@@ -23,7 +23,7 @@ namespace Login
             string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\USERS\VAGRANT\SOURCE\REPOS\WORKFLOWMANAGEMENT\LOGIN\LOGIN\USERS.MDF;Integrated Security = True;";
             SqlCommand com;
             SqlConnection con;
-            string str = "INSERT INTO [dbo].[UsersTable] ([UserID], [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES (2, 'Testy', 'Westy', 'Administrator', 'test@troywiegand.com', 'testfromtest', 'password2')";
+            string str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES ('Testy', 'Westy', 'Administrator', 'test@troywiegand.com', 'testfromtest', 'password2')";
             con = new SqlConnection(connStr);
             con.Open();
             com = new SqlCommand(str, con);
