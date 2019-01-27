@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Login
 {
-    public partial class Form2 : Form
+    public partial class LoginForm : Form
     {
-        public Form2()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace Login
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            Form1 f1 = new Form1();
+            RegisterForm f1 = new RegisterForm();
             f1.ShowDialog();
         }
 
