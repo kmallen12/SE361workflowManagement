@@ -44,6 +44,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtVerifyPassword = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -199,11 +200,22 @@
             this.txtVerifyPassword.TabIndex = 15;
             this.txtVerifyPassword.UseSystemPasswordChar = true;
             // 
-            // Form1
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(516, 456);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 16;
+            this.btnRegister.Text = "REGISTER";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 506);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtVerifyPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -220,7 +232,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "RegisterForm";
             this.Text = "Create Account";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -246,6 +258,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtVerifyPassword;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
 

@@ -20,17 +20,80 @@ namespace Login
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private Boolean isValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return true;
+            } catch
+            {
+                return false;
+            }
+        }
+
+        private Boolean CheckValidUser()
+        {
+            Boolean Check = true;
+
+            if(txtPassword.Text != txtVerifyPassword.Text)
+            {
+                MessageBox.Show("Password and Verify Password must match!");
+                txtPassword.Text = "";
+                txtVerifyPassword.Text = "";
+                Check = false;
+            }
+
+            if (!isValidEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Please Use a Valid Email!");
+                txtEmail.Text = "";
+                Check = false;
+            }
+
+            return Check;
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
             string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\USERS\VAGRANT\SOURCE\REPOS\WORKFLOWMANAGEMENT\LOGIN\LOGIN\USERS.MDF;Integrated Security = True;";
             SqlCommand com;
             SqlConnection con;
-            string str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES ('Testy', 'Westy', 'Administrator', 'test@troywiegand.com', 'testfromtest', 'password2')";
+            string str;
+            Boolean success_flag=true;
+
+            if (CheckValidUser())
+            {
+               str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES ('" + txtFirstName.Text + "','" + txtLastName.Text + "','" + cboxUserType.Text + "','" + txtEmail.Text + "','" + txtUsername.Text + "','" + txtPassword.Text + "')";
+            }
+            else return;
+            
             con = new SqlConnection(connStr);
             con.Open();
             com = new SqlCommand(str, con);
-            com.ExecuteNonQuery();
-            MessageBox.Show("VICTORY");
+            try
+            {
+                com.ExecuteNonQuery();
+            }
+            catch(SqlException EX)
+            {
+                if(EX.Number == 2627)
+                {
+                    MessageBox.Show("That Username is already taken. Sorry! Try again.");
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    txtVerifyPassword.Text = "";
+                    success_flag = false;
+                }
+            }
+
+            if (success_flag)
+                MessageBox.Show("New User " + txtUsername + " created!");
             con.Close();
-            MessageBox.Show("LAMER VICTORY!");
+
         }
     }
 }
