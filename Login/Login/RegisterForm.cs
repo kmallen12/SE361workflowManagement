@@ -35,26 +35,43 @@ namespace Login
             }
         }
 
+        private Boolean isValidPassword(string p)
+        {
+            if (p.Length < 5)
+                return false;
+
+            if (p.Contains(",") || p.Contains("'") || p.Contains('"') || p.Contains(".") || p.Contains(";"))
+                return false;
+
+            return true;
+        }
+
         private Boolean CheckValidUser()
         {
-            Boolean Check = true;
+            if (!isValidPassword(txtPassword.Text))
+            {
+                MessageBox.Show("Password must be at least 5 characters and can not include , \' \" . ; ");
+                txtPassword.Text = "";
+                txtVerifyPassword.Text = "";
+                return false;
+            }
 
             if(txtPassword.Text != txtVerifyPassword.Text)
             {
                 MessageBox.Show("Password and Verify Password must match!");
                 txtPassword.Text = "";
                 txtVerifyPassword.Text = "";
-                Check = false;
+                return false;
             }
 
             if (!isValidEmail(txtEmail.Text))
             {
                 MessageBox.Show("Please Use a Valid Email!");
                 txtEmail.Text = "";
-                Check = false;
+                return false;
             }
 
-            return Check;
+            return true;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -90,10 +107,16 @@ namespace Login
                 }
             }
 
-            if (success_flag)
-                MessageBox.Show("New User " + txtUsername + " created!");
+           
             con.Close();
 
+            if (success_flag)
+            {
+                MessageBox.Show("New User " + txtUsername + " created!");
+                this.Hide();
+                LoginForm formLogin = new LoginForm();
+                formLogin.ShowDialog();
+            }
         }
     }
 }
