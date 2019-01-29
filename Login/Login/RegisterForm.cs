@@ -76,7 +76,7 @@ namespace Login
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\USERS\VAGRANT\SOURCE\REPOS\WORKFLOWMANAGEMENT\LOGIN\LOGIN\USERS.MDF;Integrated Security = True;";
+            string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\Users\kmallen\source\repos\SE361-OCOTOD\WorkFlowManagement\Login\Login\Users.mdf;Integrated Security = True;";
             SqlCommand com;
             SqlConnection con;
             string str;
@@ -112,7 +112,7 @@ namespace Login
 
             if (success_flag)
             {
-                MessageBox.Show("New User " + txtUsername + " created!");
+                MessageBox.Show("New User " + txtUsername.Text + " created!");
                 this.Hide();
                 LoginForm formLogin = new LoginForm();
                 formLogin.ShowDialog();
