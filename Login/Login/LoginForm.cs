@@ -35,7 +35,7 @@ namespace Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\USERS\VAGRANT\SOURCE\REPOS\WORKFLOWMANAGEMENT\LOGIN\LOGIN\USERS.MDF;Integrated Security = True;";
+            string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\USERS\mnims\SOURCE\REPOS\WORKFLOWMANAGEMENT\LOGIN\LOGIN\USERS.MDF;Integrated Security = True;";
             SqlCommand com;
             SqlConnection con;
             string str="SELECT UserName, Password "+ "FROM  [dbo].[UsersTable]"+
