@@ -76,7 +76,7 @@ namespace Login
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string connStr = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\USERS\mnims\SOURCE\REPOS\WORKFLOWMANAGEMENT\LOGIN\LOGIN\USERS.MDF;Integrated Security = True;";
+            string connStr = "tcp:workflowdatabase.database.windows.net,1433; Initial Catalog = WorkFlowDatabase; Persist Security Info = False; User ID = OCOTOD; Password =FairBanks152; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30";
             SqlCommand com;
             SqlConnection con;
             string str;
@@ -112,7 +112,7 @@ namespace Login
 
             if (success_flag)
             {
-                MessageBox.Show("New User " + txtUsername + " created!");
+                MessageBox.Show("New User " + txtUsername.Text + " created!");
                 this.Hide();
                 LoginForm formLogin = new LoginForm();
                 formLogin.ShowDialog();
