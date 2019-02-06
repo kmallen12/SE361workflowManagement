@@ -1,4 +1,4 @@
-﻿namespace Login
+﻿namespace WorkflowManagement
 {
     partial class RegisterForm
     {

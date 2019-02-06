@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-namespace Login
+namespace WorkflowManagement
 {
     public partial class LoginForm : Form
     {
@@ -35,7 +35,15 @@ namespace Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            string connStr = "tcp:workflowdatabase.database.windows.net,1433; Initial Catalog = WorkFlowDatabase; Persist Security Info = False; User ID = OCOTOD; Password =FairBanks152; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30";
+            string connStr = @"Server=tcp:workflowdatabase.database.windows.net,1433;
+                                   Initial Catalog = WorkFlowDatabase;
+                                   Persist Security Info = False;
+                                   User ID = OCOTOD;
+                                   Password = FairBanks152;
+                                   MultipleActiveResultSets = False;
+                                   Encrypt = True;
+                                   TrustServerCertificate = False;
+                                   Connection Timeout = 30;";
             SqlCommand com;
             SqlConnection con;
             string str="SELECT UserName, Password "+ "FROM  [dbo].[UsersTable]"+
@@ -43,6 +51,7 @@ namespace Login
             Boolean success_flag = true;
             con = new SqlConnection(connStr);
             con.Open();
+            MessageBox.Show("connected to db");
             com = new SqlCommand(str, con);
 
             SqlDataReader reader = com.ExecuteReader();
