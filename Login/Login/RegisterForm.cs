@@ -76,9 +76,13 @@ namespace WorkflowManagement
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string connStr = "tcp:workflowdatabase.database.windows.net,1433; Initial Catalog = WorkFlowDatabase; Persist Security Info = False; User ID = OCOTOD; Password =FairBanks152; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30";
-            SqlCommand com;
-            SqlConnection con;
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433"; 
+                builder.UserID = "OCOTOD";            
+                builder.Password = "FairBanks152";     
+                builder.InitialCatalog = "WorkFlowDatabase";
+           SqlConnection con = new SqlConnection(builder.ConnectionString);
+
             string str;
             Boolean success_flag=true;
 
@@ -88,9 +92,8 @@ namespace WorkflowManagement
             }
             else return;
             
-            con = new SqlConnection(connStr);
             con.Open();
-            com = new SqlCommand(str, con);
+            SqlCommand com = new SqlCommand(str, con);
             try
             {
                 com.ExecuteNonQuery();

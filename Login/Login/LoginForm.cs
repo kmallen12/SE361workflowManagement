@@ -35,24 +35,19 @@ namespace WorkflowManagement
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            string connStr = @"Server=tcp:workflowdatabase.database.windows.net,1433;
-                                   Initial Catalog = WorkFlowDatabase;
-                                   Persist Security Info = False;
-                                   User ID = OCOTOD;
-                                   Password = FairBanks152;
-                                   MultipleActiveResultSets = False;
-                                   Encrypt = True;
-                                   TrustServerCertificate = False;
-                                   Connection Timeout = 30;";
-            SqlCommand com;
-            SqlConnection con;
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433"; 
+                builder.UserID = "OCOTOD";            
+                builder.Password = "FairBanks152";     
+                builder.InitialCatalog = "WorkFlowDatabase";
+           SqlConnection con = new SqlConnection(builder.ConnectionString);
+
             string str="SELECT UserName, Password "+ "FROM  [dbo].[UsersTable]"+
                         "WHERE UserName = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
             Boolean success_flag = true;
-            con = new SqlConnection(connStr);
             con.Open();
             MessageBox.Show("connected to db");
-            com = new SqlCommand(str, con);
+            SqlCommand com = new SqlCommand(str, con);
 
             SqlDataReader reader = com.ExecuteReader();
 
