@@ -46,7 +46,6 @@ namespace WorkflowManagement
                         "WHERE UserName = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
             Boolean success_flag = true;
             con.Open();
-            MessageBox.Show("connected to db");
             SqlCommand com = new SqlCommand(str, con);
 
             SqlDataReader reader = com.ExecuteReader();
@@ -66,6 +65,9 @@ namespace WorkflowManagement
             if (success_flag)
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
+                StockForm formStock = new StockForm();
+                Hide();
+                formStock.ShowDialog();
             }
         }
     }
