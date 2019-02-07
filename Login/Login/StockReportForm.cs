@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login
+namespace WorkflowManagement
 {
     public partial class StockReportForm : Form
     {
@@ -20,19 +20,19 @@ namespace Login
         //all materials on hand - aggregates by material type
         public double totalQuantity()
         {
-            
+            return 0;
         }
 
         //average cost by material type
         public double averageCost()
         {
-
+            return 0;
         }
 
         //average time to use
         public TimeSpan avgIdleTime()
         {
-
+            return new TimeSpan();
         }
 
     }
