@@ -15,7 +15,8 @@ namespace WorkflowManagement
     {
         public RegisterForm()
         {
-            InitializeComponent();       
+            InitializeComponent();      
+            this.AcceptButton = btnRegister;
         }
         
         private void Form1_Load(object sender, EventArgs e)
