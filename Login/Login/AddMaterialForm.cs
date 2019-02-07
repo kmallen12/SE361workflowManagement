@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WorkflowManagement
 {
@@ -22,10 +23,56 @@ namespace WorkflowManagement
 
         }
 
+   
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
             Application.Exit();
+        }
+
+        private void Confirm_Material_btn_Click(object sender, EventArgs e)
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
+            builder.UserID = "OCOTOD";
+            builder.Password = "FairBanks152";
+            builder.InitialCatalog = "WorkFlowDatabase";
+            SqlConnection con = new SqlConnection(builder.ConnectionString);
+
+            string str;
+            str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES ('" + txt_materialType.Text + "','" + txt_Quantity.Text + "','" + txt_unitCost.Text + "','" + txt_TotalCost.Text + "','" + txt_DateAcq.Text + "','" + txt_dateUsed.Text + "','" + 0 + "')";
+            con.Open();
+
+            SqlCommand com = new SqlCommand(str, con);
+            com.ExecuteNonQuery();
+
+
+            StockForm formStock = new StockForm();
+
+            Hide();
+            formStock.ShowDialog();
+        }
+
+        private void Another_Material_btn_Click(object sender, EventArgs e)
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
+            builder.UserID = "OCOTOD";
+            builder.Password = "FairBanks152";
+            builder.InitialCatalog = "WorkFlowDatabase";
+            SqlConnection con = new SqlConnection(builder.ConnectionString);
+
+            string str;
+            str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES ('" + txt_materialType.Text + "','" + txt_Quantity.Text + "','" + txt_unitCost.Text + "','" + txt_TotalCost.Text + "','" + txt_DateAcq.Text + "','" + txt_dateUsed.Text + "','" + 0 + "')";
+            con.Open();
+
+            SqlCommand com = new SqlCommand(str, con);
+            com.ExecuteNonQuery();
+
+
+            StockForm formStock = new StockForm();
+
         }
     }
 }

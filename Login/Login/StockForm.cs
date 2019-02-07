@@ -17,10 +17,11 @@ namespace WorkflowManagement
             InitializeComponent();
         }
 
-     
+        string str;
         private void btn_AddMaterial_Click(object sender, EventArgs e)
         {
             AddMaterialForm formMaterial = new AddMaterialForm();
+            
             Hide();
             formMaterial.ShowDialog();
         }
