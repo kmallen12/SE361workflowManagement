@@ -67,6 +67,13 @@
     <Compile Include="AddMaterialForm.Designer.cs">
       <DependentUpon>AddMaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stock.cs" />
+    <Compile Include="StockReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockReportForm.Designer.cs">
+      <DependentUpon>StockReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="AddMaterialForm.resx">
       <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockReportForm.resx">
+      <DependentUpon>StockReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
