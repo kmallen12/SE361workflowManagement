@@ -49,7 +49,7 @@ namespace WorkflowManagement
 
             string str="SELECT UserType "+ "FROM  [dbo].[UsersTable]"+
                         "WHERE UserName = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
-            Boolean success_flag = true;
+            Boolean success_flag = false;
             con.Open();
             SqlCommand com = new SqlCommand(str, con);
 
@@ -57,8 +57,10 @@ namespace WorkflowManagement
 
             while (reader.Read())
             {
-                success_flag = true;
+                
                 UserType=reader[0].ToString();
+                if(UserType != "" )
+                    success_flag = true;
             }
             
             if(!success_flag)
