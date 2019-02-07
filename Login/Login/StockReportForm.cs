@@ -16,5 +16,24 @@ namespace Login
         {
             InitializeComponent();
         }
+
+        //all materials on hand - aggregates by material type
+        public double totalQuantity()
+        {
+            
+        }
+
+        //average cost by material type
+        public double averageCost()
+        {
+
+        }
+
+        //average time to use
+        public TimeSpan avgIdleTime()
+        {
+
+        }
+
     }
 }

@@ -25,7 +25,7 @@ namespace Login
         }
 
         //returns the time materials sit idle (difference between received date and use date)
-        public TimeSpan averageTime()
+        public TimeSpan idleTime()
         {
             return dateUsed - dateAcquired;
         }
