@@ -23,5 +23,13 @@ namespace WorkflowManagement
             this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
 
         }
+        private void stockdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // THIS IS WHERE WE SHOULD ADD FUNCTIONALITY TO BE ABLE TO EDIT
+            // THE ROWS AND TABLES OF THE DATABASE ROWS THAT ARE DISPLAYED
+            // https://stackoverflow.com/questions/14065443/updating-database-using-datagridview
+
+
+        }
     }
 }
