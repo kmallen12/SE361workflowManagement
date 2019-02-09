@@ -30,10 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
-            this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
+            this.stockdata = new System.Windows.Forms.DataGridView();
             this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +39,12 @@
             this.dateAcquiredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amtDefectedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
+            this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
+            this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.stockdata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_warehouseSummary
@@ -57,11 +57,11 @@
             this.lbl_warehouseSummary.TabIndex = 0;
             this.lbl_warehouseSummary.Text = "Warehouse Summary:";
             // 
-            // dataGridView1
+            // stockdata
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stockdata.AutoGenerateColumns = false;
+            this.stockdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stockdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemIDDataGridViewTextBoxColumn,
             this.materialTypeDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
@@ -70,25 +70,12 @@
             this.dateAcquiredDataGridViewTextBoxColumn,
             this.dateUsedDataGridViewTextBoxColumn,
             this.amtDefectedDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.stockTableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 348);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // workFlowDatabaseDataSet
-            // 
-            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
-            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockTableBindingSource
-            // 
-            this.stockTableBindingSource.DataMember = "StockTable";
-            this.stockTableBindingSource.DataSource = this.workFlowDatabaseDataSet;
-            // 
-            // stockTableTableAdapter
-            // 
-            this.stockTableTableAdapter.ClearBeforeFill = true;
+            this.stockdata.DataSource = this.stockTableBindingSource;
+            this.stockdata.Location = new System.Drawing.Point(12, 90);
+            this.stockdata.Name = "stockdata";
+            this.stockdata.Size = new System.Drawing.Size(843, 348);
+            this.stockdata.TabIndex = 1;
+            this.stockdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stockdata_CellContentClick);
             // 
             // itemIDDataGridViewTextBoxColumn
             // 
@@ -139,20 +126,34 @@
             this.amtDefectedDataGridViewTextBoxColumn.HeaderText = "amtDefected";
             this.amtDefectedDataGridViewTextBoxColumn.Name = "amtDefectedDataGridViewTextBoxColumn";
             // 
+            // stockTableBindingSource
+            // 
+            this.stockTableBindingSource.DataMember = "StockTable";
+            this.stockTableBindingSource.DataSource = this.workFlowDatabaseDataSet;
+            // 
+            // workFlowDatabaseDataSet
+            // 
+            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
+            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stockTableTableAdapter
+            // 
+            this.stockTableTableAdapter.ClearBeforeFill = true;
+            // 
             // UpdateStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.stockdata);
             this.Controls.Add(this.lbl_warehouseSummary);
             this.Name = "UpdateStock";
             this.Text = "View and Update Stock Form";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.UpdateStock_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockdata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +162,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_warehouseSummary;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView stockdata;
         private Login.WorkFlowDatabaseDataSet workFlowDatabaseDataSet;
         private System.Windows.Forms.BindingSource stockTableBindingSource;
         private Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter stockTableTableAdapter;
