@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddMaterialForm.cs">
+    <Compile Include="StockAddMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMaterialForm.Designer.cs">
-      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    <Compile Include="StockAddMaterialForm.Designer.cs">
+      <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock.cs" />
     <Compile Include="StockReportForm.cs">
@@ -94,19 +94,19 @@
     <Compile Include="StockMainForm.Designer.cs">
       <DependentUpon>StockMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View_UpdateStockForm.cs">
+    <Compile Include="StockView_UpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View_UpdateStockForm.Designer.cs">
-      <DependentUpon>View_UpdateStockForm.cs</DependentUpon>
+    <Compile Include="StockView_UpdateForm.Designer.cs">
+      <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddMaterialForm.resx">
-      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    <EmbeddedResource Include="StockAddMaterialForm.resx">
+      <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockReportForm.resx">
       <DependentUpon>StockReportForm.cs</DependentUpon>
@@ -129,8 +129,8 @@
     <EmbeddedResource Include="StockMainForm.resx">
       <DependentUpon>StockMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View_UpdateStockForm.resx">
-      <DependentUpon>View_UpdateStockForm.cs</DependentUpon>
+    <EmbeddedResource Include="StockView_UpdateForm.resx">
+      <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
