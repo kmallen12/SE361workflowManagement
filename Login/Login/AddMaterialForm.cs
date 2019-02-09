@@ -33,6 +33,7 @@ namespace WorkflowManagement
 
         private void Confirm_Material_btn_Click(object sender, EventArgs e)
         {
+ 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
             builder.UserID = "OCOTOD";
@@ -72,6 +73,15 @@ namespace WorkflowManagement
 
 
             StockForm formStock = new StockForm();
+
+            txt_materialType.Clear();
+            txt_Quantity.Clear();
+            txt_Defected.Clear();
+            txt_unitCost.Clear();
+            txt_TotalCost.Clear();
+            txt_DateAcq.Clear();
+            txt_dateUsed.Clear();
+            
 
         }
     }
