@@ -60,6 +60,18 @@ namespace WorkflowManagement
         {
             if (CheckValidStock())
             {
+                string material = txt_materialType.Text;
+                double unitCost;
+
+                if (string.IsNullOrEmpty(txt_unitCost.Text))
+                {
+                    unitCost = 0;
+                }
+                else
+                {
+                    unitCost = double.Parse(txt_unitCost.Text);
+                }
+
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
                 builder.UserID = "OCOTOD";
@@ -68,12 +80,63 @@ namespace WorkflowManagement
                 SqlConnection con = new SqlConnection(builder.ConnectionString);
 
                 string str;
-                str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES ('" + txt_materialType.Text + "','" + txt_Quantity.Text + "','" + txt_unitCost.Text + "','" + txt_TotalCost.Text + "','" + txt_DateAcq.Text + "','" + txt_dateUsed.Text + "','" + 0 + "')";
+                str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
                 con.Open();
 
-                SqlCommand com = new SqlCommand(str, con);
-                com.ExecuteNonQuery();
+                using (SqlCommand com = new SqlCommand(str, con))
+                {
+                    com.Connection = con;
+                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
+                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(txt_Quantity.Text);
 
+                    if (!string.IsNullOrEmpty(txt_unitCost.Text))
+                    {
+                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
+                    }
+
+                    if (!string.IsNullOrEmpty(txt_TotalCost.Text))
+                    {
+                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(txt_TotalCost.Text);
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
+                    }
+
+                    if(!string.IsNullOrEmpty(txt_DateAcq.Text))
+                    {
+                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = txt_DateAcq.Text;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
+                    }
+
+                    if (!string.IsNullOrEmpty(txt_dateUsed.Text))
+                    {
+                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = txt_dateUsed.Text;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
+                    }
+
+                    if (!string.IsNullOrEmpty(txt_Defected.Text))
+                    {
+                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(txt_Defected.Text);
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
+
+                    }
+
+                    com.ExecuteNonQuery();
+                }
 
                 StockForm formStock = new StockForm();
 
