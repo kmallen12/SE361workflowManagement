@@ -12,6 +12,26 @@ namespace Login
         public double quantity, totalCost, defects;
         public DateTime dateAcquired, dateUsed;
 
+        public Stock()
+        {
+            materialType = "";
+            quantity = 0;
+            totalCost = 0;
+            defects = 0;
+            dateAcquired = DateTime.Today;
+            dateUsed = DateTime.Today;
+        }
+
+        public Stock(string material, double quan, double tCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
+        {
+            materialType = material;
+            quantity = quan;
+            totalCost = tCost;
+            defects = defectNo;
+            dateAcquired = dtAcq;
+            dateUsed = dtUsed;
+        }
+
         //returns the unit cost of materials purchased
         public double unitCost()
         {
@@ -30,6 +50,29 @@ namespace Login
             return dateUsed - dateAcquired;
         }
         
+        public Boolean isValidQuantity(double quantity)
+        {
+            try
+            {
+                double quan = quantity;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public Boolean CheckValidStock()
+        {
+            if (!isValidQuantity(quantity))
+            {
+                System.Windows.Forms.MessageBox.Show("Quantity must be an integer (e.g. 30, 1000, etc.");
+                return false;
+            }
+
+            return true;
+        }
 
     }
 }
