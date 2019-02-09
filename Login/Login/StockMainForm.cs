@@ -28,7 +28,10 @@ namespace WorkflowManagement
 
         private void btn_UpdateStock_Click(object sender, EventArgs e)
         {
+            UpdateStock formStock = new UpdateStock();
 
+            Hide();
+            formStock.ShowDialog();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -37,14 +40,12 @@ namespace WorkflowManagement
             Application.Exit();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_Report_Click(object sender, EventArgs e)
         {
+            StockReportForm formReport = new StockReportForm();
 
-        }
-
-        private void StockForm_Load(object sender, EventArgs e)
-        {
-
+            Hide();
+            formReport.ShowDialog();
         }
     }
 }
