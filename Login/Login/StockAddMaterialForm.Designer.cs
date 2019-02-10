@@ -200,7 +200,7 @@
             this.Confirm_Material_btn.TabIndex = 15;
             this.Confirm_Material_btn.Text = "Confirm Material And Exit";
             this.Confirm_Material_btn.UseVisualStyleBackColor = true;
-            this.Confirm_Material_btn.Click += new System.EventHandler(this.Confirm_Material_btn_Click);
+
             // 
             // AddMaterialForm
             // 

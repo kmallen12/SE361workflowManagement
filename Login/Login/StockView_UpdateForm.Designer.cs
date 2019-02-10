@@ -42,6 +42,16 @@
             this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
             this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
+            this.ItemIDGrid_box = new System.Windows.Forms.TextBox();
+            this.materialTypeGrid_box = new System.Windows.Forms.TextBox();
+            this.quantityGrid_box = new System.Windows.Forms.TextBox();
+            this.unitCostGrid_box = new System.Windows.Forms.TextBox();
+            this.totalCostGrid_box = new System.Windows.Forms.TextBox();
+            this.dateAcquiredGrid_box = new System.Windows.Forms.TextBox();
+            this.dateUsedGrid_box = new System.Windows.Forms.TextBox();
+            this.amtDefectedGrid_box = new System.Windows.Forms.TextBox();
+            this.Enter_ID_lbl = new System.Windows.Forms.Label();
+            this.ConfirmGrid_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
@@ -51,10 +61,9 @@
             // 
             this.lbl_warehouseSummary.AutoSize = true;
             this.lbl_warehouseSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_warehouseSummary.Location = new System.Drawing.Point(61, 48);
-            this.lbl_warehouseSummary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_warehouseSummary.Location = new System.Drawing.Point(46, 39);
             this.lbl_warehouseSummary.Name = "lbl_warehouseSummary";
-            this.lbl_warehouseSummary.Size = new System.Drawing.Size(267, 29);
+            this.lbl_warehouseSummary.Size = new System.Drawing.Size(216, 24);
             this.lbl_warehouseSummary.TabIndex = 0;
             this.lbl_warehouseSummary.Text = "Warehouse Summary:";
             // 
@@ -72,10 +81,10 @@
             this.dateUsedDataGridViewTextBoxColumn,
             this.amtDefectedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stockTableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 111);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1124, 428);
+            this.dataGridView1.RowHeadersWidth = 5;
+            this.dataGridView1.Size = new System.Drawing.Size(808, 348);
             this.dataGridView1.TabIndex = 1;
             // 
             // itemIDDataGridViewTextBoxColumn
@@ -141,14 +150,109 @@
             // 
             this.stockTableTableAdapter.ClearBeforeFill = true;
             // 
+            // ItemIDGrid_box
+            // 
+            this.ItemIDGrid_box.Location = new System.Drawing.Point(18, 444);
+            this.ItemIDGrid_box.Name = "ItemIDGrid_box";
+            this.ItemIDGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.ItemIDGrid_box.TabIndex = 2;
+            this.ItemIDGrid_box.TextChanged += new System.EventHandler(this.ItemIDGrid_box_TextChanged);
+            // 
+            // materialTypeGrid_box
+            // 
+            this.materialTypeGrid_box.Location = new System.Drawing.Point(118, 444);
+            this.materialTypeGrid_box.Name = "materialTypeGrid_box";
+            this.materialTypeGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.materialTypeGrid_box.TabIndex = 3;
+            this.materialTypeGrid_box.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // quantityGrid_box
+            // 
+            this.quantityGrid_box.Location = new System.Drawing.Point(219, 444);
+            this.quantityGrid_box.Name = "quantityGrid_box";
+            this.quantityGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.quantityGrid_box.TabIndex = 4;
+            this.quantityGrid_box.TextChanged += new System.EventHandler(this.quantityGrid_box_TextChanged);
+            // 
+            // unitCostGrid_box
+            // 
+            this.unitCostGrid_box.Location = new System.Drawing.Point(320, 444);
+            this.unitCostGrid_box.Name = "unitCostGrid_box";
+            this.unitCostGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.unitCostGrid_box.TabIndex = 5;
+            this.unitCostGrid_box.TextChanged += new System.EventHandler(this.unitCostGrid_box_TextChanged);
+            // 
+            // totalCostGrid_box
+            // 
+            this.totalCostGrid_box.Location = new System.Drawing.Point(421, 444);
+            this.totalCostGrid_box.Name = "totalCostGrid_box";
+            this.totalCostGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.totalCostGrid_box.TabIndex = 6;
+            this.totalCostGrid_box.TextChanged += new System.EventHandler(this.totalCostGrid_box_TextChanged);
+            // 
+            // dateAcquiredGrid_box
+            // 
+            this.dateAcquiredGrid_box.Location = new System.Drawing.Point(522, 444);
+            this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
+            this.dateAcquiredGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.dateAcquiredGrid_box.TabIndex = 7;
+            this.dateAcquiredGrid_box.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // dateUsedGrid_box
+            // 
+            this.dateUsedGrid_box.Location = new System.Drawing.Point(623, 444);
+            this.dateUsedGrid_box.Name = "dateUsedGrid_box";
+            this.dateUsedGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.dateUsedGrid_box.TabIndex = 8;
+            this.dateUsedGrid_box.TextChanged += new System.EventHandler(this.dateUsedGrid_box_TextChanged);
+            // 
+            // amtDefectedGrid_box
+            // 
+            this.amtDefectedGrid_box.Location = new System.Drawing.Point(724, 444);
+            this.amtDefectedGrid_box.Name = "amtDefectedGrid_box";
+            this.amtDefectedGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.amtDefectedGrid_box.TabIndex = 9;
+            this.amtDefectedGrid_box.TextChanged += new System.EventHandler(this.amtDefectedGrid_box_TextChanged);
+            // 
+            // Enter_ID_lbl
+            // 
+            this.Enter_ID_lbl.AutoSize = true;
+            this.Enter_ID_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Enter_ID_lbl.Location = new System.Drawing.Point(15, 489);
+            this.Enter_ID_lbl.Name = "Enter_ID_lbl";
+            this.Enter_ID_lbl.Size = new System.Drawing.Size(488, 18);
+            this.Enter_ID_lbl.TabIndex = 10;
+            this.Enter_ID_lbl.Text = "Enter ID and Desired Changes or Omit ID to Add a New Material";
+            this.Enter_ID_lbl.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // ConfirmGrid_btn
+            // 
+            this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmGrid_btn.Location = new System.Drawing.Point(522, 470);
+            this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
+            this.ConfirmGrid_btn.Size = new System.Drawing.Size(298, 52);
+            this.ConfirmGrid_btn.TabIndex = 11;
+            this.ConfirmGrid_btn.Text = "Confirm";
+            this.ConfirmGrid_btn.UseVisualStyleBackColor = true;
+            this.ConfirmGrid_btn.Click += new System.EventHandler(this.ConfirmGrid_btn_Click);
+            // 
             // UpdateStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 554);
+            this.ClientSize = new System.Drawing.Size(932, 534);
+            this.Controls.Add(this.ConfirmGrid_btn);
+            this.Controls.Add(this.Enter_ID_lbl);
+            this.Controls.Add(this.amtDefectedGrid_box);
+            this.Controls.Add(this.dateUsedGrid_box);
+            this.Controls.Add(this.dateAcquiredGrid_box);
+            this.Controls.Add(this.totalCostGrid_box);
+            this.Controls.Add(this.unitCostGrid_box);
+            this.Controls.Add(this.quantityGrid_box);
+            this.Controls.Add(this.materialTypeGrid_box);
+            this.Controls.Add(this.ItemIDGrid_box);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_warehouseSummary);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UpdateStock";
             this.Text = "View and Update Stock Form";
             this.TopMost = true;
@@ -176,5 +280,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateAcquiredDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateUsedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amtDefectedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox ItemIDGrid_box;
+        private System.Windows.Forms.TextBox materialTypeGrid_box;
+        private System.Windows.Forms.TextBox quantityGrid_box;
+        private System.Windows.Forms.TextBox unitCostGrid_box;
+        private System.Windows.Forms.TextBox totalCostGrid_box;
+        private System.Windows.Forms.TextBox dateAcquiredGrid_box;
+        private System.Windows.Forms.TextBox dateUsedGrid_box;
+        private System.Windows.Forms.TextBox amtDefectedGrid_box;
+        private System.Windows.Forms.Label Enter_ID_lbl;
+        private System.Windows.Forms.Button ConfirmGrid_btn;
     }
 }

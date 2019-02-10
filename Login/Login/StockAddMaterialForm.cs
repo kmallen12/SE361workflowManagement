@@ -56,7 +56,7 @@ namespace WorkflowManagement
             return true;
         }
 
-        private void Confirm_Material_btn_Click(object sender, EventArgs e)
+        private void ConfirmGrid_btn_Click(object sender, EventArgs e)
         {
             if (CheckValidStock())
             {
