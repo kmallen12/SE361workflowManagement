@@ -24,29 +24,11 @@ namespace WorkflowManagement
             this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
 
         }
-        private void stockdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // THIS IS WHERE WE SHOULD ADD FUNCTIONALITY TO BE ABLE TO EDIT
-            // THE ROWS AND TABLES OF THE DATABASE ROWS THAT ARE DISPLAYED
-            // https://stackoverflow.com/questions/14065443/updating-database-using-datagridview
+    
 
+     
 
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         private Boolean isValidQuantity(string quantity)
         {
             try
@@ -244,34 +226,6 @@ namespace WorkflowManagement
             }
         }
 
-        private void ItemIDGrid_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quantityGrid_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void unitCostGrid_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void totalCostGrid_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateUsedGrid_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void amtDefectedGrid_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
