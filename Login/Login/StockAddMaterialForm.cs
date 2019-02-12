@@ -22,7 +22,6 @@ namespace WorkflowManagement
         {
 
         }
-
    
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -31,11 +30,11 @@ namespace WorkflowManagement
             Application.Exit();
         }
 
-        private Boolean isValidQuantity(string quantity)
+        private Boolean isValidNumber(string number)
         {
             try
             {
-                double quan = double.Parse(quantity);
+                double num = double.Parse(number);
                 return true;
             }
             catch
@@ -44,12 +43,34 @@ namespace WorkflowManagement
             }
         }
 
+
         private Boolean CheckValidStock()
         {
-            if (!isValidQuantity(txt_Quantity.Text))
+            if (!isValidNumber(txt_Quantity.Text))
             {
-                System.Windows.Forms.MessageBox.Show("Quantity must be an integer (e.g. 30, 1000, etc.)");
+                System.Windows.Forms.MessageBox.Show("Quantity must be numerical (e.g. 30, 1000, etc.)");
                 txt_Quantity.Clear();
+                return false;
+            }
+
+            if (!isValidNumber(txt_Defected.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Number of defected items must be numerical (e.g. 30, 1000, etc.)");
+                txt_Defected.Clear();
+                return false;
+            }
+
+            if (!isValidNumber(txt_unitCost.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Unit cost must be numerical and can contain two decimal places (e.g. 30, 1.45, etc.)");
+                txt_Defected.Clear();
+                return false;
+            }
+
+            if (!isValidNumber(txt_TotalCost.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Total cost must be numerical and can contain two decimal places (e.g. 30, 1.45, etc.)");
+                txt_Defected.Clear();
                 return false;
             }
 
@@ -63,16 +84,6 @@ namespace WorkflowManagement
             if (CheckValidStock())
             {
                 string material = txt_materialType.Text;
-                double unitCost;
-
-                if (string.IsNullOrEmpty(txt_unitCost.Text))
-                {
-                    unitCost = 0;
-                }
-                else
-                {
-                    unitCost = double.Parse(txt_unitCost.Text);
-                }
 
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
@@ -93,7 +104,7 @@ namespace WorkflowManagement
 
                     if (!string.IsNullOrEmpty(txt_unitCost.Text))
                     {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = double.Parse(txt_unitCost.Text);
                     }
                     else
                     {
@@ -158,16 +169,6 @@ namespace WorkflowManagement
             if (CheckValidStock())
             {
                 string material = txt_materialType.Text;
-                double unitCost;
-
-                if (string.IsNullOrEmpty(txt_unitCost.Text))
-                {
-                    unitCost = 0;
-                }
-                else
-                {
-                    unitCost = double.Parse(txt_unitCost.Text);
-                }
 
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
@@ -188,7 +189,7 @@ namespace WorkflowManagement
 
                     if (!string.IsNullOrEmpty(txt_unitCost.Text))
                     {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = double.Parse(txt_unitCost.Text);
                     }
                     else
                     {
@@ -240,6 +241,14 @@ namespace WorkflowManagement
                 Hide();
                 formStock.ShowDialog();
             }
+        }
+
+        private void btnCalcTotalCost_Click(object sender, EventArgs e)
+        {
+            double quan = double.Parse(txt_Quantity.Text);
+            double uCost = double.Parse(txt_unitCost.Text);
+            double tCost = Math.Round(quan * uCost, 2);
+            txt_TotalCost.Text = tCost.ToString();
         }
     }
 }
