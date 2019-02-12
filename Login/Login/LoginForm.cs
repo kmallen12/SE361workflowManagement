@@ -74,12 +74,15 @@ namespace WorkflowManagement
             if (success_flag)
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
-                if(UserType == "Administrator" || UserType == "Stockiest" ){
+                this.Hide();
+                //Need to decide on homepage or user-specific forms.
+                HomePage formHomePage = new HomePage();
+                formHomePage.ShowDialog();
 
-                StockForm formStock = new StockForm();
-                Hide();
-                formStock.ShowDialog();
-                 }  
+                if (UserType == "Administrator" || UserType == "Stockiest" ){
+                    StockForm formStock = new StockForm();
+                    formStock.ShowDialog();
+                 }
             }
         }
     }
