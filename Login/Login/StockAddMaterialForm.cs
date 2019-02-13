@@ -53,6 +53,7 @@ namespace WorkflowManagement
                 return false;
             }
 
+            /*
             if (!isValidNumber(txt_Defected.Text))
             {
                 System.Windows.Forms.MessageBox.Show("Number of defected items must be numerical (e.g. 30, 1000, etc.)");
@@ -72,7 +73,7 @@ namespace WorkflowManagement
                 System.Windows.Forms.MessageBox.Show("Total cost must be numerical and can contain two decimal places (e.g. 30, 1.45, etc.)");
                 txt_Defected.Clear();
                 return false;
-            }
+            }*/
 
             return true;
         }

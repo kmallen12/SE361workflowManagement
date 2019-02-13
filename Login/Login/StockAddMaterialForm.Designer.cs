@@ -233,7 +233,7 @@
             // 
             this.btnCalcTotalCost.Location = new System.Drawing.Point(613, 308);
             this.btnCalcTotalCost.Name = "btnCalcTotalCost";
-            this.btnCalcTotalCost.Size = new System.Drawing.Size(74, 23);
+            this.btnCalcTotalCost.Size = new System.Drawing.Size(90, 23);
             this.btnCalcTotalCost.TabIndex = 18;
             this.btnCalcTotalCost.Text = "Calculate";
             this.btnCalcTotalCost.UseVisualStyleBackColor = true;
