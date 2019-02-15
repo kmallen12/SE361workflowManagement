@@ -74,9 +74,10 @@ namespace WorkflowManagement
             if (success_flag)
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
+                CurrentUser objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
                 this.Hide();
-                //Need to decide on homepage or user-specific forms.
-                HomePage formHomePage = new HomePage();
+
+                HomePage formHomePage = new HomePage(objCurrentUser);
                 formHomePage.ShowDialog();
 
                 if (UserType == "Administrator" || UserType == "Stockiest" ){

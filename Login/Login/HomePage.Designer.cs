@@ -41,10 +41,11 @@
             this.btnProductUpdateStatus = new System.Windows.Forms.Button();
             this.btnProductQuality = new System.Windows.Forms.Button();
             this.pnlReports = new System.Windows.Forms.Panel();
+            this.btnReportGenerate = new System.Windows.Forms.Button();
             this.btnProductsView = new System.Windows.Forms.Button();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.btnStockUpdate = new System.Windows.Forms.Button();
-            this.btnStockGenerateID = new System.Windows.Forms.Button();
+            this.btnStockGenerateReport = new System.Windows.Forms.Button();
             this.btnStockValidate = new System.Windows.Forms.Button();
             this.btnStockMaterials = new System.Windows.Forms.Button();
             this.pnlStock = new System.Windows.Forms.Panel();
@@ -53,7 +54,8 @@
             this.tabReports = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.tabHome = new System.Windows.Forms.TabControl();
-            this.btnReportGenerate = new System.Windows.Forms.Button();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.btnStockiestHomepage = new System.Windows.Forms.Button();
             this.pnlReports.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.pnlStock.SuspendLayout();
@@ -66,15 +68,16 @@
             // lblUsername
             // 
             this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(684, 15);
+            this.lblUsername.Location = new System.Drawing.Point(607, 36);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(33, 13);
+            this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsername.Size = new System.Drawing.Size(187, 13);
             this.lblUsername.TabIndex = 13;
             this.lblUsername.Text = "User";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // button6
             // 
@@ -192,6 +195,15 @@
             this.pnlReports.TabIndex = 11;
             this.pnlReports.Visible = false;
             // 
+            // btnReportGenerate
+            // 
+            this.btnReportGenerate.Location = new System.Drawing.Point(13, 16);
+            this.btnReportGenerate.Name = "btnReportGenerate";
+            this.btnReportGenerate.Size = new System.Drawing.Size(130, 32);
+            this.btnReportGenerate.TabIndex = 1;
+            this.btnReportGenerate.Text = "Generate Report";
+            this.btnReportGenerate.UseVisualStyleBackColor = true;
+            // 
             // btnProductsView
             // 
             this.btnProductsView.Location = new System.Drawing.Point(13, 16);
@@ -218,25 +230,27 @@
             // 
             // btnStockUpdate
             // 
-            this.btnStockUpdate.Location = new System.Drawing.Point(13, 162);
+            this.btnStockUpdate.Location = new System.Drawing.Point(6, 45);
             this.btnStockUpdate.Name = "btnStockUpdate";
             this.btnStockUpdate.Size = new System.Drawing.Size(130, 32);
             this.btnStockUpdate.TabIndex = 3;
             this.btnStockUpdate.Text = "View/Update Stock";
             this.btnStockUpdate.UseVisualStyleBackColor = true;
+            this.btnStockUpdate.Click += new System.EventHandler(this.btnStockUpdate_Click);
             // 
-            // btnStockGenerateID
+            // btnStockGenerateReport
             // 
-            this.btnStockGenerateID.Location = new System.Drawing.Point(13, 120);
-            this.btnStockGenerateID.Name = "btnStockGenerateID";
-            this.btnStockGenerateID.Size = new System.Drawing.Size(130, 32);
-            this.btnStockGenerateID.TabIndex = 2;
-            this.btnStockGenerateID.Text = "Generate ID";
-            this.btnStockGenerateID.UseVisualStyleBackColor = true;
+            this.btnStockGenerateReport.Location = new System.Drawing.Point(6, 83);
+            this.btnStockGenerateReport.Name = "btnStockGenerateReport";
+            this.btnStockGenerateReport.Size = new System.Drawing.Size(130, 32);
+            this.btnStockGenerateReport.TabIndex = 2;
+            this.btnStockGenerateReport.Text = "Generate Report";
+            this.btnStockGenerateReport.UseVisualStyleBackColor = true;
+            this.btnStockGenerateReport.Click += new System.EventHandler(this.btnStockGenerateReport_Click);
             // 
             // btnStockValidate
             // 
-            this.btnStockValidate.Location = new System.Drawing.Point(13, 69);
+            this.btnStockValidate.Location = new System.Drawing.Point(278, 7);
             this.btnStockValidate.Name = "btnStockValidate";
             this.btnStockValidate.Size = new System.Drawing.Size(130, 32);
             this.btnStockValidate.TabIndex = 1;
@@ -245,12 +259,13 @@
             // 
             // btnStockMaterials
             // 
-            this.btnStockMaterials.Location = new System.Drawing.Point(13, 16);
+            this.btnStockMaterials.Location = new System.Drawing.Point(6, 7);
             this.btnStockMaterials.Name = "btnStockMaterials";
             this.btnStockMaterials.Size = new System.Drawing.Size(130, 32);
             this.btnStockMaterials.TabIndex = 0;
             this.btnStockMaterials.Text = "Add Raw Materials";
             this.btnStockMaterials.UseVisualStyleBackColor = true;
+            this.btnStockMaterials.Click += new System.EventHandler(this.btnStockMaterials_Click);
             // 
             // pnlStock
             // 
@@ -258,8 +273,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStock.BackColor = System.Drawing.Color.White;
+            this.pnlStock.Controls.Add(this.btnStockiestHomepage);
             this.pnlStock.Controls.Add(this.btnStockUpdate);
-            this.pnlStock.Controls.Add(this.btnStockGenerateID);
+            this.pnlStock.Controls.Add(this.btnStockGenerateReport);
             this.pnlStock.Controls.Add(this.btnStockValidate);
             this.pnlStock.Controls.Add(this.btnStockMaterials);
             this.pnlStock.Location = new System.Drawing.Point(6, 86);
@@ -331,14 +347,29 @@
             this.tabHome.TabIndex = 8;
             this.tabHome.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabHome_Selected);
             // 
-            // btnReportGenerate
+            // lblUserType
             // 
-            this.btnReportGenerate.Location = new System.Drawing.Point(13, 16);
-            this.btnReportGenerate.Name = "btnReportGenerate";
-            this.btnReportGenerate.Size = new System.Drawing.Size(130, 32);
-            this.btnReportGenerate.TabIndex = 1;
-            this.btnReportGenerate.Text = "Generate Report";
-            this.btnReportGenerate.UseVisualStyleBackColor = true;
+            this.lblUserType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUserType.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.ForeColor = System.Drawing.Color.White;
+            this.lblUserType.Location = new System.Drawing.Point(610, 49);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUserType.Size = new System.Drawing.Size(184, 13);
+            this.lblUserType.TabIndex = 14;
+            this.lblUserType.Text = "UserType";
+            this.lblUserType.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // btnStockiestHomepage
+            // 
+            this.btnStockiestHomepage.Location = new System.Drawing.Point(142, 7);
+            this.btnStockiestHomepage.Name = "btnStockiestHomepage";
+            this.btnStockiestHomepage.Size = new System.Drawing.Size(130, 32);
+            this.btnStockiestHomepage.TabIndex = 4;
+            this.btnStockiestHomepage.Text = "Stockiest Homepage";
+            this.btnStockiestHomepage.UseVisualStyleBackColor = true;
+            this.btnStockiestHomepage.Click += new System.EventHandler(this.btnStockiestHomepage_Click);
             // 
             // HomePage
             // 
@@ -347,6 +378,7 @@
             this.BackgroundImage = global::Login.Properties.Resources.OCOTODWorkflow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblUserType);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.tabHome);
@@ -364,7 +396,6 @@
             this.tabReports.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -386,7 +417,7 @@
         private System.Windows.Forms.Button btnProductsView;
         private System.Windows.Forms.Panel pnlProducts;
         private System.Windows.Forms.Button btnStockUpdate;
-        private System.Windows.Forms.Button btnStockGenerateID;
+        private System.Windows.Forms.Button btnStockGenerateReport;
         private System.Windows.Forms.Button btnStockValidate;
         private System.Windows.Forms.Button btnStockMaterials;
         private System.Windows.Forms.Panel pnlStock;
@@ -396,5 +427,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabHome;
         private System.Windows.Forms.Button btnReportGenerate;
+        private System.Windows.Forms.Label lblUserType;
+        private System.Windows.Forms.Button btnStockiestHomepage;
     }
 }
