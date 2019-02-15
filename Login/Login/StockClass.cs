@@ -8,40 +8,43 @@ namespace WorkflowManagement
 {
     class Stock
     {
-        public string materialType;
-        public double quantity, totalCost, defects;
-        public DateTime dateAcquired, dateUsed;
-
+        public string materialType { get; set; }
+        public double quantity { get; set; }
+        public double unitCost { get; set; }
+        public double defects { get; set; }
+        public DateTime dateAcquired { get; set; }
+        public DateTime dateUsed { get; set; }
+        
         public Stock()
         {
             materialType = "";
             quantity = 0;
-            totalCost = 0;
+            unitCost = 0;
             defects = 0;
             dateAcquired = DateTime.Today;
             dateUsed = DateTime.Today;
         }
 
-        public Stock(string material, double quan, double tCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
+        public Stock(string material, double quan, double uCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
         {
             materialType = material;
             quantity = quan;
-            totalCost = tCost;
+            unitCost = uCost;
             defects = defectNo;
             dateAcquired = dtAcq;
             dateUsed = dtUsed;
         }
 
         //returns the unit cost of materials purchased
-        public double unitCost()
+        public double totalCost()
         {
-            return totalCost / quantity;
+            return unitCost * quantity;
         }
 
         //returns the percent of unusable materials by dividing the defect number by quantity purchased
-        public string defectRate()
+        public double defectRate()
         {
-            return (defects / quantity * 100).ToString() + "%";
+            return (defects / quantity * 100);
         }
 
         //returns the time materials sit idle (difference between received date and use date)

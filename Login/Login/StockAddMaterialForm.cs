@@ -23,8 +23,6 @@ namespace WorkflowManagement
 
         }
 
-   
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             //Cowen - I commented these lines out so the Homepage doesn't get closed when the form is closed.
@@ -32,6 +30,7 @@ namespace WorkflowManagement
             //Application.Exit();
         }
 
+        
         private Boolean isValidQuantity(string quantity)
         {
             try
@@ -57,27 +56,60 @@ namespace WorkflowManagement
             return true;
         }
 
-        
-
         private void Another_Material_btn_Click(object sender, EventArgs e)
         {
-            if (CheckValidStock())
+            try
             {
-                string material = txt_materialType.Text;
-                double unitCost;
+                CheckEntry objCheckQuantity = new CheckEntry(txt_Quantity.Text, lbl_quantity.Text);
+                if(!objCheckQuantity.isValidNumber())
+                {
+                    txt_Quantity.Clear();
+                }
 
-                if (string.IsNullOrEmpty(txt_unitCost.Text))
+                CheckEntry objCheckUnitCost = new CheckEntry(txt_unitCost.Text, lbl_unitCost.Text);
+                if (!objCheckUnitCost.isNull())
                 {
-                    unitCost = 0;
+                    if (!objCheckUnitCost.isValidNumber())
+                    {
+                        txt_unitCost.Clear(); 
+                    }
                 }
-                else
+
+                CheckEntry objCheckDefects = new CheckEntry(txt_Defected.Text, lbl_defected.Text);
+                if (!objCheckDefects.isNull())
                 {
-                    unitCost = double.Parse(txt_unitCost.Text);
+                    if (!objCheckDefects.isValidNumber())
+                    {
+                        txt_Defected.Clear();
+                    }
                 }
+
+                CheckEntry objCheckTotalCost = new CheckEntry(txt_TotalCost.Text, lbl_totalCost.Text);
+                if (!objCheckTotalCost.isNull())
+                {
+                    if (!objCheckTotalCost.isValidNumber())
+                    {
+                        txt_TotalCost.Clear();
+                    }
+                }
+
+                string materialType;
+                double quantity, unitCost, defects, totalCost;
+                DateTime dateAquired, dateUsed;
+
+                materialType = txt_materialType.Text;
+                quantity = double.Parse(txt_Quantity.Text);
+                unitCost = double.Parse(txt_unitCost.Text);
+                defects = double.Parse(txt_Defected.Text);
+                totalCost = double.Parse(txt_TotalCost.Text);
+                dateAquired = DateTime.Parse(txt_DateAcq.Text);
+                dateUsed = DateTime.Parse(txt_dateUsed.Text);
+
+                Stock objStock = new Stock(materialType, quantity, unitCost, defects, dateAquired, dateUsed);
 
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
-                builder.UserID = "OCOTOD";
+                builder.DataSource = "OCOTOD";
                 builder.Password = "FairBanks152";
                 builder.InitialCatalog = "WorkFlowDatabase";
                 SqlConnection con = new SqlConnection(builder.ConnectionString);
@@ -89,10 +121,12 @@ namespace WorkflowManagement
                 using (SqlCommand com = new SqlCommand(str, con))
                 {
                     com.Connection = con;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(txt_Quantity.Text);
+                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = materialType;
+                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = quantity;
 
-                    if (!string.IsNullOrEmpty(txt_unitCost.Text))
+                    // If the unit cost text box is not empty, add the unit cost in decimal format to the database.
+                    // Otherwise, add a null value.
+                    if (!objCheckUnitCost.isNull())
                     {
                         com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
                     }
@@ -101,41 +135,48 @@ namespace WorkflowManagement
                         com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
                     }
 
-                    if (!string.IsNullOrEmpty(txt_TotalCost.Text))
+                    // If the total cost text box is not empty, add the total cost in decimal format to the database.
+                    // Otherwise, add a null value.
+                    if (!objCheckTotalCost.isNull())
                     {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(txt_TotalCost.Text);
+                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = totalCost;
                     }
                     else
                     {
                         com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
                     }
 
+                    // If the defects text box is not empty, add the defects in decimal format to the database.
+                    // Otherwise, add a null value.
+                    if (!objCheckDefects.isNull())
+                    {
+                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = defects;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
+                    }
+
+                    // If the date acquired text box is not empty, add the date acquired in varchar format to the database.
+                    // Otherwise, add a null value.
                     if (!string.IsNullOrEmpty(txt_DateAcq.Text))
                     {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = txt_DateAcq.Text;
+                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAquired;
                     }
                     else
                     {
                         com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
                     }
 
+                    // If the date used text box is not empty, add the date used in varchar format to the database.
+                    // Otherwise, add a null value.
                     if (!string.IsNullOrEmpty(txt_dateUsed.Text))
                     {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = txt_dateUsed.Text;
+                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsed;
                     }
                     else
                     {
                         com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(txt_Defected.Text))
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(txt_Defected.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
-
                     }
 
                     com.ExecuteNonQuery();
@@ -151,7 +192,10 @@ namespace WorkflowManagement
                 txt_TotalCost.Clear();
                 txt_unitCost.Clear();
             }
+            catch
+            {
 
+            }
         }
 
         private void Confirm_Material_btn_Click(object sender, EventArgs e)

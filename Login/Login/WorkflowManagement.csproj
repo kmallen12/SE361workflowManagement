@@ -80,7 +80,7 @@
     <Compile Include="StockAddMaterialForm.Designer.cs">
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock.cs" />
+    <Compile Include="StockClass.cs" />
     <Compile Include="StockReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +113,7 @@
     <Compile Include="StockView_UpdateForm.Designer.cs">
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckEntryClass.cs" />
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
