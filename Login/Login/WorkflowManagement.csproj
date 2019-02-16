@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="DatabaseManager.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
