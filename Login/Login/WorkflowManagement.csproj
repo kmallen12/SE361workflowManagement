@@ -75,6 +75,7 @@
     <Compile Include="ItemCapacityForm.Designer.cs">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs" />
     <Compile Include="StockAddMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
