@@ -36,7 +36,7 @@ namespace WorkflowManagement
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "select " + column + "from " + table + "where " + column + " = @field";
-            cmd.Parameters.AddWithBalue("@field", data);
+            cmd.Parameters.AddWithValue("@field", data);
             try
             {
                 conn.Open();
