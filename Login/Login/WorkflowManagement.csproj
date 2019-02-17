@@ -76,6 +76,13 @@
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Password.cs" />
+    <Compile Include="RawMaterials.cs" />
+    <Compile Include="RawMaterialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RawMaterialsForm.Designer.cs">
+      <DependentUpon>RawMaterialsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockAddMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RawMaterialsForm.resx">
+      <DependentUpon>RawMaterialsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockAddMaterialForm.resx">
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>

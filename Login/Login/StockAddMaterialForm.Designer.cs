@@ -34,7 +34,6 @@
             this.lbl_totalCost = new System.Windows.Forms.Label();
             this.lbl_dateAcq = new System.Windows.Forms.Label();
             this.lbl_dateUsed = new System.Windows.Forms.Label();
-            this.txt_materialType = new System.Windows.Forms.TextBox();
             this.txt_Quantity = new System.Windows.Forms.TextBox();
             this.txt_unitCost = new System.Windows.Forms.TextBox();
             this.txt_DateAcq = new System.Windows.Forms.TextBox();
@@ -44,6 +43,8 @@
             this.txt_TotalCost = new System.Windows.Forms.TextBox();
             this.Another_Material_btn = new System.Windows.Forms.Button();
             this.Confirm_Material_btn = new System.Windows.Forms.Button();
+            this.txt_materialType = new System.Windows.Forms.ComboBox();
+            this.btnCustomizeMaterials = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // materialType
@@ -113,18 +114,10 @@
             this.lbl_dateUsed.TabIndex = 5;
             this.lbl_dateUsed.Text = "Date Used: ";
             // 
-            // txt_materialType
-            // 
-            this.txt_materialType.Location = new System.Drawing.Point(363, 58);
-            this.txt_materialType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_materialType.Name = "txt_materialType";
-            this.txt_materialType.Size = new System.Drawing.Size(233, 22);
-            this.txt_materialType.TabIndex = 6;
-            // 
             // txt_Quantity
             // 
             this.txt_Quantity.Location = new System.Drawing.Point(363, 124);
-            this.txt_Quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Quantity.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Quantity.Name = "txt_Quantity";
             this.txt_Quantity.Size = new System.Drawing.Size(233, 22);
             this.txt_Quantity.TabIndex = 7;
@@ -132,7 +125,7 @@
             // txt_unitCost
             // 
             this.txt_unitCost.Location = new System.Drawing.Point(363, 261);
-            this.txt_unitCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_unitCost.Margin = new System.Windows.Forms.Padding(4);
             this.txt_unitCost.Name = "txt_unitCost";
             this.txt_unitCost.Size = new System.Drawing.Size(233, 22);
             this.txt_unitCost.TabIndex = 9;
@@ -140,7 +133,7 @@
             // txt_DateAcq
             // 
             this.txt_DateAcq.Location = new System.Drawing.Point(363, 401);
-            this.txt_DateAcq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_DateAcq.Margin = new System.Windows.Forms.Padding(4);
             this.txt_DateAcq.Name = "txt_DateAcq";
             this.txt_DateAcq.Size = new System.Drawing.Size(233, 22);
             this.txt_DateAcq.TabIndex = 11;
@@ -148,7 +141,7 @@
             // txt_dateUsed
             // 
             this.txt_dateUsed.Location = new System.Drawing.Point(363, 468);
-            this.txt_dateUsed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_dateUsed.Margin = new System.Windows.Forms.Padding(4);
             this.txt_dateUsed.Name = "txt_dateUsed";
             this.txt_dateUsed.Size = new System.Drawing.Size(233, 22);
             this.txt_dateUsed.TabIndex = 12;
@@ -156,7 +149,7 @@
             // txt_Defected
             // 
             this.txt_Defected.Location = new System.Drawing.Point(363, 185);
-            this.txt_Defected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Defected.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Defected.Name = "txt_Defected";
             this.txt_Defected.Size = new System.Drawing.Size(233, 22);
             this.txt_Defected.TabIndex = 8;
@@ -175,7 +168,7 @@
             // txt_TotalCost
             // 
             this.txt_TotalCost.Location = new System.Drawing.Point(363, 327);
-            this.txt_TotalCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TotalCost.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TotalCost.Name = "txt_TotalCost";
             this.txt_TotalCost.Size = new System.Drawing.Size(233, 22);
             this.txt_TotalCost.TabIndex = 10;
@@ -183,7 +176,7 @@
             // Another_Material_btn
             // 
             this.Another_Material_btn.Location = new System.Drawing.Point(181, 511);
-            this.Another_Material_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Another_Material_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Another_Material_btn.Name = "Another_Material_btn";
             this.Another_Material_btn.Size = new System.Drawing.Size(235, 28);
             this.Another_Material_btn.TabIndex = 14;
@@ -194,7 +187,7 @@
             // Confirm_Material_btn
             // 
             this.Confirm_Material_btn.Location = new System.Drawing.Point(500, 511);
-            this.Confirm_Material_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Confirm_Material_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Confirm_Material_btn.Name = "Confirm_Material_btn";
             this.Confirm_Material_btn.Size = new System.Drawing.Size(235, 28);
             this.Confirm_Material_btn.TabIndex = 15;
@@ -202,11 +195,30 @@
             this.Confirm_Material_btn.UseVisualStyleBackColor = true;
             this.Confirm_Material_btn.Click += new System.EventHandler(this.Confirm_Material_btn_Click);
             // 
+            // txt_materialType
+            // 
+            this.txt_materialType.FormattingEnabled = true;
+            this.txt_materialType.Location = new System.Drawing.Point(363, 60);
+            this.txt_materialType.Name = "txt_materialType";
+            this.txt_materialType.Size = new System.Drawing.Size(233, 24);
+            this.txt_materialType.TabIndex = 16;
+            // 
+            // btnCustomizeMaterials
+            // 
+            this.btnCustomizeMaterials.Location = new System.Drawing.Point(629, 59);
+            this.btnCustomizeMaterials.Name = "btnCustomizeMaterials";
+            this.btnCustomizeMaterials.Size = new System.Drawing.Size(121, 24);
+            this.btnCustomizeMaterials.TabIndex = 17;
+            this.btnCustomizeMaterials.Text = "Customize List";
+            this.btnCustomizeMaterials.UseVisualStyleBackColor = true;
+            this.btnCustomizeMaterials.Click += new System.EventHandler(this.btnCustomizeMaterials_Click);
+            // 
             // AddMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 554);
+            this.Controls.Add(this.btnCustomizeMaterials);
             this.Controls.Add(this.txt_materialType);
             this.Controls.Add(this.txt_Quantity);
             this.Controls.Add(this.txt_Defected);
@@ -223,7 +235,7 @@
             this.Controls.Add(this.lbl_unitCost);
             this.Controls.Add(this.lbl_quantity);
             this.Controls.Add(this.materialType);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddMaterialForm";
             this.Text = "Add Raw Material";
             this.ResumeLayout(false);
@@ -239,7 +251,6 @@
         private System.Windows.Forms.Label lbl_totalCost;
         private System.Windows.Forms.Label lbl_dateAcq;
         private System.Windows.Forms.Label lbl_dateUsed;
-        private System.Windows.Forms.TextBox txt_materialType;
         private System.Windows.Forms.TextBox txt_Quantity;
         private System.Windows.Forms.TextBox txt_unitCost;
         private System.Windows.Forms.TextBox txt_DateAcq;
@@ -249,5 +260,7 @@
         private System.Windows.Forms.TextBox txt_TotalCost;
         private System.Windows.Forms.Button Another_Material_btn;
         private System.Windows.Forms.Button Confirm_Material_btn;
+        private System.Windows.Forms.ComboBox txt_materialType;
+        private System.Windows.Forms.Button btnCustomizeMaterials;
     }
 }

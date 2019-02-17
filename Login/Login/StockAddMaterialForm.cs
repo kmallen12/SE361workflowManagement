@@ -190,7 +190,7 @@ namespace WorkflowManagement
 
                 StockForm formStock = new StockForm();
 
-                txt_materialType.Clear();
+                txt_materialType.SelectedIndex = -1;
                 txt_DateAcq.Clear();
                 txt_dateUsed.Clear();
                 txt_Defected.Clear();
@@ -334,6 +334,12 @@ namespace WorkflowManagement
 
                 throw;
             }
+        }
+
+        private void btnCustomizeMaterials_Click(object sender, EventArgs e)
+        {
+            RawMaterialsForm formMaterial = new RawMaterialsForm();
+            formMaterial.ShowDialog();
         }
     }
 }
