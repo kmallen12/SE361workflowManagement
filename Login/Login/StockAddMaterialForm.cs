@@ -13,9 +13,14 @@ namespace WorkflowManagement
 {
     public partial class AddMaterialForm : Form
     {
+        private Stock objStock;
+        private List<Stock> stocks;
+
         public AddMaterialForm()
         {
             InitializeComponent();
+
+            stocks = new List<Stock>();
         }
 
         private void lbl_unitCost_Click(object sender, EventArgs e)
@@ -93,20 +98,21 @@ namespace WorkflowManagement
                     }
                 }
 
-                string materialType;
-                double quantity, unitCost, defects, totalCost;
-                DateTime dateAquired, dateUsed;
+                string materialType = txt_materialType.Text;
+                double quantity = double.Parse(txt_Quantity.Text);
+                double unitCost = double.Parse(txt_unitCost.Text);
+                double defects = double.Parse(txt_Defected.Text);
+                double totalCost = double.Parse(txt_TotalCost.Text);
+                DateTime dateAquired = DateTime.Parse(txt_DateAcq.Text);
+                DateTime dateUsed = DateTime.Parse(txt_dateUsed.Text);
 
-                materialType = txt_materialType.Text;
-                quantity = double.Parse(txt_Quantity.Text);
-                unitCost = double.Parse(txt_unitCost.Text);
-                defects = double.Parse(txt_Defected.Text);
-                totalCost = double.Parse(txt_TotalCost.Text);
-                dateAquired = DateTime.Parse(txt_DateAcq.Text);
-                dateUsed = DateTime.Parse(txt_dateUsed.Text);
+                objStock = new Stock(materialType, quantity, unitCost, defects, dateAquired, dateUsed);
 
-                Stock objStock = new Stock(materialType, quantity, unitCost, defects, dateAquired, dateUsed);
+                stocks.Add(objStock);
 
+                
+                
+                //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
                 builder.DataSource = "OCOTOD";
@@ -200,20 +206,58 @@ namespace WorkflowManagement
 
         private void Confirm_Material_btn_Click(object sender, EventArgs e)
         {
-            if (CheckValidStock())
+            try
             {
-                string material = txt_materialType.Text;
-                double unitCost;
-
-                if (string.IsNullOrEmpty(txt_unitCost.Text))
+                CheckEntry objCheckEntryQuantity = new CheckEntry(txt_Quantity.Text, lbl_quantity.Text);
+                if (!objCheckEntryQuantity.isValidNumber())
                 {
-                    unitCost = 0;
-                }
-                else
-                {
-                    unitCost = double.Parse(txt_unitCost.Text);
+                    txt_Quantity.Clear();
                 }
 
+                CheckEntry objCheckUnitCost = new CheckEntry(txt_unitCost.Text, lbl_unitCost.Text);
+                if (!objCheckUnitCost.isNull())
+                {
+                    if (!objCheckUnitCost.isValidNumber())
+                    {
+                        txt_unitCost.Clear();
+                    }
+                }
+
+                CheckEntry objCheckDefects = new CheckEntry(txt_Defected.Text, lbl_defected.Text);
+                if (!objCheckDefects.isNull())
+                {
+                    if (!objCheckDefects.isValidNumber())
+                    {
+                        txt_Defected.Clear();
+                    }
+                }
+
+                CheckEntry objCheckTotalCost = new CheckEntry(txt_TotalCost.Text, lbl_totalCost.Text);
+                if (!objCheckTotalCost.isNull())
+                {
+                    if (!objCheckTotalCost.isValidNumber())
+                    {
+                        txt_TotalCost.Clear();
+                    }
+                }
+
+                string materialType = txt_materialType.Text;
+                double quantity = double.Parse(txt_Quantity.Text);
+                double unitCost = double.Parse(txt_unitCost.Text);
+                double defects = double.Parse(txt_Defected.Text);
+                double totalCost = double.Parse(txt_TotalCost.Text);
+                DateTime dateAquired = DateTime.Parse(txt_DateAcq.Text);
+                DateTime dateUsed = DateTime.Parse(txt_dateUsed.Text);
+
+                objStock = new Stock(materialType, quantity, unitCost, defects, dateAquired, dateUsed);
+
+                stocks.Add(objStock);
+
+            
+
+
+
+            //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
                 builder.UserID = "OCOTOD";
@@ -228,12 +272,12 @@ namespace WorkflowManagement
                 using (SqlCommand com = new SqlCommand(str, con))
                 {
                     com.Connection = con;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
+                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = materialType;
                     com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(txt_Quantity.Text);
 
                     if (!string.IsNullOrEmpty(txt_unitCost.Text))
                     {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = double.Parse(txt_unitCost.Text);
                     }
                     else
                     {
@@ -284,6 +328,11 @@ namespace WorkflowManagement
 
                 Hide();
                 formStock.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
