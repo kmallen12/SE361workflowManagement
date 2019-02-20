@@ -9,18 +9,21 @@ namespace WorkflowManagement
     class RawMaterials
     {
         private string material { get; set; }
-        private double? unitCost { get; set; }
-
+        
         public RawMaterials()
         {
             material = "";
-            unitCost = null;
         }
 
-        public RawMaterials(string rMaterial, double? uCost)
+        public RawMaterials(string rMaterial)
         {
-            rMaterial = material;
-            uCost = unitCost;
+            material = rMaterial;
+        }
+        
+        //override ToString
+        public override string ToString()
+        {
+            return material;
         }
     }
 }

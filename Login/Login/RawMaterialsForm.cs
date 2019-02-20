@@ -31,33 +31,28 @@ namespace WorkflowManagement
         {
             try
             {
-                CheckEntry objCheckRMUnitCost = new CheckEntry(txtRawMaterialUnitCost.Text, lblRawMaterialUnitCost.Text);
-                if (!objCheckRMUnitCost.isNull())
-                {
-                    if (!objCheckRMUnitCost.isValidNumber())
-                    {
-                        txtRawMaterialUnitCost.Clear();
-                    }
-                }
-
                 string materialName = txtRawMaterialName.Text;
-                double? unitCost = double.Parse(txtRawMaterialUnitCost.Text);
 
-                objRawMat = new RawMaterials(materialName, unitCost);
+                objRawMat = new RawMaterials(materialName);
                 rawMaterials.Add(objRawMat);
 
-                MessageBox.Show("Material " + materialName + ", " + unitCost + " added to the list.");
+                MessageBox.Show("Material " + materialName + " was added to the list.");
 
                 lstRawMaterials.Items.Clear();
                 lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Error adding material to the list.");
                 throw;
             }
             
 
+        }
+
+        private void btnCloseRawMaterial_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }
