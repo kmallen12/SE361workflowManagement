@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorkflowManagement
 {
-    class RawMaterials
+    public class RawMaterials
     {
         public string material { get; set; }
         
