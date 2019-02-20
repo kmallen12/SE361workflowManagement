@@ -8,7 +8,7 @@ namespace WorkflowManagement
 {
     class RawMaterials
     {
-        private string material { get; set; }
+        public string material { get; set; }
         
         public RawMaterials()
         {

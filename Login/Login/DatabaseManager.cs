@@ -16,7 +16,7 @@ namespace WorkflowManagement
         string Where;
         string Data;
     }
-    static class DatabaseManager
+    public class DatabaseManager
     {
         private static SqlConnection _conn = new SqlConnection(
             @"Server=tcp:workflowdatabase.database.windows.net,1433;
@@ -53,6 +53,74 @@ namespace WorkflowManagement
                 conn.Close();
             }
             return false;
+        }
+
+        //Insert data into the Raw Materials table in the database
+        public void InsertToRMTable(List<RawMaterials> rawMaterials)
+        {
+            try
+            {
+                conn.Open();
+
+                //SQL Command to insert data to the Raw Materials Table
+                SqlCommand cmd = new SqlCommand("INSERT INTO RawMaterials (rawMaterials)" + "VALUES (@rMaterial)");
+                cmd.Connection = conn;
+
+                //feed Raw Materials list to the sqlCommand
+                foreach (var rawMat in rawMaterials)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("rMaterial", rawMat.material);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error adding raw materials to the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        //load data from the Raw Materials Table into a list
+        public List<RawMaterials> LoadRawMat()
+        {
+            List<RawMaterials> rawMaterials = new List<RawMaterials>();
+
+            try
+            {
+                RawMaterials tempRawMat;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM RawMaterials", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string rawMatName = (string)reader["matName"];
+                    tempRawMat = new RawMaterials(rawMatName);
+                    rawMaterials.Add(tempRawMat);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error reading data in from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return rawMaterials;
         }
 
         //below is the primary formatting of functions withtin this Database class

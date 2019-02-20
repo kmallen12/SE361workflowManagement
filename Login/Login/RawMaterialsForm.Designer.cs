@@ -35,20 +35,24 @@
             this.txtRawMaterialName = new System.Windows.Forms.TextBox();
             this.lblRawMaterialName = new System.Windows.Forms.Label();
             this.lblRawMaterialsList = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaveRMtoDB = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstRawMaterials
             // 
             this.lstRawMaterials.FormattingEnabled = true;
-            this.lstRawMaterials.Location = new System.Drawing.Point(86, 155);
+            this.lstRawMaterials.Location = new System.Drawing.Point(85, 101);
             this.lstRawMaterials.Margin = new System.Windows.Forms.Padding(2);
             this.lstRawMaterials.Name = "lstRawMaterials";
             this.lstRawMaterials.Size = new System.Drawing.Size(422, 134);
             this.lstRawMaterials.TabIndex = 0;
+            this.lstRawMaterials.SelectedIndexChanged += new System.EventHandler(this.lstRawMaterials_SelectedIndexChanged);
             // 
             // btnCloseRawMaterial
             // 
-            this.btnCloseRawMaterial.Location = new System.Drawing.Point(254, 309);
+            this.btnCloseRawMaterial.Location = new System.Drawing.Point(325, 309);
             this.btnCloseRawMaterial.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseRawMaterial.Name = "btnCloseRawMaterial";
             this.btnCloseRawMaterial.Size = new System.Drawing.Size(80, 28);
@@ -59,7 +63,7 @@
             // 
             // btnAddNewMaterial
             // 
-            this.btnAddNewMaterial.Location = new System.Drawing.Point(380, 63);
+            this.btnAddNewMaterial.Location = new System.Drawing.Point(340, 249);
             this.btnAddNewMaterial.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNewMaterial.Name = "btnAddNewMaterial";
             this.btnAddNewMaterial.Size = new System.Drawing.Size(93, 27);
@@ -72,7 +76,7 @@
             // 
             this.lblAddRawMaterial.AutoSize = true;
             this.lblAddRawMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddRawMaterial.Location = new System.Drawing.Point(82, 24);
+            this.lblAddRawMaterial.Location = new System.Drawing.Point(82, 9);
             this.lblAddRawMaterial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddRawMaterial.Name = "lblAddRawMaterial";
             this.lblAddRawMaterial.Size = new System.Drawing.Size(391, 17);
@@ -81,7 +85,7 @@
             // 
             // txtRawMaterialName
             // 
-            this.txtRawMaterialName.Location = new System.Drawing.Point(203, 67);
+            this.txtRawMaterialName.Location = new System.Drawing.Point(164, 249);
             this.txtRawMaterialName.Margin = new System.Windows.Forms.Padding(2);
             this.txtRawMaterialName.Name = "txtRawMaterialName";
             this.txtRawMaterialName.Size = new System.Drawing.Size(146, 20);
@@ -90,7 +94,7 @@
             // lblRawMaterialName
             // 
             this.lblRawMaterialName.AutoSize = true;
-            this.lblRawMaterialName.Location = new System.Drawing.Point(121, 67);
+            this.lblRawMaterialName.Location = new System.Drawing.Point(82, 249);
             this.lblRawMaterialName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRawMaterialName.Name = "lblRawMaterialName";
             this.lblRawMaterialName.Size = new System.Drawing.Size(78, 13);
@@ -101,18 +105,54 @@
             // 
             this.lblRawMaterialsList.AutoSize = true;
             this.lblRawMaterialsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRawMaterialsList.Location = new System.Drawing.Point(82, 136);
+            this.lblRawMaterialsList.Location = new System.Drawing.Point(81, 82);
             this.lblRawMaterialsList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRawMaterialsList.Name = "lblRawMaterialsList";
             this.lblRawMaterialsList.Size = new System.Drawing.Size(145, 17);
             this.lblRawMaterialsList.TabIndex = 9;
             this.lblRawMaterialsList.Text = "Raw Materials List:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(437, 249);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 27);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSaveRMtoDB
+            // 
+            this.btnSaveRMtoDB.Location = new System.Drawing.Point(164, 309);
+            this.btnSaveRMtoDB.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveRMtoDB.Name = "btnSaveRMtoDB";
+            this.btnSaveRMtoDB.Size = new System.Drawing.Size(127, 28);
+            this.btnSaveRMtoDB.TabIndex = 11;
+            this.btnSaveRMtoDB.Text = "Save List to Database";
+            this.btnSaveRMtoDB.UseVisualStyleBackColor = true;
+            this.btnSaveRMtoDB.Click += new System.EventHandler(this.btnSaveRMtoDB_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(84, 41);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 26);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Load List from Database";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // RawMaterialsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSaveRMtoDB);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRawMaterialsList);
             this.Controls.Add(this.lblRawMaterialName);
             this.Controls.Add(this.txtRawMaterialName);
@@ -138,5 +178,8 @@
         private System.Windows.Forms.TextBox txtRawMaterialName;
         private System.Windows.Forms.Label lblRawMaterialName;
         private System.Windows.Forms.Label lblRawMaterialsList;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveRMtoDB;
+        private System.Windows.Forms.Button button2;
     }
 }
