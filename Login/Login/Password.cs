@@ -9,15 +9,15 @@ namespace WorkFlowManagement
 {
     class Password
     {
-        string HashedPassword { get; }
-        byte[] hashBytes;
+        private string HashedPassword { get; }
+        private byte[] hashBytes;
         Boolean match = true;
-        public Password(string s)
+        public Password(string password)
         {
             byte[] salt;
             new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
 
-            var pbkdf2 = new Rfc2898DeriveBytes(s, salt, 10000);
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
             byte[] hash = pbkdf2.GetBytes(20);
 
             hashBytes = new byte[36];
