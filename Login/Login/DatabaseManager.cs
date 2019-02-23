@@ -126,7 +126,127 @@ namespace WorkflowManagement
 
             return rawMaterials;
         }
+        public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
+        {
+            _conn.Open();
+            string str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
+                com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(quantity);
 
+                if (!string.IsNullOrEmpty(unitCost))
+                {
+                    com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                }
+                else
+                {
+                    com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(totalCost))
+                {
+                    com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(totalCost);
+                }
+                else
+                {
+                    com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(dateAcquired))
+                {
+                    com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAcquired;
+                }
+                else
+                {
+                    com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(dateUsed))
+                {
+                    com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsed;
+                }
+                else
+                {
+                    com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(amtDefected))
+                {
+                    com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(amtDefected);
+                }
+                else
+                {
+                    com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
+
+                }
+
+                com.ExecuteNonQuery();
+            }
+
+        }
+        public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[StockTable] SET materialType=@materialType, quantity=@quantity, unitCost=@unitCost, totalCost=@totalCost, dateAcquired=@dateAcquired, dateUsed=@dateUsed, amtDefected=@amtDefected WHERE itemID=@itemID";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
+                com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
+                com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(quantity);
+
+                if (!string.IsNullOrEmpty(unitCost))
+                {
+                    com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                }
+                else
+                {
+                    com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(totalCost))
+                {
+                    com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(totalCost);
+                }
+                else
+                {
+                    com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(dateAcquired))
+                {
+                    com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAcquired;
+                }
+                else
+                {
+                    com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(dateUsed))
+                {
+                    com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsed;
+                }
+                else
+                {
+                    com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(amtDefected))
+                {
+                    com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(amtDefected);
+                }
+                else
+                {
+                    com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
+
+                }
+
+                com.ExecuteNonQuery();
+            }
+
+        }
         //below is the primary formatting of functions withtin this Database class
         // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
 

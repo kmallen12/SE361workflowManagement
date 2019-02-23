@@ -17,7 +17,7 @@ namespace WorkflowManagement
         {
             InitializeComponent();
         }
-
+        DatabaseManager q = new DatabaseManager();
         private void UpdateStock_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockTable' table. You can move, or remove it, as needed.
@@ -68,71 +68,8 @@ namespace WorkflowManagement
                     unitCost = double.Parse(unitCostGrid_box.Text);
                 }
 
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
-                builder.UserID = "OCOTOD";
-                builder.Password = "FairBanks152";
-                builder.InitialCatalog = "WorkFlowDatabase";
-                SqlConnection con = new SqlConnection(builder.ConnectionString);
-
-                string str;
-                str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
-                con.Open();
-
-                using (SqlCommand com = new SqlCommand(str, con))
-                {
-                    com.Connection = con;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(quantityGrid_box.Text);
-
-                    if (!string.IsNullOrEmpty(unitCostGrid_box.Text))
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(totalCostGrid_box.Text))
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(totalCostGrid_box.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(dateAcquiredGrid_box.Text))
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value =dateAcquiredGrid_box.Text;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(dateUsedGrid_box.Text))
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsedGrid_box.Text;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(amtDefectedGrid_box.Text))
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(amtDefectedGrid_box.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
-
-                    }
-
-                    com.ExecuteNonQuery();
-                }
+                
+                q.InsertStock(materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
                 this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
                 this.dataGridView1.Refresh();
                 this.dataGridView1.RefreshEdit();
@@ -153,73 +90,8 @@ namespace WorkflowManagement
                     unitCost = double.Parse(unitCostGrid_box.Text);
                 }
 
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
-                builder.UserID = "OCOTOD";
-                builder.Password = "FairBanks152";
-                builder.InitialCatalog = "WorkFlowDatabase";
-                SqlConnection con = new SqlConnection(builder.ConnectionString);
-                
-                string str;
-                str = "UPDATE [dbo].[StockTable] SET materialType=@materialType, quantity=@quantity, unitCost=@unitCost, totalCost=@totalCost, dateAcquired=@dateAcquired, dateUsed=@dateUsed, amtDefected=@amtDefected WHERE itemID=@itemID";
-                con.Open();
+                q.UpdateStock(key ,materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
 
-                using (SqlCommand com = new SqlCommand(str, con))
-                {
-                    
-                    com.Connection = con;
-                    com.Parameters.Add("@itemID",SqlDbType.Int).Value= ItemIDGrid_box.Text;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(quantityGrid_box.Text);
-
-                    if (!string.IsNullOrEmpty(unitCostGrid_box.Text))
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(totalCostGrid_box.Text))
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(totalCostGrid_box.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(dateAcquiredGrid_box.Text))
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAcquiredGrid_box.Text;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(dateUsedGrid_box.Text))
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsedGrid_box.Text;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(amtDefectedGrid_box.Text))
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(amtDefectedGrid_box.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
-
-                    }
-
-                    com.ExecuteNonQuery();
-                }
                 this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
                 this.dataGridView1.Refresh();
                 this.dataGridView1.RefreshEdit();
