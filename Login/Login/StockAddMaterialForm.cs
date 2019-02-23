@@ -20,6 +20,7 @@ namespace WorkflowManagement
 
         //dropdown list property
         private List<RawMaterials> materialList;
+        private RawMaterials objWood;  //DELETE THIS ONCE CONNECTED TO DATABASE
 
         public AddMaterialForm()
         {
@@ -27,8 +28,17 @@ namespace WorkflowManagement
 
             stocks = new List<Stock>();
 
-            materialList = objDatabaseManager.LoadRawMat();
-            txt_materialType.DataSource = materialList;
+            materialList = new List<RawMaterials>();
+
+            //DELETE THESE TWO LINES ONCE CONNECTED TO DATABASE
+            objWood = new RawMaterials("wood");
+            materialList.Add(objWood);
+
+            //materialList = objDatabaseManager.LoadRawMat();
+            foreach(RawMaterials mat in materialList)
+            {
+                txt_materialType.Items.Add(mat.material);
+            }
         }
 
         private void lbl_unitCost_Click(object sender, EventArgs e)
@@ -41,32 +51,6 @@ namespace WorkflowManagement
             //Cowen - I commented these lines out so the Homepage doesn't get closed when the form is closed.
             //base.OnFormClosing(e);    
             //Application.Exit();
-        }
-
-        
-        private Boolean isValidQuantity(string quantity)
-        {
-            try
-            {
-                double quan = double.Parse(quantity);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private Boolean CheckValidStock()
-        {
-            if (!isValidQuantity(txt_Quantity.Text))
-            {
-                System.Windows.Forms.MessageBox.Show("Quantity must be an integer (e.g. 30, 1000, etc.)");
-                txt_Quantity.Clear();
-                return false;
-            }
-
-            return true;
         }
 
         private void Another_Material_btn_Click(object sender, EventArgs e)
@@ -348,6 +332,25 @@ namespace WorkflowManagement
         {
             RawMaterialsForm formMaterial = new RawMaterialsForm();
             formMaterial.ShowDialog();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            CheckEntry objCheckQuantity = new CheckEntry(txt_Quantity.Text, lbl_quantity.Text);
+            CheckEntry objCheckUCost = new CheckEntry(txt_unitCost.Text, lbl_unitCost.Text);
+
+            if (!objCheckQuantity.isNull() && !objCheckUCost.isNull())
+            {
+                double uCost = double.Parse(txt_unitCost.Text);
+                double quan = double.Parse(txt_Quantity.Text);
+                double tCost = uCost * quan;
+
+                txt_TotalCost.Text = tCost.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Enter a value in the Quantity and Unit Cost fields.");
+            }
         }
     }
 }
