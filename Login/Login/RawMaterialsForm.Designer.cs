@@ -79,9 +79,9 @@
             this.lblAddRawMaterial.Location = new System.Drawing.Point(82, 9);
             this.lblAddRawMaterial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddRawMaterial.Name = "lblAddRawMaterial";
-            this.lblAddRawMaterial.Size = new System.Drawing.Size(391, 17);
+            this.lblAddRawMaterial.Size = new System.Drawing.Size(467, 17);
             this.lblAddRawMaterial.TabIndex = 4;
-            this.lblAddRawMaterial.Text = "Click \"Add New\" to add a new raw material to the list.";
+            this.lblAddRawMaterial.Text = "Load the materials list from the database or add new materials.";
             // 
             // txtRawMaterialName
             // 

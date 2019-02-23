@@ -156,7 +156,6 @@
             this.ItemIDGrid_box.Name = "ItemIDGrid_box";
             this.ItemIDGrid_box.Size = new System.Drawing.Size(95, 20);
             this.ItemIDGrid_box.TabIndex = 2;
-           
             // 
             // materialTypeGrid_box
             // 
@@ -164,7 +163,6 @@
             this.materialTypeGrid_box.Name = "materialTypeGrid_box";
             this.materialTypeGrid_box.Size = new System.Drawing.Size(95, 20);
             this.materialTypeGrid_box.TabIndex = 3;
-            
             // 
             // quantityGrid_box
             // 
@@ -172,7 +170,6 @@
             this.quantityGrid_box.Name = "quantityGrid_box";
             this.quantityGrid_box.Size = new System.Drawing.Size(95, 20);
             this.quantityGrid_box.TabIndex = 4;
-            
             // 
             // unitCostGrid_box
             // 
@@ -180,7 +177,6 @@
             this.unitCostGrid_box.Name = "unitCostGrid_box";
             this.unitCostGrid_box.Size = new System.Drawing.Size(95, 20);
             this.unitCostGrid_box.TabIndex = 5;
-            
             // 
             // totalCostGrid_box
             // 
@@ -188,7 +184,6 @@
             this.totalCostGrid_box.Name = "totalCostGrid_box";
             this.totalCostGrid_box.Size = new System.Drawing.Size(95, 20);
             this.totalCostGrid_box.TabIndex = 6;
-            
             // 
             // dateAcquiredGrid_box
             // 
@@ -196,7 +191,6 @@
             this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
             this.dateAcquiredGrid_box.Size = new System.Drawing.Size(95, 20);
             this.dateAcquiredGrid_box.TabIndex = 7;
-        
             // 
             // dateUsedGrid_box
             // 
@@ -204,7 +198,6 @@
             this.dateUsedGrid_box.Name = "dateUsedGrid_box";
             this.dateUsedGrid_box.Size = new System.Drawing.Size(95, 20);
             this.dateUsedGrid_box.TabIndex = 8;
-            
             // 
             // amtDefectedGrid_box
             // 
@@ -212,7 +205,6 @@
             this.amtDefectedGrid_box.Name = "amtDefectedGrid_box";
             this.amtDefectedGrid_box.Size = new System.Drawing.Size(95, 20);
             this.amtDefectedGrid_box.TabIndex = 9;
-            
             // 
             // Enter_ID_lbl
             // 
@@ -223,7 +215,6 @@
             this.Enter_ID_lbl.Size = new System.Drawing.Size(488, 18);
             this.Enter_ID_lbl.TabIndex = 10;
             this.Enter_ID_lbl.Text = "Enter ID and Desired Changes or Omit ID to Add a New Material";
-         
             // 
             // ConfirmGrid_btn
             // 

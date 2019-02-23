@@ -16,11 +16,19 @@ namespace WorkflowManagement
         private Stock objStock;
         private List<Stock> stocks;
 
+        DatabaseManager objDatabaseManager;
+
+        //dropdown list property
+        private List<RawMaterials> materialList;
+
         public AddMaterialForm()
         {
             InitializeComponent();
 
             stocks = new List<Stock>();
+
+            materialList = objDatabaseManager.LoadRawMat();
+            txt_materialType.DataSource = materialList;
         }
 
         private void lbl_unitCost_Click(object sender, EventArgs e)
