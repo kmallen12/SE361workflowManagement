@@ -16,7 +16,7 @@ namespace WorkflowManagement
         private List<RawMaterials> rawMaterials;
 
         DatabaseManager objDatabaseManager;
-
+        DatabaseManager q = new DatabaseManager();
         //declare connection string to Azure database
         const string connectionString = @"Data Source=workflowdatabase.database.windows.net;Initial Catalog=WorkFlowDatabase;User ID=OCOTOD;Password=********;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -86,7 +86,7 @@ namespace WorkflowManagement
 
         private void btnSaveRMtoDB_Click(object sender, EventArgs e)
         {
-            objDatabaseManager.InsertToRMTable(rawMaterials);
+            q.InsertToRMTable(rawMaterials);
 
             MessageBox.Show("List saved to the database.");
         }

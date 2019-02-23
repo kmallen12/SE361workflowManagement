@@ -17,7 +17,7 @@ namespace WorkflowManagement
         private List<Stock> stocks;
 
         DatabaseManager objDatabaseManager;
-
+        DatabaseManager q = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
         private RawMaterials objWood;  //DELETE THIS ONCE CONNECTED TO DATABASE
@@ -103,83 +103,9 @@ namespace WorkflowManagement
                 stocks.Add(objStock);
 
                 
-                
+
                 //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
-                builder.DataSource = "OCOTOD";
-                builder.Password = "FairBanks152";
-                builder.InitialCatalog = "WorkFlowDatabase";
-                SqlConnection con = new SqlConnection(builder.ConnectionString);
-
-                string str;
-                str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
-                con.Open();
-
-                using (SqlCommand com = new SqlCommand(str, con))
-                {
-                    com.Connection = con;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = materialType;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = quantity;
-
-                    // If the unit cost text box is not empty, add the unit cost in decimal format to the database.
-                    // Otherwise, add a null value.
-                    if (!objCheckUnitCost.isNull())
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    // If the total cost text box is not empty, add the total cost in decimal format to the database.
-                    // Otherwise, add a null value.
-                    if (!objCheckTotalCost.isNull())
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = totalCost;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    // If the defects text box is not empty, add the defects in decimal format to the database.
-                    // Otherwise, add a null value.
-                    if (!objCheckDefects.isNull())
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = defects;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    // If the date acquired text box is not empty, add the date acquired in varchar format to the database.
-                    // Otherwise, add a null value.
-                    if (!string.IsNullOrEmpty(txt_DateAcq.Text))
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAquired;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    // If the date used text box is not empty, add the date used in varchar format to the database.
-                    // Otherwise, add a null value.
-                    if (!string.IsNullOrEmpty(txt_dateUsed.Text))
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsed;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    com.ExecuteNonQuery();
-                }
-
+                q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
                 StockForm formStock = new StockForm();
 
                 txt_materialType.SelectedIndex = -1;
@@ -245,76 +171,11 @@ namespace WorkflowManagement
 
                 stocks.Add(objStock);
 
-            
+                q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
 
 
 
-            //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433";
-                builder.UserID = "OCOTOD";
-                builder.Password = "FairBanks152";
-                builder.InitialCatalog = "WorkFlowDatabase";
-                SqlConnection con = new SqlConnection(builder.ConnectionString);
-
-                string str;
-                str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
-                con.Open();
-
-                using (SqlCommand com = new SqlCommand(str, con))
-                {
-                    com.Connection = con;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = materialType;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(txt_Quantity.Text);
-
-                    if (!string.IsNullOrEmpty(txt_unitCost.Text))
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = double.Parse(txt_unitCost.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(txt_TotalCost.Text))
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(txt_TotalCost.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(txt_DateAcq.Text))
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = txt_DateAcq.Text;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(txt_dateUsed.Text))
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = txt_dateUsed.Text;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(txt_Defected.Text))
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(txt_Defected.Text);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
-
-                    }
-
-                    com.ExecuteNonQuery();
-                }
+                //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
 
                 StockForm formStock = new StockForm();
 

@@ -67,19 +67,22 @@ namespace WorkflowManagement
                 conn.Open();
 
                 //SQL Command to insert data to the Raw Materials Table
-                SqlCommand cmd = new SqlCommand("INSERT INTO RawMaterials (rawMaterials)" + "VALUES (@rMaterial)");
-                cmd.Connection = conn;
+                string str = "INSERT INTO [dbo].[RawMaterialsTable] ([rawMaterial]) Values (@rMaterial)";
 
                 //feed Raw Materials list to the sqlCommand
+               
+                
+                    
                 foreach (var rawMat in rawMaterials)
                 {
-                    cmd.Parameters.Clear();
-
-                    cmd.Parameters.AddWithValue("rMaterial", rawMat.material);
-
-                    cmd.ExecuteNonQuery();
+                    SqlCommand com = new SqlCommand(str, _conn);
+                    com.Connection = _conn;
+                    com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
+                        
+         
+                    com.ExecuteNonQuery();
                 }
-
+                
             }
             catch (Exception)
             {
