@@ -89,7 +89,7 @@ namespace WorkFlowManagement
             int passwordStrength = -64;
 
             for (int i = 0; i < enteredPassword.Length; i++)
-                passwordStrength += 4;
+                passwordStrength += 5;
 
             Boolean hasLower = false;
             Boolean hasUpper = false;
