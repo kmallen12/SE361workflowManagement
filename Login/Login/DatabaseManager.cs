@@ -57,14 +57,25 @@ namespace WorkFlowManagement
 
 
 
-        
+        private Boolean isValidQuantity(string quantity)
+        {
+            try
+            {
+                int quan = int.Parse(quantity);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         //Insert data into the Raw Materials table in the database
         public void InsertToRMTable(List<RawMaterials> rawMaterials)
         {
             try
             {
-                conn.Open();
+                _conn.Open();
 
                 //SQL Command to insert data to the Raw Materials Table
                 string str = "INSERT INTO [dbo].[RawMaterialsTable] ([rawMaterial]) Values (@rMaterial)";
@@ -90,8 +101,9 @@ namespace WorkFlowManagement
             }
             finally
             {
-                conn.Close();
+                _conn.Close();
             }
+            _conn.Close();
         }
 
         //load data from the Raw Materials Table into a list
@@ -107,20 +119,20 @@ namespace WorkFlowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM RawMaterials", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM RawMaterialsTable", conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    string rawMatName = (string)reader["matName"];
+                    string rawMatName = (string)reader["rawMaterial"];
                     tempRawMat = new RawMaterials(rawMatName);
                     rawMaterials.Add(tempRawMat);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Error reading data in from the database.");
+                MessageBox.Show(e.ToString(), "Error reading data in from the database.");
             }
             finally
             {
@@ -128,6 +140,31 @@ namespace WorkFlowManagement
             }
 
             return rawMaterials;
+        }
+        public void UpdateWareHouse(string ID, string max, string low)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[WareHouseTable] SET Max=@Max , Low=@Low WHERE itemID = @itemID";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@itemID", SqlDbType.Int).Value = int.Parse(ID);
+
+                if (!string.IsNullOrEmpty(max) && isValidQuantity(max))
+                {
+                    com.Parameters.Add("@Max", SqlDbType.Int).Value = int.Parse(max);
+                }
+                else com.Parameters.Add("@Max", SqlDbType.Int).Value = 100;
+
+                if (!string.IsNullOrEmpty(low) && isValidQuantity(low))
+                {
+                    com.Parameters.Add("@Low", SqlDbType.Int).Value = int.Parse(low);
+                }
+                else com.Parameters.Add("@Low", SqlDbType.Int).Value = 10;
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
         }
         public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
@@ -187,7 +224,7 @@ namespace WorkFlowManagement
 
                 com.ExecuteNonQuery();
             }
-
+            _conn.Close();
         }
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
@@ -248,7 +285,7 @@ namespace WorkFlowManagement
 
                 com.ExecuteNonQuery();
             }
-
+            _conn.Close();
         }
         //below is the primary formatting of functions withtin this Database class
         // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
