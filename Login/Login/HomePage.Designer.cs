@@ -51,8 +51,6 @@
             this.lblstockHmPg = new System.Windows.Forms.Label();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.tabProducts = new System.Windows.Forms.TabPage();
-            this.tabReports = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabHome = new System.Windows.Forms.TabControl();
             this.lblUserType = new System.Windows.Forms.Label();
             this.pnlReports.SuspendLayout();
@@ -60,7 +58,6 @@
             this.pnlStock.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.tabProducts.SuspendLayout();
-            this.tabReports.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -314,33 +311,12 @@
             this.tabProducts.TabIndex = 1;
             this.tabProducts.Text = "Products";
             // 
-            // tabReports
-            // 
-            this.tabReports.BackColor = System.Drawing.Color.White;
-            this.tabReports.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabReports.Controls.Add(this.button1);
-            this.tabReports.Location = new System.Drawing.Point(4, 22);
-            this.tabReports.Name = "tabReports";
-            this.tabReports.Size = new System.Drawing.Size(780, 0);
-            this.tabReports.TabIndex = 2;
-            this.tabReports.Text = "Reports";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(7, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "View Reports";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // tabHome
             // 
             this.tabHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabHome.Controls.Add(this.tabStock);
             this.tabHome.Controls.Add(this.tabProducts);
-            this.tabHome.Controls.Add(this.tabReports);
             this.tabHome.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tabHome.Location = new System.Drawing.Point(6, 65);
             this.tabHome.Name = "tabHome";
@@ -386,7 +362,6 @@
             this.pnlStock.PerformLayout();
             this.tabStock.ResumeLayout(false);
             this.tabProducts.ResumeLayout(false);
-            this.tabReports.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -415,8 +390,6 @@
         private System.Windows.Forms.Panel pnlStock;
         private System.Windows.Forms.TabPage tabStock;
         private System.Windows.Forms.TabPage tabProducts;
-        private System.Windows.Forms.TabPage tabReports;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabHome;
         private System.Windows.Forms.Button btnReportGenerate;
         private System.Windows.Forms.Label lblUserType;

@@ -16,7 +16,6 @@ namespace WorkFlowManagement
         /// AUTHOR: Cowen Shears
         /// DATE: 2/11/19
         /// DESCRIPTION: Homepage for application. Knows who the user is, 
-        /// and has buttons set up in a tab system that link to other pages with functionality.
         /// Currently - listing all buttons/links we have made.
         /// Future - want to only display buttons/links for those pertinent to the user's type.
 
@@ -27,7 +26,6 @@ namespace WorkFlowManagement
             //Set panels to correct initial visibility.
             pnlStock.Visible = true;
             pnlProducts.Visible = false;
-            pnlReports.Visible = false;
             lblUsername.Text = "";
             lblUserType.Text = "";
         }
@@ -40,7 +38,6 @@ namespace WorkFlowManagement
 
             pnlStock.Visible = true;
             pnlProducts.Visible = false;
-            pnlReports.Visible = false;
             lblUsername.Text = objCurrentUser.GetUsername();
             lblUserType.Text = objCurrentUser.GetUserType();
         }
@@ -51,8 +48,7 @@ namespace WorkFlowManagement
             if (tabHome.SelectedTab == tabHome.TabPages["tabStock"])//specific tabname
             {
                 pnlStock.Visible = true;
-                pnlProducts.Visible = false;
-                pnlReports.Visible = false;
+                pnlProducts.Visible = false;      
             }
             else if (tabHome.SelectedTab == tabHome.TabPages["tabProducts"])
             {
@@ -60,12 +56,7 @@ namespace WorkFlowManagement
                 pnlProducts.Visible = true;
                 pnlReports.Visible = false;
             }
-            else if (tabHome.SelectedTab == tabHome.TabPages["tabReports"])
-            {
-                pnlStock.Visible = false;
-                pnlProducts.Visible = false;
-                pnlReports.Visible = true;
-            }
+            
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
