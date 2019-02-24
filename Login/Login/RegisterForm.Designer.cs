@@ -1,4 +1,4 @@
-﻿namespace WorkflowManagement
+﻿namespace WorkFlowManagement
 {
     partial class RegisterForm
     {
@@ -45,6 +45,9 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtVerifyPassword = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.wareHouseTableTableAdapter1 = new Login.WorkFlowDatabaseDataSetTableAdapters.WareHouseTableTableAdapter();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +136,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(100, 393);
+            this.label9.Location = new System.Drawing.Point(100, 413);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 18);
             this.label9.TabIndex = 8;
@@ -190,10 +193,11 @@
             this.txtPassword.Size = new System.Drawing.Size(235, 20);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtVerifyPassword
             // 
-            this.txtVerifyPassword.Location = new System.Drawing.Point(271, 391);
+            this.txtVerifyPassword.Location = new System.Drawing.Point(271, 414);
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.PasswordChar = '*';
             this.txtVerifyPassword.Size = new System.Drawing.Size(235, 20);
@@ -202,7 +206,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(516, 456);
+            this.btnRegister.Location = new System.Drawing.Point(524, 471);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 16;
@@ -210,11 +214,37 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.ForeColor = System.Drawing.Color.Red;
+            this.progressBar1.Location = new System.Drawing.Point(271, 379);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(235, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 17;
+            // 
+            // wareHouseTableTableAdapter1
+            // 
+            this.wareHouseTableTableAdapter1.ClearBeforeFill = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(523, 324);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(191, 78);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Passwords must be 8 Characters Long \r\nAnd meet 3 of the four conditions: \r\n- Cont" +
+    "ain one UpperCase Letter\r\n- Conatin one LowerCase Letter\r\n- Contain one Number\r\n" +
+    "- Contain one Symbol (./,!#$& etc..)\r\n";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 506);
+            this.ClientSize = new System.Drawing.Size(726, 506);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtVerifyPassword);
             this.Controls.Add(this.txtPassword);
@@ -234,7 +264,6 @@
             this.Controls.Add(this.label1);
             this.Name = "RegisterForm";
             this.Text = "Create Account";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,6 +288,9 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtVerifyPassword;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private Login.WorkFlowDatabaseDataSetTableAdapters.WareHouseTableTableAdapter wareHouseTableTableAdapter1;
+        private System.Windows.Forms.Label label10;
     }
 }
 

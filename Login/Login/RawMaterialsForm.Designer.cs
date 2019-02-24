@@ -1,4 +1,4 @@
-﻿namespace WorkflowManagement
+﻿namespace WorkFlowManagement
 {
     partial class RawMaterialsForm
     {
@@ -35,9 +35,9 @@
             this.txtRawMaterialName = new System.Windows.Forms.TextBox();
             this.lblRawMaterialName = new System.Windows.Forms.Label();
             this.lblRawMaterialsList = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSaveRMtoDB = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstRawMaterials
@@ -112,16 +112,16 @@
             this.lblRawMaterialsList.TabIndex = 9;
             this.lblRawMaterialsList.Text = "Raw Materials List:";
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(437, 249);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 27);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDelete.Location = new System.Drawing.Point(437, 249);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(71, 27);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSaveRMtoDB
             // 
@@ -134,25 +134,25 @@
             this.btnSaveRMtoDB.UseVisualStyleBackColor = true;
             this.btnSaveRMtoDB.Click += new System.EventHandler(this.btnSaveRMtoDB_Click);
             // 
-            // button2
+            // btnLoad
             // 
-            this.button2.Location = new System.Drawing.Point(84, 41);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 26);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Load List from Database";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnLoad.Location = new System.Drawing.Point(84, 41);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(149, 26);
+            this.btnLoad.TabIndex = 12;
+            this.btnLoad.Text = "Load List from Database";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // RawMaterialsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSaveRMtoDB);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblRawMaterialsList);
             this.Controls.Add(this.lblRawMaterialName);
             this.Controls.Add(this.txtRawMaterialName);
@@ -178,8 +178,8 @@
         private System.Windows.Forms.TextBox txtRawMaterialName;
         private System.Windows.Forms.Label lblRawMaterialName;
         private System.Windows.Forms.Label lblRawMaterialsList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSaveRMtoDB;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoad;
     }
 }

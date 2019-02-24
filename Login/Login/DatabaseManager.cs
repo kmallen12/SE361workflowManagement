@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     struct SqlQuery
     {
@@ -16,7 +16,7 @@ namespace WorkflowManagement
         string Where;
         string Data;
     }
-    public class DatabaseManager
+   public class DatabaseManager
     {
         private static SqlConnection _conn = new SqlConnection(
             @"Server=tcp:workflowdatabase.database.windows.net,1433;
@@ -57,29 +57,43 @@ namespace WorkflowManagement
 
 
 
-        
+        private Boolean isValidQuantity(string quantity)
+        {
+            try
+            {
+                int quan = int.Parse(quantity);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         //Insert data into the Raw Materials table in the database
         public void InsertToRMTable(List<RawMaterials> rawMaterials)
         {
             try
             {
-                conn.Open();
+                _conn.Open();
 
                 //SQL Command to insert data to the Raw Materials Table
-                SqlCommand cmd = new SqlCommand("INSERT INTO RawMaterials (rawMaterials)" + "VALUES (@rMaterial)");
-                cmd.Connection = conn;
+                string str = "INSERT INTO [dbo].[RawMaterialsTable] ([rawMaterial]) Values (@rMaterial)";
 
                 //feed Raw Materials list to the sqlCommand
+               
+                
+                    
                 foreach (var rawMat in rawMaterials)
                 {
-                    cmd.Parameters.Clear();
-
-                    cmd.Parameters.AddWithValue("rMaterial", rawMat.material);
-
-                    cmd.ExecuteNonQuery();
+                    SqlCommand com = new SqlCommand(str, _conn);
+                    com.Connection = _conn;
+                    com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
+                        
+         
+                    com.ExecuteNonQuery();
                 }
-
+                
             }
             catch (Exception)
             {
@@ -87,8 +101,9 @@ namespace WorkflowManagement
             }
             finally
             {
-                conn.Close();
+                _conn.Close();
             }
+            _conn.Close();
         }
 
         //load data from the Raw Materials Table into a list
@@ -104,20 +119,20 @@ namespace WorkflowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM RawMaterials", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM RawMaterialsTable", conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    string rawMatName = (string)reader["matName"];
+                    string rawMatName = (string)reader["rawMaterial"];
                     tempRawMat = new RawMaterials(rawMatName);
                     rawMaterials.Add(tempRawMat);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Error reading data in from the database.");
+                MessageBox.Show(e.ToString(), "Error reading data in from the database.");
             }
             finally
             {
@@ -126,7 +141,31 @@ namespace WorkflowManagement
 
             return rawMaterials;
         }
+        public void UpdateWareHouse(string ID, string max, string low)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[WareHouseTable] SET Max=@Max , Low=@Low WHERE itemID = @itemID";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@itemID", SqlDbType.Int).Value = int.Parse(ID);
 
+                if (!string.IsNullOrEmpty(max) && isValidQuantity(max))
+                {
+                    com.Parameters.Add("@Max", SqlDbType.Int).Value = int.Parse(max);
+                }
+                else com.Parameters.Add("@Max", SqlDbType.Int).Value = 100;
+
+                if (!string.IsNullOrEmpty(low) && isValidQuantity(low))
+                {
+                    com.Parameters.Add("@Low", SqlDbType.Int).Value = int.Parse(low);
+                }
+                else com.Parameters.Add("@Low", SqlDbType.Int).Value = 10;
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
         public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
             _conn.Open();
@@ -185,7 +224,7 @@ namespace WorkflowManagement
 
                 com.ExecuteNonQuery();
             }
-
+            _conn.Close();
         }
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
@@ -246,52 +285,8 @@ namespace WorkflowManagement
 
                 com.ExecuteNonQuery();
             }
-
+            _conn.Close();
         }
-
-        //load data from the Stock Table into a list
-        public List<Stock> LoadStocks()
-        {
-            List<Stock> stocks = new List<Stock>();
-
-            try
-            {
-                Stock tempStock;
-
-                //open a db connection
-                conn.Open();
-
-                //create SQL Command to pull data from Raw Materials table
-                string str = "SELECT * FROM [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
-                SqlCommand cmd = new SqlCommand(str, conn);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string materialType = (string)reader["materialType"];
-                    double unitCost = (double)reader["unitCost"];
-                    double totalCost = (double)reader["totalCost"];
-                    double quantity = (double)reader["quantity"];
-                    double defects = (double)reader["amtDefected"];
-                    DateTime dateUsed = (DateTime)reader["dateUsed"];
-                    DateTime dateAcquired = (DateTime)reader["dateAcqired"];
-                    tempStock = new Stock(materialType, quantity, unitCost, defects, dateAcquired, dateUsed);
-                    stocks.Add(tempStock);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error loading the Stock Table from the database.");
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return stocks;
-        }
-
         //below is the primary formatting of functions withtin this Database class
         // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
 

@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     public partial class LoginForm : Form
     {
+        CurrentUser objCurrentUser;
         public LoginForm()
         {
             InitializeComponent();
@@ -47,8 +48,8 @@ namespace WorkflowManagement
             builder.InitialCatalog = "WorkFlowDatabase";
            SqlConnection con = new SqlConnection(builder.ConnectionString);
 
-            string str="SELECT UserType "+ "FROM  [dbo].[UsersTable]"+
-                        "WHERE UserName = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
+            string str="SELECT UserType,Password "+ "FROM  [dbo].[UsersTable]"+
+                        "WHERE UserName = '" + txtUsername.Text+ "'";
             Boolean success_flag = false;
             con.Open();
             SqlCommand com = new SqlCommand(str, con);
@@ -59,7 +60,10 @@ namespace WorkflowManagement
             {
                 
                 UserType=reader[0].ToString();
-                if(UserType != "" )
+                string dbPassword = reader[1].ToString();
+                Password objPassword = new Password();
+               
+                if(UserType != "" && objPassword.verifyPasswordMatch(dbPassword, txtPassword.Text))
                     success_flag = true;
             }
             
@@ -74,15 +78,15 @@ namespace WorkflowManagement
             if (success_flag)
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
-                CurrentUser objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
+                objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
                 this.Hide();
 
                 HomePage formHomePage = new HomePage(objCurrentUser);
                 formHomePage.ShowDialog();
 
                 if (UserType == "Administrator" || UserType == "Stockiest" ){
-                    StockForm formStock = new StockForm();
-                    formStock.ShowDialog();
+                    //StockForm formStock = new StockForm();
+                    //formStock.ShowDialog();
                  }
             }
         }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     public partial class RawMaterialsForm : Form
     {
@@ -16,7 +16,7 @@ namespace WorkflowManagement
         private List<RawMaterials> rawMaterials;
 
         DatabaseManager objDatabaseManager;
-
+        DatabaseManager q = new DatabaseManager();
         //declare connection string to Azure database
         const string connectionString = @"Data Source=workflowdatabase.database.windows.net;Initial Catalog=WorkFlowDatabase;User ID=OCOTOD;Password=********;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -49,9 +49,9 @@ namespace WorkflowManagement
                 lstRawMaterials.Items.Clear();
                 lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                MessageBox.Show("Error adding material to the list.");
+                MessageBox.Show(err + "Error adding material to the list.");
                 throw;
             }
         }
@@ -70,7 +70,7 @@ namespace WorkflowManagement
             txtRawMaterialName.Text = objRawMat.material;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             //remove item
             string materialName = objRawMat.material;
@@ -86,12 +86,12 @@ namespace WorkflowManagement
 
         private void btnSaveRMtoDB_Click(object sender, EventArgs e)
         {
-            objDatabaseManager.InsertToRMTable(rawMaterials);
+            q.InsertToRMTable(rawMaterials);
 
             MessageBox.Show("List saved to the database.");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
             rawMaterials = objDatabaseManager.LoadRawMat();
 
