@@ -117,9 +117,9 @@ namespace WorkFlowManagement
                 txt_TotalCost.Clear();
                 txt_unitCost.Clear();
             }
-            catch
+            catch (Exception err)
             {
-
+                MessageBox.Show("Error: "+ err);
             }
         }
 
@@ -183,9 +183,9 @@ namespace WorkFlowManagement
                 //Hide();
                 //formStock.ShowDialog();
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                MessageBox.Show("Error: " + err);
                 throw;
             }
         }

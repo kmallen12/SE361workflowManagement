@@ -97,6 +97,10 @@ namespace WorkFlowManagement
                     txtVerifyPassword.Text = "";
                     success_flag = false;
                 }
+                else
+                {
+                    MessageBox.Show("Error: " + EX);
+                }
             }
 
            

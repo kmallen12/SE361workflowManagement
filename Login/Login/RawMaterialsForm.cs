@@ -49,9 +49,9 @@ namespace WorkFlowManagement
                 lstRawMaterials.Items.Clear();
                 lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                MessageBox.Show("Error adding material to the list.");
+                MessageBox.Show(err + "Error adding material to the list.");
                 throw;
             }
         }
@@ -70,7 +70,7 @@ namespace WorkFlowManagement
             txtRawMaterialName.Text = objRawMat.material;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             //remove item
             string materialName = objRawMat.material;
@@ -91,7 +91,7 @@ namespace WorkFlowManagement
             MessageBox.Show("List saved to the database.");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
             rawMaterials = objDatabaseManager.LoadRawMat();
 
