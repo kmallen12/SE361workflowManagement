@@ -13,22 +13,37 @@ namespace WorkflowManagement
 {
     public partial class UpdateStock : Form
     {
+        private Stock objStock;
+        private List<Stock> stocks;
+        DatabaseManager objDatabaseManager = new DatabaseManager();
+
         public UpdateStock()
         {
             InitializeComponent();
         }
-        DatabaseManager q = new DatabaseManager();
+        
         private void UpdateStock_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockTable' table. You can move, or remove it, as needed.
-            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
+            //this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
+        }
+
+        private void btnLoadStockFromDB_Click(object sender, EventArgs e)
+        {
+            //load Stocks Table from database into a list
+            stocks = new List<Stock>();
+            stocks = objDatabaseManager.LoadStocks();
+
+            //use list as datasource for data grid
+            var stockBindingList = new BindingList<Stock>(stocks);
+            var source = new BindingSource(stockBindingList, null);
+            dataGridView1.DataSource = source;
+            dataGridView1.Refresh();
+
+            
 
         }
-    
 
-     
-
-       
         private Boolean isValidQuantity(string quantity)
         {
             try
@@ -54,6 +69,13 @@ namespace WorkflowManagement
         }
         private void ConfirmGrid_btn_Click(object sender, EventArgs e)
         {
+            CheckEntry objCheckID = new CheckEntry(ItemIDGrid_box.Text, "Item ID");
+            CheckEntry objCheckMatType = new CheckEntry(materialTypeGrid_box.Text, "Material Type");
+            CheckEntry objCheckQuan = new CheckEntry(quantityGrid_box.Text, "Quantity");
+            CheckEntry objCheckUCost = new CheckEntry(unitCostGrid_box.Text,"Unit Cost");
+            CheckEntry objCheckTCost = new CheckEntry(totalCostGrid_box.Text, "Total Cost");
+
+            if(!objCheckID.isNull())
             if (CheckValidStock()&&string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
             {
                 string material = materialTypeGrid_box.Text;
@@ -69,7 +91,7 @@ namespace WorkflowManagement
                 }
 
                 
-                q.InsertStock(materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
+                objDatabaseManager.InsertStock(materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
                 this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
                 this.dataGridView1.Refresh();
                 this.dataGridView1.RefreshEdit();
@@ -90,14 +112,14 @@ namespace WorkflowManagement
                     unitCost = double.Parse(unitCostGrid_box.Text);
                 }
 
-                q.UpdateStock(key ,materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
-
+                objDatabaseManager.UpdateStock(key, materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
+                
                 this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
                 this.dataGridView1.Refresh();
                 this.dataGridView1.RefreshEdit();
             }
         }
 
-      
+        
     }
 }

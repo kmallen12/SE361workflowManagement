@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorkflowManagement
 {
-    class Stock
+    public class Stock
     {
         public string materialType { get; set; }
         public double quantity { get; set; }

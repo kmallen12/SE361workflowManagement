@@ -126,6 +126,7 @@ namespace WorkflowManagement
 
             return rawMaterials;
         }
+
         public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
             _conn.Open();
@@ -247,6 +248,50 @@ namespace WorkflowManagement
             }
 
         }
+
+        //load data from the Stock Table into a list
+        public List<Stock> LoadStocks()
+        {
+            List<Stock> stocks = new List<Stock>();
+
+            try
+            {
+                Stock tempStock;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                string str = "SELECT * FROM [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
+                SqlCommand cmd = new SqlCommand(str, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string materialType = (string)reader["materialType"];
+                    double unitCost = (double)reader["unitCost"];
+                    double totalCost = (double)reader["totalCost"];
+                    double quantity = (double)reader["quantity"];
+                    double defects = (double)reader["amtDefected"];
+                    DateTime dateUsed = (DateTime)reader["dateUsed"];
+                    DateTime dateAcquired = (DateTime)reader["dateAcqired"];
+                    tempStock = new Stock(materialType, quantity, unitCost, defects, dateAcquired, dateUsed);
+                    stocks.Add(tempStock);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error loading the Stock Table from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return stocks;
+        }
+
         //below is the primary formatting of functions withtin this Database class
         // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
 

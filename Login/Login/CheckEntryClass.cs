@@ -38,6 +38,7 @@ namespace WorkflowManagement
             }
         }
 
+        //returns true if string variable is null
         public Boolean isNull()
         {
             if (text == "") { return true; }
