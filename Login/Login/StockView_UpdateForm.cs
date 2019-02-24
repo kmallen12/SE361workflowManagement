@@ -32,7 +32,7 @@ namespace WorkFlowManagement
         {
             //load Stocks Table from database into a list
             stocks = new List<Stock>();
-            stocks = objDatabaseManager.LoadStocks();
+            // = objDatabaseManager.LoadStocks();
 
             //use list as datasource for data grid
             var stockBindingList = new BindingList<Stock>(stocks);

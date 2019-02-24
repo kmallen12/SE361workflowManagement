@@ -193,6 +193,17 @@ namespace WorkFlowManagement
         private void btnCustomizeMaterials_Click(object sender, EventArgs e)
         {
             RawMaterialsForm formMaterial = new RawMaterialsForm();
+            formMaterial.FormClosing += (sender2, e2) =>
+            {
+                txt_materialType.Items.Clear();
+                materialList = q.LoadRawMat();
+                //materialList = objDatabaseManager.LoadRawMat();
+                foreach (var mat in materialList)
+                {
+
+                    txt_materialType.Items.Add(mat.material);
+                }
+            };
             formMaterial.ShowDialog();
         }
 

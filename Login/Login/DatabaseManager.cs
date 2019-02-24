@@ -81,15 +81,11 @@ namespace WorkFlowManagement
                 string str = "INSERT INTO [dbo].[RawMaterialsTable] ([rawMaterial]) Values (@rMaterial)";
 
                 //feed Raw Materials list to the sqlCommand
-               
-                
-                    
                 foreach (var rawMat in rawMaterials)
                 {
                     SqlCommand com = new SqlCommand(str, _conn);
                     com.Connection = _conn;
                     com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
-                        
          
                     com.ExecuteNonQuery();
                 }
@@ -98,6 +94,38 @@ namespace WorkFlowManagement
             catch (Exception)
             {
                 MessageBox.Show("Error adding raw materials to the database.");
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            _conn.Close();
+        }
+
+        //Delete data from the Raw Materials table in the database
+        public void DeleteFromRMTable(List<RawMaterials> rawMaterials)
+        {
+            try
+            {
+                _conn.Open();
+
+                //SQL Command to delete data from the Raw Materials Table
+                string str = "DELETE FROM [dbo].[RawMaterialsTable] WHERE ([rawMaterial]) = (@rMaterial)";
+
+                //feed Raw Materials list to the sqlCommand
+                foreach (var rawMat in rawMaterials)
+                {
+                    SqlCommand com = new SqlCommand(str, _conn);
+                    com.Connection = _conn;
+                    com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
+
+                    com.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error deleting raw materials from the database.");
             }
             finally
             {
