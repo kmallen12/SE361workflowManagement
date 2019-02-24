@@ -315,6 +315,81 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
+
+
+        public void InsertUser(string FirstName, string LastName, string UserType, string Email, string UserName, string Password)
+        {
+            _conn.Close();
+            _conn.Open();
+            string str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES (  @FirstName  , @LastName,@UserType,@Email,@UserName,@Password)";
+
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+
+                if (!string.IsNullOrEmpty(FirstName))
+                {
+                    com.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = FirstName;
+                }
+                else
+                {
+                    com.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(LastName))
+                {
+                    com.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = LastName;
+                }
+                else
+                {
+                    com.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(UserType))
+                {
+                    com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = UserType;
+                }
+                else
+                {
+                    com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(Email))
+                {
+                    com.Parameters.Add("@Email", SqlDbType.NVarChar).Value = Email;
+                }
+                else
+                {
+                    com.Parameters.Add("@Email", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(UserName))
+                {
+                    com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = UserName;
+                }
+                else
+                {
+                    com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(Password))
+                {
+                    com.Parameters.Add("@Password", SqlDbType.NVarChar).Value = Password;
+                }
+                else
+                {
+                    com.Parameters.Add("@Password", SqlDbType.NVarChar).Value = DBNull.Value;
+
+                }
+
+                com.ExecuteNonQuery();
+
+            }
+            _conn.Close();
+
+        }
+
+
         //below is the primary formatting of functions withtin this Database class
         // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
 
