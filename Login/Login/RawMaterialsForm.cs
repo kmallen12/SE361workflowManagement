@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     public partial class RawMaterialsForm : Form
     {

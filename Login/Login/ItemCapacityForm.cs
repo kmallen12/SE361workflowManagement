@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     public partial class ItemCapacityForm : Form
     {
