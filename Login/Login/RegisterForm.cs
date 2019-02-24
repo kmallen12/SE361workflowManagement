@@ -76,6 +76,10 @@ namespace WorkFlowManagement
                         success_flag = false;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Error: " + EX);
+                }
             }
             else return;
 

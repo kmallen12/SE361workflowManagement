@@ -16,7 +16,7 @@ namespace WorkFlowManagement
         string Where;
         string Data;
     }
-    public class DatabaseManager
+   public class DatabaseManager
     {
         private static SqlConnection _conn = new SqlConnection(
             @"Server=tcp:workflowdatabase.database.windows.net,1433;
