@@ -107,7 +107,7 @@ namespace WorkFlowManagement
 
                 //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
                 q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
-                StockForm formStock = new StockForm();
+                //StockForm formStock = new StockForm();
 
                 txt_materialType.SelectedIndex = -1;
                 txt_DateAcq.Clear();
@@ -178,10 +178,10 @@ namespace WorkFlowManagement
 
                 //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
 
-                StockForm formStock = new StockForm();
+                //StockForm formStock = new StockForm();
 
-                Hide();
-                formStock.ShowDialog();
+                //Hide();
+                //formStock.ShowDialog();
             }
             catch (Exception)
             {

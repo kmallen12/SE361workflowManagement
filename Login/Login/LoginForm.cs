@@ -85,8 +85,8 @@ namespace WorkFlowManagement
                 formHomePage.ShowDialog();
 
                 if (UserType == "Administrator" || UserType == "Stockiest" ){
-                    StockForm formStock = new StockForm();
-                    formStock.ShowDialog();
+                    //StockForm formStock = new StockForm();
+                    //formStock.ShowDialog();
                  }
             }
         }

@@ -84,15 +84,6 @@ namespace WorkFlowManagement
             Application.Exit();
         }
 
-        private void btnStockiestHomepage_Click(object sender, EventArgs e)
-        {
-            if (objCurrentUser.GetUserType() == "Administrator" || objCurrentUser.GetUserType() == "Stockiest")
-            {
-                StockForm formStock = new StockForm();
-                formStock.ShowDialog();
-            }
-        }
-
         private void btnStockMaterials_Click(object sender, EventArgs e)
         {
             AddMaterialForm formMaterial = new AddMaterialForm();
@@ -110,5 +101,6 @@ namespace WorkFlowManagement
             StockReportForm formReport = new StockReportForm();
             formReport.ShowDialog();
         }
+
     }
 }
