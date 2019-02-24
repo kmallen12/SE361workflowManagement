@@ -1,4 +1,4 @@
-﻿namespace WorkflowManagement
+﻿namespace WorkFlowManagement
 {
     partial class StockForm
     {

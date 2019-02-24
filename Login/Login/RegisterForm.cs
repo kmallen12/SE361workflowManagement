@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace WorkflowManagement 
+namespace WorkFlowManagement 
 {
     public partial class RegisterForm : Form
     {
@@ -36,26 +36,9 @@ namespace WorkflowManagement
             }
         }
 
-        private Boolean isValidPassword(string p)
-        {
-            if (p.Length < 5)
-                return false;
-
-            if (p.Contains(",") || p.Contains("'") || p.Contains('"') || p.Contains(".") || p.Contains(";"))
-                return false;
-
-            return true;
-        }
 
         private Boolean CheckValidUser()
         {
-            if (!isValidPassword(txtPassword.Text))
-            {
-                MessageBox.Show("Password must be at least 5 characters and can not include , \' \" . ; ");
-                txtPassword.Text = "";
-                txtVerifyPassword.Text = "";
-                return false;
-            }
 
             if(txtPassword.Text != txtVerifyPassword.Text)
             {
@@ -89,7 +72,9 @@ namespace WorkflowManagement
 
             if (CheckValidUser())
             {
-               str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES ('" + txtFirstName.Text + "','" + txtLastName.Text + "','" + cboxUserType.Text + "','" + txtEmail.Text + "','" + txtUsername.Text + "','" + txtPassword.Text + "')";
+               Password objPassword = new Password();
+                string encrptedPassword = objPassword.encryptPassword(txtPassword.Text);
+               str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES ('" + txtFirstName.Text + "','" + txtLastName.Text + "','" + cboxUserType.Text + "','" + txtEmail.Text + "','" + txtUsername.Text + "','" + encrptedPassword + "')";
             }
             else return;
             
