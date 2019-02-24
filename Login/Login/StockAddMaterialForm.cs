@@ -31,12 +31,13 @@ namespace WorkflowManagement
             materialList = new List<RawMaterials>();
 
             //DELETE THESE TWO LINES ONCE CONNECTED TO DATABASE
-            objWood = new RawMaterials("wood");
-            materialList.Add(objWood);
-
+            
+           
+            materialList = q.LoadRawMat();
             //materialList = objDatabaseManager.LoadRawMat();
-            foreach(RawMaterials mat in materialList)
+            foreach(var mat in materialList)
             {
+                
                 txt_materialType.Items.Add(mat.material);
             }
         }
