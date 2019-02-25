@@ -258,14 +258,20 @@ namespace WorkFlowManagement
         }
 
         //load data from the Stocks Table into a list
-        public List<Stock> LoadStocks()
+        public DataTable LoadStocks()
         {
-            List<Stock> stocks = new List<Stock>();
+            DataTable stockTable = new DataTable();
+            stockTable.Columns.Add("itemID", typeof(int));
+            stockTable.Columns.Add("materialType", typeof(string));
+            stockTable.Columns.Add("quantity", typeof(double));
+            stockTable.Columns.Add("unitCost", typeof(double));
+            stockTable.Columns.Add("totalCost", typeof(double));
+            stockTable.Columns.Add("dateAcquired", typeof(DateTime));
+            stockTable.Columns.Add("dateUsed", typeof(DateTime));
+            stockTable.Columns.Add("amtDefected", typeof(double));
 
             try
             {
-                Stock tempStock;
-
                 //open a db connection
                 conn.Open();
 
@@ -281,7 +287,7 @@ namespace WorkFlowManagement
                     decimal quan = (decimal)reader["quantity"];
                     double quantity = (double) quan;
 
-                    double unitCost, amtDefected;
+                    double unitCost, amtDefected, totalCost;
                     DateTime dateAcq, dateUsed;
 
                     //handle null unit cost values in database
@@ -289,10 +295,12 @@ namespace WorkFlowManagement
                     {
                         decimal uCost = (decimal)reader["unitCost"];
                         unitCost = (double)uCost;
+                        totalCost = unitCost * quantity;
                     }
                     else
                     {
                         unitCost = 0;
+                        totalCost = 0;
                     }
 
                     //handle null defects in database
@@ -326,9 +334,8 @@ namespace WorkFlowManagement
                         dateUsed = DateTime.MinValue;
                     }
 
-                    tempStock = new Stock(matName, quantity, unitCost, amtDefected, dateAcq, dateUsed);
-                    tempStock.id = id;
-                    stocks.Add(tempStock);
+                    stockTable.Rows.Add(id, matName, quantity, unitCost, totalCost, dateAcq, dateUsed, amtDefected);
+
                 }
             }
             catch (Exception e)
@@ -340,7 +347,7 @@ namespace WorkFlowManagement
                 conn.Close();
             }
 
-            return stocks;
+            return stockTable;
         }
 
         //update stock in the Stock Table
