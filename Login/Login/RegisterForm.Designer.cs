@@ -158,9 +158,10 @@
             // 
             // cboxUserType
             // 
+            this.cboxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUserType.FormattingEnabled = true;
             this.cboxUserType.Items.AddRange(new object[] {
-            "Administator",
+            "Administrator",
             "Stockiest",
             "Product Manager",
             "Quality Analyzer",
