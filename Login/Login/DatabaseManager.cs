@@ -198,6 +198,7 @@ namespace WorkFlowManagement
         //insert new stock into the Stock Table
         public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
+            _conn.Close();
             _conn.Open();
             string str = "INSERT INTO [dbo].[StockTable] (  [materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) VALUES (@materialType, @quantity, @unitCost, @totalCost, @dateAcquired, @dateUsed, @amtDefected)";
             using (SqlCommand com = new SqlCommand(str, _conn))

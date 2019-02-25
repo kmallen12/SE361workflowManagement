@@ -13,7 +13,6 @@ namespace WorkFlowManagement
 {
     public partial class UpdateStock : Form
     {
-        private Stock objStock;
         private DataTable stocks;
         DatabaseManager objDatabaseManager = new DatabaseManager();
 
@@ -24,7 +23,7 @@ namespace WorkFlowManagement
         
         private void UpdateStock_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockTable' table. You can move, or remove it, as needed.
+            // Uncomment the next line of code to view data right from Database (not recommended b/c doesn't follow 3-tier architecture).
             //this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
         }
 
@@ -64,14 +63,13 @@ namespace WorkFlowManagement
         }
         private void ConfirmGrid_btn_Click(object sender, EventArgs e)
         {
-            /*CheckEntry objCheckID = new CheckEntry(ItemIDGrid_box.Text, "Item ID");
+            CheckEntry objCheckID = new CheckEntry(ItemIDGrid_box.Text, "Item ID");
             CheckEntry objCheckMatType = new CheckEntry(materialTypeGrid_box.Text, "Material Type");
             CheckEntry objCheckQuan = new CheckEntry(quantityGrid_box.Text, "Quantity");
             CheckEntry objCheckUCost = new CheckEntry(unitCostGrid_box.Text,"Unit Cost");
             CheckEntry objCheckTCost = new CheckEntry(totalCostGrid_box.Text, "Total Cost");
 
-            if(!objCheckID.isNull())*/
-
+            //insert a new stock into the Stock Table if the entry does NOT have a value in the ID field
             if (CheckValidStock()&&string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
             {
                 string material = materialTypeGrid_box.Text;
@@ -85,7 +83,6 @@ namespace WorkFlowManagement
                 {
                     unitCost = double.Parse(unitCostGrid_box.Text);
                 }
-
                 
                 objDatabaseManager.InsertStock(materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
                 this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
@@ -93,6 +90,7 @@ namespace WorkFlowManagement
                 this.dataGridView1.RefreshEdit();
 
             }
+            //update existing stock in the Stock table if there is a value in the ID field
             else if (CheckValidStock()&&!string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
             {
               

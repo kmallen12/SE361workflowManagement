@@ -81,21 +81,6 @@ namespace WorkFlowManagement
                     }
                 }
 
-                string materialType = txt_materialType.Text;
-                double quantity = double.Parse(txt_Quantity.Text);
-                double unitCost = double.Parse(txt_unitCost.Text);
-                double defects = double.Parse(txt_Defected.Text);
-                double totalCost = double.Parse(txt_TotalCost.Text);
-                DateTime dateAquired = DateTime.Parse(txt_DateAcq.Text);
-                DateTime dateUsed = DateTime.Parse(txt_dateUsed.Text);
-
-                objStock = new Stock(materialType, quantity, unitCost, defects, dateAquired, dateUsed);
-
-                stocks.Add(objStock);
-
-                
-
-                //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
                 q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
                 //StockForm formStock = new StockForm();
 
@@ -150,33 +135,13 @@ namespace WorkFlowManagement
                     }
                 }
 
-                string materialType = txt_materialType.Text;
-                double quantity = double.Parse(txt_Quantity.Text);
-                double unitCost = double.Parse(txt_unitCost.Text);
-                double defects = double.Parse(txt_Defected.Text);
-                double totalCost = double.Parse(txt_TotalCost.Text);
-                DateTime dateAquired = DateTime.Parse(txt_DateAcq.Text);
-                DateTime dateUsed = DateTime.Parse(txt_dateUsed.Text);
-
-                objStock = new Stock(materialType, quantity, unitCost, defects, dateAquired, dateUsed);
-
-                stocks.Add(objStock);
-
                 q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
 
-
-
-                //CODE BELOW NEEDS TO BE REPLACED WITH DB HANDLER CODE
-
-                //StockForm formStock = new StockForm();
-
-                //Hide();
-                //formStock.ShowDialog();
+                Hide();
             }
             catch (Exception err)
             {
                 MessageBox.Show("Error: " + err);
-                throw;
             }
         }
 

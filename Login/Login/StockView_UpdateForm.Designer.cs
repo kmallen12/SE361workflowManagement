@@ -52,7 +52,6 @@
             this.amtDefectedGrid_box = new System.Windows.Forms.TextBox();
             this.Enter_ID_lbl = new System.Windows.Forms.Label();
             this.ConfirmGrid_btn = new System.Windows.Forms.Button();
-            this.btnSaveUpdatesToDB = new System.Windows.Forms.Button();
             this.btnLoadStockFromDB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
@@ -223,21 +222,11 @@
             this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmGrid_btn.Location = new System.Drawing.Point(522, 470);
             this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
-            this.ConfirmGrid_btn.Size = new System.Drawing.Size(117, 52);
+            this.ConfirmGrid_btn.Size = new System.Drawing.Size(297, 52);
             this.ConfirmGrid_btn.TabIndex = 11;
-            this.ConfirmGrid_btn.Text = "Add/Update";
+            this.ConfirmGrid_btn.Text = "Add/Update and Save to Database";
             this.ConfirmGrid_btn.UseVisualStyleBackColor = true;
             this.ConfirmGrid_btn.Click += new System.EventHandler(this.ConfirmGrid_btn_Click);
-            // 
-            // btnSaveUpdatesToDB
-            // 
-            this.btnSaveUpdatesToDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveUpdatesToDB.Location = new System.Drawing.Point(645, 470);
-            this.btnSaveUpdatesToDB.Name = "btnSaveUpdatesToDB";
-            this.btnSaveUpdatesToDB.Size = new System.Drawing.Size(174, 52);
-            this.btnSaveUpdatesToDB.TabIndex = 12;
-            this.btnSaveUpdatesToDB.Text = "Save to Database";
-            this.btnSaveUpdatesToDB.UseVisualStyleBackColor = true;
             // 
             // btnLoadStockFromDB
             // 
@@ -256,7 +245,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 534);
             this.Controls.Add(this.btnLoadStockFromDB);
-            this.Controls.Add(this.btnSaveUpdatesToDB);
             this.Controls.Add(this.ConfirmGrid_btn);
             this.Controls.Add(this.Enter_ID_lbl);
             this.Controls.Add(this.amtDefectedGrid_box);
@@ -306,7 +294,6 @@
         private System.Windows.Forms.TextBox amtDefectedGrid_box;
         private System.Windows.Forms.Label Enter_ID_lbl;
         private System.Windows.Forms.Button ConfirmGrid_btn;
-        private System.Windows.Forms.Button btnSaveUpdatesToDB;
         private System.Windows.Forms.Button btnLoadStockFromDB;
     }
 }

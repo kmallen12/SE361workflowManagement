@@ -23,7 +23,7 @@ namespace WorkFlowManagement
         public Password()
         {}
 
-        //This function takes an entered String and encrpts it by generating random salt, hashing with that salt, and then converting it to a string
+        //This function takes an entered String and encrypts it by generating random salt, hashing with that salt, and then converting it to a string
         //returns encrypted password as a string
         public string encryptPassword(string enteredPassword)
         {
@@ -64,7 +64,7 @@ namespace WorkFlowManagement
             salt = hashBytes.Take(16).ToArray();
         }
 
-        //This function returns an encrpted password without salt
+        //This function returns an encrypted password without salt
        private byte[] hashPassword(string enteredPassword)
         {
             var pbkdf2 = new Rfc2898DeriveBytes(enteredPassword, salt, 10000);
@@ -72,7 +72,7 @@ namespace WorkFlowManagement
             return pbkdf2.GetBytes(20);
         }
 
-        //This function returns a string that is salt concatenated with encrpted password as string
+        //This function returns a string that is salt concatenated with encrypted password as string
         private string stringifySaltedHashedPassword(byte[] hash)
         {
             byte[] hashBytes = new byte[36];
