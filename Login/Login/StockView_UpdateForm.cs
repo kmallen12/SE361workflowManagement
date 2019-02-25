@@ -25,23 +25,24 @@ namespace WorkFlowManagement
         private void UpdateStock_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockTable' table. You can move, or remove it, as needed.
-            //this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
+            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
         }
 
         private void btnLoadStockFromDB_Click(object sender, EventArgs e)
         {
+            //DO NOT DELETE - THIS IS AN ALMOST COMPLETE ATTEMPT AT 3-TIER 
+            /*
             //load Stocks Table from database into a list
             stocks = new List<Stock>();
-            // = objDatabaseManager.LoadStocks();
+            stocks = objDatabaseManager.LoadStocks();
 
             //use list as datasource for data grid
             var stockBindingList = new BindingList<Stock>(stocks);
             var source = new BindingSource(stockBindingList, null);
             dataGridView1.DataSource = source;
             dataGridView1.Refresh();
-
+            */
             
-
         }
 
         private Boolean isValidQuantity(string quantity)

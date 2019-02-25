@@ -14,6 +14,7 @@ namespace WorkFlowManagement
         public double defects { get; set; }
         public DateTime dateAcquired { get; set; }
         public DateTime dateUsed { get; set; }
+        public int id { get; set; }
         
         public Stock()
         {

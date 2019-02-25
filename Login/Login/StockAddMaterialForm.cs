@@ -20,7 +20,6 @@ namespace WorkFlowManagement
         DatabaseManager q = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
-        private RawMaterials objWood;  //DELETE THIS ONCE CONNECTED TO DATABASE
 
         public AddMaterialForm()
         {
@@ -28,13 +27,11 @@ namespace WorkFlowManagement
 
             stocks = new List<Stock>();
 
-            materialList = new List<RawMaterials>();
-
-            //DELETE THESE TWO LINES ONCE CONNECTED TO DATABASE
-            
+            materialList = new List<RawMaterials>();            
            
             materialList = q.LoadRawMat();
             //materialList = objDatabaseManager.LoadRawMat();
+
             foreach(var mat in materialList)
             {
                 
@@ -45,13 +42,6 @@ namespace WorkFlowManagement
         private void lbl_unitCost_Click(object sender, EventArgs e)
         {
 
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            //Cowen - I commented these lines out so the Homepage doesn't get closed when the form is closed.
-            //base.OnFormClosing(e);    
-            //Application.Exit();
         }
 
         private void Another_Material_btn_Click(object sender, EventArgs e)
