@@ -14,20 +14,19 @@ namespace WorkFlowManagement
     public partial class HomePage : Form
     {
         /// AUTHOR: Cowen Shears
-        /// DATE: 2/11/19
-        /// DESCRIPTION: Homepage for application. Knows who the user is, 
-        /// Currently - listing all buttons/links we have made.
+        /// DATE: 2/25/19
+        /// DESCRIPTION: Homepage for application. Knows who the user is.
         /// Future - want to only display buttons/links for those pertinent to the user's type.
 
-        CurrentUser objCurrentUser = new CurrentUser();
+        CurrentUser objCurrentUser;
         public HomePage() 
         {
             InitializeComponent();
             //Set panels to correct initial visibility.
             pnlStock.Visible = true;
             pnlProducts.Visible = false;
-            lblUsername.Text = "";
-            lblUserType.Text = "";
+            lblUsername.Text = string.Empty;
+            lblUserType.Text = string.Empty;
         }
         
         public HomePage(CurrentUser LoggedInUser)
@@ -38,14 +37,14 @@ namespace WorkFlowManagement
 
             pnlStock.Visible = true;
             pnlProducts.Visible = false;
-            lblUsername.Text = objCurrentUser.GetUsername();
-            lblUserType.Text = objCurrentUser.GetUserType();
+            lblUsername.Text = objCurrentUser.Username;
+            lblUserType.Text = objCurrentUser.UserType;
         }
 
         private void tabHome_Selected(object sender, TabControlEventArgs e)
         {
             //Changes the visibility of the pages. Using panels instead of included tabpages currently.
-            if (tabHome.SelectedTab == tabHome.TabPages["tabStock"])//specific tabname
+            if (tabHome.SelectedTab == tabHome.TabPages["tabStock"])
             {
                 pnlStock.Visible = true;
                 pnlProducts.Visible = false;      
@@ -61,8 +60,8 @@ namespace WorkFlowManagement
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            objCurrentUser.Username = "";
-            objCurrentUser.UserType = "";
+            objCurrentUser.Username = string.Empty;
+            objCurrentUser.UserType = string.Empty;
             Hide();
             LoginForm formLogin = new LoginForm();
             formLogin.ShowDialog();
@@ -70,7 +69,6 @@ namespace WorkFlowManagement
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            //Cowen - I commented these lines out so the Homepage doesn't get closed when the form is closed.
             base.OnFormClosing(e);    
             Application.Exit();
         }
