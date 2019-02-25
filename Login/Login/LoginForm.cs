@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 
 namespace WorkFlowManagement
 {
     public partial class LoginForm : Form
     {
+        DatabaseManager objDatabaseManager = new DatabaseManager();
         CurrentUser objCurrentUser;
         public LoginForm()
         {
@@ -28,54 +28,21 @@ namespace WorkFlowManagement
             RegisterForm formRegister = new RegisterForm();
             formRegister.ShowDialog();
         }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-          
-                
-        
-
+             
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string UserType="";
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433"; 
-            builder.UserID = "OCOTOD";            
-            builder.Password = "FairBanks152";     
-            builder.InitialCatalog = "WorkFlowDatabase";
-           SqlConnection con = new SqlConnection(builder.ConnectionString);
 
-            string str="SELECT UserType,Password "+ "FROM  [dbo].[UsersTable]"+
-                        "WHERE UserName = '" + txtUsername.Text+ "'";
-            Boolean success_flag = false;
-            con.Open();
-            SqlCommand com = new SqlCommand(str, con);
 
-            SqlDataReader reader = com.ExecuteReader();
+            string UserType = objDatabaseManager.LoginFromDb(txtUsername?.Text, txtPassword?.Text);
 
-            while (reader.Read())
-            {
-                
-                UserType=reader[0].ToString();
-                string dbPassword = reader[1].ToString();
-                Password objPassword = new Password();
-               
-                if(UserType != "" && objPassword.verifyPasswordMatch(dbPassword, txtPassword.Text))
-                    success_flag = true;
-            }
-            
-            if(!success_flag)
+            if (UserType == null)
             {
                 txtUsername.Text = "";
                 txtPassword.Text = "";
-                success_flag = false;
                 MessageBox.Show("Incorrect Username or Password! \n Please try again.");
             }
 
-            if (success_flag)
+            if (UserType != null)
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
                 objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
@@ -83,11 +50,6 @@ namespace WorkFlowManagement
 
                 HomePage formHomePage = new HomePage(objCurrentUser);
                 formHomePage.ShowDialog();
-
-                if (UserType == "Administrator" || UserType == "Stockiest" ){
-                    //StockForm formStock = new StockForm();
-                    //formStock.ShowDialog();
-                 }
             }
         }
     }

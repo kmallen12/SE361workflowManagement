@@ -479,6 +479,61 @@ namespace WorkFlowManagement
 
         }
 
+        public string LoginFromDb(string UserName, string enteredPassword)
+        {
+            string UserType = null;
+            try
+            {
+                UserType = String.Empty;
+
+                _conn.Close();
+                _conn.Open();
+
+                string str = "SELECT UserType,Password " + "FROM  [dbo].[UsersTable]" +
+                           "WHERE UserName = @Username";
+
+                using (SqlCommand com = new SqlCommand(str, _conn))
+                {
+                    com.Connection = _conn;
+
+
+                    if (!string.IsNullOrEmpty(UserName))
+                    {
+                        com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = UserName;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = DBNull.Value;
+
+                    }
+
+                    SqlDataReader reader = com.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+                        string dbPassword = reader[1]?.ToString();
+                        Password objPassword = new Password();
+
+                        if (UserType != null && objPassword.verifyPasswordMatch(dbPassword, enteredPassword))
+                            UserType = reader[0]?.ToString();
+
+                    }
+                }
+                _conn.Close();
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                UserType = null;
+            }
+
+
+            return UserType;
+        }
+
 
         //below is the primary formatting of functions withtin this Database class
         // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
