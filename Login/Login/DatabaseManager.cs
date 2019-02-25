@@ -416,27 +416,42 @@ namespace WorkFlowManagement
             return UserType;
         }
 
+        public DataTable StockReportMax()
+        {
+            _conn.Close();
+            _conn.Open();
 
-        //below is the primary formatting of functions withtin this Database class
-        // think of it as an example. if u used it in other classes you'd scall it by: DatabaseManager.insertmaterial()
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
-        // public static void insertmaterial()
-        //{
-        //    try
-        //    {
-        //        conn.Open();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        return;
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //    MessageBox.Show("connected to db through database manager");
-        //    return;
-        //}
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            _conn.Close();
+
+            return dtRecord;
+        }
+
+        public DataTable StockReportLow()
+        {
+            _conn.Close();
+            _conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            _conn.Close();
+
+            return dtRecord;
+        }
+
     }
 }
