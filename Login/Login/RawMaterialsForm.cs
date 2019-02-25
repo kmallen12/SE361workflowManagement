@@ -14,9 +14,11 @@ namespace WorkFlowManagement
     {
         private RawMaterials objRawMat;
         private List<RawMaterials> rawMaterials;
+        private List<RawMaterials> addedRawMaterials;
+        private List<RawMaterials> deletedRawMaterials;
 
         DatabaseManager objDatabaseManager;
-        DatabaseManager q = new DatabaseManager();
+
         //declare connection string to Azure database
         const string connectionString = @"Data Source=workflowdatabase.database.windows.net;Initial Catalog=WorkFlowDatabase;User ID=OCOTOD;Password=********;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -25,6 +27,8 @@ namespace WorkFlowManagement
             InitializeComponent();
 
             rawMaterials = new List<RawMaterials>();
+            addedRawMaterials = new List<RawMaterials>();
+            deletedRawMaterials = new List<RawMaterials>();
 
             //create an instance of DatabaseManager
             objDatabaseManager = new DatabaseManager();
@@ -42,12 +46,13 @@ namespace WorkFlowManagement
                 string materialName = txtRawMaterialName.Text;
 
                 objRawMat = new RawMaterials(materialName);
-                rawMaterials.Add(objRawMat);
+                addedRawMaterials.Add(objRawMat);
 
                 MessageBox.Show("Material " + materialName + " was added to the list.");
 
                 lstRawMaterials.Items.Clear();
                 lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
+                lstRawMaterials.Items.AddRange(addedRawMaterials.ToArray());
             }
             catch (Exception err)
             {
@@ -59,6 +64,7 @@ namespace WorkFlowManagement
         private void btnCloseRawMaterial_Click(object sender, EventArgs e)
         {
             Hide();
+
         }
 
         private void lstRawMaterials_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,21 +78,29 @@ namespace WorkFlowManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //remove item
+            //save material name to a string to use in the message to user
             string materialName = objRawMat.material;
+            
+            //remove item from local list
             rawMaterials.Remove(objRawMat);
+            addedRawMaterials.Remove(objRawMat);
 
-            //message to user
-            MessageBox.Show("Material " + materialName + " was removed from the list.");
+            //add deleted object to the deleted list - this will later be used to remove these from the database
+            deletedRawMaterials.Add(objRawMat);
 
             //refresh list display
             lstRawMaterials.Items.Clear();
             lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
+            lstRawMaterials.Items.AddRange(addedRawMaterials.ToArray());
+
+            //message to user
+            MessageBox.Show("Material " + materialName + " was removed from the list.");
         }
 
         private void btnSaveRMtoDB_Click(object sender, EventArgs e)
         {
-            q.InsertToRMTable(rawMaterials);
+            objDatabaseManager.InsertToRMTable(addedRawMaterials);
+            objDatabaseManager.DeleteFromRMTable(deletedRawMaterials);
 
             MessageBox.Show("List saved to the database.");
         }
@@ -96,6 +110,10 @@ namespace WorkFlowManagement
             rawMaterials = objDatabaseManager.LoadRawMat();
 
             MessageBox.Show("List loaded from the database.");
+
+            //refresh list display
+            lstRawMaterials.Items.Clear();
+            lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
         }
     }
 }

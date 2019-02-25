@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorkFlowManagement
 {
-    class Stock
+    public class Stock
     {
         public string materialType { get; set; }
         public double quantity { get; set; }
@@ -14,6 +14,7 @@ namespace WorkFlowManagement
         public double defects { get; set; }
         public DateTime dateAcquired { get; set; }
         public DateTime dateUsed { get; set; }
+        public int id { get; set; }
         
         public Stock()
         {

@@ -185,17 +185,18 @@
             // 
             // txt_materialType
             // 
+            this.txt_materialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_materialType.FormattingEnabled = true;
             this.txt_materialType.Location = new System.Drawing.Point(272, 49);
-            this.txt_materialType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_materialType.Margin = new System.Windows.Forms.Padding(2);
             this.txt_materialType.Name = "txt_materialType";
             this.txt_materialType.Size = new System.Drawing.Size(176, 21);
-            this.txt_materialType.TabIndex = 16;
+            this.txt_materialType.TabIndex = 1;
             // 
             // btnCustomizeMaterials
             // 
             this.btnCustomizeMaterials.Location = new System.Drawing.Point(472, 48);
-            this.btnCustomizeMaterials.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomizeMaterials.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomizeMaterials.Name = "btnCustomizeMaterials";
             this.btnCustomizeMaterials.Size = new System.Drawing.Size(91, 22);
             this.btnCustomizeMaterials.TabIndex = 17;

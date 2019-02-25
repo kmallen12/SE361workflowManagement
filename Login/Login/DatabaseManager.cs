@@ -55,8 +55,6 @@ namespace WorkFlowManagement
             return false;
         }
 
-
-
         private Boolean isValidQuantity(string quantity)
         {
             try
@@ -81,15 +79,11 @@ namespace WorkFlowManagement
                 string str = "INSERT INTO [dbo].[RawMaterialsTable] ([rawMaterial]) Values (@rMaterial)";
 
                 //feed Raw Materials list to the sqlCommand
-               
-                
-                    
                 foreach (var rawMat in rawMaterials)
                 {
                     SqlCommand com = new SqlCommand(str, _conn);
                     com.Connection = _conn;
                     com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
-                        
          
                     com.ExecuteNonQuery();
                 }
@@ -98,6 +92,38 @@ namespace WorkFlowManagement
             catch (Exception)
             {
                 MessageBox.Show("Error adding raw materials to the database.");
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            _conn.Close();
+        }
+
+        //Delete data from the Raw Materials table in the database
+        public void DeleteFromRMTable(List<RawMaterials> rawMaterials)
+        {
+            try
+            {
+                _conn.Open();
+
+                //SQL Command to delete data from the Raw Materials Table
+                string str = "DELETE FROM [dbo].[RawMaterialsTable] WHERE ([rawMaterial]) = (@rMaterial)";
+
+                //feed Raw Materials list to the sqlCommand
+                foreach (var rawMat in rawMaterials)
+                {
+                    SqlCommand com = new SqlCommand(str, _conn);
+                    com.Connection = _conn;
+                    com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
+
+                    com.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error deleting raw materials from the database.");
             }
             finally
             {
@@ -141,6 +167,8 @@ namespace WorkFlowManagement
 
             return rawMaterials;
         }
+
+        //update max/min information for the warehouse
         public void UpdateWareHouse(string ID, string max, string low)
         {
             _conn.Open();
@@ -166,6 +194,8 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
+
+        //insert new stock into the Stock Table
         public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
             _conn.Open();
@@ -226,6 +256,94 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
+
+        //load data from the Stocks Table into a list
+        public List<Stock> LoadStocks()
+        {
+            List<Stock> stocks = new List<Stock>();
+
+            try
+            {
+                Stock tempStock;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [dbo].[StockTable]", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = (int)reader["itemID"];
+                    string matName = (string)reader["materialType"];
+                    decimal quan = (decimal)reader["quantity"];
+                    double quantity = (double) quan;
+
+                    double unitCost, amtDefected;
+                    DateTime dateAcq, dateUsed;
+
+                    //handle null unit cost values in database
+                    if (!reader.IsDBNull(3))
+                    {
+                        decimal uCost = (decimal)reader["unitCost"];
+                        unitCost = (double)uCost;
+                    }
+                    else
+                    {
+                        unitCost = 0;
+                    }
+
+                    //handle null defects in database
+                    if (!reader.IsDBNull(7))
+                    {
+                        decimal defects = (decimal)reader["amtDefected"];
+                        amtDefected = (double)defects;
+                    }
+                    else
+                    {
+                        amtDefected = 0;
+                    }
+
+                    //handle null date acquired in database
+                    if (!reader.IsDBNull(5))
+                    {
+                        dateAcq = (DateTime)reader["dateAcquired"];
+                    }
+                    else
+                    {
+                        dateAcq = DateTime.MinValue;
+                    }
+
+                    //handle null date used in database
+                    if (!reader.IsDBNull(6))
+                    {
+                        dateUsed = (DateTime)reader["dateUsed"];
+                    }
+                    else
+                    {
+                        dateUsed = DateTime.MinValue;
+                    }
+
+                    tempStock = new Stock(matName, quantity, unitCost, amtDefected, dateAcq, dateUsed);
+                    tempStock.id = id;
+                    stocks.Add(tempStock);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return stocks;
+        }
+
+        //update stock in the Stock Table
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
             _conn.Open();
@@ -288,7 +406,7 @@ namespace WorkFlowManagement
             _conn.Close();
         }
 
-
+        //insert new user into the Users Table
         public void InsertUser(string FirstName, string LastName, string UserType, string Email, string UserName, string Password)
         {
             _conn.Close();
