@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +49,8 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.wareHouseTableTableAdapter1 = new Login.WorkFlowDatabaseDataSetTableAdapters.WareHouseTableTableAdapter();
             this.label10 = new System.Windows.Forms.Label();
+            this.lblCriteriaMet = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +139,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(100, 413);
+            this.label9.Location = new System.Drawing.Point(100, 432);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 18);
             this.label9.TabIndex = 8;
@@ -198,7 +201,7 @@
             // 
             // txtVerifyPassword
             // 
-            this.txtVerifyPassword.Location = new System.Drawing.Point(271, 414);
+            this.txtVerifyPassword.Location = new System.Drawing.Point(271, 433);
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.PasswordChar = '*';
             this.txtVerifyPassword.Size = new System.Drawing.Size(235, 20);
@@ -233,17 +236,37 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(523, 324);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(191, 78);
+            this.label10.Size = new System.Drawing.Size(201, 78);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Passwords must be 8 Characters Long \r\nAnd meet 3 of the four conditions: \r\n- Cont" +
-    "ain one UpperCase Letter\r\n- Conatin one LowerCase Letter\r\n- Contain one Number\r\n" +
-    "- Contain one Symbol (./,!#$& etc..)\r\n";
+            this.label10.Text = resources.GetString("label10.Text");
+            // 
+            // lblCriteriaMet
+            // 
+            this.lblCriteriaMet.AutoSize = true;
+            this.lblCriteriaMet.Location = new System.Drawing.Point(421, 409);
+            this.lblCriteriaMet.Name = "lblCriteriaMet";
+            this.lblCriteriaMet.Size = new System.Drawing.Size(69, 13);
+            this.lblCriteriaMet.TabIndex = 19;
+            this.lblCriteriaMet.Text = "meets criteria";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(412, 394);
+            this.label12.Margin = new System.Windows.Forms.Padding(0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 20);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "|";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 506);
+            this.Controls.Add(this.lblCriteriaMet);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnRegister);
@@ -263,6 +286,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label12);
             this.Name = "RegisterForm";
             this.Text = "Create Account";
             this.ResumeLayout(false);
@@ -292,6 +316,8 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private Login.WorkFlowDatabaseDataSetTableAdapters.WareHouseTableTableAdapter wareHouseTableTableAdapter1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCriteriaMet;
+        private System.Windows.Forms.Label label12;
     }
 }
 
