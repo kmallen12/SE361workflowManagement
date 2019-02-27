@@ -37,11 +37,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnReportsView = new System.Windows.Forms.Button();
             this.btnProductUpdateStatus = new System.Windows.Forms.Button();
             this.btnProductQuality = new System.Windows.Forms.Button();
-            this.pnlReports = new System.Windows.Forms.Panel();
-            this.btnReportGenerate = new System.Windows.Forms.Button();
             this.btnProductsView = new System.Windows.Forms.Button();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.btnStockUpdate = new System.Windows.Forms.Button();
@@ -53,7 +50,7 @@
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.tabHome = new System.Windows.Forms.TabControl();
             this.lblUserType = new System.Windows.Forms.Label();
-            this.pnlReports.SuspendLayout();
+            this.lblProductDash = new System.Windows.Forms.Label();
             this.pnlProducts.SuspendLayout();
             this.pnlStock.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -150,61 +147,32 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnReportsView
-            // 
-            this.btnReportsView.Location = new System.Drawing.Point(13, 69);
-            this.btnReportsView.Name = "btnReportsView";
-            this.btnReportsView.Size = new System.Drawing.Size(130, 32);
-            this.btnReportsView.TabIndex = 0;
-            this.btnReportsView.Text = "View Reports";
-            this.btnReportsView.UseVisualStyleBackColor = true;
-            // 
             // btnProductUpdateStatus
             // 
-            this.btnProductUpdateStatus.Location = new System.Drawing.Point(13, 120);
+            this.btnProductUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductUpdateStatus.Location = new System.Drawing.Point(13, 205);
             this.btnProductUpdateStatus.Name = "btnProductUpdateStatus";
-            this.btnProductUpdateStatus.Size = new System.Drawing.Size(130, 32);
+            this.btnProductUpdateStatus.Size = new System.Drawing.Size(174, 60);
             this.btnProductUpdateStatus.TabIndex = 2;
             this.btnProductUpdateStatus.Text = "Update Product Status";
             this.btnProductUpdateStatus.UseVisualStyleBackColor = true;
             // 
             // btnProductQuality
             // 
-            this.btnProductQuality.Location = new System.Drawing.Point(13, 69);
+            this.btnProductQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductQuality.Location = new System.Drawing.Point(13, 135);
             this.btnProductQuality.Name = "btnProductQuality";
-            this.btnProductQuality.Size = new System.Drawing.Size(130, 32);
+            this.btnProductQuality.Size = new System.Drawing.Size(174, 52);
             this.btnProductQuality.TabIndex = 1;
             this.btnProductQuality.Text = "Check Product Quality";
             this.btnProductQuality.UseVisualStyleBackColor = true;
             // 
-            // pnlReports
-            // 
-            this.pnlReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlReports.BackColor = System.Drawing.Color.White;
-            this.pnlReports.Controls.Add(this.btnReportGenerate);
-            this.pnlReports.Controls.Add(this.btnReportsView);
-            this.pnlReports.Location = new System.Drawing.Point(6, 86);
-            this.pnlReports.Name = "pnlReports";
-            this.pnlReports.Size = new System.Drawing.Size(788, 355);
-            this.pnlReports.TabIndex = 11;
-            this.pnlReports.Visible = false;
-            // 
-            // btnReportGenerate
-            // 
-            this.btnReportGenerate.Location = new System.Drawing.Point(13, 16);
-            this.btnReportGenerate.Name = "btnReportGenerate";
-            this.btnReportGenerate.Size = new System.Drawing.Size(130, 32);
-            this.btnReportGenerate.TabIndex = 1;
-            this.btnReportGenerate.Text = "Generate Report";
-            this.btnReportGenerate.UseVisualStyleBackColor = true;
-            // 
             // btnProductsView
             // 
-            this.btnProductsView.Location = new System.Drawing.Point(13, 16);
+            this.btnProductsView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductsView.Location = new System.Drawing.Point(13, 60);
             this.btnProductsView.Name = "btnProductsView";
-            this.btnProductsView.Size = new System.Drawing.Size(130, 32);
+            this.btnProductsView.Size = new System.Drawing.Size(174, 58);
             this.btnProductsView.TabIndex = 0;
             this.btnProductsView.Text = "View Products";
             this.btnProductsView.UseVisualStyleBackColor = true;
@@ -215,10 +183,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProducts.BackColor = System.Drawing.Color.White;
+            this.pnlProducts.Controls.Add(this.lblProductDash);
             this.pnlProducts.Controls.Add(this.btnProductUpdateStatus);
             this.pnlProducts.Controls.Add(this.btnProductQuality);
             this.pnlProducts.Controls.Add(this.btnProductsView);
-            this.pnlProducts.Location = new System.Drawing.Point(6, 86);
+            this.pnlProducts.Location = new System.Drawing.Point(6, 83);
             this.pnlProducts.Name = "pnlProducts";
             this.pnlProducts.Size = new System.Drawing.Size(788, 355);
             this.pnlProducts.TabIndex = 10;
@@ -267,7 +236,7 @@
             this.pnlStock.Controls.Add(this.btnStockUpdate);
             this.pnlStock.Controls.Add(this.btnStockGenerateReport);
             this.pnlStock.Controls.Add(this.btnStockMaterials);
-            this.pnlStock.Location = new System.Drawing.Point(6, 86);
+            this.pnlStock.Location = new System.Drawing.Point(6, 83);
             this.pnlStock.Name = "pnlStock";
             this.pnlStock.Size = new System.Drawing.Size(788, 355);
             this.pnlStock.TabIndex = 9;
@@ -276,7 +245,7 @@
             // 
             this.lblstockHmPg.AutoSize = true;
             this.lblstockHmPg.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstockHmPg.Location = new System.Drawing.Point(8, 14);
+            this.lblstockHmPg.Location = new System.Drawing.Point(8, 28);
             this.lblstockHmPg.Name = "lblstockHmPg";
             this.lblstockHmPg.Size = new System.Drawing.Size(254, 29);
             this.lblstockHmPg.TabIndex = 4;
@@ -290,7 +259,7 @@
             this.tabStock.Controls.Add(this.button3);
             this.tabStock.Controls.Add(this.button4);
             this.tabStock.Controls.Add(this.button5);
-            this.tabStock.Location = new System.Drawing.Point(4, 22);
+            this.tabStock.Location = new System.Drawing.Point(4, 25);
             this.tabStock.Name = "tabStock";
             this.tabStock.Padding = new System.Windows.Forms.Padding(3);
             this.tabStock.Size = new System.Drawing.Size(780, 0);
@@ -304,7 +273,7 @@
             this.tabProducts.Controls.Add(this.button6);
             this.tabProducts.Controls.Add(this.button7);
             this.tabProducts.Controls.Add(this.button8);
-            this.tabProducts.Location = new System.Drawing.Point(4, 22);
+            this.tabProducts.Location = new System.Drawing.Point(4, 25);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
             this.tabProducts.Size = new System.Drawing.Size(780, 0);
@@ -318,6 +287,7 @@
             this.tabHome.Controls.Add(this.tabStock);
             this.tabHome.Controls.Add(this.tabProducts);
             this.tabHome.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tabHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabHome.Location = new System.Drawing.Point(6, 65);
             this.tabHome.Name = "tabHome";
             this.tabHome.SelectedIndex = 0;
@@ -339,6 +309,16 @@
             this.lblUserType.Text = "UserType";
             this.lblUserType.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // lblProductDash
+            // 
+            this.lblProductDash.AutoSize = true;
+            this.lblProductDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDash.Location = new System.Drawing.Point(8, 17);
+            this.lblProductDash.Name = "lblProductDash";
+            this.lblProductDash.Size = new System.Drawing.Size(346, 29);
+            this.lblProductDash.TabIndex = 5;
+            this.lblProductDash.Text = "Product Manager Dashboard";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,13 +331,12 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.tabHome);
             this.Controls.Add(this.pnlStock);
-            this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlProducts);
             this.Name = "HomePage";
             this.Text = "OCOTOD | Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.pnlReports.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);
+            this.pnlProducts.PerformLayout();
             this.pnlStock.ResumeLayout(false);
             this.pnlStock.PerformLayout();
             this.tabStock.ResumeLayout(false);
@@ -378,10 +357,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button btnReportsView;
         private System.Windows.Forms.Button btnProductUpdateStatus;
         private System.Windows.Forms.Button btnProductQuality;
-        private System.Windows.Forms.Panel pnlReports;
         private System.Windows.Forms.Button btnProductsView;
         private System.Windows.Forms.Panel pnlProducts;
         private System.Windows.Forms.Button btnStockUpdate;
@@ -391,8 +368,8 @@
         private System.Windows.Forms.TabPage tabStock;
         private System.Windows.Forms.TabPage tabProducts;
         private System.Windows.Forms.TabControl tabHome;
-        private System.Windows.Forms.Button btnReportGenerate;
         private System.Windows.Forms.Label lblUserType;
         private System.Windows.Forms.Label lblstockHmPg;
+        private System.Windows.Forms.Label lblProductDash;
     }
 }

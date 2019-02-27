@@ -47,13 +47,12 @@ namespace WorkFlowManagement
             if (tabHome.SelectedTab == tabHome.TabPages["tabStock"])
             {
                 pnlStock.Visible = true;
-                pnlProducts.Visible = false;      
+                pnlProducts.Visible = false;
             }
-            else if (tabHome.SelectedTab == tabHome.TabPages["tabProducts"])
+            if (tabHome.SelectedTab == tabHome.TabPages["tabProducts"])
             {
                 pnlStock.Visible = false;
                 pnlProducts.Visible = true;
-                pnlReports.Visible = false;
             }
             
         }
@@ -90,6 +89,5 @@ namespace WorkFlowManagement
             StockReportForm formReport = new StockReportForm();
             formReport.ShowDialog();
         }
-
     }
 }
