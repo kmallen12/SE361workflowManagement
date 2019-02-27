@@ -16,7 +16,7 @@ namespace WorkFlowManagement
         /// AUTHOR: Cowen Shears
         /// DATE: 2/25/19
         /// DESCRIPTION: Homepage for application. Knows who the user is.
-        /// Future - want to only display buttons/links for those pertinent to the user's type.
+        /// EDITED BY: Mary Hermann 2/27/19
 
         CurrentUser objCurrentUser;
         public HomePage() 
