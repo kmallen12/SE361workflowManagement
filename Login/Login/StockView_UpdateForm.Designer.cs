@@ -1,6 +1,6 @@
-﻿namespace WorkflowManagement
+﻿namespace WorkFlowManagement
 {
-    partial class UpdateStock
+    partial class UpdateStockForm
     {
         /// <summary>
         /// Required designer variable.
@@ -52,6 +52,7 @@
             this.amtDefectedGrid_box = new System.Windows.Forms.TextBox();
             this.Enter_ID_lbl = new System.Windows.Forms.Label();
             this.ConfirmGrid_btn = new System.Windows.Forms.Button();
+            this.btnLoadStockFromDB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
@@ -156,7 +157,6 @@
             this.ItemIDGrid_box.Name = "ItemIDGrid_box";
             this.ItemIDGrid_box.Size = new System.Drawing.Size(95, 20);
             this.ItemIDGrid_box.TabIndex = 2;
-           
             // 
             // materialTypeGrid_box
             // 
@@ -164,7 +164,6 @@
             this.materialTypeGrid_box.Name = "materialTypeGrid_box";
             this.materialTypeGrid_box.Size = new System.Drawing.Size(95, 20);
             this.materialTypeGrid_box.TabIndex = 3;
-            
             // 
             // quantityGrid_box
             // 
@@ -172,7 +171,6 @@
             this.quantityGrid_box.Name = "quantityGrid_box";
             this.quantityGrid_box.Size = new System.Drawing.Size(95, 20);
             this.quantityGrid_box.TabIndex = 4;
-            
             // 
             // unitCostGrid_box
             // 
@@ -180,7 +178,6 @@
             this.unitCostGrid_box.Name = "unitCostGrid_box";
             this.unitCostGrid_box.Size = new System.Drawing.Size(95, 20);
             this.unitCostGrid_box.TabIndex = 5;
-            
             // 
             // totalCostGrid_box
             // 
@@ -188,7 +185,6 @@
             this.totalCostGrid_box.Name = "totalCostGrid_box";
             this.totalCostGrid_box.Size = new System.Drawing.Size(95, 20);
             this.totalCostGrid_box.TabIndex = 6;
-            
             // 
             // dateAcquiredGrid_box
             // 
@@ -196,7 +192,6 @@
             this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
             this.dateAcquiredGrid_box.Size = new System.Drawing.Size(95, 20);
             this.dateAcquiredGrid_box.TabIndex = 7;
-        
             // 
             // dateUsedGrid_box
             // 
@@ -204,7 +199,6 @@
             this.dateUsedGrid_box.Name = "dateUsedGrid_box";
             this.dateUsedGrid_box.Size = new System.Drawing.Size(95, 20);
             this.dateUsedGrid_box.TabIndex = 8;
-            
             // 
             // amtDefectedGrid_box
             // 
@@ -212,7 +206,6 @@
             this.amtDefectedGrid_box.Name = "amtDefectedGrid_box";
             this.amtDefectedGrid_box.Size = new System.Drawing.Size(95, 20);
             this.amtDefectedGrid_box.TabIndex = 9;
-            
             // 
             // Enter_ID_lbl
             // 
@@ -223,24 +216,35 @@
             this.Enter_ID_lbl.Size = new System.Drawing.Size(488, 18);
             this.Enter_ID_lbl.TabIndex = 10;
             this.Enter_ID_lbl.Text = "Enter ID and Desired Changes or Omit ID to Add a New Material";
-         
             // 
             // ConfirmGrid_btn
             // 
             this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmGrid_btn.Location = new System.Drawing.Point(522, 470);
             this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
-            this.ConfirmGrid_btn.Size = new System.Drawing.Size(298, 52);
+            this.ConfirmGrid_btn.Size = new System.Drawing.Size(297, 52);
             this.ConfirmGrid_btn.TabIndex = 11;
-            this.ConfirmGrid_btn.Text = "Confirm";
+            this.ConfirmGrid_btn.Text = "Add/Update and Save to Database";
             this.ConfirmGrid_btn.UseVisualStyleBackColor = true;
             this.ConfirmGrid_btn.Click += new System.EventHandler(this.ConfirmGrid_btn_Click);
+            // 
+            // btnLoadStockFromDB
+            // 
+            this.btnLoadStockFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadStockFromDB.Location = new System.Drawing.Point(290, 26);
+            this.btnLoadStockFromDB.Name = "btnLoadStockFromDB";
+            this.btnLoadStockFromDB.Size = new System.Drawing.Size(213, 52);
+            this.btnLoadStockFromDB.TabIndex = 13;
+            this.btnLoadStockFromDB.Text = "Load from Database";
+            this.btnLoadStockFromDB.UseVisualStyleBackColor = true;
+            this.btnLoadStockFromDB.Click += new System.EventHandler(this.btnLoadStockFromDB_Click);
             // 
             // UpdateStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 534);
+            this.Controls.Add(this.btnLoadStockFromDB);
             this.Controls.Add(this.ConfirmGrid_btn);
             this.Controls.Add(this.Enter_ID_lbl);
             this.Controls.Add(this.amtDefectedGrid_box);
@@ -290,5 +294,6 @@
         private System.Windows.Forms.TextBox amtDefectedGrid_box;
         private System.Windows.Forms.Label Enter_ID_lbl;
         private System.Windows.Forms.Button ConfirmGrid_btn;
+        private System.Windows.Forms.Button btnLoadStockFromDB;
     }
 }

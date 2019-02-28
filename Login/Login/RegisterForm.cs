@@ -1,27 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace WorkflowManagement 
+namespace WorkFlowManagement 
 {
     public partial class RegisterForm : Form
     {
+        DatabaseManager q = new DatabaseManager();
+        Password objPassword = new Password();
         public RegisterForm()
         {
             InitializeComponent();      
             this.AcceptButton = btnRegister;
-        }
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private Boolean isValidEmail(string email)
@@ -30,30 +20,17 @@ namespace WorkflowManagement
             {
                 var addr = new System.Net.Mail.MailAddress(email);
                 return true;
-            } catch
-            {
+            } catch {
                 return false;
             }
         }
 
-        private Boolean isValidPassword(string p)
-        {
-            if (p.Length < 5)
-                return false;
-
-            if (p.Contains(",") || p.Contains("'") || p.Contains('"') || p.Contains(".") || p.Contains(";"))
-                return false;
-
-            return true;
-        }
-
         private Boolean CheckValidUser()
         {
-            if (!isValidPassword(txtPassword.Text))
+            
+            if (objPassword.DeterminePasswordStrength(txtPassword.Text) < 0)
             {
-                MessageBox.Show("Password must be at least 5 characters and can not include , \' \" . ; ");
-                txtPassword.Text = "";
-                txtVerifyPassword.Text = "";
+                MessageBox.Show("Password is not Strong enough!");
                 return false;
             }
 
@@ -77,42 +54,35 @@ namespace WorkflowManagement
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433"; 
-                builder.UserID = "OCOTOD";            
-                builder.Password = "FairBanks152";     
-                builder.InitialCatalog = "WorkFlowDatabase";
-           SqlConnection con = new SqlConnection(builder.ConnectionString);
-
-            string str;
             Boolean success_flag=true;
 
             if (CheckValidUser())
             {
-               str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES ('" + txtFirstName.Text + "','" + txtLastName.Text + "','" + cboxUserType.Text + "','" + txtEmail.Text + "','" + txtUsername.Text + "','" + txtPassword.Text + "')";
+                try
+                {
+                    
+                    string encrptedPassword = objPassword.encryptPassword(txtPassword.Text);
+                    q.InsertUser(txtFirstName.Text, txtLastName.Text, cboxUserType.Text, 
+                        txtEmail.Text, txtUsername.Text, encrptedPassword);
+                }
+                catch (SqlException EX)
+                {
+                    if (EX.Number == 2627)
+                    {
+                        MessageBox.Show("That Username is already taken. Sorry! Try again.");
+                        txtUsername.Text = "";
+                        txtPassword.Text = "";
+                        txtVerifyPassword.Text = "";
+                        success_flag = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: " + EX);
+                    }
+                }
+                
             }
             else return;
-            
-            con.Open();
-            SqlCommand com = new SqlCommand(str, con);
-            try
-            {
-                com.ExecuteNonQuery();
-            }
-            catch(SqlException EX)
-            {
-                if(EX.Number == 2627)
-                {
-                    MessageBox.Show("That Username is already taken. Sorry! Try again.");
-                    txtUsername.Text = "";
-                    txtPassword.Text = "";
-                    txtVerifyPassword.Text = "";
-                    success_flag = false;
-                }
-            }
-
-           
-            con.Close();
 
             if (success_flag)
             {
@@ -122,5 +92,24 @@ namespace WorkflowManagement
                 formLogin.ShowDialog();
             }
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+           
+            int passStrength = objPassword.DeterminePasswordStrength(txtPassword.Text)+64;
+
+            if (passStrength-64 < progressBar1.Minimum)
+            {
+                progressBar1.Value =  passStrength/ 8;
+            }
+            else if(passStrength > progressBar1.Maximum)
+            {
+                progressBar1.Value = progressBar1.Maximum;
+            }
+            else  {
+                progressBar1.Value = passStrength;
+            }
+        }
+      
     }
 }

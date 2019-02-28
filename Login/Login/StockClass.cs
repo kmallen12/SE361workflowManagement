@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
-    class Stock
+    /// LAST EDITED BY: Kristen 
+    /// DATE: 2/24/2019
+    /// DESCRIPTION: Class to manage Stock. It calculates idle time (time in storage before being used). 
+    /// It calculates the defect rate.
+    public class Stock
     {
         public string materialType { get; set; }
         public double quantity { get; set; }
@@ -14,6 +18,7 @@ namespace WorkflowManagement
         public double defects { get; set; }
         public DateTime dateAcquired { get; set; }
         public DateTime dateUsed { get; set; }
+        public int id { get; set; }
         
         public Stock()
         {

@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     public partial class LoginForm : Form
     {
+        DatabaseManager objDatabaseManager = new DatabaseManager();
+        CurrentUser objCurrentUser;
         public LoginForm()
         {
             InitializeComponent();
@@ -27,63 +28,30 @@ namespace WorkflowManagement
             RegisterForm formRegister = new RegisterForm();
             formRegister.ShowDialog();
         }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-          
-                
-        
-
+             
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string UserType="";
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "tcp:workflowdatabase.database.windows.net,1433"; 
-            builder.UserID = "OCOTOD";            
-            builder.Password = "FairBanks152";     
-            builder.InitialCatalog = "WorkFlowDatabase";
-           SqlConnection con = new SqlConnection(builder.ConnectionString);
 
-            string str="SELECT UserType "+ "FROM  [dbo].[UsersTable]"+
-                        "WHERE UserName = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
-            Boolean success_flag = false;
-            con.Open();
-            SqlCommand com = new SqlCommand(str, con);
 
-            SqlDataReader reader = com.ExecuteReader();
+            string UserType = objDatabaseManager.LoginFromDb(txtUsername?.Text, txtPassword?.Text);
 
-            while (reader.Read())
-            {
-                
-                UserType=reader[0].ToString();
-                if(UserType != "" )
-                    success_flag = true;
-            }
             
-            if(!success_flag)
+
+            if (String.IsNullOrEmpty(UserType))
             {
                 txtUsername.Text = "";
                 txtPassword.Text = "";
-                success_flag = false;
                 MessageBox.Show("Incorrect Username or Password! \n Please try again.");
             }
 
-            if (success_flag)
+            if (!String.IsNullOrEmpty(UserType))
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
-                CurrentUser objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
+                objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
                 this.Hide();
 
                 HomePage formHomePage = new HomePage(objCurrentUser);
                 formHomePage.ShowDialog();
-
-                if (UserType == "Administrator" || UserType == "Stockiest" ){
-                    StockForm formStock = new StockForm();
-                    formStock.ShowDialog();
-                 }
             }
         }
     }

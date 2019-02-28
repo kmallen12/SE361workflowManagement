@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     class CheckEntry
     {
@@ -38,6 +38,7 @@ namespace WorkflowManagement
             }
         }
 
+        //returns true if string variable is null
         public Boolean isNull()
         {
             if (text == "") { return true; }

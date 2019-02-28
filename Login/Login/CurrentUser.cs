@@ -4,36 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkflowManagement
+namespace WorkFlowManagement
 {
     public class CurrentUser
     {
-        /// AUTHOR: Cowen Shears
-        /// DATE: 2/15/19
+        /// AUTHOR: Cowen Shears and Troy
+        /// DATE: 2/27/19
         /// DESCRIPTION: Class to store basic details about the current user who is logged in. 
-        /// Currently holds two strings, Username and UserType.
+
+        //Automatic Properties
         public string Username { get; set; }
         public string UserType { get; set; }
-        public CurrentUser()
-        {
-            Username = ""; 
-            UserType = "";
-        }
-
+       
         public CurrentUser(string Username,string UserType)
         {
             this.Username = Username;
             this.UserType = UserType;
         }
 
-        public string GetUsername()
+        //Boolean Function To Return if a User can view certain windows/forms
+        public Boolean canView(Object Form)
         {
-            return Username;
+            if (UserType == "Administrator")
+                return true;
+
+            if (UserType == "Stockiest")
+            {
+                if(Form.GetType().ToString() == "WorkFlowManagement.StockReportForm"
+                    || Form.GetType().ToString() == "WorkFlowManagement.AddMaterialForm"
+                    || Form.GetType().ToString() == "WorkFlowManagement.UpdateStockForm")
+                    return true;
+
+            }
+                
+
+            return false;
         }
 
-        public string GetUserType()
-        {
-            return UserType;
-        }
     }
 }
