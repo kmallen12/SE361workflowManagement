@@ -35,14 +35,16 @@ namespace WorkFlowManagement
 
             string UserType = objDatabaseManager.LoginFromDb(txtUsername?.Text, txtPassword?.Text);
 
-            if (UserType == null)
+            
+
+            if (String.IsNullOrEmpty(UserType))
             {
                 txtUsername.Text = "";
                 txtPassword.Text = "";
                 MessageBox.Show("Incorrect Username or Password! \n Please try again.");
             }
 
-            if (UserType != null)
+            if (!String.IsNullOrEmpty(UserType))
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
                 objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
