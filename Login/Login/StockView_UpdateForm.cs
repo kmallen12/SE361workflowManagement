@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace WorkFlowManagement
 {
-    public partial class UpdateStock : Form
+    public partial class UpdateStockForm : Form
     {
         private DataTable stocks;
         DatabaseManager objDatabaseManager = new DatabaseManager();
 
-        public UpdateStock()
+        public UpdateStockForm()
         {
             InitializeComponent();
         }

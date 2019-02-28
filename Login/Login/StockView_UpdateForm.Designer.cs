@@ -1,6 +1,6 @@
 ﻿namespace WorkFlowManagement
 {
-    partial class UpdateStock
+    partial class UpdateStockForm
     {
         /// <summary>
         /// Required designer variable.
