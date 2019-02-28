@@ -75,19 +75,43 @@ namespace WorkFlowManagement
         private void btnStockMaterials_Click(object sender, EventArgs e)
         {
             AddMaterialForm formMaterial = new AddMaterialForm();
-            formMaterial.ShowDialog();
+            if (objCurrentUser.canView(formMaterial))
+            {
+                formMaterial.ShowDialog();
+            }
+            else
+            {
+                formMaterial.Dispose();
+                MessageBox.Show("You do not have access for the Stock Materials Form.");
+            }
         }
 
         private void btnStockUpdate_Click(object sender, EventArgs e)
         {
-            UpdateStock formStock = new UpdateStock();
-            formStock.ShowDialog();
+            UpdateStockForm formStock = new UpdateStockForm();
+            if (objCurrentUser.canView(formStock))
+            {
+                formStock.ShowDialog();
+            }
+            else
+            {
+                formStock.Dispose();
+                MessageBox.Show("You do not have access for the Stock View/Update Form.");
+            }
         }
 
         private void btnStockGenerateReport_Click(object sender, EventArgs e)
         {
             StockReportForm formReport = new StockReportForm();
-            formReport.ShowDialog();
+            if (objCurrentUser.canView(formReport))
+            {
+                formReport.ShowDialog();
+            }
+            else
+            {
+                formReport.Dispose();
+                MessageBox.Show("You do not have access for the Stock Report Form.");
+            }
         }
     }
 }
