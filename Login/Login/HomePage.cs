@@ -79,7 +79,6 @@ namespace WorkflowManagement
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            //Cowen - I commented these lines out so the Homepage doesn't get closed when the form is closed.
             base.OnFormClosing(e);    
             Application.Exit();
         }
