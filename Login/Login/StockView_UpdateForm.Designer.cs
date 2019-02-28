@@ -241,6 +241,7 @@
             // 
             // UpdateStock
             // 
+            this.Load += new System.EventHandler(this.UpdateStockForm_Load);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 534);
@@ -260,10 +261,7 @@
             this.Name = "UpdateStock";
             this.Text = "View and Update Stock Form";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.UpdateStock_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

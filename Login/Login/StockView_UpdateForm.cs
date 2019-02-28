@@ -16,15 +16,17 @@ namespace WorkFlowManagement
         private DataTable stocks;
         DatabaseManager objDatabaseManager = new DatabaseManager();
 
-        public UpdateStockForm()
-        {
-            InitializeComponent();
-        }
-        
-        private void UpdateStock_Load(object sender, EventArgs e)
+        public UpdateStockForm() => InitializeComponent();
+
+        private void UpdateStockForm_Load(object sender, EventArgs e)
         {
             // Uncomment the next line of code to view data right from Database (not recommended b/c doesn't follow 3-tier architecture).
             //this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
+            stocks = new DataTable();
+            stocks = objDatabaseManager.LoadStocks();
+
+            //use stock datatable as datasource for data grid
+            dataGridView1.DataSource = stocks;
         }
 
         private void btnLoadStockFromDB_Click(object sender, EventArgs e)
