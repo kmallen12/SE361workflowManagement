@@ -12,14 +12,15 @@ using System.IO;
 namespace WorkFlowManagement
 {
   
-    public partial class Product : Form
+    public partial class AddProduct : Form
     {
         DatabaseManager objDatabaseManager;
         DatabaseManager q = new DatabaseManager();
         private DataTable Partialstocks;
-        public Product()
+        public AddProduct()
         {
             InitializeComponent();
+            
         }
         string Materials;
         int ProductQuantity;
@@ -41,7 +42,7 @@ namespace WorkFlowManagement
 
    
 
-        private void txt_AddMaterialtoProduct_Click(object sender, EventArgs e)
+        private void btn_AddMaterialtoProduct_Click(object sender, EventArgs e)
         {
             Materials = txt_MaterialID.Text + " " + txt_MaterialQuantity.Text + " " + Materials;
             q.SubtractMaterial(Int32.Parse(txt_MaterialID.Text), Decimal.Parse(txt_MaterialQuantity.Text));
@@ -53,7 +54,23 @@ namespace WorkFlowManagement
             PartialStockGrid.DataSource = Partialstocks;
             Description_lbl.Text = Materials;
         }
-
+        public void SetTXTBoxs(string key, string quantity)
+        {
+            txt_ProductID.Text = key;
+            txt_ProductQuantity.Text = quantity;
+            txt_ProductName.Visible=false;
+            txt_MaterialQuantity.Visible = false;
+            txt_MaterialID.Visible = false;
+            lbl_MaterialAmount.Visible = false;
+            lbl_MaterialID.Visible = false;
+            lbl_CreateANewProduct.Visible = false;
+            btn_FinalizeProduct.Visible = false;
+            btn_AddMaterialtoProduct.Visible = false;
+            lbl_ProductName.Visible = false;
+            lbl_OrderMoreProduct.Visible = true;
+            lbl_ProductID.Visible = true;
+            btn_AdditionalProduct.Visible = true;
+        }
         private void btn_FinalizeProduct_Click(object sender, EventArgs e)
         {
             string[] list = Materials.Split(' ');
@@ -88,6 +105,11 @@ namespace WorkFlowManagement
                 MessageBox.Show(p.ToString());
             }
             q.InsertProduct(txt_ProductName.Text, Materials, Int32.Parse(txt_ProductQuantity.Text));
+
+        }
+
+        private void btn_AdditionalProduct_Click(object sender, EventArgs e)
+        {
 
         }
     }

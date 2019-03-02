@@ -76,11 +76,11 @@
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Password.cs" />
-    <Compile Include="Product.cs">
+    <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="RawMaterials.cs" />
     <Compile Include="RawMaterialsForm.cs">
@@ -123,10 +123,21 @@
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckEntryClass.cs" />
+    <Compile Include="ViewProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProducts.Designer.cs">
+      <DependentUpon>ViewProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlowDatabaseDataSetProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -134,8 +145,8 @@
     <EmbeddedResource Include="ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RawMaterialsForm.resx">
       <DependentUpon>RawMaterialsForm.cs</DependentUpon>
@@ -165,6 +176,9 @@
     <EmbeddedResource Include="StockView_UpdateForm.resx">
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewProducts.resx">
+      <DependentUpon>ViewProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
@@ -186,6 +200,17 @@
     </None>
     <None Include="WorkFlowDatabaseDataSet.xss">
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSetProducts.xsc">
+      <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSetProducts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkFlowDatabaseDataSetProducts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkFlowDatabaseDataSetProducts.xss">
+      <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

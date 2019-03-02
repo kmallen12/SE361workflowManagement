@@ -446,7 +446,72 @@ namespace WorkFlowManagement
 
             return stockTable;
         }
+        public DataTable LoadProducts()
+        {
+            DataTable ProductTable = new DataTable();
+            ProductTable.Columns.Add("pId", typeof(int));
+            ProductTable.Columns.Add("ProductName", typeof(string));
+            ProductTable.Columns.Add("materialsString", typeof(string));
+            ProductTable.Columns.Add("quantity", typeof(int));
 
+            try
+            {
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT pId, ProductName, materialsString, quantity FROM [dbo].[ProductTable]", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int pId = (int)reader["pId"];
+                    string ProductName = (string)reader["ProductName"];
+                    string materialsString = (string)reader["materialsString"];
+                    int quantity = (int)reader["quantity"];
+
+
+
+
+                    //handle null unit cost values in database
+
+
+                    //handle null defects in database
+
+
+                    ProductTable.Rows.Add(pId, ProductName, materialsString, quantity);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return ProductTable;
+        }
+        public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[ProductTable] SET ProductName=@ProductName, materialsString=@materialsString, quantity=@quantity WHERE pId=@pId";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
+                com.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName;
+                com.Parameters.Add("@materialsString", SqlDbType.Decimal).Value = materialsString;
+                com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
+               
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
 
         //update stock in the Stock Table
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)

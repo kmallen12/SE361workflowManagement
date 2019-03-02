@@ -44,6 +44,7 @@
             this.btnProductUpdateStatus = new System.Windows.Forms.Button();
             this.btnProductQuality = new System.Windows.Forms.Button();
             this.btnProductsView = new System.Windows.Forms.Button();
+            this.btn_AddProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -169,6 +170,7 @@
             // 
             // tabProducts
             // 
+            this.tabProducts.Controls.Add(this.btn_AddProduct);
             this.tabProducts.Controls.Add(this.btnReorderStck);
             this.tabProducts.Controls.Add(this.lblProductHomepg);
             this.tabProducts.Controls.Add(this.btnProductUpdateStatus);
@@ -234,6 +236,17 @@
             this.btnProductsView.UseVisualStyleBackColor = true;
             this.btnProductsView.Click += new System.EventHandler(this.btnProductsView_Click);
             // 
+            // btn_AddProduct
+            // 
+            this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddProduct.Location = new System.Drawing.Point(210, 55);
+            this.btn_AddProduct.Name = "btn_AddProduct";
+            this.btn_AddProduct.Size = new System.Drawing.Size(174, 58);
+            this.btn_AddProduct.TabIndex = 12;
+            this.btn_AddProduct.Text = "Add Product";
+            this.btn_AddProduct.UseVisualStyleBackColor = true;
+            this.btn_AddProduct.Click += new System.EventHandler(this.btn_AddProduct_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +289,6 @@
         private System.Windows.Forms.Button btnProductUpdateStatus;
         private System.Windows.Forms.Button btnProductQuality;
         private System.Windows.Forms.Button btnProductsView;
+        private System.Windows.Forms.Button btn_AddProduct;
     }
 }

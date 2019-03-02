@@ -91,7 +91,13 @@ namespace WorkFlowManagement
 
         private void btnProductsView_Click(object sender, EventArgs e)
         {
-            Product AddProduct = new Product();
+            ViewProducts btnViewProducts = new ViewProducts();
+            btnViewProducts.ShowDialog();
+        }
+
+        private void btn_AddProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct AddProduct = new AddProduct();
             AddProduct.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace WorkFlowManagement
 {
-    partial class Product
+    partial class AddProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -37,19 +37,23 @@
             this.bindingSourceStock = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataStock = new Login.WorkFlowDatabaseDataSet();
             this.stockTableTableAdapterPartial = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_CreateANewProduct = new System.Windows.Forms.Label();
             this.txt_ProductName = new System.Windows.Forms.TextBox();
             this.txt_ProductQuantity = new System.Windows.Forms.TextBox();
             this.txt_MaterialID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_ProductName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_AddMaterialtoProduct = new System.Windows.Forms.Button();
+            this.lbl_MaterialID = new System.Windows.Forms.Label();
+            this.btn_AddMaterialtoProduct = new System.Windows.Forms.Button();
             this.btn_FinalizeProduct = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_MaterialAmount = new System.Windows.Forms.Label();
             this.txt_MaterialQuantity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Description_lbl = new System.Windows.Forms.Label();
+            this.txt_ProductID = new System.Windows.Forms.TextBox();
+            this.lbl_ProductID = new System.Windows.Forms.Label();
+            this.lbl_OrderMoreProduct = new System.Windows.Forms.Label();
+            this.btn_AdditionalProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataStock)).BeginInit();
@@ -109,15 +113,15 @@
             // 
             this.stockTableTableAdapterPartial.ClearBeforeFill = true;
             // 
-            // label2
+            // lbl_CreateANewProduct
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Create A New Product\r\n";
+            this.lbl_CreateANewProduct.AutoSize = true;
+            this.lbl_CreateANewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CreateANewProduct.Location = new System.Drawing.Point(106, 9);
+            this.lbl_CreateANewProduct.Name = "lbl_CreateANewProduct";
+            this.lbl_CreateANewProduct.Size = new System.Drawing.Size(217, 24);
+            this.lbl_CreateANewProduct.TabIndex = 1;
+            this.lbl_CreateANewProduct.Text = "Create A New Product\r\n";
             // 
             // txt_ProductName
             // 
@@ -140,15 +144,15 @@
             this.txt_MaterialID.Size = new System.Drawing.Size(100, 20);
             this.txt_MaterialID.TabIndex = 4;
             // 
-            // label4
+            // lbl_ProductName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "ProductName";
+            this.lbl_ProductName.AutoSize = true;
+            this.lbl_ProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductName.Location = new System.Drawing.Point(59, 76);
+            this.lbl_ProductName.Name = "lbl_ProductName";
+            this.lbl_ProductName.Size = new System.Drawing.Size(117, 20);
+            this.lbl_ProductName.TabIndex = 6;
+            this.lbl_ProductName.Text = "ProductName";
             // 
             // label5
             // 
@@ -160,26 +164,26 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "ProductQuantity";
             // 
-            // label3
+            // lbl_MaterialID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "MaterialID";
+            this.lbl_MaterialID.AutoSize = true;
+            this.lbl_MaterialID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MaterialID.Location = new System.Drawing.Point(59, 204);
+            this.lbl_MaterialID.Name = "lbl_MaterialID";
+            this.lbl_MaterialID.Size = new System.Drawing.Size(92, 20);
+            this.lbl_MaterialID.TabIndex = 8;
+            this.lbl_MaterialID.Text = "MaterialID";
             // 
-            // txt_AddMaterialtoProduct
+            // btn_AddMaterialtoProduct
             // 
-            this.txt_AddMaterialtoProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_AddMaterialtoProduct.Location = new System.Drawing.Point(63, 308);
-            this.txt_AddMaterialtoProduct.Name = "txt_AddMaterialtoProduct";
-            this.txt_AddMaterialtoProduct.Size = new System.Drawing.Size(150, 50);
-            this.txt_AddMaterialtoProduct.TabIndex = 9;
-            this.txt_AddMaterialtoProduct.Text = "Add Material to Current Product";
-            this.txt_AddMaterialtoProduct.UseVisualStyleBackColor = true;
-            this.txt_AddMaterialtoProduct.Click += new System.EventHandler(this.txt_AddMaterialtoProduct_Click);
+            this.btn_AddMaterialtoProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddMaterialtoProduct.Location = new System.Drawing.Point(63, 308);
+            this.btn_AddMaterialtoProduct.Name = "btn_AddMaterialtoProduct";
+            this.btn_AddMaterialtoProduct.Size = new System.Drawing.Size(150, 50);
+            this.btn_AddMaterialtoProduct.TabIndex = 9;
+            this.btn_AddMaterialtoProduct.Text = "Add Material to Current Product";
+            this.btn_AddMaterialtoProduct.UseVisualStyleBackColor = true;
+            this.btn_AddMaterialtoProduct.Click += new System.EventHandler(this.btn_AddMaterialtoProduct_Click);
             // 
             // btn_FinalizeProduct
             // 
@@ -192,15 +196,15 @@
             this.btn_FinalizeProduct.UseVisualStyleBackColor = true;
             this.btn_FinalizeProduct.Click += new System.EventHandler(this.btn_FinalizeProduct_Click);
             // 
-            // label6
+            // lbl_MaterialAmount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 267);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "MaterialAmount";
+            this.lbl_MaterialAmount.AutoSize = true;
+            this.lbl_MaterialAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MaterialAmount.Location = new System.Drawing.Point(59, 267);
+            this.lbl_MaterialAmount.Name = "lbl_MaterialAmount";
+            this.lbl_MaterialAmount.Size = new System.Drawing.Size(135, 20);
+            this.lbl_MaterialAmount.TabIndex = 11;
+            this.lbl_MaterialAmount.Text = "MaterialAmount";
             // 
             // txt_MaterialQuantity
             // 
@@ -229,24 +233,70 @@
             this.Description_lbl.TabIndex = 14;
             this.Description_lbl.Text = "\r\n";
             // 
-            // Product
+            // txt_ProductID
+            // 
+            this.txt_ProductID.Location = new System.Drawing.Point(250, 104);
+            this.txt_ProductID.Name = "txt_ProductID";
+            this.txt_ProductID.Size = new System.Drawing.Size(100, 20);
+            this.txt_ProductID.TabIndex = 15;
+            this.txt_ProductID.WordWrap = false;
+            // 
+            // lbl_ProductID
+            // 
+            this.lbl_ProductID.AutoSize = true;
+            this.lbl_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductID.Location = new System.Drawing.Point(59, 104);
+            this.lbl_ProductID.Name = "lbl_ProductID";
+            this.lbl_ProductID.Size = new System.Drawing.Size(90, 20);
+            this.lbl_ProductID.TabIndex = 16;
+            this.lbl_ProductID.Text = "ProductID";
+            this.lbl_ProductID.Visible = false;
+            // 
+            // lbl_OrderMoreProduct
+            // 
+            this.lbl_OrderMoreProduct.AutoSize = true;
+            this.lbl_OrderMoreProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_OrderMoreProduct.Location = new System.Drawing.Point(106, 33);
+            this.lbl_OrderMoreProduct.Name = "lbl_OrderMoreProduct";
+            this.lbl_OrderMoreProduct.Size = new System.Drawing.Size(196, 24);
+            this.lbl_OrderMoreProduct.TabIndex = 17;
+            this.lbl_OrderMoreProduct.Text = "Order More Product";
+            this.lbl_OrderMoreProduct.Visible = false;
+            // 
+            // btn_AdditionalProduct
+            // 
+            this.btn_AdditionalProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AdditionalProduct.Location = new System.Drawing.Point(141, 308);
+            this.btn_AdditionalProduct.Name = "btn_AdditionalProduct";
+            this.btn_AdditionalProduct.Size = new System.Drawing.Size(150, 50);
+            this.btn_AdditionalProduct.TabIndex = 18;
+            this.btn_AdditionalProduct.Text = "Order Additional Product";
+            this.btn_AdditionalProduct.UseVisualStyleBackColor = true;
+            this.btn_AdditionalProduct.Visible = false;
+            this.btn_AdditionalProduct.Click += new System.EventHandler(this.btn_AdditionalProduct_Click);
+            // 
+            // AddProduct
             // 
             this.ClientSize = new System.Drawing.Size(797, 526);
+            this.Controls.Add(this.btn_AdditionalProduct);
+            this.Controls.Add(this.lbl_OrderMoreProduct);
+            this.Controls.Add(this.lbl_ProductID);
+            this.Controls.Add(this.txt_ProductID);
             this.Controls.Add(this.Description_lbl);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_MaterialQuantity);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_MaterialAmount);
             this.Controls.Add(this.btn_FinalizeProduct);
-            this.Controls.Add(this.txt_AddMaterialtoProduct);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_AddMaterialtoProduct);
+            this.Controls.Add(this.lbl_MaterialID);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_ProductName);
             this.Controls.Add(this.txt_MaterialID);
             this.Controls.Add(this.txt_ProductQuantity);
             this.Controls.Add(this.txt_ProductName);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_CreateANewProduct);
             this.Controls.Add(this.PartialStockGrid);
-            this.Name = "Product";
+            this.Name = "AddProduct";
             this.Load += new System.EventHandler(this.Product_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceStock)).EndInit();
@@ -262,13 +312,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridPartialStock;
         private System.Windows.Forms.BindingSource workFlowDatabaseDataSetBindingSource;
-       
+
         private System.Windows.Forms.BindingSource stockTableBindingSource;
-        
+
         private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn materialTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-      
+
         private System.Windows.Forms.DataGridView PartialStockGrid;
         private Login.WorkFlowDatabaseDataSet workFlowDatabaseDataStock;
         private System.Windows.Forms.BindingSource bindingSourceStock;
@@ -276,18 +326,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_CreateANewProduct;
         private System.Windows.Forms.TextBox txt_ProductName;
         private System.Windows.Forms.TextBox txt_ProductQuantity;
         private System.Windows.Forms.TextBox txt_MaterialID;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_ProductName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button txt_AddMaterialtoProduct;
+        private System.Windows.Forms.Label lbl_MaterialID;
+        private System.Windows.Forms.Button btn_AddMaterialtoProduct;
         private System.Windows.Forms.Button btn_FinalizeProduct;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_MaterialAmount;
         private System.Windows.Forms.TextBox txt_MaterialQuantity;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Description_lbl;
+        private System.Windows.Forms.TextBox txt_ProductID;
+        private System.Windows.Forms.Label lbl_ProductID;
+        private System.Windows.Forms.Label lbl_OrderMoreProduct;
+        private System.Windows.Forms.Button btn_AdditionalProduct;
     }
 }
