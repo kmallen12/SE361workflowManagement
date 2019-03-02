@@ -232,6 +232,7 @@
             this.btnProductsView.TabIndex = 7;
             this.btnProductsView.Text = "View Products";
             this.btnProductsView.UseVisualStyleBackColor = true;
+            this.btnProductsView.Click += new System.EventHandler(this.btnProductsView_Click);
             // 
             // HomePage
             // 

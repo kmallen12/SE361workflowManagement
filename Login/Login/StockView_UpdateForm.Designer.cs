@@ -239,9 +239,8 @@
             this.btnLoadStockFromDB.UseVisualStyleBackColor = true;
             this.btnLoadStockFromDB.Click += new System.EventHandler(this.btnLoadStockFromDB_Click);
             // 
-            // UpdateStock
+            // UpdateStockForm
             // 
-            this.Load += new System.EventHandler(this.UpdateStockForm_Load);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 534);
@@ -258,10 +257,13 @@
             this.Controls.Add(this.ItemIDGrid_box);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_warehouseSummary);
-            this.Name = "UpdateStock";
+            this.Name = "UpdateStockForm";
             this.Text = "View and Update Stock Form";
             this.TopMost = true;
-           
+            this.Load += new System.EventHandler(this.UpdateStockForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

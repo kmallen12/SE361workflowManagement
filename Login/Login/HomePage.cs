@@ -88,5 +88,11 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the Stock Report Form.");
             }
         }
+
+        private void btnProductsView_Click(object sender, EventArgs e)
+        {
+            Product AddProduct = new Product();
+            AddProduct.ShowDialog();
+        }
     }
 }
