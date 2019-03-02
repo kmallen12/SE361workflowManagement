@@ -73,14 +73,15 @@ namespace WorkFlowManagement
             {
                 _conn.Open();
 
-                //SQL Command to insert data to the Raw Materials Table
+                //SQL Command to grab quantity based on materialID
                 SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID="+key, _conn);
                 SqlDataReader reader2 = cmd.ExecuteReader();
                 reader2.Read();
                 decimal total = reader2.GetDecimal(0);
                 reader2.Close();
-                //feed Raw Materials list to the sqlCommand
+                
                 total = total - amt;
+                //Update row to new total 
                 string str = "UPDATE [dbo].[StockTable] SET  quantity=@quantity WHERE itemID=@itemID";
                 using (SqlCommand com = new SqlCommand(str, _conn))
                 {
@@ -495,6 +496,33 @@ namespace WorkFlowManagement
 
             return ProductTable;
         }
+        public string ProductMaterials(int key)
+        {
+            string materials="";
+            try
+            {
+                //open a db connection
+                conn.Open();
+                
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT  materialsString, quantity FROM [dbo].[ProductTable] WHERE pId="+key, conn);
+
+                materials=Convert.ToString(cmd.ExecuteScalar()); 
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return materials;
+        }
         public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity)
         {
             _conn.Open();
@@ -512,7 +540,28 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
+        public void IncreaseProduct(int key, int quantity)
+        {
+            _conn.Close();
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT quantity FROM ProductTable WHERE pId=" + key, _conn);
+            SqlDataReader reader2 = cmd.ExecuteReader();
+            reader2.Read();
+            int total = reader2.GetInt32(0)+quantity;
+            reader2.Close();
+            string str = "UPDATE [dbo].[ProductTable] SET quantity=@quantity WHERE pId=@pId";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
+                
+                com.Parameters.Add("@quantity", SqlDbType.Int).Value = total;
 
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
         //update stock in the Stock Table
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
@@ -572,6 +621,7 @@ namespace WorkFlowManagement
                 }
 
                 com.ExecuteNonQuery();
+                
             }
             _conn.Close();
         }
@@ -689,6 +739,7 @@ namespace WorkFlowManagement
                             UserType = reader[0]?.ToString();
 
                     }
+                    reader.Close();
                 }
                 _conn.Close();
 

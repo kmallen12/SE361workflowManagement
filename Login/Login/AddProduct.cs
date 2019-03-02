@@ -14,8 +14,8 @@ namespace WorkFlowManagement
   
     public partial class AddProduct : Form
     {
-        DatabaseManager objDatabaseManager;
-        DatabaseManager q = new DatabaseManager();
+        DatabaseManager objDatabaseManager = new DatabaseManager();
+        string[] Description;
         private DataTable Partialstocks;
         public AddProduct()
         {
@@ -33,7 +33,7 @@ namespace WorkFlowManagement
             // TODO: This line of code loads data into the 'workFlowDatabaseDataSet1.StockTable' table. You can move, or remove it, as needed.
           
             Partialstocks = new DataTable();
-            Partialstocks = q.LoadPartialStocks();
+            Partialstocks = objDatabaseManager.LoadPartialStocks();
 
             //use stock datatable as datasource for data grid
             PartialStockGrid.DataSource = Partialstocks;
@@ -45,14 +45,14 @@ namespace WorkFlowManagement
         private void btn_AddMaterialtoProduct_Click(object sender, EventArgs e)
         {
             Materials = txt_MaterialID.Text + " " + txt_MaterialQuantity.Text + " " + Materials;
-            q.SubtractMaterial(Int32.Parse(txt_MaterialID.Text), Decimal.Parse(txt_MaterialQuantity.Text));
+            
            
             Partialstocks = new DataTable();
-            Partialstocks = q.LoadPartialStocks();
+            Partialstocks = objDatabaseManager.LoadPartialStocks();
 
-            //use stock datatable as datasource for data grid
+            //use Product datatable as datasource for data grid
             PartialStockGrid.DataSource = Partialstocks;
-            Description_lbl.Text = Materials;
+            lbl_Description.Text = Materials;
         }
         public void SetTXTBoxs(string key, string quantity)
         {
@@ -70,47 +70,81 @@ namespace WorkFlowManagement
             lbl_OrderMoreProduct.Visible = true;
             lbl_ProductID.Visible = true;
             btn_AdditionalProduct.Visible = true;
+            txt_ProductID.Visible = true;
+            txt_ProductQuantity.Visible = true;
+            lbl_Description.Text = objDatabaseManager.ProductMaterials(Int32.Parse(txt_ProductID.Text));
+            Description = lbl_Description.Text.Split(' ');
+            
         }
         private void btn_FinalizeProduct_Click(object sender, EventArgs e)
         {
-            string[] list = Materials.Split(' ');
+            Description = Materials.Split(' ');
             try
             {
                 ProductQuantity = int.Parse(txt_ProductQuantity.Text);
-                ProductName = txt_ProductQuantity.Text;
+                
                 int test1;
                 decimal test2;
-               // MessageBox.Show(Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + " " + Int32.Parse(list[2]) + " " + Decimal.Parse(list[3]));
-                if (ProductQuantity > 1)
+                // MessageBox.Show(Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + " " + Int32.Parse(list[2]) + " " + Decimal.Parse(list[3]));
+                for (int x = 0; x < ProductQuantity; x++)
                 {
-                    for (int x = 1; x < ProductQuantity; x++)
+                    for (int i = 0; i < Description.Length-1; i++)
                     {
-                        for (int i = 0; i < list.Length-1; i++)
+                        if (i % 2 == 0)
                         {
-                            if (i % 2 == 0)
-                            {
-                              //  MessageBox.Show(list.Length.ToString());
-                                test1 = Int32.Parse(list[i]);
-                                test2 = Decimal.Parse(list[i + 1]);
-                               // MessageBox.Show(test1.ToString());
-                                q.SubtractMaterial(test1, test2);
-                            }
+                        //  MessageBox.Show(list.Length.ToString());
+                        test1 = Int32.Parse(Description[i]);
+                        test2 = Decimal.Parse(Description[i + 1]);
+                        // MessageBox.Show(test1.ToString());
+                        objDatabaseManager.SubtractMaterial(test1, test2);
                         }
                     }
                 }
+                
             }
             catch (Exception p)
             {
                // MessageBox.Show("TEST" + Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + "TEST");
                 MessageBox.Show(p.ToString());
             }
-            q.InsertProduct(txt_ProductName.Text, Materials, Int32.Parse(txt_ProductQuantity.Text));
+            objDatabaseManager.InsertProduct(txt_ProductName.Text, Materials, Int32.Parse(txt_ProductQuantity.Text));
 
         }
 
         private void btn_AdditionalProduct_Click(object sender, EventArgs e)
         {
-
+            
+            try
+            {
+                ProductQuantity = int.Parse(txt_ProductQuantity.Text);
+                
+                int test1;
+                decimal test2;
+                // MessageBox.Show(Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + " " + Int32.Parse(list[2]) + " " + Decimal.Parse(list[3]));
+                
+                
+                for (int x = 0; x < ProductQuantity; x++)
+                {
+                    for (int i = 0; i < Description.Length - 1; i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            //  MessageBox.Show(list.Length.ToString());
+                            test1 = Int32.Parse(Description[i]);
+                            test2 = Decimal.Parse(Description[i + 1]);
+                            // MessageBox.Show(test1.ToString());
+                            objDatabaseManager.SubtractMaterial(test1, test2);
+                        }
+                    }
+                }
+                
+            }
+            catch (Exception p)
+            {
+                // MessageBox.Show("TEST" + Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + "TEST");
+                MessageBox.Show(p.ToString());
+            }
+            objDatabaseManager.IncreaseProduct(Int32.Parse(txt_ProductID.Text), ProductQuantity);
         }
     }
 }

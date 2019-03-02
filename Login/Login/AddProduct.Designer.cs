@@ -49,7 +49,7 @@
             this.lbl_MaterialAmount = new System.Windows.Forms.Label();
             this.txt_MaterialQuantity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Description_lbl = new System.Windows.Forms.Label();
+            this.lbl_Description = new System.Windows.Forms.Label();
             this.txt_ProductID = new System.Windows.Forms.TextBox();
             this.lbl_ProductID = new System.Windows.Forms.Label();
             this.lbl_OrderMoreProduct = new System.Windows.Forms.Label();
@@ -223,15 +223,15 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Product Description(ID, Amount):";
             // 
-            // Description_lbl
+            // lbl_Description
             // 
-            this.Description_lbl.AutoSize = true;
-            this.Description_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description_lbl.Location = new System.Drawing.Point(106, 423);
-            this.Description_lbl.Name = "Description_lbl";
-            this.Description_lbl.Size = new System.Drawing.Size(10, 24);
-            this.Description_lbl.TabIndex = 14;
-            this.Description_lbl.Text = "\r\n";
+            this.lbl_Description.AutoSize = true;
+            this.lbl_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Description.Location = new System.Drawing.Point(106, 423);
+            this.lbl_Description.Name = "lbl_Description";
+            this.lbl_Description.Size = new System.Drawing.Size(10, 24);
+            this.lbl_Description.TabIndex = 14;
+            this.lbl_Description.Text = "\r\n";
             // 
             // txt_ProductID
             // 
@@ -239,6 +239,7 @@
             this.txt_ProductID.Name = "txt_ProductID";
             this.txt_ProductID.Size = new System.Drawing.Size(100, 20);
             this.txt_ProductID.TabIndex = 15;
+            this.txt_ProductID.Visible = false;
             this.txt_ProductID.WordWrap = false;
             // 
             // lbl_ProductID
@@ -282,7 +283,7 @@
             this.Controls.Add(this.lbl_OrderMoreProduct);
             this.Controls.Add(this.lbl_ProductID);
             this.Controls.Add(this.txt_ProductID);
-            this.Controls.Add(this.Description_lbl);
+            this.Controls.Add(this.lbl_Description);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_MaterialQuantity);
             this.Controls.Add(this.lbl_MaterialAmount);
@@ -338,7 +339,7 @@
         private System.Windows.Forms.Label lbl_MaterialAmount;
         private System.Windows.Forms.TextBox txt_MaterialQuantity;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label Description_lbl;
+        private System.Windows.Forms.Label lbl_Description;
         private System.Windows.Forms.TextBox txt_ProductID;
         private System.Windows.Forms.Label lbl_ProductID;
         private System.Windows.Forms.Label lbl_OrderMoreProduct;
