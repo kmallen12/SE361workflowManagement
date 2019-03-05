@@ -101,7 +101,7 @@ namespace WorkFlowManagement
                 // MessageBox.Show("TEST" + Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + "TEST");
                 MessageBox.Show(p.ToString());
             }
-            objDatabaseManager.IncreaseProductQuantity(productID,productQuantity);
+            objDatabaseManager.IncreaseProductQuantity(productID,quantity);
             //Update product info after increase.
             SetProduct(key);
         }
