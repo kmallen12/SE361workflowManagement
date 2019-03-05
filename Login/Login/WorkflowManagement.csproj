@@ -69,7 +69,7 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ProductClass.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Stock GUI\ItemCapacityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +77,11 @@
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Password.cs" />
-    <Compile Include="Product GUI\AddProduct.cs">
+    <Compile Include="Product GUI\AddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product GUI\AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
+    <Compile Include="Product GUI\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\RawMaterials.cs" />
     <Compile Include="Stock GUI\RawMaterialsForm.cs">
@@ -124,11 +124,11 @@
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\CheckEntryClass.cs" />
-    <Compile Include="Product GUI\ViewProducts.cs">
+    <Compile Include="Product GUI\ViewProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product GUI\ViewProducts.Designer.cs">
-      <DependentUpon>ViewProducts.cs</DependentUpon>
+    <Compile Include="Product GUI\ViewProductsForm.Designer.cs">
+      <DependentUpon>ViewProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,8 +146,8 @@
     <EmbeddedResource Include="Stock GUI\ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product GUI\AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Product GUI\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock GUI\RawMaterialsForm.resx">
       <DependentUpon>RawMaterialsForm.cs</DependentUpon>
@@ -177,8 +177,8 @@
     <EmbeddedResource Include="Stock GUI\StockView_UpdateForm.resx">
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product GUI\ViewProducts.resx">
-      <DependentUpon>ViewProducts.cs</DependentUpon>
+    <EmbeddedResource Include="Product GUI\ViewProductsForm.resx">
+      <DependentUpon>ViewProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />

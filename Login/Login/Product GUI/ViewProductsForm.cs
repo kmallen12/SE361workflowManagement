@@ -12,30 +12,32 @@ namespace WorkFlowManagement
 {
     public partial class ViewProducts : Form
     {
-        DatabaseManager objDatabaseManager = new DatabaseManager();
-        private DataTable Products;
+        Product P;
         public ViewProducts()
         {
             InitializeComponent();
+            P = new Product();
         }
 
         private void ViewProducts_Load(object sender, EventArgs e)
         {
-            Products = new DataTable();
-            Products = objDatabaseManager.LoadProducts();
-            dataGrid_ViewProducts.DataSource = Products;
+           
+            dataGrid_ViewProducts.DataSource = P.ProductTable();
         }
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
-            objDatabaseManager.UpdateProduct(Int32.Parse(txt_ProductID.Text), txt_ProductName.Text, txt_ProductMaterials.Text, Int32.Parse(txt_ProductQuantity.Text));
+            
+            P.UpdateProduct(Int32.Parse(txt_ProductID.Text), txt_ProductName.Text, txt_ProductMaterials.Text, Int32.Parse(txt_ProductQuantity.Text));
+           
         }
 
         private void btn_OrderProduct_Click(object sender, EventArgs e)
         {
-            AddProduct p = new AddProduct();
-            p.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
-            p.ShowDialog();
+            //More of an existing product.
+            AddProduct addp = new AddProduct();
+            addp.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
+            addp.ShowDialog();
         }
     }
 }

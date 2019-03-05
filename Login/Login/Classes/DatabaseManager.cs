@@ -67,7 +67,8 @@ namespace WorkFlowManagement
                 return false;
             }
         }
-        public void SubtractMaterial(int key, decimal amt)
+
+        public void SubtractMaterialQuantity(int key, decimal amt)
         {
             try
             {
@@ -227,6 +228,7 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
+        //Insert a new product into the productTable.
         public void InsertProduct(string productName, string materialsString, int quantity)
         {
             _conn.Close();
@@ -398,6 +400,7 @@ namespace WorkFlowManagement
 
             return stockTable;
         }
+        //Grabs just the itemID, materialType, and quantity for materials datagrid in Product GUIS.
         public DataTable LoadPartialStocks()
         {
             DataTable stockTable = new DataTable();
@@ -460,7 +463,7 @@ namespace WorkFlowManagement
                 //open a db connection
                 conn.Open();
 
-                //create SQL Command to pull data from Raw Materials table
+                //SQL Command to pull data from Product table
                 SqlCommand cmd = new SqlCommand("SELECT pId, ProductName, materialsString, quantity FROM [dbo].[ProductTable]", conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -503,9 +506,9 @@ namespace WorkFlowManagement
             {
                 //open a db connection
                 conn.Open();
-                
-                //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT  materialsString, quantity FROM [dbo].[ProductTable] WHERE pId="+key, conn);
+
+                //SQL Command to pull productMaterials from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  materialsString FROM [dbo].[ProductTable] WHERE pId="+key, conn);
 
                 materials=Convert.ToString(cmd.ExecuteScalar()); 
 
@@ -523,6 +526,60 @@ namespace WorkFlowManagement
 
             return materials;
         }
+        public int ProductQuantity(int key)
+        {
+            int quantity = 0;
+            try
+            {
+                //open a db connection
+                conn.Open();
+
+                //SQL Command to pull productQuantity from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  quantity FROM [dbo].[ProductTable] WHERE pId=" + key, conn);
+
+                quantity = (int)cmd.ExecuteScalar();
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return quantity;
+        }
+        public string ProductName(int key)
+        {
+            string name = "";
+            try
+            {
+                //open a db connection
+                conn.Open();
+
+                //SQL Command to pull productName from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  productName FROM [dbo].[ProductTable] WHERE pId=" + key, conn);
+
+                name = Convert.ToString(cmd.ExecuteScalar());
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return name;
+        }
+        //Updates Product based on key(ID).
         public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity)
         {
             _conn.Open();
@@ -532,7 +589,7 @@ namespace WorkFlowManagement
                 com.Connection = _conn;
                 com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
                 com.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName;
-                com.Parameters.Add("@materialsString", SqlDbType.Decimal).Value = materialsString;
+                com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
                
 
@@ -540,7 +597,7 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
-        public void IncreaseProduct(int key, int quantity)
+        public void IncreaseProductQuantity(int key, int quantity)
         {
             _conn.Close();
             _conn.Open();

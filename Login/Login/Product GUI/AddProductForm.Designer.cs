@@ -298,6 +298,7 @@
             this.Controls.Add(this.lbl_CreateANewProduct);
             this.Controls.Add(this.PartialStockGrid);
             this.Name = "AddProduct";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.Product_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceStock)).EndInit();
