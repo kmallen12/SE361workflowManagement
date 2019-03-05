@@ -34,9 +34,14 @@ namespace WorkFlowManagement
                     || Form.GetType().ToString() == "WorkFlowManagement.AddMaterialForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.UpdateStockForm")
                     return true;
-
             }
-                
+
+            if (UserType == "Product Manager")
+            {
+                if (Form.GetType().ToString() == "WorkFlowManagement.AddProduct"
+                    || Form.GetType().ToString() == "WorkFlowManagement.ViewProduct")
+                    return true;
+            }
 
             return false;
         }

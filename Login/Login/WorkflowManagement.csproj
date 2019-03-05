@@ -69,6 +69,7 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ProductClass.cs" />
     <Compile Include="Stock GUI\ItemCapacityForm.cs">
       <SubType>Form</SubType>
     </Compile>
