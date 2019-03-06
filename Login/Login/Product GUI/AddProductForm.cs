@@ -15,11 +15,16 @@ namespace WorkFlowManagement
     public partial class AddProduct : Form
     {
         Product P;
+        //We check to see if text entries are correct.
+        CheckEntry CE;
+        //Dialogue boxes for confirmation
+        MB M;
         public AddProduct()
         {
             InitializeComponent();
             P = new Product();
-           
+            CE = new CheckEntry();
+            M = new MB();
         }
 
         private void Product_Load_1(object sender, EventArgs e)
@@ -32,10 +37,13 @@ namespace WorkFlowManagement
 
         private void btn_AddMaterialtoProduct_Click(object sender, EventArgs e)
         {
-            //Add materials one at a time to materialsProduct in Productclass.
-            P.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
-            //Update the description in the bottom half so the user can see what has been added thus far.
-            lbl_Description.Text = P.productMaterials;
+            if (CE.isnotNull(txt_MaterialID.Text, "ID") && CE.isnotNull(txt_MaterialQuantity.Text, "Quantity"))
+            {
+                //Add materials one at a time to materialsProduct in Productclass.
+                P.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
+                //Update the description in the bottom half so the user can see what has been added thus far.
+                lbl_Description.Text = P.productMaterials;
+            }
         }
         //Sets the GUI form to the version for adding a certain material not creating one. 
         //Functionality is so similar that creating a new form is redundant. 
@@ -66,15 +74,25 @@ namespace WorkFlowManagement
         
         private void btn_FinalizeProduct_Click(object sender, EventArgs e)
         {
-            P.FinalizeProduct(txt_ProductName.Text,Int32.Parse(txt_ProductQuantity.Text));
+            if (CE.isnotNull(txt_ProductName.Text, "ProductName") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
+            {
+                if (M.CreateProduct(txt_ProductName.Text, P.productMaterials, txt_ProductQuantity.Text))
+                {
+                    P.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
+                    Product_Load_1(sender, e);
+                }
+            }
         }
 
         private void btn_AdditionalProduct_Click(object sender, EventArgs e)
         {
             //Ensures product has correct attributes based on ID.
             //If the user changes the ID.
-            P.SetProduct(Int32.Parse(txt_ProductID.Text));
-            P.AdditionalProduct(Int32.Parse(txt_ProductID.Text),Int32.Parse(txt_ProductQuantity.Text));
+            if (CE.isnotNull(txt_ProductID.Text, "ProductID") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
+            {
+                P.SetProduct(Int32.Parse(txt_ProductID.Text));
+                P.AdditionalProduct(Int32.Parse(txt_ProductID.Text), Int32.Parse(txt_ProductQuantity.Text));
+            }
         }
     }
 }

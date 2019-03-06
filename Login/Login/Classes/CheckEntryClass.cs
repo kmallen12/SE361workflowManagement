@@ -28,7 +28,7 @@ namespace WorkFlowManagement
         {
             try
             {
-                double txt = double.Parse(text);
+                double txt = double.Parse(label);
                 return true;
             }
             catch
@@ -37,12 +37,39 @@ namespace WorkFlowManagement
                 return false;
             }
         }
+        public Boolean isValidInt(string t, string lbl)
+        {
+            try
+            {
+                int txt = Int32.Parse(t);
+                return true;
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show(lbl + " must be a Integer value.");
+                return false;
+            }
+        }
 
         //returns true if string variable is null
         public Boolean isNull()
         {
-            if (text == "") { return true; }
+            if (text == "")
+            {
+                System.Windows.Forms.MessageBox.Show(label + " must not be null.");
+                return true;
+            }
             return false;
+        }
+        public Boolean isnotNull(string t, string lbl)
+        {
+            if (t != "")
+                return true;
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(lbl + " must not be null.");
+                return false;
+            }
         }
     }
 }
