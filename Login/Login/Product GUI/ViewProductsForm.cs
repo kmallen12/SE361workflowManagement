@@ -13,6 +13,7 @@ namespace WorkFlowManagement
     public partial class ViewProducts : Form
     {
         Product P;
+        MB M;
         public ViewProducts()
         {
             InitializeComponent();
@@ -27,9 +28,14 @@ namespace WorkFlowManagement
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
-            
-            P.UpdateProduct(Int32.Parse(txt_ProductID.Text), txt_ProductName.Text, txt_ProductMaterials.Text, Int32.Parse(txt_ProductQuantity.Text));
-           
+            //Set the product based on ID
+            P.SetProduct(Int32.Parse(txt_ProductID.Text));
+            M = new MB();
+            if (M.UpdateProduct(P, txt_ProductID.Text, txt_ProductName.Text, txt_ProductMaterials.Text, txt_ProductQuantity.Text) == true)
+            {
+                P.UpdateProduct(Int32.Parse(txt_ProductID.Text), txt_ProductName.Text, txt_ProductMaterials.Text, Int32.Parse(txt_ProductQuantity.Text));
+                ViewProducts_Load(sender, e);
+            }
         }
 
         private void btn_OrderProduct_Click(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace WorkFlowManagement
     {
         DatabaseManager objDatabaseManager = new DatabaseManager();
         //Represents the Materials string broken into an array based on ' '.
-        string[] Description;
+        string[] materialsDescription;
         
         public int productID { get; set; }
         public string productName { get; set; }
@@ -49,21 +49,25 @@ namespace WorkFlowManagement
         {
             productMaterials = ID + " " + Quantity + " " + productMaterials;
         }
+        public string productDiscription()
+        {
+            return "ID: " + productID + " Name: " + productName + " Materials: " + productMaterials + " Quantity: " + productQuantity;
+        }
         public void FinalizeProduct(string name, int quantity)
         {
             //Instantiate productName and productQuantity of the new product.
             productName = name;
             productQuantity = quantity;
             //Break up the Materials string into an array so that its easy to parse it. 
-            Description = productMaterials.Split(' ');
+            materialsDescription = productMaterials.Split(' ');
             try
             {   //Subtract materials for amount of product. 
                 for (int x = 0; x < quantity; x++)
                 {
                     //Subtract quantity of material given from material in database. 
                     //Description [0] would be the first ID and [1] is the quantity then increment +2.
-                    for (int i = 0; i < Description.Length - 1; i = i + 2)
-                        objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(Description[i]), Decimal.Parse(Description[i + 1]));
+                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                        objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
                 }
             }
             catch (Exception p)
@@ -78,9 +82,9 @@ namespace WorkFlowManagement
         {
             //Ensure we have the correct product information.
             SetProduct(key);
-            
+
             //Break up the Materials string.
-            Description = productMaterials.Split(' ');
+            materialsDescription = productMaterials.Split(' ');
             try
             {
                
@@ -90,8 +94,8 @@ namespace WorkFlowManagement
                 {
                     //Subtract quantity of material given from material in database. 
                     //Description [0] would be the first ID and [1] is the quantity then increment +2.
-                    for (int i = 0; i < Description.Length - 1; i = i + 2)
-                         objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(Description[i]), Decimal.Parse(Description[i + 1])); 
+                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                         objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1])); 
          
                 }
 

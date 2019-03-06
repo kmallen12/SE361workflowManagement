@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseManager.cs" />
+    <Compile Include="Classes\MB.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
