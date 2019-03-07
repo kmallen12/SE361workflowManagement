@@ -14,7 +14,7 @@ namespace WorkFlowManagement
       
     public partial class AddProduct : Form
     {
-        Product P;
+        Product product;
         //We check to see if text entries are correct.
         CheckEntry CE;
         //Dialogue boxes for confirmation
@@ -22,7 +22,7 @@ namespace WorkFlowManagement
         public AddProduct()
         {
             InitializeComponent();
-            P = new Product();
+            product = new Product();
             CE = new CheckEntry();
             M = new MB();
         }
@@ -30,7 +30,7 @@ namespace WorkFlowManagement
         private void Product_Load_1(object sender, EventArgs e)
         {
             //use partialstock datatable as datasource for data grid
-            PartialStockGrid.DataSource = P.PartialStockTable();
+            PartialStockGrid.DataSource = product.PartialStockTable();
         }
 
    
@@ -40,9 +40,9 @@ namespace WorkFlowManagement
             if (CE.isnotNull(txt_MaterialID.Text, "ID") && CE.isnotNull(txt_MaterialQuantity.Text, "Quantity"))
             {
                 //Add materials one at a time to materialsProduct in Productclass.
-                P.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
+                product.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
                 //Update the description in the bottom half so the user can see what has been added thus far.
-                lbl_Description.Text = P.productMaterials;
+                lbl_Description.Text = product.productMaterials;
             }
         }
         //Sets the GUI form to the version for adding a certain material not creating one. 
@@ -67,8 +67,8 @@ namespace WorkFlowManagement
             txt_ProductQuantity.Visible = true;
             //Ensures product has correct attributes based on ID.
             //Only needed so we can correctly set the discription of the materials.
-            P.SetProduct(Int32.Parse(txt_ProductID.Text));
-            lbl_Description.Text = P.productMaterials;
+            product.SetProduct(Int32.Parse(txt_ProductID.Text));
+            lbl_Description.Text = product.productMaterials;
             
         }
         
@@ -76,9 +76,9 @@ namespace WorkFlowManagement
         {
             if (CE.isnotNull(txt_ProductName.Text, "ProductName") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
             {
-                if (M.CreateProduct(txt_ProductName.Text, P.productMaterials, txt_ProductQuantity.Text))
+                if (M.CreateProduct(txt_ProductName.Text, product.productMaterials, txt_ProductQuantity.Text))
                 {
-                    P.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
+                    product.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
                     Product_Load_1(sender, e);
                 }
             }
@@ -90,8 +90,8 @@ namespace WorkFlowManagement
             //If the user changes the ID.
             if (CE.isnotNull(txt_ProductID.Text, "ProductID") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
             {
-                P.SetProduct(Int32.Parse(txt_ProductID.Text));
-                P.AdditionalProduct(Int32.Parse(txt_ProductID.Text), Int32.Parse(txt_ProductQuantity.Text));
+                product.SetProduct(Int32.Parse(txt_ProductID.Text));
+                product.AdditionalProduct(Int32.Parse(txt_ProductID.Text), Int32.Parse(txt_ProductQuantity.Text));
             }
         }
     }
