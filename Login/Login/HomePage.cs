@@ -92,13 +92,29 @@ namespace WorkFlowManagement
         private void btnProductsView_Click(object sender, EventArgs e)
         {
             ViewProducts btnViewProducts = new ViewProducts();
-            btnViewProducts.ShowDialog();
+            if (objCurrentUser.canView(btnViewProducts))
+            {
+                btnViewProducts.ShowDialog();
+            }
+            else
+            {
+                btnViewProducts.Dispose();
+                MessageBox.Show("You do not have access for the View Products Form.");
+            }
         }
 
         private void btn_AddProduct_Click(object sender, EventArgs e)
         {
             AddProduct AddProduct = new AddProduct();
-            AddProduct.ShowDialog();
+            if (objCurrentUser.canView(AddProduct))
+            {
+                AddProduct.ShowDialog();
+            }
+            else
+            {
+                AddProduct.Dispose();
+                MessageBox.Show("You do not have access for the Add Products Form.");
+            }
         }
     }
 }

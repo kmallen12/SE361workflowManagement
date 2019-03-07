@@ -39,7 +39,7 @@ namespace WorkFlowManagement
             if (UserType == "Product Manager")
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.AddProduct"
-                    || Form.GetType().ToString() == "WorkFlowManagement.ViewProduct")
+                    || Form.GetType().ToString() == "WorkFlowManagement.ViewProducts")
                     return true;
             }
 
