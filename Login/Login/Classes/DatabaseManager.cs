@@ -849,5 +849,41 @@ namespace WorkFlowManagement
             return dtRecord;
         }
 
+        //load data from the User Type Table into a list
+        public List<string> LoadUserTypes()
+        {
+            List<string> users = new List<string>();
+
+            try
+            {
+                string tempUsers;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM UserTypeTable", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string type = (string)reader["userTypeText"];
+                    tempUsers = type;
+                    users.Add(tempUsers);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error reading data in from the User Type database table.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return users;
+        }
+
     }
 }

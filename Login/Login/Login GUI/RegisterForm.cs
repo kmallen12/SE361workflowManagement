@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace WorkFlowManagement 
 {
@@ -8,10 +9,19 @@ namespace WorkFlowManagement
     {
         DatabaseManager q = new DatabaseManager();
         Password objPassword = new Password();
+        private List<string> userTypes;
+        
         public RegisterForm()
         {
             InitializeComponent();      
             this.AcceptButton = btnRegister;
+
+            userTypes = new List<string>();
+            userTypes = q.LoadUserTypes();
+            foreach (var type in userTypes)
+            {
+                cboxUserType.Items.Add(type);
+            }
         }
 
         private Boolean isValidEmail(string email)
