@@ -52,6 +52,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cboxUserType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -285,11 +286,23 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "** All fields are required **";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(574, 580);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 623);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cboxUserType);
             this.Controls.Add(this.lblCriteriaMet);
             this.Controls.Add(this.label10);
@@ -345,6 +358,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboxUserType;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 

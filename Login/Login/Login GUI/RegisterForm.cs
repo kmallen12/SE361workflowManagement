@@ -166,6 +166,12 @@ namespace WorkFlowManagement
                 progressBar1.Value = passStrength;
             }
         }
-      
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm formLogin = new LoginForm();
+            formLogin.ShowDialog();
+        }
     }
 }
