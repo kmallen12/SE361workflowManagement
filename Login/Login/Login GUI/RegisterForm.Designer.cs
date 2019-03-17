@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblVerifyPw = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -51,6 +51,7 @@
             this.lblCriteriaMet = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cboxUserType = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -77,87 +78,87 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Account Information";
             // 
-            // label3
+            // lblFirstName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(133, 112);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "First Name:";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(133, 112);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(111, 24);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "First Name";
             // 
-            // label4
+            // lblLastName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(133, 159);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 24);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Last Name:";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(133, 159);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(108, 24);
+            this.lblLastName.TabIndex = 3;
+            this.lblLastName.Text = "Last Name";
             // 
-            // label5
+            // lblUserType
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(133, 208);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "User Type:";
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.Location = new System.Drawing.Point(133, 208);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(106, 24);
+            this.lblUserType.TabIndex = 4;
+            this.lblUserType.Text = "User Type";
             // 
-            // label6
+            // lblEmail
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(133, 258);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 24);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Email:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(133, 258);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(62, 24);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "Email";
             // 
-            // label7
+            // lblUsername
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(133, 386);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Username:";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(133, 386);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(105, 24);
+            this.lblUsername.TabIndex = 6;
+            this.lblUsername.Text = "Username";
             // 
-            // label8
+            // lblPassword
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(133, 437);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 24);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Password:";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(133, 437);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(100, 24);
+            this.lblPassword.TabIndex = 7;
+            this.lblPassword.Text = "Password";
             // 
-            // label9
+            // lblVerifyPw
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(133, 532);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 24);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Verify Password:";
+            this.lblVerifyPw.AutoSize = true;
+            this.lblVerifyPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVerifyPw.Location = new System.Drawing.Point(133, 532);
+            this.lblVerifyPw.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVerifyPw.Name = "lblVerifyPw";
+            this.lblVerifyPw.Size = new System.Drawing.Size(159, 24);
+            this.lblVerifyPw.TabIndex = 8;
+            this.lblVerifyPw.Text = "Verify Password";
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(361, 112);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(312, 22);
             this.txtFirstName.TabIndex = 9;
@@ -165,7 +166,7 @@
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(361, 156);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(312, 22);
             this.txtLastName.TabIndex = 10;
@@ -173,7 +174,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(361, 256);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(312, 22);
             this.txtEmail.TabIndex = 12;
@@ -181,7 +182,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(361, 384);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(312, 22);
             this.txtUsername.TabIndex = 13;
@@ -189,7 +190,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(361, 434);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(312, 22);
@@ -200,7 +201,7 @@
             // txtVerifyPassword
             // 
             this.txtVerifyPassword.Location = new System.Drawing.Point(361, 533);
-            this.txtVerifyPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtVerifyPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.PasswordChar = '*';
             this.txtVerifyPassword.Size = new System.Drawing.Size(312, 22);
@@ -210,7 +211,7 @@
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(699, 580);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 28);
             this.btnRegister.TabIndex = 16;
@@ -222,7 +223,7 @@
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.Red;
             this.progressBar1.Location = new System.Drawing.Point(361, 466);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(313, 28);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -273,6 +274,17 @@
             this.cboxUserType.Size = new System.Drawing.Size(312, 24);
             this.cboxUserType.TabIndex = 21;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(390, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(254, 24);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "** All fields are required **";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,17 +301,18 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblVerifyPw);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblUserType);
+            this.Controls.Add(this.lblLastName);
+            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterForm";
             this.Text = "Create Account";
             this.ResumeLayout(false);
@@ -311,13 +324,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblUserType;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblVerifyPw;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtEmail;
@@ -331,6 +344,7 @@
         private System.Windows.Forms.Label lblCriteriaMet;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboxUserType;
+        private System.Windows.Forms.Label label3;
     }
 }
 

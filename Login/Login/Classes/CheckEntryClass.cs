@@ -61,6 +61,17 @@ namespace WorkFlowManagement
             }
             return false;
         }
+
+        //returns true if string variable is null
+        public Boolean isNull(string t, string lbl)
+        {
+            if (t == "")
+            {
+                return true;
+            }
+            return false;
+        }
+
         public Boolean isnotNull(string t, string lbl)
         {
             if (t != "")
@@ -68,6 +79,21 @@ namespace WorkFlowManagement
             else
             {
                 System.Windows.Forms.MessageBox.Show(lbl + " must not be null.");
+                return false;
+            }
+        }
+
+        //checks to see if a string is a valid email address
+        public Boolean isValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Please Use a Valid Email!");
                 return false;
             }
         }

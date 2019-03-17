@@ -32,10 +32,7 @@ namespace WorkFlowManagement
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-
             string UserType = objDatabaseManager.LoginFromDb(txtUsername?.Text, txtPassword?.Text);
-
-            
 
             if (String.IsNullOrEmpty(UserType))
             {
