@@ -42,7 +42,7 @@ namespace WorkFlowManagement
                 //Add materials one at a time to materialsProduct in Productclass.
                 product.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
                 //Update the description in the bottom half so the user can see what has been added thus far.
-                lbl_Description.Text = product.productMaterials;
+                lbl_Description.Text = product.JsonMaterialReturn();
             }
         }
         //Sets the GUI form to the version for adding a certain material not creating one. 

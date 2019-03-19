@@ -8,14 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace WorkFlowManagement
 {
+    public struct MaterialsProduct
+    {
+        public int ID;
+        public int Quantity;
+        public string Name;
+        public MaterialsProduct(int InitID, int InitQuantity, string InitName)
+        {
+            ID = InitID;
+            Quantity = InitQuantity;
+            Name = InitName;
+        }
+    };
     class Product
     {
         DatabaseManager objDatabaseManager = new DatabaseManager();
         //Represents the Materials string broken into an array based on ' '.
         string[] materialsDescription;
+        string JsonMaterialString;
         
         public int productID { get; set; }
         public string productName { get; set; }
@@ -29,6 +43,7 @@ namespace WorkFlowManagement
             productID = key;
             productName = objDatabaseManager.ProductName(key);
             productMaterials = objDatabaseManager.ProductMaterials(key);
+            JsonMaterialString = productMaterials;
             productQuantity = objDatabaseManager.ProductQuantity(key);
         }
         public void UpdateProduct(int id, string name, string materials, int quantity)
@@ -47,7 +62,14 @@ namespace WorkFlowManagement
         //build the productMaterial string. 
         public void AddMaterialtoProduct(string ID, string Quantity)
         {
+            MaterialsProduct newMaterial = new MaterialsProduct(Int32.Parse(ID), Int32.Parse(Quantity), objDatabaseManager.MaterialName(Int32.Parse(ID)).Trim(' ')); 
+            JsonMaterialString = JsonConvert.SerializeObject(newMaterial)+"\n"+JsonMaterialString;
+            Console.WriteLine(JsonMaterialString);
             productMaterials = ID + " " + Quantity + " " + productMaterials;
+        }
+        public string JsonMaterialReturn()
+        {
+            return JsonMaterialString;
         }
         public string productDiscription()
         {
@@ -75,14 +97,55 @@ namespace WorkFlowManagement
                 MessageBox.Show(p.ToString());
             }
             //ID is automatically generated when inserted into the table. 
-            objDatabaseManager.InsertProduct(productName, productMaterials, productQuantity);
+            objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity);
             
         }
+        public void ConvertJsonMaterials()
+        {
+            string ID = "";
+            string Quantity = "";
+            string both = "";
+            for (int i = 0; i < JsonMaterialString.Length; i++)
+            {
+                
+                if (JsonMaterialString[i] == ':' && JsonMaterialString[i - 2] == 'D')
+                {
+                    i++;
+                    //build the ID
+                    while (JsonMaterialString[i] != ',')
+                    {
+                        ID += JsonMaterialString[i];
+                        i++;
+                    }
+                    //Add the ID to both
+                    both = ID;
+                    ID = "";
+                }
+                if (JsonMaterialString[i] == ':' && JsonMaterialString[i - 2] == 'y')
+                {
+                    i++;
+                    while (JsonMaterialString[i] != ',')
+                    {
+                        Quantity = Quantity + JsonMaterialString[i];
+                        i++;
+                    }
+                    //Add the quantity to both
+                    both = both +" "+ Quantity;
+                    Quantity = "";
+                    productMaterials = both + " " + productMaterials;
+                    both = "";
+                    
+                }
+                //MessageBox.Show(productMaterials+"ice");
+            }
+        } 
         public void AdditionalProduct(int key, int quantity)
         {
             //Ensure we have the correct product information.
             SetProduct(key);
-
+            productMaterials = "";
+            ConvertJsonMaterials();
+            
             //Break up the Materials string.
             materialsDescription = productMaterials.Split(' ');
             try
