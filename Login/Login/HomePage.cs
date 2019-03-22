@@ -16,59 +16,22 @@ namespace WorkFlowManagement
         /// AUTHOR: Cowen Shears
         /// DATE: 2/25/19
         /// DESCRIPTION: Homepage for application. Knows who the user is.
-        /// EDITED BY: Mary Hermann 3/22/19
+        /// EDITED BY: Mary Hermann 2/28/19
 
         CurrentUser objCurrentUser;
-
-        //this function stops the flickering 
-        // https://stackoverflow.com/questions/2612487/how-to-fix-the-flickering-in-user-controls?lq=1
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
-        }
         public HomePage() 
         {
             InitializeComponent();
-            //Set panels to correct initial visibility.
-            pnlStock.Visible = true;
-            pnlProducts.Visible = false;
             lblUsername.Text = string.Empty;
             lblUserType.Text = string.Empty;
         }
-
         
         public HomePage(CurrentUser LoggedInUser)
         {
             InitializeComponent();
-
             objCurrentUser = LoggedInUser;
-
-            pnlStock.Visible = true;
-            pnlProducts.Visible = false;
             lblUsername.Text = objCurrentUser.Username;
             lblUserType.Text = objCurrentUser.UserType;
-        }
-
-        private void tabHome_Selected(object sender, TabControlEventArgs e)
-        {
-            
-            //Changes the visibility of the pages. Using panels instead of included tabpages currently.
-            if (tabHome.SelectedTab == tabHome.TabPages["tabStock"])
-            {
-                pnlStock.Visible = true;
-                pnlProducts.Visible = false;
-            }
-            if (tabHome.SelectedTab == tabHome.TabPages["tabProducts"])
-            {
-                pnlStock.Visible = false;
-                pnlProducts.Visible = true;
-            }
-            
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -86,22 +49,72 @@ namespace WorkFlowManagement
             Application.Exit();
         }
 
-        private void btnStockMaterials_Click(object sender, EventArgs e)
+        private void btnStockMaterials_Click_1(object sender, EventArgs e)
         {
             AddMaterialForm formMaterial = new AddMaterialForm();
-            formMaterial.ShowDialog();
+            if (objCurrentUser.canView(formMaterial))
+            {
+                formMaterial.ShowDialog();
+            }
+            else
+            {
+                formMaterial.Dispose();
+                MessageBox.Show("You do not have access for the Stock Materials Form.");
+            }
         }
-
-        private void btnStockUpdate_Click(object sender, EventArgs e)
+        private void btnStockUpdate_Click_1(object sender, EventArgs e)
         {
-            UpdateStock formStock = new UpdateStock();
-            formStock.ShowDialog();
+            UpdateStockForm formStock = new UpdateStockForm();
+            if (objCurrentUser.canView(formStock))
+            {
+                formStock.ShowDialog();
+            }
+            else
+            {
+                formStock.Dispose();
+                MessageBox.Show("You do not have access for the Stock View/Update Form.");
+            }
         }
-
-        private void btnStockGenerateReport_Click(object sender, EventArgs e)
+        private void btnStockGenerateReport_Click_1(object sender, EventArgs e)
         {
             StockReportForm formReport = new StockReportForm();
-            formReport.ShowDialog();
+            if (objCurrentUser.canView(formReport))
+            {
+                formReport.ShowDialog();
+            }
+            else
+            {
+                formReport.Dispose();
+                MessageBox.Show("You do not have access for the Stock Report Form.");
+            }
+        }
+
+        private void btnProductsView_Click(object sender, EventArgs e)
+        {
+            ViewProducts btnViewProducts = new ViewProducts();
+            if (objCurrentUser.canView(btnViewProducts))
+            {
+                btnViewProducts.ShowDialog();
+            }
+            else
+            {
+                btnViewProducts.Dispose();
+                MessageBox.Show("You do not have access for the View Products Form.");
+            }
+        }
+
+        private void btn_AddProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct AddProduct = new AddProduct();
+            if (objCurrentUser.canView(AddProduct))
+            {
+                AddProduct.ShowDialog();
+            }
+            else
+            {
+                AddProduct.Dispose();
+                MessageBox.Show("You do not have access for the Add Products Form.");
+            }
         }
     }
 }

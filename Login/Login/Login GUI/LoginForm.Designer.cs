@@ -33,7 +33,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkCreateAccount = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -85,16 +85,16 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Login to the WorkFlow System";
             // 
-            // linkLabel1
+            // linkCreateAccount
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(266, 249);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(115, 13);
-            this.linkLabel1.TabIndex = 20;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Create a new account.";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkCreateAccount.AutoSize = true;
+            this.linkCreateAccount.Location = new System.Drawing.Point(266, 249);
+            this.linkCreateAccount.Name = "linkCreateAccount";
+            this.linkCreateAccount.Size = new System.Drawing.Size(115, 13);
+            this.linkCreateAccount.TabIndex = 20;
+            this.linkCreateAccount.TabStop = true;
+            this.linkCreateAccount.Text = "Create a new account.";
+            this.linkCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCreateAccount_LinkClicked);
             // 
             // label1
             // 
@@ -123,7 +123,7 @@
             this.ClientSize = new System.Drawing.Size(554, 329);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkCreateAccount);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label8);
@@ -143,7 +143,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkCreateAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogin;
     }

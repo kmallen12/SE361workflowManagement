@@ -19,9 +19,6 @@ namespace WorkFlowManagement
 
         DatabaseManager objDatabaseManager;
 
-        //declare connection string to Azure database
-        const string connectionString = @"Data Source=workflowdatabase.database.windows.net;Initial Catalog=WorkFlowDatabase;User ID=OCOTOD;Password=********;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
         public RawMaterialsForm()
         {
             InitializeComponent();

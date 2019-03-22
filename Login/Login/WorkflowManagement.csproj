@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,86 +64,108 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentUser.cs" />
-    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="Classes\CurrentUser.cs" />
+    <Compile Include="Classes\DatabaseManager.cs" />
+    <Compile Include="Classes\MB.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemCapacityForm.cs">
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Stock GUI\ItemCapacityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemCapacityForm.Designer.cs">
+    <Compile Include="Stock GUI\ItemCapacityForm.Designer.cs">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Password.cs" />
-    <Compile Include="RawMaterials.cs" />
-    <Compile Include="RawMaterialsForm.cs">
+    <Compile Include="Classes\Password.cs" />
+    <Compile Include="Product GUI\AddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RawMaterialsForm.Designer.cs">
+    <Compile Include="Product GUI\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\RawMaterials.cs" />
+    <Compile Include="Stock GUI\RawMaterialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock GUI\RawMaterialsForm.Designer.cs">
       <DependentUpon>RawMaterialsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockAddMaterialForm.cs">
+    <Compile Include="Stock GUI\StockAddMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockAddMaterialForm.Designer.cs">
+    <Compile Include="Stock GUI\StockAddMaterialForm.Designer.cs">
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockClass.cs" />
-    <Compile Include="StockReportForm.cs">
+    <Compile Include="Classes\StockClass.cs" />
+    <Compile Include="Stock GUI\StockReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockReportForm.Designer.cs">
+    <Compile Include="Stock GUI\StockReportForm.Designer.cs">
       <DependentUpon>StockReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterForm.cs">
+    <Compile Include="Login GUI\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterForm.Designer.cs">
+    <Compile Include="Login GUI\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Login GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StockView_UpdateForm.cs">
+    <Compile Include="Stock GUI\StockView_UpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockView_UpdateForm.Designer.cs">
+    <Compile Include="Stock GUI\StockView_UpdateForm.Designer.cs">
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckEntryClass.cs" />
+    <Compile Include="Classes\CheckEntryClass.cs" />
+    <Compile Include="Product GUI\ViewProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\ViewProductsForm.Designer.cs">
+      <DependentUpon>ViewProductsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WorkFlowDatabaseDataSetProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemCapacityForm.resx">
+    <EmbeddedResource Include="Stock GUI\ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RawMaterialsForm.resx">
+    <EmbeddedResource Include="Product GUI\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock GUI\RawMaterialsForm.resx">
       <DependentUpon>RawMaterialsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockAddMaterialForm.resx">
+    <EmbeddedResource Include="Stock GUI\StockAddMaterialForm.resx">
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockReportForm.resx">
+    <EmbeddedResource Include="Stock GUI\StockReportForm.resx">
       <DependentUpon>StockReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterForm.resx">
+    <EmbeddedResource Include="Login GUI\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Login GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -153,11 +178,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StockView_UpdateForm.resx">
+    <EmbeddedResource Include="Stock GUI\StockView_UpdateForm.resx">
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
+    <EmbeddedResource Include="Product GUI\ViewProductsForm.resx">
+      <DependentUpon>ViewProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,6 +194,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Classes\WorkflowClass2.vsdx" />
     <None Include="WorkFlowDatabaseDataSet.xsc">
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -177,6 +205,17 @@
     </None>
     <None Include="WorkFlowDatabaseDataSet.xss">
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSetProducts.xsc">
+      <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSetProducts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkFlowDatabaseDataSetProducts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkFlowDatabaseDataSetProducts.xss">
+      <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -195,11 +234,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OCOTODWorkflow.jpg" />
+    <None Include="WorkflowUMLSprint3.pdf" />
+    <None Include="zzResources\OCOTODWorkflow.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="GUI\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
