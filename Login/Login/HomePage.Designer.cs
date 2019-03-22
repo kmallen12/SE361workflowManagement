@@ -39,16 +39,22 @@
             this.btnStockGenerateReport = new System.Windows.Forms.Button();
             this.btnStockMaterials = new System.Windows.Forms.Button();
             this.tabProducts = new System.Windows.Forms.TabPage();
+            this.btn_AddProduct = new System.Windows.Forms.Button();
             this.btnReorderStck = new System.Windows.Forms.Button();
             this.lblProductHomepg = new System.Windows.Forms.Label();
             this.btnProductUpdateStatus = new System.Windows.Forms.Button();
             this.btnProductQuality = new System.Windows.Forms.Button();
             this.btnProductsView = new System.Windows.Forms.Button();
-            this.btn_AddProduct = new System.Windows.Forms.Button();
+            this.tabQuality = new System.Windows.Forms.TabPage();
+            this.tabDelivery = new System.Windows.Forms.TabPage();
+            this.lblQAdashboard = new System.Windows.Forms.Label();
+            this.lblDdashboard = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.tabProducts.SuspendLayout();
+            this.tabQuality.SuspendLayout();
+            this.tabDelivery.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -103,6 +109,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabBar.Controls.Add(this.tabStock);
             this.tabBar.Controls.Add(this.tabProducts);
+            this.tabBar.Controls.Add(this.tabQuality);
+            this.tabBar.Controls.Add(this.tabDelivery);
             this.tabBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabBar.Location = new System.Drawing.Point(1, 65);
             this.tabBar.Name = "tabBar";
@@ -185,6 +193,17 @@
             this.tabProducts.Text = "Products";
             this.tabProducts.UseVisualStyleBackColor = true;
             // 
+            // btn_AddProduct
+            // 
+            this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddProduct.Location = new System.Drawing.Point(210, 55);
+            this.btn_AddProduct.Name = "btn_AddProduct";
+            this.btn_AddProduct.Size = new System.Drawing.Size(174, 58);
+            this.btn_AddProduct.TabIndex = 12;
+            this.btn_AddProduct.Text = "Add Product";
+            this.btn_AddProduct.UseVisualStyleBackColor = true;
+            this.btn_AddProduct.Click += new System.EventHandler(this.btn_AddProduct_Click);
+            // 
             // btnReorderStck
             // 
             this.btnReorderStck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,16 +255,47 @@
             this.btnProductsView.UseVisualStyleBackColor = true;
             this.btnProductsView.Click += new System.EventHandler(this.btnProductsView_Click);
             // 
-            // btn_AddProduct
+            // tabQuality
             // 
-            this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddProduct.Location = new System.Drawing.Point(210, 55);
-            this.btn_AddProduct.Name = "btn_AddProduct";
-            this.btn_AddProduct.Size = new System.Drawing.Size(174, 58);
-            this.btn_AddProduct.TabIndex = 12;
-            this.btn_AddProduct.Text = "Add Product";
-            this.btn_AddProduct.UseVisualStyleBackColor = true;
-            this.btn_AddProduct.Click += new System.EventHandler(this.btn_AddProduct_Click);
+            this.tabQuality.Controls.Add(this.lblQAdashboard);
+            this.tabQuality.Location = new System.Drawing.Point(4, 27);
+            this.tabQuality.Name = "tabQuality";
+            this.tabQuality.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQuality.Size = new System.Drawing.Size(797, 353);
+            this.tabQuality.TabIndex = 2;
+            this.tabQuality.Text = "Quality";
+            this.tabQuality.UseVisualStyleBackColor = true;
+            // 
+            // tabDelivery
+            // 
+            this.tabDelivery.Controls.Add(this.lblDdashboard);
+            this.tabDelivery.Location = new System.Drawing.Point(4, 27);
+            this.tabDelivery.Name = "tabDelivery";
+            this.tabDelivery.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDelivery.Size = new System.Drawing.Size(797, 353);
+            this.tabDelivery.TabIndex = 3;
+            this.tabDelivery.Text = "Delivery";
+            this.tabDelivery.UseVisualStyleBackColor = true;
+            // 
+            // lblQAdashboard
+            // 
+            this.lblQAdashboard.AutoSize = true;
+            this.lblQAdashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQAdashboard.Location = new System.Drawing.Point(7, 13);
+            this.lblQAdashboard.Name = "lblQAdashboard";
+            this.lblQAdashboard.Size = new System.Drawing.Size(375, 29);
+            this.lblQAdashboard.TabIndex = 9;
+            this.lblQAdashboard.Text = "Quality Assessment Dashboard";
+            // 
+            // lblDdashboard
+            // 
+            this.lblDdashboard.AutoSize = true;
+            this.lblDdashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDdashboard.Location = new System.Drawing.Point(7, 17);
+            this.lblDdashboard.Name = "lblDdashboard";
+            this.lblDdashboard.Size = new System.Drawing.Size(384, 29);
+            this.lblDdashboard.TabIndex = 9;
+            this.lblDdashboard.Text = "Delviery Department Dashboard";
             // 
             // HomePage
             // 
@@ -267,6 +317,10 @@
             this.tabStock.PerformLayout();
             this.tabProducts.ResumeLayout(false);
             this.tabProducts.PerformLayout();
+            this.tabQuality.ResumeLayout(false);
+            this.tabQuality.PerformLayout();
+            this.tabDelivery.ResumeLayout(false);
+            this.tabDelivery.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +344,9 @@
         private System.Windows.Forms.Button btnProductQuality;
         private System.Windows.Forms.Button btnProductsView;
         private System.Windows.Forms.Button btn_AddProduct;
+        private System.Windows.Forms.TabPage tabQuality;
+        private System.Windows.Forms.TabPage tabDelivery;
+        private System.Windows.Forms.Label lblQAdashboard;
+        private System.Windows.Forms.Label lblDdashboard;
     }
 }
