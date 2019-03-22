@@ -16,9 +16,21 @@ namespace WorkFlowManagement
         /// AUTHOR: Cowen Shears
         /// DATE: 2/25/19
         /// DESCRIPTION: Homepage for application. Knows who the user is.
-        /// EDITED BY: Mary Hermann 2/27/19
+        /// EDITED BY: Mary Hermann 3/22/19
 
         CurrentUser objCurrentUser;
+
+        //this function stops the flickering 
+        // https://stackoverflow.com/questions/2612487/how-to-fix-the-flickering-in-user-controls?lq=1
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
         public HomePage() 
         {
             InitializeComponent();
@@ -28,6 +40,7 @@ namespace WorkFlowManagement
             lblUsername.Text = string.Empty;
             lblUserType.Text = string.Empty;
         }
+
         
         public HomePage(CurrentUser LoggedInUser)
         {
@@ -43,6 +56,7 @@ namespace WorkFlowManagement
 
         private void tabHome_Selected(object sender, TabControlEventArgs e)
         {
+            
             //Changes the visibility of the pages. Using panels instead of included tabpages currently.
             if (tabHome.SelectedTab == tabHome.TabPages["tabStock"])
             {
