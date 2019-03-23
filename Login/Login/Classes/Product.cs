@@ -78,9 +78,13 @@ namespace WorkFlowManagement
         }
         public int FinalizeProduct(string name, int quantity)
         {
+            
             int tempmat;
             int id;
             decimal amt;
+            productMaterials = "";
+            //Turn Json format to ID Quantity format seperated by ' ' for easy parsing. 
+            ConvertJsonMaterials();
             //Instantiate productName and productQuantity of the new product.
             productName = name;
             productQuantity = quantity;
@@ -96,6 +100,7 @@ namespace WorkFlowManagement
                     {
                         id = Int32.Parse(materialsDescription[i]);
                         amt = Decimal.Parse(materialsDescription[i + 1]);
+                        //Value for material quantity if we did subtract based on product amount.
                         tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
                         if (tempmat < 0)
                         {
@@ -105,10 +110,10 @@ namespace WorkFlowManagement
 
 
                     }
+                    //If we don't get negatives in the previous loop we actually subtract materials.
                     for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
-                    {
                         objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
-                    }
+                   
                 }
 
             }
@@ -117,9 +122,10 @@ namespace WorkFlowManagement
                 MessageBox.Show(p.ToString());
             }
             //ID is automatically generated when inserted into the table. 
-            objDatabaseManager.InsertProduct(productName, productMaterials, productQuantity);
+            objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity);
             return 0;
         }
+        //This is the conversion from JSon to the ID Quantity format.
         public void ConvertJsonMaterials()
         {
             string ID = "";
@@ -164,6 +170,7 @@ namespace WorkFlowManagement
             //Ensure we have the correct product information.
             SetProduct(key);
             productMaterials = "";
+            //Turn Json format to ID Quantity format seperated by ' ' for easy parsing. 
             ConvertJsonMaterials();
             int tempmat;
             int id;
@@ -172,25 +179,28 @@ namespace WorkFlowManagement
             materialsDescription = productMaterials.Split(' ');
             try
             {
-
-                // MessageBox.Show(Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + " " + Int32.Parse(list[2]) + " " + Decimal.Parse(list[3]));
-
-                for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                for (int x = 0; x < quantity; x++)
                 {
-                    id = Int32.Parse(materialsDescription[i]);
-                    amt = Decimal.Parse(materialsDescription[i + 1]);
-                    tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
-                    if (tempmat < 0)
+                    //Subtract quantity of material given from material in database. 
+                    //Description [0] would be the first ID and [1] is the quantity then increment +2.
+                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
                     {
-                        M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
-                        return 0;
+                        id = Int32.Parse(materialsDescription[i]);
+                        amt = Decimal.Parse(materialsDescription[i + 1]);
+                        //Value for material quantity if we did subtract based on product amount.
+                        tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
+                        if (tempmat < 0)
+                        {
+                            M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
+                            return 0;
+                        }
+
+
                     }
-
-
-                }
-                for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
-                {
-                    objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
+                    //If we don't get negatives in the previous loop we actually subtract materials.
+                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                        objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
+                    
                 }
 
             }
