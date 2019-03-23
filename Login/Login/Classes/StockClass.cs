@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
+using System.IO;
 namespace WorkFlowManagement
 {
     /// LAST EDITED BY: Kristen 
@@ -12,6 +16,7 @@ namespace WorkFlowManagement
     /// It calculates the defect rate.
     public class Stock
     {
+        DatabaseManager objDatabaseManager = new DatabaseManager();
         public string materialType { get; set; }
         public double quantity { get; set; }
         public double unitCost { get; set; }
@@ -38,6 +43,22 @@ namespace WorkFlowManagement
             defects = defectNo;
             dateAcquired = dtAcq;
             dateUsed = dtUsed;
+        }
+        public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
+        {
+            objDatabaseManager.UpdateStock(key, material, quantity, unitCost, totalCost, dateAcquired, dateUsed, amtDefected);
+        }
+        public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
+        {
+            objDatabaseManager.InsertStock(material, quantity, unitCost, totalCost, dateAcquired, dateUsed, amtDefected);
+        }
+        public DataTable StockTable()
+        {
+            return objDatabaseManager.LoadStocks();
+        }
+        public List<RawMaterials> LoadRawMat()
+        {
+            return objDatabaseManager.LoadRawMat();
         }
 
         //returns the unit cost of materials purchased

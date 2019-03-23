@@ -26,6 +26,7 @@ namespace WorkFlowManagement
     };
     class Product
     {
+        MB M = new MB();
         DatabaseManager objDatabaseManager = new DatabaseManager();
         //Represents the Materials string broken into an array based on ' '.
         string[] materialsDescription;
@@ -75,8 +76,11 @@ namespace WorkFlowManagement
         {
             return "ID: " + productID + " Name: " + productName + " Materials: " + productMaterials + " Quantity: " + productQuantity;
         }
-        public void FinalizeProduct(string name, int quantity)
+        public int FinalizeProduct(string name, int quantity)
         {
+            int tempmat;
+            int id;
+            decimal amt;
             //Instantiate productName and productQuantity of the new product.
             productName = name;
             productQuantity = quantity;
@@ -89,16 +93,32 @@ namespace WorkFlowManagement
                     //Subtract quantity of material given from material in database. 
                     //Description [0] would be the first ID and [1] is the quantity then increment +2.
                     for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                    {
+                        id = Int32.Parse(materialsDescription[i]);
+                        amt = Decimal.Parse(materialsDescription[i + 1]);
+                        tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
+                        if (tempmat < 0)
+                        {
+                            M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
+                            return 0;
+                        }
+
+
+                    }
+                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                    {
                         objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
+                    }
                 }
+
             }
             catch (Exception p)
             {
                 MessageBox.Show(p.ToString());
             }
             //ID is automatically generated when inserted into the table. 
-            objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity);
-            
+            objDatabaseManager.InsertProduct(productName, productMaterials, productQuantity);
+            return 0;
         }
         public void ConvertJsonMaterials()
         {
@@ -139,27 +159,38 @@ namespace WorkFlowManagement
                 //MessageBox.Show(productMaterials+"ice");
             }
         } 
-        public void AdditionalProduct(int key, int quantity)
+        public int AdditionalProduct(int key, int quantity)
         {
             //Ensure we have the correct product information.
             SetProduct(key);
             productMaterials = "";
             ConvertJsonMaterials();
-            
+            int tempmat;
+            int id;
+            decimal amt;
             //Break up the Materials string.
             materialsDescription = productMaterials.Split(' ');
             try
             {
-               
+
                 // MessageBox.Show(Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + " " + Int32.Parse(list[2]) + " " + Decimal.Parse(list[3]));
 
-                for (int x = 0; x < quantity; x++)
+                for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
                 {
-                    //Subtract quantity of material given from material in database. 
-                    //Description [0] would be the first ID and [1] is the quantity then increment +2.
-                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
-                         objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1])); 
-         
+                    id = Int32.Parse(materialsDescription[i]);
+                    amt = Decimal.Parse(materialsDescription[i + 1]);
+                    tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
+                    if (tempmat < 0)
+                    {
+                        M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
+                        return 0;
+                    }
+
+
+                }
+                for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                {
+                    objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
                 }
 
             }
@@ -171,6 +202,7 @@ namespace WorkFlowManagement
             objDatabaseManager.IncreaseProductQuantity(productID,quantity);
             //Update product info after increase.
             SetProduct(key);
+            return 0;
         }
     }
 }

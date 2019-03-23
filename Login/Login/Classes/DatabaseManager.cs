@@ -67,7 +67,61 @@ namespace WorkFlowManagement
                 return false;
             }
         }
+        public string returnMaterialName(int key)
+        {
+            try
+            {
+                _conn.Open();
 
+                //SQL Command to grab quantity based on materialID
+                SqlCommand cmd = new SqlCommand("SELECT materialType FROM StockTable WHERE itemID=" + key, _conn);
+                SqlDataReader reader2 = cmd.ExecuteReader();
+                reader2.Read();
+                return reader2.GetString(0);
+
+            }
+            catch (Exception q)
+            {
+                MessageBox.Show(q.ToString());
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            _conn.Close();
+            return "";
+        }
+        //returns the amount of material if we tried to subtract that much material.
+        public int CheckMaterialQuantity(int key, decimal amt)
+        {
+            try
+            {
+                _conn.Open();
+
+                //SQL Command to grab quantity based on materialID
+                SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
+                SqlDataReader reader2 = cmd.ExecuteReader();
+                reader2.Read();
+                decimal total = reader2.GetDecimal(0);
+                reader2.Close();
+
+                total = total - amt;
+                
+                return (int)total;
+
+            }
+            catch (Exception q)
+            {
+                MessageBox.Show(q.ToString());
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            _conn.Close();
+            return 0;
+        }
+        //actually subtracts the material
         public void SubtractMaterialQuantity(int key, decimal amt)
         {
             try

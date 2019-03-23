@@ -13,23 +13,23 @@ namespace WorkFlowManagement
 {
     public partial class AddMaterialForm : Form
     {
-        private Stock objStock;
+        
         private List<Stock> stocks;
 
-        DatabaseManager objDatabaseManager;
-        DatabaseManager q = new DatabaseManager();
+        
+        Stock S;
         //dropdown list property
         private List<RawMaterials> materialList;
 
         public AddMaterialForm()
         {
             InitializeComponent();
-
+            S = new Stock();
             stocks = new List<Stock>();
 
-            materialList = new List<RawMaterials>();            
-           
-            materialList = q.LoadRawMat();
+            materialList = new List<RawMaterials>();
+
+            materialList = S.LoadRawMat();
             //materialList = objDatabaseManager.LoadRawMat();
 
             foreach(var mat in materialList)
@@ -81,7 +81,7 @@ namespace WorkFlowManagement
                     }
                 }
 
-                q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
+                S.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
                 //StockForm formStock = new StockForm();
 
                 txt_materialType.SelectedIndex = -1;
@@ -135,7 +135,7 @@ namespace WorkFlowManagement
                     }
                 }
 
-                q.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
+                S.InsertStock(txt_materialType.Text, txt_Quantity.Text, txt_unitCost.Text, txt_TotalCost.Text, txt_DateAcq.Text, txt_dateUsed.Text, txt_Defected.Text);
 
                 Hide();
             }
@@ -151,7 +151,7 @@ namespace WorkFlowManagement
             formMaterial.FormClosing += (sender2, e2) =>
             {
                 txt_materialType.Items.Clear();
-                materialList = q.LoadRawMat();
+                materialList = S.LoadRawMat();
                 //materialList = objDatabaseManager.LoadRawMat();
                 foreach (var mat in materialList)
                 {

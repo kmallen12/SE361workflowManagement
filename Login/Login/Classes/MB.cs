@@ -35,6 +35,8 @@ namespace WorkFlowManagement
             caption = "Insufficient Materials";
             System.Windows.Forms.MessageBox.Show(messageBoxTxt, caption, System.Windows.Forms.MessageBoxButtons.OK);
         }
+        
+
         public void IncorrectEntry()
         {
             messageBoxTxt = "Please use the correct entry format.";
