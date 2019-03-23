@@ -8,7 +8,7 @@ namespace WorkFlowManagement
 {
     public class CurrentUser
     {
-        /// AUTHOR: Cowen Shears and Troy
+        /// AUTHOR: Cowen Shears and Troy and Mary
         /// DATE: 2/27/19
         /// DESCRIPTION: Class to store basic details about the current user who is logged in. 
 
@@ -41,6 +41,16 @@ namespace WorkFlowManagement
                 if (Form.GetType().ToString() == "WorkFlowManagement.AddProduct"
                     || Form.GetType().ToString() == "WorkFlowManagement.ViewProducts")
                     return true;
+            }
+
+            if (UserType == "Quality Analyzer")
+            {
+             
+            }
+
+            if (UserType == "Delivery Manager")
+            {
+
             }
 
             return false;

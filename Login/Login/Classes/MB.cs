@@ -29,6 +29,14 @@ namespace WorkFlowManagement
             else
                 return false;
         }
+        public void NegativeMaterial(string material, int matQuantity, int productQuantity, int matActual)
+        {
+            messageBoxTxt = "The product or amount of product you are trying to create requires "+ matQuantity*productQuantity+" "+material+" but there is only "+ matActual + " available.";
+            caption = "Insufficient Materials";
+            System.Windows.Forms.MessageBox.Show(messageBoxTxt, caption, System.Windows.Forms.MessageBoxButtons.OK);
+        }
+        
+
         public void IncorrectEntry()
         {
             messageBoxTxt = "Please use the correct entry format.";
