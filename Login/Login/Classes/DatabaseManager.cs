@@ -16,7 +16,7 @@ namespace WorkFlowManagement
         string Where;
         string Data;
     }
-    public class DatabaseManager
+   public class DatabaseManager
     {
         private static SqlConnection _conn = new SqlConnection(
             @"Server=tcp:workflowdatabase.database.windows.net,1433;
@@ -28,7 +28,7 @@ namespace WorkFlowManagement
 
         public static SqlConnection conn
         {
-            get { return _conn; } private set { conn = value; }
+            get { return _conn;} private set {conn = value;}
         }
 
         private static bool CheckField(string table, string column, string data)
@@ -75,12 +75,12 @@ namespace WorkFlowManagement
                 _conn.Open();
 
                 //SQL Command to grab quantity based on materialID
-                SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
+                SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID="+key, _conn);
                 SqlDataReader reader2 = cmd.ExecuteReader();
                 reader2.Read();
                 decimal total = reader2.GetDecimal(0);
                 reader2.Close();
-
+                
                 total = total - amt;
                 //Update row to new total 
                 string str = "UPDATE [dbo].[StockTable] SET  quantity=@quantity WHERE itemID=@itemID";
@@ -90,7 +90,7 @@ namespace WorkFlowManagement
                     com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = total;
                     com.ExecuteNonQuery();
                 }
-
+               
             }
             catch (Exception q)
             {
@@ -101,59 +101,6 @@ namespace WorkFlowManagement
                 _conn.Close();
             }
             _conn.Close();
-        }
-        public int CheckMaterialQuantity(int key, decimal amt)
-        {
-            try
-            {
-                _conn.Open();
-
-                //SQL Command to grab quantity based on materialID
-                SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
-                SqlDataReader reader2 = cmd.ExecuteReader();
-                reader2.Read();
-                decimal total = reader2.GetDecimal(0);
-                reader2.Close();
-
-                total = total - amt;
-                //Update row to new total 
-                return (int)total;
-
-            }
-            catch (Exception q)
-            {
-                MessageBox.Show(q.ToString());
-            }
-            finally
-            {
-                _conn.Close();
-            }
-            _conn.Close();
-            return 0;
-        }
-        public string returnMaterialName(int key)
-        {
-            try
-            {
-                _conn.Open();
-
-                //SQL Command to grab quantity based on materialID
-                SqlCommand cmd = new SqlCommand("SELECT materialType FROM StockTable WHERE itemID=" + key, _conn);
-                SqlDataReader reader2 = cmd.ExecuteReader();
-                reader2.Read();
-                return reader2.GetString(0);
-
-            }
-            catch (Exception q)
-            {
-                MessageBox.Show(q.ToString());
-            }
-            finally
-            {
-                _conn.Close();
-            }
-            _conn.Close();
-            return "";
         }
         //Insert data into the Raw Materials table in the database
         public void InsertToRMTable(List<RawMaterials> rawMaterials)
@@ -171,10 +118,10 @@ namespace WorkFlowManagement
                     SqlCommand com = new SqlCommand(str, _conn);
                     com.Connection = _conn;
                     com.Parameters.Add("@rMaterial", SqlDbType.VarChar).Value = rawMat.material;
-
+         
                     com.ExecuteNonQuery();
                 }
-
+                
             }
             catch (Exception)
             {
@@ -389,7 +336,7 @@ namespace WorkFlowManagement
                     int id = (int)reader["itemID"];
                     string matName = (string)reader["materialType"];
                     decimal quan = (decimal)reader["quantity"];
-                    double quantity = (double)quan;
+                    double quantity = (double) quan;
 
                     double unitCost, amtDefected, totalCost;
                     DateTime dateAcq, dateUsed;
@@ -460,7 +407,7 @@ namespace WorkFlowManagement
             stockTable.Columns.Add("itemID", typeof(int));
             stockTable.Columns.Add("materialType", typeof(string));
             stockTable.Columns.Add("quantity", typeof(double));
-
+            
 
             try
             {
@@ -479,14 +426,14 @@ namespace WorkFlowManagement
                     decimal quan = (decimal)reader["quantity"];
                     double quantity = (double)quan;
 
-
-
+                   
+                 
 
                     //handle null unit cost values in database
-
+                   
 
                     //handle null defects in database
-
+                   
 
                     stockTable.Rows.Add(id, matName, quantity);
 
@@ -554,16 +501,16 @@ namespace WorkFlowManagement
         }
         public string ProductMaterials(int key)
         {
-            string materials = "";
+            string materials="";
             try
             {
                 //open a db connection
                 conn.Open();
 
                 //SQL Command to pull productMaterials from productTable.
-                SqlCommand cmd = new SqlCommand("SELECT  materialsString FROM [dbo].[ProductTable] WHERE pId=" + key, conn);
+                SqlCommand cmd = new SqlCommand("SELECT  materialsString FROM [dbo].[ProductTable] WHERE pId="+key, conn);
 
-                materials = Convert.ToString(cmd.ExecuteScalar());
+                materials=Convert.ToString(cmd.ExecuteScalar()); 
 
 
 
@@ -632,8 +579,34 @@ namespace WorkFlowManagement
 
             return name;
         }
+        public string MaterialName(int key)
+        {
+            string name = "";
+            try
+            {
+                //open a db connection
+                conn.Open();
+
+                //SQL Command to pull productName from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  materialType FROM [dbo].[StockTable] WHERE itemID=" + key, conn);
+
+                name = Convert.ToString(cmd.ExecuteScalar());
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return name;
+        }
         //Updates Product based on key(ID).
-        public void UpdateProduct(int key, string ProductName, string materialsString, int quantity)
+        public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity)
         {
             _conn.Open();
             string str = "UPDATE [dbo].[ProductTable] SET ProductName=@ProductName, materialsString=@materialsString, quantity=@quantity WHERE pId=@pId";
@@ -644,7 +617,7 @@ namespace WorkFlowManagement
                 com.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName;
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
-
+               
 
                 com.ExecuteNonQuery();
             }
@@ -657,14 +630,14 @@ namespace WorkFlowManagement
             SqlCommand cmd = new SqlCommand("SELECT quantity FROM ProductTable WHERE pId=" + key, _conn);
             SqlDataReader reader2 = cmd.ExecuteReader();
             reader2.Read();
-            int total = reader2.GetInt32(0) + quantity;
+            int total = reader2.GetInt32(0)+quantity;
             reader2.Close();
             string str = "UPDATE [dbo].[ProductTable] SET quantity=@quantity WHERE pId=@pId";
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;
                 com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
-
+                
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = total;
 
 
@@ -675,114 +648,157 @@ namespace WorkFlowManagement
         //update stock in the Stock Table
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {
-            
-                _conn.Open();
-                string str = "UPDATE [dbo].[StockTable] SET materialType=@materialType, quantity=@quantity, unitCost=@unitCost, totalCost=@totalCost, dateAcquired=@dateAcquired, dateUsed=@dateUsed, amtDefected=@amtDefected WHERE itemID=@itemID";
-                using (SqlCommand com = new SqlCommand(str, _conn))
+            _conn.Open();
+            string str = "UPDATE [dbo].[StockTable] SET materialType=@materialType, quantity=@quantity, unitCost=@unitCost, totalCost=@totalCost, dateAcquired=@dateAcquired, dateUsed=@dateUsed, amtDefected=@amtDefected WHERE itemID=@itemID";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
+                com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
+                com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(quantity);
+
+                if (!string.IsNullOrEmpty(unitCost))
                 {
-                    com.Connection = _conn;
-                    com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
-                    com.Parameters.Add("@materialType", SqlDbType.VarChar).Value = material;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = double.Parse(quantity);
+                    com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
+                }
+                else
+                {
+                    com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
+                }
 
-                    if (!string.IsNullOrEmpty(unitCost))
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = unitCost;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@unitCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
+                if (!string.IsNullOrEmpty(totalCost))
+                {
+                    com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(totalCost);
+                }
+                else
+                {
+                    com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
+                }
 
-                    if (!string.IsNullOrEmpty(totalCost))
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = double.Parse(totalCost);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@totalCost", SqlDbType.Decimal).Value = DBNull.Value;
-                    }
+                if (!string.IsNullOrEmpty(dateAcquired))
+                {
+                    com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAcquired;
+                }
+                else
+                {
+                    com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
+                }
 
-                    if (!string.IsNullOrEmpty(dateAcquired))
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = dateAcquired;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateAcquired", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
+                if (!string.IsNullOrEmpty(dateUsed))
+                {
+                    com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsed;
+                }
+                else
+                {
+                    com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
+                }
 
-                    if (!string.IsNullOrEmpty(dateUsed))
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = dateUsed;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(amtDefected))
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(amtDefected);
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
-
-                    }
-
-                    com.ExecuteNonQuery();
+                if (!string.IsNullOrEmpty(amtDefected))
+                {
+                    com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = double.Parse(amtDefected);
+                }
+                else
+                {
+                    com.Parameters.Add("@amtDefected", SqlDbType.Decimal).Value = DBNull.Value;
 
                 }
-                _conn.Close();
-            }
 
-            //insert new user into the Users Table
-            public void InsertUser(string FirstName, string LastName, string UserType, string Email, string UserName, string Password)
+                com.ExecuteNonQuery();
+                
+            }
+            _conn.Close();
+        }
+
+        //insert new user into the Users Table
+        public void InsertUser(string FirstName, string LastName, string UserType, string Email, string UserName, string Password)
+        {
+            _conn.Close();
+            _conn.Open();
+            string str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES (  @FirstName  , @LastName,@UserType,@Email,@UserName,@Password)";
+
+            using (SqlCommand com = new SqlCommand(str, _conn))
             {
+                com.Connection = _conn;
+
+                if (!string.IsNullOrEmpty(FirstName))
+                {
+                    com.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = FirstName;
+                }
+                else
+                {
+                    com.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(LastName))
+                {
+                    com.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = LastName;
+                }
+                else
+                {
+                    com.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(UserType))
+                {
+                    com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = UserType;
+                }
+                else
+                {
+                    com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(Email))
+                {
+                    com.Parameters.Add("@Email", SqlDbType.NVarChar).Value = Email;
+                }
+                else
+                {
+                    com.Parameters.Add("@Email", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(UserName))
+                {
+                    com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = UserName;
+                }
+                else
+                {
+                    com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = DBNull.Value;
+                }
+
+                if (!string.IsNullOrEmpty(Password))
+                {
+                    com.Parameters.Add("@Password", SqlDbType.NVarChar).Value = Password;
+                }
+                else
+                {
+                    com.Parameters.Add("@Password", SqlDbType.NVarChar).Value = DBNull.Value;
+
+                }
+
+                com.ExecuteNonQuery();
+
+            }
+            _conn.Close();
+
+        }
+
+        public string LoginFromDb(string UserName, string enteredPassword)
+        {
+            string UserType = null;
+            try
+            {
+                UserType = String.Empty;
+
                 _conn.Close();
                 _conn.Open();
-                string str = "INSERT INTO [dbo].[UsersTable] ( [FirstName], [LastName], [UserType], [Email], [UserName], [Password]) VALUES (  @FirstName  , @LastName,@UserType,@Email,@UserName,@Password)";
+
+                string str = "SELECT UserType,Password " + "FROM  [dbo].[UsersTable]" +
+                           "WHERE UserName = @Username";
 
                 using (SqlCommand com = new SqlCommand(str, _conn))
                 {
                     com.Connection = _conn;
 
-                    if (!string.IsNullOrEmpty(FirstName))
-                    {
-                        com.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = FirstName;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(LastName))
-                    {
-                        com.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = LastName;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(UserType))
-                    {
-                        com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = UserType;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = DBNull.Value;
-                    }
-
-                    if (!string.IsNullOrEmpty(Email))
-                    {
-                        com.Parameters.Add("@Email", SqlDbType.NVarChar).Value = Email;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@Email", SqlDbType.NVarChar).Value = DBNull.Value;
-                    }
 
                     if (!string.IsNullOrEmpty(UserName))
                     {
@@ -791,117 +807,109 @@ namespace WorkFlowManagement
                     else
                     {
                         com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = DBNull.Value;
+
                     }
 
-                    if (!string.IsNullOrEmpty(Password))
+                    SqlDataReader reader = com.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        com.Parameters.Add("@Password", SqlDbType.NVarChar).Value = Password;
-                    }
-                    else
-                    {
-                        com.Parameters.Add("@Password", SqlDbType.NVarChar).Value = DBNull.Value;
+
+                        string dbPassword = reader[1]?.ToString();
+                        Password objPassword = new Password();
+
+                        if (UserType != null && objPassword.verifyPasswordMatch(dbPassword, enteredPassword))
+                            UserType = reader[0]?.ToString();
 
                     }
-
-                    com.ExecuteNonQuery();
-
+                    reader.Close();
                 }
                 _conn.Close();
 
-            }
 
-            public string LoginFromDb(string UserName, string enteredPassword)
+            }
+            catch (Exception e)
             {
-                string UserType = null;
-                try
-                {
-                    UserType = String.Empty;
-
-                    _conn.Close();
-                    _conn.Open();
-
-                    string str = "SELECT UserType,Password " + "FROM  [dbo].[UsersTable]" +
-                               "WHERE UserName = @Username";
-
-                    using (SqlCommand com = new SqlCommand(str, _conn))
-                    {
-                        com.Connection = _conn;
-
-
-                        if (!string.IsNullOrEmpty(UserName))
-                        {
-                            com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = UserName;
-                        }
-                        else
-                        {
-                            com.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = DBNull.Value;
-
-                        }
-
-                        SqlDataReader reader = com.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-
-                            string dbPassword = reader[1]?.ToString();
-                            Password objPassword = new Password();
-
-                            if (UserType != null && objPassword.verifyPasswordMatch(dbPassword, enteredPassword))
-                                UserType = reader[0]?.ToString();
-
-                        }
-                        reader.Close();
-                    }
-                    _conn.Close();
-
-
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString());
-                    UserType = null;
-                }
-
-
-                return UserType;
+                MessageBox.Show(e.ToString());
+                UserType = null;
             }
 
-            public DataTable StockReportMax()
-            {
-                _conn.Close();
-                _conn.Open();
 
-                SqlCommand sqlCmd = new SqlCommand();
-                sqlCmd.Connection = _conn;
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
-                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
-                DataTable dtRecord = new DataTable();
-                sqlDataAdap.Fill(dtRecord);
-
-                _conn.Close();
-
-                return dtRecord;
-            }
-
-            public DataTable StockReportLow()
-            {
-                _conn.Close();
-                _conn.Open();
-
-                SqlCommand sqlCmd = new SqlCommand();
-                sqlCmd.Connection = _conn;
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
-                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
-                DataTable dtRecord = new DataTable();
-                sqlDataAdap.Fill(dtRecord);
-                _conn.Close();
-
-                return dtRecord;
-            }
-
+            return UserType;
         }
+
+        public DataTable StockReportMax()
+        {
+            _conn.Close();
+            _conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            _conn.Close();
+
+            return dtRecord;
+        }
+
+        public DataTable StockReportLow()
+        {
+            _conn.Close();
+            _conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            _conn.Close();
+
+            return dtRecord;
+        }
+
+        //load data from the User Type Table into a list
+        public List<string> LoadUserTypes()
+        {
+            List<string> users = new List<string>();
+
+            try
+            {
+                string tempUsers;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM UserTypeTable", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string type = (string)reader["userTypeText"];
+                    tempUsers = type;
+                    users.Add(tempUsers);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error reading data in from the User Type database table.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return users;
+        }
+
     }
+}

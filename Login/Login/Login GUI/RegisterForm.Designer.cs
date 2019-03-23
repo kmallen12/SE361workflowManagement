@@ -31,16 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblVerifyPw = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
-            this.cboxUserType = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -51,6 +50,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblCriteriaMet = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.cboxUserType = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,9 +60,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 46);
+            this.label1.Location = new System.Drawing.Point(72, 57);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 19);
+            this.label1.Size = new System.Drawing.Size(192, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Personal Information";
             // 
@@ -69,150 +72,149 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 266);
+            this.label2.Location = new System.Drawing.Point(72, 327);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 19);
+            this.label2.Size = new System.Drawing.Size(187, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Account Information";
             // 
-            // label3
+            // lblFirstName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(100, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "First Name:";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(133, 112);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(111, 24);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "First Name";
             // 
-            // label4
+            // lblLastName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(100, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Last Name:";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(133, 159);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(108, 24);
+            this.lblLastName.TabIndex = 3;
+            this.lblLastName.Text = "Last Name";
             // 
-            // label5
+            // lblUserType
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(100, 169);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "User Type:";
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.Location = new System.Drawing.Point(133, 208);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(106, 24);
+            this.lblUserType.TabIndex = 4;
+            this.lblUserType.Text = "User Type";
             // 
-            // label6
+            // lblEmail
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(100, 210);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 18);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Email:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(133, 258);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(62, 24);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "Email";
             // 
-            // label7
+            // lblUsername
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(100, 314);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 18);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Username:";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(133, 386);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(105, 24);
+            this.lblUsername.TabIndex = 6;
+            this.lblUsername.Text = "Username";
             // 
-            // label8
+            // lblPassword
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(100, 355);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 18);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Password:";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(133, 437);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(100, 24);
+            this.lblPassword.TabIndex = 7;
+            this.lblPassword.Text = "Password";
             // 
-            // label9
+            // lblVerifyPw
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(100, 432);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(135, 18);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Verify Password:";
+            this.lblVerifyPw.AutoSize = true;
+            this.lblVerifyPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVerifyPw.Location = new System.Drawing.Point(133, 532);
+            this.lblVerifyPw.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVerifyPw.Name = "lblVerifyPw";
+            this.lblVerifyPw.Size = new System.Drawing.Size(159, 24);
+            this.lblVerifyPw.TabIndex = 8;
+            this.lblVerifyPw.Text = "Verify Password";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(271, 91);
+            this.txtFirstName.Location = new System.Drawing.Point(361, 112);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(235, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(312, 22);
             this.txtFirstName.TabIndex = 9;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(271, 127);
+            this.txtLastName.Location = new System.Drawing.Point(361, 156);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(235, 20);
+            this.txtLastName.Size = new System.Drawing.Size(312, 22);
             this.txtLastName.TabIndex = 10;
-            // 
-            // cboxUserType
-            // 
-            this.cboxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxUserType.FormattingEnabled = true;
-            this.cboxUserType.Items.AddRange(new object[] {
-            "Administrator",
-            "Stockiest",
-            "Product Manager",
-            "Quality Analyzer",
-            "Delivery Manager",
-            "Report Manager"});
-            this.cboxUserType.Location = new System.Drawing.Point(271, 169);
-            this.cboxUserType.Name = "cboxUserType";
-            this.cboxUserType.Size = new System.Drawing.Size(235, 21);
-            this.cboxUserType.TabIndex = 11;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(271, 208);
+            this.txtEmail.Location = new System.Drawing.Point(361, 256);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(235, 20);
+            this.txtEmail.Size = new System.Drawing.Size(312, 22);
             this.txtEmail.TabIndex = 12;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(271, 312);
+            this.txtUsername.Location = new System.Drawing.Point(361, 384);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(235, 20);
+            this.txtUsername.Size = new System.Drawing.Size(312, 22);
             this.txtUsername.TabIndex = 13;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(271, 353);
+            this.txtPassword.Location = new System.Drawing.Point(361, 434);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(235, 20);
+            this.txtPassword.Size = new System.Drawing.Size(312, 22);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtVerifyPassword
             // 
-            this.txtVerifyPassword.Location = new System.Drawing.Point(271, 433);
+            this.txtVerifyPassword.Location = new System.Drawing.Point(361, 533);
+            this.txtVerifyPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.PasswordChar = '*';
-            this.txtVerifyPassword.Size = new System.Drawing.Size(235, 20);
+            this.txtVerifyPassword.Size = new System.Drawing.Size(312, 22);
             this.txtVerifyPassword.TabIndex = 15;
             this.txtVerifyPassword.UseSystemPasswordChar = true;
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(524, 471);
+            this.btnRegister.Location = new System.Drawing.Point(699, 580);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(100, 28);
             this.btnRegister.TabIndex = 16;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -221,9 +223,10 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.Red;
-            this.progressBar1.Location = new System.Drawing.Point(271, 379);
+            this.progressBar1.Location = new System.Drawing.Point(361, 466);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(235, 23);
+            this.progressBar1.Size = new System.Drawing.Size(313, 28);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 17;
             // 
@@ -234,18 +237,20 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(523, 324);
+            this.label10.Location = new System.Drawing.Point(697, 399);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(201, 78);
+            this.label10.Size = new System.Drawing.Size(269, 102);
             this.label10.TabIndex = 18;
             this.label10.Text = resources.GetString("label10.Text");
             // 
             // lblCriteriaMet
             // 
             this.lblCriteriaMet.AutoSize = true;
-            this.lblCriteriaMet.Location = new System.Drawing.Point(421, 409);
+            this.lblCriteriaMet.Location = new System.Drawing.Point(561, 503);
+            this.lblCriteriaMet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCriteriaMet.Name = "lblCriteriaMet";
-            this.lblCriteriaMet.Size = new System.Drawing.Size(69, 13);
+            this.lblCriteriaMet.Size = new System.Drawing.Size(93, 17);
             this.lblCriteriaMet.TabIndex = 19;
             this.lblCriteriaMet.Text = "meets criteria";
             // 
@@ -254,18 +259,51 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(412, 394);
+            this.label12.Location = new System.Drawing.Point(549, 485);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 20);
+            this.label12.Size = new System.Drawing.Size(17, 25);
             this.label12.TabIndex = 20;
             this.label12.Text = "|";
             // 
+            // cboxUserType
+            // 
+            this.cboxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxUserType.FormattingEnabled = true;
+            this.cboxUserType.Location = new System.Drawing.Point(361, 208);
+            this.cboxUserType.Name = "cboxUserType";
+            this.cboxUserType.Size = new System.Drawing.Size(312, 24);
+            this.cboxUserType.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(390, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(254, 24);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "** All fields are required **";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(574, 580);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 506);
+            this.ClientSize = new System.Drawing.Size(968, 623);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.cboxUserType);
             this.Controls.Add(this.lblCriteriaMet);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.progressBar1);
@@ -274,19 +312,20 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.cboxUserType);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblVerifyPw);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblUserType);
+            this.Controls.Add(this.lblLastName);
+            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterForm";
             this.Text = "Create Account";
             this.ResumeLayout(false);
@@ -298,16 +337,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblUserType;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblVerifyPw;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.ComboBox cboxUserType;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
@@ -318,6 +356,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblCriteriaMet;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cboxUserType;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 

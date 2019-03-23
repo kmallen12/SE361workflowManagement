@@ -22,7 +22,7 @@ namespace WorkFlowManagement
         }
 
         // Closes Login window and opens Create Account window
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             RegisterForm formRegister = new RegisterForm();
@@ -32,10 +32,7 @@ namespace WorkFlowManagement
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-
             string UserType = objDatabaseManager.LoginFromDb(txtUsername?.Text, txtPassword?.Text);
-
-            
 
             if (String.IsNullOrEmpty(UserType))
             {

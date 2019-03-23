@@ -1,55 +1,112 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace WorkFlowManagement 
 {
     public partial class RegisterForm : Form
     {
-        DatabaseManager q = new DatabaseManager();
+        DatabaseManager objDatabaseManager = new DatabaseManager();
+        CheckEntry objCheckEntry = new CheckEntry();
         Password objPassword = new Password();
+        private List<string> userTypes;
+        string output;
+
         public RegisterForm()
         {
             InitializeComponent();      
             this.AcceptButton = btnRegister;
-        }
 
-        private Boolean isValidEmail(string email)
-        {
-            try
+            //load User Types from database into the user type dropdown list
+            //This function creates a list of user types and then adds 
+            //each item in the list as an Item in the dropdown list tool.
+            userTypes = new List<string>();
+            userTypes = objDatabaseManager.LoadUserTypes();
+            foreach (var type in userTypes)
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return true;
-            } catch {
-                return false;
+                cboxUserType.Items.Add(type);
             }
         }
 
         private Boolean CheckValidUser()
         {
-            
-            if (objPassword.DeterminePasswordStrength(txtPassword.Text) < 0)
+            bool addUser = true;
+
+            //This series of if statements checks to see if required textboxes are null.
+            //If null, the corresponding label is added to the output string.
+            if (objCheckEntry.isNull(txtFirstName.Text, lblFirstName.Text))
             {
-                MessageBox.Show("Password is not Strong enough!");
-                return false;
+                output += "\n " + lblFirstName.Text;
+                addUser = false;
             }
 
-            if(txtPassword.Text != txtVerifyPassword.Text)
+            if (objCheckEntry.isNull(txtLastName.Text, lblLastName.Text))
             {
-                MessageBox.Show("Password and Verify Password must match!");
-                txtPassword.Text = "";
-                txtVerifyPassword.Text = "";
-                return false;
+                output += "\n " + lblLastName.Text;
+                addUser = false;
             }
 
-            if (!isValidEmail(txtEmail.Text))
+            if (objCheckEntry.isNull(cboxUserType.Text, lblUserType.Text))
             {
-                MessageBox.Show("Please Use a Valid Email!");
-                txtEmail.Text = "";
-                return false;
+                output += "\n " + lblUsername.Text;
+                addUser = false;
             }
 
-            return true;
+            if (objCheckEntry.isNull(txtEmail.Text, lblEmail.Text))
+            {
+                output += "\n " + lblEmail.Text;
+                addUser = false;
+            }
+            else
+            {
+                if (!objCheckEntry.isValidEmail(txtEmail.Text))
+                {
+                    txtEmail.Text = "";
+                    return false;
+                }
+            }
+
+            if (objCheckEntry.isNull(txtUsername.Text, lblUsername.Text))
+            {
+                output += "\n " + lblUsername.Text;
+                addUser = false;
+            }
+
+            if (objCheckEntry.isNull(txtPassword.Text, lblPassword.Text))
+            {
+                output += "\n " + lblPassword.Text;
+                addUser = false;
+            }
+            else
+            {
+                if (objPassword.DeterminePasswordStrength(txtPassword.Text) < 0)
+                {
+                    MessageBox.Show("Password is not Strong enough!");
+                    return false;
+                }
+            }
+
+            if (objCheckEntry.isNull(txtVerifyPassword.Text, lblVerifyPw.Text))
+            {
+                output += "\n " + lblVerifyPw.Text;
+                addUser = false;
+            }
+            else
+            {
+                if (txtPassword.Text != txtVerifyPassword.Text)
+                {
+                    MessageBox.Show("Password and Verify Password must match!");
+                    txtPassword.Text = "";
+                    txtVerifyPassword.Text = "";
+                    return false;
+                }
+            }
+
+            MessageBox.Show("The following fields must contain a value: " + output);
+            output = "";
+
+            return addUser;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -60,10 +117,9 @@ namespace WorkFlowManagement
             {
                 try
                 {
-                    
-                    string encrptedPassword = objPassword.encryptPassword(txtPassword.Text);
-                    q.InsertUser(txtFirstName.Text, txtLastName.Text, cboxUserType.Text, 
-                        txtEmail.Text, txtUsername.Text, encrptedPassword);
+                    string encryptedPassword = objPassword.encryptPassword(txtPassword.Text);
+                    objDatabaseManager.InsertUser(txtFirstName.Text, txtLastName.Text, cboxUserType.Text, 
+                        txtEmail.Text, txtUsername.Text, encryptedPassword);
                 }
                 catch (SqlException EX)
                 {
@@ -110,6 +166,12 @@ namespace WorkFlowManagement
                 progressBar1.Value = passStrength;
             }
         }
-      
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm formLogin = new LoginForm();
+            formLogin.ShowDialog();
+        }
     }
 }

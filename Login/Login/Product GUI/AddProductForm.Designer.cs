@@ -75,9 +75,9 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.PartialStockGrid.DataSource = this.bindingSourceStock;
-            this.PartialStockGrid.Location = new System.Drawing.Point(451, 0);
+            this.PartialStockGrid.Location = new System.Drawing.Point(571, -1);
             this.PartialStockGrid.Name = "PartialStockGrid";
-            this.PartialStockGrid.Size = new System.Drawing.Size(345, 526);
+            this.PartialStockGrid.Size = new System.Drawing.Size(345, 646);
             this.PartialStockGrid.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -227,7 +227,7 @@
             // 
             this.lbl_Description.AutoSize = true;
             this.lbl_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Description.Location = new System.Drawing.Point(106, 423);
+            this.lbl_Description.Location = new System.Drawing.Point(59, 407);
             this.lbl_Description.Name = "lbl_Description";
             this.lbl_Description.Size = new System.Drawing.Size(10, 24);
             this.lbl_Description.TabIndex = 14;
@@ -278,7 +278,7 @@
             // 
             // AddProduct
             // 
-            this.ClientSize = new System.Drawing.Size(797, 526);
+            this.ClientSize = new System.Drawing.Size(915, 644);
             this.Controls.Add(this.btn_AdditionalProduct);
             this.Controls.Add(this.lbl_OrderMoreProduct);
             this.Controls.Add(this.lbl_ProductID);

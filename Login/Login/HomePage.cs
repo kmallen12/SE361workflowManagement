@@ -16,7 +16,7 @@ namespace WorkFlowManagement
         /// AUTHOR: Cowen Shears
         /// DATE: 2/25/19
         /// DESCRIPTION: Homepage for application. Knows who the user is.
-        /// EDITED BY: Mary Hermann 2/28/19
+        /// EDITED BY: Mary Hermann 3/22/19
 
         CurrentUser objCurrentUser;
         public HomePage() 
@@ -25,7 +25,18 @@ namespace WorkFlowManagement
             lblUsername.Text = string.Empty;
             lblUserType.Text = string.Empty;
         }
-        
+
+        //fixes flickering
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
         public HomePage(CurrentUser LoggedInUser)
         {
             InitializeComponent();
@@ -92,13 +103,29 @@ namespace WorkFlowManagement
         private void btnProductsView_Click(object sender, EventArgs e)
         {
             ViewProducts btnViewProducts = new ViewProducts();
-            btnViewProducts.ShowDialog();
+            if (objCurrentUser.canView(btnViewProducts))
+            {
+                btnViewProducts.ShowDialog();
+            }
+            else
+            {
+                btnViewProducts.Dispose();
+                MessageBox.Show("You do not have access for the View Products Form.");
+            }
         }
 
         private void btn_AddProduct_Click(object sender, EventArgs e)
         {
             AddProduct AddProduct = new AddProduct();
-            AddProduct.ShowDialog();
+            if (objCurrentUser.canView(AddProduct))
+            {
+                AddProduct.ShowDialog();
+            }
+            else
+            {
+                AddProduct.Dispose();
+                MessageBox.Show("You do not have access for the Add Products Form.");
+            }
         }
     }
 }
