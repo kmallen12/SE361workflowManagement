@@ -21,8 +21,11 @@ namespace WorkFlowManagement
         public string productName { get; set; }
         public string productMaterials { get; set; }
         public int productQuantity { get; set; }
+
+        MB M = new MB();
+
         //We set attributes after class initialization(in some cases) so I changed it from Product() to SetProduct()
-        
+
         public void SetProduct(int key)
         {
             //Querries the database for each attributes based on the key. 
@@ -53,8 +56,11 @@ namespace WorkFlowManagement
         {
             return "ID: " + productID + " Name: " + productName + " Materials: " + productMaterials + " Quantity: " + productQuantity;
         }
-        public void FinalizeProduct(string name, int quantity)
+        public int FinalizeProduct(string name, int quantity)
         {
+            int tempmat;
+            int id;
+            decimal amt;
             //Instantiate productName and productQuantity of the new product.
             productName = name;
             productQuantity = quantity;
@@ -67,8 +73,24 @@ namespace WorkFlowManagement
                     //Subtract quantity of material given from material in database. 
                     //Description [0] would be the first ID and [1] is the quantity then increment +2.
                     for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                    {
+                        id = Int32.Parse(materialsDescription[i]);
+                        amt = Decimal.Parse(materialsDescription[i + 1]);
+                        tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
+                        if (tempmat < 0)
+                        { 
+                            M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat+ quantity * (int)amt);
+                            return 0;
+                        }
+                        
+                        
+                    }
+                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+                    {
                         objDatabaseManager.SubtractMaterialQuantity(Int32.Parse(materialsDescription[i]), Decimal.Parse(materialsDescription[i + 1]));
+                    }
                 }
+                
             }
             catch (Exception p)
             {
@@ -76,7 +98,7 @@ namespace WorkFlowManagement
             }
             //ID is automatically generated when inserted into the table. 
             objDatabaseManager.InsertProduct(productName, productMaterials, productQuantity);
-            
+            return 0;
         }
         public void AdditionalProduct(int key, int quantity)
         {
@@ -109,5 +131,11 @@ namespace WorkFlowManagement
             //Update product info after increase.
             SetProduct(key);
         }
+    }
+    public struct productMaterials
+    {
+        public int materialID;
+        public int Quantity;
+        public string Name;
     }
 }
