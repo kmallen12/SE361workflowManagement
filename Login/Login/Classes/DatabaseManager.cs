@@ -308,6 +308,84 @@ namespace WorkFlowManagement
             _conn.Close();
         }
 
+        public void InsertToStockTable(List<Stock> stocks)
+        {
+            try
+            {
+                _conn.Open();
+
+                //SQL Command to insert data to the Raw Materials Table
+                string str = "INSERT INTO [dbo].[StockTable] ([materialType], [quantity], [unitCost], [totalCost], [dateAcquired], [dateUsed], [amtDefected]) " +
+                    "Values (@material, @quan, @uCost, @tCost, @dateAcq, @dateUsed, @defects)";
+
+                //feed Raw Materials list to the sqlCommand
+                foreach (var stock in stocks)
+                {
+                    SqlCommand com = new SqlCommand(str, _conn);
+                    com.Connection = _conn;
+                    com.Parameters.Add("@material", SqlDbType.VarChar).Value = stock.materialType;
+                    com.Parameters.Add("@quan", SqlDbType.Decimal).Value = stock.quantity;
+
+                    if(stock.unitCost != 0)
+                    {
+                        com.Parameters.Add("@uCost", SqlDbType.Decimal).Value = stock.unitCost;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@uCost", SqlDbType.Decimal).Value = DBNull.Value;
+                    }
+
+                    if (stock.totalCost() != 0)
+                    {
+                        com.Parameters.Add("@tCost", SqlDbType.Decimal).Value = stock.totalCost();
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@tCost", SqlDbType.Decimal).Value = DBNull.Value;
+                    }
+
+                    if (stock.dateAcquired != DateTime.MinValue)
+                    {
+                        com.Parameters.Add("@dateAcq", SqlDbType.Date).Value = stock.dateAcquired;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@dateAcq", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    if (stock.dateUsed != DateTime.MinValue)
+                    {
+                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = stock.dateUsed;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@dateUsed", SqlDbType.VarChar).Value = DBNull.Value;
+                    }
+
+                    if (stock.defects != 0)
+                    {
+                        com.Parameters.Add("@defects", SqlDbType.Decimal).Value = stock.defects;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@defects", SqlDbType.Decimal).Value = DBNull.Value;
+                    }
+
+                    com.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString(), "Error adding stocks to the database.");
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            _conn.Close();
+        }
+
         //load data from the Stocks Table into a list
         public DataTable LoadStocks()
         {

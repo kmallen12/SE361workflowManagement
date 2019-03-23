@@ -82,5 +82,13 @@ namespace WorkFlowManagement
             return true;
         }
 
+        //Overriding the ToString method
+        public override string ToString()
+        {
+            return string.Format("Material: {0}, Quantity: {1}, Defects: {2}, Unit Cost: {3:c}, Total Cost: {4:c}, Date Acquired: {5}, Date Used: {6}",
+                materialType, quantity, defects, unitCost, totalCost(), dateAcquired, dateUsed);
+        }
+
+
     }
 }

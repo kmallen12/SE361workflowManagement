@@ -28,7 +28,7 @@ namespace WorkFlowManagement
         {
             try
             {
-                double txt = double.Parse(label);
+                double txt = double.Parse(text);
                 return true;
             }
             catch
@@ -37,6 +37,20 @@ namespace WorkFlowManagement
                 return false;
             }
         }
+
+        public Boolean isValidNumber(string t, string l)
+        {
+            try
+            {
+                double testNo = double.Parse(t);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public Boolean isValidInt(string t, string lbl)
         {
             try
@@ -94,6 +108,19 @@ namespace WorkFlowManagement
             catch
             {
                 System.Windows.Forms.MessageBox.Show("Please Use a Valid Email!");
+                return false;
+            }
+        }
+
+        public Boolean isValidDate(string dateEntered)
+        {
+            try
+            {
+                DateTime date = DateTime.Parse(dateEntered);
+                return true;
+            }
+            catch (Exception)
+            {
                 return false;
             }
         }
