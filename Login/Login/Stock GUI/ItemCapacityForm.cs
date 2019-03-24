@@ -13,10 +13,13 @@ namespace WorkFlowManagement
 {
     public partial class ItemCapacityForm : Form
     {
-        DatabaseManager q = new DatabaseManager();
+        DatabaseManager objDatabaseManager = new DatabaseManager();
+        CheckEntry objCheckEntry;
+
         public ItemCapacityForm()
         {
             InitializeComponent();
+            objCheckEntry = new CheckEntry();
         }
 
         private Boolean isValidQuantity(string quantity)
@@ -33,13 +36,11 @@ namespace WorkFlowManagement
         }
 
 
-
-
         private void btnUpdateWarningValues_Click(object sender, EventArgs e)
         {
             if (isValidQuantity(txtItemID.Text))
             {
-                q.UpdateWareHouse(txtItemID.Text, txtMax.Text, txtLow.Text);
+                objDatabaseManager.UpdateWareHouse(txtItemID.Text, txtMax.Text, txtLow.Text);
             }
         }
     }

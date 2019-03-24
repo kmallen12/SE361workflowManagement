@@ -260,7 +260,7 @@ namespace WorkFlowManagement
         public void UpdateWareHouse(string ID, string max, string low)
         {
             _conn.Open();
-            string str = "UPDATE [dbo].[WareHouseTable] SET Max=@Max , Low=@Low WHERE itemID = @itemID";
+            string str = "UPDATE [dbo].[WareHouseTable] SET Max=@Max, Low=@Low WHERE itemID = @itemID";
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;

@@ -15,6 +15,7 @@ namespace WorkFlowManagement
     {
         private DataTable stocks;
         DatabaseManager objDatabaseManager = new DatabaseManager();
+        CheckEntry objCheckEntry = new CheckEntry();
 
         public UpdateStockForm() => InitializeComponent();
 
