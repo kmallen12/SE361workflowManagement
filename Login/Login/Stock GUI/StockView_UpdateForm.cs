@@ -16,105 +16,87 @@ namespace WorkFlowManagement
         private DataTable stocks;
         DatabaseManager objDatabaseManager = new DatabaseManager();
         CheckEntry objCheckEntry = new CheckEntry();
+        Stock objStock = new Stock();
+        private List<RawMaterials> materialList;
 
         public UpdateStockForm() => InitializeComponent();
 
-        private void UpdateStockForm_Load(object sender, EventArgs e)
+        private void loadStocks()
         {
-            // Uncomment the next line of code to view data right from Database (not recommended b/c doesn't follow 3-tier architecture).
-            //this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
-            stocks = new DataTable();
-            stocks = objDatabaseManager.LoadStocks();
-
-            //use stock datatable as datasource for data grid
-            dataGridView1.DataSource = stocks;
-        }
-
-        private void btnLoadStockFromDB_Click(object sender, EventArgs e)
-        {          
             //load Stocks Table from database into a list
             stocks = new DataTable();
             stocks = objDatabaseManager.LoadStocks();
 
             //use stock datatable as datasource for data grid
             dataGridView1.DataSource = stocks;
-            
         }
 
-        private Boolean isValidQuantity(string quantity)
+        private void UpdateStockForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                double quan = double.Parse(quantity);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-        private Boolean CheckValidStock()
-        {
-            if (!isValidQuantity(quantityGrid_box.Text))
-            {
-                System.Windows.Forms.MessageBox.Show("Quantity must be an integer (e.g. 30, 1000, etc.)");
-                quantityGrid_box.Clear();
-                return false;
-            }
+            loadStocks();
 
-            return true;
+            materialList = new List<RawMaterials>();
+
+            materialList = objDatabaseManager.LoadRawMat();
+
+            foreach (var mat in materialList)
+            {
+                txtMaterialType.Items.Add(mat.material);
+            }
         }
+
+        private void btnLoadStockFromDB_Click(object sender, EventArgs e)
+        {
+            loadStocks();
+        }
+
         private void ConfirmGrid_btn_Click(object sender, EventArgs e)
         {
-            CheckEntry objCheckID = new CheckEntry(ItemIDGrid_box.Text, "Item ID");
-            CheckEntry objCheckMatType = new CheckEntry(materialTypeGrid_box.Text, "Material Type");
-            CheckEntry objCheckQuan = new CheckEntry(quantityGrid_box.Text, "Quantity");
-            CheckEntry objCheckUCost = new CheckEntry(unitCostGrid_box.Text,"Unit Cost");
-            CheckEntry objCheckTCost = new CheckEntry(totalCostGrid_box.Text, "Total Cost");
-
-            //insert a new stock into the Stock Table if the entry does NOT have a value in the ID field
-            if (CheckValidStock()&&string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
+            //Add a new stock if the Item ID is empty
+            if (string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
             {
-                string material = materialTypeGrid_box.Text;
-                double unitCost;
-
-                if (string.IsNullOrEmpty(unitCostGrid_box.Text))
+                try
                 {
-                    unitCost = 0;
-                }
-                else
-                {
-                    unitCost = double.Parse(unitCostGrid_box.Text);
-                }
-                
-                objDatabaseManager.InsertStock(materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
-                this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
-                this.dataGridView1.Refresh();
-                this.dataGridView1.RefreshEdit();
+                    objCheckEntry.checkValidStockEntry(txtMaterialType.Text, lblMaterialType.Text, quantityGrid_box.Text, lblQuantity.Text, unitCostGrid_box.Text, lblUnitCost.Text,
+                        totalCostGrid_box.Text, lblTotalCost.Text, amtDefectedGrid_box.Text, lblDefects.Text, dateAcquiredGrid_box.Text, lblDateAcq.Text, dateUsedGrid_box.Text,
+                        lblDateUsed.Text, objStock);
 
+                    objDatabaseManager.InsertStock(txtMaterialType.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
+
+                    loadStocks();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error adding stock to Stock table.");
+                }
             }
-            //update existing stock in the Stock table if there is a value in the ID field
-            else if (CheckValidStock()&&!string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
+
+            //Update existing stock based on the ID entered in the Item ID field
+            if (!string.IsNullOrEmpty(ItemIDGrid_box.Text.ToString()))
             {
-              
-                string material = materialTypeGrid_box.Text;
-                double unitCost;
-                int key = Int32.Parse(ItemIDGrid_box.Text);
-                if (string.IsNullOrEmpty(unitCostGrid_box.Text))
+                try
                 {
-                    unitCost = 0;
+                    objCheckEntry.checkValidStockEntry(txtMaterialType.Text, lblMaterialType.Text, quantityGrid_box.Text, lblQuantity.Text, unitCostGrid_box.Text, lblUnitCost.Text,
+                        totalCostGrid_box.Text, lblTotalCost.Text, amtDefectedGrid_box.Text, lblDefects.Text, dateAcquiredGrid_box.Text, lblDateAcq.Text, dateUsedGrid_box.Text,
+                        lblDateUsed.Text, objStock);
+
+                    int key = Int32.Parse(ItemIDGrid_box.Text);
+
+                    objDatabaseManager.UpdateStock(key, txtMaterialType.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
+                    MessageBox.Show("Item number " + ItemIDGrid_box.Text + " (" + txtMaterialType.Text + ") was updated in the database.");
                 }
-                else
+                catch (Exception)
                 {
-                    unitCost = double.Parse(unitCostGrid_box.Text);
+                    MessageBox.Show("Error updating stock in the Stock database table.");
                 }
 
-                objDatabaseManager.UpdateStock(key, materialTypeGrid_box.Text, quantityGrid_box.Text, unitCostGrid_box.Text, totalCostGrid_box.Text, dateAcquiredGrid_box.Text, dateUsedGrid_box.Text, amtDefectedGrid_box.Text);
-                
-                this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
-                this.dataGridView1.Refresh();
-                this.dataGridView1.RefreshEdit();
+                loadStocks();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
