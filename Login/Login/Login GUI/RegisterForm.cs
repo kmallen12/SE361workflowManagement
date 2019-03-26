@@ -7,6 +7,7 @@ namespace WorkFlowManagement
 {
     public partial class RegisterForm : Form
     {
+        //Update: 3/26/2019 - Cowen Shears - I fixed some bugs for the MessageBox in CheckValidUser().
         DatabaseManager objDatabaseManager = new DatabaseManager();
         CheckEntry objCheckEntry = new CheckEntry();
         Password objPassword = new Password();
@@ -32,7 +33,7 @@ namespace WorkFlowManagement
         private Boolean CheckValidUser()
         {
             bool addUser = true;
-
+            bool showMessage = true;
             //This series of if statements checks to see if required textboxes are null.
             //If null, the corresponding label is added to the output string.
             if (objCheckEntry.isNull(txtFirstName.Text, lblFirstName.Text))
@@ -49,7 +50,7 @@ namespace WorkFlowManagement
 
             if (objCheckEntry.isNull(cboxUserType.Text, lblUserType.Text))
             {
-                output += "\n " + lblUsername.Text;
+                output += "\n User Type";
                 addUser = false;
             }
 
@@ -63,7 +64,9 @@ namespace WorkFlowManagement
                 if (!objCheckEntry.isValidEmail(txtEmail.Text))
                 {
                     txtEmail.Text = "";
-                    return false;
+                    output += "\n " + lblEmail.Text;
+                    addUser = false;
+                    showMessage = false;
                 }
             }
 
@@ -83,7 +86,10 @@ namespace WorkFlowManagement
                 if (objPassword.DeterminePasswordStrength(txtPassword.Text) < 0)
                 {
                     MessageBox.Show("Password is not Strong enough!");
-                    return false;
+                    txtPassword.Text = "";
+                    txtVerifyPassword.Text = "";
+                    addUser = false;
+                    showMessage = false;
                 }
             }
 
@@ -99,11 +105,12 @@ namespace WorkFlowManagement
                     MessageBox.Show("Password and Verify Password must match!");
                     txtPassword.Text = "";
                     txtVerifyPassword.Text = "";
-                    return false;
+                    addUser = false;
+                    showMessage = false;
                 }
             }
-
-            MessageBox.Show("The following fields must contain a value: " + output);
+            
+            if (showMessage == true && addUser == false) MessageBox.Show("The following fields must contain a value: " + output);
             output = "";
 
             return addUser;

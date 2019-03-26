@@ -8,9 +8,9 @@ namespace WorkFlowManagement
 {
     public class CurrentUser
     {
-        /// AUTHOR: Cowen Shears and Troy and Mary
         /// DATE: 2/27/19
         /// DESCRIPTION: Class to store basic details about the current user who is logged in. 
+        /// LAST UPDATE BY: Cowen Shears 3/26/2019
 
         //Automatic Properties
         public string Username { get; set; }
@@ -55,6 +55,5 @@ namespace WorkFlowManagement
 
             return false;
         }
-
     }
 }

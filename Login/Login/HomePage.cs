@@ -13,12 +13,12 @@ namespace WorkFlowManagement
 {
     public partial class HomePage : Form
     {
-        /// AUTHOR: Cowen Shears
         /// DATE: 2/25/19
         /// DESCRIPTION: Homepage for application. Knows who the user is.
-        /// EDITED BY: Mary Hermann 3/22/19
+        /// LAST UPDATE BY: Cowen Shears 3/26/19
 
         CurrentUser objCurrentUser;
+        public ToolTip ttUserFeedback = new ToolTip();
         public HomePage() 
         {
             InitializeComponent();
@@ -43,6 +43,55 @@ namespace WorkFlowManagement
             objCurrentUser = LoggedInUser;
             lblUsername.Text = objCurrentUser.Username;
             lblUserType.Text = objCurrentUser.UserType;
+            SetAccessibility();
+        }
+
+        private void SetAccessibility()
+        {
+            //Grays out inaccessable buttons and displays tooltips for user based on UserType.
+            if (objCurrentUser.UserType == "Administrator") return; //administrator has access to all 
+
+            if (objCurrentUser.UserType != "Stockiest")
+            {
+                ttUserFeedback.SetToolTip(btnStockGenerateReport, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnStockMaterials, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnStockUpdate, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+                btnStockGenerateReport.ForeColor = Color.DarkGray;
+                btnStockMaterials.ForeColor = Color.DarkGray;
+                btnStockUpdate.ForeColor = Color.DarkGray;
+
+            }
+
+            if (objCurrentUser.UserType != "Product Manager")
+            {
+                ttUserFeedback.SetToolTip(btnProductsView, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btn_AddProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnProductQuality, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnProductUpdateStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnReorderStock, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+                btnProductsView.ForeColor = Color.DarkGray;
+                btn_AddProduct.ForeColor = Color.DarkGray;
+                btnProductQuality.ForeColor = Color.DarkGray;
+                btnProductUpdateStatus.ForeColor = Color.DarkGray;
+                btnReorderStock.ForeColor = Color.DarkGray;
+            }
+
+            if (objCurrentUser.UserType != "Quality Analyzer")
+            {
+                //fill with buttons for QA user
+            }
+
+            if (objCurrentUser.UserType != "Delivery Manager")
+            {
+                //fill with buttons for DM user
+            }
+
+            if (objCurrentUser.UserType != "Report Manager")
+            {
+                //fill with buttons for RM user
+            }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -70,7 +119,7 @@ namespace WorkFlowManagement
             else
             {
                 formMaterial.Dispose();
-                MessageBox.Show("You do not have access for the Stock Materials Form.");
+                MessageBox.Show("You do not have access for the Stock Materials Form.\nContact your local Stockiest.");
             }
         }
         private void btnStockUpdate_Click_1(object sender, EventArgs e)
@@ -83,7 +132,7 @@ namespace WorkFlowManagement
             else
             {
                 formStock.Dispose();
-                MessageBox.Show("You do not have access for the Stock View/Update Form.");
+                MessageBox.Show("You do not have access for the Stock View/Update Form.\nContact your local Stockiest.");
             }
         }
         private void btnStockGenerateReport_Click_1(object sender, EventArgs e)
@@ -96,7 +145,7 @@ namespace WorkFlowManagement
             else
             {
                 formReport.Dispose();
-                MessageBox.Show("You do not have access for the Stock Report Form.");
+                MessageBox.Show("You do not have access for the Stock Report Form.\nContact your local Stockiest.");
             }
         }
 
@@ -110,7 +159,7 @@ namespace WorkFlowManagement
             else
             {
                 btnViewProducts.Dispose();
-                MessageBox.Show("You do not have access for the View Products Form.");
+                MessageBox.Show("You do not have access for the View Products Form.\nContact your local Product Manager.");
             }
         }
 
@@ -124,7 +173,7 @@ namespace WorkFlowManagement
             else
             {
                 AddProduct.Dispose();
-                MessageBox.Show("You do not have access for the Add Products Form.");
+                MessageBox.Show("You do not have access for the Add Products Form.\nContact your local Product Manager.");
             }
         }
     }

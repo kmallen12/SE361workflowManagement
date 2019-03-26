@@ -40,14 +40,14 @@
             this.btnStockMaterials = new System.Windows.Forms.Button();
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.btn_AddProduct = new System.Windows.Forms.Button();
-            this.btnReorderStck = new System.Windows.Forms.Button();
+            this.btnReorderStock = new System.Windows.Forms.Button();
             this.lblProductHomepg = new System.Windows.Forms.Label();
             this.btnProductUpdateStatus = new System.Windows.Forms.Button();
             this.btnProductQuality = new System.Windows.Forms.Button();
             this.btnProductsView = new System.Windows.Forms.Button();
             this.tabQuality = new System.Windows.Forms.TabPage();
-            this.tabDelivery = new System.Windows.Forms.TabPage();
             this.lblQAdashboard = new System.Windows.Forms.Label();
+            this.tabDelivery = new System.Windows.Forms.TabPage();
             this.lblDdashboard = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
@@ -168,6 +168,7 @@
             // btnStockMaterials
             // 
             this.btnStockMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockMaterials.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnStockMaterials.Location = new System.Drawing.Point(14, 54);
             this.btnStockMaterials.Name = "btnStockMaterials";
             this.btnStockMaterials.Size = new System.Drawing.Size(173, 56);
@@ -179,7 +180,7 @@
             // tabProducts
             // 
             this.tabProducts.Controls.Add(this.btn_AddProduct);
-            this.tabProducts.Controls.Add(this.btnReorderStck);
+            this.tabProducts.Controls.Add(this.btnReorderStock);
             this.tabProducts.Controls.Add(this.lblProductHomepg);
             this.tabProducts.Controls.Add(this.btnProductUpdateStatus);
             this.tabProducts.Controls.Add(this.btnProductQuality);
@@ -204,15 +205,15 @@
             this.btn_AddProduct.UseVisualStyleBackColor = true;
             this.btn_AddProduct.Click += new System.EventHandler(this.btn_AddProduct_Click);
             // 
-            // btnReorderStck
+            // btnReorderStock
             // 
-            this.btnReorderStck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReorderStck.Location = new System.Drawing.Point(14, 273);
-            this.btnReorderStck.Name = "btnReorderStck";
-            this.btnReorderStck.Size = new System.Drawing.Size(173, 56);
-            this.btnReorderStck.TabIndex = 11;
-            this.btnReorderStck.Text = "Reorder Stock";
-            this.btnReorderStck.UseVisualStyleBackColor = true;
+            this.btnReorderStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReorderStock.Location = new System.Drawing.Point(14, 273);
+            this.btnReorderStock.Name = "btnReorderStock";
+            this.btnReorderStock.Size = new System.Drawing.Size(173, 56);
+            this.btnReorderStock.TabIndex = 11;
+            this.btnReorderStock.Text = "Reorder Stock";
+            this.btnReorderStock.UseVisualStyleBackColor = true;
             // 
             // lblProductHomepg
             // 
@@ -266,6 +267,16 @@
             this.tabQuality.Text = "Quality";
             this.tabQuality.UseVisualStyleBackColor = true;
             // 
+            // lblQAdashboard
+            // 
+            this.lblQAdashboard.AutoSize = true;
+            this.lblQAdashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQAdashboard.Location = new System.Drawing.Point(7, 13);
+            this.lblQAdashboard.Name = "lblQAdashboard";
+            this.lblQAdashboard.Size = new System.Drawing.Size(375, 29);
+            this.lblQAdashboard.TabIndex = 9;
+            this.lblQAdashboard.Text = "Quality Assessment Dashboard";
+            // 
             // tabDelivery
             // 
             this.tabDelivery.Controls.Add(this.lblDdashboard);
@@ -276,16 +287,6 @@
             this.tabDelivery.TabIndex = 3;
             this.tabDelivery.Text = "Delivery";
             this.tabDelivery.UseVisualStyleBackColor = true;
-            // 
-            // lblQAdashboard
-            // 
-            this.lblQAdashboard.AutoSize = true;
-            this.lblQAdashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQAdashboard.Location = new System.Drawing.Point(7, 13);
-            this.lblQAdashboard.Name = "lblQAdashboard";
-            this.lblQAdashboard.Size = new System.Drawing.Size(375, 29);
-            this.lblQAdashboard.TabIndex = 9;
-            this.lblQAdashboard.Text = "Quality Assessment Dashboard";
             // 
             // lblDdashboard
             // 
@@ -338,7 +339,7 @@
         private System.Windows.Forms.Button btnStockGenerateReport;
         private System.Windows.Forms.Button btnStockMaterials;
         private System.Windows.Forms.TabPage tabProducts;
-        private System.Windows.Forms.Button btnReorderStck;
+        private System.Windows.Forms.Button btnReorderStock;
         private System.Windows.Forms.Label lblProductHomepg;
         private System.Windows.Forms.Button btnProductUpdateStatus;
         private System.Windows.Forms.Button btnProductQuality;
