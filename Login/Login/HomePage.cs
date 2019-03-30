@@ -76,6 +76,7 @@ namespace WorkFlowManagement
                 btnProductQuality.ForeColor = Color.DarkGray;
                 btnProductUpdateStatus.ForeColor = Color.DarkGray;
                 btnReorderStock.ForeColor = Color.DarkGray;
+                btnReManufacture.ForeColor = Color.DarkGray;
             }
 
             if (objCurrentUser.UserType != "Quality Analyzer")
@@ -204,7 +205,7 @@ namespace WorkFlowManagement
 
         private void btnDelViewProduct_Click(object sender, EventArgs e)
         {
-            ViewProducts btnViewProducts = new ViewProducts();
+            ViewProductsForm btnViewProducts = new ViewProductsForm();
             if (objCurrentUser.canView(btnViewProducts))
             {
                 btnViewProducts.ShowDialog();
@@ -226,7 +227,35 @@ namespace WorkFlowManagement
             else
             {
                 formReport.Dispose();
-                MessageBox.Show("You do not have access for the Stock Report Form.\nContact your local Stockiest.");
+                MessageBox.Show("You do not have access for the Stock Report Form.\nContact your local Report Manager.");
+            }
+        }
+
+        private void btnDelRouteProduct_Click(object sender, EventArgs e)
+        {
+            RouteProducts formReport = new RouteProducts();
+            if (objCurrentUser.canView(formReport))
+            {
+                formReport.ShowDialog();
+            }
+            else
+            {
+                formReport.Dispose();
+                MessageBox.Show("You do not have access for the Route Products Form.\nContact your local Report Manager.");
+            }
+        }
+
+        private void btnReManufacture_Click(object sender, EventArgs e)
+        {
+            RemanufactureForm formReport = new RemanufactureForm();
+            if (objCurrentUser.canView(formReport))
+            {
+                formReport.ShowDialog();
+            }
+            else
+            {
+                formReport.Dispose();
+                MessageBox.Show("You do not have access for the Remanufacture Products Form.\nContact your local Product Manager.");
             }
         }
     }

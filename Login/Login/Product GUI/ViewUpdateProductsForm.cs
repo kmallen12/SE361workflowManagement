@@ -42,7 +42,7 @@ namespace WorkFlowManagement
                 P.SetProduct(Int32.Parse(txt_ProductID.Text));
                 if (M.UpdateProduct(P, txt_ProductID.Text, txt_ProductName.Text, txt_ProductMaterials.Text, txt_ProductQuantity.Text))
                 {
-                    P.UpdateProduct(Int32.Parse(txt_ProductID.Text), txt_ProductName.Text, txt_ProductMaterials.Text, Int32.Parse(txt_ProductQuantity.Text));
+                    P.UpdateProduct(Int32.Parse(txt_ProductID.Text), txt_ProductName.Text, txt_ProductMaterials.Text, Int32.Parse(txt_ProductQuantity.Text), "In Progress");
                     ViewProducts_Load(sender, e);
                 }
             }

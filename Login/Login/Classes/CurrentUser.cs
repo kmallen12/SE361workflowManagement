@@ -39,7 +39,8 @@ namespace WorkFlowManagement
             if (UserType == "Product Manager")
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.AddProduct"
-                    || Form.GetType().ToString() == "WorkFlowManagement.ViewProducts")
+                    || Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
+                    || Form.GetType().ToString() == "WorkFlowManagement.RemanufactureForm")
                     return true;
             }
 
@@ -50,7 +51,8 @@ namespace WorkFlowManagement
 
             if (UserType == "Delivery Manager")
             {
-                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts")
+                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
+                    || Form.GetType().ToString() == "WorkFlowManagement.RouteProducts")
                     return true;
             }
 

@@ -256,6 +256,94 @@ namespace WorkFlowManagement
             return rawMaterials;
         }
 
+        //load IDs of qualified products from the Products Table into a list
+        public List<Product> LoadQualifiedProducts()
+        {
+            string status = "Passed QA";
+            List<Product> qualifiedProds = new List<Product>();
+
+            try
+            {
+                Product tempProd;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+
+                cmd.Parameters.AddWithValue("@status", status);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    tempProd = new Product();
+                    tempProd.productID = (int)reader["pID"];
+                    tempProd.productName = (string)reader["ProductName"];
+                    tempProd.productMaterials = (string)reader["materialsString"];
+                    tempProd.productQuantity = (int)reader["quantity"];
+                    tempProd.productStatus = (string)reader["productStatus"];
+                    qualifiedProds.Add(tempProd);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading qualified products from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return qualifiedProds;
+        }
+
+        //load IDs of defective products from the Products Table into a list
+        public List<Product> LoadDefectiveProducts()
+        {
+            string status = "Defective";
+            List<Product> defectiveProds = new List<Product>();
+
+            try
+            {
+                Product tempProd;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+
+                cmd.Parameters.AddWithValue("@status", status);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    tempProd = new Product();
+                    tempProd.productID = (int)reader["pID"];
+                    tempProd.productName = (string)reader["ProductName"];
+                    tempProd.productMaterials = (string)reader["materialsString"];
+                    tempProd.productQuantity = (int)reader["quantity"];
+                    tempProd.productStatus = (string)reader["productStatus"];
+                    defectiveProds.Add(tempProd);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading qualified products from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return defectiveProds;
+        }
+
         //update max/min information for the warehouse
         public void UpdateWareHouse(string ID, string max, string low)
         {
@@ -283,18 +371,20 @@ namespace WorkFlowManagement
             _conn.Close();
         }
         //Insert a new product into the productTable.
-        public void InsertProduct(string productName, string materialsString, int quantity)
+        public void InsertProduct(string productName, string materialsString, int quantity, string status)
         {
             _conn.Close();
             _conn.Open();
-            string str = "INSERT INTO [dbo].[ProductTable] (  [productName], [materialsString], [quantity]) VALUES (@productName, @materialsString, @quantity)";
+            string str = "INSERT INTO [dbo].[ProductTable] (  [productName], [materialsString], [quantity], [productStatus]) VALUES (@productName, @materialsString, @quantity, @status)";
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;
                 com.Parameters.Add("@productName", SqlDbType.VarChar).Value = productName;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
+                com.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
 
+                
                 com.ExecuteNonQuery();
             }
             _conn.Close();
@@ -711,6 +801,31 @@ namespace WorkFlowManagement
 
             return name;
         }
+
+        public string ProductStatus(int key)
+        {
+            string status = "";
+            try
+            {
+                //open a db connection
+                conn.Open();
+
+                //SQL Command to pull productStatus from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  productStatus FROM [dbo].[ProductTable] WHERE pId=" + key, conn);
+
+                status = Convert.ToString(cmd.ExecuteScalar());
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading product status from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return status;
+        }
         public string MaterialName(int key)
         {
             string name = "";
@@ -738,10 +853,10 @@ namespace WorkFlowManagement
             return name;
         }
         //Updates Product based on key(ID).
-        public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity)
+        public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity, string productStatus)
         {
             _conn.Open();
-            string str = "UPDATE [dbo].[ProductTable] SET ProductName=@ProductName, materialsString=@materialsString, quantity=@quantity WHERE pId=@pId";
+            string str = "UPDATE [dbo].[ProductTable] SET ProductName=@ProductName, materialsString=@materialsString, quantity=@quantity, productStatus=@productStatus WHERE pId=@pId";
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;
@@ -749,7 +864,7 @@ namespace WorkFlowManagement
                 com.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName;
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
-               
+                com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
 
                 com.ExecuteNonQuery();
             }

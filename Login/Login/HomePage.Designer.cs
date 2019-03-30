@@ -60,6 +60,7 @@
             this.btnRepProductsInProgress = new System.Windows.Forms.Button();
             this.btnRepStockRawMaterials = new System.Windows.Forms.Button();
             this.btnRepStockWarehouseCapacity = new System.Windows.Forms.Button();
+            this.btnReManufacture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -201,6 +202,7 @@
             // 
             // tabProducts
             // 
+            this.tabProducts.Controls.Add(this.btnReManufacture);
             this.tabProducts.Controls.Add(this.btn_AddProduct);
             this.tabProducts.Controls.Add(this.btnReorderStock);
             this.tabProducts.Controls.Add(this.lblProductHomepg);
@@ -356,6 +358,7 @@
             this.btnDelRouteProduct.TabIndex = 11;
             this.btnDelRouteProduct.Text = "Route Products";
             this.btnDelRouteProduct.UseVisualStyleBackColor = true;
+            this.btnDelRouteProduct.Click += new System.EventHandler(this.btnDelRouteProduct_Click);
             // 
             // btnDelViewProduct
             // 
@@ -462,6 +465,18 @@
             this.btnRepStockWarehouseCapacity.UseVisualStyleBackColor = true;
             this.btnRepStockWarehouseCapacity.Click += new System.EventHandler(this.btnRepStockWarehouseCapacity_Click);
             // 
+            // btnReManufacture
+            // 
+            this.btnReManufacture.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReManufacture.Location = new System.Drawing.Point(686, 68);
+            this.btnReManufacture.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReManufacture.Name = "btnReManufacture";
+            this.btnReManufacture.Size = new System.Drawing.Size(232, 71);
+            this.btnReManufacture.TabIndex = 13;
+            this.btnReManufacture.Text = "Defective Products to Re-Manufacture";
+            this.btnReManufacture.UseVisualStyleBackColor = true;
+            this.btnReManufacture.Click += new System.EventHandler(this.btnReManufacture_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -527,5 +542,6 @@
         private System.Windows.Forms.Button btnDelViewQualProducts;
         private System.Windows.Forms.Button btnDelRouteProduct;
         private System.Windows.Forms.Button btnDelViewProduct;
+        private System.Windows.Forms.Button btnReManufacture;
     }
 }

@@ -74,6 +74,18 @@
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Delivery GUI\RouteProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery GUI\RouteProducts.Designer.cs">
+      <DependentUpon>RouteProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product GUI\RemanufactureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\RemanufactureForm.Designer.cs">
+      <DependentUpon>RemanufactureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock GUI\ItemCapacityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,16 +140,27 @@
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\CheckEntryClass.cs" />
-    <Compile Include="Product GUI\ViewProductsForm.cs">
+    <Compile Include="Product GUI\ViewUpdateProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product GUI\ViewProductsForm.Designer.cs">
+    <Compile Include="Product GUI\ViewUpdateProductsForm.Designer.cs">
+      <DependentUpon>ViewUpdateProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery GUI\ViewProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery GUI\ViewProductsForm.Designer.cs">
       <DependentUpon>ViewProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlowDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkFlowDatabaseDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="WorkFlowDatabaseDataSetProducts.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,6 +169,12 @@
     </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery GUI\RouteProducts.resx">
+      <DependentUpon>RouteProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
+      <DependentUpon>RemanufactureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock GUI\ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>
@@ -181,7 +210,10 @@
     <EmbeddedResource Include="Stock GUI\StockView_UpdateForm.resx">
       <DependentUpon>StockView_UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product GUI\ViewProductsForm.resx">
+    <EmbeddedResource Include="Product GUI\ViewUpdateProductsForm.resx">
+      <DependentUpon>ViewUpdateProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery GUI\ViewProductsForm.resx">
       <DependentUpon>ViewProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
@@ -205,6 +237,17 @@
     </None>
     <None Include="WorkFlowDatabaseDataSet.xss">
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet1.xsc">
+      <DependentUpon>WorkFlowDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkFlowDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet1.xss">
+      <DependentUpon>WorkFlowDatabaseDataSet1.xsd</DependentUpon>
     </None>
     <None Include="WorkFlowDatabaseDataSetProducts.xsc">
       <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>

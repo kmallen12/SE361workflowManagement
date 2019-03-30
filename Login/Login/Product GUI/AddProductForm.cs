@@ -33,7 +33,6 @@ namespace WorkFlowManagement
             PartialStockGrid.DataSource = product.PartialStockTable();
         }
 
-   
 
         private void btn_AddMaterialtoProduct_Click(object sender, EventArgs e)
         {

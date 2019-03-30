@@ -17,6 +17,7 @@ namespace WorkFlowManagement
         public int ID;
         public int Quantity;
         public string Name;
+
         public MaterialsProduct(int InitID, int InitQuantity, string InitName)
         {
             ID = InitID;
@@ -24,7 +25,7 @@ namespace WorkFlowManagement
             Name = InitName;
         }
     };
-    class Product
+    public class Product
     {
         MB M = new MB();
         DatabaseManager objDatabaseManager = new DatabaseManager();
@@ -36,6 +37,8 @@ namespace WorkFlowManagement
         public string productName { get; set; }
         public string productMaterials { get; set; }
         public int productQuantity { get; set; }
+
+        public string productStatus { get; set; }
         //We set attributes after class initialization(in some cases) so I changed it from Product() to SetProduct()
         
         public void SetProduct(int key)
@@ -46,10 +49,11 @@ namespace WorkFlowManagement
             productMaterials = objDatabaseManager.ProductMaterials(key);
             JsonMaterialString = productMaterials;
             productQuantity = objDatabaseManager.ProductQuantity(key);
+            productStatus = objDatabaseManager.ProductStatus(key);
         }
-        public void UpdateProduct(int id, string name, string materials, int quantity)
+        public void UpdateProduct(int id, string name, string materials, int quantity, string status)
         {
-            objDatabaseManager.UpdateProduct(id, name, materials, quantity);
+            objDatabaseManager.UpdateProduct(id, name, materials, quantity, status);
         }
         //Grabs the ID, name, and quantity of a material for a datagrid.
         public DataTable PartialStockTable()
@@ -122,7 +126,7 @@ namespace WorkFlowManagement
                 MessageBox.Show(p.ToString());
             }
             //ID is automatically generated when inserted into the table. 
-            objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity);
+            objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity, "In Progress");
             return 0;
         }
         //This is the conversion from JSon to the ID Quantity format.
@@ -213,6 +217,13 @@ namespace WorkFlowManagement
             //Update product info after increase.
             SetProduct(key);
             return 0;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("ID: {0}, Product: {1}, Made of: {2}, Quantity: {3}, Status: {4}",
+                productID, productName, productMaterials, productQuantity, productStatus);
+
         }
     }
 }
