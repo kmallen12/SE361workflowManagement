@@ -10,7 +10,7 @@ namespace WorkFlowManagement
     {
         /// DATE: 2/27/19
         /// DESCRIPTION: Class to store basic details about the current user who is logged in. 
-        /// LAST UPDATE BY: Cowen Shears 3/26/2019
+        /// LAST UPDATE BY: Kristen Allen 3/30/19
 
         //Automatic Properties
         public string Username { get; set; }
@@ -58,7 +58,8 @@ namespace WorkFlowManagement
 
             if (UserType == "Report Manager")
             {
-                if (Form.GetType().ToString() == "WorkFlowManagement.StockReportForm")
+                if (Form.GetType().ToString() == "WorkFlowManagement.StockReportForm"
+                    || Form.GetType().ToString() == "WorkFlowManagement.RemanufactureForm")
                     return true;
             }
 

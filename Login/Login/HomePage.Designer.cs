@@ -39,6 +39,7 @@
             this.btnStockGenerateReport = new System.Windows.Forms.Button();
             this.btnStockMaterials = new System.Windows.Forms.Button();
             this.tabProducts = new System.Windows.Forms.TabPage();
+            this.btnReManufacture = new System.Windows.Forms.Button();
             this.btn_AddProduct = new System.Windows.Forms.Button();
             this.btnReorderStock = new System.Windows.Forms.Button();
             this.lblProductHomepg = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.btnRepProductsInProgress = new System.Windows.Forms.Button();
             this.btnRepStockRawMaterials = new System.Windows.Forms.Button();
             this.btnRepStockWarehouseCapacity = new System.Windows.Forms.Button();
-            this.btnReManufacture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -218,6 +218,18 @@
             this.tabProducts.TabIndex = 1;
             this.tabProducts.Text = "Products";
             this.tabProducts.UseVisualStyleBackColor = true;
+            // 
+            // btnReManufacture
+            // 
+            this.btnReManufacture.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReManufacture.Location = new System.Drawing.Point(686, 68);
+            this.btnReManufacture.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReManufacture.Name = "btnReManufacture";
+            this.btnReManufacture.Size = new System.Drawing.Size(232, 71);
+            this.btnReManufacture.TabIndex = 13;
+            this.btnReManufacture.Text = "Defective Products to Re-Manufacture";
+            this.btnReManufacture.UseVisualStyleBackColor = true;
+            this.btnReManufacture.Click += new System.EventHandler(this.btnReManufacture_Click);
             // 
             // btn_AddProduct
             // 
@@ -419,6 +431,7 @@
             this.btnRepDefectedProducts.TabIndex = 11;
             this.btnRepDefectedProducts.Text = "Defected Products";
             this.btnRepDefectedProducts.UseVisualStyleBackColor = true;
+            this.btnRepDefectedProducts.Click += new System.EventHandler(this.btnRepDefectedProducts_Click);
             // 
             // btnRepQualifiedProducts
             // 
@@ -464,18 +477,6 @@
             this.btnRepStockWarehouseCapacity.Text = "Stock Warehouse Capacity Report";
             this.btnRepStockWarehouseCapacity.UseVisualStyleBackColor = true;
             this.btnRepStockWarehouseCapacity.Click += new System.EventHandler(this.btnRepStockWarehouseCapacity_Click);
-            // 
-            // btnReManufacture
-            // 
-            this.btnReManufacture.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReManufacture.Location = new System.Drawing.Point(686, 68);
-            this.btnReManufacture.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReManufacture.Name = "btnReManufacture";
-            this.btnReManufacture.Size = new System.Drawing.Size(232, 71);
-            this.btnReManufacture.TabIndex = 13;
-            this.btnReManufacture.Text = "Defective Products to Re-Manufacture";
-            this.btnReManufacture.UseVisualStyleBackColor = true;
-            this.btnReManufacture.Click += new System.EventHandler(this.btnReManufacture_Click);
             // 
             // HomePage
             // 

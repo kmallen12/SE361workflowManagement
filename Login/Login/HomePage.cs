@@ -258,5 +258,19 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the Remanufacture Products Form.\nContact your local Product Manager.");
             }
         }
+
+        private void btnRepDefectedProducts_Click(object sender, EventArgs e)
+        {
+            RemanufactureForm formReport = new RemanufactureForm();
+            if (objCurrentUser.canView(formReport))
+            {
+                formReport.ShowDialog();
+            }
+            else
+            {
+                formReport.Dispose();
+                MessageBox.Show("You do not have access for the Remanufacture Products Form.\nContact your local Reports Manager.");
+            }
+        }
     }
 }
