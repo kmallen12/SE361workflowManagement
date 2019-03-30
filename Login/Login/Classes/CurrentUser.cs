@@ -50,7 +50,14 @@ namespace WorkFlowManagement
 
             if (UserType == "Delivery Manager")
             {
+                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts")
+                    return true;
+            }
 
+            if (UserType == "Report Manager")
+            {
+                if (Form.GetType().ToString() == "WorkFlowManagement.StockReportForm")
+                    return true;
             }
 
             return false;

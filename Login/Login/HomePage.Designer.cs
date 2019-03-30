@@ -48,13 +48,18 @@
             this.tabQuality = new System.Windows.Forms.TabPage();
             this.lblQAdashboard = new System.Windows.Forms.Label();
             this.tabDelivery = new System.Windows.Forms.TabPage();
+            this.btnDelProductStatusReport = new System.Windows.Forms.Button();
+            this.btnDelViewQualProducts = new System.Windows.Forms.Button();
+            this.btnDelRouteProduct = new System.Windows.Forms.Button();
+            this.btnDelViewProduct = new System.Windows.Forms.Button();
             this.lblDdashboard = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRepDefectedProducts = new System.Windows.Forms.Button();
+            this.btnRepQualifiedProducts = new System.Windows.Forms.Button();
+            this.btnRepProductsInProgress = new System.Windows.Forms.Button();
+            this.btnRepStockRawMaterials = new System.Windows.Forms.Button();
+            this.btnRepStockWarehouseCapacity = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -84,7 +89,7 @@
             this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogOut.BackColor = System.Drawing.SystemColors.Control;
             this.btnLogOut.Location = new System.Drawing.Point(959, 12);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(100, 28);
             this.btnLogOut.TabIndex = 12;
@@ -124,7 +129,7 @@
             this.tabBar.Controls.Add(this.tabReports);
             this.tabBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabBar.Location = new System.Drawing.Point(1, 80);
-            this.tabBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabBar.Margin = new System.Windows.Forms.Padding(4);
             this.tabBar.Name = "tabBar";
             this.tabBar.SelectedIndex = 0;
             this.tabBar.Size = new System.Drawing.Size(1073, 473);
@@ -138,9 +143,9 @@
             this.tabStock.Controls.Add(this.btnStockMaterials);
             this.tabStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabStock.Location = new System.Drawing.Point(4, 33);
-            this.tabStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStock.Margin = new System.Windows.Forms.Padding(4);
             this.tabStock.Name = "tabStock";
-            this.tabStock.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStock.Padding = new System.Windows.Forms.Padding(4);
             this.tabStock.Size = new System.Drawing.Size(1065, 436);
             this.tabStock.TabIndex = 0;
             this.tabStock.Text = "Stock";
@@ -161,7 +166,7 @@
             // 
             this.btnStockUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockUpdate.Location = new System.Drawing.Point(19, 156);
-            this.btnStockUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStockUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnStockUpdate.Name = "btnStockUpdate";
             this.btnStockUpdate.Size = new System.Drawing.Size(231, 64);
             this.btnStockUpdate.TabIndex = 7;
@@ -173,7 +178,7 @@
             // 
             this.btnStockGenerateReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockGenerateReport.Location = new System.Drawing.Point(19, 242);
-            this.btnStockGenerateReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStockGenerateReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnStockGenerateReport.Name = "btnStockGenerateReport";
             this.btnStockGenerateReport.Size = new System.Drawing.Size(231, 74);
             this.btnStockGenerateReport.TabIndex = 6;
@@ -186,7 +191,7 @@
             this.btnStockMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockMaterials.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnStockMaterials.Location = new System.Drawing.Point(19, 66);
-            this.btnStockMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStockMaterials.Margin = new System.Windows.Forms.Padding(4);
             this.btnStockMaterials.Name = "btnStockMaterials";
             this.btnStockMaterials.Size = new System.Drawing.Size(231, 69);
             this.btnStockMaterials.TabIndex = 5;
@@ -204,9 +209,9 @@
             this.tabProducts.Controls.Add(this.btnProductsView);
             this.tabProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProducts.Location = new System.Drawing.Point(4, 33);
-            this.tabProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProducts.Margin = new System.Windows.Forms.Padding(4);
             this.tabProducts.Name = "tabProducts";
-            this.tabProducts.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProducts.Padding = new System.Windows.Forms.Padding(4);
             this.tabProducts.Size = new System.Drawing.Size(1065, 436);
             this.tabProducts.TabIndex = 1;
             this.tabProducts.Text = "Products";
@@ -216,7 +221,7 @@
             // 
             this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddProduct.Location = new System.Drawing.Point(280, 68);
-            this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AddProduct.Name = "btn_AddProduct";
             this.btn_AddProduct.Size = new System.Drawing.Size(232, 71);
             this.btn_AddProduct.TabIndex = 12;
@@ -228,7 +233,7 @@
             // 
             this.btnReorderStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReorderStock.Location = new System.Drawing.Point(19, 336);
-            this.btnReorderStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReorderStock.Margin = new System.Windows.Forms.Padding(4);
             this.btnReorderStock.Name = "btnReorderStock";
             this.btnReorderStock.Size = new System.Drawing.Size(231, 69);
             this.btnReorderStock.TabIndex = 11;
@@ -250,7 +255,7 @@
             // 
             this.btnProductUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductUpdateStatus.Location = new System.Drawing.Point(19, 246);
-            this.btnProductUpdateStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductUpdateStatus.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductUpdateStatus.Name = "btnProductUpdateStatus";
             this.btnProductUpdateStatus.Size = new System.Drawing.Size(232, 74);
             this.btnProductUpdateStatus.TabIndex = 9;
@@ -261,7 +266,7 @@
             // 
             this.btnProductQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductQuality.Location = new System.Drawing.Point(19, 160);
-            this.btnProductQuality.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductQuality.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductQuality.Name = "btnProductQuality";
             this.btnProductQuality.Size = new System.Drawing.Size(232, 64);
             this.btnProductQuality.TabIndex = 8;
@@ -272,7 +277,7 @@
             // 
             this.btnProductsView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductsView.Location = new System.Drawing.Point(19, 68);
-            this.btnProductsView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductsView.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductsView.Name = "btnProductsView";
             this.btnProductsView.Size = new System.Drawing.Size(232, 71);
             this.btnProductsView.TabIndex = 7;
@@ -284,9 +289,9 @@
             // 
             this.tabQuality.Controls.Add(this.lblQAdashboard);
             this.tabQuality.Location = new System.Drawing.Point(4, 33);
-            this.tabQuality.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabQuality.Margin = new System.Windows.Forms.Padding(4);
             this.tabQuality.Name = "tabQuality";
-            this.tabQuality.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabQuality.Padding = new System.Windows.Forms.Padding(4);
             this.tabQuality.Size = new System.Drawing.Size(1065, 436);
             this.tabQuality.TabIndex = 2;
             this.tabQuality.Text = "Quality";
@@ -305,15 +310,64 @@
             // 
             // tabDelivery
             // 
+            this.tabDelivery.Controls.Add(this.btnDelProductStatusReport);
+            this.tabDelivery.Controls.Add(this.btnDelViewQualProducts);
+            this.tabDelivery.Controls.Add(this.btnDelRouteProduct);
+            this.tabDelivery.Controls.Add(this.btnDelViewProduct);
             this.tabDelivery.Controls.Add(this.lblDdashboard);
             this.tabDelivery.Location = new System.Drawing.Point(4, 33);
-            this.tabDelivery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.tabDelivery.Name = "tabDelivery";
-            this.tabDelivery.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDelivery.Padding = new System.Windows.Forms.Padding(4);
             this.tabDelivery.Size = new System.Drawing.Size(1065, 436);
             this.tabDelivery.TabIndex = 3;
             this.tabDelivery.Text = "Delivery";
             this.tabDelivery.UseVisualStyleBackColor = true;
+            // 
+            // btnDelProductStatusReport
+            // 
+            this.btnDelProductStatusReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelProductStatusReport.Location = new System.Drawing.Point(29, 357);
+            this.btnDelProductStatusReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelProductStatusReport.Name = "btnDelProductStatusReport";
+            this.btnDelProductStatusReport.Size = new System.Drawing.Size(232, 71);
+            this.btnDelProductStatusReport.TabIndex = 13;
+            this.btnDelProductStatusReport.Text = "Product Status Report";
+            this.btnDelProductStatusReport.UseVisualStyleBackColor = true;
+            // 
+            // btnDelViewQualProducts
+            // 
+            this.btnDelViewQualProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelViewQualProducts.Location = new System.Drawing.Point(29, 265);
+            this.btnDelViewQualProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelViewQualProducts.Name = "btnDelViewQualProducts";
+            this.btnDelViewQualProducts.Size = new System.Drawing.Size(232, 71);
+            this.btnDelViewQualProducts.TabIndex = 12;
+            this.btnDelViewQualProducts.Text = "View Qualified Products";
+            this.btnDelViewQualProducts.UseVisualStyleBackColor = true;
+            // 
+            // btnDelRouteProduct
+            // 
+            this.btnDelRouteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelRouteProduct.Location = new System.Drawing.Point(29, 171);
+            this.btnDelRouteProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelRouteProduct.Name = "btnDelRouteProduct";
+            this.btnDelRouteProduct.Size = new System.Drawing.Size(232, 71);
+            this.btnDelRouteProduct.TabIndex = 11;
+            this.btnDelRouteProduct.Text = "Route Products";
+            this.btnDelRouteProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnDelViewProduct
+            // 
+            this.btnDelViewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelViewProduct.Location = new System.Drawing.Point(29, 74);
+            this.btnDelViewProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelViewProduct.Name = "btnDelViewProduct";
+            this.btnDelViewProduct.Size = new System.Drawing.Size(232, 71);
+            this.btnDelViewProduct.TabIndex = 10;
+            this.btnDelViewProduct.Text = "View Products";
+            this.btnDelViewProduct.UseVisualStyleBackColor = true;
+            this.btnDelViewProduct.Click += new System.EventHandler(this.btnDelViewProduct_Click);
             // 
             // lblDdashboard
             // 
@@ -324,15 +378,16 @@
             this.lblDdashboard.Name = "lblDdashboard";
             this.lblDdashboard.Size = new System.Drawing.Size(465, 36);
             this.lblDdashboard.TabIndex = 9;
-            this.lblDdashboard.Text = "Delviery Department Dashboard";
+            this.lblDdashboard.Text = "Delivery Department Dashboard";
             // 
             // tabReports
             // 
-            this.tabReports.Controls.Add(this.button5);
-            this.tabReports.Controls.Add(this.button4);
-            this.tabReports.Controls.Add(this.button3);
-            this.tabReports.Controls.Add(this.button2);
-            this.tabReports.Controls.Add(this.button1);
+            this.tabReports.Controls.Add(this.label1);
+            this.tabReports.Controls.Add(this.btnRepDefectedProducts);
+            this.tabReports.Controls.Add(this.btnRepQualifiedProducts);
+            this.tabReports.Controls.Add(this.btnRepProductsInProgress);
+            this.tabReports.Controls.Add(this.btnRepStockRawMaterials);
+            this.tabReports.Controls.Add(this.btnRepStockWarehouseCapacity);
             this.tabReports.Location = new System.Drawing.Point(4, 33);
             this.tabReports.Name = "tabReports";
             this.tabReports.Size = new System.Drawing.Size(1065, 436);
@@ -340,60 +395,72 @@
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // label1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(20, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 74);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Stock Warehouse Capacity Report";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(462, 36);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Reports Department Dashboard";
             // 
-            // button2
+            // btnRepDefectedProducts
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(20, 124);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(231, 74);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Stock Raw Materials Inventory";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRepDefectedProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepDefectedProducts.Location = new System.Drawing.Point(313, 285);
+            this.btnRepDefectedProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRepDefectedProducts.Name = "btnRepDefectedProducts";
+            this.btnRepDefectedProducts.Size = new System.Drawing.Size(231, 74);
+            this.btnRepDefectedProducts.TabIndex = 11;
+            this.btnRepDefectedProducts.Text = "Defected Products";
+            this.btnRepDefectedProducts.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRepQualifiedProducts
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(306, 31);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(231, 74);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Products In Progress";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRepQualifiedProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepQualifiedProducts.Location = new System.Drawing.Point(313, 189);
+            this.btnRepQualifiedProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRepQualifiedProducts.Name = "btnRepQualifiedProducts";
+            this.btnRepQualifiedProducts.Size = new System.Drawing.Size(231, 74);
+            this.btnRepQualifiedProducts.TabIndex = 10;
+            this.btnRepQualifiedProducts.Text = "Qualified Products";
+            this.btnRepQualifiedProducts.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnRepProductsInProgress
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(306, 124);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(231, 74);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Qualified Products";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnRepProductsInProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepProductsInProgress.Location = new System.Drawing.Point(313, 96);
+            this.btnRepProductsInProgress.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRepProductsInProgress.Name = "btnRepProductsInProgress";
+            this.btnRepProductsInProgress.Size = new System.Drawing.Size(231, 74);
+            this.btnRepProductsInProgress.TabIndex = 9;
+            this.btnRepProductsInProgress.Text = "Products In Progress";
+            this.btnRepProductsInProgress.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnRepStockRawMaterials
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(306, 220);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(231, 74);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Defected Products";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnRepStockRawMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepStockRawMaterials.Location = new System.Drawing.Point(27, 189);
+            this.btnRepStockRawMaterials.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRepStockRawMaterials.Name = "btnRepStockRawMaterials";
+            this.btnRepStockRawMaterials.Size = new System.Drawing.Size(231, 74);
+            this.btnRepStockRawMaterials.TabIndex = 8;
+            this.btnRepStockRawMaterials.Text = "Stock Raw Materials Inventory";
+            this.btnRepStockRawMaterials.UseVisualStyleBackColor = true;
+            // 
+            // btnRepStockWarehouseCapacity
+            // 
+            this.btnRepStockWarehouseCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepStockWarehouseCapacity.Location = new System.Drawing.Point(27, 96);
+            this.btnRepStockWarehouseCapacity.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRepStockWarehouseCapacity.Name = "btnRepStockWarehouseCapacity";
+            this.btnRepStockWarehouseCapacity.Size = new System.Drawing.Size(231, 74);
+            this.btnRepStockWarehouseCapacity.TabIndex = 7;
+            this.btnRepStockWarehouseCapacity.Text = "Stock Warehouse Capacity Report";
+            this.btnRepStockWarehouseCapacity.UseVisualStyleBackColor = true;
+            this.btnRepStockWarehouseCapacity.Click += new System.EventHandler(this.btnRepStockWarehouseCapacity_Click);
             // 
             // HomePage
             // 
@@ -406,7 +473,7 @@
             this.Controls.Add(this.lblUserType);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnLogOut);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomePage";
             this.Text = "OCOTOD | Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -421,6 +488,7 @@
             this.tabDelivery.ResumeLayout(false);
             this.tabDelivery.PerformLayout();
             this.tabReports.ResumeLayout(false);
+            this.tabReports.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -449,10 +517,15 @@
         private System.Windows.Forms.Label lblQAdashboard;
         private System.Windows.Forms.Label lblDdashboard;
         private System.Windows.Forms.TabPage tabReports;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRepDefectedProducts;
+        private System.Windows.Forms.Button btnRepQualifiedProducts;
+        private System.Windows.Forms.Button btnRepProductsInProgress;
+        private System.Windows.Forms.Button btnRepStockRawMaterials;
+        private System.Windows.Forms.Button btnRepStockWarehouseCapacity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDelProductStatusReport;
+        private System.Windows.Forms.Button btnDelViewQualProducts;
+        private System.Windows.Forms.Button btnDelRouteProduct;
+        private System.Windows.Forms.Button btnDelViewProduct;
     }
 }

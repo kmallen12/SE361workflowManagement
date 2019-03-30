@@ -86,11 +86,36 @@ namespace WorkFlowManagement
             if (objCurrentUser.UserType != "Delivery Manager")
             {
                 //fill with buttons for DM user
+                btnDelProductStatusReport.ForeColor = Color.DarkGray;
+                btnDelRouteProduct.ForeColor = Color.DarkGray;
+                btnDelViewProduct.ForeColor = Color.DarkGray;
+                btnDelViewQualProducts.ForeColor = Color.DarkGray; 
             }
 
             if (objCurrentUser.UserType != "Report Manager")
             {
-                //fill with buttons for RM user
+                //Stock Tab Feedback
+                if (objCurrentUser.UserType != "Stockiest")
+                {
+                    ttUserFeedback.SetToolTip(btnStockMaterials, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                    ttUserFeedback.SetToolTip(btnStockUpdate, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+                    btnStockMaterials.ForeColor = Color.DarkGray;
+                    btnStockUpdate.ForeColor = Color.DarkGray;
+                }
+               
+
+                //Product Tab Feedback
+                ttUserFeedback.SetToolTip(btnProductQuality, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+                btnProductQuality.ForeColor = Color.DarkGray;
+
+                //Gray out Report tabs
+                btnRepStockWarehouseCapacity.ForeColor = Color.DarkGray;
+                btnRepStockRawMaterials.ForeColor = Color.DarkGray;
+                btnRepProductsInProgress.ForeColor = Color.DarkGray;
+                btnRepQualifiedProducts.ForeColor = Color.DarkGray;
+                btnRepDefectedProducts.ForeColor = Color.DarkGray;
             }
         }
 
@@ -174,6 +199,34 @@ namespace WorkFlowManagement
             {
                 AddProduct.Dispose();
                 MessageBox.Show("You do not have access for the Add Products Form.\nContact your local Product Manager.");
+            }
+        }
+
+        private void btnDelViewProduct_Click(object sender, EventArgs e)
+        {
+            ViewProducts btnViewProducts = new ViewProducts();
+            if (objCurrentUser.canView(btnViewProducts))
+            {
+                btnViewProducts.ShowDialog();
+            }
+            else
+            {
+                btnViewProducts.Dispose();
+                MessageBox.Show("You do not have access for the View Products Form.\nContact your local Product Manager.");
+            }
+        }
+
+        private void btnRepStockWarehouseCapacity_Click(object sender, EventArgs e)
+        {
+            StockReportForm formReport = new StockReportForm();
+            if (objCurrentUser.canView(formReport))
+            {
+                formReport.ShowDialog();
+            }
+            else
+            {
+                formReport.Dispose();
+                MessageBox.Show("You do not have access for the Stock Report Form.\nContact your local Stockiest.");
             }
         }
     }
