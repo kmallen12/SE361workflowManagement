@@ -256,10 +256,48 @@ namespace WorkFlowManagement
             return rawMaterials;
         }
 
+        //load data from the Raw Materials Table into a list
+        public List<string> LoadProductStatus()
+        {
+            List<string> status = new List<string>();
+
+            try
+            {
+                string tempStatus;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductStatusTable", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string prodStatus = (string)reader["statusText"];
+                    tempStatus = prodStatus;
+                    status.Add(tempStatus);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error reading data in from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return status;
+        }
+
         //load IDs of qualified products from the Products Table into a list
         public List<Product> LoadQualifiedProducts()
         {
-            string status = "Passed QA";
+            string acceptable = "Acceptable";
+            string medium = "Medium";
+            string high = "High";
             List<Product> qualifiedProds = new List<Product>();
 
             try
@@ -269,10 +307,12 @@ namespace WorkFlowManagement
                 //open a db connection
                 conn.Open();
 
-                //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+                //create SQL Command to pull data from Product table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status1 OR productStatus = @status2 OR productStatus = @status3", conn);
 
-                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@status1", acceptable);
+                cmd.Parameters.AddWithValue("@status2", medium);
+                cmd.Parameters.AddWithValue("@status3", high);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -303,7 +343,8 @@ namespace WorkFlowManagement
         //load IDs of defective products from the Products Table into a list
         public List<Product> LoadDefectiveProducts()
         {
-            string status = "Defective";
+            string veryPoor = "Very Poor";
+            string poor = "Poor";
             List<Product> defectiveProds = new List<Product>();
 
             try
@@ -314,9 +355,11 @@ namespace WorkFlowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status2 OR productStatus = @status1", conn);
 
-                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@status2", poor);
+                cmd.Parameters.AddWithValue("@status1", veryPoor);
+
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -342,6 +385,50 @@ namespace WorkFlowManagement
             }
 
             return defectiveProds;
+        }
+
+        //load IDs of defective products from the Products Table into a list
+        public List<Product> LoadInProgressProducts()
+        {
+            string status = "In Progress";
+            List<Product> products = new List<Product>();
+
+            try
+            {
+                Product tempProd;
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+
+                cmd.Parameters.AddWithValue("@status", status);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    tempProd = new Product();
+                    tempProd.productID = (int)reader["pID"];
+                    tempProd.productName = (string)reader["ProductName"];
+                    tempProd.productMaterials = (string)reader["materialsString"];
+                    tempProd.productQuantity = (int)reader["quantity"];
+                    tempProd.productStatus = (string)reader["productStatus"];
+                    products.Add(tempProd);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading qualified products from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return products;
         }
 
         //update max/min information for the warehouse

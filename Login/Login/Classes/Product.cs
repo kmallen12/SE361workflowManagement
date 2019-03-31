@@ -257,9 +257,10 @@ namespace WorkFlowManagement
 
         public override string ToString()
         {
-            return string.Format("ID: {0}, Product: {1}, Made of: {2}, Quantity: {3}, Status: {4}",
-                productID, productName, productMaterials, productQuantity, productStatus);
+            return string.Format("ID: {0}, Product: {1}, Quantity: {2}, Status: {3}",
+                productID, productName, productQuantity, productStatus);
 
         }
+
     }
 }
