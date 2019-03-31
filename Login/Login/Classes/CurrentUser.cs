@@ -15,20 +15,23 @@ namespace WorkFlowManagement
         //Automatic Properties
         public string Username { get; set; }
         public string UserType { get; set; }
+
+        public int UserTypeID { get; set; }
        
-        public CurrentUser(string Username,string UserType)
+        public CurrentUser(string Username,string UserType, int UserTypeID)
         {
             this.Username = Username;
             this.UserType = UserType;
+            this.UserTypeID = UserTypeID;
         }
 
         //Boolean Function To Return if a User can view certain windows/forms
         public Boolean canView(Object Form)
         {
-            if (UserType == "Administrator")
+            if (UserTypeID == 1)
                 return true;
 
-            if (UserType == "Stockiest")
+            if (UserTypeID == 2)
             {
                 if(Form.GetType().ToString() == "WorkFlowManagement.StockReportForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.AddMaterialForm"
@@ -36,7 +39,7 @@ namespace WorkFlowManagement
                     return true;
             }
 
-            if (UserType == "Product Manager")
+            if (UserTypeID == 3)
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.AddProduct"
                     || Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
@@ -44,21 +47,21 @@ namespace WorkFlowManagement
                     return true;
             }
 
-            if (UserType == "Quality Analyzer")
+            if (UserTypeID == 4)
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
                     || Form.GetType().ToString() == "WorkFlowManagement.CheckQuality")
                     return true;
             }
 
-            if (UserType == "Delivery Manager")
+            if (UserTypeID == 5)
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
                     || Form.GetType().ToString() == "WorkFlowManagement.RouteProducts")
                     return true;
             }
 
-            if (UserType == "Report Manager")
+            if (UserTypeID == 6)
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.StockReportForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.RemanufactureForm")

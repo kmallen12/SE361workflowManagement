@@ -33,7 +33,7 @@ namespace WorkFlowManagement
         {
 
             string UserType = objDatabaseManager.LoginFromDb(txtUsername?.Text, txtPassword?.Text);
-
+            int UserTypeID = objDatabaseManager.GetUserTypeID(UserType);
             if (String.IsNullOrEmpty(UserType))
             {
                 txtUsername.Text = "";
@@ -44,7 +44,7 @@ namespace WorkFlowManagement
             if (!String.IsNullOrEmpty(UserType))
             {
                 MessageBox.Show("You are logged in " + txtUsername.Text);
-                objCurrentUser = new CurrentUser(txtUsername.Text,UserType);
+                objCurrentUser = new CurrentUser(txtUsername.Text,UserType,UserTypeID);
                 this.Hide();
 
                 HomePage formHomePage = new HomePage(objCurrentUser);

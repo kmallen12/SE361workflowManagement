@@ -1116,6 +1116,60 @@ namespace WorkFlowManagement
 
         }
 
+        public int GetUserTypeID(string UserType)
+        {
+            int ID=-1;
+            try
+            {
+
+                _conn.Close();
+                _conn.Open();
+
+                string str = "SELECT UserTypeID " + "FROM  [dbo].[UserTypeTable]" +
+                           "WHERE userTypeText = @UserType";
+
+                using (SqlCommand com = new SqlCommand(str, _conn))
+                {
+                    com.Connection = _conn;
+
+
+                    if (!string.IsNullOrEmpty(UserType))
+                    {
+                        com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = UserType;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@UserType", SqlDbType.NVarChar).Value = DBNull.Value;
+
+                    }
+
+                    SqlDataReader reader = com.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+
+                        if (UserType != null )
+                            ID = (int) (reader[0]);
+
+                    }
+                    reader.Close();
+                }
+                _conn.Close();
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                ID = -1;
+            }
+
+
+            return ID;
+
+        }
+
         public string LoginFromDb(string UserName, string enteredPassword)
         {
             string UserType = null;
