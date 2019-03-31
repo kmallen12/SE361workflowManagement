@@ -49,14 +49,14 @@ namespace WorkFlowManagement
 
             if (UserTypeID == 4)
             {
-                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
+                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProductsForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.CheckQuality")
                     return true;
             }
 
             if (UserTypeID == 5)
             {
-                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
+                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProductsForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.RouteProducts")
                     return true;
             }

@@ -49,9 +49,9 @@ namespace WorkFlowManagement
         private void SetAccessibility()
         {
             //Grays out inaccessable buttons and displays tooltips for user based on UserType.
-            if (objCurrentUser.UserType == "Administrator") return; //administrator has access to all 
+            if (objCurrentUser.UserTypeID == 1) return; //administrator has access to all 
 
-            if (objCurrentUser.UserType != "Stockiest")
+            if (objCurrentUser.UserTypeID != 2)
             {
                 ttUserFeedback.SetToolTip(btnStockGenerateReport, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btnStockMaterials, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
@@ -63,7 +63,7 @@ namespace WorkFlowManagement
 
             }
 
-            if (objCurrentUser.UserType != "Product Manager")
+            if (objCurrentUser.UserTypeID != 3)
             {
                 ttUserFeedback.SetToolTip(btnProductsView, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_AddProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
@@ -79,12 +79,14 @@ namespace WorkFlowManagement
                 btnReManufacture.ForeColor = Color.DarkGray;
             }
 
-            if (objCurrentUser.UserType != "Quality Analyzer")
+            if (objCurrentUser.UserTypeID != 4)
             {
                 //fill with buttons for QA user
+                btnQAViewProd.ForeColor = Color.DarkGray;
+                btnQAUpdateProdStatus.ForeColor = Color.DarkGray;
             }
 
-            if (objCurrentUser.UserType != "Delivery Manager")
+            if (objCurrentUser.UserTypeID != 5)
             {
                 //fill with buttons for DM user
                 btnDelProductStatusReport.ForeColor = Color.DarkGray;
@@ -93,10 +95,10 @@ namespace WorkFlowManagement
                 btnDelViewQualProducts.ForeColor = Color.DarkGray; 
             }
 
-            if (objCurrentUser.UserType != "Report Manager")
+            if (objCurrentUser.UserTypeID != 6)
             {
                 //Stock Tab Feedback
-                if (objCurrentUser.UserType != "Stockiest")
+                if (objCurrentUser.UserTypeID != 2)
                 {
                     ttUserFeedback.SetToolTip(btnStockMaterials, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                     ttUserFeedback.SetToolTip(btnStockUpdate, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
@@ -206,6 +208,8 @@ namespace WorkFlowManagement
         private void btnDelViewProduct_Click(object sender, EventArgs e)
         {
             ViewProductsForm btnViewProducts = new ViewProductsForm();
+            MessageBox.Show(btnViewProducts.GetType().ToString());
+            MessageBox.Show(objCurrentUser.UserTypeID.ToString());
             if (objCurrentUser.canView(btnViewProducts))
             {
                 btnViewProducts.ShowDialog();
