@@ -412,7 +412,7 @@ namespace WorkFlowManagement
                     tempProd = new Product();
                     tempProd.productID = (int)reader["pID"];
                     tempProd.productName = (string)reader["ProductName"];
-                    tempProd.productMaterials = (string)reader["materialsString"];
+                    tempProd.JsonMaterialString = (string)reader["materialsString"];
                     tempProd.productQuantity = (int)reader["quantity"];
                     tempProd.productStatus = (string)reader["productStatus"];
                     products.Add(tempProd);

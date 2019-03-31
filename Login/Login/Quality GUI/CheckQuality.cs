@@ -67,7 +67,7 @@ namespace WorkFlowManagement
         {
             foreach (var prod in updatedProducts)
             {
-                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.productMaterials, prod.productQuantity, prod.productStatus);
+                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.JsonMaterialString, prod.productQuantity, prod.productStatus);
             }
 
             lstProducts.Items.Clear();
