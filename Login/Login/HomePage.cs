@@ -272,5 +272,33 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the Remanufacture Products Form.\nContact your local Reports Manager.");
             }
         }
+
+        private void btnQAViewProd_Click(object sender, EventArgs e)
+        {
+            ViewProductsForm btnViewProducts = new ViewProductsForm();
+            if (objCurrentUser.canView(btnViewProducts))
+            {
+                btnViewProducts.ShowDialog();
+            }
+            else
+            {
+                btnViewProducts.Dispose();
+                MessageBox.Show("You do not have access for the View Products Form.\nContact your local Quality Analyzer.");
+            }
+        }
+
+        private void btnQAUpdateProdStatus_Click(object sender, EventArgs e)
+        {
+            CheckQuality checkQualityForm = new CheckQuality();
+            if (objCurrentUser.canView(checkQualityForm))
+            {
+                checkQualityForm.ShowDialog();
+            }
+            else
+            {
+                checkQualityForm.Dispose();
+                MessageBox.Show("You do not have access for the View Products Form.\nContact your local Quality Analyzer.");
+            }
+        }
     }
 }

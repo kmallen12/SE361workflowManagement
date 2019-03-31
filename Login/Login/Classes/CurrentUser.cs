@@ -46,7 +46,9 @@ namespace WorkFlowManagement
 
             if (UserType == "Quality Analyzer")
             {
-             
+                if (Form.GetType().ToString() == "WorkFlowManagement.ViewProducts"
+                    || Form.GetType().ToString() == "WorkFlowManagement.CheckQuality")
+                    return true;
             }
 
             if (UserType == "Delivery Manager")

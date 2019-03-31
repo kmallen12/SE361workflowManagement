@@ -86,6 +86,12 @@
     <Compile Include="Product GUI\RemanufactureForm.Designer.cs">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quality GUI\CheckQuality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality GUI\CheckQuality.Designer.cs">
+      <DependentUpon>CheckQuality.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock GUI\ItemCapacityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality GUI\CheckQuality.resx">
+      <DependentUpon>CheckQuality.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock GUI\ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>

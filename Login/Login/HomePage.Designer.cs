@@ -47,6 +47,8 @@
             this.btnProductQuality = new System.Windows.Forms.Button();
             this.btnProductsView = new System.Windows.Forms.Button();
             this.tabQuality = new System.Windows.Forms.TabPage();
+            this.btnQAUpdateProdStatus = new System.Windows.Forms.Button();
+            this.btnQAViewProd = new System.Windows.Forms.Button();
             this.lblQAdashboard = new System.Windows.Forms.Label();
             this.tabDelivery = new System.Windows.Forms.TabPage();
             this.btnDelProductStatusReport = new System.Windows.Forms.Button();
@@ -301,6 +303,8 @@
             // 
             // tabQuality
             // 
+            this.tabQuality.Controls.Add(this.btnQAUpdateProdStatus);
+            this.tabQuality.Controls.Add(this.btnQAViewProd);
             this.tabQuality.Controls.Add(this.lblQAdashboard);
             this.tabQuality.Location = new System.Drawing.Point(4, 33);
             this.tabQuality.Margin = new System.Windows.Forms.Padding(4);
@@ -310,6 +314,30 @@
             this.tabQuality.TabIndex = 2;
             this.tabQuality.Text = "Quality";
             this.tabQuality.UseVisualStyleBackColor = true;
+            // 
+            // btnQAUpdateProdStatus
+            // 
+            this.btnQAUpdateProdStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQAUpdateProdStatus.Location = new System.Drawing.Point(29, 167);
+            this.btnQAUpdateProdStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQAUpdateProdStatus.Name = "btnQAUpdateProdStatus";
+            this.btnQAUpdateProdStatus.Size = new System.Drawing.Size(232, 71);
+            this.btnQAUpdateProdStatus.TabIndex = 13;
+            this.btnQAUpdateProdStatus.Text = "Update Product Status";
+            this.btnQAUpdateProdStatus.UseVisualStyleBackColor = true;
+            this.btnQAUpdateProdStatus.Click += new System.EventHandler(this.btnQAUpdateProdStatus_Click);
+            // 
+            // btnQAViewProd
+            // 
+            this.btnQAViewProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQAViewProd.Location = new System.Drawing.Point(29, 70);
+            this.btnQAViewProd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQAViewProd.Name = "btnQAViewProd";
+            this.btnQAViewProd.Size = new System.Drawing.Size(232, 71);
+            this.btnQAViewProd.TabIndex = 12;
+            this.btnQAViewProd.Text = "View Products";
+            this.btnQAViewProd.UseVisualStyleBackColor = true;
+            this.btnQAViewProd.Click += new System.EventHandler(this.btnQAViewProd_Click);
             // 
             // lblQAdashboard
             // 
@@ -544,5 +572,7 @@
         private System.Windows.Forms.Button btnDelRouteProduct;
         private System.Windows.Forms.Button btnDelViewProduct;
         private System.Windows.Forms.Button btnReManufacture;
+        private System.Windows.Forms.Button btnQAUpdateProdStatus;
+        private System.Windows.Forms.Button btnQAViewProd;
     }
 }
