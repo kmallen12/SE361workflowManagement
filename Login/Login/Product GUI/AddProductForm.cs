@@ -23,6 +23,7 @@ namespace WorkFlowManagement
         {
             InitializeComponent();
             product = new Product();
+            product.newProduct();
             CE = new CheckEntry();
             M = new MB();
         }
@@ -67,7 +68,7 @@ namespace WorkFlowManagement
             //Ensures product has correct attributes based on ID.
             //Only needed so we can correctly set the discription of the materials.
             product.SetProduct(Int32.Parse(txt_ProductID.Text));
-            lbl_Description.Text = product.productMaterials;
+            lbl_Description.Text = product.returnMaterialLabel();
             
         }
         
@@ -75,7 +76,7 @@ namespace WorkFlowManagement
         {
             if (CE.isnotNull(txt_ProductName.Text, "ProductName") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
             {
-                if (M.CreateProduct(txt_ProductName.Text, product.productMaterials, txt_ProductQuantity.Text))
+                if (M.CreateProduct(txt_ProductName.Text, product.JsonMaterialString, txt_ProductQuantity.Text))
                 {
                     product.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
                     Product_Load_1(sender, e);

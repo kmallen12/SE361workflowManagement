@@ -120,7 +120,7 @@ namespace WorkFlowManagement
             foreach (var prod in toSalesProducts)
             {
                 prod.productStatus = "Sent to Sales";
-                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.productMaterials, prod.productQuantity, prod.productStatus);
+                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.JsonMaterialString, prod.productQuantity, prod.productStatus);
                 MessageBox.Show(prod.ToString());
             }
 
@@ -137,7 +137,7 @@ namespace WorkFlowManagement
             foreach (var prod in toManufacturingProducts)
             {
                 prod.productStatus = "Returned to Manufacturing";
-                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.productMaterials, prod.productQuantity, prod.productStatus);
+                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.JsonMaterialString, prod.productQuantity, prod.productStatus);
                 MessageBox.Show(prod.ToString());
             }
 

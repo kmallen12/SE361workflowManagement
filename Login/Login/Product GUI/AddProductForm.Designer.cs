@@ -119,7 +119,7 @@
             this.lbl_CreateANewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CreateANewProduct.Location = new System.Drawing.Point(106, 9);
             this.lbl_CreateANewProduct.Name = "lbl_CreateANewProduct";
-            this.lbl_CreateANewProduct.Size = new System.Drawing.Size(271, 29);
+            this.lbl_CreateANewProduct.Size = new System.Drawing.Size(217, 24);
             this.lbl_CreateANewProduct.TabIndex = 1;
             this.lbl_CreateANewProduct.Text = "Create A New Product\r\n";
             // 
@@ -127,21 +127,21 @@
             // 
             this.txt_ProductName.Location = new System.Drawing.Point(250, 78);
             this.txt_ProductName.Name = "txt_ProductName";
-            this.txt_ProductName.Size = new System.Drawing.Size(100, 22);
+            this.txt_ProductName.Size = new System.Drawing.Size(100, 20);
             this.txt_ProductName.TabIndex = 2;
             // 
             // txt_ProductQuantity
             // 
             this.txt_ProductQuantity.Location = new System.Drawing.Point(250, 144);
             this.txt_ProductQuantity.Name = "txt_ProductQuantity";
-            this.txt_ProductQuantity.Size = new System.Drawing.Size(100, 22);
+            this.txt_ProductQuantity.Size = new System.Drawing.Size(100, 20);
             this.txt_ProductQuantity.TabIndex = 3;
             // 
             // txt_MaterialID
             // 
             this.txt_MaterialID.Location = new System.Drawing.Point(250, 206);
             this.txt_MaterialID.Name = "txt_MaterialID";
-            this.txt_MaterialID.Size = new System.Drawing.Size(100, 22);
+            this.txt_MaterialID.Size = new System.Drawing.Size(100, 20);
             this.txt_MaterialID.TabIndex = 4;
             // 
             // lbl_ProductName
@@ -150,7 +150,7 @@
             this.lbl_ProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductName.Location = new System.Drawing.Point(59, 76);
             this.lbl_ProductName.Name = "lbl_ProductName";
-            this.lbl_ProductName.Size = new System.Drawing.Size(142, 25);
+            this.lbl_ProductName.Size = new System.Drawing.Size(117, 20);
             this.lbl_ProductName.TabIndex = 6;
             this.lbl_ProductName.Text = "ProductName";
             // 
@@ -160,7 +160,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(59, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 25);
+            this.label5.Size = new System.Drawing.Size(138, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "ProductQuantity";
             // 
@@ -170,7 +170,7 @@
             this.lbl_MaterialID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_MaterialID.Location = new System.Drawing.Point(59, 204);
             this.lbl_MaterialID.Name = "lbl_MaterialID";
-            this.lbl_MaterialID.Size = new System.Drawing.Size(110, 25);
+            this.lbl_MaterialID.Size = new System.Drawing.Size(92, 20);
             this.lbl_MaterialID.TabIndex = 8;
             this.lbl_MaterialID.Text = "MaterialID";
             // 
@@ -202,7 +202,7 @@
             this.lbl_MaterialAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_MaterialAmount.Location = new System.Drawing.Point(59, 267);
             this.lbl_MaterialAmount.Name = "lbl_MaterialAmount";
-            this.lbl_MaterialAmount.Size = new System.Drawing.Size(163, 25);
+            this.lbl_MaterialAmount.Size = new System.Drawing.Size(135, 20);
             this.lbl_MaterialAmount.TabIndex = 11;
             this.lbl_MaterialAmount.Text = "MaterialAmount";
             // 
@@ -210,7 +210,7 @@
             // 
             this.txt_MaterialQuantity.Location = new System.Drawing.Point(250, 269);
             this.txt_MaterialQuantity.Name = "txt_MaterialQuantity";
-            this.txt_MaterialQuantity.Size = new System.Drawing.Size(100, 22);
+            this.txt_MaterialQuantity.Size = new System.Drawing.Size(100, 20);
             this.txt_MaterialQuantity.TabIndex = 12;
             // 
             // label7
@@ -219,9 +219,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(59, 374);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(352, 29);
+            this.label7.Size = new System.Drawing.Size(248, 24);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Materials(ID, Quantity, Type):";
+            this.label7.Text = "Materials(Type, Quantity):";
             // 
             // lbl_Description
             // 
@@ -229,7 +229,7 @@
             this.lbl_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Description.Location = new System.Drawing.Point(59, 407);
             this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(13, 29);
+            this.lbl_Description.Size = new System.Drawing.Size(10, 24);
             this.lbl_Description.TabIndex = 14;
             this.lbl_Description.Text = "\r\n";
             // 
@@ -237,7 +237,7 @@
             // 
             this.txt_ProductID.Location = new System.Drawing.Point(250, 104);
             this.txt_ProductID.Name = "txt_ProductID";
-            this.txt_ProductID.Size = new System.Drawing.Size(100, 22);
+            this.txt_ProductID.Size = new System.Drawing.Size(100, 20);
             this.txt_ProductID.TabIndex = 15;
             this.txt_ProductID.Visible = false;
             this.txt_ProductID.WordWrap = false;
@@ -248,7 +248,7 @@
             this.lbl_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductID.Location = new System.Drawing.Point(59, 104);
             this.lbl_ProductID.Name = "lbl_ProductID";
-            this.lbl_ProductID.Size = new System.Drawing.Size(107, 25);
+            this.lbl_ProductID.Size = new System.Drawing.Size(90, 20);
             this.lbl_ProductID.TabIndex = 16;
             this.lbl_ProductID.Text = "ProductID";
             this.lbl_ProductID.Visible = false;
@@ -259,7 +259,7 @@
             this.lbl_OrderMoreProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderMoreProduct.Location = new System.Drawing.Point(106, 33);
             this.lbl_OrderMoreProduct.Name = "lbl_OrderMoreProduct";
-            this.lbl_OrderMoreProduct.Size = new System.Drawing.Size(245, 29);
+            this.lbl_OrderMoreProduct.Size = new System.Drawing.Size(196, 24);
             this.lbl_OrderMoreProduct.TabIndex = 17;
             this.lbl_OrderMoreProduct.Text = "Order More Product";
             this.lbl_OrderMoreProduct.Visible = false;
