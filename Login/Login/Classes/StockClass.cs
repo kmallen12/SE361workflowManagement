@@ -14,6 +14,21 @@ namespace WorkFlowManagement
     /// DATE: 2/24/2019
     /// DESCRIPTION: Class to manage Stock. It calculates idle time (time in storage before being used). 
     /// It calculates the defect rate.
+    /// 
+    public struct StockOrderRequest
+    {
+        public int OrderID;
+        public int Quantity;
+        public string Discription;
+        public int StockID;
+        public StockOrderRequest(int initID, int initQuantity, string initDiscription, int initStockID)
+        {
+            OrderID = initID;
+            Quantity = initQuantity;
+            Discription = initDiscription;
+            StockID = initStockID;
+        }
+    };
     public class Stock
     {
         DatabaseManager objDatabaseManager = new DatabaseManager();

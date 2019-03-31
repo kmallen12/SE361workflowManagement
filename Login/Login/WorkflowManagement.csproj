@@ -80,6 +80,18 @@
     <Compile Include="Delivery GUI\RouteProducts.Designer.cs">
       <DependentUpon>RouteProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product GUI\OrderStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\OrderStockForm.Designer.cs">
+      <DependentUpon>OrderStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product GUI\ProductOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\ProductOrders.Designer.cs">
+      <DependentUpon>ProductOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product GUI\RemanufactureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\StockClass.cs" />
+    <Compile Include="Stock GUI\StockOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock GUI\StockOrders.Designer.cs">
+      <DependentUpon>StockOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock GUI\StockReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Delivery GUI\RouteProducts.resx">
       <DependentUpon>RouteProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\OrderStockForm.resx">
+      <DependentUpon>OrderStockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>

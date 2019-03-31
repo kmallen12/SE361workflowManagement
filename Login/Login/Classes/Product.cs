@@ -25,7 +25,21 @@ namespace WorkFlowManagement
             Name = InitName;
         }
     };
-   
+    public struct ProductOrderRequest
+    {
+        public int OrderID;
+        public int Quantity;
+        public string Discription;
+        public int ProductID;
+        public ProductOrderRequest(int initID, int initQuantity, string initDiscription, int initProductID)
+        {
+            OrderID = initID;
+            Quantity = initQuantity;
+            Discription = initDiscription;
+            ProductID = initProductID;
+        }
+    };
+
 
     public class Product
     {
