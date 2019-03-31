@@ -295,7 +295,9 @@ namespace WorkFlowManagement
         //load IDs of qualified products from the Products Table into a list
         public List<Product> LoadQualifiedProducts()
         {
-            string status = "Passed QA";
+            string acceptable = "Acceptable";
+            string medium = "Medium";
+            string high = "High";
             List<Product> qualifiedProds = new List<Product>();
 
             try
@@ -305,10 +307,12 @@ namespace WorkFlowManagement
                 //open a db connection
                 conn.Open();
 
-                //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+                //create SQL Command to pull data from Product table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status1 OR productStatus = @status2 OR productStatus = @status3", conn);
 
-                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@status1", acceptable);
+                cmd.Parameters.AddWithValue("@status2", medium);
+                cmd.Parameters.AddWithValue("@status3", high);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -339,7 +343,8 @@ namespace WorkFlowManagement
         //load IDs of defective products from the Products Table into a list
         public List<Product> LoadDefectiveProducts()
         {
-            string status = "Defective";
+            string veryPoor = "Very Poor";
+            string poor = "Poor";
             List<Product> defectiveProds = new List<Product>();
 
             try
@@ -350,9 +355,11 @@ namespace WorkFlowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status2 OR productStatus = @status1", conn);
 
-                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@status2", poor);
+                cmd.Parameters.AddWithValue("@status1", veryPoor);
+
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
