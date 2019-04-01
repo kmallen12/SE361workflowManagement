@@ -329,5 +329,19 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the ManageProductOrders.\nContact your local Product Manager.");
             }
         }
+
+        private void btnRepStockRawMaterials_Click(object sender, EventArgs e)
+        {
+            StockView formStock = new StockView();
+            if (objCurrentUser.canView(formStock))
+            {
+                formStock.ShowDialog();
+            }
+            else
+            {
+                formStock.Dispose();
+                MessageBox.Show("You do not have access for the Stock View Form.\nContact your local Stockiest or Report Manager.");
+            }
+        }
     }
 }
