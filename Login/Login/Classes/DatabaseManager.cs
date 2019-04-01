@@ -497,7 +497,7 @@ namespace WorkFlowManagement
 
                     com.ExecuteNonQuery();
                 }
-               
+                _conn.Close();
             }
            
         }
@@ -528,6 +528,7 @@ namespace WorkFlowManagement
                     order = new ProductOrderRequest(ID, Quantity,Discription, ProductID);
                     orders.Add(order);
                 }
+                _conn.Close();
             }
             catch (Exception e)
             {
