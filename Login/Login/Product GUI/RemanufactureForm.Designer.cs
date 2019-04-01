@@ -30,58 +30,52 @@
         {
             this.lblDefectiveProducts = new System.Windows.Forms.Label();
             this.lstDefProd = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRepRemanufacture = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDefectiveProducts
             // 
             this.lblDefectiveProducts.AutoSize = true;
             this.lblDefectiveProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefectiveProducts.Location = new System.Drawing.Point(34, 30);
+            this.lblDefectiveProducts.Location = new System.Drawing.Point(26, 24);
+            this.lblDefectiveProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDefectiveProducts.Name = "lblDefectiveProducts";
-            this.lblDefectiveProducts.Size = new System.Drawing.Size(193, 25);
+            this.lblDefectiveProducts.Size = new System.Drawing.Size(161, 20);
             this.lblDefectiveProducts.TabIndex = 0;
             this.lblDefectiveProducts.Text = "Defective Products";
             // 
             // lstDefProd
             // 
             this.lstDefProd.FormattingEnabled = true;
-            this.lstDefProd.ItemHeight = 16;
-            this.lstDefProd.Location = new System.Drawing.Point(39, 75);
+            this.lstDefProd.Location = new System.Drawing.Point(29, 61);
+            this.lstDefProd.Margin = new System.Windows.Forms.Padding(2);
             this.lstDefProd.Name = "lstDefProd";
-            this.lstDefProd.Size = new System.Drawing.Size(702, 116);
+            this.lstDefProd.Size = new System.Drawing.Size(528, 134);
             this.lstDefProd.TabIndex = 1;
             // 
-            // button1
+            // btnRepRemanufacture
             // 
-            this.button1.Location = new System.Drawing.Point(112, 214);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 56);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Check stock levels";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(396, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 56);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Remanufacture";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRepRemanufacture.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepRemanufacture.Location = new System.Drawing.Point(418, 217);
+            this.btnRepRemanufacture.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRepRemanufacture.Name = "btnRepRemanufacture";
+            this.btnRepRemanufacture.Size = new System.Drawing.Size(139, 46);
+            this.btnRepRemanufacture.TabIndex = 3;
+            this.btnRepRemanufacture.Text = "Remanufacture Selected Item";
+            this.btnRepRemanufacture.UseVisualStyleBackColor = true;
+            this.btnRepRemanufacture.Click += new System.EventHandler(this.btnRepRemanufacture_Click);
             // 
             // RemanufactureForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnRepRemanufacture);
             this.Controls.Add(this.lstDefProd);
             this.Controls.Add(this.lblDefectiveProducts);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RemanufactureForm";
-            this.Text = "RemanufactureForm";
+            this.Text = "Remanufacture Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,7 +85,6 @@
 
         private System.Windows.Forms.Label lblDefectiveProducts;
         private System.Windows.Forms.ListBox lstDefProd;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRepRemanufacture;
     }
 }

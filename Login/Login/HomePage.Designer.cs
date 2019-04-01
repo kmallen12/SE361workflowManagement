@@ -461,7 +461,7 @@
             this.btnRepDefectedProducts.Name = "btnRepDefectedProducts";
             this.btnRepDefectedProducts.Size = new System.Drawing.Size(173, 60);
             this.btnRepDefectedProducts.TabIndex = 11;
-            this.btnRepDefectedProducts.Text = "Defected Products";
+            this.btnRepDefectedProducts.Text = "Defective Products";
             this.btnRepDefectedProducts.UseVisualStyleBackColor = true;
             this.btnRepDefectedProducts.Click += new System.EventHandler(this.btnRepDefectedProducts_Click);
             // 
