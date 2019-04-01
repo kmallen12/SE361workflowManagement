@@ -476,6 +476,67 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
+        public void InsertProductOrders(List<ProductOrderRequest> Orders)
+        {
+           
+            List<int> IDs = new List<int>();
+            foreach (ProductOrderRequest order in Orders)
+            {
+                _conn.Close();
+                _conn.Open();
+                
+                string str = "INSERT INTO [dbo].[ProductOrderRequest] (  [Amount], [OrderDiscription], [pId]) VALUES (@Amount, @OrderDiscription, @ProductID)";
+                using (SqlCommand com = new SqlCommand(str, _conn))
+                {
+                    com.Connection = _conn;
+                    com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
+                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Discription;
+                    com.Parameters.Add("@ProductID", SqlDbType.Int).Value = order.ProductID;
+
+
+
+                    com.ExecuteNonQuery();
+                }
+               
+            }
+           
+        }
+        //return the list of productorders for the product manager
+        public List<ProductOrderRequest> LoadProductOrders()
+        {
+            List<ProductOrderRequest> orders  = new List<ProductOrderRequest>();
+
+            try
+            {
+                ProductOrderRequest order;
+
+                //open a db connection
+                _conn.Open();
+
+                //create SQL Command to pull data from Repair table
+                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, pId FROM [dbo].[ProductOrderRequest]", _conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int ID = (int)reader["OrderID"];
+                    int Quantity = (int)reader["Amount"];
+                    string Discription = (string)reader["OrderDiscription"];
+                    int ProductID = (int)reader["pId"];
+
+                    order = new ProductOrderRequest(ID, Quantity,Discription, ProductID);
+                    orders.Add(order);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error reading data in from the database.");
+            }
+
+            _conn.Close();
+            return orders;
+        }
         //insert new stock into the Stock Table
         public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Login.Stock_GUI
 {
-    public partial class StockOrders : Form
+    public partial class ManageStockOrders : Form
     {
-        public StockOrders()
+        public ManageStockOrders()
         {
             InitializeComponent();
         }

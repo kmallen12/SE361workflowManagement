@@ -86,11 +86,11 @@
     <Compile Include="Product GUI\OrderStockForm.Designer.cs">
       <DependentUpon>OrderStockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product GUI\ProductOrders.cs">
+    <Compile Include="Product GUI\ManageProductOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product GUI\ProductOrders.Designer.cs">
-      <DependentUpon>ProductOrders.cs</DependentUpon>
+    <Compile Include="Product GUI\ManageProductOrders.Designer.cs">
+      <DependentUpon>ManageProductOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Product GUI\RemanufactureForm.cs">
       <SubType>Form</SubType>
@@ -103,6 +103,12 @@
     </Compile>
     <Compile Include="Quality GUI\CheckQuality.Designer.cs">
       <DependentUpon>CheckQuality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality GUI\CreateProductOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality GUI\CreateProductOrder.Designer.cs">
+      <DependentUpon>CreateProductOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock GUI\ItemCapacityForm.cs">
       <SubType>Form</SubType>
@@ -131,11 +137,11 @@
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\StockClass.cs" />
-    <Compile Include="Stock GUI\StockOrders.cs">
+    <Compile Include="Stock GUI\ManageStockOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock GUI\StockOrders.Designer.cs">
-      <DependentUpon>StockOrders.cs</DependentUpon>
+    <Compile Include="Stock GUI\ManageStockOrders.Designer.cs">
+      <DependentUpon>ManageStockOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock GUI\StockReportForm.cs">
       <SubType>Form</SubType>
@@ -200,11 +206,17 @@
     <EmbeddedResource Include="Product GUI\OrderStockForm.resx">
       <DependentUpon>OrderStockForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\ManageProductOrders.resx">
+      <DependentUpon>ManageProductOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quality GUI\CheckQuality.resx">
       <DependentUpon>CheckQuality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality GUI\CreateProductOrder.resx">
+      <DependentUpon>CreateProductOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock GUI\ItemCapacityForm.resx">
       <DependentUpon>ItemCapacityForm.cs</DependentUpon>

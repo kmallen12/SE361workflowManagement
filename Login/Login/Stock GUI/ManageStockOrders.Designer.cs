@@ -1,6 +1,6 @@
-﻿namespace Login.Product_GUI
+﻿namespace Login.Stock_GUI
 {
-    partial class ProductOrders
+    partial class ManageStockOrders
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ProductOrders";
+            this.Text = "StockOrders";
         }
 
         #endregion

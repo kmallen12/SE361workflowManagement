@@ -304,5 +304,30 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the View Products Form.\nContact your local Quality Analyzer.");
             }
         }
+
+        private void ProductOrder_btn_Click(object sender, EventArgs e)
+        {
+           
+            CreateProductOrder ProductOrders = new CreateProductOrder();
+            if(objCurrentUser.canView(ProductOrders))
+                ProductOrders.ShowDialog();
+            else
+            {
+                ProductOrders.Dispose();
+                MessageBox.Show("You do not have access for the ProductOrderForm.\nContact your local Product Manager.");
+            }
+        }
+
+        private void btn_ManageProductOrders_Click(object sender, EventArgs e)
+        {
+            ManageProductOrders ProductOrders = new ManageProductOrders();
+            if(objCurrentUser.canView(ProductOrders))
+                ProductOrders.ShowDialog();
+            else
+            {
+                ProductOrders.Dispose();
+                MessageBox.Show("You do not have access for the ManageProductOrders.\nContact your local Product Manager.");
+            }
+        }
     }
 }

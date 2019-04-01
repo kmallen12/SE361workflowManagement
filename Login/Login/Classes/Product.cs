@@ -38,7 +38,15 @@ namespace WorkFlowManagement
             Discription = initDiscription;
             ProductID = initProductID;
         }
-    };
+        public override string ToString()
+        {
+            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Discription: {2}", ProductID, Quantity, Discription);
+        }
+        public string returnOrders()
+        {
+            return string.Format("ProductID: {0}, DefectiveQuantity: {1}", ProductID, Quantity);
+        }
+    }
 
 
     public class Product
@@ -48,13 +56,16 @@ namespace WorkFlowManagement
         //Represents the Materials string broken into an array based on ' '.
         int[] materialsDescription;
         public string JsonMaterialString;
-        
+
+        public List<ProductOrderRequest> ProductOrderRequests;
+
+        public ProductOrderRequest ProductOrder;
         public int productID { get; set; }
         public string productName { get; set; }
         //public string productMaterials { get; set; }
         public List<MaterialsProduct> productMaterials;
         public int productQuantity { get; set; }
-
+        private List<int> IDs;
         private int materialamt;
         public string productStatus { get; set; }
         //We set attributes after class initialization(in some cases) so I changed it from Product() to SetProduct()
@@ -62,6 +73,24 @@ namespace WorkFlowManagement
         {
             productMaterials = new List<MaterialsProduct>();
             materialamt = 0;
+        }
+        public List<ProductOrderRequest> LoadProductOrders()
+        {
+            ProductOrderRequests = objDatabaseManager.LoadProductOrders();
+            return ProductOrderRequests;
+        }
+        public void newOrders()
+        {
+            ProductOrderRequests = new List<ProductOrderRequest>();
+        }
+        public void newOrder(int initQuantity, string initDiscription, int initID)
+        {
+            ProductOrder = new ProductOrderRequest(0, initQuantity, initDiscription, initID);
+            ProductOrderRequests.Add(ProductOrder);
+        }
+        public void InsertProductOrder()
+        {
+            objDatabaseManager.InsertProductOrders(ProductOrderRequests);
         }
         public void SetProduct(int key)
         {
