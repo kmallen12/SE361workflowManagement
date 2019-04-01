@@ -328,6 +328,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="WorkflowUML.vsdx" />
     <None Include="WorkflowUMLSprint3.pdf" />
     <None Include="zzResources\OCOTODWorkflow.jpg" />
   </ItemGroup>
