@@ -332,7 +332,7 @@ namespace WorkFlowManagement
 
         private void btnRepStockRawMaterials_Click(object sender, EventArgs e)
         {
-            StockView formStock = new StockView();
+            StockSummaryForm formStock = new StockSummaryForm();
             if (objCurrentUser.canView(formStock))
             {
                 formStock.ShowDialog();
@@ -342,6 +342,12 @@ namespace WorkFlowManagement
                 formStock.Dispose();
                 MessageBox.Show("You do not have access for the Stock View Form.\nContact your local Stockiest or Report Manager.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StockSummaryForm sumForm = new StockSummaryForm();
+            sumForm.ShowDialog();
         }
     }
 }

@@ -1360,6 +1360,44 @@ namespace WorkFlowManagement
 
             return users;
         }
-        
+
+        public DataTable SumStocks()
+        {
+            DataTable stockTable = new DataTable();
+            stockTable.Columns.Add("Material", typeof(string));
+            stockTable.Columns.Add("Inventory Level", typeof(double));
+            
+            try
+            {
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT materialType, SUM(quantity) as Sum FROM StockTable GROUP BY materialType", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string matName = (string)reader["materialType"];
+                    decimal sum = (decimal)reader["Sum"];
+                    double sumStocks = (double)sum;
+
+                    stockTable.Rows.Add(matName, sumStocks);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stock summary from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return stockTable;
+        }
+
     }
 }

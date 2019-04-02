@@ -93,30 +93,8 @@ namespace WorkFlowManagement
         {
             return dateUsed - dateAcquired;
         }
-        
-        public Boolean isValidQuantity(double quantity)
-        {
-            try
-            {
-                double quan = quantity;
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
 
-        public Boolean CheckValidStock()
-        {
-            if (!isValidQuantity(quantity))
-            {
-                System.Windows.Forms.MessageBox.Show("Quantity must be an integer (e.g. 30, 1000, etc.");
-                return false;
-            }
-
-            return true;
-        }
+       
 
         //Overriding the ToString method
         public override string ToString()
