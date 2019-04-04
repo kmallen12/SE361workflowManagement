@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockSummaryForm));
             this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
             this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
@@ -59,37 +60,41 @@
             // dataGridViewStockSum
             // 
             this.dataGridViewStockSum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStockSum.Location = new System.Drawing.Point(201, 134);
+            this.dataGridViewStockSum.Location = new System.Drawing.Point(151, 109);
+            this.dataGridViewStockSum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewStockSum.Name = "dataGridViewStockSum";
             this.dataGridViewStockSum.RowTemplate.Height = 24;
-            this.dataGridViewStockSum.Size = new System.Drawing.Size(408, 444);
+            this.dataGridViewStockSum.Size = new System.Drawing.Size(306, 361);
             this.dataGridViewStockSum.TabIndex = 0;
             // 
             // lblSumStocks
             // 
             this.lblSumStocks.AutoSize = true;
             this.lblSumStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSumStocks.Location = new System.Drawing.Point(82, 58);
+            this.lblSumStocks.Location = new System.Drawing.Point(62, 47);
+            this.lblSumStocks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSumStocks.Name = "lblSumStocks";
-            this.lblSumStocks.Size = new System.Drawing.Size(218, 25);
+            this.lblSumStocks.Size = new System.Drawing.Size(179, 20);
             this.lblSumStocks.TabIndex = 1;
             this.lblSumStocks.Text = "Warehouse Inventory";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 93);
+            this.label1.Location = new System.Drawing.Point(62, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(527, 17);
+            this.label1.Size = new System.Drawing.Size(397, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "The table below shows the total amount of stocks in the warehouse sorted by type." +
     "";
             // 
             // btnOpenDetails
             // 
-            this.btnOpenDetails.Location = new System.Drawing.Point(648, 432);
+            this.btnOpenDetails.Location = new System.Drawing.Point(486, 351);
+            this.btnOpenDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpenDetails.Name = "btnOpenDetails";
-            this.btnOpenDetails.Size = new System.Drawing.Size(170, 59);
+            this.btnOpenDetails.Size = new System.Drawing.Size(128, 48);
             this.btnOpenDetails.TabIndex = 3;
             this.btnOpenDetails.Text = "Open Detailed View";
             this.btnOpenDetails.UseVisualStyleBackColor = true;
@@ -97,9 +102,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(648, 519);
+            this.btnClose.Location = new System.Drawing.Point(486, 422);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(170, 59);
+            this.btnClose.Size = new System.Drawing.Size(128, 48);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -107,14 +113,16 @@
             // 
             // StockSummaryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 603);
+            this.ClientSize = new System.Drawing.Size(646, 490);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOpenDetails);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSumStocks);
             this.Controls.Add(this.dataGridViewStockSum);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StockSummaryForm";
             this.Text = "Stock Summary Form";
             this.Load += new System.EventHandler(this.StockSummaryForm_Load);

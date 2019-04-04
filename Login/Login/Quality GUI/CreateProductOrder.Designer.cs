@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateProductOrder));
             this.ProductOrderInfo_lbl = new System.Windows.Forms.Label();
             this.ID_Text = new System.Windows.Forms.TextBox();
             this.Confirm_btn = new System.Windows.Forms.Button();
@@ -57,26 +58,29 @@
             // 
             this.ProductOrderInfo_lbl.AutoSize = true;
             this.ProductOrderInfo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductOrderInfo_lbl.Location = new System.Drawing.Point(7, 9);
-            this.ProductOrderInfo_lbl.MaximumSize = new System.Drawing.Size(380, 100);
+            this.ProductOrderInfo_lbl.Location = new System.Drawing.Point(5, 6);
+            this.ProductOrderInfo_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ProductOrderInfo_lbl.MaximumSize = new System.Drawing.Size(253, 65);
             this.ProductOrderInfo_lbl.Name = "ProductOrderInfo_lbl";
-            this.ProductOrderInfo_lbl.Size = new System.Drawing.Size(291, 58);
+            this.ProductOrderInfo_lbl.Size = new System.Drawing.Size(204, 40);
             this.ProductOrderInfo_lbl.TabIndex = 1;
             this.ProductOrderInfo_lbl.Text = "Enter information about defective product.";
             // 
             // ID_Text
             // 
-            this.ID_Text.Location = new System.Drawing.Point(241, 106);
+            this.ID_Text.Location = new System.Drawing.Point(161, 69);
+            this.ID_Text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ID_Text.Name = "ID_Text";
-            this.ID_Text.Size = new System.Drawing.Size(108, 26);
+            this.ID_Text.Size = new System.Drawing.Size(73, 20);
             this.ID_Text.TabIndex = 2;
             // 
             // Confirm_btn
             // 
             this.Confirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirm_btn.Location = new System.Drawing.Point(12, 615);
+            this.Confirm_btn.Location = new System.Drawing.Point(8, 400);
+            this.Confirm_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Confirm_btn.Name = "Confirm_btn";
-            this.Confirm_btn.Size = new System.Drawing.Size(337, 90);
+            this.Confirm_btn.Size = new System.Drawing.Size(225, 58);
             this.Confirm_btn.TabIndex = 3;
             this.Confirm_btn.Text = "Send List To Product Manager";
             this.Confirm_btn.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 102);
+            this.label2.Location = new System.Drawing.Point(8, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 29);
+            this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Product ID:";
             // 
@@ -96,9 +101,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 271);
+            this.label3.Location = new System.Drawing.Point(8, 176);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 29);
+            this.label3.Size = new System.Drawing.Size(180, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Defective Discription:";
             // 
@@ -106,25 +112,28 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 215);
+            this.label4.Location = new System.Drawing.Point(8, 140);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 29);
+            this.label4.Size = new System.Drawing.Size(157, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Defective Amount:";
             // 
             // Discription_text
             // 
-            this.Discription_text.Location = new System.Drawing.Point(12, 303);
+            this.Discription_text.Location = new System.Drawing.Point(8, 197);
+            this.Discription_text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Discription_text.Multiline = true;
             this.Discription_text.Name = "Discription_text";
-            this.Discription_text.Size = new System.Drawing.Size(337, 149);
+            this.Discription_text.Size = new System.Drawing.Size(226, 98);
             this.Discription_text.TabIndex = 7;
             // 
             // Amount_Text
             // 
-            this.Amount_Text.Location = new System.Drawing.Point(241, 219);
+            this.Amount_Text.Location = new System.Drawing.Point(161, 142);
+            this.Amount_Text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Amount_Text.Name = "Amount_Text";
-            this.Amount_Text.Size = new System.Drawing.Size(108, 26);
+            this.Amount_Text.Size = new System.Drawing.Size(73, 20);
             this.Amount_Text.TabIndex = 8;
             // 
             // dataGridView1
@@ -138,10 +147,11 @@
             this.quantityDataGridViewTextBoxColumn,
             this.productStatusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productTableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1132, -2);
+            this.dataGridView1.Location = new System.Drawing.Point(755, -1);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(972, 734);
+            this.dataGridView1.Size = new System.Drawing.Size(648, 477);
             this.dataGridView1.TabIndex = 9;
             // 
             // pIdDataGridViewTextBoxColumn
@@ -193,19 +203,21 @@
             // 
             this.listBox_ProductOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_ProductOrders.FormattingEnabled = true;
-            this.listBox_ProductOrders.ItemHeight = 25;
-            this.listBox_ProductOrders.Location = new System.Drawing.Point(371, 3);
-            this.listBox_ProductOrders.MaximumSize = new System.Drawing.Size(755, 729);
+            this.listBox_ProductOrders.ItemHeight = 16;
+            this.listBox_ProductOrders.Location = new System.Drawing.Point(247, 2);
+            this.listBox_ProductOrders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox_ProductOrders.MaximumSize = new System.Drawing.Size(505, 475);
             this.listBox_ProductOrders.Name = "listBox_ProductOrders";
-            this.listBox_ProductOrders.Size = new System.Drawing.Size(755, 729);
+            this.listBox_ProductOrders.Size = new System.Drawing.Size(505, 468);
             this.listBox_ProductOrders.TabIndex = 10;
             // 
             // btn_AddOrderToList
             // 
             this.btn_AddOrderToList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddOrderToList.Location = new System.Drawing.Point(12, 492);
+            this.btn_AddOrderToList.Location = new System.Drawing.Point(8, 320);
+            this.btn_AddOrderToList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_AddOrderToList.Name = "btn_AddOrderToList";
-            this.btn_AddOrderToList.Size = new System.Drawing.Size(337, 90);
+            this.btn_AddOrderToList.Size = new System.Drawing.Size(225, 58);
             this.btn_AddOrderToList.TabIndex = 11;
             this.btn_AddOrderToList.Text = "Add Order To List";
             this.btn_AddOrderToList.UseVisualStyleBackColor = true;
@@ -213,9 +225,9 @@
             // 
             // CreateProductOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2104, 731);
+            this.ClientSize = new System.Drawing.Size(1403, 475);
             this.Controls.Add(this.btn_AddOrderToList);
             this.Controls.Add(this.listBox_ProductOrders);
             this.Controls.Add(this.dataGridView1);
@@ -227,6 +239,8 @@
             this.Controls.Add(this.Confirm_btn);
             this.Controls.Add(this.ID_Text);
             this.Controls.Add(this.ProductOrderInfo_lbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CreateProductOrder";
             this.Text = "CreateProductOrder";
             this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);

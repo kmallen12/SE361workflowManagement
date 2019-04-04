@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateStockForm));
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,10 +72,9 @@
             // 
             this.lbl_warehouseSummary.AutoSize = true;
             this.lbl_warehouseSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_warehouseSummary.Location = new System.Drawing.Point(61, 48);
-            this.lbl_warehouseSummary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_warehouseSummary.Location = new System.Drawing.Point(46, 39);
             this.lbl_warehouseSummary.Name = "lbl_warehouseSummary";
-            this.lbl_warehouseSummary.Size = new System.Drawing.Size(267, 29);
+            this.lbl_warehouseSummary.Size = new System.Drawing.Size(216, 24);
             this.lbl_warehouseSummary.TabIndex = 0;
             this.lbl_warehouseSummary.Text = "Warehouse Summary:";
             // 
@@ -92,11 +92,10 @@
             this.dateUsedDataGridViewTextBoxColumn,
             this.amtDefectedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stockTableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 111);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 5;
-            this.dataGridView1.Size = new System.Drawing.Size(1077, 428);
+            this.dataGridView1.Size = new System.Drawing.Size(808, 348);
             this.dataGridView1.TabIndex = 1;
             // 
             // itemIDDataGridViewTextBoxColumn
@@ -164,78 +163,69 @@
             // 
             // ItemIDGrid_box
             // 
-            this.ItemIDGrid_box.Location = new System.Drawing.Point(24, 604);
-            this.ItemIDGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.ItemIDGrid_box.Location = new System.Drawing.Point(18, 491);
             this.ItemIDGrid_box.Name = "ItemIDGrid_box";
-            this.ItemIDGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.ItemIDGrid_box.Size = new System.Drawing.Size(95, 20);
             this.ItemIDGrid_box.TabIndex = 2;
             // 
             // quantityGrid_box
             // 
-            this.quantityGrid_box.Location = new System.Drawing.Point(292, 604);
-            this.quantityGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.quantityGrid_box.Location = new System.Drawing.Point(219, 491);
             this.quantityGrid_box.Name = "quantityGrid_box";
-            this.quantityGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.quantityGrid_box.Size = new System.Drawing.Size(95, 20);
             this.quantityGrid_box.TabIndex = 4;
             // 
             // unitCostGrid_box
             // 
-            this.unitCostGrid_box.Location = new System.Drawing.Point(427, 604);
-            this.unitCostGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.unitCostGrid_box.Location = new System.Drawing.Point(320, 491);
             this.unitCostGrid_box.Name = "unitCostGrid_box";
-            this.unitCostGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.unitCostGrid_box.Size = new System.Drawing.Size(95, 20);
             this.unitCostGrid_box.TabIndex = 5;
             // 
             // totalCostGrid_box
             // 
-            this.totalCostGrid_box.Location = new System.Drawing.Point(561, 604);
-            this.totalCostGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.totalCostGrid_box.Location = new System.Drawing.Point(421, 491);
             this.totalCostGrid_box.Name = "totalCostGrid_box";
-            this.totalCostGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.totalCostGrid_box.Size = new System.Drawing.Size(95, 20);
             this.totalCostGrid_box.TabIndex = 6;
             // 
             // dateAcquiredGrid_box
             // 
-            this.dateAcquiredGrid_box.Location = new System.Drawing.Point(696, 604);
-            this.dateAcquiredGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.dateAcquiredGrid_box.Location = new System.Drawing.Point(522, 491);
             this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
-            this.dateAcquiredGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.dateAcquiredGrid_box.Size = new System.Drawing.Size(95, 20);
             this.dateAcquiredGrid_box.TabIndex = 7;
             // 
             // dateUsedGrid_box
             // 
-            this.dateUsedGrid_box.Location = new System.Drawing.Point(831, 604);
-            this.dateUsedGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.dateUsedGrid_box.Location = new System.Drawing.Point(623, 491);
             this.dateUsedGrid_box.Name = "dateUsedGrid_box";
-            this.dateUsedGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.dateUsedGrid_box.Size = new System.Drawing.Size(95, 20);
             this.dateUsedGrid_box.TabIndex = 8;
             // 
             // amtDefectedGrid_box
             // 
-            this.amtDefectedGrid_box.Location = new System.Drawing.Point(965, 604);
-            this.amtDefectedGrid_box.Margin = new System.Windows.Forms.Padding(4);
+            this.amtDefectedGrid_box.Location = new System.Drawing.Point(724, 491);
             this.amtDefectedGrid_box.Name = "amtDefectedGrid_box";
-            this.amtDefectedGrid_box.Size = new System.Drawing.Size(125, 22);
+            this.amtDefectedGrid_box.Size = new System.Drawing.Size(95, 20);
             this.amtDefectedGrid_box.TabIndex = 9;
             // 
             // Enter_ID_lbl
             // 
             this.Enter_ID_lbl.AutoSize = true;
             this.Enter_ID_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Enter_ID_lbl.Location = new System.Drawing.Point(20, 552);
-            this.Enter_ID_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Enter_ID_lbl.Location = new System.Drawing.Point(15, 448);
             this.Enter_ID_lbl.Name = "Enter_ID_lbl";
-            this.Enter_ID_lbl.Size = new System.Drawing.Size(603, 24);
+            this.Enter_ID_lbl.Size = new System.Drawing.Size(488, 18);
             this.Enter_ID_lbl.TabIndex = 10;
             this.Enter_ID_lbl.Text = "Enter ID and Desired Changes or Omit ID to Add a New Material";
             // 
             // ConfirmGrid_btn
             // 
             this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmGrid_btn.Location = new System.Drawing.Point(532, 649);
-            this.ConfirmGrid_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.ConfirmGrid_btn.Location = new System.Drawing.Point(399, 527);
             this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
-            this.ConfirmGrid_btn.Size = new System.Drawing.Size(414, 40);
+            this.ConfirmGrid_btn.Size = new System.Drawing.Size(310, 32);
             this.ConfirmGrid_btn.TabIndex = 11;
             this.ConfirmGrid_btn.Text = "Add/Update and Save to Database";
             this.ConfirmGrid_btn.UseVisualStyleBackColor = true;
@@ -244,10 +234,9 @@
             // btnLoadStockFromDB
             // 
             this.btnLoadStockFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadStockFromDB.Location = new System.Drawing.Point(387, 32);
-            this.btnLoadStockFromDB.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadStockFromDB.Location = new System.Drawing.Point(290, 26);
             this.btnLoadStockFromDB.Name = "btnLoadStockFromDB";
-            this.btnLoadStockFromDB.Size = new System.Drawing.Size(284, 64);
+            this.btnLoadStockFromDB.Size = new System.Drawing.Size(213, 52);
             this.btnLoadStockFromDB.TabIndex = 13;
             this.btnLoadStockFromDB.Text = "Load from Database";
             this.btnLoadStockFromDB.UseVisualStyleBackColor = true;
@@ -257,10 +246,9 @@
             // 
             this.lblItemID.AutoSize = true;
             this.lblItemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemID.Location = new System.Drawing.Point(21, 582);
-            this.lblItemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItemID.Location = new System.Drawing.Point(16, 473);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(54, 18);
+            this.lblItemID.Size = new System.Drawing.Size(46, 15);
             this.lblItemID.TabIndex = 14;
             this.lblItemID.Text = "Item ID";
             // 
@@ -268,10 +256,9 @@
             // 
             this.lblMaterialType.AutoSize = true;
             this.lblMaterialType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialType.Location = new System.Drawing.Point(154, 582);
-            this.lblMaterialType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaterialType.Location = new System.Drawing.Point(116, 473);
             this.lblMaterialType.Name = "lblMaterialType";
-            this.lblMaterialType.Size = new System.Drawing.Size(96, 18);
+            this.lblMaterialType.Size = new System.Drawing.Size(81, 15);
             this.lblMaterialType.TabIndex = 15;
             this.lblMaterialType.Text = "Material Type";
             // 
@@ -279,10 +266,9 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(290, 582);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantity.Location = new System.Drawing.Point(218, 473);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(62, 18);
+            this.lblQuantity.Size = new System.Drawing.Size(51, 15);
             this.lblQuantity.TabIndex = 16;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -290,10 +276,9 @@
             // 
             this.lblUnitCost.AutoSize = true;
             this.lblUnitCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitCost.Location = new System.Drawing.Point(424, 582);
-            this.lblUnitCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUnitCost.Location = new System.Drawing.Point(318, 473);
             this.lblUnitCost.Name = "lblUnitCost";
-            this.lblUnitCost.Size = new System.Drawing.Size(70, 18);
+            this.lblUnitCost.Size = new System.Drawing.Size(56, 15);
             this.lblUnitCost.TabIndex = 17;
             this.lblUnitCost.Text = "Unit Cost";
             // 
@@ -301,10 +286,9 @@
             // 
             this.lblTotalCost.AutoSize = true;
             this.lblTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCost.Location = new System.Drawing.Point(558, 582);
-            this.lblTotalCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCost.Location = new System.Drawing.Point(418, 473);
             this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(77, 18);
+            this.lblTotalCost.Size = new System.Drawing.Size(61, 15);
             this.lblTotalCost.TabIndex = 18;
             this.lblTotalCost.Text = "Total Cost";
             // 
@@ -312,10 +296,9 @@
             // 
             this.lblDateAcq.AutoSize = true;
             this.lblDateAcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAcq.Location = new System.Drawing.Point(693, 582);
-            this.lblDateAcq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateAcq.Location = new System.Drawing.Point(520, 473);
             this.lblDateAcq.Name = "lblDateAcq";
-            this.lblDateAcq.Size = new System.Drawing.Size(100, 18);
+            this.lblDateAcq.Size = new System.Drawing.Size(84, 15);
             this.lblDateAcq.TabIndex = 19;
             this.lblDateAcq.Text = "Date Acquired";
             // 
@@ -323,10 +306,9 @@
             // 
             this.lblDateUsed.AutoSize = true;
             this.lblDateUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateUsed.Location = new System.Drawing.Point(828, 582);
-            this.lblDateUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateUsed.Location = new System.Drawing.Point(621, 473);
             this.lblDateUsed.Name = "lblDateUsed";
-            this.lblDateUsed.Size = new System.Drawing.Size(78, 18);
+            this.lblDateUsed.Size = new System.Drawing.Size(65, 15);
             this.lblDateUsed.TabIndex = 20;
             this.lblDateUsed.Text = "Date Used";
             // 
@@ -334,20 +316,18 @@
             // 
             this.lblDefects.AutoSize = true;
             this.lblDefects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefects.Location = new System.Drawing.Point(962, 582);
-            this.lblDefects.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDefects.Location = new System.Drawing.Point(722, 473);
             this.lblDefects.Name = "lblDefects";
-            this.lblDefects.Size = new System.Drawing.Size(59, 18);
+            this.lblDefects.Size = new System.Drawing.Size(48, 15);
             this.lblDefects.TabIndex = 21;
             this.lblDefects.Text = "Defects";
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(981, 649);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Location = new System.Drawing.Point(736, 527);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 40);
+            this.btnClose.Size = new System.Drawing.Size(80, 32);
             this.btnClose.TabIndex = 22;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -357,16 +337,17 @@
             // 
             this.txtMaterialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtMaterialType.FormattingEnabled = true;
-            this.txtMaterialType.Location = new System.Drawing.Point(156, 604);
+            this.txtMaterialType.Location = new System.Drawing.Point(117, 491);
+            this.txtMaterialType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaterialType.Name = "txtMaterialType";
-            this.txtMaterialType.Size = new System.Drawing.Size(125, 24);
+            this.txtMaterialType.Size = new System.Drawing.Size(95, 21);
             this.txtMaterialType.TabIndex = 23;
             // 
             // UpdateStockForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1114, 704);
+            this.ClientSize = new System.Drawing.Size(836, 572);
             this.Controls.Add(this.txtMaterialType);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblDefects);
@@ -389,7 +370,7 @@
             this.Controls.Add(this.ItemIDGrid_box);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_warehouseSummary);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateStockForm";
             this.Text = "View and Update Stock Form";
             this.TopMost = true;

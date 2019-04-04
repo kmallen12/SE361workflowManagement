@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockView));
             this.btnLoadDB = new System.Windows.Forms.Button();
             this.DGVStockView = new System.Windows.Forms.DataGridView();
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.Controls.Add(this.btnLoadDB);
             this.Controls.Add(this.DGVStockView);
             this.Controls.Add(this.lbl_warehouseSummary);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StockView";
             this.Text = "StockView";
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).EndInit();

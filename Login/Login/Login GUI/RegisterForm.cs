@@ -8,11 +8,16 @@ namespace WorkFlowManagement
     public partial class RegisterForm : Form
     {
         //Update: 3/26/2019 - Cowen Shears - I fixed some bugs for the MessageBox in CheckValidUser().
+
+
+
+
         DatabaseManager objDatabaseManager = new DatabaseManager();
         CheckEntry objCheckEntry = new CheckEntry();
         Password objPassword = new Password();
         private List<string> userTypes;
         string output;
+        public ToolTip ttPasswordHelp = new ToolTip();
 
         public RegisterForm()
         {
@@ -28,6 +33,7 @@ namespace WorkFlowManagement
             {
                 cboxUserType.Items.Add(type);
             }
+            ttPasswordHelp.SetToolTip(lblPasswordHelp, "Passwords must be at least 8 Characters\nAnd meet 3 of the four conditions:\n- Contain one UpperCase Letter\n- Conatin one LowerCase Letter\n- Contain one Number\n- Contain one Symbol(./, !#$& etc..)");
         }
 
         private Boolean CheckValidUser()

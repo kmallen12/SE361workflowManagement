@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewProducts));
             this.dataGrid_ViewProducts = new System.Windows.Forms.DataGridView();
             this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +65,9 @@
             this.materialsStringDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn});
             this.dataGrid_ViewProducts.DataSource = this.productTableBindingSource;
-            this.dataGrid_ViewProducts.Location = new System.Drawing.Point(457, 15);
-            this.dataGrid_ViewProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_ViewProducts.Location = new System.Drawing.Point(343, 12);
             this.dataGrid_ViewProducts.Name = "dataGrid_ViewProducts";
-            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(593, 524);
+            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(445, 426);
             this.dataGrid_ViewProducts.TabIndex = 0;
             // 
             // pIdDataGridViewTextBoxColumn
@@ -113,53 +113,47 @@
             // 
             this.lbl_ViewProducts.AutoSize = true;
             this.lbl_ViewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ViewProducts.Location = new System.Drawing.Point(75, 27);
-            this.lbl_ViewProducts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ViewProducts.Location = new System.Drawing.Point(56, 22);
             this.lbl_ViewProducts.Name = "lbl_ViewProducts";
-            this.lbl_ViewProducts.Size = new System.Drawing.Size(282, 29);
+            this.lbl_ViewProducts.Size = new System.Drawing.Size(222, 24);
             this.lbl_ViewProducts.TabIndex = 1;
             this.lbl_ViewProducts.Text = "Update Product Details";
             // 
             // txt_ProductID
             // 
-            this.txt_ProductID.Location = new System.Drawing.Point(240, 127);
-            this.txt_ProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ProductID.Location = new System.Drawing.Point(180, 103);
             this.txt_ProductID.Name = "txt_ProductID";
-            this.txt_ProductID.Size = new System.Drawing.Size(208, 22);
+            this.txt_ProductID.Size = new System.Drawing.Size(157, 20);
             this.txt_ProductID.TabIndex = 2;
             // 
             // txt_ProductName
             // 
-            this.txt_ProductName.Location = new System.Drawing.Point(240, 217);
-            this.txt_ProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ProductName.Location = new System.Drawing.Point(180, 176);
             this.txt_ProductName.Name = "txt_ProductName";
-            this.txt_ProductName.Size = new System.Drawing.Size(208, 22);
+            this.txt_ProductName.Size = new System.Drawing.Size(157, 20);
             this.txt_ProductName.TabIndex = 3;
             // 
             // txt_ProductMaterials
             // 
-            this.txt_ProductMaterials.Location = new System.Drawing.Point(240, 306);
-            this.txt_ProductMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ProductMaterials.Location = new System.Drawing.Point(180, 249);
             this.txt_ProductMaterials.Name = "txt_ProductMaterials";
-            this.txt_ProductMaterials.Size = new System.Drawing.Size(208, 22);
+            this.txt_ProductMaterials.Size = new System.Drawing.Size(157, 20);
             this.txt_ProductMaterials.TabIndex = 4;
             // 
             // txt_ProductQuantity
             // 
-            this.txt_ProductQuantity.Location = new System.Drawing.Point(240, 395);
-            this.txt_ProductQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ProductQuantity.Location = new System.Drawing.Point(180, 321);
             this.txt_ProductQuantity.Name = "txt_ProductQuantity";
-            this.txt_ProductQuantity.Size = new System.Drawing.Size(208, 22);
+            this.txt_ProductQuantity.Size = new System.Drawing.Size(157, 20);
             this.txt_ProductQuantity.TabIndex = 5;
             // 
             // lbl_ProductID
             // 
             this.lbl_ProductID.AutoSize = true;
             this.lbl_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductID.Location = new System.Drawing.Point(17, 128);
-            this.lbl_ProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductID.Location = new System.Drawing.Point(13, 104);
             this.lbl_ProductID.Name = "lbl_ProductID";
-            this.lbl_ProductID.Size = new System.Drawing.Size(105, 20);
+            this.lbl_ProductID.Size = new System.Drawing.Size(84, 16);
             this.lbl_ProductID.TabIndex = 6;
             this.lbl_ProductID.Text = "Product ID:";
             // 
@@ -167,10 +161,9 @@
             // 
             this.lbl_ProductName.AutoSize = true;
             this.lbl_ProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductName.Location = new System.Drawing.Point(17, 217);
-            this.lbl_ProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductName.Location = new System.Drawing.Point(13, 176);
             this.lbl_ProductName.Name = "lbl_ProductName";
-            this.lbl_ProductName.Size = new System.Drawing.Size(134, 20);
+            this.lbl_ProductName.Size = new System.Drawing.Size(110, 16);
             this.lbl_ProductName.TabIndex = 7;
             this.lbl_ProductName.Text = "Product Name:";
             // 
@@ -178,10 +171,9 @@
             // 
             this.lbl_ProductMaterials.AutoSize = true;
             this.lbl_ProductMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductMaterials.Location = new System.Drawing.Point(17, 311);
-            this.lbl_ProductMaterials.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductMaterials.Location = new System.Drawing.Point(13, 253);
             this.lbl_ProductMaterials.Name = "lbl_ProductMaterials";
-            this.lbl_ProductMaterials.Size = new System.Drawing.Size(164, 20);
+            this.lbl_ProductMaterials.Size = new System.Drawing.Size(133, 16);
             this.lbl_ProductMaterials.TabIndex = 8;
             this.lbl_ProductMaterials.Text = "Product Materials:";
             // 
@@ -189,20 +181,18 @@
             // 
             this.lbl_ProductQuantity.AutoSize = true;
             this.lbl_ProductQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductQuantity.Location = new System.Drawing.Point(17, 400);
-            this.lbl_ProductQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductQuantity.Location = new System.Drawing.Point(13, 325);
             this.lbl_ProductQuantity.Name = "lbl_ProductQuantity";
-            this.lbl_ProductQuantity.Size = new System.Drawing.Size(156, 20);
+            this.lbl_ProductQuantity.Size = new System.Drawing.Size(125, 16);
             this.lbl_ProductQuantity.TabIndex = 9;
             this.lbl_ProductQuantity.Text = "Product Quantity:";
             // 
             // btn_UpdateProduct
             // 
             this.btn_UpdateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateProduct.Location = new System.Drawing.Point(20, 473);
-            this.btn_UpdateProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_UpdateProduct.Location = new System.Drawing.Point(15, 384);
             this.btn_UpdateProduct.Name = "btn_UpdateProduct";
-            this.btn_UpdateProduct.Size = new System.Drawing.Size(209, 52);
+            this.btn_UpdateProduct.Size = new System.Drawing.Size(157, 42);
             this.btn_UpdateProduct.TabIndex = 10;
             this.btn_UpdateProduct.Text = "UpdateProduct";
             this.btn_UpdateProduct.UseVisualStyleBackColor = true;
@@ -211,10 +201,9 @@
             // btn_OrderProduct
             // 
             this.btn_OrderProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OrderProduct.Location = new System.Drawing.Point(240, 473);
-            this.btn_OrderProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_OrderProduct.Location = new System.Drawing.Point(180, 384);
             this.btn_OrderProduct.Name = "btn_OrderProduct";
-            this.btn_OrderProduct.Size = new System.Drawing.Size(209, 52);
+            this.btn_OrderProduct.Size = new System.Drawing.Size(157, 42);
             this.btn_OrderProduct.TabIndex = 11;
             this.btn_OrderProduct.Text = "OrderProduct";
             this.btn_OrderProduct.UseVisualStyleBackColor = true;
@@ -224,19 +213,18 @@
             // 
             this.lbl_ProductInfo.AutoSize = true;
             this.lbl_ProductInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductInfo.Location = new System.Drawing.Point(16, 68);
-            this.lbl_ProductInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductInfo.Location = new System.Drawing.Point(12, 55);
             this.lbl_ProductInfo.Name = "lbl_ProductInfo";
-            this.lbl_ProductInfo.Size = new System.Drawing.Size(378, 36);
+            this.lbl_ProductInfo.Size = new System.Drawing.Size(318, 30);
             this.lbl_ProductInfo.TabIndex = 12;
             this.lbl_ProductInfo.Text = "Enter ID and Quantity to order more of a product.\r\nEnter all fields to Update a p" +
     "roduct.";
             // 
             // ViewProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_ProductInfo);
             this.Controls.Add(this.btn_OrderProduct);
             this.Controls.Add(this.btn_UpdateProduct);
@@ -250,7 +238,7 @@
             this.Controls.Add(this.txt_ProductID);
             this.Controls.Add(this.lbl_ViewProducts);
             this.Controls.Add(this.dataGrid_ViewProducts);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewProducts";
             this.Text = "View & Update Products";
             this.Load += new System.EventHandler(this.ViewProducts_Load);

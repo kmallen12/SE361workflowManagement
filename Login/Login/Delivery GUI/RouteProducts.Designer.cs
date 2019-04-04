@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteProducts));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnRemoveDefects = new System.Windows.Forms.Button();
             this.btnSendToManu = new System.Windows.Forms.Button();
@@ -43,33 +44,34 @@
             this.lblProdIDQualified = new System.Windows.Forms.Label();
             this.cboxProdIDQualified = new System.Windows.Forms.ComboBox();
             this.dataGrid_ViewProducts = new System.Windows.Forms.DataGridView();
+            this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.workFlowDatabaseDataSet1 = new Login.WorkFlowDatabaseDataSet1();
             this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
             this.lblSelectProdForManu = new System.Windows.Forms.Label();
             this.lblSelectProdForSales = new System.Windows.Forms.Label();
             this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
             this.tableAdapterManager = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager();
-            this.workFlowDatabaseDataSet1 = new Login.WorkFlowDatabaseDataSet1();
-            this.productTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productTableTableAdapter1 = new Login.WorkFlowDatabaseDataSet1TableAdapters.ProductTableTableAdapter();
             this.tableAdapterManager1 = new Login.WorkFlowDatabaseDataSet1TableAdapters.TableAdapterManager();
-            this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ViewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(860, 505);
+            this.btnClose.Location = new System.Drawing.Point(645, 410);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 44);
+            this.btnClose.Size = new System.Drawing.Size(75, 36);
             this.btnClose.TabIndex = 33;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -77,9 +79,10 @@
             // 
             // btnRemoveDefects
             // 
-            this.btnRemoveDefects.Location = new System.Drawing.Point(80, 483);
+            this.btnRemoveDefects.Location = new System.Drawing.Point(60, 392);
+            this.btnRemoveDefects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveDefects.Name = "btnRemoveDefects";
-            this.btnRemoveDefects.Size = new System.Drawing.Size(91, 50);
+            this.btnRemoveDefects.Size = new System.Drawing.Size(68, 41);
             this.btnRemoveDefects.TabIndex = 32;
             this.btnRemoveDefects.Text = "Remove from list";
             this.btnRemoveDefects.UseVisualStyleBackColor = true;
@@ -87,9 +90,10 @@
             // 
             // btnSendToManu
             // 
-            this.btnSendToManu.Location = new System.Drawing.Point(204, 483);
+            this.btnSendToManu.Location = new System.Drawing.Point(153, 392);
+            this.btnSendToManu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSendToManu.Name = "btnSendToManu";
-            this.btnSendToManu.Size = new System.Drawing.Size(145, 50);
+            this.btnSendToManu.Size = new System.Drawing.Size(109, 41);
             this.btnSendToManu.TabIndex = 31;
             this.btnSendToManu.Text = "SEND ALL TO MANUFACTURING";
             this.btnSendToManu.UseVisualStyleBackColor = true;
@@ -97,9 +101,10 @@
             // 
             // btnAddToDefectsList
             // 
-            this.btnAddToDefectsList.Location = new System.Drawing.Point(269, 350);
+            this.btnAddToDefectsList.Location = new System.Drawing.Point(202, 284);
+            this.btnAddToDefectsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddToDefectsList.Name = "btnAddToDefectsList";
-            this.btnAddToDefectsList.Size = new System.Drawing.Size(91, 24);
+            this.btnAddToDefectsList.Size = new System.Drawing.Size(68, 20);
             this.btnAddToDefectsList.TabIndex = 30;
             this.btnAddToDefectsList.Text = "Add to List";
             this.btnAddToDefectsList.UseVisualStyleBackColor = true;
@@ -108,18 +113,19 @@
             // lstDefectedProd
             // 
             this.lstDefectedProd.FormattingEnabled = true;
-            this.lstDefectedProd.ItemHeight = 16;
-            this.lstDefectedProd.Location = new System.Drawing.Point(32, 393);
+            this.lstDefectedProd.Location = new System.Drawing.Point(24, 319);
+            this.lstDefectedProd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstDefectedProd.Name = "lstDefectedProd";
-            this.lstDefectedProd.Size = new System.Drawing.Size(344, 84);
+            this.lstDefectedProd.Size = new System.Drawing.Size(259, 69);
             this.lstDefectedProd.TabIndex = 29;
             // 
             // lblProdIDDefected
             // 
             this.lblProdIDDefected.AutoSize = true;
-            this.lblProdIDDefected.Location = new System.Drawing.Point(29, 357);
+            this.lblProdIDDefected.Location = new System.Drawing.Point(22, 290);
+            this.lblProdIDDefected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProdIDDefected.Name = "lblProdIDDefected";
-            this.lblProdIDDefected.Size = new System.Drawing.Size(74, 17);
+            this.lblProdIDDefected.Size = new System.Drawing.Size(58, 13);
             this.lblProdIDDefected.TabIndex = 28;
             this.lblProdIDDefected.Text = "Product ID";
             // 
@@ -127,16 +133,18 @@
             // 
             this.cboxProdIDDefects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProdIDDefects.FormattingEnabled = true;
-            this.cboxProdIDDefects.Location = new System.Drawing.Point(128, 350);
+            this.cboxProdIDDefects.Location = new System.Drawing.Point(96, 284);
+            this.cboxProdIDDefects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxProdIDDefects.Name = "cboxProdIDDefects";
-            this.cboxProdIDDefects.Size = new System.Drawing.Size(121, 24);
+            this.cboxProdIDDefects.Size = new System.Drawing.Size(92, 21);
             this.cboxProdIDDefects.TabIndex = 27;
             // 
             // btnRemoveQualified
             // 
-            this.btnRemoveQualified.Location = new System.Drawing.Point(80, 226);
+            this.btnRemoveQualified.Location = new System.Drawing.Point(60, 184);
+            this.btnRemoveQualified.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveQualified.Name = "btnRemoveQualified";
-            this.btnRemoveQualified.Size = new System.Drawing.Size(91, 50);
+            this.btnRemoveQualified.Size = new System.Drawing.Size(68, 41);
             this.btnRemoveQualified.TabIndex = 26;
             this.btnRemoveQualified.Text = "Remove from list";
             this.btnRemoveQualified.UseVisualStyleBackColor = true;
@@ -144,9 +152,10 @@
             // 
             // btnSendToSales
             // 
-            this.btnSendToSales.Location = new System.Drawing.Point(231, 226);
+            this.btnSendToSales.Location = new System.Drawing.Point(173, 184);
+            this.btnSendToSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSendToSales.Name = "btnSendToSales";
-            this.btnSendToSales.Size = new System.Drawing.Size(91, 50);
+            this.btnSendToSales.Size = new System.Drawing.Size(68, 41);
             this.btnSendToSales.TabIndex = 25;
             this.btnSendToSales.Text = "SEND ALL TO SALES";
             this.btnSendToSales.UseVisualStyleBackColor = true;
@@ -154,9 +163,10 @@
             // 
             // btnAddToQualifiedList
             // 
-            this.btnAddToQualifiedList.Location = new System.Drawing.Point(269, 93);
+            this.btnAddToQualifiedList.Location = new System.Drawing.Point(202, 76);
+            this.btnAddToQualifiedList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddToQualifiedList.Name = "btnAddToQualifiedList";
-            this.btnAddToQualifiedList.Size = new System.Drawing.Size(91, 24);
+            this.btnAddToQualifiedList.Size = new System.Drawing.Size(68, 20);
             this.btnAddToQualifiedList.TabIndex = 24;
             this.btnAddToQualifiedList.Text = "Add to List";
             this.btnAddToQualifiedList.UseVisualStyleBackColor = true;
@@ -165,18 +175,19 @@
             // lstQualifiedProd
             // 
             this.lstQualifiedProd.FormattingEnabled = true;
-            this.lstQualifiedProd.ItemHeight = 16;
-            this.lstQualifiedProd.Location = new System.Drawing.Point(32, 136);
+            this.lstQualifiedProd.Location = new System.Drawing.Point(24, 110);
+            this.lstQualifiedProd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstQualifiedProd.Name = "lstQualifiedProd";
-            this.lstQualifiedProd.Size = new System.Drawing.Size(344, 84);
+            this.lstQualifiedProd.Size = new System.Drawing.Size(259, 69);
             this.lstQualifiedProd.TabIndex = 23;
             // 
             // lblProdIDQualified
             // 
             this.lblProdIDQualified.AutoSize = true;
-            this.lblProdIDQualified.Location = new System.Drawing.Point(29, 100);
+            this.lblProdIDQualified.Location = new System.Drawing.Point(22, 81);
+            this.lblProdIDQualified.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProdIDQualified.Name = "lblProdIDQualified";
-            this.lblProdIDQualified.Size = new System.Drawing.Size(74, 17);
+            this.lblProdIDQualified.Size = new System.Drawing.Size(58, 13);
             this.lblProdIDQualified.TabIndex = 22;
             this.lblProdIDQualified.Text = "Product ID";
             // 
@@ -184,9 +195,10 @@
             // 
             this.cboxProdIDQualified.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProdIDQualified.FormattingEnabled = true;
-            this.cboxProdIDQualified.Location = new System.Drawing.Point(128, 93);
+            this.cboxProdIDQualified.Location = new System.Drawing.Point(96, 76);
+            this.cboxProdIDQualified.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxProdIDQualified.Name = "cboxProdIDQualified";
-            this.cboxProdIDQualified.Size = new System.Drawing.Size(121, 24);
+            this.cboxProdIDQualified.Size = new System.Drawing.Size(92, 21);
             this.cboxProdIDQualified.TabIndex = 21;
             // 
             // dataGrid_ViewProducts
@@ -200,71 +212,10 @@
             this.quantityDataGridViewTextBoxColumn,
             this.productStatusDataGridViewTextBoxColumn});
             this.dataGrid_ViewProducts.DataSource = this.productTableBindingSource1;
-            this.dataGrid_ViewProducts.Location = new System.Drawing.Point(538, 29);
-            this.dataGrid_ViewProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGrid_ViewProducts.Location = new System.Drawing.Point(404, 24);
             this.dataGrid_ViewProducts.Name = "dataGrid_ViewProducts";
-            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(711, 448);
+            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(533, 364);
             this.dataGrid_ViewProducts.TabIndex = 20;
-            // 
-            // productTableBindingSource
-            // 
-            this.productTableBindingSource.DataMember = "ProductTable";
-            this.productTableBindingSource.DataSource = this.workFlowDatabaseDataSetProducts;
-            // 
-            // workFlowDatabaseDataSetProducts
-            // 
-            this.workFlowDatabaseDataSetProducts.DataSetName = "WorkFlowDatabaseDataSetProducts";
-            this.workFlowDatabaseDataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblSelectProdForManu
-            // 
-            this.lblSelectProdForManu.AutoSize = true;
-            this.lblSelectProdForManu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectProdForManu.Location = new System.Drawing.Point(29, 316);
-            this.lblSelectProdForManu.Name = "lblSelectProdForManu";
-            this.lblSelectProdForManu.Size = new System.Drawing.Size(442, 20);
-            this.lblSelectProdForManu.TabIndex = 19;
-            this.lblSelectProdForManu.Text = "Select Defected Products to Send to Manufacturing";
-            // 
-            // lblSelectProdForSales
-            // 
-            this.lblSelectProdForSales.AutoSize = true;
-            this.lblSelectProdForSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectProdForSales.Location = new System.Drawing.Point(29, 55);
-            this.lblSelectProdForSales.Name = "lblSelectProdForSales";
-            this.lblSelectProdForSales.Size = new System.Drawing.Size(369, 20);
-            this.lblSelectProdForSales.TabIndex = 18;
-            this.lblSelectProdForSales.Text = "Select Qualified Products to Send to Sales";
-            // 
-            // productTableTableAdapter
-            // 
-            this.productTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProductTableTableAdapter = this.productTableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // workFlowDatabaseDataSet1
-            // 
-            this.workFlowDatabaseDataSet1.DataSetName = "WorkFlowDatabaseDataSet1";
-            this.workFlowDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productTableBindingSource1
-            // 
-            this.productTableBindingSource1.DataMember = "ProductTable";
-            this.productTableBindingSource1.DataSource = this.workFlowDatabaseDataSet1;
-            // 
-            // productTableTableAdapter1
-            // 
-            this.productTableTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.ProductTableTableAdapter = this.productTableTableAdapter1;
-            this.tableAdapterManager1.UpdateOrder = Login.WorkFlowDatabaseDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // pIdDataGridViewTextBoxColumn
             // 
@@ -297,11 +248,73 @@
             this.productStatusDataGridViewTextBoxColumn.HeaderText = "productStatus";
             this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
             // 
+            // productTableBindingSource1
+            // 
+            this.productTableBindingSource1.DataMember = "ProductTable";
+            this.productTableBindingSource1.DataSource = this.workFlowDatabaseDataSet1;
+            // 
+            // workFlowDatabaseDataSet1
+            // 
+            this.workFlowDatabaseDataSet1.DataSetName = "WorkFlowDatabaseDataSet1";
+            this.workFlowDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productTableBindingSource
+            // 
+            this.productTableBindingSource.DataMember = "ProductTable";
+            this.productTableBindingSource.DataSource = this.workFlowDatabaseDataSetProducts;
+            // 
+            // workFlowDatabaseDataSetProducts
+            // 
+            this.workFlowDatabaseDataSetProducts.DataSetName = "WorkFlowDatabaseDataSetProducts";
+            this.workFlowDatabaseDataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblSelectProdForManu
+            // 
+            this.lblSelectProdForManu.AutoSize = true;
+            this.lblSelectProdForManu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectProdForManu.Location = new System.Drawing.Point(22, 257);
+            this.lblSelectProdForManu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectProdForManu.Name = "lblSelectProdForManu";
+            this.lblSelectProdForManu.Size = new System.Drawing.Size(380, 17);
+            this.lblSelectProdForManu.TabIndex = 19;
+            this.lblSelectProdForManu.Text = "Select Defected Products to Send to Manufacturing";
+            // 
+            // lblSelectProdForSales
+            // 
+            this.lblSelectProdForSales.AutoSize = true;
+            this.lblSelectProdForSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectProdForSales.Location = new System.Drawing.Point(22, 45);
+            this.lblSelectProdForSales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectProdForSales.Name = "lblSelectProdForSales";
+            this.lblSelectProdForSales.Size = new System.Drawing.Size(317, 17);
+            this.lblSelectProdForSales.TabIndex = 18;
+            this.lblSelectProdForSales.Text = "Select Qualified Products to Send to Sales";
+            // 
+            // productTableTableAdapter
+            // 
+            this.productTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ProductTableTableAdapter = this.productTableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // productTableTableAdapter1
+            // 
+            this.productTableTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.ProductTableTableAdapter = this.productTableTableAdapter1;
+            this.tableAdapterManager1.UpdateOrder = Login.WorkFlowDatabaseDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // RouteProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 572);
+            this.ClientSize = new System.Drawing.Size(964, 465);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRemoveDefects);
             this.Controls.Add(this.btnSendToManu);
@@ -318,14 +331,16 @@
             this.Controls.Add(this.dataGrid_ViewProducts);
             this.Controls.Add(this.lblSelectProdForManu);
             this.Controls.Add(this.lblSelectProdForSales);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RouteProducts";
             this.Text = "RouteProducts";
             this.Load += new System.EventHandler(this.RouteProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ViewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

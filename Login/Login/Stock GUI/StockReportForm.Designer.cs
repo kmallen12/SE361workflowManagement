@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockReportForm));
             this.lbl_lowInventory = new System.Windows.Forms.Label();
             this.lbl_maxCapacity = new System.Windows.Forms.Label();
             this.dataGridViewLow = new System.Windows.Forms.DataGridView();
@@ -170,6 +171,7 @@
             this.Controls.Add(this.dataGridViewLow);
             this.Controls.Add(this.lbl_maxCapacity);
             this.Controls.Add(this.lbl_lowInventory);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StockReportForm";
             this.Text = "Stock Report";

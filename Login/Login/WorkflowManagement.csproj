@@ -236,6 +236,9 @@
     <EmbeddedResource Include="Product GUI\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stock GUI\ManageStockOrders.resx">
+      <DependentUpon>ManageStockOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stock GUI\RawMaterialsForm.resx">
       <DependentUpon>RawMaterialsForm.cs</DependentUpon>
     </EmbeddedResource>

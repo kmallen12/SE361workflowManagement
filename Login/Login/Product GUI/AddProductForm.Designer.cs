@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.label1 = new System.Windows.Forms.Label();
             this.PartialStockGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -297,6 +298,7 @@
             this.Controls.Add(this.txt_ProductName);
             this.Controls.Add(this.lbl_CreateANewProduct);
             this.Controls.Add(this.PartialStockGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddProduct";
             this.Text = "  ";
             this.Load += new System.EventHandler(this.Product_Load_1);

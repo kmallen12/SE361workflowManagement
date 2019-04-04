@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewProductsForm));
             this.lblProductDetails = new System.Windows.Forms.Label();
             this.workFlowDatabaseDataSet1 = new Login.WorkFlowDatabaseDataSet();
             this.workFlowDatabaseDataSet2 = new Login.WorkFlowDatabaseDataSet();
             this.dataGrid_ViewProducts = new System.Windows.Forms.DataGridView();
-            this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
-            this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
-            this.tableAdapterManager = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager();
             this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
+            this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
+            this.tableAdapterManager = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ViewProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductDetails
             // 
             this.lblProductDetails.AutoSize = true;
             this.lblProductDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDetails.Location = new System.Drawing.Point(32, 25);
-            this.lblProductDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProductDetails.Location = new System.Drawing.Point(24, 20);
             this.lblProductDetails.Name = "lblProductDetails";
-            this.lblProductDetails.Size = new System.Drawing.Size(191, 29);
+            this.lblProductDetails.Size = new System.Drawing.Size(150, 24);
             this.lblProductDetails.TabIndex = 2;
             this.lblProductDetails.Text = "Product Details";
             // 
@@ -79,31 +79,10 @@
             this.materialsStringDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn});
             this.dataGrid_ViewProducts.DataSource = this.productTableBindingSource;
-            this.dataGrid_ViewProducts.Location = new System.Drawing.Point(104, 80);
-            this.dataGrid_ViewProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGrid_ViewProducts.Location = new System.Drawing.Point(78, 65);
             this.dataGrid_ViewProducts.Name = "dataGrid_ViewProducts";
-            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(593, 427);
+            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(445, 347);
             this.dataGrid_ViewProducts.TabIndex = 3;
-            // 
-            // workFlowDatabaseDataSetProducts
-            // 
-            this.workFlowDatabaseDataSetProducts.DataSetName = "WorkFlowDatabaseDataSetProducts";
-            this.workFlowDatabaseDataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productTableBindingSource
-            // 
-            this.productTableBindingSource.DataMember = "ProductTable";
-            this.productTableBindingSource.DataSource = this.workFlowDatabaseDataSetProducts;
-            // 
-            // productTableTableAdapter
-            // 
-            this.productTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProductTableTableAdapter = this.productTableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // pIdDataGridViewTextBoxColumn
             // 
@@ -130,21 +109,43 @@
             this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             // 
+            // productTableBindingSource
+            // 
+            this.productTableBindingSource.DataMember = "ProductTable";
+            this.productTableBindingSource.DataSource = this.workFlowDatabaseDataSetProducts;
+            // 
+            // workFlowDatabaseDataSetProducts
+            // 
+            this.workFlowDatabaseDataSetProducts.DataSetName = "WorkFlowDatabaseDataSetProducts";
+            this.workFlowDatabaseDataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productTableTableAdapter
+            // 
+            this.productTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ProductTableTableAdapter = this.productTableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // ViewProductsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 567);
+            this.ClientSize = new System.Drawing.Size(600, 461);
             this.Controls.Add(this.dataGrid_ViewProducts);
             this.Controls.Add(this.lblProductDetails);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ViewProductsForm";
             this.Text = "ViewProductsForm";
             this.Load += new System.EventHandler(this.ViewProductsForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ViewProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

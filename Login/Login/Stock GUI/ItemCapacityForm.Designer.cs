@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemCapacityForm));
             this.txtItemID = new System.Windows.Forms.TextBox();
             this.txtMax = new System.Windows.Forms.TextBox();
             this.txtLow = new System.Windows.Forms.TextBox();
@@ -107,6 +108,7 @@
             this.Controls.Add(this.txtLow);
             this.Controls.Add(this.txtMax);
             this.Controls.Add(this.txtItemID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ItemCapacityForm";
             this.Text = "ItemCapacityForm";
             this.ResumeLayout(false);
