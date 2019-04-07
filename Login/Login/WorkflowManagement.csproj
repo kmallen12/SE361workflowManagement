@@ -80,6 +80,12 @@
     <Compile Include="Delivery GUI\RouteProducts.Designer.cs">
       <DependentUpon>RouteProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product GUI\ViewProductOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\ViewProductOrders.Designer.cs">
+      <DependentUpon>ViewProductOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product GUI\OrderStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,17 @@
     </Compile>
     <Compile Include="Product GUI\RemanufactureForm.Designer.cs">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product GUI\ViewQualifiedProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\ViewQualifiedProducts.Designer.cs">
+      <DependentUpon>ViewQualifiedProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QualifiedProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QualifiedProducts.xsd</DependentUpon>
     </Compile>
     <Compile Include="Quality GUI\CheckQuality.cs">
       <SubType>Form</SubType>
@@ -204,6 +221,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WorkFlowDatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkFlowDatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WorkFlowDatabaseDataSetProducts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,6 +237,9 @@
     <EmbeddedResource Include="Delivery GUI\RouteProducts.resx">
       <DependentUpon>RouteProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\ViewProductOrders.resx">
+      <DependentUpon>ViewProductOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\OrderStockForm.resx">
       <DependentUpon>OrderStockForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\ViewQualifiedProducts.resx">
+      <DependentUpon>ViewQualifiedProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quality GUI\CheckQuality.resx">
       <DependentUpon>CheckQuality.cs</DependentUpon>
@@ -290,6 +318,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QualifiedProducts.xsc">
+      <DependentUpon>QualifiedProducts.xsd</DependentUpon>
+    </None>
+    <None Include="QualifiedProducts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QualifiedProducts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QualifiedProducts.xss">
+      <DependentUpon>QualifiedProducts.xsd</DependentUpon>
+    </None>
     <None Include="WorkFlowDatabaseDataSet.xsc">
       <DependentUpon>WorkFlowDatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -311,6 +350,17 @@
     </None>
     <None Include="WorkFlowDatabaseDataSet1.xss">
       <DependentUpon>WorkFlowDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet2.xsc">
+      <DependentUpon>WorkFlowDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkFlowDatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet2.xss">
+      <DependentUpon>WorkFlowDatabaseDataSet2.xsd</DependentUpon>
     </None>
     <None Include="WorkFlowDatabaseDataSetProducts.xsc">
       <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>

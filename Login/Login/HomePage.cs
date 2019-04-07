@@ -344,10 +344,16 @@ namespace WorkFlowManagement
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRepQualifiedProducts_Click(object sender, EventArgs e)
         {
-            StockSummaryForm sumForm = new StockSummaryForm();
-            sumForm.ShowDialog();
+            ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
+            vqpForm.ShowDialog();
+        }
+
+        private void btnRepProductsInProgress_Click(object sender, EventArgs e)
+        {
+            ViewProductOrders vpoForm = new ViewProductOrders();
+            vpoForm.ShowDialog();
         }
     }
 }

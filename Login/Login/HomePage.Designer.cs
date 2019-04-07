@@ -151,7 +151,7 @@
             this.tabStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabStock.Location = new System.Drawing.Point(4, 27);
             this.tabStock.Name = "tabStock";
-            this.tabStock.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabStock.Padding = new System.Windows.Forms.Padding(3);
             this.tabStock.Size = new System.Drawing.Size(797, 353);
             this.tabStock.TabIndex = 0;
             this.tabStock.Text = "Stock";
@@ -167,7 +167,6 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Stock Inventory Summary";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblStockHmpg
             // 
@@ -226,7 +225,7 @@
             this.tabProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProducts.Location = new System.Drawing.Point(4, 27);
             this.tabProducts.Name = "tabProducts";
-            this.tabProducts.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
             this.tabProducts.Size = new System.Drawing.Size(797, 353);
             this.tabProducts.TabIndex = 1;
             this.tabProducts.Text = "Products";
@@ -324,7 +323,7 @@
             this.tabQuality.Controls.Add(this.lblQAdashboard);
             this.tabQuality.Location = new System.Drawing.Point(4, 27);
             this.tabQuality.Name = "tabQuality";
-            this.tabQuality.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabQuality.Padding = new System.Windows.Forms.Padding(3);
             this.tabQuality.Size = new System.Drawing.Size(797, 353);
             this.tabQuality.TabIndex = 2;
             this.tabQuality.Text = "Quality";
@@ -382,7 +381,7 @@
             this.tabDelivery.Controls.Add(this.lblDdashboard);
             this.tabDelivery.Location = new System.Drawing.Point(4, 27);
             this.tabDelivery.Name = "tabDelivery";
-            this.tabDelivery.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabDelivery.Padding = new System.Windows.Forms.Padding(3);
             this.tabDelivery.Size = new System.Drawing.Size(797, 353);
             this.tabDelivery.TabIndex = 3;
             this.tabDelivery.Text = "Delivery";
@@ -519,6 +518,7 @@
             this.btnRepQualifiedProducts.TabIndex = 10;
             this.btnRepQualifiedProducts.Text = "Qualified Products";
             this.btnRepQualifiedProducts.UseVisualStyleBackColor = true;
+            this.btnRepQualifiedProducts.Click += new System.EventHandler(this.btnRepQualifiedProducts_Click);
             // 
             // btnRepProductsInProgress
             // 
@@ -529,6 +529,7 @@
             this.btnRepProductsInProgress.TabIndex = 9;
             this.btnRepProductsInProgress.Text = "Products In Progress";
             this.btnRepProductsInProgress.UseVisualStyleBackColor = true;
+            this.btnRepProductsInProgress.Click += new System.EventHandler(this.btnRepProductsInProgress_Click);
             // 
             // btnRepStockRawMaterials
             // 
