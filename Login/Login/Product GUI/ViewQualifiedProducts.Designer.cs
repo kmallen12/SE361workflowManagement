@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewQualifiedProducts));
             this.qualifiedProducts = new Login.QualifiedProducts();
             this.qualifiedProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSet2 = new Login.WorkFlowDatabaseDataSet2();
@@ -107,6 +108,7 @@
             this.Controls.Add(this.btnRepRemanufacture);
             this.Controls.Add(this.lstQualProd);
             this.Controls.Add(this.lblDefectiveProducts);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewQualifiedProducts";
             this.Text = "ViewQualifiedProducts";
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).EndInit();
