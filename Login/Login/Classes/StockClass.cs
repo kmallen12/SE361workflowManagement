@@ -28,6 +28,14 @@ namespace WorkFlowManagement
             Discription = initDiscription;
             StockID = initStockID;
         }
+        public override string ToString()
+        {
+            return string.Format("StockID: {0}, Quantity: {1}, Discription: {2}", StockID, Quantity, Discription);
+        }
+        public string returnOrders()
+        {
+            return string.Format("StockID: {0}, Quantity: {1}", StockID, Quantity);
+        }
     };
     public class Stock
     {
@@ -39,7 +47,9 @@ namespace WorkFlowManagement
         public DateTime dateAcquired { get; set; }
         public DateTime dateUsed { get; set; }
         public int id { get; set; }
-        
+
+        public List<StockOrderRequest> StockOrderRequests;
+        public StockOrderRequest StockOrder;
         public Stock()
         {
             materialType = "";
@@ -49,7 +59,24 @@ namespace WorkFlowManagement
             dateAcquired = DateTime.Today;
             dateUsed = DateTime.Today;
         }
-
+        public List<StockOrderRequest> LoadStockOrders()
+        {
+            StockOrderRequests = objDatabaseManager.LoadStockOrders();
+            return StockOrderRequests;
+        }
+        public void newOrders()
+        {
+            StockOrderRequests = new List<StockOrderRequest>();
+        }
+        public void newOrder(int initQuantity, string initDiscription, int initID)
+        {
+            StockOrder = new StockOrderRequest(0, initQuantity, initDiscription, initID);
+            StockOrderRequests.Add(StockOrder);
+        }
+        public void InsertStockOrder()
+        {
+            objDatabaseManager.InsertStockOrders(StockOrderRequests);
+        }
         public Stock(string material, double quan, double uCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
         {
             materialType = material;

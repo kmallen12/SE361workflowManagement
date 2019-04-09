@@ -35,6 +35,7 @@
             this.workFlowDatabaseDataSet1 = new Login.WorkFlowDatabaseDataSet();
             this.tabBar = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblStockHmpg = new System.Windows.Forms.Label();
             this.btnStockUpdate = new System.Windows.Forms.Button();
@@ -143,6 +144,7 @@
             // 
             // tabStock
             // 
+            this.tabStock.Controls.Add(this.button2);
             this.tabStock.Controls.Add(this.button1);
             this.tabStock.Controls.Add(this.lblStockHmpg);
             this.tabStock.Controls.Add(this.btnStockUpdate);
@@ -156,6 +158,18 @@
             this.tabStock.TabIndex = 0;
             this.tabStock.Text = "Stock";
             this.tabStock.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(292, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(173, 56);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Manage Stock Orders";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -271,8 +285,9 @@
             this.btnReorderStock.Name = "btnReorderStock";
             this.btnReorderStock.Size = new System.Drawing.Size(173, 56);
             this.btnReorderStock.TabIndex = 11;
-            this.btnReorderStock.Text = "Reorder Stock";
+            this.btnReorderStock.Text = "Order Stock";
             this.btnReorderStock.UseVisualStyleBackColor = true;
+            this.btnReorderStock.Click += new System.EventHandler(this.btnReorderStock_Click);
             // 
             // lblProductHomepg
             // 
@@ -629,5 +644,6 @@
         private System.Windows.Forms.Label lblStockReport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

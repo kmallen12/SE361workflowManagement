@@ -365,5 +365,17 @@ namespace WorkFlowManagement
             ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
             vqpForm.ShowDialog();
         }
+
+        private void btnReorderStock_Click(object sender, EventArgs e)
+        {
+            CreateStockOrder StockOrder = new CreateStockOrder();
+            StockOrder.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManageStockOrders Orders = new ManageStockOrders();
+            Orders.ShowDialog();
+        }
     }
 }

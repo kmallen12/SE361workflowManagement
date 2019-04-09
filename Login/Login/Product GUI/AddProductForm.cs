@@ -45,7 +45,7 @@ namespace WorkFlowManagement
                 lbl_Description.Text = product.JsonMaterialReturn();
             }
         }
-        //Sets the GUI form to the version for adding a certain material not creating one. 
+        //Sets the GUI form to the version for adding a certain product not creating one. 
         //Functionality is so similar that creating a new form is redundant. 
         public void SetTXTBoxs(string key, string quantity)
         { 
