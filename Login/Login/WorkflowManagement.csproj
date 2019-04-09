@@ -80,17 +80,17 @@
     <Compile Include="Delivery GUI\RouteProducts.Designer.cs">
       <DependentUpon>RouteProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product GUI\CreateStockOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\CreateStockOrder.Designer.cs">
+      <DependentUpon>CreateStockOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product GUI\ViewProductOrders.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Product GUI\ViewProductOrders.Designer.cs">
       <DependentUpon>ViewProductOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Product GUI\OrderStockForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Product GUI\OrderStockForm.Designer.cs">
-      <DependentUpon>OrderStockForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Product GUI\ManageProductOrders.cs">
       <SubType>Form</SubType>
@@ -103,6 +103,12 @@
     </Compile>
     <Compile Include="Product GUI\RemanufactureForm.Designer.cs">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product GUI\ProductStausReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\ProductStausReportForm.Designer.cs">
+      <DependentUpon>ProductStausReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Product GUI\ViewQualifiedProducts.cs">
       <SubType>Form</SubType>
@@ -141,6 +147,12 @@
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\RawMaterials.cs" />
+    <Compile Include="Stock GUI\ManageStockOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock GUI\ManageStockOrders.Designer.cs">
+      <DependentUpon>ManageStockOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock GUI\RawMaterialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,12 +166,6 @@
       <DependentUpon>StockAddMaterialForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\StockClass.cs" />
-    <Compile Include="Stock GUI\ManageStockOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stock GUI\ManageStockOrders.Designer.cs">
-      <DependentUpon>ManageStockOrders.cs</DependentUpon>
-    </Compile>
     <Compile Include="Stock GUI\StockReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,17 +243,20 @@
     <EmbeddedResource Include="Delivery GUI\RouteProducts.resx">
       <DependentUpon>RouteProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\CreateStockOrder.resx">
+      <DependentUpon>CreateStockOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\ViewProductOrders.resx">
       <DependentUpon>ViewProductOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Product GUI\OrderStockForm.resx">
-      <DependentUpon>OrderStockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\ManageProductOrders.resx">
       <DependentUpon>ManageProductOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\ProductStausReportForm.resx">
+      <DependentUpon>ProductStausReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\ViewQualifiedProducts.resx">
       <DependentUpon>ViewQualifiedProducts.cs</DependentUpon>

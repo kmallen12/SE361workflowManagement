@@ -9,13 +9,7 @@ using System.Threading.Tasks;
 
 namespace WorkFlowManagement
 {
-    struct SqlQuery
-    {
-        string Table;
-        string Column;
-        string Where;
-        string Data;
-    }
+
    public class DatabaseManager
     {
         private static SqlConnection _conn = new SqlConnection(
@@ -475,6 +469,85 @@ namespace WorkFlowManagement
                 com.ExecuteNonQuery();
             }
             _conn.Close();
+        }
+        public DataTable StockOrderTable()
+        {
+            _conn.Close();
+            _conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT itemID, materialType, quantity FROM StockTable";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            _conn.Close();
+
+            return dtRecord;
+        }
+        public void InsertStockOrders(List<StockOrderRequest> Orders)
+        {
+
+            List<int> IDs = new List<int>();
+            foreach (StockOrderRequest order in Orders)
+            {
+                _conn.Close();
+                _conn.Open();
+
+                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDiscription], [itemID]) VALUES (@Amount, @OrderDiscription, @itemID)";
+                using (SqlCommand com = new SqlCommand(str, _conn))
+                {
+                    com.Connection = _conn;
+                    com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
+                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Discription;
+                    com.Parameters.Add("@itemID", SqlDbType.Int).Value = order.StockID;
+
+
+
+                    com.ExecuteNonQuery();
+                }
+                _conn.Close();
+            }
+
+        }
+        public List<StockOrderRequest> LoadStockOrders()
+        {
+            List<StockOrderRequest> orders = new List<StockOrderRequest>();
+
+            try
+            {
+                StockOrderRequest order;
+
+                //open a db connection
+                _conn.Open();
+
+                //create SQL Command to pull data from Repair table
+                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, itemID FROM [dbo].[StockOrderRequest]", _conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int ID = (int)reader["OrderID"];
+                    int Quantity = (int)reader["Amount"];
+                    string Discription = (string)reader["OrderDiscription"];
+                    int itemID = (int)reader["itemID"];
+
+                    order = new StockOrderRequest(ID, Quantity, Discription, itemID);
+                    orders.Add(order);
+                }
+                _conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error reading data in from the database.");
+            }
+
+            _conn.Close();
+            return orders;
         }
         public void InsertProductOrders(List<ProductOrderRequest> Orders)
         {
@@ -950,7 +1023,32 @@ namespace WorkFlowManagement
 
             return name;
         }
+        public string StockName(int key)
+        {
+            string name = "";
+            try
+            {
+                //open a db connection
+                conn.Open();
 
+                //SQL Command to pull productName from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  materialType FROM [dbo].[StockTable] WHERE itemID=" + key, conn);
+
+                name = Convert.ToString(cmd.ExecuteScalar());
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return name;
+        }
         public string ProductStatus(int key)
         {
             string status = "";
@@ -1397,6 +1495,25 @@ namespace WorkFlowManagement
             }
 
             return stockTable;
+        }
+
+        public DataTable ProductStatusTable()
+        {
+            _conn.Close();
+            _conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT PT.productName , PT.productStatus FROM ProductTable AS PT ORDER BY PT.productStatus";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            _conn.Close();
+
+            return dtRecord;
         }
 
     }

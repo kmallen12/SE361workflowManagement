@@ -14,7 +14,7 @@ namespace WorkFlowManagement
     {
         Product P;
         ProductOrderRequest Order;
-       
+        AddProduct addProduct;
         public ManageProductOrders()
         {
             P = new Product();
@@ -27,7 +27,9 @@ namespace WorkFlowManagement
 
         private void Confirm_btn_Click(object sender, EventArgs e)
         {
-
+            addProduct = new AddProduct();
+            addProduct.SetTXTBoxs(Order.ProductID.ToString(), Order.Quantity.ToString());
+            addProduct.ShowDialog();
         }
 
         private void OrderList_listbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace WorkFlowManagement
                 {
                     Order = (ProductOrderRequest)OrderList_listbox.SelectedItem;
                 }
-                      
+                   
             }
             catch (Exception ex)
             {

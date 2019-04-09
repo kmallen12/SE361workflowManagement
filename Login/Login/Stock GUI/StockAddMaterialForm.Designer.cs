@@ -190,15 +190,16 @@
             this.txt_materialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_materialType.FormattingEnabled = true;
             this.txt_materialType.Location = new System.Drawing.Point(272, 49);
-            this.txt_materialType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_materialType.Margin = new System.Windows.Forms.Padding(2);
             this.txt_materialType.Name = "txt_materialType";
             this.txt_materialType.Size = new System.Drawing.Size(176, 21);
             this.txt_materialType.TabIndex = 1;
+            this.txt_materialType.SelectedIndexChanged += new System.EventHandler(this.txt_materialType_SelectedIndexChanged);
             // 
             // btnCustomizeMaterials
             // 
             this.btnCustomizeMaterials.Location = new System.Drawing.Point(472, 48);
-            this.btnCustomizeMaterials.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomizeMaterials.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomizeMaterials.Name = "btnCustomizeMaterials";
             this.btnCustomizeMaterials.Size = new System.Drawing.Size(91, 22);
             this.btnCustomizeMaterials.TabIndex = 17;
@@ -251,7 +252,7 @@
             // lstStocks
             // 
             this.lstStocks.Location = new System.Drawing.Point(22, 392);
-            this.lstStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstStocks.Margin = new System.Windows.Forms.Padding(2);
             this.lstStocks.Name = "lstStocks";
             this.lstStocks.Size = new System.Drawing.Size(541, 80);
             this.lstStocks.TabIndex = 22;

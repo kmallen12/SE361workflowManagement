@@ -208,8 +208,6 @@ namespace WorkFlowManagement
         private void btnDelViewProduct_Click(object sender, EventArgs e)
         {
             ViewProductsForm btnViewProducts = new ViewProductsForm();
-            MessageBox.Show(btnViewProducts.GetType().ToString());
-            MessageBox.Show(objCurrentUser.UserTypeID.ToString());
             if (objCurrentUser.canView(btnViewProducts))
             {
                 btnViewProducts.ShowDialog();
@@ -354,6 +352,30 @@ namespace WorkFlowManagement
         {
             ViewProductOrders vpoForm = new ViewProductOrders();
             vpoForm.ShowDialog();
+        }
+
+        private void btnDelProductStatusReport_Click(object sender, EventArgs e)
+        {
+            ProductStatusReportForm psrForm =new ProductStatusReportForm();
+            psrForm.ShowDialog();
+        }
+
+        private void btnDelViewQualProducts_Click(object sender, EventArgs e)
+        {
+            ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
+            vqpForm.ShowDialog();
+        }
+
+        private void btnReorderStock_Click(object sender, EventArgs e)
+        {
+            CreateStockOrder StockOrder = new CreateStockOrder();
+            StockOrder.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManageStockOrders Orders = new ManageStockOrders();
+            Orders.ShowDialog();
         }
     }
 }
