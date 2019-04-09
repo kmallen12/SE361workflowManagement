@@ -396,6 +396,7 @@
             this.btnDelProductStatusReport.TabIndex = 13;
             this.btnDelProductStatusReport.Text = "Product Status Report";
             this.btnDelProductStatusReport.UseVisualStyleBackColor = true;
+            this.btnDelProductStatusReport.Click += new System.EventHandler(this.btnDelProductStatusReport_Click);
             // 
             // btnDelViewQualProducts
             // 
@@ -406,6 +407,7 @@
             this.btnDelViewQualProducts.TabIndex = 12;
             this.btnDelViewQualProducts.Text = "View Qualified Products";
             this.btnDelViewQualProducts.UseVisualStyleBackColor = true;
+            this.btnDelViewQualProducts.Click += new System.EventHandler(this.btnDelViewQualProducts_Click);
             // 
             // btnDelRouteProduct
             // 

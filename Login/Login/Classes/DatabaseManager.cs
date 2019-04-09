@@ -9,13 +9,7 @@ using System.Threading.Tasks;
 
 namespace WorkFlowManagement
 {
-    struct SqlQuery
-    {
-        string Table;
-        string Column;
-        string Where;
-        string Data;
-    }
+
    public class DatabaseManager
     {
         private static SqlConnection _conn = new SqlConnection(
@@ -1397,6 +1391,25 @@ namespace WorkFlowManagement
             }
 
             return stockTable;
+        }
+
+        public DataTable ProductStatusTable()
+        {
+            _conn.Close();
+            _conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = _conn;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT PT.productName , PT.productStatus FROM ProductTable AS PT ORDER BY PT.productStatus";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            _conn.Close();
+
+            return dtRecord;
         }
 
     }
