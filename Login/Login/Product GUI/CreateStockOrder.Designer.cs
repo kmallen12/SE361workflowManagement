@@ -64,11 +64,11 @@
             this.ProductOrderInfo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductOrderInfo_lbl.Location = new System.Drawing.Point(5, 6);
             this.ProductOrderInfo_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ProductOrderInfo_lbl.MaximumSize = new System.Drawing.Size(253, 65);
+            this.ProductOrderInfo_lbl.MaximumSize = new System.Drawing.Size(240, 65);
             this.ProductOrderInfo_lbl.Name = "ProductOrderInfo_lbl";
             this.ProductOrderInfo_lbl.Size = new System.Drawing.Size(204, 40);
             this.ProductOrderInfo_lbl.TabIndex = 1;
-            this.ProductOrderInfo_lbl.Text = "Enter information about defective product.";
+            this.ProductOrderInfo_lbl.Text = "Enter information about stock order.";
             // 
             // ID_Text
             // 
@@ -180,7 +180,7 @@
             this.listBox_StockOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_StockOrders.FormattingEnabled = true;
             this.listBox_StockOrders.ItemHeight = 16;
-            this.listBox_StockOrders.Location = new System.Drawing.Point(247, 2);
+            this.listBox_StockOrders.Location = new System.Drawing.Point(238, 2);
             this.listBox_StockOrders.Margin = new System.Windows.Forms.Padding(2);
             this.listBox_StockOrders.MaximumSize = new System.Drawing.Size(505, 475);
             this.listBox_StockOrders.Name = "listBox_StockOrders";
@@ -232,7 +232,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateStockOrder";
-            this.Text = "CreateProductOrder";
+            this.Text = "CreateStockOrder";
             this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();

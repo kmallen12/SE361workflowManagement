@@ -28,6 +28,7 @@ namespace WorkFlowManagement
         private void Confirm_btn_Click(object sender, EventArgs e)
         {
             S.InsertStockOrder();
+            MessageBox.Show("Order(s) sent to the stock manager.", "Success");
         }
 
         private void CreateProductOrder_Load_1(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace WorkFlowManagement
             int result;
             if (Int32.TryParse(Amount_Text.Text, out result) && Int32.TryParse(ID_Text.Text, out result))
                 S.newOrder(Int32.Parse(Amount_Text.Text), Discription_text.Text, Int32.Parse(ID_Text.Text));
-            listBox_StockOrders.Items.Add(S.StockOrder.returnOrders());
+            listBox_StockOrders.Items.Add(S.StockOrder.ToString());
         }
     }
 }

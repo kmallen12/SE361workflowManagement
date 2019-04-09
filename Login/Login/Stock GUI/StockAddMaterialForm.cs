@@ -38,6 +38,13 @@ namespace WorkFlowManagement
             }
         }
 
+        public void SETFORM(int stockID, int Quantity)
+        {
+            txt_Quantity.Text = Quantity.ToString();
+            txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
+
+            txt_materialType.SelectedIndex = txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
+        }
         private void Another_Material_btn_Click(object sender, EventArgs e)
         {
             if(objCheckEntry.checkValidStockEntry(txt_materialType.Text, lblMaterialType.Text, txt_Quantity.Text, lbl_quantity.Text, txt_unitCost.Text, lbl_unitCost.Text, 
@@ -124,6 +131,11 @@ namespace WorkFlowManagement
 
             stocks.Clear();
             lstStocks.Clear();
+        }
+
+        private void txt_materialType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

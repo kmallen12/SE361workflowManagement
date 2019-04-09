@@ -1023,7 +1023,32 @@ namespace WorkFlowManagement
 
             return name;
         }
+        public string StockName(int key)
+        {
+            string name = "";
+            try
+            {
+                //open a db connection
+                conn.Open();
 
+                //SQL Command to pull productName from productTable.
+                SqlCommand cmd = new SqlCommand("SELECT  materialType FROM [dbo].[StockTable] WHERE itemID=" + key, conn);
+
+                name = Convert.ToString(cmd.ExecuteScalar());
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return name;
+        }
         public string ProductStatus(int key)
         {
             string status = "";
