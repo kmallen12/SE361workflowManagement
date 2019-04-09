@@ -31,8 +31,10 @@ namespace WorkFlowManagement
     };
     public class Stock
     {
+        private string MaterialType;
+
         DatabaseManager objDatabaseManager = new DatabaseManager();
-        public string materialType { get; set; }
+        public string materialType { get { return MaterialType; } set { MaterialType = value;  } }
         public double quantity { get; set; }
         public double unitCost { get; set; }
         public double defects { get; set; }

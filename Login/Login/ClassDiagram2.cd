@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WorkFlowManagement.CheckEntry" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAIAABAQAAAAABAAAAAAAAAYAAAACAAAQAA=</HashCode>
+      <FileName>Classes\CheckEntryClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.CurrentUser" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAQAAAAAAAAEACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\CurrentUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.DatabaseManager">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQCCSAwEiAAGAAABAAIIAAGCARQAAgAAAkAAMcEswAA=</HashCode>
+      <FileName>Classes\DatabaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.MB" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAAAAAAIAAAAAADAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Classes\MB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.Password" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAABAgAAAAiAAAAAIAAAAABQAAAAEA=</HashCode>
+      <FileName>Classes\Password.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.Product" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAKABAAAACAkAAEhAARAgCCAAEAAAAQAEgEAAIAgqA=</HashCode>
+      <FileName>Classes\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.RawMaterials" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Classes\RawMaterials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.Stock" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAgAAAQYAEAAEAAIAAQACACAAAACAAAAAAAgUggA=</HashCode>
+      <FileName>Classes\StockClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.RouteProducts" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gwIAEAAQQCUEMBARAIaIAAEiAAYpwRAEGMAAQAQAoAA=</HashCode>
+      <FileName>Delivery GUI\RouteProducts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.ViewProductsForm" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoIAAAAQAiAIABAAAASAAAACAAAggAAAGAAAAAQAAAA=</HashCode>
+      <FileName>Delivery GUI\ViewProductsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.HomePage" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgBJCIQwgCAEEDKRRwGABJCCRHAIAqxAEBCASCEACAE=</HashCode>
+      <FileName>HomePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.LoginForm" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAIAACAAEBAAAACABAACAAAAKAAAABAAAABAAAA=</HashCode>
+      <FileName>Login GUI\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.RegisterForm" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAiACAAwICAAEBEAAACBIHgDCEBQAoAEAngAAAAgAEQ=</HashCode>
+      <FileName>Login GUI\RegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.AddProduct" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARIAAAAgEjBBBJCAAACAIELiQAAiABCAAQAIAFIRAgQ=</HashCode>
+      <FileName>Product GUI\AddProductForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.ManageProductOrders" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAEACAAAAAAAACIAAACAIAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>Product GUI\ManageProductOrders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.RemanufactureForm" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIABAAQAACAAEAAAAACAAAACAAAAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>Product GUI\RemanufactureForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.ViewProductOrders" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAACAAAAAAAACIAAACAIAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Product GUI\ViewProductOrders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.ViewQualifiedProducts" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAABAAAAACAAEAAQAACAAAACAAAAgAQAGAEAEgAAAAA=</HashCode>
+      <FileName>Product GUI\ViewQualifiedProducts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.ViewProducts" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEIAAAAwSCBAAJAAgASAIAIiBAAggAAACAAAAQJAAAI=</HashCode>
+      <FileName>Product GUI\ViewUpdateProductsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.Program" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.CheckQuality" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAVCAAEAgYAAKIAQACAAQAwJAAGKAAFAYABAA=</HashCode>
+      <FileName>Quality GUI\CheckQuality.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.CreateProductOrder" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAQAAQACAAAFBCAACAAAACACoggBAACSAAAABABAg=</HashCode>
+      <FileName>Quality GUI\CreateProductOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.ItemCapacityForm" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAEBAAAACAAAACAAAIACAAACGAAAAEAAA=</HashCode>
+      <FileName>Stock GUI\ItemCapacityForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.RawMaterialsForm" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIxABQAACAAEAAxAACQCAACAAgIAAAAQAEAAgACAQQ=</HashCode>
+      <FileName>Stock GUI\RawMaterialsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.AddMaterialForm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAkAEBCABEAAAaASMkgASAABAQIEAAKAMBMAACAA=</HashCode>
+      <FileName>Stock GUI\StockAddMaterialForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.StockReportForm" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAIAAAGCBFAAAACCAABACABAAAAAAEAEQABAAAAA=</HashCode>
+      <FileName>Stock GUI\StockReportForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.StockSummaryForm" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAABAAiABFBAAAAiAAAACAAAAQIAAEICAAAAAAAA=</HashCode>
+      <FileName>Stock GUI\StockSummaryForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.StockView" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgEBAAAACEAACCAAAAAIAAACAFAAAAAAA=</HashCode>
+      <FileName>Stock GUI\StockView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkFlowManagement.UpdateStockForm" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgCECAAAiSBFFAgAYCEgABCAAgpZIAAELAkFFAAIAA=</HashCode>
+      <FileName>Stock GUI\StockView_UpdateForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.Product_GUI.OrderStockForm" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAABAAAACAAAACAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Product GUI\OrderStockForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.Properties.Settings" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAIAAAAAABABAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.QualifiedProducts" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJABAACQAACAAgCQBwAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockTableRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Login.WorkFlowDatabaseDataSet.StockTableRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockReportMaxCapacityRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockReportLowCapacityDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Login.WorkFlowDatabaseDataSet.WareHouseTableRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockReportMaxCapacityDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.WareHouseTableRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.WareHouseTableRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.UsersTableDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockReportLowCapacityRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockReportMaxCapacityRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockReportLowCapacityRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Login.WorkFlowDatabaseDataSet.StockReportMaxCapacityRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockTableDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Login.WorkFlowDatabaseDataSet.UsersTableRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Login.WorkFlowDatabaseDataSet.WareHouseTableDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.UsersTableRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Login.WorkFlowDatabaseDataSet.StockReportLowCapacityRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Login.WorkFlowDatabaseDataSet.StockTableRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Login.WorkFlowDatabaseDataSet.UsersTableRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAggAEAAAwAAAArAFEAAQAACUAhCSBwAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet1" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJABAACQAACAAgCQBwAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet2" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJABAACQAACAAgCQBwAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetProducts" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJABAACQAACAAgCQBwAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.QualifiedProductsTableAdapters.ProductTableTableAdapter" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.QualifiedProductsTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMACgAAAGgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.Stock_GUI.ManageStockOrders" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stock GUI\ManageStockOrders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEBAECAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetTableAdapters.UsersTableTableAdapter" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetTableAdapters.WareHouseTableTableAdapter" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetTableAdapters.StockReportLowCapacityTableAdapter" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetTableAdapters.StockReportMaxCapacityTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAIAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAADAAAABABAEBAQQAMABgACACgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet1TableAdapters.ProductTableTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet1TableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMACgAAAGgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet2TableAdapters.ProductTableTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSet2TableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMACgAAAGgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMACgAAAGgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="WorkFlowManagement.SqlQuery" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAQAAAAAEAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\DatabaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="WorkFlowManagement.MaterialsProduct" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Classes\Product.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="WorkFlowManagement.ProductOrderRequest" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAAIAAgAAAAEA=</HashCode>
+      <FileName>Classes\Product.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="WorkFlowManagement.StockOrderRequest" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgAAACAA=</HashCode>
+      <FileName>Classes\StockClass.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

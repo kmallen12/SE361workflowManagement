@@ -37,6 +37,7 @@ namespace WorkFlowManagement
             //This line of code is what needs to happen but you can't cast the selected item
             //as a product, so need to find a way around that. 
             //remanufactureProducts.Add((Product)lstDefProd.SelectedItem);
+            //remanufactureProducts.Add(NewtonSoft.Serialize); //use Matthew's product code for syntax
             MessageBox.Show("This defective product will be remanufactured");
         }
     }

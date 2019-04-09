@@ -14,9 +14,9 @@ namespace WorkFlowManagement
     public partial class StockView : Form
     {
         private DataTable stocks;
-        DatabaseManager objDatabaseManager = new DatabaseManager();
-        CheckEntry objCheckEntry = new CheckEntry();
-        Stock objStock = new Stock();
+        private DatabaseManager objDatabaseManager = new DatabaseManager();
+        private CheckEntry objCheckEntry = new CheckEntry();
+        private Stock objStock = new Stock();
         private List<RawMaterials> materialList;
 
         public StockView() => InitializeComponent();

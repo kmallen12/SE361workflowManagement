@@ -12,8 +12,8 @@ namespace WorkFlowManagement
 {
     public partial class StockSummaryForm : Form
     {
-        DataTable stocks;
-        DatabaseManager objDatabaseManager;
+        private DataTable stocks;
+        private DatabaseManager objDatabaseManager;
 
         public StockSummaryForm()
         {

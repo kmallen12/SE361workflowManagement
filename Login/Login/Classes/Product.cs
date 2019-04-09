@@ -40,7 +40,7 @@ namespace WorkFlowManagement
         }
         public override string ToString()
         {
-            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Discription: {2}", ProductID, Quantity, Discription);
+            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Description: {2}", ProductID, Quantity, Discription);
         }
         public string returnOrders()
         {
@@ -68,7 +68,7 @@ namespace WorkFlowManagement
         private List<int> IDs;
         private int materialamt;
         public string productStatus { get; set; }
-        //We set attributes after class initialization(in some cases) so I changed it from Product() to SetProduct()
+
         public void newProduct()
         {
             productMaterials = new List<MaterialsProduct>();
