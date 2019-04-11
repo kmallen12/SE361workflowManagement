@@ -38,6 +38,7 @@
             this.lstQualProd = new System.Windows.Forms.ListBox();
             this.lblDefectiveProducts = new System.Windows.Forms.Label();
             this.btnRepRemanufacture = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).BeginInit();
@@ -100,11 +101,22 @@
             this.btnRepRemanufacture.UseVisualStyleBackColor = true;
             this.btnRepRemanufacture.Click += new System.EventHandler(this.btnRepRemanufacture_Click);
             // 
+            // btnExport
+            // 
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(268, 213);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(139, 46);
+            this.btnExport.TabIndex = 7;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
             // ViewQualifiedProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 309);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnRepRemanufacture);
             this.Controls.Add(this.lstQualProd);
             this.Controls.Add(this.lblDefectiveProducts);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.ListBox lstQualProd;
         private System.Windows.Forms.Label lblDefectiveProducts;
         private System.Windows.Forms.Button btnRepRemanufacture;
+        private System.Windows.Forms.Button btnExport;
     }
 }

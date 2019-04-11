@@ -15,6 +15,7 @@ namespace WorkFlowManagement
         private List<Product> defProducts;
         
         private DatabaseManager objDatabaseManager;
+        private ToolTip ttExport = new ToolTip();
 
         public RemanufactureForm()
         {
@@ -29,6 +30,8 @@ namespace WorkFlowManagement
             {
                 lstDefProd.Items.Add(prod.ToString());
             }
+
+            ttExport.SetToolTip(btnExport, "Export as pdfs coming soon  :D");
         }
 
         //add selected item to Remanufacture list
