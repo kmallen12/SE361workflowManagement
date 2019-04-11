@@ -56,6 +56,13 @@ namespace WorkFlowManagement
                 ttUserFeedback.SetToolTip(btnStockGenerateReport, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btnStockMaterials, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btnStockUpdate, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                
+                ttUserFeedback.SetToolTip(btnStockInventorySum, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(button2, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+                button2.ForeColor = Color.DarkGray;
+
+                btnStockInventorySum.ForeColor = Color.DarkGray;
 
                 btnStockGenerateReport.ForeColor = Color.DarkGray;
                 btnStockMaterials.ForeColor = Color.DarkGray;
@@ -68,24 +75,49 @@ namespace WorkFlowManagement
                 ttUserFeedback.SetToolTip(btnProductsView, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_AddProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 
-                ttUserFeedback.SetToolTip(btnReorderStock, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
-
+                ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnReManufacture, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btn_StockOrderStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+        
+                    
                 btnProductsView.ForeColor = Color.DarkGray;
                 btn_AddProduct.ForeColor = Color.DarkGray;
                 
                 btnReorderStock.ForeColor = Color.DarkGray;
                 btnReManufacture.ForeColor = Color.DarkGray;
+
+                btn_ManageProductOrders.ForeColor = Color.DarkGray;
+                btn_StockOrderStatus.ForeColor = Color.DarkGray;
+
             }
 
             if (objCurrentUser.UserTypeID != 4)
             {
+                ttUserFeedback.SetToolTip(ProductOrder_btn, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btn_ProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnQAViewProd, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnQAUpdateProdStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+                
+                    
                 //fill with buttons for QA user
                 btnQAViewProd.ForeColor = Color.DarkGray;
                 btnQAUpdateProdStatus.ForeColor = Color.DarkGray;
+                ProductOrder_btn.ForeColor = Color.DarkGray;
+                btn_ProductOrders.ForeColor = Color.DarkGray;
+
+
             }
 
             if (objCurrentUser.UserTypeID != 5)
             {
+                ttUserFeedback.SetToolTip(btnDelProductStatusReport, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnDelRouteProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnDelViewProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                ttUserFeedback.SetToolTip(btnDelViewQualProducts, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+
+
                 //fill with buttons for DM user
                 btnDelProductStatusReport.ForeColor = Color.DarkGray;
                 btnDelRouteProduct.ForeColor = Color.DarkGray;
@@ -104,7 +136,21 @@ namespace WorkFlowManagement
                     btnStockMaterials.ForeColor = Color.DarkGray;
                     btnStockUpdate.ForeColor = Color.DarkGray;
                 }
-               
+
+                if (objCurrentUser.UserTypeID != 3)
+                {
+                    
+                        
+                        
+                    ttUserFeedback.SetToolTip(btnRepDefectedProducts, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                    ttUserFeedback.SetToolTip(btnRepProductsInProgress, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                    ttUserFeedback.SetToolTip(btnRepQualifiedProducts, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                    btnRepDefectedProducts.ForeColor = Color.DarkGray;
+                    btnRepProductsInProgress.ForeColor = Color.DarkGray;
+                    btnRepQualifiedProducts.ForeColor = Color.DarkGray;
+
+                }
+
 
                 //Product Tab Feedback
 
@@ -341,7 +387,17 @@ namespace WorkFlowManagement
         private void btnRepQualifiedProducts_Click(object sender, EventArgs e)
         {
             ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
-            vqpForm.ShowDialog();
+
+            StockSummaryForm formStock = new StockSummaryForm();
+            if (objCurrentUser.canView(vqpForm))
+            {
+                vqpForm.ShowDialog();
+            }
+            else
+            {
+                vqpForm.Dispose();
+                MessageBox.Show("You do not have access for the Qualified Products Form.\nContact your local Product or Report Manager.");
+            }
         }
 
         
@@ -349,43 +405,99 @@ namespace WorkFlowManagement
         private void btnDelProductStatusReport_Click(object sender, EventArgs e)
         {
             ProductStatusReportForm psrForm =new ProductStatusReportForm();
-            psrForm.ShowDialog();
+            if (objCurrentUser.canView(psrForm))
+            {
+                psrForm.ShowDialog();
+            }
+            else
+            {
+                psrForm.Dispose();
+                MessageBox.Show("You do not have access for the Product Status Form.\nContact your local Delivery Manager.");
+            }
         }
 
         private void btnDelViewQualProducts_Click(object sender, EventArgs e)
         {
             ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
-            vqpForm.ShowDialog();
+            if (objCurrentUser.canView(vqpForm))
+            {
+                vqpForm.ShowDialog();
+            }
+            else
+            {
+                vqpForm.Dispose();
+                MessageBox.Show("You do not have access for the View Product Quality Form.\nContact your local Delivery Manager.");
+            }
         }
 
         private void btnReorderStock_Click(object sender, EventArgs e)
         {
             CreateStockOrder StockOrder = new CreateStockOrder();
-            StockOrder.ShowDialog();
+            if (objCurrentUser.canView(StockOrder))
+            {
+                StockOrder.ShowDialog();
+            }
+            else
+            {
+                StockOrder.Dispose();
+                MessageBox.Show("You do not have access for the ReOrder Stock Form.\nContact your local Product Manager.");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ManageStockOrders Orders = new ManageStockOrders();
-            Orders.ShowDialog();
+            if (objCurrentUser.canView(Orders))
+            {
+                Orders.ShowDialog();
+            }
+            else
+            {
+                Orders.Dispose();
+                MessageBox.Show("You do not have access for the Manage Stock Orders Form.\nContact your local Stockiest.");
+            }
         }
 
         private void btnStockInventorySum_Click(object sender, EventArgs e)
         {
             StockSummaryForm SummaryForm = new StockSummaryForm();
-            SummaryForm.ShowDialog();
+            if (objCurrentUser.canView(SummaryForm))
+            {
+                SummaryForm.ShowDialog();
+            }
+            else
+            {
+                SummaryForm.Dispose();
+                MessageBox.Show("You do not have access for the Stock Inventory Sum Form.\nContact your local Stockiest.");
+            }
         }
 
         private void btn_StockOrderStatus_Click(object sender, EventArgs e)
         {
             ViewStockOrders OrderStatus = new ViewStockOrders();
-            OrderStatus.ShowDialog();
+            if (objCurrentUser.canView(OrderStatus))
+            {
+                OrderStatus.ShowDialog();
+            }
+            else
+            {
+                OrderStatus.Dispose();
+                MessageBox.Show("You do not have access for the Stock Order Status Form.\nContact your local Product Manager.");
+            }
         }
 
         private void btn_ProductOrders_Click(object sender, EventArgs e)
         {
             ViewProductOrders ViewOrder = new ViewProductOrders();
-            ViewOrder.ShowDialog();
+            if (objCurrentUser.canView(ViewOrder))
+            {
+                ViewOrder.ShowDialog();
+            }
+            else
+            {
+                ViewOrder.Dispose();
+                MessageBox.Show("You do not have access for the Product Order Status Form.\nContact your local Quality Manager.");
+            }
         }
     }
 }
