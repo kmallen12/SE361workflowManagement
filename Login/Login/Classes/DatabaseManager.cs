@@ -502,7 +502,7 @@ namespace WorkFlowManagement
                 {
                     com.Connection = _conn;
                     com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
-                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Discription;
+                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Description;
                     com.Parameters.Add("@itemID", SqlDbType.Int).Value = order.StockID;
 
 

@@ -236,9 +236,9 @@
             this.btnLoadStockFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadStockFromDB.Location = new System.Drawing.Point(290, 26);
             this.btnLoadStockFromDB.Name = "btnLoadStockFromDB";
-            this.btnLoadStockFromDB.Size = new System.Drawing.Size(213, 52);
+            this.btnLoadStockFromDB.Size = new System.Drawing.Size(154, 52);
             this.btnLoadStockFromDB.TabIndex = 13;
-            this.btnLoadStockFromDB.Text = "Load from Database";
+            this.btnLoadStockFromDB.Text = "Refresh Table";
             this.btnLoadStockFromDB.UseVisualStyleBackColor = true;
             this.btnLoadStockFromDB.Click += new System.EventHandler(this.btnLoadStockFromDB_Click);
             // 
@@ -338,7 +338,7 @@
             this.txtMaterialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtMaterialType.FormattingEnabled = true;
             this.txtMaterialType.Location = new System.Drawing.Point(117, 491);
-            this.txtMaterialType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaterialType.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaterialType.Name = "txtMaterialType";
             this.txtMaterialType.Size = new System.Drawing.Size(95, 21);
             this.txtMaterialType.TabIndex = 23;
