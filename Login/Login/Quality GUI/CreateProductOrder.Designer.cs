@@ -39,16 +39,16 @@
             this.Discription_text = new System.Windows.Forms.TextBox();
             this.Amount_Text = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
             this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
             this.listBox_ProductOrders = new System.Windows.Forms.ListBox();
             this.btn_AddOrderToList = new System.Windows.Forms.Button();
+            this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).BeginInit();
@@ -69,7 +69,7 @@
             // ID_Text
             // 
             this.ID_Text.Location = new System.Drawing.Point(161, 69);
-            this.ID_Text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ID_Text.Margin = new System.Windows.Forms.Padding(2);
             this.ID_Text.Name = "ID_Text";
             this.ID_Text.Size = new System.Drawing.Size(73, 20);
             this.ID_Text.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.Confirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Confirm_btn.Location = new System.Drawing.Point(8, 400);
-            this.Confirm_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Confirm_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Confirm_btn.Name = "Confirm_btn";
             this.Confirm_btn.Size = new System.Drawing.Size(225, 58);
             this.Confirm_btn.TabIndex = 3;
@@ -104,9 +104,9 @@
             this.label3.Location = new System.Drawing.Point(8, 176);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 20);
+            this.label3.Size = new System.Drawing.Size(186, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Defective Discription:";
+            this.label3.Text = "Defective Description:";
             // 
             // label4
             // 
@@ -122,7 +122,7 @@
             // Discription_text
             // 
             this.Discription_text.Location = new System.Drawing.Point(8, 197);
-            this.Discription_text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Discription_text.Margin = new System.Windows.Forms.Padding(2);
             this.Discription_text.Multiline = true;
             this.Discription_text.Name = "Discription_text";
             this.Discription_text.Size = new System.Drawing.Size(226, 98);
@@ -131,7 +131,7 @@
             // Amount_Text
             // 
             this.Amount_Text.Location = new System.Drawing.Point(161, 142);
-            this.Amount_Text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Amount_Text.Margin = new System.Windows.Forms.Padding(2);
             this.Amount_Text.Name = "Amount_Text";
             this.Amount_Text.Size = new System.Drawing.Size(73, 20);
             this.Amount_Text.TabIndex = 8;
@@ -148,42 +148,11 @@
             this.productStatusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productTableBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(755, -1);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(648, 477);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // pIdDataGridViewTextBoxColumn
-            // 
-            this.pIdDataGridViewTextBoxColumn.DataPropertyName = "pId";
-            this.pIdDataGridViewTextBoxColumn.HeaderText = "pId";
-            this.pIdDataGridViewTextBoxColumn.Name = "pIdDataGridViewTextBoxColumn";
-            this.pIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "productName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // materialsStringDataGridViewTextBoxColumn
-            // 
-            this.materialsStringDataGridViewTextBoxColumn.DataPropertyName = "materialsString";
-            this.materialsStringDataGridViewTextBoxColumn.HeaderText = "materialsString";
-            this.materialsStringDataGridViewTextBoxColumn.Name = "materialsStringDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // productStatusDataGridViewTextBoxColumn
-            // 
-            this.productStatusDataGridViewTextBoxColumn.DataPropertyName = "productStatus";
-            this.productStatusDataGridViewTextBoxColumn.HeaderText = "productStatus";
-            this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
             // 
             // productTableBindingSource
             // 
@@ -205,7 +174,7 @@
             this.listBox_ProductOrders.FormattingEnabled = true;
             this.listBox_ProductOrders.ItemHeight = 16;
             this.listBox_ProductOrders.Location = new System.Drawing.Point(247, 2);
-            this.listBox_ProductOrders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox_ProductOrders.Margin = new System.Windows.Forms.Padding(2);
             this.listBox_ProductOrders.MaximumSize = new System.Drawing.Size(505, 475);
             this.listBox_ProductOrders.Name = "listBox_ProductOrders";
             this.listBox_ProductOrders.Size = new System.Drawing.Size(505, 468);
@@ -215,13 +184,46 @@
             // 
             this.btn_AddOrderToList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddOrderToList.Location = new System.Drawing.Point(8, 320);
-            this.btn_AddOrderToList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_AddOrderToList.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddOrderToList.Name = "btn_AddOrderToList";
             this.btn_AddOrderToList.Size = new System.Drawing.Size(225, 58);
             this.btn_AddOrderToList.TabIndex = 11;
             this.btn_AddOrderToList.Text = "Add Order To List";
             this.btn_AddOrderToList.UseVisualStyleBackColor = true;
             this.btn_AddOrderToList.Click += new System.EventHandler(this.btn_AddOrderToList_Click);
+            // 
+            // pIdDataGridViewTextBoxColumn
+            // 
+            this.pIdDataGridViewTextBoxColumn.DataPropertyName = "pId";
+            this.pIdDataGridViewTextBoxColumn.HeaderText = "pId";
+            this.pIdDataGridViewTextBoxColumn.Name = "pIdDataGridViewTextBoxColumn";
+            this.pIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pIdDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "productName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // materialsStringDataGridViewTextBoxColumn
+            // 
+            this.materialsStringDataGridViewTextBoxColumn.DataPropertyName = "materialsString";
+            this.materialsStringDataGridViewTextBoxColumn.HeaderText = "materialsString";
+            this.materialsStringDataGridViewTextBoxColumn.Name = "materialsStringDataGridViewTextBoxColumn";
+            this.materialsStringDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // productStatusDataGridViewTextBoxColumn
+            // 
+            this.productStatusDataGridViewTextBoxColumn.DataPropertyName = "productStatus";
+            this.productStatusDataGridViewTextBoxColumn.HeaderText = "productStatus";
+            this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
             // 
             // CreateProductOrder
             // 
@@ -240,7 +242,7 @@
             this.Controls.Add(this.ID_Text);
             this.Controls.Add(this.ProductOrderInfo_lbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateProductOrder";
             this.Text = "CreateProductOrder";
             this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);
@@ -267,12 +269,12 @@
         private Login.WorkFlowDatabaseDataSetProducts workFlowDatabaseDataSetProducts;
         private System.Windows.Forms.BindingSource productTableBindingSource;
         private Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter productTableTableAdapter;
+        private System.Windows.Forms.ListBox listBox_ProductOrders;
+        private System.Windows.Forms.Button btn_AddOrderToList;
         private System.Windows.Forms.DataGridViewTextBoxColumn pIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn materialsStringDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productStatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ListBox listBox_ProductOrders;
-        private System.Windows.Forms.Button btn_AddOrderToList;
     }
 }

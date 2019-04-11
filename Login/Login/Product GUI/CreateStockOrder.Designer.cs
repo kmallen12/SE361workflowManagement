@@ -86,7 +86,7 @@
             this.Confirm_btn.Name = "Confirm_btn";
             this.Confirm_btn.Size = new System.Drawing.Size(225, 58);
             this.Confirm_btn.TabIndex = 3;
-            this.Confirm_btn.Text = "Send List To Product Manager";
+            this.Confirm_btn.Text = "Send List To Stock Manager";
             this.Confirm_btn.UseVisualStyleBackColor = true;
             this.Confirm_btn.Click += new System.EventHandler(this.Confirm_btn_Click);
             // 
@@ -108,9 +108,9 @@
             this.label3.Location = new System.Drawing.Point(8, 176);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 20);
+            this.label3.Size = new System.Drawing.Size(178, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Request Discription:";
+            this.label3.Text = "Request Description:";
             // 
             // label4
             // 

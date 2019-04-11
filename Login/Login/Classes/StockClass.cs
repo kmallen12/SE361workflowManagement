@@ -19,18 +19,18 @@ namespace WorkFlowManagement
     {
         public int OrderID;
         public int Quantity;
-        public string Discription;
+        public string Description;
         public int StockID;
-        public StockOrderRequest(int initID, int initQuantity, string initDiscription, int initStockID)
+        public StockOrderRequest(int initID, int initQuantity, string initDescription, int initStockID)
         {
             OrderID = initID;
             Quantity = initQuantity;
-            Discription = initDiscription;
+            Description = initDescription;
             StockID = initStockID;
         }
         public override string ToString()
         {
-            return string.Format("StockID: {0}, Quantity: {1}, Discription: {2}", StockID, Quantity, Discription);
+            return string.Format("StockID: {0}, Quantity: {1}, Description: {2}", StockID, Quantity, Description);
         }
         public string returnOrders()
         {
@@ -70,9 +70,9 @@ namespace WorkFlowManagement
         {
             StockOrderRequests = new List<StockOrderRequest>();
         }
-        public void newOrder(int initQuantity, string initDiscription, int initID)
+        public void newOrder(int initQuantity, string initDescription, int initID)
         {
-            StockOrder = new StockOrderRequest(0, initQuantity, initDiscription, initID);
+            StockOrder = new StockOrderRequest(0, initQuantity, initDescription, initID);
             StockOrderRequests.Add(StockOrder);
         }
         public void InsertStockOrder()

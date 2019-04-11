@@ -377,5 +377,11 @@ namespace WorkFlowManagement
             ManageStockOrders Orders = new ManageStockOrders();
             Orders.ShowDialog();
         }
+
+        private void btnStockInventorySum_Click(object sender, EventArgs e)
+        {
+            StockSummaryForm SummaryForm = new StockSummaryForm();
+            SummaryForm.ShowDialog();
+        }
     }
 }

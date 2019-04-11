@@ -36,7 +36,7 @@
             this.tabBar = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStockInventorySum = new System.Windows.Forms.Button();
             this.lblStockHmpg = new System.Windows.Forms.Label();
             this.btnStockUpdate = new System.Windows.Forms.Button();
             this.btnStockGenerateReport = new System.Windows.Forms.Button();
@@ -145,7 +145,7 @@
             // tabStock
             // 
             this.tabStock.Controls.Add(this.button2);
-            this.tabStock.Controls.Add(this.button1);
+            this.tabStock.Controls.Add(this.btnStockInventorySum);
             this.tabStock.Controls.Add(this.lblStockHmpg);
             this.tabStock.Controls.Add(this.btnStockUpdate);
             this.tabStock.Controls.Add(this.btnStockGenerateReport);
@@ -171,16 +171,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnStockInventorySum
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(292, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 56);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Stock Inventory Summary";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStockInventorySum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockInventorySum.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnStockInventorySum.Location = new System.Drawing.Point(292, 53);
+            this.btnStockInventorySum.Name = "btnStockInventorySum";
+            this.btnStockInventorySum.Size = new System.Drawing.Size(173, 56);
+            this.btnStockInventorySum.TabIndex = 9;
+            this.btnStockInventorySum.Text = "Stock Inventory Summary";
+            this.btnStockInventorySum.UseVisualStyleBackColor = true;
+            this.btnStockInventorySum.Click += new System.EventHandler(this.btnStockInventorySum_Click);
             // 
             // lblStockHmpg
             // 
@@ -351,7 +352,7 @@
             this.ProductOrder_btn.Name = "ProductOrder_btn";
             this.ProductOrder_btn.Size = new System.Drawing.Size(174, 58);
             this.ProductOrder_btn.TabIndex = 14;
-            this.ProductOrder_btn.Text = "Create ProductOrder";
+            this.ProductOrder_btn.Text = "Create Product Order";
             this.ProductOrder_btn.UseVisualStyleBackColor = true;
             this.ProductOrder_btn.Click += new System.EventHandler(this.ProductOrder_btn_Click);
             // 
@@ -643,7 +644,7 @@
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblStockReport;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStockInventorySum;
         private System.Windows.Forms.Button button2;
     }
 }
