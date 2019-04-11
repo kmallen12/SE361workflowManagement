@@ -51,7 +51,7 @@ namespace WorkFlowManagement
 
     public class Product
     {
-        MB M = new MB();
+        WorkFlowMessage M = new WorkFlowMessage();
         DatabaseManager objDatabaseManager = new DatabaseManager();
         //Represents the Materials string broken into an array based on ' '.
         int[] materialsDescription;
@@ -120,24 +120,17 @@ namespace WorkFlowManagement
         public void AddMaterialtoProduct(string ID, string Quantity)
         {
             MaterialsProduct newMaterial = new MaterialsProduct(Int32.Parse(ID), Int32.Parse(Quantity), objDatabaseManager.MaterialName(Int32.Parse(ID)).Trim(' '));
-            MessageBox.Show(ID + " " + Quantity + " " + objDatabaseManager.MaterialName(Int32.Parse(ID)).Trim(' '));
+            
             materialamt++;
             productMaterials.Add(newMaterial);
             JsonMaterialString = JsonConvert.SerializeObject(productMaterials);
-            MessageBox.Show(JsonMaterialString);
             
         }
         public string JsonMaterialReturn()
         {
             return JsonMaterialString;
         }
-        public string returnMaterialLabel()
-        {
-            string MaterialLabel="";
-            for (int i = 0; i < productMaterials.Count; i++)
-                MaterialLabel = productMaterials[i].Name + " " + productMaterials[i].Quantity +"\n"+ MaterialLabel; 
-            return MaterialLabel;
-        }
+        
         public string productDiscription()
         {
             return "ID: " + productID + " Name: " + productName + " Materials: " + productMaterials + " Quantity: " + productQuantity;
@@ -157,10 +150,10 @@ namespace WorkFlowManagement
             //Build the materials string into an array so that its easy to parse it. 
             for (int i = 0; i < materialamt; i++)
             {
-                MessageBox.Show(productMaterials[i].Name + " " + productMaterials[i].Quantity + " " + productMaterials[i].ID);
+                
                 materialsDescription[2*i] = productMaterials[i].ID;
                 materialsDescription[2*i + 1] = productMaterials[i].Quantity;
-                MessageBox.Show(i.ToString());
+                
             }
             try
             {   //Subtract materials for amount of product. 
@@ -191,7 +184,7 @@ namespace WorkFlowManagement
             }
             catch (Exception p)
             {
-                MessageBox.Show(p.ToString());
+                MessageBox.Show(p.ToString(),"Warning");
             }
             //ID is automatically generated when inserted into the table. 
             objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity, "In Progress");
@@ -203,7 +196,7 @@ namespace WorkFlowManagement
 
 
             productMaterials = JsonConvert.DeserializeObject<List<MaterialsProduct>>(JsonMaterialString);
-            MessageBox.Show(productMaterials.Count.ToString());
+            
             
             //for (int i = 0; i < JsonMaterialString.Length; i++)
             //{

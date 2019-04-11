@@ -342,10 +342,10 @@
         private System.Windows.Forms.Label lbl_MaterialAmount;
         private System.Windows.Forms.TextBox txt_MaterialQuantity;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_Description;
         private System.Windows.Forms.TextBox txt_ProductID;
         private System.Windows.Forms.Label lbl_ProductID;
         private System.Windows.Forms.Label lbl_OrderMoreProduct;
         private System.Windows.Forms.Button btn_AdditionalProduct;
+        public System.Windows.Forms.Label lbl_Description;
     }
 }

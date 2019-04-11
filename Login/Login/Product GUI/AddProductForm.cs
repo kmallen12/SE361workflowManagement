@@ -18,14 +18,14 @@ namespace WorkFlowManagement
         //We check to see if text entries are correct.
         CheckEntry CE;
         //Dialogue boxes for confirmation
-        MB M;
+        WorkFlowMessage M;
         public AddProduct()
         {
             InitializeComponent();
             product = new Product();
             product.newProduct();
             CE = new CheckEntry();
-            M = new MB();
+            M = new WorkFlowMessage();
         }
 
         private void Product_Load_1(object sender, EventArgs e)
@@ -42,7 +42,12 @@ namespace WorkFlowManagement
                 //Add materials one at a time to materialsProduct in Productclass.
                 product.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
                 //Update the description in the bottom half so the user can see what has been added thus far.
-                lbl_Description.Text = product.JsonMaterialReturn();
+                
+                lbl_Description.Text = string.Empty;
+                foreach (var v in product.productMaterials)
+                    lbl_Description.Text = lbl_Description.Text +v.Name + ", " + v.Quantity + "\n";
+
+
             }
         }
         //Sets the GUI form to the version for adding a certain product not creating one. 
@@ -68,15 +73,17 @@ namespace WorkFlowManagement
             //Ensures product has correct attributes based on ID.
             //Only needed so we can correctly set the discription of the materials.
             product.SetProduct(Int32.Parse(txt_ProductID.Text));
-            lbl_Description.Text = product.returnMaterialLabel();
-            
+            lbl_Description.Text = string.Empty;
+            foreach (var v in product.productMaterials)
+                lbl_Description.Text = lbl_Description.Text + v.Name + ", " + v.Quantity + "\n";
+
         }
         
         private void btn_FinalizeProduct_Click(object sender, EventArgs e)
         {
             if (CE.isnotNull(txt_ProductName.Text, "ProductName") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
             {
-                if (M.CreateProduct(txt_ProductName.Text, product.JsonMaterialString, txt_ProductQuantity.Text))
+                if (M.CreateProduct(txt_ProductName.Text, lbl_Description.Text, txt_ProductQuantity.Text))
                 {
                     product.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
                     Product_Load_1(sender, e);

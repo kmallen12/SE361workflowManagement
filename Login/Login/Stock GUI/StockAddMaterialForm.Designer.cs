@@ -51,6 +51,7 @@
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnSaveToDB = new System.Windows.Forms.Button();
             this.lstStocks = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMaterialType
@@ -167,7 +168,7 @@
             // 
             // Another_Material_btn
             // 
-            this.Another_Material_btn.Location = new System.Drawing.Point(300, 336);
+            this.Another_Material_btn.Location = new System.Drawing.Point(356, 336);
             this.Another_Material_btn.Name = "Another_Material_btn";
             this.Another_Material_btn.Size = new System.Drawing.Size(115, 23);
             this.Another_Material_btn.TabIndex = 14;
@@ -189,12 +190,11 @@
             // 
             this.txt_materialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_materialType.FormattingEnabled = true;
-            this.txt_materialType.Location = new System.Drawing.Point(272, 49);
+            this.txt_materialType.Location = new System.Drawing.Point(272, 50);
             this.txt_materialType.Margin = new System.Windows.Forms.Padding(2);
             this.txt_materialType.Name = "txt_materialType";
             this.txt_materialType.Size = new System.Drawing.Size(176, 21);
             this.txt_materialType.TabIndex = 1;
-            this.txt_materialType.SelectedIndexChanged += new System.EventHandler(this.txt_materialType_SelectedIndexChanged);
             // 
             // btnCustomizeMaterials
             // 
@@ -259,11 +259,22 @@
             this.lstStocks.UseCompatibleStateImageBehavior = false;
             this.lstStocks.View = System.Windows.Forms.View.List;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(235, 336);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Increase Quantity";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 556);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lstStocks);
             this.Controls.Add(this.btnSaveToDB);
             this.Controls.Add(this.btnCalculate);
@@ -318,5 +329,6 @@
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.Button btnSaveToDB;
         private System.Windows.Forms.ListView lstStocks;
+        private System.Windows.Forms.Button button1;
     }
 }
