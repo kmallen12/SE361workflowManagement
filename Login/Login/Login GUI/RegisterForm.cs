@@ -17,7 +17,7 @@ namespace WorkFlowManagement
         Password objPassword = new Password();
         private List<string> userTypes;
         string output;
-        public ToolTip ttPasswordHelp = new ToolTip();
+        private ToolTip ttPasswordHelp = new ToolTip();
 
         public RegisterForm()
         {
@@ -185,6 +185,12 @@ namespace WorkFlowManagement
             this.Hide();
             LoginForm formLogin = new LoginForm();
             formLogin.ShowDialog();
+        }
+
+        private void lblPasswordHelp_Click(object sender, EventArgs e)
+        {
+            ttPasswordHelp.SetToolTip(lblPasswordHelp, "Passwords must be at least 8 Characters\nAnd meet 3 of the four conditions:\n- Contain one UpperCase Letter\n- Conatin one LowerCase Letter\n- Contain one Number\n- Contain one Symbol(./, !#$& etc..)");
+            ttPasswordHelp.ShowAlways = true;
         }
     }
 }

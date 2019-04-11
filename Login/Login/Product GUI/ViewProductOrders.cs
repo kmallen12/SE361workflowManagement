@@ -14,6 +14,7 @@ namespace WorkFlowManagement
     {
         Product P;
         ProductOrderRequest Order;
+        private ToolTip ttExport = new ToolTip();
        
         public ViewProductOrders()
         {
@@ -21,6 +22,8 @@ namespace WorkFlowManagement
             InitializeComponent();
 
             OrderList_listbox.DataSource = P.LoadProductOrders();
+
+            ttExport.SetToolTip(btnExport, "Export as pdfs coming soon  :D");
         }
 
        
