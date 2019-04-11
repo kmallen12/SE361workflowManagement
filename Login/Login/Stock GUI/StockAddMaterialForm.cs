@@ -20,7 +20,7 @@ namespace WorkFlowManagement
         private DatabaseManager objDatabaseManager = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
-
+        private int ID { get; set; }
         public AddMaterialForm()
         {
             InitializeComponent();
@@ -40,11 +40,13 @@ namespace WorkFlowManagement
 
         public void SETFORM(int stockID, int Quantity)
         {
+            ID = stockID;
             txt_Quantity.Text = Quantity.ToString();
             txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
 
             txt_materialType.SelectedIndex = txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
         }
+
         private void Another_Material_btn_Click(object sender, EventArgs e)
         {
             if(objCheckEntry.checkValidStockEntry(txt_materialType.Text, lblMaterialType.Text, txt_Quantity.Text, lbl_quantity.Text, txt_unitCost.Text, lbl_unitCost.Text, 
@@ -133,9 +135,11 @@ namespace WorkFlowManagement
             lstStocks.Clear();
         }
 
-        private void txt_materialType_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            
+            objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
         }
     }
 }

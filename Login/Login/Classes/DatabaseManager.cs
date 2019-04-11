@@ -337,8 +337,7 @@ namespace WorkFlowManagement
         //load IDs of defective products from the Products Table into a list
         public List<Product> LoadDefectiveProducts()
         {
-            string veryPoor = "Very Poor";
-            string poor = "Poor";
+            
             List<Product> defectiveProds = new List<Product>();
 
             try
@@ -349,11 +348,9 @@ namespace WorkFlowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status2 OR productStatus = @status1", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = 'Returned to Manufacturing'", conn);
 
-                cmd.Parameters.AddWithValue("@status2", poor);
-                cmd.Parameters.AddWithValue("@status1", veryPoor);
-
+                
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -1112,6 +1109,28 @@ namespace WorkFlowManagement
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
                 com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
+        public void IncreaseStockQuantity(int key, int quantity)
+        {
+            _conn.Close();
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
+            SqlDataReader reader2 = cmd.ExecuteReader();
+            reader2.Read();
+            decimal total = reader2.GetDecimal(0) + (decimal)quantity;
+            reader2.Close();
+            string str = "UPDATE [dbo].[StockTable] SET quantity=@quantity WHERE itemID=@itemID";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
+
+                com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = total;
+
 
                 com.ExecuteNonQuery();
             }

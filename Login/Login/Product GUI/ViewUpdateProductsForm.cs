@@ -14,7 +14,7 @@ namespace WorkFlowManagement
     {
         Product P;
         //Dialogue boxes for confirmation
-        MB M;
+        WorkFlowMessage M;
         //We check to see if text entries are correct.
         CheckEntry CE;
         public ViewProducts()
@@ -32,7 +32,7 @@ namespace WorkFlowManagement
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
-            M = new MB();
+            M = new WorkFlowMessage();
             
             //Set the product based on ID
 
