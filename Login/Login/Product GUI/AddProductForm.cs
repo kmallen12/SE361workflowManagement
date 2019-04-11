@@ -99,6 +99,7 @@ namespace WorkFlowManagement
             {
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
                 product.AdditionalProduct(Int32.Parse(txt_ProductID.Text), Int32.Parse(txt_ProductQuantity.Text));
+                Product_Load_1(sender, e);
             }
         }
     }

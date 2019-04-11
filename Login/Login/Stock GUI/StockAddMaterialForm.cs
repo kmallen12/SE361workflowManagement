@@ -137,9 +137,17 @@ namespace WorkFlowManagement
 
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_IncreaseQuantity_Click(object sender, EventArgs e)
         {
-            objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
+            try
+            {
+                objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            MessageBox.Show(txt_materialType.SelectedItem.ToString() + " has had it's quantity increased by " + txt_Quantity.Text+".", "Success!");
         }
     }
 }

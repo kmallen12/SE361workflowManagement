@@ -48,5 +48,11 @@ namespace WorkFlowManagement
                 MessageBox.Show(ex.Message, "Warning");
             }
         }
+
+        private void btn_ConfirmFilled_Click(object sender, EventArgs e)
+        {
+            P.UpdateProductOrderStatus(Order.OrderID);
+            OrderList_listbox.DataSource = P.LoadProductOrders();
+        }
     }
 }

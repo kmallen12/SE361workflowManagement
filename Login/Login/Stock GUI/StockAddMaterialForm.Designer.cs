@@ -51,7 +51,7 @@
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnSaveToDB = new System.Windows.Forms.Button();
             this.lstStocks = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_IncreaseQuantity = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMaterialType
@@ -259,22 +259,22 @@
             this.lstStocks.UseCompatibleStateImageBehavior = false;
             this.lstStocks.View = System.Windows.Forms.View.List;
             // 
-            // button1
+            // btn_IncreaseQuantity
             // 
-            this.button1.Location = new System.Drawing.Point(235, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Increase Quantity";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_IncreaseQuantity.Location = new System.Drawing.Point(235, 336);
+            this.btn_IncreaseQuantity.Name = "btn_IncreaseQuantity";
+            this.btn_IncreaseQuantity.Size = new System.Drawing.Size(115, 23);
+            this.btn_IncreaseQuantity.TabIndex = 23;
+            this.btn_IncreaseQuantity.Text = "Increase Quantity";
+            this.btn_IncreaseQuantity.UseVisualStyleBackColor = true;
+            this.btn_IncreaseQuantity.Click += new System.EventHandler(this.btn_IncreaseQuantity_Click);
             // 
             // AddMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 556);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_IncreaseQuantity);
             this.Controls.Add(this.lstStocks);
             this.Controls.Add(this.btnSaveToDB);
             this.Controls.Add(this.btnCalculate);
@@ -329,6 +329,6 @@
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.Button btnSaveToDB;
         private System.Windows.Forms.ListView lstStocks;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_IncreaseQuantity;
     }
 }

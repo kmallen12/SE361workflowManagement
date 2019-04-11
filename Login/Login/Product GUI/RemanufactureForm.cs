@@ -27,7 +27,6 @@ namespace WorkFlowManagement
             
             foreach (var prod in defProducts)
             {
-                MessageBox.Show(prod.ToString());
                 lstDefProd.Items.Add(prod.ToString());
             }
         }

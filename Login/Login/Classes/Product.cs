@@ -31,16 +31,18 @@ namespace WorkFlowManagement
         public int Quantity;
         public string Discription;
         public int ProductID;
-        public ProductOrderRequest(int initID, int initQuantity, string initDiscription, int initProductID)
+        public string OrderStatus;
+        public ProductOrderRequest(int initID, int initQuantity, string initDiscription, string initOrderStatus, int initProductID)
         {
             OrderID = initID;
             Quantity = initQuantity;
             Discription = initDiscription;
             ProductID = initProductID;
+            OrderStatus = initOrderStatus;
         }
         public override string ToString()
         {
-            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Description: {2}", ProductID, Quantity, Discription);
+            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Description: {2}, Status: {3}", ProductID, Quantity, Discription, OrderStatus);
         }
         public string returnOrders()
         {
@@ -79,13 +81,17 @@ namespace WorkFlowManagement
             ProductOrderRequests = objDatabaseManager.LoadProductOrders();
             return ProductOrderRequests;
         }
+        public void UpdateProductOrderStatus(int ID)
+        {
+            objDatabaseManager.UpdateProductOrderStatus(ID);
+        }
         public void newOrders()
         {
             ProductOrderRequests = new List<ProductOrderRequest>();
         }
-        public void newOrder(int initQuantity, string initDiscription, int initID)
+        public void newOrder(int initQuantity, string initDiscription, string initOrderStatus, int initID)
         {
-            ProductOrder = new ProductOrderRequest(0, initQuantity, initDiscription, initID);
+            ProductOrder = new ProductOrderRequest(0, initQuantity, initDiscription, initOrderStatus, initID);
             ProductOrderRequests.Add(ProductOrder);
         }
         public void InsertProductOrder()

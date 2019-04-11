@@ -67,14 +67,12 @@ namespace WorkFlowManagement
             {
                 ttUserFeedback.SetToolTip(btnProductsView, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_AddProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
-                ttUserFeedback.SetToolTip(btnProductQuality, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
-                ttUserFeedback.SetToolTip(btnProductUpdateStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                
                 ttUserFeedback.SetToolTip(btnReorderStock, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
                 btnProductsView.ForeColor = Color.DarkGray;
                 btn_AddProduct.ForeColor = Color.DarkGray;
-                btnProductQuality.ForeColor = Color.DarkGray;
-                btnProductUpdateStatus.ForeColor = Color.DarkGray;
+                
                 btnReorderStock.ForeColor = Color.DarkGray;
                 btnReManufacture.ForeColor = Color.DarkGray;
             }
@@ -109,9 +107,7 @@ namespace WorkFlowManagement
                
 
                 //Product Tab Feedback
-                ttUserFeedback.SetToolTip(btnProductQuality, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
-                btnProductQuality.ForeColor = Color.DarkGray;
 
                 //Gray out Report tabs
                 btnRepStockWarehouseCapacity.ForeColor = Color.DarkGray;
@@ -348,11 +344,7 @@ namespace WorkFlowManagement
             vqpForm.ShowDialog();
         }
 
-        private void btnRepProductsInProgress_Click(object sender, EventArgs e)
-        {
-            ViewProductOrders vpoForm = new ViewProductOrders();
-            vpoForm.ShowDialog();
-        }
+        
 
         private void btnDelProductStatusReport_Click(object sender, EventArgs e)
         {
@@ -382,6 +374,18 @@ namespace WorkFlowManagement
         {
             StockSummaryForm SummaryForm = new StockSummaryForm();
             SummaryForm.ShowDialog();
+        }
+
+        private void btn_StockOrderStatus_Click(object sender, EventArgs e)
+        {
+            ViewStockOrders OrderStatus = new ViewStockOrders();
+            OrderStatus.ShowDialog();
+        }
+
+        private void btn_ProductOrders_Click(object sender, EventArgs e)
+        {
+            ViewProductOrders ViewOrder = new ViewProductOrders();
+            ViewOrder.ShowDialog();
         }
     }
 }

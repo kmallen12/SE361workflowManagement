@@ -49,5 +49,12 @@ namespace WorkFlowManagement
                 MessageBox.Show(ex.Message, "Warning");
             }
         }
+
+        private void btn_Filled_Click(object sender, EventArgs e)
+        {
+            S.UpdateStockOrderStatus(Order.OrderID);
+            OrderList_listbox.DataSource = S.LoadStockOrders();
+
+        }
     }
 }
