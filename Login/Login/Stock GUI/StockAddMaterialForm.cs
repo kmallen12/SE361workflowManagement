@@ -36,6 +36,10 @@ namespace WorkFlowManagement
             {
                 txt_materialType.Items.Add(mat.material);
             }
+
+            txt_unitCost.DecimalPlaces = 2;
+            txt_TotalCost.DecimalPlaces = 2;
+            txt_dateUsed.CustomFormat = " ";
         }
 
         public void SETFORM(int stockID, int Quantity)
@@ -57,12 +61,13 @@ namespace WorkFlowManagement
                     lstStocks.Items.Add(objStock.ToString());
 
                     txt_materialType.SelectedIndex = -1;
-                    txt_DateAcq.Clear();
-                    txt_dateUsed.Clear();
-                    txt_Defected.Clear();
-                    txt_Quantity.Clear();
-                    txt_TotalCost.Clear();
-                    txt_unitCost.Clear();
+                    txt_DateAcq.Value= DateTime.Now;
+                    txt_dateUsed.CustomFormat = "";
+                    txt_Defected.Value = 0;
+                    txt_Quantity.Value = 0;
+                    txt_TotalCost.Value = 0;
+                    txt_unitCost.Value = 0;
+                    objStock = new Stock();
                 }
                 catch (Exception err)
                 {
@@ -136,6 +141,11 @@ namespace WorkFlowManagement
         private void txt_materialType_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void txt_dateUsed_ValueChanged(object sender, EventArgs e)
+        {
+            txt_dateUsed.CustomFormat = "dd/mm/yyyy";
         }
     }
 }
