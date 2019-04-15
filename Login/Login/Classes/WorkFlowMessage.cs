@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace WorkFlowManagement
 {
-    class MB
+    class WorkFlowMessage
     {
         string messageBoxTxt;
         string caption;
@@ -22,7 +22,7 @@ namespace WorkFlowManagement
         }
         public bool CreateProduct(string name, string materials, string quantity)
         {
-            messageBoxTxt = "Are you sure you want to creat Product: " + name + " using Materials: " + materials + " of quantity " + quantity + "?"; 
+            messageBoxTxt = "Are you sure you want to creat Product: " + name + " using Materials:" +"\n"+ materials +"of quantity " + quantity + "?"; 
             caption = "Confirm Product Creation";
             if (System.Windows.Forms.MessageBox.Show(messageBoxTxt, caption, System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 return true;

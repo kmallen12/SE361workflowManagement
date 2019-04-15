@@ -337,8 +337,7 @@ namespace WorkFlowManagement
         //load IDs of defective products from the Products Table into a list
         public List<Product> LoadDefectiveProducts()
         {
-            string veryPoor = "Very Poor";
-            string poor = "Poor";
+            
             List<Product> defectiveProds = new List<Product>();
 
             try
@@ -349,11 +348,9 @@ namespace WorkFlowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status2 OR productStatus = @status1", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = 'Returned to Manufacturing'", conn);
 
-                cmd.Parameters.AddWithValue("@status2", poor);
-                cmd.Parameters.AddWithValue("@status1", veryPoor);
-
+                
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -497,12 +494,13 @@ namespace WorkFlowManagement
                 _conn.Close();
                 _conn.Open();
 
-                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDiscription], [itemID]) VALUES (@Amount, @OrderDiscription, @itemID)";
+                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDiscription], [OrderStatus], [itemID]) VALUES (@Amount, @OrderDiscription, @Status, @itemID)";
                 using (SqlCommand com = new SqlCommand(str, _conn))
                 {
                     com.Connection = _conn;
                     com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
                     com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Description;
+                    com.Parameters.Add("@Status", SqlDbType.NVarChar).Value = order.Status;
                     com.Parameters.Add("@itemID", SqlDbType.Int).Value = order.StockID;
 
 
@@ -525,7 +523,7 @@ namespace WorkFlowManagement
                 _conn.Open();
 
                 //create SQL Command to pull data from Repair table
-                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, itemID FROM [dbo].[StockOrderRequest]", _conn);
+                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, OrderStatus, itemID FROM [dbo].[StockOrderRequest]", _conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -534,9 +532,10 @@ namespace WorkFlowManagement
                     int ID = (int)reader["OrderID"];
                     int Quantity = (int)reader["Amount"];
                     string Discription = (string)reader["OrderDiscription"];
+                    string Status = (string)reader["OrderStatus"];
                     int itemID = (int)reader["itemID"];
 
-                    order = new StockOrderRequest(ID, Quantity, Discription, itemID);
+                    order = new StockOrderRequest(ID, Quantity, Discription, Status, itemID);
                     orders.Add(order);
                 }
                 _conn.Close();
@@ -558,7 +557,7 @@ namespace WorkFlowManagement
                 _conn.Close();
                 _conn.Open();
                 
-                string str = "INSERT INTO [dbo].[ProductOrderRequest] (  [Amount], [OrderDiscription], [pId]) VALUES (@Amount, @OrderDiscription, @ProductID)";
+                string str = "INSERT INTO [dbo].[ProductOrderRequest] (  [Amount], [OrderDiscription], [OrderStatus], [pId]) VALUES (@Amount, @OrderDiscription, 'Pending', @ProductID)";
                 using (SqlCommand com = new SqlCommand(str, _conn))
                 {
                     com.Connection = _conn;
@@ -587,7 +586,7 @@ namespace WorkFlowManagement
                 _conn.Open();
 
                 //create SQL Command to pull data from Repair table
-                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, pId FROM [dbo].[ProductOrderRequest]", _conn);
+                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, OrderStatus, pId FROM [dbo].[ProductOrderRequest]", _conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -596,9 +595,10 @@ namespace WorkFlowManagement
                     int ID = (int)reader["OrderID"];
                     int Quantity = (int)reader["Amount"];
                     string Discription = (string)reader["OrderDiscription"];
+                    string Status = (string)reader["OrderStatus"];
                     int ProductID = (int)reader["pId"];
 
-                    order = new ProductOrderRequest(ID, Quantity,Discription, ProductID);
+                    order = new ProductOrderRequest(ID, Quantity,Discription, Status,ProductID);
                     orders.Add(order);
                 }
                 _conn.Close();
@@ -1112,6 +1112,61 @@ namespace WorkFlowManagement
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
                 com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
+
+        public void UpdateStockOrderStatus(int key)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[StockOrderRequest] SET OrderStatus='Order Filled' WHERE OrderID="+key;
+
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                
+                
+
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
+        public void UpdateProductOrderStatus(int key)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[ProductOrderRequest] SET OrderStatus='Order Filled' WHERE OrderID=" + key;
+
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+
+
+
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
+        public void IncreaseStockQuantity(int key, int quantity)
+        {
+            _conn.Close();
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
+            SqlDataReader reader2 = cmd.ExecuteReader();
+            reader2.Read();
+            decimal total = reader2.GetDecimal(0) + (decimal)quantity;
+            reader2.Close();
+            string str = "UPDATE [dbo].[StockTable] SET quantity=@quantity WHERE itemID=@itemID";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
+
+                com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = total;
+
 
                 com.ExecuteNonQuery();
             }

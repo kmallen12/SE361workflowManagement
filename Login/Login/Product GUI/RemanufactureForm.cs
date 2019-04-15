@@ -13,22 +13,25 @@ namespace WorkFlowManagement
     public partial class RemanufactureForm : Form
     {
         private List<Product> defProducts;
-        public List<Product> remanufactureProducts;
+        
         private DatabaseManager objDatabaseManager;
+        private ToolTip ttExport = new ToolTip();
 
         public RemanufactureForm()
         {
             InitializeComponent();
             defProducts = new List<Product>();
-            remanufactureProducts = new List<Product>();
+            
             objDatabaseManager = new DatabaseManager();
 
             defProducts = objDatabaseManager.LoadDefectiveProducts();
-
+            
             foreach (var prod in defProducts)
             {
                 lstDefProd.Items.Add(prod.ToString());
             }
+
+            ttExport.SetToolTip(btnExport, "Export as pdfs coming soon  :D");
         }
 
         //add selected item to Remanufacture list

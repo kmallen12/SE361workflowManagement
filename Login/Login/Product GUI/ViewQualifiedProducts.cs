@@ -14,6 +14,7 @@ namespace WorkFlowManagement
     {
         private List<Product> qualProducts;
         private DatabaseManager objDatabaseManager;
+        private ToolTip ttExport = new ToolTip();
         public ViewQualifiedProducts()
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace WorkFlowManagement
             {
                 lstQualProd.Items.Add(prod.ToString());
             }
+
+            ttExport.SetToolTip(btnExport, "Export as pdfs coming soon  :D");
         }
 
         private void btnRepRemanufacture_Click(object sender, EventArgs e)

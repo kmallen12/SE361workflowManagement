@@ -43,7 +43,7 @@ namespace WorkFlowManagement
         {
             int result;
             if (Int32.TryParse(Amount_Text.Text, out result) && Int32.TryParse(ID_Text.Text, out result))
-                S.newOrder(Int32.Parse(Amount_Text.Text), Discription_text.Text, Int32.Parse(ID_Text.Text));
+                S.newOrder(Int32.Parse(Amount_Text.Text), Discription_text.Text,"Pending", Int32.Parse(ID_Text.Text));
             listBox_StockOrders.Items.Add(S.StockOrder.ToString());
         }
     }

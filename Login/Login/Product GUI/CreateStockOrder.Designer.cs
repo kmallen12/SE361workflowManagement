@@ -148,7 +148,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 477);
+            this.dataGridView1.Size = new System.Drawing.Size(435, 477);
             this.dataGridView1.TabIndex = 9;
             // 
             // stockTableBindingSource
@@ -182,7 +182,7 @@
             this.listBox_StockOrders.ItemHeight = 16;
             this.listBox_StockOrders.Location = new System.Drawing.Point(238, 2);
             this.listBox_StockOrders.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox_StockOrders.MaximumSize = new System.Drawing.Size(505, 475);
+            this.listBox_StockOrders.MaximumSize = new System.Drawing.Size(505, 468);
             this.listBox_StockOrders.Name = "listBox_StockOrders";
             this.listBox_StockOrders.Size = new System.Drawing.Size(505, 468);
             this.listBox_StockOrders.TabIndex = 10;
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1403, 475);
+            this.ClientSize = new System.Drawing.Size(1088, 475);
             this.Controls.Add(this.btn_AddOrderToList);
             this.Controls.Add(this.listBox_StockOrders);
             this.Controls.Add(this.dataGridView1);

@@ -20,7 +20,7 @@ namespace WorkFlowManagement
         private DatabaseManager objDatabaseManager = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
-
+        private int ID { get; set; }
         public AddMaterialForm()
         {
             InitializeComponent();
@@ -44,11 +44,13 @@ namespace WorkFlowManagement
 
         public void SETFORM(int stockID, int Quantity)
         {
+            ID = stockID;
             txt_Quantity.Text = Quantity.ToString();
             txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
 
             txt_materialType.SelectedIndex = txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
         }
+
         private void Another_Material_btn_Click(object sender, EventArgs e)
         {
             if(objCheckEntry.checkValidStockEntry(txt_materialType.Text, lblMaterialType.Text, txt_Quantity.Text, lbl_quantity.Text, txt_unitCost.Text, lbl_unitCost.Text, 
@@ -138,9 +140,19 @@ namespace WorkFlowManagement
             lstStocks.Clear();
         }
 
-        private void txt_materialType_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void btn_IncreaseQuantity_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            MessageBox.Show(txt_materialType.SelectedItem.ToString() + " has had it's quantity increased by " + txt_Quantity.Text+".", "Success!");
         }
 
         private void txt_dateUsed_ValueChanged(object sender, EventArgs e)

@@ -243,7 +243,7 @@
             this.cboxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUserType.FormattingEnabled = true;
             this.cboxUserType.Location = new System.Drawing.Point(271, 169);
-            this.cboxUserType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxUserType.Margin = new System.Windows.Forms.Padding(2);
             this.cboxUserType.Name = "cboxUserType";
             this.cboxUserType.Size = new System.Drawing.Size(235, 21);
             this.cboxUserType.TabIndex = 21;
@@ -281,6 +281,7 @@
             this.lblPasswordHelp.Size = new System.Drawing.Size(18, 18);
             this.lblPasswordHelp.TabIndex = 24;
             this.lblPasswordHelp.Text = "?";
+            this.lblPasswordHelp.Click += new System.EventHandler(this.lblPasswordHelp_Click);
             // 
             // RegisterForm
             // 
