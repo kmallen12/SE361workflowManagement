@@ -50,6 +50,7 @@
             this.lblProductHomepg = new System.Windows.Forms.Label();
             this.btnProductsView = new System.Windows.Forms.Button();
             this.tabQuality = new System.Windows.Forms.TabPage();
+            this.btn_ProductOrders = new System.Windows.Forms.Button();
             this.ProductOrder_btn = new System.Windows.Forms.Button();
             this.btnQAUpdateProdStatus = new System.Windows.Forms.Button();
             this.btnQAViewProd = new System.Windows.Forms.Button();
@@ -70,7 +71,6 @@
             this.btnRepProductsInProgress = new System.Windows.Forms.Button();
             this.btnRepStockRawMaterials = new System.Windows.Forms.Button();
             this.btnRepStockWarehouseCapacity = new System.Windows.Forms.Button();
-            this.btn_ProductOrders = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             this.tabBar.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -336,6 +336,17 @@
             this.tabQuality.Text = "Quality";
             this.tabQuality.UseVisualStyleBackColor = true;
             // 
+            // btn_ProductOrders
+            // 
+            this.btn_ProductOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ProductOrders.Location = new System.Drawing.Point(225, 57);
+            this.btn_ProductOrders.Name = "btn_ProductOrders";
+            this.btn_ProductOrders.Size = new System.Drawing.Size(174, 58);
+            this.btn_ProductOrders.TabIndex = 15;
+            this.btn_ProductOrders.Text = "View Product Orders";
+            this.btn_ProductOrders.UseVisualStyleBackColor = true;
+            this.btn_ProductOrders.Click += new System.EventHandler(this.btn_ProductOrders_Click);
+            // 
             // ProductOrder_btn
             // 
             this.ProductOrder_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -538,6 +549,7 @@
             this.btnRepProductsInProgress.TabIndex = 9;
             this.btnRepProductsInProgress.Text = "Products In Progress";
             this.btnRepProductsInProgress.UseVisualStyleBackColor = true;
+            this.btnRepProductsInProgress.Click += new System.EventHandler(this.btnRepProductsInProgress_Click);
             // 
             // btnRepStockRawMaterials
             // 
@@ -560,17 +572,6 @@
             this.btnRepStockWarehouseCapacity.Text = "Warehouse Capacity";
             this.btnRepStockWarehouseCapacity.UseVisualStyleBackColor = true;
             this.btnRepStockWarehouseCapacity.Click += new System.EventHandler(this.btnRepStockWarehouseCapacity_Click);
-            // 
-            // btn_ProductOrders
-            // 
-            this.btn_ProductOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ProductOrders.Location = new System.Drawing.Point(225, 57);
-            this.btn_ProductOrders.Name = "btn_ProductOrders";
-            this.btn_ProductOrders.Size = new System.Drawing.Size(174, 58);
-            this.btn_ProductOrders.TabIndex = 15;
-            this.btn_ProductOrders.Text = "View Product Orders";
-            this.btn_ProductOrders.UseVisualStyleBackColor = true;
-            this.btn_ProductOrders.Click += new System.EventHandler(this.btn_ProductOrders_Click);
             // 
             // HomePage
             // 
