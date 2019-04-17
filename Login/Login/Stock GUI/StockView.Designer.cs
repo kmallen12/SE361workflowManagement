@@ -29,22 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockView));
-            this.btnLoadDB = new System.Windows.Forms.Button();
             this.DGVStockView = new System.Windows.Forms.DataGridView();
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnLoadDB
-            // 
-            this.btnLoadDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadDB.Location = new System.Drawing.Point(274, 19);
-            this.btnLoadDB.Name = "btnLoadDB";
-            this.btnLoadDB.Size = new System.Drawing.Size(213, 52);
-            this.btnLoadDB.TabIndex = 16;
-            this.btnLoadDB.Text = "Load from Database";
-            this.btnLoadDB.UseVisualStyleBackColor = true;
-            this.btnLoadDB.Click += new System.EventHandler(this.btnLoadDB_Click);
             // 
             // DGVStockView
             // 
@@ -70,7 +58,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLoadDB);
             this.Controls.Add(this.DGVStockView);
             this.Controls.Add(this.lbl_warehouseSummary);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -83,8 +70,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLoadDB;
         private System.Windows.Forms.DataGridView DGVStockView;
         private System.Windows.Forms.Label lbl_warehouseSummary;
     }

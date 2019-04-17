@@ -19,7 +19,11 @@ namespace WorkFlowManagement
         private Stock objStock = new Stock();
         private List<RawMaterials> materialList;
 
-        public StockView() => InitializeComponent();
+        public StockView() 
+        {
+            InitializeComponent();
+            loadStocks();
+        }
 
         private void loadStocks()
         {
@@ -30,10 +34,5 @@ namespace WorkFlowManagement
             //use stock datatable as datasource for data grid
             DGVStockView.DataSource = stocks;
         }
-        private void btnLoadDB_Click(object sender, EventArgs e)
-        {
-            loadStocks();
-        }
-    
     }
 }
