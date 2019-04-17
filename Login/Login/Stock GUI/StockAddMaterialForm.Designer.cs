@@ -51,10 +51,16 @@
             this.txt_TotalCost = new System.Windows.Forms.NumericUpDown();
             this.txt_DateAcq = new System.Windows.Forms.DateTimePicker();
             this.txt_dateUsed = new System.Windows.Forms.DateTimePicker();
+            this.lblAddToList = new System.Windows.Forms.Label();
+            this.StsAddMaterial = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Defected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_unitCost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TotalCost)).BeginInit();
+            this.StsAddMaterial.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMaterialType
@@ -156,7 +162,6 @@
             this.txt_materialType.Name = "txt_materialType";
             this.txt_materialType.Size = new System.Drawing.Size(176, 21);
             this.txt_materialType.TabIndex = 1;
-            this.txt_materialType.SelectedIndexChanged += new System.EventHandler(this.txt_materialType_SelectedIndexChanged);
             // 
             // btnCustomizeMaterials
             // 
@@ -291,11 +296,51 @@
             this.txt_dateUsed.Value = new System.DateTime(2019, 4, 14, 20, 55, 8, 0);
             this.txt_dateUsed.ValueChanged += new System.EventHandler(this.txt_dateUsed_ValueChanged);
             // 
+            // lblAddToList
+            // 
+            this.lblAddToList.AutoSize = true;
+            this.lblAddToList.Location = new System.Drawing.Point(447, 34);
+            this.lblAddToList.Name = "lblAddToList";
+            this.lblAddToList.Size = new System.Drawing.Size(136, 13);
+            this.lblAddToList.TabIndex = 20;
+            this.lblAddToList.Text = "Item not in List? Click Here:";
+            // 
+            // StsAddMaterial
+            // 
+            this.StsAddMaterial.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3});
+            this.StsAddMaterial.Location = new System.Drawing.Point(0, 534);
+            this.StsAddMaterial.Name = "StsAddMaterial";
+            this.StsAddMaterial.Size = new System.Drawing.Size(583, 22);
+            this.StsAddMaterial.TabIndex = 21;
+            this.StsAddMaterial.Text = "Once material added to list, review and add to database";
+            this.StsAddMaterial.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StsAddMaterial_ItemClicked);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(227, 17);
+            this.toolStripStatusLabel1.Text = "Add material to list, then save to database";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
+            // 
             // AddMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 556);
+            this.Controls.Add(this.StsAddMaterial);
+            this.Controls.Add(this.lblAddToList);
             this.Controls.Add(this.txt_dateUsed);
             this.Controls.Add(this.txt_DateAcq);
             this.Controls.Add(this.txt_TotalCost);
@@ -325,6 +370,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Defected)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_unitCost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TotalCost)).EndInit();
+            this.StsAddMaterial.ResumeLayout(false);
+            this.StsAddMaterial.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +401,10 @@
         private System.Windows.Forms.NumericUpDown txt_TotalCost;
         private System.Windows.Forms.DateTimePicker txt_DateAcq;
         private System.Windows.Forms.DateTimePicker txt_dateUsed;
+        private System.Windows.Forms.Label lblAddToList;
+        private System.Windows.Forms.StatusStrip StsAddMaterial;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }
