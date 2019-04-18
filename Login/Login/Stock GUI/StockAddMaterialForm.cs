@@ -159,5 +159,10 @@ namespace WorkFlowManagement
         {
             txt_dateUsed.CustomFormat = "dd/mm/yyyy";
         }
+
+        private void txt_materialType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

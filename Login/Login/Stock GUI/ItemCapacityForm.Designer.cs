@@ -36,25 +36,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateWarningValues = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtItemID
             // 
-            this.txtItemID.Location = new System.Drawing.Point(50, 49);
+            this.txtItemID.Location = new System.Drawing.Point(47, 87);
             this.txtItemID.Name = "txtItemID";
             this.txtItemID.Size = new System.Drawing.Size(100, 20);
             this.txtItemID.TabIndex = 0;
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(192, 48);
+            this.txtMax.Location = new System.Drawing.Point(189, 86);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(100, 20);
             this.txtMax.TabIndex = 1;
             // 
             // txtLow
             // 
-            this.txtLow.Location = new System.Drawing.Point(326, 49);
+            this.txtLow.Location = new System.Drawing.Point(323, 87);
             this.txtLow.Name = "txtLow";
             this.txtLow.Size = new System.Drawing.Size(100, 20);
             this.txtLow.TabIndex = 2;
@@ -62,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 33);
+            this.label1.Location = new System.Drawing.Point(79, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 3;
@@ -71,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 33);
+            this.label2.Location = new System.Drawing.Point(186, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 4;
@@ -80,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 33);
+            this.label3.Location = new System.Drawing.Point(320, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 13);
             this.label3.TabIndex = 5;
@@ -88,19 +90,40 @@
             // 
             // btnUpdateWarningValues
             // 
-            this.btnUpdateWarningValues.Location = new System.Drawing.Point(447, 82);
+            this.btnUpdateWarningValues.Location = new System.Drawing.Point(444, 120);
             this.btnUpdateWarningValues.Name = "btnUpdateWarningValues";
-            this.btnUpdateWarningValues.Size = new System.Drawing.Size(151, 23);
+            this.btnUpdateWarningValues.Size = new System.Drawing.Size(151, 27);
             this.btnUpdateWarningValues.TabIndex = 6;
             this.btnUpdateWarningValues.Text = "Change Warning Values";
             this.btnUpdateWarningValues.UseVisualStyleBackColor = true;
             this.btnUpdateWarningValues.Click += new System.EventHandler(this.btnUpdateWarningValues_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(44, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(522, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Enter a stock item ID. Then indicate how much warehouse space is allocated to thi" +
+    "s item (Max Capacity) and ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(44, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(278, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "what level of inventory triggers a warning (Low Inventory).";
+            // 
             // ItemCapacityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 117);
+            this.ClientSize = new System.Drawing.Size(622, 178);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUpdateWarningValues);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -110,7 +133,7 @@
             this.Controls.Add(this.txtItemID);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ItemCapacityForm";
-            this.Text = "ItemCapacityForm";
+            this.Text = "Item Capacity Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +148,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdateWarningValues;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
