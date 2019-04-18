@@ -43,7 +43,6 @@ namespace WorkFlowManagement
 
             if (!String.IsNullOrEmpty(UserType))
             {
-                MessageBox.Show("You are logged in " + txtUsername.Text);
                 objCurrentUser = new CurrentUser(txtUsername.Text,UserType,UserTypeID);
                 this.Hide();
 

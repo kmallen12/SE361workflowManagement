@@ -135,7 +135,7 @@ namespace WorkFlowManagement
             {
                 MessageBox.Show("Error: " + err);
             }
-
+            toolStripStatusLabel1.Text = "List of Materials Added to Database";
             stocks.Clear();
             lstStocks.Clear();
         }
@@ -160,9 +160,9 @@ namespace WorkFlowManagement
             txt_dateUsed.CustomFormat = "dd/mm/yyyy";
         }
 
-        private void txt_materialType_SelectedIndexChanged(object sender, EventArgs e)
+        private void StsAddMaterial_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            toolStripStatusLabel1.Text = "Review items in the list then save to database";
         }
     }
 }
