@@ -1443,39 +1443,61 @@ namespace WorkFlowManagement
 
         public DataTable StockReportMax()
         {
-            _conn.Close();
-            _conn.Open();
-
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = _conn;
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
             DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
 
-            _conn.Close();
+            try
+            {
+                _conn.Close();
+                _conn.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = _conn;
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "SELECT ST.itemID , ST.materialType, ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+                sqlDataAdap.Fill(dtRecord);
+
+                _conn.Close();
+
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error loading stock max capacity from database.");
+            }
 
             return dtRecord;
+
         }
 
         public DataTable StockReportLow()
         {
-            _conn.Close();
-            _conn.Open();
-
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = _conn;
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
             DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-            _conn.Close();
+
+            try
+            {
+                _conn.Close();
+                _conn.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = _conn;
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "SELECT ST.itemID, ST.materialType, ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+                sqlDataAdap.Fill(dtRecord);
+                _conn.Close();
+
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error loading stock low capacity from database.");
+            }
 
             return dtRecord;
+
         }
 
         //load data from the User Type Table into a list

@@ -24,7 +24,17 @@ namespace WorkFlowManagement
             updateMaxLowDataViewer();
         }
 
-        private void linklblChangeItem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void updateMaxLowDataViewer()
+        {
+            DataTable dataMax = objDatabaseManager.StockReportMax();
+            dataGridViewMax.DataSource = dataMax;
+
+            DataTable dataLow = objDatabaseManager.StockReportLow();
+            dataGridViewLow.DataSource = dataLow;
+
+        }
+
+        private void btnChangeDefaults_Click(object sender, EventArgs e)
         {
             ItemCapacityForm ICF = new ItemCapacityForm();
 
@@ -36,17 +46,6 @@ namespace WorkFlowManagement
 
 
             ICF.Show();
-
-        }
-
-        private void updateMaxLowDataViewer()
-        {
-            DataTable dataMax = objDatabaseManager.StockReportMax();
-            dataGridViewMax.DataSource = dataMax;
-
-            DataTable dataLow = objDatabaseManager.StockReportLow();
-            dataGridViewLow.DataSource = dataLow;
-
         }
     }
 }
