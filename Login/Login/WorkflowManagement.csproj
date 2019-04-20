@@ -105,11 +105,11 @@
     <Compile Include="Product GUI\RemanufactureForm.Designer.cs">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product GUI\ProductStausReportForm.cs">
+    <Compile Include="Product GUI\ProductStatusReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product GUI\ProductStausReportForm.Designer.cs">
-      <DependentUpon>ProductStausReportForm.cs</DependentUpon>
+    <Compile Include="Product GUI\ProductStatusReportForm.Designer.cs">
+      <DependentUpon>ProductStatusReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Product GUI\ViewQualifiedProducts.cs">
       <SubType>Form</SubType>
@@ -273,8 +273,8 @@
     <EmbeddedResource Include="Product GUI\RemanufactureForm.resx">
       <DependentUpon>RemanufactureForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product GUI\ProductStausReportForm.resx">
-      <DependentUpon>ProductStausReportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Product GUI\ProductStatusReportForm.resx">
+      <DependentUpon>ProductStatusReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\ViewQualifiedProducts.resx">
       <DependentUpon>ViewQualifiedProducts.cs</DependentUpon>

@@ -52,8 +52,7 @@ namespace WorkFlowManagement
                     objDatabaseManager.InsertToStockTable(stocks);
 
                     txt_materialType.SelectedIndex = -1;
-                    txt_DateAcq.Value= DateTime.Now;
-                    txt_dateUsed.CustomFormat = "";
+                    ResetDTP();
                     txt_Defected.Value = 0;
                     txt_Quantity.Value = 0;
                     txt_TotalCost.Value = 0;
@@ -116,12 +115,7 @@ namespace WorkFlowManagement
             }
         }
 
-        private void btnSaveToDB_Click(object sender, EventArgs e)
-        {
             
-        }
-
-        
 
         private void btn_IncreaseQuantity_Click(object sender, EventArgs e)
         {
@@ -138,7 +132,7 @@ namespace WorkFlowManagement
 
         private void txt_dateUsed_ValueChanged(object sender, EventArgs e)
         {
-            txt_dateUsed.CustomFormat = "dd/mm/yyyy";
+            txt_dateUsed.CustomFormat = "MM/dd/yyyy";
         }
 
         private void StsAddMaterial_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -148,9 +142,21 @@ namespace WorkFlowManagement
 
         private void AddMaterialForm_Load(object sender, EventArgs e)
         {
-            txt_DateAcq.Format = DateTimePickerFormat.Custom;
-            txt_dateUsed.CustomFormat = " ";
+            ResetDTP();
+        }
 
+        private void ResetDTP()
+        {
+            txt_DateAcq.Format = DateTimePickerFormat.Custom;
+            txt_DateAcq.CustomFormat = " ";
+
+            txt_dateUsed.Format = DateTimePickerFormat.Custom;
+            txt_dateUsed.CustomFormat = " ";
+        }
+
+        private void txt_DateAcq_ValueChanged(object sender, EventArgs e)
+        {
+            txt_DateAcq.CustomFormat = "MM/dd/yyyy";
         }
     }
 }

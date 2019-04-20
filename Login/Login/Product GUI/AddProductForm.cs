@@ -42,6 +42,8 @@ namespace WorkFlowManagement
         {
             //use partialstock datatable as datasource for data grid
             PartialStockGrid.DataSource = product.PartialStockTable();
+
+            lbl_Title.Text = "Create a New Product";
         }
 
 
@@ -69,7 +71,7 @@ namespace WorkFlowManagement
             txt_MaterialID.Visible = false;
             lbl_MaterialAmount.Visible = false;
             lbl_MaterialID.Visible = false;
-            lbl_CreateANewProduct.Visible = false;
+            lbl_Title.Visible = false;
             btn_FinalizeProduct.Visible = false;
             btn_AddMaterialtoProduct.Visible = false;
             lbl_ProductName.Visible = false;
