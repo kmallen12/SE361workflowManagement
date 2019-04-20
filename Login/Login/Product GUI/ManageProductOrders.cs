@@ -15,21 +15,24 @@ namespace WorkFlowManagement
         Product P;
         ProductOrderRequest Order;
         AddProduct addProduct;
-        public ManageProductOrders()
+        Form Home;
+        public ManageProductOrders(Form H)
         {
             P = new Product();
             InitializeComponent();
-
+            Home = H;
             OrderList_listbox.DataSource = P.LoadProductOrders();
         }
 
-       
-
         private void Confirm_btn_Click(object sender, EventArgs e)
         {
-            addProduct = new AddProduct();
+            Home.MdiChildren.Last<Form>().Close();
+            
+            addProduct = new AddProduct(this);
+            addProduct.MdiParent = Home;
             addProduct.SetTXTBoxs(Order.ProductID.ToString(), Order.Quantity.ToString());
-            addProduct.ShowDialog();
+            addProduct.Show();
+            
         }
 
         private void OrderList_listbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +52,8 @@ namespace WorkFlowManagement
             }
         }
 
-        private void btn_ConfirmFilled_Click(object sender, EventArgs e)
+        
+        public void ConfirmFilled()
         {
             P.UpdateProductOrderStatus(Order.OrderID);
             OrderList_listbox.DataSource = P.LoadProductOrders();

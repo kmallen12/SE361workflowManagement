@@ -18,6 +18,17 @@ namespace WorkFlowManagement
         CheckEntry CE;
         //Dialogue boxes for confirmation
         WorkFlowMessage M;
+        
+        ManageProductOrders Orders;
+        public AddProduct(ManageProductOrders O)
+        {
+            InitializeComponent();
+            product = new Product();
+            product.newProduct();
+            CE = new CheckEntry();
+            M = new WorkFlowMessage();
+            Orders = O;       
+        }
         public AddProduct()
         {
             InitializeComponent();
@@ -45,8 +56,6 @@ namespace WorkFlowManagement
                 lbl_Description.Text = string.Empty;
                 foreach (var v in product.productMaterials)
                     lbl_Description.Text = lbl_Description.Text +v.Name + ", " + v.Quantity + "\n";
-
-
             }
         }
         //Sets the GUI form to the version for adding a certain product not creating one. 
@@ -99,7 +108,9 @@ namespace WorkFlowManagement
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
                 product.AdditionalProduct(Int32.Parse(txt_ProductID.Text), Int32.Parse(txt_ProductQuantity.Text));
                 Product_Load_1(sender, e);
+                Orders.ConfirmFilled();
             }
+            
         }
     }
 }
