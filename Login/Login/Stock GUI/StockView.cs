@@ -15,9 +15,6 @@ namespace WorkFlowManagement
     {
         private DataTable stocks;
         private DatabaseManager objDatabaseManager = new DatabaseManager();
-        private CheckEntry objCheckEntry = new CheckEntry();
-        private Stock objStock = new Stock();
-        private List<RawMaterials> materialList;
 
         public StockView() => InitializeComponent();
 
@@ -34,6 +31,15 @@ namespace WorkFlowManagement
         {
             loadStocks();
         }
-    
+
+        private void StockView_Load_1(object sender, EventArgs e)
+        {
+            loadStocks();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
