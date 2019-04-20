@@ -13,21 +13,30 @@ namespace WorkFlowManagement
     public partial class ViewProducts : Form
     {
         Product P;
+        DataTable productTable;
         //Dialogue boxes for confirmation
         WorkFlowMessage M;
         //We check to see if text entries are correct.
         CheckEntry CE;
+
         public ViewProducts()
         {
             InitializeComponent();
             P = new Product();
             CE = new CheckEntry();
+            productTable = P.ProductTable();
         }
 
         private void ViewProducts_Load(object sender, EventArgs e)
         {
            
             dataGrid_ViewProducts.DataSource = P.ProductTable();
+
+            txt_ProductID.Items.Clear();
+            for (int i = 0; i < productTable.Rows.Count; i++)
+            {
+                txt_ProductID.Items.Add(productTable.Rows[i]["pId"]);
+            }
         }
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
@@ -56,6 +65,27 @@ namespace WorkFlowManagement
             AddProduct addp = new AddProduct();
             addp.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
             addp.ShowDialog();
+        }
+
+        private void txt_ProductID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow[] selectedRow;
+
+                selectedRow = productTable.Select("pId = " + txt_ProductID.Text);
+
+                if (selectedRow.Length > 0)
+                {
+                    txt_ProductName.Text = selectedRow[0]["productName"].ToString();
+                    txt_ProductMaterials.Text = selectedRow[0]["materialsString"].ToString();
+                    txt_ProductQuantity.Text = selectedRow[0]["quantity"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error selecting data from data table.");
+            }
         }
     }
 }

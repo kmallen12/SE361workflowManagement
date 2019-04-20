@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using Newtonsoft.Json;
 
 namespace WorkFlowManagement
@@ -24,6 +18,7 @@ namespace WorkFlowManagement
             Quantity = InitQuantity;
             Name = InitName;
         }
+
     };
     public struct ProductOrderRequest
     {
@@ -100,7 +95,7 @@ namespace WorkFlowManagement
         }
         public void SetProduct(int key)
         {
-            //Querries the database for each attributes based on the key. 
+            //Querries the database for each attribute based on the key. 
             productID = key;
             productName = objDatabaseManager.ProductName(key);
             JsonMaterialString = objDatabaseManager.ProductMaterials(key);
@@ -131,10 +126,6 @@ namespace WorkFlowManagement
             productMaterials.Add(newMaterial);
             JsonMaterialString = JsonConvert.SerializeObject(productMaterials);
             
-        }
-        public string JsonMaterialReturn()
-        {
-            return JsonMaterialString;
         }
         
         public string productDiscription()
@@ -196,67 +187,26 @@ namespace WorkFlowManagement
             objDatabaseManager.InsertProduct(productName, JsonMaterialString, productQuantity, "In Progress");
             return 0;
         }
+
         //This is the conversion from JSon to the ID Quantity format.
         public void ConvertJsonMaterials()
         {
-
-
             productMaterials = JsonConvert.DeserializeObject<List<MaterialsProduct>>(JsonMaterialString);
-            
-            
-            //for (int i = 0; i < JsonMaterialString.Length; i++)
-            //{
-
-            //    if (JsonMaterialString[i] == ':' && JsonMaterialString[i - 2] == 'D')
-            //    {
-            //        i++;
-            //        //build the ID
-            //        while (JsonMaterialString[i] != ',')
-            //        {
-            //            ID += JsonMaterialString[i];
-            //            i++;
-            //        }
-            //        //Add the ID to both
-            //        both = ID;
-            //        ID = "";
-            //    }
-            //    if (JsonMaterialString[i] == ':' && JsonMaterialString[i - 2] == 'y')
-            //    {
-            //        i++;
-            //        while (JsonMaterialString[i] != ',')
-            //        {
-            //            Quantity = Quantity + JsonMaterialString[i];
-            //            i++;
-            //        }
-            //        //Add the quantity to both
-            //        both = both +" "+ Quantity;
-            //        Quantity = "";
-            //        productMaterials = both + " " + productMaterials;
-            //        both = "";
-
-            //    }
-            //    //MessageBox.Show(productMaterials+"ice");
-            //}
-
         } 
         public int AdditionalProduct(int key, int quantity)
         {
             //Ensure we have the correct product information.
             
-            
             materialsDescription = new int[2 * materialamt];
             
-
             int tempmat;
             int id;
             decimal amt;
             //Build the materialstring
             for (int i = 0; i < materialamt; i++)
             {
-                
                 materialsDescription[2 * i] = productMaterials[i].ID;
                 materialsDescription[2 * i + 1] = productMaterials[i].Quantity;
-                
             }
             
             try
