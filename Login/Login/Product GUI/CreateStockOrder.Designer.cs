@@ -218,6 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 475);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_AddOrderToList);
             this.Controls.Add(this.listBox_StockOrders);
             this.Controls.Add(this.dataGridView1);
@@ -229,9 +230,12 @@
             this.Controls.Add(this.Confirm_btn);
             this.Controls.Add(this.ID_Text);
             this.Controls.Add(this.ProductOrderInfo_lbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateStockOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CreateStockOrder";
             this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

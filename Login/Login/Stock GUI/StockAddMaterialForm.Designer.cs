@@ -339,6 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 556);
+            this.ControlBox = false;
             this.Controls.Add(this.StsAddMaterial);
             this.Controls.Add(this.lblAddToList);
             this.Controls.Add(this.txt_dateUsed);
@@ -363,8 +364,11 @@
             this.Controls.Add(this.lbl_unitCost);
             this.Controls.Add(this.lbl_quantity);
             this.Controls.Add(this.lblMaterialType);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Name = "AddMaterialForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Add Raw Material";
             ((System.ComponentModel.ISupportInitialize)(this.txt_Quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Defected)).EndInit();

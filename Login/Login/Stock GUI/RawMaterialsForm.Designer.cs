@@ -151,6 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ControlBox = false;
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSaveRMtoDB);
             this.Controls.Add(this.btnDelete);
@@ -161,9 +162,12 @@
             this.Controls.Add(this.btnAddNewMaterial);
             this.Controls.Add(this.btnCloseRawMaterial);
             this.Controls.Add(this.lstRawMaterials);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RawMaterialsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "RawMaterialsForm";
             this.Load += new System.EventHandler(this.RawMaterialsForm_Load);
             this.ResumeLayout(false);

@@ -348,6 +348,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 572);
+            this.ControlBox = false;
             this.Controls.Add(this.txtMaterialType);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblDefects);
@@ -370,8 +371,11 @@
             this.Controls.Add(this.ItemIDGrid_box);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_warehouseSummary);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Name = "UpdateStockForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "View and Update Stock Form";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.UpdateStockForm_Load);

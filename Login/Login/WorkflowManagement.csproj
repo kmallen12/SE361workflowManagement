@@ -51,6 +51,7 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -223,6 +224,12 @@
     <Compile Include="Delivery GUI\ViewProductsForm.Designer.cs">
       <DependentUpon>ViewProductsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabHolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabHolder.Designer.cs">
+      <DependentUpon>TabHolder.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -325,6 +332,9 @@
     <EmbeddedResource Include="Delivery GUI\ViewProductsForm.resx">
       <DependentUpon>ViewProductsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TabHolder.resx">
+      <DependentUpon>TabHolder.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="OCOTOD-UML-Diagram.vsdx" />
@@ -414,6 +424,8 @@
     <None Include="WorkflowUMLSprint3.pdf" />
     <None Include="zzResources\OCOTODWorkflow.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="zzResources\SameColorBack.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

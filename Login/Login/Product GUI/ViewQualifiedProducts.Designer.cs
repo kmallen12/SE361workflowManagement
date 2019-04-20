@@ -116,12 +116,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 309);
+            this.ControlBox = false;
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnRepRemanufacture);
             this.Controls.Add(this.lstQualProd);
             this.Controls.Add(this.lblDefectiveProducts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Name = "ViewQualifiedProducts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ViewQualifiedProducts";
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProductsBindingSource)).EndInit();
