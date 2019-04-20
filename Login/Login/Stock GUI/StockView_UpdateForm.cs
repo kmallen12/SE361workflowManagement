@@ -104,13 +104,13 @@ namespace WorkFlowManagement
             this.Hide();
         }
 
-        private void ItemIDGrid_box_SelectedIndexChanged(object sender, EventArgs e)
+        private void ItemIDGrid_box_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
             {
                 DataRow[] selectedRow;
 
-                selectedRow = stocks.Select("ItemID = "+ItemIDGrid_box.Text);
+                selectedRow = stocks.Select("itemID = " + ItemIDGrid_box.Text);
 
                 if (selectedRow.Length > 0)
                 {
@@ -128,7 +128,6 @@ namespace WorkFlowManagement
             {
                 MessageBox.Show("Error selecting data from data table.");
             }
-            
         }
     }
 }
