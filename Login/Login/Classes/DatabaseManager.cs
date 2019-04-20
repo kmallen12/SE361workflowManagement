@@ -488,22 +488,19 @@ namespace WorkFlowManagement
         public void InsertStockOrders(List<StockOrderRequest> Orders)
         {
 
-            List<int> IDs = new List<int>();
             foreach (StockOrderRequest order in Orders)
             {
                 _conn.Close();
                 _conn.Open();
 
-                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDiscription], [OrderStatus], [itemID]) VALUES (@Amount, @OrderDiscription, @Status, @itemID)";
+                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDescription], [OrderStatus], [MaterialType]) VALUES (@Amount, @OrderDescription, @Status, @MaterialType)";
                 using (SqlCommand com = new SqlCommand(str, _conn))
                 {
                     com.Connection = _conn;
                     com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
-                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Description;
+                    com.Parameters.Add("@OrderDescription", SqlDbType.NVarChar).Value = order.Description;
                     com.Parameters.Add("@Status", SqlDbType.NVarChar).Value = order.Status;
-                    com.Parameters.Add("@itemID", SqlDbType.Int).Value = order.StockID;
-
-
+                    com.Parameters.Add("@MaterialType", SqlDbType.NVarChar).Value = order.MaterialType;
 
                     com.ExecuteNonQuery();
                 }
@@ -523,7 +520,7 @@ namespace WorkFlowManagement
                 _conn.Open();
 
                 //create SQL Command to pull data from Repair table
-                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, OrderStatus, itemID FROM [dbo].[StockOrderRequest]", _conn);
+                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDescription, OrderStatus, MaterialType FROM [dbo].[StockOrderRequest]", _conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -531,11 +528,11 @@ namespace WorkFlowManagement
                 {
                     int ID = (int)reader["OrderID"];
                     int Quantity = (int)reader["Amount"];
-                    string Discription = (string)reader["OrderDiscription"];
+                    string Discription = (string)reader["OrderDescription"];
                     string Status = (string)reader["OrderStatus"];
-                    int itemID = (int)reader["itemID"];
+                    string MaterialType = (string)reader["MaterialType"];
 
-                    order = new StockOrderRequest(ID, Quantity, Discription, Status, itemID);
+                    order = new StockOrderRequest(ID, Quantity, Discription, Status, MaterialType);
                     orders.Add(order);
                 }
                 _conn.Close();

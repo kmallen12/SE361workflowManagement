@@ -636,6 +636,23 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StockSummaryViewTableAdapter" GeneratorDataComponentClassName="StockSummaryViewTableAdapter" Name="StockSummaryView" UserDataComponentName="StockSummaryViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WorkFlowDatabaseConnectionString (Settings)" DbObjectName="WorkFlowDatabase.dbo.StockSummaryView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT materialType, Sum FROM dbo.StockSummaryView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="materialType" DataSetColumn="materialType" />
+              <Mapping SourceColumn="Sum" DataSetColumn="Sum" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -644,7 +661,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
   <xs:element name="WorkFlowDatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="WorkFlowDatabaseDataSet" msprop:Generator_UserDSName="WorkFlowDatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="StockTable" msprop:Generator_TableClassName="StockTableDataTable" msprop:Generator_TableVarName="tableStockTable" msprop:Generator_RowChangedName="StockTableRowChanged" msprop:Generator_TablePropName="StockTable" msprop:Generator_RowDeletingName="StockTableRowDeleting" msprop:Generator_RowChangingName="StockTableRowChanging" msprop:Generator_RowEvHandlerName="StockTableRowChangeEventHandler" msprop:Generator_RowDeletedName="StockTableRowDeleted" msprop:Generator_RowClassName="StockTableRow" msprop:Generator_UserTableName="StockTable" msprop:Generator_RowEvArgName="StockTableRowChangeEvent">
+        <xs:element name="StockTable" msprop:Generator_TableClassName="StockTableDataTable" msprop:Generator_TableVarName="tableStockTable" msprop:Generator_TablePropName="StockTable" msprop:Generator_RowDeletingName="StockTableRowDeleting" msprop:Generator_RowChangingName="StockTableRowChanging" msprop:Generator_RowEvHandlerName="StockTableRowChangeEventHandler" msprop:Generator_RowDeletedName="StockTableRowDeleted" msprop:Generator_UserTableName="StockTable" msprop:Generator_RowChangedName="StockTableRowChanged" msprop:Generator_RowEvArgName="StockTableRowChangeEvent" msprop:Generator_RowClassName="StockTableRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="itemID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnitemID" msprop:Generator_ColumnPropNameInRow="itemID" msprop:Generator_ColumnPropNameInTable="itemIDColumn" msprop:Generator_UserColumnName="itemID" type="xs:int" />
@@ -664,7 +681,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UsersTable" msprop:Generator_TableClassName="UsersTableDataTable" msprop:Generator_TableVarName="tableUsersTable" msprop:Generator_TablePropName="UsersTable" msprop:Generator_RowDeletingName="UsersTableRowDeleting" msprop:Generator_RowChangingName="UsersTableRowChanging" msprop:Generator_RowEvHandlerName="UsersTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersTableRowDeleted" msprop:Generator_UserTableName="UsersTable" msprop:Generator_RowChangedName="UsersTableRowChanged" msprop:Generator_RowEvArgName="UsersTableRowChangeEvent" msprop:Generator_RowClassName="UsersTableRow">
+        <xs:element name="UsersTable" msprop:Generator_TableClassName="UsersTableDataTable" msprop:Generator_TableVarName="tableUsersTable" msprop:Generator_RowChangedName="UsersTableRowChanged" msprop:Generator_TablePropName="UsersTable" msprop:Generator_RowDeletingName="UsersTableRowDeleting" msprop:Generator_RowChangingName="UsersTableRowChanging" msprop:Generator_RowEvHandlerName="UsersTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersTableRowDeleted" msprop:Generator_RowClassName="UsersTableRow" msprop:Generator_UserTableName="UsersTable" msprop:Generator_RowEvArgName="UsersTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
@@ -712,7 +729,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WareHouseTable" msprop:Generator_TableClassName="WareHouseTableDataTable" msprop:Generator_TableVarName="tableWareHouseTable" msprop:Generator_TablePropName="WareHouseTable" msprop:Generator_RowDeletingName="WareHouseTableRowDeleting" msprop:Generator_RowChangingName="WareHouseTableRowChanging" msprop:Generator_RowEvHandlerName="WareHouseTableRowChangeEventHandler" msprop:Generator_RowDeletedName="WareHouseTableRowDeleted" msprop:Generator_UserTableName="WareHouseTable" msprop:Generator_RowChangedName="WareHouseTableRowChanged" msprop:Generator_RowEvArgName="WareHouseTableRowChangeEvent" msprop:Generator_RowClassName="WareHouseTableRow">
+        <xs:element name="WareHouseTable" msprop:Generator_TableClassName="WareHouseTableDataTable" msprop:Generator_TableVarName="tableWareHouseTable" msprop:Generator_RowChangedName="WareHouseTableRowChanged" msprop:Generator_TablePropName="WareHouseTable" msprop:Generator_RowDeletingName="WareHouseTableRowDeleting" msprop:Generator_RowChangingName="WareHouseTableRowChanging" msprop:Generator_RowEvHandlerName="WareHouseTableRowChangeEventHandler" msprop:Generator_RowDeletedName="WareHouseTableRowDeleted" msprop:Generator_RowClassName="WareHouseTableRow" msprop:Generator_UserTableName="WareHouseTable" msprop:Generator_RowEvArgName="WareHouseTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="itemID" msprop:Generator_ColumnVarNameInTable="columnitemID" msprop:Generator_ColumnPropNameInRow="itemID" msprop:Generator_ColumnPropNameInTable="itemIDColumn" msprop:Generator_UserColumnName="itemID" type="xs:int" />
@@ -721,7 +738,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockReportLowCapacity" msprop:Generator_TableClassName="StockReportLowCapacityDataTable" msprop:Generator_TableVarName="tableStockReportLowCapacity" msprop:Generator_TablePropName="StockReportLowCapacity" msprop:Generator_RowDeletingName="StockReportLowCapacityRowDeleting" msprop:Generator_RowChangingName="StockReportLowCapacityRowChanging" msprop:Generator_RowEvHandlerName="StockReportLowCapacityRowChangeEventHandler" msprop:Generator_RowDeletedName="StockReportLowCapacityRowDeleted" msprop:Generator_UserTableName="StockReportLowCapacity" msprop:Generator_RowChangedName="StockReportLowCapacityRowChanged" msprop:Generator_RowEvArgName="StockReportLowCapacityRowChangeEvent" msprop:Generator_RowClassName="StockReportLowCapacityRow">
+        <xs:element name="StockReportLowCapacity" msprop:Generator_TableClassName="StockReportLowCapacityDataTable" msprop:Generator_TableVarName="tableStockReportLowCapacity" msprop:Generator_RowChangedName="StockReportLowCapacityRowChanged" msprop:Generator_TablePropName="StockReportLowCapacity" msprop:Generator_RowDeletingName="StockReportLowCapacityRowDeleting" msprop:Generator_RowChangingName="StockReportLowCapacityRowChanging" msprop:Generator_RowEvHandlerName="StockReportLowCapacityRowChangeEventHandler" msprop:Generator_RowDeletedName="StockReportLowCapacityRowDeleted" msprop:Generator_RowClassName="StockReportLowCapacityRow" msprop:Generator_UserTableName="StockReportLowCapacity" msprop:Generator_RowEvArgName="StockReportLowCapacityRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="itemID" msprop:Generator_ColumnVarNameInTable="columnitemID" msprop:Generator_ColumnPropNameInRow="itemID" msprop:Generator_ColumnPropNameInTable="itemIDColumn" msprop:Generator_UserColumnName="itemID" type="xs:int" />
@@ -729,7 +746,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockReportMaxCapacity" msprop:Generator_TableClassName="StockReportMaxCapacityDataTable" msprop:Generator_TableVarName="tableStockReportMaxCapacity" msprop:Generator_TablePropName="StockReportMaxCapacity" msprop:Generator_RowDeletingName="StockReportMaxCapacityRowDeleting" msprop:Generator_RowChangingName="StockReportMaxCapacityRowChanging" msprop:Generator_RowEvHandlerName="StockReportMaxCapacityRowChangeEventHandler" msprop:Generator_RowDeletedName="StockReportMaxCapacityRowDeleted" msprop:Generator_UserTableName="StockReportMaxCapacity" msprop:Generator_RowChangedName="StockReportMaxCapacityRowChanged" msprop:Generator_RowEvArgName="StockReportMaxCapacityRowChangeEvent" msprop:Generator_RowClassName="StockReportMaxCapacityRow">
+        <xs:element name="StockReportMaxCapacity" msprop:Generator_TableClassName="StockReportMaxCapacityDataTable" msprop:Generator_TableVarName="tableStockReportMaxCapacity" msprop:Generator_RowChangedName="StockReportMaxCapacityRowChanged" msprop:Generator_TablePropName="StockReportMaxCapacity" msprop:Generator_RowDeletingName="StockReportMaxCapacityRowDeleting" msprop:Generator_RowChangingName="StockReportMaxCapacityRowChanging" msprop:Generator_RowEvHandlerName="StockReportMaxCapacityRowChangeEventHandler" msprop:Generator_RowDeletedName="StockReportMaxCapacityRowDeleted" msprop:Generator_RowClassName="StockReportMaxCapacityRow" msprop:Generator_UserTableName="StockReportMaxCapacity" msprop:Generator_RowEvArgName="StockReportMaxCapacityRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="itemID" msprop:Generator_ColumnVarNameInTable="columnitemID" msprop:Generator_ColumnPropNameInRow="itemID" msprop:Generator_ColumnPropNameInTable="itemIDColumn" msprop:Generator_UserColumnName="itemID" type="xs:int" />
@@ -737,7 +754,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ProductOrderRequest" msprop:Generator_TableClassName="ProductOrderRequestDataTable" msprop:Generator_TableVarName="tableProductOrderRequest" msprop:Generator_TablePropName="ProductOrderRequest" msprop:Generator_RowDeletingName="ProductOrderRequestRowDeleting" msprop:Generator_RowChangingName="ProductOrderRequestRowChanging" msprop:Generator_RowEvHandlerName="ProductOrderRequestRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductOrderRequestRowDeleted" msprop:Generator_UserTableName="ProductOrderRequest" msprop:Generator_RowChangedName="ProductOrderRequestRowChanged" msprop:Generator_RowEvArgName="ProductOrderRequestRowChangeEvent" msprop:Generator_RowClassName="ProductOrderRequestRow">
+        <xs:element name="ProductOrderRequest" msprop:Generator_TableClassName="ProductOrderRequestDataTable" msprop:Generator_TableVarName="tableProductOrderRequest" msprop:Generator_RowChangedName="ProductOrderRequestRowChanged" msprop:Generator_TablePropName="ProductOrderRequest" msprop:Generator_RowDeletingName="ProductOrderRequestRowDeleting" msprop:Generator_RowChangingName="ProductOrderRequestRowChanging" msprop:Generator_RowEvHandlerName="ProductOrderRequestRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductOrderRequestRowDeleted" msprop:Generator_RowClassName="ProductOrderRequestRow" msprop:Generator_UserTableName="ProductOrderRequest" msprop:Generator_RowEvArgName="ProductOrderRequestRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OrderID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnOrderID" msprop:Generator_ColumnPropNameInRow="OrderID" msprop:Generator_ColumnPropNameInTable="OrderIDColumn" msprop:Generator_UserColumnName="OrderID" type="xs:int" />
@@ -760,7 +777,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ProductStatusTable" msprop:Generator_TableClassName="ProductStatusTableDataTable" msprop:Generator_TableVarName="tableProductStatusTable" msprop:Generator_TablePropName="ProductStatusTable" msprop:Generator_RowDeletingName="ProductStatusTableRowDeleting" msprop:Generator_RowChangingName="ProductStatusTableRowChanging" msprop:Generator_RowEvHandlerName="ProductStatusTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductStatusTableRowDeleted" msprop:Generator_UserTableName="ProductStatusTable" msprop:Generator_RowChangedName="ProductStatusTableRowChanged" msprop:Generator_RowEvArgName="ProductStatusTableRowChangeEvent" msprop:Generator_RowClassName="ProductStatusTableRow">
+        <xs:element name="ProductStatusTable" msprop:Generator_TableClassName="ProductStatusTableDataTable" msprop:Generator_TableVarName="tableProductStatusTable" msprop:Generator_RowChangedName="ProductStatusTableRowChanged" msprop:Generator_TablePropName="ProductStatusTable" msprop:Generator_RowDeletingName="ProductStatusTableRowDeleting" msprop:Generator_RowChangingName="ProductStatusTableRowChanging" msprop:Generator_RowEvHandlerName="ProductStatusTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductStatusTableRowDeleted" msprop:Generator_RowClassName="ProductStatusTableRow" msprop:Generator_UserTableName="ProductStatusTable" msprop:Generator_RowEvArgName="ProductStatusTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="statusId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnstatusId" msprop:Generator_ColumnPropNameInRow="statusId" msprop:Generator_ColumnPropNameInTable="statusIdColumn" msprop:Generator_UserColumnName="statusId" type="xs:int" />
@@ -774,7 +791,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ProductTable" msprop:Generator_TableClassName="ProductTableDataTable" msprop:Generator_TableVarName="tableProductTable" msprop:Generator_TablePropName="ProductTable" msprop:Generator_RowDeletingName="ProductTableRowDeleting" msprop:Generator_RowChangingName="ProductTableRowChanging" msprop:Generator_RowEvHandlerName="ProductTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductTableRowDeleted" msprop:Generator_UserTableName="ProductTable" msprop:Generator_RowChangedName="ProductTableRowChanged" msprop:Generator_RowEvArgName="ProductTableRowChangeEvent" msprop:Generator_RowClassName="ProductTableRow">
+        <xs:element name="ProductTable" msprop:Generator_TableClassName="ProductTableDataTable" msprop:Generator_TableVarName="tableProductTable" msprop:Generator_RowChangedName="ProductTableRowChanged" msprop:Generator_TablePropName="ProductTable" msprop:Generator_RowDeletingName="ProductTableRowDeleting" msprop:Generator_RowChangingName="ProductTableRowChanging" msprop:Generator_RowEvHandlerName="ProductTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductTableRowDeleted" msprop:Generator_RowClassName="ProductTableRow" msprop:Generator_UserTableName="ProductTable" msprop:Generator_RowEvArgName="ProductTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="pId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnpId" msprop:Generator_ColumnPropNameInRow="pId" msprop:Generator_ColumnPropNameInTable="pIdColumn" msprop:Generator_UserColumnName="pId" type="xs:int" />
@@ -804,7 +821,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RawMaterialsTable" msprop:Generator_TableClassName="RawMaterialsTableDataTable" msprop:Generator_TableVarName="tableRawMaterialsTable" msprop:Generator_TablePropName="RawMaterialsTable" msprop:Generator_RowDeletingName="RawMaterialsTableRowDeleting" msprop:Generator_RowChangingName="RawMaterialsTableRowChanging" msprop:Generator_RowEvHandlerName="RawMaterialsTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RawMaterialsTableRowDeleted" msprop:Generator_UserTableName="RawMaterialsTable" msprop:Generator_RowChangedName="RawMaterialsTableRowChanged" msprop:Generator_RowEvArgName="RawMaterialsTableRowChangeEvent" msprop:Generator_RowClassName="RawMaterialsTableRow">
+        <xs:element name="RawMaterialsTable" msprop:Generator_TableClassName="RawMaterialsTableDataTable" msprop:Generator_TableVarName="tableRawMaterialsTable" msprop:Generator_RowChangedName="RawMaterialsTableRowChanged" msprop:Generator_TablePropName="RawMaterialsTable" msprop:Generator_RowDeletingName="RawMaterialsTableRowDeleting" msprop:Generator_RowChangingName="RawMaterialsTableRowChanging" msprop:Generator_RowEvHandlerName="RawMaterialsTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RawMaterialsTableRowDeleted" msprop:Generator_RowClassName="RawMaterialsTableRow" msprop:Generator_UserTableName="RawMaterialsTable" msprop:Generator_RowEvArgName="RawMaterialsTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -818,7 +835,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockOrderRequest" msprop:Generator_TableClassName="StockOrderRequestDataTable" msprop:Generator_TableVarName="tableStockOrderRequest" msprop:Generator_TablePropName="StockOrderRequest" msprop:Generator_RowDeletingName="StockOrderRequestRowDeleting" msprop:Generator_RowChangingName="StockOrderRequestRowChanging" msprop:Generator_RowEvHandlerName="StockOrderRequestRowChangeEventHandler" msprop:Generator_RowDeletedName="StockOrderRequestRowDeleted" msprop:Generator_UserTableName="StockOrderRequest" msprop:Generator_RowChangedName="StockOrderRequestRowChanged" msprop:Generator_RowEvArgName="StockOrderRequestRowChangeEvent" msprop:Generator_RowClassName="StockOrderRequestRow">
+        <xs:element name="StockOrderRequest" msprop:Generator_TableClassName="StockOrderRequestDataTable" msprop:Generator_TableVarName="tableStockOrderRequest" msprop:Generator_RowChangedName="StockOrderRequestRowChanged" msprop:Generator_TablePropName="StockOrderRequest" msprop:Generator_RowDeletingName="StockOrderRequestRowDeleting" msprop:Generator_RowChangingName="StockOrderRequestRowChanging" msprop:Generator_RowEvHandlerName="StockOrderRequestRowChangeEventHandler" msprop:Generator_RowDeletedName="StockOrderRequestRowDeleted" msprop:Generator_RowClassName="StockOrderRequestRow" msprop:Generator_UserTableName="StockOrderRequest" msprop:Generator_RowEvArgName="StockOrderRequestRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OrderID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnOrderID" msprop:Generator_ColumnPropNameInRow="OrderID" msprop:Generator_ColumnPropNameInTable="OrderIDColumn" msprop:Generator_UserColumnName="OrderID" type="xs:int" />
@@ -841,7 +858,7 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserTypeTable" msprop:Generator_TableClassName="UserTypeTableDataTable" msprop:Generator_TableVarName="tableUserTypeTable" msprop:Generator_TablePropName="UserTypeTable" msprop:Generator_RowDeletingName="UserTypeTableRowDeleting" msprop:Generator_RowChangingName="UserTypeTableRowChanging" msprop:Generator_RowEvHandlerName="UserTypeTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTypeTableRowDeleted" msprop:Generator_UserTableName="UserTypeTable" msprop:Generator_RowChangedName="UserTypeTableRowChanged" msprop:Generator_RowEvArgName="UserTypeTableRowChangeEvent" msprop:Generator_RowClassName="UserTypeTableRow">
+        <xs:element name="UserTypeTable" msprop:Generator_TableClassName="UserTypeTableDataTable" msprop:Generator_TableVarName="tableUserTypeTable" msprop:Generator_RowChangedName="UserTypeTableRowChanged" msprop:Generator_TablePropName="UserTypeTable" msprop:Generator_RowDeletingName="UserTypeTableRowDeleting" msprop:Generator_RowChangingName="UserTypeTableRowChanging" msprop:Generator_RowEvHandlerName="UserTypeTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTypeTableRowDeleted" msprop:Generator_RowClassName="UserTypeTableRow" msprop:Generator_UserTableName="UserTypeTable" msprop:Generator_RowEvArgName="UserTypeTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="userTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnuserTypeID" msprop:Generator_ColumnPropNameInRow="userTypeID" msprop:Generator_ColumnPropNameInTable="userTypeIDColumn" msprop:Generator_UserColumnName="userTypeID" type="xs:int" />
@@ -852,6 +869,20 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StockSummaryView" msprop:Generator_TableClassName="StockSummaryViewDataTable" msprop:Generator_TableVarName="tableStockSummaryView" msprop:Generator_TablePropName="StockSummaryView" msprop:Generator_RowDeletingName="StockSummaryViewRowDeleting" msprop:Generator_RowChangingName="StockSummaryViewRowChanging" msprop:Generator_RowEvHandlerName="StockSummaryViewRowChangeEventHandler" msprop:Generator_RowDeletedName="StockSummaryViewRowDeleted" msprop:Generator_UserTableName="StockSummaryView" msprop:Generator_RowChangedName="StockSummaryViewRowChanged" msprop:Generator_RowEvArgName="StockSummaryViewRowChangeEvent" msprop:Generator_RowClassName="StockSummaryViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="materialType" msprop:Generator_ColumnVarNameInTable="columnmaterialType" msprop:Generator_ColumnPropNameInRow="materialType" msprop:Generator_ColumnPropNameInTable="materialTypeColumn" msprop:Generator_UserColumnName="materialType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sum" msprop:Generator_ColumnVarNameInTable="columnSum" msprop:Generator_ColumnPropNameInRow="Sum" msprop:Generator_ColumnPropNameInTable="SumColumn" msprop:Generator_UserColumnName="Sum" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -904,9 +935,9 @@ SELECT userTypeID, userTypeText FROM UserTypeTable WHERE (userTypeText = @userTy
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_UsersTable_UserTypeTable" msdata:parent="UserTypeTable" msdata:child="UsersTable" msdata:parentkey="userTypeText" msdata:childkey="UserType" msprop:Generator_UserChildTable="UsersTable" msprop:Generator_ChildPropName="GetUsersTableRows" msprop:Generator_UserRelationName="FK_UsersTable_UserTypeTable" msprop:Generator_RelationVarName="relationFK_UsersTable_UserTypeTable" msprop:Generator_UserParentTable="UserTypeTable" msprop:Generator_ParentPropName="UserTypeTableRow" />
-      <msdata:Relationship name="FK__ProductOrde__pId__2BFE89A6" msdata:parent="ProductTable" msdata:child="ProductOrderRequest" msdata:parentkey="pId" msdata:childkey="pId" msprop:Generator_UserChildTable="ProductOrderRequest" msprop:Generator_ChildPropName="GetProductOrderRequestRows" msprop:Generator_UserRelationName="FK__ProductOrde__pId__2BFE89A6" msprop:Generator_RelationVarName="relationFK__ProductOrde__pId__2BFE89A6" msprop:Generator_UserParentTable="ProductTable" msprop:Generator_ParentPropName="ProductTableRow" />
-      <msdata:Relationship name="FK__StockOrde__itemI__29221CFB" msdata:parent="StockTable" msdata:child="StockOrderRequest" msdata:parentkey="itemID" msdata:childkey="itemID" msprop:Generator_UserChildTable="StockOrderRequest" msprop:Generator_ChildPropName="GetStockOrderRequestRows" msprop:Generator_UserRelationName="FK__StockOrde__itemI__29221CFB" msprop:Generator_ParentPropName="StockTableRow" msprop:Generator_RelationVarName="relationFK__StockOrde__itemI__29221CFB" msprop:Generator_UserParentTable="StockTable" />
+      <msdata:Relationship name="FK_UsersTable_UserTypeTable" msdata:parent="UserTypeTable" msdata:child="UsersTable" msdata:parentkey="userTypeText" msdata:childkey="UserType" msprop:Generator_UserChildTable="UsersTable" msprop:Generator_ChildPropName="GetUsersTableRows" msprop:Generator_UserRelationName="FK_UsersTable_UserTypeTable" msprop:Generator_ParentPropName="UserTypeTableRow" msprop:Generator_RelationVarName="relationFK_UsersTable_UserTypeTable" msprop:Generator_UserParentTable="UserTypeTable" />
+      <msdata:Relationship name="FK__ProductOrde__pId__2BFE89A6" msdata:parent="ProductTable" msdata:child="ProductOrderRequest" msdata:parentkey="pId" msdata:childkey="pId" msprop:Generator_UserChildTable="ProductOrderRequest" msprop:Generator_ChildPropName="GetProductOrderRequestRows" msprop:Generator_UserRelationName="FK__ProductOrde__pId__2BFE89A6" msprop:Generator_ParentPropName="ProductTableRow" msprop:Generator_RelationVarName="relationFK__ProductOrde__pId__2BFE89A6" msprop:Generator_UserParentTable="ProductTable" />
+      <msdata:Relationship name="FK__StockOrde__itemI__29221CFB" msdata:parent="StockTable" msdata:child="StockOrderRequest" msdata:parentkey="itemID" msdata:childkey="itemID" msprop:Generator_UserChildTable="StockOrderRequest" msprop:Generator_ChildPropName="GetStockOrderRequestRows" msprop:Generator_UserRelationName="FK__StockOrde__itemI__29221CFB" msprop:Generator_RelationVarName="relationFK__StockOrde__itemI__29221CFB" msprop:Generator_UserParentTable="StockTable" msprop:Generator_ParentPropName="StockTableRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

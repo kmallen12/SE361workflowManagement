@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WorkFlowManagement
 {
     public partial class CreateStockOrder : Form
     {
-
         Stock S;
         DatabaseManager objDatabaseManager;
+        DataTable stockTable; 
+
         public CreateStockOrder()
         {
             InitializeComponent();
             S = new Stock();
             S.newOrders();
             objDatabaseManager = new DatabaseManager();
+            stockTable = objDatabaseManager.SumStocks();
         }
-
         
 
         private void Confirm_btn_Click(object sender, EventArgs e)
@@ -33,17 +28,22 @@ namespace WorkFlowManagement
 
         private void CreateProductOrder_Load_1(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockTable' table. You can move, or remove it, as needed.
-            DataTable dataProductStatus = objDatabaseManager.StockOrderTable();
-            dataGridView1.DataSource = dataProductStatus;
+            //This line of code loads data into the 'workFlowDatabaseDataSet.StockSummaryView' table.
+            this.stockSummaryViewTableAdapter.Fill(this.workFlowDatabaseDataSet.StockSummaryView);
 
+            //load materials from the data table in the Material drop down
+            cboxMaterial.Items.Clear();
+            for (int i = 0; i < stockTable.Rows.Count; i++)
+            {
+                cboxMaterial.Items.Add(stockTable.Rows[i]["Material"]);
+            }
         }
 
         private void btn_AddOrderToList_Click(object sender, EventArgs e)
         {
             int result;
-            if (Int32.TryParse(Amount_Text.Text, out result) && Int32.TryParse(ID_Text.Text, out result))
-                S.newOrder(Int32.Parse(Amount_Text.Text), Discription_text.Text,"Pending", Int32.Parse(ID_Text.Text));
+            if (Int32.TryParse(Amount_Text.Text, out result))
+                S.newOrder(Int32.Parse(Amount_Text.Text), Discription_text.Text,"Pending", cboxMaterial.Text.Trim(' '));
             listBox_StockOrders.Items.Add(S.StockOrder.ToString());
         }
     }

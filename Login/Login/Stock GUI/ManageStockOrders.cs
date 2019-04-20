@@ -29,7 +29,7 @@ namespace WorkFlowManagement
         {
             AddMaterial = new AddMaterialForm();
 
-            AddMaterial.SETFORM(Order.StockID,Order.Quantity);
+            AddMaterial.SETFORM(Order.MaterialType,Order.Quantity);
             AddMaterial.ShowDialog();
         }
 
