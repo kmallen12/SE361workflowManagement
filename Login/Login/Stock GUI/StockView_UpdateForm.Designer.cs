@@ -99,7 +99,7 @@
             this.amtDefectedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stockTableBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 111);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 5;
             this.dataGridView1.Size = new System.Drawing.Size(1077, 397);
@@ -183,7 +183,7 @@
             // 
             this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmGrid_btn.Location = new System.Drawing.Point(819, 649);
-            this.ConfirmGrid_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ConfirmGrid_btn.Margin = new System.Windows.Forms.Padding(4);
             this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
             this.ConfirmGrid_btn.Size = new System.Drawing.Size(126, 39);
             this.ConfirmGrid_btn.TabIndex = 11;
@@ -195,7 +195,7 @@
             // 
             this.btnLoadStockFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadStockFromDB.Location = new System.Drawing.Point(387, 32);
-            this.btnLoadStockFromDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadStockFromDB.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadStockFromDB.Name = "btnLoadStockFromDB";
             this.btnLoadStockFromDB.Size = new System.Drawing.Size(205, 64);
             this.btnLoadStockFromDB.TabIndex = 13;
@@ -295,7 +295,7 @@
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(981, 649);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(107, 39);
             this.btnClose.TabIndex = 22;
@@ -373,7 +373,8 @@
             // 
             // dateAcquiredGrid_box
             // 
-            this.dateAcquiredGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateAcquiredGrid_box.CustomFormat = " ";
+            this.dateAcquiredGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateAcquiredGrid_box.Location = new System.Drawing.Point(695, 606);
             this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
             this.dateAcquiredGrid_box.Size = new System.Drawing.Size(125, 22);
@@ -381,7 +382,8 @@
             // 
             // dateUsedGrid_box
             // 
-            this.dateUsedGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateUsedGrid_box.CustomFormat = " ";
+            this.dateUsedGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateUsedGrid_box.Location = new System.Drawing.Point(831, 606);
             this.dateUsedGrid_box.Name = "dateUsedGrid_box";
             this.dateUsedGrid_box.Size = new System.Drawing.Size(125, 22);
@@ -430,7 +432,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateStockForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "View and Update Stock Form";

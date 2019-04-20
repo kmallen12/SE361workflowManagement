@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace WorkFlowManagement
 {
@@ -114,12 +108,29 @@ namespace WorkFlowManagement
 
                 if (selectedRow.Length > 0)
                 {
+                    if (DateTime.Parse(selectedRow[0]["dateAcquired"].ToString()) != DateTime.MinValue){
+                        dateAcquiredGrid_box.CustomFormat = "MM/dd/yyyy";
+                        dateAcquiredGrid_box.Text = selectedRow[0]["dateAcquired"].ToString();
+                    }
+                    else
+                    {
+                        dateAcquiredGrid_box.CustomFormat = " ";
+                    }
+
+                    if (DateTime.Parse(selectedRow[0]["dateUsed"].ToString()) != DateTime.MinValue)
+                    {
+                        dateUsedGrid_box.CustomFormat = "MM/dd/yyyy";
+                        dateUsedGrid_box.Text = selectedRow[0]["dateUsed"].ToString();
+                    }
+                    else
+                    {
+                        dateUsedGrid_box.CustomFormat = " ";
+                    }
+
                     txtMaterialType.Text = selectedRow[0]["materialType"].ToString();
                     quantityGrid_box.Text = selectedRow[0]["quantity"].ToString();
                     unitCostGrid_box.Text = selectedRow[0]["unitCost"].ToString();
                     totalCostGrid_box.Text = selectedRow[0]["totalCost"].ToString();
-                    dateAcquiredGrid_box.Text = selectedRow[0]["dateAcquired"].ToString();
-                    dateUsedGrid_box.Text = selectedRow[0]["dateUsed"].ToString();
                     amtDefectedGrid_box.Text = selectedRow[0]["amtDefected"].ToString();
                 }
 
@@ -128,6 +139,6 @@ namespace WorkFlowManagement
             {
                 MessageBox.Show("Error selecting data from data table.");
             }
-        }
+        }       
     }
 }
