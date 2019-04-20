@@ -11,7 +11,6 @@ using System.IO;
 
 namespace WorkFlowManagement
 {
-      
     public partial class AddProduct : Form
     {
         Product product;

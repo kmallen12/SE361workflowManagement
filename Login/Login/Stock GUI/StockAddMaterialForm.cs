@@ -32,7 +32,6 @@ namespace WorkFlowManagement
 
             txt_unitCost.DecimalPlaces = 2;
             txt_TotalCost.DecimalPlaces = 2;
-            txt_dateUsed.CustomFormat = " ";
         }
 
         public void SETFORM(string Material, int Quantity)
@@ -50,7 +49,7 @@ namespace WorkFlowManagement
                 {
                     stocks.Add(objStock);
 
-                    lstStocks.Items.Add(objStock.ToString());
+                    objDatabaseManager.InsertToStockTable(stocks);
 
                     txt_materialType.SelectedIndex = -1;
                     txt_DateAcq.Value= DateTime.Now;
@@ -65,6 +64,8 @@ namespace WorkFlowManagement
                 {
                     MessageBox.Show("Error: " + err);
                 }
+                toolStripStatusLabel1.Text = "List of Materials Added to Database";
+                stocks.Clear();
             }
         }
 
@@ -117,17 +118,7 @@ namespace WorkFlowManagement
 
         private void btnSaveToDB_Click(object sender, EventArgs e)
         {
-            try
-            {
-                objDatabaseManager.InsertToStockTable(stocks);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Error: " + err);
-            }
-            toolStripStatusLabel1.Text = "List of Materials Added to Database";
-            stocks.Clear();
-            lstStocks.Clear();
+            
         }
 
         
@@ -153,6 +144,13 @@ namespace WorkFlowManagement
         private void StsAddMaterial_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             toolStripStatusLabel1.Text = "Review items in the list then save to database";
+        }
+
+        private void AddMaterialForm_Load(object sender, EventArgs e)
+        {
+            txt_DateAcq.Format = DateTimePickerFormat.Custom;
+            txt_dateUsed.CustomFormat = " ";
+
         }
     }
 }
