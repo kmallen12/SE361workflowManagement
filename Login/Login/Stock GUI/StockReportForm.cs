@@ -21,10 +21,12 @@ namespace WorkFlowManagement
 
         private void StockReportForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.WareHouseTable' table. You can move, or remove it, as needed.
-            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet2.WareHouseTable' table. You can move, or remove it, as needed.
-            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet2.StockTable);
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet3.StockReportMaxCapacity' table. You can move, or remove it, as needed.
+            this.stockReportMaxCapacityTableAdapter.Fill(this.workFlowDatabaseDataSet3.StockReportMaxCapacity);
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet3.StockReportLowCapacity' table. You can move, or remove it, as needed.
+            this.stockReportLowCapacityTableAdapter.Fill(this.workFlowDatabaseDataSet3.StockReportLowCapacity);
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet3.StockReportLowCapacity' table. You can move, or remove it, as needed.
+            this.stockReportLowCapacityTableAdapter.Fill(this.workFlowDatabaseDataSet3.StockReportLowCapacity);
             updateMaxLowDataViewer();
         }
 

@@ -43,5 +43,10 @@ namespace WorkFlowManagement
                 objDatabaseManager.UpdateWareHouse(txtItemID.Text, txtMax.Text, txtLow.Text);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

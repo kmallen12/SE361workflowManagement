@@ -38,61 +38,69 @@
             this.btnUpdateWarningValues = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtItemID
             // 
-            this.txtItemID.Location = new System.Drawing.Point(47, 87);
+            this.txtItemID.Location = new System.Drawing.Point(63, 107);
+            this.txtItemID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtItemID.Name = "txtItemID";
-            this.txtItemID.Size = new System.Drawing.Size(100, 20);
+            this.txtItemID.Size = new System.Drawing.Size(132, 22);
             this.txtItemID.TabIndex = 0;
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(189, 86);
+            this.txtMax.Location = new System.Drawing.Point(252, 106);
+            this.txtMax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMax.Name = "txtMax";
-            this.txtMax.Size = new System.Drawing.Size(100, 20);
+            this.txtMax.Size = new System.Drawing.Size(132, 22);
             this.txtMax.TabIndex = 1;
             // 
             // txtLow
             // 
-            this.txtLow.Location = new System.Drawing.Point(323, 87);
+            this.txtLow.Location = new System.Drawing.Point(431, 107);
+            this.txtLow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLow.Name = "txtLow";
-            this.txtLow.Size = new System.Drawing.Size(100, 20);
+            this.txtLow.Size = new System.Drawing.Size(132, 22);
             this.txtLow.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 71);
+            this.label1.Location = new System.Drawing.Point(105, 87);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "itemID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 71);
+            this.label2.Location = new System.Drawing.Point(248, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.Size = new System.Drawing.Size(148, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Max Capacity Warning";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 71);
+            this.label3.Location = new System.Drawing.Point(427, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 13);
+            this.label3.Size = new System.Drawing.Size(152, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Low Inventory Warning";
             // 
             // btnUpdateWarningValues
             // 
-            this.btnUpdateWarningValues.Location = new System.Drawing.Point(444, 120);
+            this.btnUpdateWarningValues.Location = new System.Drawing.Point(573, 152);
+            this.btnUpdateWarningValues.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdateWarningValues.Name = "btnUpdateWarningValues";
-            this.btnUpdateWarningValues.Size = new System.Drawing.Size(151, 27);
+            this.btnUpdateWarningValues.Size = new System.Drawing.Size(201, 33);
             this.btnUpdateWarningValues.TabIndex = 6;
             this.btnUpdateWarningValues.Text = "Change Warning Values";
             this.btnUpdateWarningValues.UseVisualStyleBackColor = true;
@@ -101,9 +109,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 16);
+            this.label4.Location = new System.Drawing.Point(59, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(522, 13);
+            this.label4.Size = new System.Drawing.Size(690, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Enter a stock item ID. Then indicate how much warehouse space is allocated to thi" +
     "s item (Max Capacity) and ";
@@ -111,18 +120,31 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 32);
+            this.label5.Location = new System.Drawing.Point(59, 39);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(278, 13);
+            this.label5.Size = new System.Drawing.Size(370, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "what level of inventory triggers a warning (Low Inventory).";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(447, 152);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 33);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ItemCapacityForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 178);
+            this.ClientSize = new System.Drawing.Size(829, 219);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUpdateWarningValues);
@@ -135,6 +157,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ItemCapacityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Item Capacity Form";
@@ -154,5 +177,6 @@
         private System.Windows.Forms.Button btnUpdateWarningValues;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

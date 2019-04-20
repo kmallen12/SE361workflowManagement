@@ -245,6 +245,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WorkFlowDatabaseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkFlowDatabaseDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WorkFlowDatabaseDataSetProducts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -391,6 +396,17 @@
     </None>
     <None Include="WorkFlowDatabaseDataSet2.xss">
       <DependentUpon>WorkFlowDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet3.xsc">
+      <DependentUpon>WorkFlowDatabaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkFlowDatabaseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WorkFlowDatabaseDataSet3.xss">
+      <DependentUpon>WorkFlowDatabaseDataSet3.xsd</DependentUpon>
     </None>
     <None Include="WorkFlowDatabaseDataSetProducts.xsc">
       <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>

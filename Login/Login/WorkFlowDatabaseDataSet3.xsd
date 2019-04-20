@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WorkFlowDatabaseDataSet3" targetNamespace="http://tempuri.org/WorkFlowDatabaseDataSet3.xsd" xmlns:mstns="http://tempuri.org/WorkFlowDatabaseDataSet3.xsd" xmlns="http://tempuri.org/WorkFlowDatabaseDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WorkFlowDatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WorkFlowDatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Login.Properties.Settings.GlobalReference.Default.WorkFlowDatabaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StockReportLowCapacityTableAdapter" GeneratorDataComponentClassName="StockReportLowCapacityTableAdapter" Name="StockReportLowCapacity" UserDataComponentName="StockReportLowCapacityTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WorkFlowDatabaseConnectionString (Settings)" DbObjectName="WorkFlowDatabase.dbo.StockReportLowCapacity" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT itemID, materialType, quantity, Low FROM dbo.StockReportLowCapacity</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="itemID" DataSetColumn="itemID" />
+              <Mapping SourceColumn="materialType" DataSetColumn="materialType" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+              <Mapping SourceColumn="Low" DataSetColumn="Low" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StockReportMaxCapacityTableAdapter" GeneratorDataComponentClassName="StockReportMaxCapacityTableAdapter" Name="StockReportMaxCapacity" UserDataComponentName="StockReportMaxCapacityTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WorkFlowDatabaseConnectionString (Settings)" DbObjectName="WorkFlowDatabase.dbo.StockReportMaxCapacity" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT itemID, materialType, quantity, Max FROM dbo.StockReportMaxCapacity</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="itemID" DataSetColumn="itemID" />
+              <Mapping SourceColumn="materialType" DataSetColumn="materialType" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+              <Mapping SourceColumn="Max" DataSetColumn="Max" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WorkFlowDatabaseDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="WorkFlowDatabaseDataSet3" msprop:Generator_UserDSName="WorkFlowDatabaseDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StockReportLowCapacity" msprop:Generator_TableClassName="StockReportLowCapacityDataTable" msprop:Generator_TableVarName="tableStockReportLowCapacity" msprop:Generator_RowChangedName="StockReportLowCapacityRowChanged" msprop:Generator_TablePropName="StockReportLowCapacity" msprop:Generator_RowDeletingName="StockReportLowCapacityRowDeleting" msprop:Generator_RowChangingName="StockReportLowCapacityRowChanging" msprop:Generator_RowEvHandlerName="StockReportLowCapacityRowChangeEventHandler" msprop:Generator_RowDeletedName="StockReportLowCapacityRowDeleted" msprop:Generator_RowClassName="StockReportLowCapacityRow" msprop:Generator_UserTableName="StockReportLowCapacity" msprop:Generator_RowEvArgName="StockReportLowCapacityRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="itemID" msprop:Generator_ColumnVarNameInTable="columnitemID" msprop:Generator_ColumnPropNameInRow="itemID" msprop:Generator_ColumnPropNameInTable="itemIDColumn" msprop:Generator_UserColumnName="itemID" type="xs:int" />
+              <xs:element name="materialType" msprop:Generator_ColumnVarNameInTable="columnmaterialType" msprop:Generator_ColumnPropNameInRow="materialType" msprop:Generator_ColumnPropNameInTable="materialTypeColumn" msprop:Generator_UserColumnName="materialType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:decimal" />
+              <xs:element name="Low" msprop:Generator_ColumnVarNameInTable="columnLow" msprop:Generator_ColumnPropNameInRow="Low" msprop:Generator_ColumnPropNameInTable="LowColumn" msprop:Generator_UserColumnName="Low" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StockReportMaxCapacity" msprop:Generator_TableClassName="StockReportMaxCapacityDataTable" msprop:Generator_TableVarName="tableStockReportMaxCapacity" msprop:Generator_TablePropName="StockReportMaxCapacity" msprop:Generator_RowDeletingName="StockReportMaxCapacityRowDeleting" msprop:Generator_RowChangingName="StockReportMaxCapacityRowChanging" msprop:Generator_RowEvHandlerName="StockReportMaxCapacityRowChangeEventHandler" msprop:Generator_RowDeletedName="StockReportMaxCapacityRowDeleted" msprop:Generator_UserTableName="StockReportMaxCapacity" msprop:Generator_RowChangedName="StockReportMaxCapacityRowChanged" msprop:Generator_RowEvArgName="StockReportMaxCapacityRowChangeEvent" msprop:Generator_RowClassName="StockReportMaxCapacityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="itemID" msprop:Generator_ColumnVarNameInTable="columnitemID" msprop:Generator_ColumnPropNameInRow="itemID" msprop:Generator_ColumnPropNameInTable="itemIDColumn" msprop:Generator_UserColumnName="itemID" type="xs:int" />
+              <xs:element name="materialType" msprop:Generator_ColumnVarNameInTable="columnmaterialType" msprop:Generator_ColumnPropNameInRow="materialType" msprop:Generator_ColumnPropNameInTable="materialTypeColumn" msprop:Generator_UserColumnName="materialType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:decimal" />
+              <xs:element name="Max" msprop:Generator_ColumnVarNameInTable="columnMax" msprop:Generator_ColumnPropNameInRow="Max" msprop:Generator_ColumnPropNameInTable="MaxColumn" msprop:Generator_UserColumnName="Max" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StockReportLowCapacity" />
+      <xs:field xpath="mstns:itemID" />
+    </xs:unique>
+    <xs:unique name="StockReportMaxCapacity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StockReportMaxCapacity" />
+      <xs:field xpath="mstns:itemID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
