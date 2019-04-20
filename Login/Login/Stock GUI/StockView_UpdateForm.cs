@@ -29,6 +29,11 @@ namespace WorkFlowManagement
 
             //use stock datatable as datasource for data grid
             dataGridView1.DataSource = stocks;
+
+            for(int i=0; i<stocks.Rows.Count; i++)
+            {
+                ItemIDGrid_box.Items.Add(stocks.Rows[i]["itemID"]);
+            }
         }
 
         private void UpdateStockForm_Load(object sender, EventArgs e)
@@ -97,6 +102,33 @@ namespace WorkFlowManagement
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void ItemIDGrid_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow[] selectedRow;
+
+                selectedRow = stocks.Select("ItemID = "+ItemIDGrid_box.Text);
+
+                if (selectedRow.Length > 0)
+                {
+                    txtMaterialType.Text = selectedRow[0]["materialType"].ToString();
+                    quantityGrid_box.Text = selectedRow[0]["quantity"].ToString();
+                    unitCostGrid_box.Text = selectedRow[0]["unitCost"].ToString();
+                    totalCostGrid_box.Text = selectedRow[0]["totalCost"].ToString();
+                    dateAcquiredGrid_box.Text = selectedRow[0]["dateAcquired"].ToString();
+                    dateUsedGrid_box.Text = selectedRow[0]["dateUsed"].ToString();
+                    amtDefectedGrid_box.Text = selectedRow[0]["amtDefected"].ToString();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error selecting data from data table.");
+            }
+            
         }
     }
 }

@@ -87,7 +87,7 @@
             // 
             this.lbl_unitCost.AutoSize = true;
             this.lbl_unitCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_unitCost.Location = new System.Drawing.Point(88, 197);
+            this.lbl_unitCost.Location = new System.Drawing.Point(88, 162);
             this.lbl_unitCost.Name = "lbl_unitCost";
             this.lbl_unitCost.Size = new System.Drawing.Size(79, 18);
             this.lbl_unitCost.TabIndex = 2;
@@ -97,7 +97,7 @@
             // 
             this.lbl_totalCost.AutoSize = true;
             this.lbl_totalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalCost.Location = new System.Drawing.Point(88, 233);
+            this.lbl_totalCost.Location = new System.Drawing.Point(88, 198);
             this.lbl_totalCost.Name = "lbl_totalCost";
             this.lbl_totalCost.Size = new System.Drawing.Size(87, 18);
             this.lbl_totalCost.TabIndex = 3;
@@ -107,7 +107,7 @@
             // 
             this.lbl_dateAcq.AutoSize = true;
             this.lbl_dateAcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dateAcq.Location = new System.Drawing.Point(88, 263);
+            this.lbl_dateAcq.Location = new System.Drawing.Point(88, 228);
             this.lbl_dateAcq.Name = "lbl_dateAcq";
             this.lbl_dateAcq.Size = new System.Drawing.Size(113, 18);
             this.lbl_dateAcq.TabIndex = 4;
@@ -117,7 +117,7 @@
             // 
             this.lbl_dateUsed.AutoSize = true;
             this.lbl_dateUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dateUsed.Location = new System.Drawing.Point(88, 299);
+            this.lbl_dateUsed.Location = new System.Drawing.Point(88, 264);
             this.lbl_dateUsed.Name = "lbl_dateUsed";
             this.lbl_dateUsed.Size = new System.Drawing.Size(87, 18);
             this.lbl_dateUsed.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             this.lbl_defected.AutoSize = true;
             this.lbl_defected.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_defected.Location = new System.Drawing.Point(88, 162);
+            this.lbl_defected.Location = new System.Drawing.Point(88, 300);
             this.lbl_defected.Name = "lbl_defected";
             this.lbl_defected.Size = new System.Drawing.Size(183, 18);
             this.lbl_defected.TabIndex = 11;
@@ -198,7 +198,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(472, 228);
+            this.btnCalculate.Location = new System.Drawing.Point(472, 193);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(91, 23);
             this.btnCalculate.TabIndex = 7;
@@ -240,7 +240,7 @@
             // 
             // txt_Defected
             // 
-            this.txt_Defected.Location = new System.Drawing.Point(272, 160);
+            this.txt_Defected.Location = new System.Drawing.Point(272, 298);
             this.txt_Defected.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -252,7 +252,7 @@
             // 
             // txt_unitCost
             // 
-            this.txt_unitCost.Location = new System.Drawing.Point(272, 195);
+            this.txt_unitCost.Location = new System.Drawing.Point(272, 160);
             this.txt_unitCost.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -264,7 +264,7 @@
             // 
             // txt_TotalCost
             // 
-            this.txt_TotalCost.Location = new System.Drawing.Point(272, 228);
+            this.txt_TotalCost.Location = new System.Drawing.Point(272, 193);
             this.txt_TotalCost.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -277,7 +277,7 @@
             // txt_DateAcq
             // 
             this.txt_DateAcq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_DateAcq.Location = new System.Drawing.Point(272, 260);
+            this.txt_DateAcq.Location = new System.Drawing.Point(272, 225);
             this.txt_DateAcq.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.txt_DateAcq.Name = "txt_DateAcq";
             this.txt_DateAcq.Size = new System.Drawing.Size(176, 20);
@@ -288,7 +288,7 @@
             // 
             this.txt_dateUsed.CustomFormat = "";
             this.txt_dateUsed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_dateUsed.Location = new System.Drawing.Point(272, 297);
+            this.txt_dateUsed.Location = new System.Drawing.Point(272, 262);
             this.txt_dateUsed.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.txt_dateUsed.Name = "txt_dateUsed";
             this.txt_dateUsed.Size = new System.Drawing.Size(176, 20);
