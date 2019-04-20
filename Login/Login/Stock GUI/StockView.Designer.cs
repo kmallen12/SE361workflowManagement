@@ -70,11 +70,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnLoadDB);
             this.Controls.Add(this.DGVStockView);
             this.Controls.Add(this.lbl_warehouseSummary);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Name = "StockView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StockView";
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).EndInit();
             this.ResumeLayout(false);

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.label1 = new System.Windows.Forms.Label();
             this.PartialStockGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -279,7 +278,11 @@
             // 
             // AddProduct
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(915, 644);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_AdditionalProduct);
             this.Controls.Add(this.lbl_OrderMoreProduct);
             this.Controls.Add(this.lbl_ProductID);
@@ -298,8 +301,10 @@
             this.Controls.Add(this.txt_ProductName);
             this.Controls.Add(this.lbl_CreateANewProduct);
             this.Controls.Add(this.PartialStockGrid);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(404, 92);
             this.Name = "AddProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.Product_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).EndInit();

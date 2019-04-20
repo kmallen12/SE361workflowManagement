@@ -94,7 +94,7 @@
             // 
             this.lstProducts.FormattingEnabled = true;
             this.lstProducts.Location = new System.Drawing.Point(79, 62);
-            this.lstProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstProducts.Margin = new System.Windows.Forms.Padding(2);
             this.lstProducts.Name = "lstProducts";
             this.lstProducts.Size = new System.Drawing.Size(458, 134);
             this.lstProducts.TabIndex = 3;
@@ -141,7 +141,7 @@
             this.cboxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxStatus.FormattingEnabled = true;
             this.cboxStatus.Location = new System.Drawing.Point(256, 280);
-            this.cboxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cboxStatus.Name = "cboxStatus";
             this.cboxStatus.Size = new System.Drawing.Size(152, 21);
             this.cboxStatus.TabIndex = 7;
@@ -149,7 +149,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(467, 274);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(69, 25);
             this.btnUpdate.TabIndex = 8;
@@ -160,7 +160,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(364, 329);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 40);
             this.btnSave.TabIndex = 9;
@@ -171,7 +171,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(182, 329);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 40);
             this.btnClose.TabIndex = 10;
@@ -184,6 +184,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 395);
+            this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
@@ -194,9 +195,12 @@
             this.Controls.Add(this.lstProducts);
             this.Controls.Add(this.lblUpdateStatus);
             this.Controls.Add(this.lblProducts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Location = new System.Drawing.Point(404, 92);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CheckQuality";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Check Product Quality";
             this.Load += new System.EventHandler(this.CheckQuality_Load);
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).EndInit();

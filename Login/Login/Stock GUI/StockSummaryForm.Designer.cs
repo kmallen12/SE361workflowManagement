@@ -61,7 +61,7 @@
             // 
             this.dataGridViewStockSum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStockSum.Location = new System.Drawing.Point(151, 109);
-            this.dataGridViewStockSum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewStockSum.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewStockSum.Name = "dataGridViewStockSum";
             this.dataGridViewStockSum.RowTemplate.Height = 24;
             this.dataGridViewStockSum.Size = new System.Drawing.Size(306, 361);
@@ -92,7 +92,7 @@
             // btnOpenDetails
             // 
             this.btnOpenDetails.Location = new System.Drawing.Point(486, 351);
-            this.btnOpenDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpenDetails.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpenDetails.Name = "btnOpenDetails";
             this.btnOpenDetails.Size = new System.Drawing.Size(128, 48);
             this.btnOpenDetails.TabIndex = 3;
@@ -103,7 +103,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(486, 422);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(128, 48);
             this.btnClose.TabIndex = 4;
@@ -115,15 +115,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 490);
+            this.ClientSize = new System.Drawing.Size(650, 500);
+            this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOpenDetails);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSumStocks);
             this.Controls.Add(this.dataGridViewStockSum);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Location = new System.Drawing.Point(404, 92);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StockSummaryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Stock Summary Form";
             this.Load += new System.EventHandler(this.StockSummaryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();

@@ -48,10 +48,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 489);
+            this.ControlBox = false;
             this.Controls.Add(this.OrderList_listbox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewStockOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StockOrders";
             this.ResumeLayout(false);
 

@@ -194,14 +194,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 354);
+            this.ControlBox = false;
             this.Controls.Add(this.linklblChangeItem);
             this.Controls.Add(this.dataGridViewMax);
             this.Controls.Add(this.dataGridViewLow);
             this.Controls.Add(this.lbl_maxCapacity);
             this.Controls.Add(this.lbl_lowInventory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StockReportForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Stock Warehouse Report";
             this.Load += new System.EventHandler(this.StockReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();
