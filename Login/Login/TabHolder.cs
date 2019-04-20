@@ -382,7 +382,7 @@ namespace WorkFlowManagement
 
         private void btn_ManageProductOrders_Click(object sender, EventArgs e)
         {
-            ManageProductOrders ProductOrders = new ManageProductOrders();
+            ManageProductOrders ProductOrders = new ManageProductOrders(Home);
             if (objCurrentUser.canView(ProductOrders))
             {
                 Home.MdiChildren.Last<Form>().Close();

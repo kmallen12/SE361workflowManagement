@@ -270,18 +270,20 @@
             // 
             // txt_DateAcq
             // 
-            this.txt_DateAcq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_DateAcq.CustomFormat = " ";
+            this.txt_DateAcq.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txt_DateAcq.Location = new System.Drawing.Point(363, 277);
             this.txt_DateAcq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_DateAcq.Name = "txt_DateAcq";
             this.txt_DateAcq.Size = new System.Drawing.Size(233, 22);
             this.txt_DateAcq.TabIndex = 7;
             this.txt_DateAcq.Value = new System.DateTime(2019, 4, 14, 20, 55, 8, 0);
+            this.txt_DateAcq.ValueChanged += new System.EventHandler(this.txt_DateAcq_ValueChanged);
             // 
             // txt_dateUsed
             // 
-            this.txt_dateUsed.CustomFormat = "";
-            this.txt_dateUsed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_dateUsed.CustomFormat = " ";
+            this.txt_dateUsed.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txt_dateUsed.Location = new System.Drawing.Point(363, 322);
             this.txt_dateUsed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_dateUsed.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
