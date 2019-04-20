@@ -34,24 +34,30 @@
             this.lbl_maxCapacity = new System.Windows.Forms.Label();
             this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSet1 = new Login.WorkFlowDatabaseDataSet();
-            this.dataGridViewMax = new System.Windows.Forms.DataGridView();
-            this.itemIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
             this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLow = new System.Windows.Forms.DataGridView();
+            this.materialType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Low = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChangeDefaults = new System.Windows.Forms.Button();
+            this.workFlowDatabaseDataSet2 = new Login.WorkFlowDatabaseDataSet();
+            this.workFlowDatabaseDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Max = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewMax = new System.Windows.Forms.DataGridView();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMax)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_lowInventory
@@ -69,7 +75,7 @@
             // 
             this.lbl_maxCapacity.AutoSize = true;
             this.lbl_maxCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_maxCapacity.Location = new System.Drawing.Point(485, 62);
+            this.lbl_maxCapacity.Location = new System.Drawing.Point(556, 62);
             this.lbl_maxCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_maxCapacity.Name = "lbl_maxCapacity";
             this.lbl_maxCapacity.Size = new System.Drawing.Size(296, 24);
@@ -86,47 +92,6 @@
             this.workFlowDatabaseDataSet1.DataSetName = "WorkFlowDatabaseDataSet";
             this.workFlowDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewMax
-            // 
-            this.dataGridViewMax.AllowUserToAddRows = false;
-            this.dataGridViewMax.AllowUserToDeleteRows = false;
-            this.dataGridViewMax.AutoGenerateColumns = false;
-            this.dataGridViewMax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMax.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.itemIDDataGridViewTextBoxColumn1,
-            this.materialTypeDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn1});
-            this.dataGridViewMax.DataSource = this.stockTableBindingSource1;
-            this.dataGridViewMax.Location = new System.Drawing.Point(485, 105);
-            this.dataGridViewMax.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridViewMax.Name = "dataGridViewMax";
-            this.dataGridViewMax.ReadOnly = true;
-            this.dataGridViewMax.Size = new System.Drawing.Size(331, 266);
-            this.dataGridViewMax.TabIndex = 4;
-            // 
-            // itemIDDataGridViewTextBoxColumn1
-            // 
-            this.itemIDDataGridViewTextBoxColumn1.DataPropertyName = "itemID";
-            this.itemIDDataGridViewTextBoxColumn1.HeaderText = "itemID";
-            this.itemIDDataGridViewTextBoxColumn1.Name = "itemIDDataGridViewTextBoxColumn1";
-            this.itemIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.itemIDDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // materialTypeDataGridViewTextBoxColumn
-            // 
-            this.materialTypeDataGridViewTextBoxColumn.DataPropertyName = "materialType";
-            this.materialTypeDataGridViewTextBoxColumn.HeaderText = "materialType";
-            this.materialTypeDataGridViewTextBoxColumn.Name = "materialTypeDataGridViewTextBoxColumn";
-            this.materialTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn1
-            // 
-            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn1.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
-            this.quantityDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn1.Width = 75;
-            // 
             // stockTableBindingSource1
             // 
             this.stockTableBindingSource1.DataMember = "StockTable";
@@ -141,28 +106,6 @@
             // 
             this.stockTableTableAdapter.ClearBeforeFill = true;
             // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // materialType
-            // 
-            this.materialType.DataPropertyName = "materialType";
-            this.materialType.HeaderText = "materialType";
-            this.materialType.Name = "materialType";
-            this.materialType.ReadOnly = true;
-            // 
-            // itemIDDataGridViewTextBoxColumn
-            // 
-            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "itemID";
-            this.itemIDDataGridViewTextBoxColumn.HeaderText = "itemID";
-            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
-            this.itemIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemIDDataGridViewTextBoxColumn.Width = 50;
-            // 
             // dataGridViewLow
             // 
             this.dataGridViewLow.AllowUserToAddRows = false;
@@ -172,19 +115,33 @@
             this.dataGridViewLow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemIDDataGridViewTextBoxColumn,
             this.materialType,
-            this.quantityDataGridViewTextBoxColumn});
+            this.quantityDataGridViewTextBoxColumn,
+            this.Low});
             this.dataGridViewLow.DataSource = this.stockTableBindingSource;
             this.dataGridViewLow.Location = new System.Drawing.Point(40, 105);
             this.dataGridViewLow.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewLow.Name = "dataGridViewLow";
             this.dataGridViewLow.ReadOnly = true;
-            this.dataGridViewLow.Size = new System.Drawing.Size(352, 266);
+            this.dataGridViewLow.Size = new System.Drawing.Size(458, 426);
             this.dataGridViewLow.TabIndex = 3;
+            // 
+            // materialType
+            // 
+            this.materialType.DataPropertyName = "materialType";
+            this.materialType.HeaderText = "Material Type";
+            this.materialType.Name = "materialType";
+            this.materialType.ReadOnly = true;
+            // 
+            // Low
+            // 
+            this.Low.HeaderText = "Low Inventory Threshold";
+            this.Low.Name = "Low";
+            this.Low.ReadOnly = true;
             // 
             // btnChangeDefaults
             // 
             this.btnChangeDefaults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeDefaults.Location = new System.Drawing.Point(279, 12);
+            this.btnChangeDefaults.Location = new System.Drawing.Point(349, 12);
             this.btnChangeDefaults.Name = "btnChangeDefaults";
             this.btnChangeDefaults.Size = new System.Drawing.Size(276, 41);
             this.btnChangeDefaults.TabIndex = 6;
@@ -192,11 +149,85 @@
             this.btnChangeDefaults.UseVisualStyleBackColor = true;
             this.btnChangeDefaults.Click += new System.EventHandler(this.btnChangeDefaults_Click);
             // 
+            // workFlowDatabaseDataSet2
+            // 
+            this.workFlowDatabaseDataSet2.DataSetName = "WorkFlowDatabaseDataSet";
+            this.workFlowDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // workFlowDatabaseDataSet2BindingSource
+            // 
+            this.workFlowDatabaseDataSet2BindingSource.DataSource = this.workFlowDatabaseDataSet2;
+            this.workFlowDatabaseDataSet2BindingSource.Position = 0;
+            // 
+            // Max
+            // 
+            this.Max.HeaderText = "Max Quantity";
+            this.Max.Name = "Max";
+            this.Max.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn1
+            // 
+            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn1.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
+            this.quantityDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn1.Width = 65;
+            // 
+            // materialTypeDataGridViewTextBoxColumn
+            // 
+            this.materialTypeDataGridViewTextBoxColumn.DataPropertyName = "materialType";
+            this.materialTypeDataGridViewTextBoxColumn.HeaderText = "Material Type";
+            this.materialTypeDataGridViewTextBoxColumn.Name = "materialTypeDataGridViewTextBoxColumn";
+            this.materialTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemIDDataGridViewTextBoxColumn1
+            // 
+            this.itemIDDataGridViewTextBoxColumn1.DataPropertyName = "itemID";
+            this.itemIDDataGridViewTextBoxColumn1.HeaderText = "Item ID";
+            this.itemIDDataGridViewTextBoxColumn1.Name = "itemIDDataGridViewTextBoxColumn1";
+            this.itemIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.itemIDDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewMax
+            // 
+            this.dataGridViewMax.AllowUserToAddRows = false;
+            this.dataGridViewMax.AllowUserToDeleteRows = false;
+            this.dataGridViewMax.AutoGenerateColumns = false;
+            this.dataGridViewMax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMax.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemIDDataGridViewTextBoxColumn1,
+            this.materialTypeDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn1,
+            this.Max});
+            this.dataGridViewMax.DataSource = this.stockTableBindingSource1;
+            this.dataGridViewMax.Location = new System.Drawing.Point(560, 105);
+            this.dataGridViewMax.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewMax.Name = "dataGridViewMax";
+            this.dataGridViewMax.ReadOnly = true;
+            this.dataGridViewMax.Size = new System.Drawing.Size(457, 426);
+            this.dataGridViewMax.TabIndex = 4;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // itemIDDataGridViewTextBoxColumn
+            // 
+            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "itemID";
+            this.itemIDDataGridViewTextBoxColumn.HeaderText = "Item ID";
+            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
+            this.itemIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemIDDataGridViewTextBoxColumn.Width = 50;
+            // 
             // StockReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 436);
+            this.ClientSize = new System.Drawing.Size(1076, 568);
             this.ControlBox = false;
             this.Controls.Add(this.btnChangeDefaults);
             this.Controls.Add(this.dataGridViewMax);
@@ -213,10 +244,12 @@
             this.Load += new System.EventHandler(this.StockReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,19 +259,23 @@
 
         private System.Windows.Forms.Label lbl_lowInventory;
         private System.Windows.Forms.Label lbl_maxCapacity;
-        private System.Windows.Forms.DataGridView dataGridViewMax;
         private Login.WorkFlowDatabaseDataSet workFlowDatabaseDataSet1;
         private System.Windows.Forms.BindingSource stockTableBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materialTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource stockTableBindingSource1;
         private Login.WorkFlowDatabaseDataSet workFlowDatabaseDataSet;
         private Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter stockTableTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materialType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridViewLow;
         private System.Windows.Forms.Button btnChangeDefaults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Low;
+        private Login.WorkFlowDatabaseDataSet workFlowDatabaseDataSet2;
+        private System.Windows.Forms.BindingSource workFlowDatabaseDataSet2BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Max;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridViewMax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
     }
 }

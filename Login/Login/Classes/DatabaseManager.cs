@@ -1453,7 +1453,7 @@ namespace WorkFlowManagement
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = _conn;
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID , ST.materialType, ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
+                sqlCmd.CommandText = "SELECT ST.itemID , ST.materialType, ST.quantity, WHT.Max FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
                 sqlDataAdap.Fill(dtRecord);
@@ -1483,7 +1483,7 @@ namespace WorkFlowManagement
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = _conn;
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID, ST.materialType, ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
+                sqlCmd.CommandText = "SELECT ST.itemID, ST.materialType, ST.quantity, WHT.Low FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
                 sqlDataAdap.Fill(dtRecord);

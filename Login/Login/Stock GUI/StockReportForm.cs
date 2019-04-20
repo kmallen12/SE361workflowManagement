@@ -21,6 +21,10 @@ namespace WorkFlowManagement
 
         private void StockReportForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.WareHouseTable' table. You can move, or remove it, as needed.
+            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet2.WareHouseTable' table. You can move, or remove it, as needed.
+            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet2.StockTable);
             updateMaxLowDataViewer();
         }
 
@@ -31,7 +35,6 @@ namespace WorkFlowManagement
 
             DataTable dataLow = objDatabaseManager.StockReportLow();
             dataGridViewLow.DataSource = dataLow;
-
         }
 
         private void btnChangeDefaults_Click(object sender, EventArgs e)
