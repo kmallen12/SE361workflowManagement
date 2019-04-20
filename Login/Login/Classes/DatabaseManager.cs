@@ -1450,7 +1450,11 @@ namespace WorkFlowManagement
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = _conn;
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID , ST.materialType, ST.quantity, WHT.Max FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
+                sqlCmd.CommandText = @"SELECT ST.materialType, ST.Sum, WHT.Max FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum 
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = WHT.Material AND ST.Sum >= WHT.Max; ";
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
                 sqlDataAdap.Fill(dtRecord);
@@ -1480,7 +1484,11 @@ namespace WorkFlowManagement
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = _conn;
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID, ST.materialType, ST.quantity, WHT.Low FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
+                sqlCmd.CommandText = @"SELECT ST.materialType, ST.Sum, WHT.Low FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum 
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = WHT.Material AND ST.Sum <= WHT.Low; ";
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
                 sqlDataAdap.Fill(dtRecord);
