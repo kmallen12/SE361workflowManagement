@@ -37,14 +37,18 @@ namespace WorkFlowManagement
         private void btnChangeDefaults_Click(object sender, EventArgs e)
         {
             ItemCapacityForm ICF = new ItemCapacityForm();
+            ICF.StartPosition = FormStartPosition.Manual;
 
+            ICF.Left = this.Left+1;
+            ICF.Top = this.Top+25;
 
             ICF.FormClosing += (sender2, args2) =>
             {
                 updateMaxLowDataViewer();
+                this.Show();
             };
 
-
+            this.Hide();
             ICF.Show();
         }
     }
