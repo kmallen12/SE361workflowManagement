@@ -159,7 +159,7 @@ namespace WorkFlowManagement
             }
             else
             {
-                objStock.quantity = double.Parse(quantityText);
+                objStock.quantity = decimal.Parse(quantityText);
             }
 
             //If unit cost contains a value that is not formatted correctly, prompt user to enter a different value.

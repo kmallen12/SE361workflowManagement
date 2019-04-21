@@ -45,7 +45,7 @@ namespace WorkFlowManagement
 
         DatabaseManager objDatabaseManager = new DatabaseManager();
         public string materialType { get { return MaterialType; } set { MaterialType = value;  } }
-        public double quantity { get; set; }
+        public decimal quantity { get; set; }
         public double unitCost { get; set; }
         public double defects { get; set; }
         public DateTime dateAcquired { get; set; }
@@ -85,7 +85,7 @@ namespace WorkFlowManagement
         {
             objDatabaseManager.InsertStockOrders(StockOrderRequests);
         }
-        public Stock(string material, double quan, double uCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
+        public Stock(string material, decimal quan, double uCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
         {
             materialType = material;
             quantity = quan;
@@ -114,13 +114,13 @@ namespace WorkFlowManagement
         //returns the unit cost of materials purchased
         public double totalCost()
         {
-            return unitCost * quantity;
+            return unitCost * (double)quantity;
         }
 
         //returns the percent of unusable materials by dividing the defect number by quantity purchased
         public double defectRate()
         {
-            return (defects / quantity * 100);
+            return (defects / (double)quantity * 100);
         }
 
         //returns the time materials sit idle (difference between received date and use date)

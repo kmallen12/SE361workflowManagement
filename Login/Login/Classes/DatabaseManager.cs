@@ -109,7 +109,7 @@ namespace WorkFlowManagement
 
                 quantity = decimal.Parse(StockAmount);
                 sum -= quantity;
-                                
+                _conn.Close();                
                 return (int)sum;
             }
             catch (Exception q)
@@ -126,7 +126,7 @@ namespace WorkFlowManagement
         //actually subtracts the material
         public void SubtractMaterialQuantity(string StockMaterial, string StockAmount)
         {
-            List<int> stockQuantity = new List<int>();
+            
 
             try
             {
@@ -140,44 +140,54 @@ namespace WorkFlowManagement
                 cmd.Parameters.AddWithValue("@material", StockMaterial);
 
                 SqlDataReader reader2 = cmd.ExecuteReader();
-
-                while (total > 0 && reader2.Read())
+                List<Stock> Stocks = new List<Stock>();
+                Stock S;
+                while (reader2.Read())
                 {
-                    decimal quan = (decimal)reader2["quantity"];
-                    int id = (int)reader2["itemID"];
+                    S = new Stock();
 
-
-                    if (total-quan > 0)
+                    S.quantity= (decimal)reader2["quantity"];
+                    S.id = (int)reader2["itemID"];
+                    Stocks.Add(S);
+                }
+                reader2.Close();
+                foreach (Stock So in Stocks)  {
+                    if (total < So.quantity)
                     {
-                        total -= quan;
-                        stockQuantity.Add(0);
+                        _conn.Close();
+                        _conn.Open();
+                        So.quantity -= total;
+
 
                         //Update row to new total 
-                        string str = "UPDATE [dbo].[StockTable] SET  quantity=@quantity WHERE itemID=@itemID";
-                        using (SqlCommand com = new SqlCommand(str, _conn))
+                        string str = "UPDATE [dbo].[StockTable] SET quantity=@quantity WHERE itemID=@itemID";
+                        using (SqlCommand con = new SqlCommand(str, _conn))
                         {
-                            com.Parameters.Add("@itemID", SqlDbType.Int).Value = id;
-                            com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = 0;
-                            com.ExecuteNonQuery();
+                            con.Parameters.Add("@itemID", SqlDbType.Int).Value = So.id;
+                            con.Parameters.Add("@quantity", SqlDbType.Decimal).Value = So.quantity;
+                            con.ExecuteNonQuery();
                         }
+                        return;
                     }
                     else
                     {
-                        decimal diff = quan - total;
+                        _conn.Close();
+                        _conn.Open();
 
                         //Update row to new total 
                         string str = "UPDATE [dbo].[StockTable] SET  quantity=@quantity WHERE itemID=@itemID";
-                        using (SqlCommand com = new SqlCommand(str, _conn))
+                        using (SqlCommand co = new SqlCommand(str, _conn))
                         {
-                            com.Parameters.Add("@itemID", SqlDbType.Int).Value = id;
-                            com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = diff;
-                            com.ExecuteNonQuery();
+                            co.Parameters.Add("@itemID", SqlDbType.Int).Value = So.id;
+                            co.Parameters.Add("@quantity", SqlDbType.Decimal).Value = 0;
+                            co.ExecuteNonQuery();
                         }
-                    }
-                }
 
-                reader2.Close();
-                               
+                    }
+
+                    
+                    
+                }
             }
             catch (Exception q)
             {
