@@ -47,8 +47,6 @@
             this.lblProductHomepg = new System.Windows.Forms.Label();
             this.btnProductsView = new System.Windows.Forms.Button();
             this.tabQuality = new System.Windows.Forms.TabPage();
-            this.btn_ProductOrders = new System.Windows.Forms.Button();
-            this.ProductOrder_btn = new System.Windows.Forms.Button();
             this.btnQAUpdateProdStatus = new System.Windows.Forms.Button();
             this.btnQAViewProd = new System.Windows.Forms.Button();
             this.lblQAdashboard = new System.Windows.Forms.Label();
@@ -210,28 +208,12 @@
             // 
             // tabQuality
             // 
-            this.tabQuality.Controls.Add(this.btn_ProductOrders);
-            this.tabQuality.Controls.Add(this.ProductOrder_btn);
             this.tabQuality.Controls.Add(this.btnQAUpdateProdStatus);
             this.tabQuality.Controls.Add(this.btnQAViewProd);
             this.tabQuality.Controls.Add(this.lblQAdashboard);
             resources.ApplyResources(this.tabQuality, "tabQuality");
             this.tabQuality.Name = "tabQuality";
             this.tabQuality.UseVisualStyleBackColor = true;
-            // 
-            // btn_ProductOrders
-            // 
-            resources.ApplyResources(this.btn_ProductOrders, "btn_ProductOrders");
-            this.btn_ProductOrders.Name = "btn_ProductOrders";
-            this.btn_ProductOrders.UseVisualStyleBackColor = true;
-            this.btn_ProductOrders.Click += new System.EventHandler(this.btn_ProductOrders_Click);
-            // 
-            // ProductOrder_btn
-            // 
-            resources.ApplyResources(this.ProductOrder_btn, "ProductOrder_btn");
-            this.ProductOrder_btn.Name = "ProductOrder_btn";
-            this.ProductOrder_btn.UseVisualStyleBackColor = true;
-            this.ProductOrder_btn.Click += new System.EventHandler(this.ProductOrder_btn_Click);
             // 
             // btnQAUpdateProdStatus
             // 
@@ -422,7 +404,6 @@
         private System.Windows.Forms.Button btnReManufacture;
         private System.Windows.Forms.Button btnQAUpdateProdStatus;
         private System.Windows.Forms.Button btnQAViewProd;
-        private System.Windows.Forms.Button ProductOrder_btn;
         private System.Windows.Forms.Button btn_ManageProductOrders;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblStockReport;
@@ -430,6 +411,5 @@
         private System.Windows.Forms.Button btnStockInventorySum;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_StockOrderStatus;
-        private System.Windows.Forms.Button btn_ProductOrders;
     }
 }

@@ -67,7 +67,7 @@ namespace WorkFlowManagement
                 
                 lbl_Description.Text = string.Empty;
                 foreach (var v in product.productMaterials)
-                    lbl_Description.Text = lbl_Description.Text +v.Material + ", " + v.Quantity + "\n";
+                    lbl_Description.Text = lbl_Description.Text +v.Name + ", " + v.Quantity + "\n";
 
 
             }
@@ -97,7 +97,7 @@ namespace WorkFlowManagement
             product.SetProduct(Int32.Parse(txt_ProductID.Text));
             lbl_Description.Text = string.Empty;
             foreach (var v in product.productMaterials)
-                lbl_Description.Text = lbl_Description.Text + v.Material + ", " + v.Quantity + "\n";
+                lbl_Description.Text = lbl_Description.Text + v.Name + ", " + v.Quantity + "\n";
 
         }
         

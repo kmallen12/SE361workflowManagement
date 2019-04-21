@@ -89,8 +89,7 @@ namespace WorkFlowManagement
 
             if (objCurrentUser.UserTypeID != 4)
             {
-                ttUserFeedback.SetToolTip(ProductOrder_btn, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
-                ttUserFeedback.SetToolTip(btn_ProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                
                 ttUserFeedback.SetToolTip(btnQAViewProd, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btnQAUpdateProdStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
@@ -99,9 +98,7 @@ namespace WorkFlowManagement
                 //fill with buttons for QA user
                 btnQAViewProd.ForeColor = Color.DarkGray;
                 btnQAUpdateProdStatus.ForeColor = Color.DarkGray;
-                ProductOrder_btn.ForeColor = Color.DarkGray;
-                btn_ProductOrders.ForeColor = Color.DarkGray;
-
+                
 
             }
 
@@ -296,7 +293,7 @@ namespace WorkFlowManagement
 
         private void btnReManufacture_Click(object sender, EventArgs e)
         {
-            RemanufactureForm formReport = new RemanufactureForm();
+            RemanufactureForm formReport = new RemanufactureForm(Home);
             if (objCurrentUser.canView(formReport))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -313,7 +310,7 @@ namespace WorkFlowManagement
 
         private void btnRepDefectedProducts_Click(object sender, EventArgs e)
         {
-            RemanufactureForm formReport = new RemanufactureForm();
+            RemanufactureForm formReport = new RemanufactureForm(Home);
             if (objCurrentUser.canView(formReport))
             {
                 Home.MdiChildren.Last<Form>().Close();

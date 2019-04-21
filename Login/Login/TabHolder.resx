@@ -523,7 +523,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 648</value>
+    <value>418, 732</value>
   </data>
   <data name="tabProducts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -541,60 +541,6 @@
     <value>tabBar</value>
   </data>
   <data name="&gt;&gt;tabProducts.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btn_ProductOrders.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="btn_ProductOrders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 297</value>
-  </data>
-  <data name="btn_ProductOrders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 58</value>
-  </data>
-  <data name="btn_ProductOrders.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="btn_ProductOrders.Text" xml:space="preserve">
-    <value>View Product Orders</value>
-  </data>
-  <data name="&gt;&gt;btn_ProductOrders.Name" xml:space="preserve">
-    <value>btn_ProductOrders</value>
-  </data>
-  <data name="&gt;&gt;btn_ProductOrders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_ProductOrders.Parent" xml:space="preserve">
-    <value>tabQuality</value>
-  </data>
-  <data name="&gt;&gt;btn_ProductOrders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ProductOrder_btn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="ProductOrder_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 218</value>
-  </data>
-  <data name="ProductOrder_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 58</value>
-  </data>
-  <data name="ProductOrder_btn.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="ProductOrder_btn.Text" xml:space="preserve">
-    <value>Create Product Order</value>
-  </data>
-  <data name="&gt;&gt;ProductOrder_btn.Name" xml:space="preserve">
-    <value>ProductOrder_btn</value>
-  </data>
-  <data name="&gt;&gt;ProductOrder_btn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProductOrder_btn.Parent" xml:space="preserve">
-    <value>tabQuality</value>
-  </data>
-  <data name="&gt;&gt;ProductOrder_btn.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="btnQAUpdateProdStatus.Font" type="System.Drawing.Font, System.Drawing">
@@ -622,7 +568,7 @@
     <value>tabQuality</value>
   </data>
   <data name="&gt;&gt;btnQAUpdateProdStatus.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="btnQAViewProd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
@@ -649,7 +595,7 @@
     <value>tabQuality</value>
   </data>
   <data name="&gt;&gt;btnQAViewProd.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="lblQAdashboard.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -679,7 +625,7 @@
     <value>tabQuality</value>
   </data>
   <data name="&gt;&gt;lblQAdashboard.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="tabQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 27</value>
@@ -688,7 +634,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 648</value>
+    <value>418, 732</value>
   </data>
   <data name="tabQuality.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -853,7 +799,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabDelivery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 648</value>
+    <value>418, 732</value>
   </data>
   <data name="tabDelivery.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1129,7 +1075,7 @@
     <value>0, 3, 2, 3</value>
   </data>
   <data name="tabReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 648</value>
+    <value>418, 732</value>
   </data>
   <data name="tabReports.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

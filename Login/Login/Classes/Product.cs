@@ -8,12 +8,12 @@ namespace WorkFlowManagement
 {
     public struct MaterialsProduct
     {
-        public string Material;
+        public string Name;
         public int Quantity;
 
-        public MaterialsProduct(string InitMaterial, int InitQuantity)
+        public MaterialsProduct(string InitName, int InitQuantity)
         {
-            Material = InitMaterial;
+            Name = InitName;
             Quantity = InitQuantity;
         }
 
@@ -42,7 +42,24 @@ namespace WorkFlowManagement
             return string.Format("ProductID: {0}, DefectiveQuantity: {1}", ProductID, Quantity);
         }
     }
-
+    public struct ProductStruct
+    {
+        public int ProductID;
+        public string ProductName;
+        public int ProductQuantity;
+        public string ProductStatus;
+        public ProductStruct(int initProductID, int initProductQuantity, string initProductName, string initProductStatus)
+        {
+            ProductID = initProductID;
+            ProductQuantity = initProductQuantity;
+            ProductName = initProductName;
+            ProductStatus = initProductStatus;
+        }
+        public override string ToString()
+        {
+            return string.Format("ProductID: {0}, ProductName: {1}, ProductQuantity: {2}, ProductStatus: {3}", ProductID, ProductName, ProductQuantity, ProductStatus);
+        }
+    }
 
     public class Product
     {
@@ -87,6 +104,10 @@ namespace WorkFlowManagement
             ProductOrder = new ProductOrderRequest(0, initQuantity, initDiscription, initOrderStatus, initID);
             ProductOrderRequests.Add(ProductOrder);
         }
+        public List<ProductStruct> LoadDefectives()
+        {
+            return objDatabaseManager.LoadDefectiveProducts();
+        }
         public void InsertProductOrder()
         {
             objDatabaseManager.InsertProductOrders(ProductOrderRequests);
@@ -97,7 +118,9 @@ namespace WorkFlowManagement
             productID = key;
             productName = objDatabaseManager.ProductName(key);
             JsonMaterialString = objDatabaseManager.ProductMaterials(key);
+            
             ConvertJsonMaterials();
+            
             materialamt = productMaterials.Count;
             productQuantity = objDatabaseManager.ProductQuantity(key);
             productStatus = objDatabaseManager.ProductStatus(key);
@@ -145,7 +168,7 @@ namespace WorkFlowManagement
             //Build the materials string into an array so that its easy to parse it. 
             for (int i = 0; i < materialamt; i++)
             {
-                materialsDescription[2*i] = productMaterials[i].Material;
+                materialsDescription[2*i] = productMaterials[i].Name;
                 materialsDescription[2*i + 1] = productMaterials[i].Quantity.ToString();
                 
             }

@@ -54,6 +54,7 @@
             this.lstDefProd.Name = "lstDefProd";
             this.lstDefProd.Size = new System.Drawing.Size(528, 134);
             this.lstDefProd.TabIndex = 1;
+            this.lstDefProd.SelectedIndexChanged += new System.EventHandler(this.lstDefProd_SelectedIndexChanged);
             // 
             // btnRepRemanufacture
             // 

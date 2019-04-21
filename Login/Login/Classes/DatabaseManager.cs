@@ -336,16 +336,16 @@ namespace WorkFlowManagement
         }
 
         //load IDs of qualified products from the Products Table into a list
-        public List<Product> LoadQualifiedProducts()
+        public List<ProductStruct> LoadQualifiedProducts()
         {
             string acceptable = "Acceptable";
             string medium = "Medium";
             string high = "High";
-            List<Product> qualifiedProds = new List<Product>();
+            List<ProductStruct> qualifiedProds = new List<ProductStruct>();
 
             try
             {
-                Product tempProd;
+                ProductStruct tempProd;
 
                 //open a db connection
                 conn.Open();
@@ -361,12 +361,8 @@ namespace WorkFlowManagement
 
                 while (reader.Read())
                 {
-                    tempProd = new Product();
-                    tempProd.productID = (int)reader["pID"];
-                    tempProd.productName = (string)reader["ProductName"];
-                    tempProd.JsonMaterialString = (string)reader["materialsString"];
-                    tempProd.productQuantity = (int)reader["quantity"];
-                    tempProd.productStatus = (string)reader["productStatus"];
+                    tempProd = new ProductStruct((int)reader["pID"], (int)reader["quantity"], (string)reader["ProductName"], (string)reader["productStatus"]);
+                    ;
                     qualifiedProds.Add(tempProd);
 
                 }
@@ -384,14 +380,14 @@ namespace WorkFlowManagement
         }
 
         //load IDs of defective products from the Products Table into a list
-        public List<Product> LoadDefectiveProducts()
+        public List<ProductStruct> LoadDefectiveProducts()
         {
             
-            List<Product> defectiveProds = new List<Product>();
+            List<ProductStruct> defectiveProds = new List<ProductStruct>();
 
             try
             {
-                Product tempProd;
+                ProductStruct tempProd;
 
                 //open a db connection
                 conn.Open();
@@ -405,12 +401,9 @@ namespace WorkFlowManagement
 
                 while (reader.Read())
                 {
-                    tempProd = new Product();
-                    tempProd.productID = (int)reader["pID"];
-                    tempProd.productName = (string)reader["ProductName"];
-                    tempProd.JsonMaterialString = (string)reader["materialsString"];
-                    tempProd.productQuantity = (int)reader["quantity"];
-                    tempProd.productStatus = (string)reader["productStatus"];
+                    tempProd = new ProductStruct((int)reader["pID"], (int)reader["quantity"], (string)reader["ProductName"], (string)reader["productStatus"]);
+
+                   
                     defectiveProds.Add(tempProd);
 
                 }
@@ -551,19 +544,24 @@ namespace WorkFlowManagement
             _conn.Close();
             _conn.Open();
             string str = "INSERT INTO [dbo].[ProductTable] (  [productName], [materialsString], [quantity], [productStatus]) VALUES (@productName, @materialsString, @quantity, @status)";
-            using (SqlCommand com = new SqlCommand(str, _conn))
+            for (int i = 0; i < quantity; i++)
             {
-                com.Connection = _conn;
-                com.Parameters.Add("@productName", SqlDbType.VarChar).Value = productName;
-                com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
-                com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
-                com.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+                using (SqlCommand com = new SqlCommand(str, _conn))
+                {
+                    com.Connection = _conn;
+                    com.Parameters.Add("@productName", SqlDbType.VarChar).Value = productName;
+                    com.Parameters.Add("@quantity", SqlDbType.Int).Value = 1;
+                    com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
+                    com.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
 
-                
-                com.ExecuteNonQuery();
+
+                    com.ExecuteNonQuery();
+                }
             }
             _conn.Close();
         }
+            
+        
         public DataTable StockOrderTable()
         {
             _conn.Close();
@@ -1205,6 +1203,21 @@ namespace WorkFlowManagement
                 com.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName;
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
+                com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
+        public void UpdateProductStatus(int key, string productStatus)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[ProductTable] SET  productStatus=@productStatus WHERE pId=@pId";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
+              
                 com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
 
                 com.ExecuteNonQuery();
