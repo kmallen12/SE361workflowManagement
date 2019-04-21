@@ -8,15 +8,13 @@ namespace WorkFlowManagement
 {
     public struct MaterialsProduct
     {
-        public int ID;
+        public string Material;
         public int Quantity;
-        public string Name;
 
-        public MaterialsProduct(int InitID, int InitQuantity, string InitName)
+        public MaterialsProduct(string InitMaterial, int InitQuantity)
         {
-            ID = InitID;
+            Material = InitMaterial;
             Quantity = InitQuantity;
-            Name = InitName;
         }
 
     };
@@ -24,20 +22,20 @@ namespace WorkFlowManagement
     {
         public int OrderID;
         public int Quantity;
-        public string Discription;
+        public string Description;
         public int ProductID;
         public string OrderStatus;
-        public ProductOrderRequest(int initID, int initQuantity, string initDiscription, string initOrderStatus, int initProductID)
+        public ProductOrderRequest(int initID, int initQuantity, string initDescription, string initOrderStatus, int initProductID)
         {
             OrderID = initID;
             Quantity = initQuantity;
-            Discription = initDiscription;
+            Description = initDescription;
             ProductID = initProductID;
             OrderStatus = initOrderStatus;
         }
         public override string ToString()
         {
-            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Description: {2}, Status: {3}", ProductID, Quantity, Discription, OrderStatus);
+            return string.Format("ProductID: {0}, DefectiveQuantity: {1}, Description: {2}, Status: {3}", ProductID, Quantity, Description, OrderStatus);
         }
         public string returnOrders()
         {
@@ -51,7 +49,7 @@ namespace WorkFlowManagement
         WorkFlowMessage M = new WorkFlowMessage();
         DatabaseManager objDatabaseManager = new DatabaseManager();
         //Represents the Materials string broken into an array based on ' '.
-        int[] materialsDescription;
+        string[] materialsDescription;
         public string JsonMaterialString;
 
         public List<ProductOrderRequest> ProductOrderRequests;
@@ -118,9 +116,9 @@ namespace WorkFlowManagement
             return objDatabaseManager.LoadProducts();
         }
         //build the productMaterial string. 
-        public void AddMaterialtoProduct(string ID, string Quantity)
+        public void AddMaterialtoProduct(string Material, string Quantity)
         {
-            MaterialsProduct newMaterial = new MaterialsProduct(Int32.Parse(ID), Int32.Parse(Quantity), objDatabaseManager.MaterialName(Int32.Parse(ID)).Trim(' '));
+            MaterialsProduct newMaterial = new MaterialsProduct(Material, Int32.Parse(Quantity));
             
             materialamt++;
             productMaterials.Add(newMaterial);
@@ -128,7 +126,7 @@ namespace WorkFlowManagement
             
         }
         
-        public string productDiscription()
+        public string productDescription()
         {
             return "ID: " + productID + " Name: " + productName + " Materials: " + productMaterials + " Quantity: " + productQuantity;
         }
@@ -136,9 +134,9 @@ namespace WorkFlowManagement
         {
             
             int tempmat;
-            int id;
-            decimal amt;
-            materialsDescription = new int[2*materialamt];
+            string stockMaterial;
+            string stockAmount;
+            materialsDescription = new string[2*materialamt];
             //Turn Json format to ID Quantity format seperated by ' ' for easy parsing. 
             ConvertJsonMaterials();
             //Instantiate productName and productQuantity of the new product.
@@ -147,9 +145,8 @@ namespace WorkFlowManagement
             //Build the materials string into an array so that its easy to parse it. 
             for (int i = 0; i < materialamt; i++)
             {
-                
-                materialsDescription[2*i] = productMaterials[i].ID;
-                materialsDescription[2*i + 1] = productMaterials[i].Quantity;
+                materialsDescription[2*i] = productMaterials[i].Material;
+                materialsDescription[2*i + 1] = productMaterials[i].Quantity.ToString();
                 
             }
             try
@@ -160,16 +157,16 @@ namespace WorkFlowManagement
                     //Description [0] would be the first ID and [1] is the quantity then increment +2.
                     for (int i = 0; i < materialsDescription.Length; i=i+2)
                     {
-                        id = materialsDescription[i];
-                        amt = materialsDescription[i + 1];
+                        stockMaterial = materialsDescription[i];
+                        stockAmount = materialsDescription[i + 1];
                         //Value for material quantity if we did subtract based on product amount.
-                        tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
+                        tempmat = objDatabaseManager.CheckMaterialQuantity(stockMaterial, stockAmount);
                         if (tempmat < 0)
                         {
-                            M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
+                            MessageBox.Show("Not enough stock to create this product.");
+                            //M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
                             return 0;
                         }
-
 
                     }
                     //If we don't get negatives in the previous loop we actually subtract materials.
@@ -193,58 +190,62 @@ namespace WorkFlowManagement
         {
             productMaterials = JsonConvert.DeserializeObject<List<MaterialsProduct>>(JsonMaterialString);
         } 
-        public int AdditionalProduct(int key, int quantity)
+        public int AdditionalProduct(string name, int quantity)
         {
-            //Ensure we have the correct product information.
-            
-            materialsDescription = new int[2 * materialamt];
-            
-            int tempmat;
-            int id;
-            decimal amt;
-            //Build the materialstring
-            for (int i = 0; i < materialamt; i++)
-            {
-                materialsDescription[2 * i] = productMaterials[i].ID;
-                materialsDescription[2 * i + 1] = productMaterials[i].Quantity;
-            }
-            
-            try
-            {
-                for (int x = 0; x < quantity; x++)
-                {
-                    //Subtract quantity of material given from material in database. 
-                    //Description [0] would be the first ID and [1] is the quantity then increment +2.
-                    for (int i = 0; i < materialsDescription.Length; i = i + 2)
-                    {
-                        id = materialsDescription[i];
-                        amt = materialsDescription[i + 1];
-                        //Value for material quantity if we did subtract based on product amount.
-                        tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
-                        if (tempmat < 0)
-                        {
-                            M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
-                            return 0;
-                        }
+            FinalizeProduct(name, quantity);
 
-
-                    }
-                    //If we don't get negatives in the previous loop we actually subtract materials.
-                    for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
-                        objDatabaseManager.SubtractMaterialQuantity(materialsDescription[i], materialsDescription[i + 1]);
-
-                }
-
-            }
-            catch (Exception p)
-            {
-                // MessageBox.Show("TEST" + Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + "TEST");
-                MessageBox.Show(p.ToString());
-            }
-            objDatabaseManager.IncreaseProductQuantity(productID,quantity);
-            //Update product info after increase.
-            SetProduct(key);
             return 0;
+
+            ////Ensure we have the correct product information.
+            
+            //materialsDescription = new int[2 * materialamt];
+            
+            //int tempmat;
+            //int id;
+            //decimal amt;
+            ////Build the materialstring
+            //for (int i = 0; i < materialamt; i++)
+            //{
+            //    materialsDescription[2 * i] = productMaterials[i].ID;
+            //    materialsDescription[2 * i + 1] = productMaterials[i].Quantity;
+            //}
+            
+            //try
+            //{
+            //    for (int x = 0; x < quantity; x++)
+            //    {
+            //        //Subtract quantity of material given from material in database. 
+            //        //Description [0] would be the first ID and [1] is the quantity then increment +2.
+            //        for (int i = 0; i < materialsDescription.Length; i = i + 2)
+            //        {
+            //            id = materialsDescription[i];
+            //            amt = materialsDescription[i + 1];
+            //            //Value for material quantity if we did subtract based on product amount.
+            //            tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
+            //            if (tempmat < 0)
+            //            {
+            //                M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
+            //                return 0;
+            //            }
+
+
+            //        }
+            //        //If we don't get negatives in the previous loop we actually subtract materials.
+            //        for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
+            //            objDatabaseManager.SubtractMaterialQuantity(materialsDescription[i], materialsDescription[i + 1]);
+
+            //    }
+
+            //}
+            //catch (Exception p)
+            //{
+            //    // MessageBox.Show("TEST" + Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + "TEST");
+            //    MessageBox.Show(p.ToString());
+            //}
+            //objDatabaseManager.IncreaseProductQuantity(productID,quantity);
+            ////Update product info after increase.
+            //SetProduct(key);
+            //return 0;
         }
 
         public override string ToString()
