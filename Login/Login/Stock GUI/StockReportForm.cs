@@ -13,9 +13,11 @@ namespace WorkFlowManagement
 {
     public partial class StockReportForm : Form
     {
+        HomePage home;
         DatabaseManager objDatabaseManager = new DatabaseManager();
-        public StockReportForm()
+        public StockReportForm(HomePage h)
         {
+            home = h;
             InitializeComponent();
         }
 
@@ -36,11 +38,10 @@ namespace WorkFlowManagement
 
         private void btnChangeDefaults_Click(object sender, EventArgs e)
         {
-            ItemCapacityForm ICF = new ItemCapacityForm();
-            ICF.StartPosition = FormStartPosition.Manual;
+            home.MdiChildren.Last<Form>().Close();
 
-            ICF.Left = this.Left+1;
-            ICF.Top = this.Top+25;
+            ItemCapacityForm ICF = new ItemCapacityForm();
+            ICF.MdiParent=home;
 
             ICF.FormClosing += (sender2, args2) =>
             {
