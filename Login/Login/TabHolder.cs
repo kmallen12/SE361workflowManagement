@@ -191,7 +191,7 @@ namespace WorkFlowManagement
         }
         private void btnStockGenerateReport_Click_1(object sender, EventArgs e)
         {
-            StockReportForm formReport = new StockReportForm();
+            StockReportForm formReport = new StockReportForm(Home);
             if (objCurrentUser.canView(formReport))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -262,7 +262,7 @@ namespace WorkFlowManagement
 
         private void btnRepStockWarehouseCapacity_Click(object sender, EventArgs e)
         {
-            StockReportForm formReport = new StockReportForm();
+            StockReportForm formReport = new StockReportForm(Home);
             if (objCurrentUser.canView(formReport))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -382,7 +382,7 @@ namespace WorkFlowManagement
 
         private void btn_ManageProductOrders_Click(object sender, EventArgs e)
         {
-            ManageProductOrders ProductOrders = new ManageProductOrders();
+            ManageProductOrders ProductOrders = new ManageProductOrders(Home);
             if (objCurrentUser.canView(ProductOrders))
             {
                 Home.MdiChildren.Last<Form>().Close();

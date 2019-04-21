@@ -417,6 +417,54 @@ namespace WorkFlowManagement
             return defectiveProds;
         }
 
+
+
+        public int[] WareHouseStats(string mat)
+        {
+
+            int[] numbers = new int[3];
+
+            try
+            {
+                conn.Close();
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand(@"SELECT ST.materialType, ST.Sum, WHT.Max, WHT.Low FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = @material AND ST.materialType = WHT.Material; ", conn);
+
+
+                cmd.Parameters.AddWithValue("@material", mat);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    numbers[0] = (int)((Decimal)reader["Sum"]);
+
+                    numbers[1] = (int)(reader["Low"]);
+                    numbers[2] = (int)(reader["Max"]);
+                 
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error getting material information from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return numbers;
+        }
+
         //load IDs of defective products from the Products Table into a list
         public List<Product> LoadInProgressProducts()
         {
@@ -465,11 +513,11 @@ namespace WorkFlowManagement
         public void UpdateWareHouse(string ID, string max, string low)
         {
             _conn.Open();
-            string str = "UPDATE [dbo].[WareHouseTable] SET Max=@Max, Low=@Low WHERE itemID = @itemID";
+            string str = "UPDATE [dbo].[WarehouseCapTable] SET Max=@Max, Low=@Low WHERE Material = @itemID";
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;
-                com.Parameters.Add("@itemID", SqlDbType.Int).Value = int.Parse(ID);
+                com.Parameters.Add("@itemID", SqlDbType.VarChar).Value =ID;
 
                 if (!string.IsNullOrEmpty(max) && isValidQuantity(max))
                 {
@@ -1489,7 +1537,11 @@ namespace WorkFlowManagement
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = _conn;
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID , ST.materialType, ST.quantity, WHT.Max FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
+                sqlCmd.CommandText = @"SELECT ST.materialType, ST.Sum, WHT.Max FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum 
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = WHT.Material AND ST.Sum >= WHT.Max; ";
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
                 sqlDataAdap.Fill(dtRecord);
@@ -1519,7 +1571,11 @@ namespace WorkFlowManagement
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = _conn;
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT ST.itemID, ST.materialType, ST.quantity, WHT.Low FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
+                sqlCmd.CommandText = @"SELECT ST.materialType, ST.Sum, WHT.Low FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum 
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = WHT.Material AND ST.Sum <= WHT.Low; ";
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
                 sqlDataAdap.Fill(dtRecord);

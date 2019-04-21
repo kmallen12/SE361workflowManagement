@@ -20,6 +20,17 @@ namespace WorkFlowManagement
         CheckEntry CE;
         //Dialogue boxes for confirmation
         WorkFlowMessage M;
+        
+        ManageProductOrders Orders;
+        public AddProduct(ManageProductOrders O)
+        {
+            InitializeComponent();
+            product = new Product();
+            product.newProduct();
+            CE = new CheckEntry();
+            M = new WorkFlowMessage();
+            Orders = O;       
+        }
         public AddProduct()
         {
             InitializeComponent();
@@ -111,7 +122,9 @@ namespace WorkFlowManagement
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
                 product.AdditionalProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
                 Product_Load_1(sender, e);
+                Orders.ConfirmFilled();
             }
+            
         }
     }
 }

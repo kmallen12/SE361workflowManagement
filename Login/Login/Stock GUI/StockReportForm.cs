@@ -13,20 +13,17 @@ namespace WorkFlowManagement
 {
     public partial class StockReportForm : Form
     {
+        HomePage home;
         DatabaseManager objDatabaseManager = new DatabaseManager();
-        public StockReportForm()
+        public StockReportForm(HomePage h)
         {
+            home = h;
             InitializeComponent();
         }
 
         private void StockReportForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet3.StockReportMaxCapacity' table. You can move, or remove it, as needed.
-            this.stockReportMaxCapacityTableAdapter.Fill(this.workFlowDatabaseDataSet3.StockReportMaxCapacity);
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet3.StockReportLowCapacity' table. You can move, or remove it, as needed.
-            this.stockReportLowCapacityTableAdapter.Fill(this.workFlowDatabaseDataSet3.StockReportLowCapacity);
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet3.StockReportLowCapacity' table. You can move, or remove it, as needed.
-            this.stockReportLowCapacityTableAdapter.Fill(this.workFlowDatabaseDataSet3.StockReportLowCapacity);
+           
             updateMaxLowDataViewer();
         }
 
@@ -41,15 +38,18 @@ namespace WorkFlowManagement
 
         private void btnChangeDefaults_Click(object sender, EventArgs e)
         {
-            ItemCapacityForm ICF = new ItemCapacityForm();
+            home.MdiChildren.Last<Form>().Close();
 
+            ItemCapacityForm ICF = new ItemCapacityForm();
+            ICF.MdiParent=home;
 
             ICF.FormClosing += (sender2, args2) =>
             {
                 updateMaxLowDataViewer();
+                this.Show();
             };
 
-
+            this.Hide();
             ICF.Show();
         }
     }
