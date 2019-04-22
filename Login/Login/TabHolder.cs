@@ -552,7 +552,22 @@ namespace WorkFlowManagement
             }
         }
 
-        
+        private void btnRepProductsInProgress_Click(object sender, EventArgs e)
+        {
+            ViewProductInProgress ViewIP = new ViewProductInProgress();
+            if (objCurrentUser.canView(ViewIP))
+            {
+                Home.MdiChildren.Last<Form>().Close();
+
+                ViewIP.MdiParent = Home;
+                ViewIP.Show();
+            }
+            else
+            {
+                ViewIP.Dispose();
+                MessageBox.Show("You do not have access for the Product In Progress Form.\nContact your local Quality Manager.");
+            }
+        }
     }
 }
 

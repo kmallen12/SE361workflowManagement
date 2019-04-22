@@ -230,6 +230,12 @@
     <Compile Include="TabHolder.Designer.cs">
       <DependentUpon>TabHolder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quality GUI\ViewProductInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality GUI\ViewProductInProgress.Designer.cs">
+      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabHolder.resx">
       <DependentUpon>TabHolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality GUI\ViewProductInProgress.resx">
+      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />

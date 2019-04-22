@@ -62,21 +62,18 @@ namespace WorkFlowManagement
 
         }
 
-        private void btnRepProductsInProgress_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            //THIS NEEDS TO BE UPDATED WITH A FORM THAT SHOWS ALL IN PROGRESS PRODUCTS 
-            ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
-            MessageBox.Show("UNDER CONSTRUCTION. THIS FORM ISNT PERFECT BEWARE");
-            StockSummaryForm formStock = new StockSummaryForm();
-            if (objCurrentUser.canView(vqpForm))
-            {
-                vqpForm.ShowDialog();
-            }
-            else
-            {
-                vqpForm.Dispose();
-                MessageBox.Show("You do not have access for the Qualified Products Form.\nContact your local Product or Report Manager.");
-            }
+            objCurrentUser.Username = "";
+            objCurrentUser.UserType = "";
+            Hide();
+            LoginForm formLogin = new LoginForm();
+            formLogin.ShowDialog();
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            Application.Exit();
         }
     }
 }

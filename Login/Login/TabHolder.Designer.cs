@@ -271,6 +271,7 @@
             // 
             // tabReports
             // 
+            this.tabReports.BackColor = System.Drawing.Color.White;
             this.tabReports.Controls.Add(this.label2);
             this.tabReports.Controls.Add(this.lblProduct);
             this.tabReports.Controls.Add(this.lblStockReport);
@@ -282,7 +283,6 @@
             this.tabReports.Controls.Add(this.btnRepStockWarehouseCapacity);
             resources.ApplyResources(this.tabReports, "tabReports");
             this.tabReports.Name = "tabReports";
-            this.tabReports.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -325,6 +325,7 @@
             resources.ApplyResources(this.btnRepProductsInProgress, "btnRepProductsInProgress");
             this.btnRepProductsInProgress.Name = "btnRepProductsInProgress";
             this.btnRepProductsInProgress.UseVisualStyleBackColor = true;
+            this.btnRepProductsInProgress.Click += new System.EventHandler(this.btnRepProductsInProgress_Click);
             // 
             // btnRepStockRawMaterials
             // 

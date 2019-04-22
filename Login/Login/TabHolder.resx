@@ -301,7 +301,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 732</value>
+    <value>418, 869</value>
   </data>
   <data name="tabStock.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -496,7 +496,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 732</value>
+    <value>418, 869</value>
   </data>
   <data name="tabProducts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -607,7 +607,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 732</value>
+    <value>418, 869</value>
   </data>
   <data name="tabQuality.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -772,7 +772,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabDelivery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 732</value>
+    <value>418, 869</value>
   </data>
   <data name="tabDelivery.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1048,7 +1048,7 @@
     <value>0, 3, 2, 3</value>
   </data>
   <data name="tabReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 732</value>
+    <value>418, 869</value>
   </data>
   <data name="tabReports.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1072,13 +1072,13 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="tabBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 2</value>
+    <value>1, 3</value>
   </data>
   <data name="tabBar.Padding" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="tabBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 763</value>
+    <value>426, 900</value>
   </data>
   <data name="tabBar.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
