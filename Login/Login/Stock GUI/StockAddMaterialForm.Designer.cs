@@ -65,10 +65,9 @@
             // 
             this.lblMaterialType.AutoSize = true;
             this.lblMaterialType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialType.Location = new System.Drawing.Point(117, 57);
-            this.lblMaterialType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaterialType.Location = new System.Drawing.Point(88, 46);
             this.lblMaterialType.Name = "lblMaterialType";
-            this.lblMaterialType.Size = new System.Drawing.Size(136, 24);
+            this.lblMaterialType.Size = new System.Drawing.Size(109, 18);
             this.lblMaterialType.TabIndex = 0;
             this.lblMaterialType.Text = "Material Type";
             // 
@@ -76,10 +75,9 @@
             // 
             this.lbl_quantity.AutoSize = true;
             this.lbl_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quantity.Location = new System.Drawing.Point(117, 124);
-            this.lbl_quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_quantity.Location = new System.Drawing.Point(88, 101);
             this.lbl_quantity.Name = "lbl_quantity";
-            this.lbl_quantity.Size = new System.Drawing.Size(86, 24);
+            this.lbl_quantity.Size = new System.Drawing.Size(70, 18);
             this.lbl_quantity.TabIndex = 1;
             this.lbl_quantity.Text = "Quantity";
             // 
@@ -87,10 +85,9 @@
             // 
             this.lbl_unitCost.AutoSize = true;
             this.lbl_unitCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_unitCost.Location = new System.Drawing.Point(117, 199);
-            this.lbl_unitCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_unitCost.Location = new System.Drawing.Point(88, 162);
             this.lbl_unitCost.Name = "lbl_unitCost";
-            this.lbl_unitCost.Size = new System.Drawing.Size(93, 24);
+            this.lbl_unitCost.Size = new System.Drawing.Size(79, 18);
             this.lbl_unitCost.TabIndex = 2;
             this.lbl_unitCost.Text = "Unit Cost";
             // 
@@ -98,10 +95,9 @@
             // 
             this.lbl_totalCost.AutoSize = true;
             this.lbl_totalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalCost.Location = new System.Drawing.Point(117, 244);
-            this.lbl_totalCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_totalCost.Location = new System.Drawing.Point(88, 198);
             this.lbl_totalCost.Name = "lbl_totalCost";
-            this.lbl_totalCost.Size = new System.Drawing.Size(103, 24);
+            this.lbl_totalCost.Size = new System.Drawing.Size(87, 18);
             this.lbl_totalCost.TabIndex = 3;
             this.lbl_totalCost.Text = "Total Cost";
             // 
@@ -109,10 +105,9 @@
             // 
             this.lbl_dateAcq.AutoSize = true;
             this.lbl_dateAcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dateAcq.Location = new System.Drawing.Point(117, 281);
-            this.lbl_dateAcq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_dateAcq.Location = new System.Drawing.Point(88, 228);
             this.lbl_dateAcq.Name = "lbl_dateAcq";
-            this.lbl_dateAcq.Size = new System.Drawing.Size(143, 24);
+            this.lbl_dateAcq.Size = new System.Drawing.Size(113, 18);
             this.lbl_dateAcq.TabIndex = 4;
             this.lbl_dateAcq.Text = "Date Acquired";
             // 
@@ -120,10 +115,9 @@
             // 
             this.lbl_dateUsed.AutoSize = true;
             this.lbl_dateUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dateUsed.Location = new System.Drawing.Point(117, 325);
-            this.lbl_dateUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_dateUsed.Location = new System.Drawing.Point(88, 264);
             this.lbl_dateUsed.Name = "lbl_dateUsed";
-            this.lbl_dateUsed.Size = new System.Drawing.Size(106, 24);
+            this.lbl_dateUsed.Size = new System.Drawing.Size(87, 18);
             this.lbl_dateUsed.TabIndex = 5;
             this.lbl_dateUsed.Text = "Date Used";
             // 
@@ -131,19 +125,17 @@
             // 
             this.lbl_defected.AutoSize = true;
             this.lbl_defected.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_defected.Location = new System.Drawing.Point(117, 369);
-            this.lbl_defected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_defected.Location = new System.Drawing.Point(88, 300);
             this.lbl_defected.Name = "lbl_defected";
-            this.lbl_defected.Size = new System.Drawing.Size(222, 24);
+            this.lbl_defected.Size = new System.Drawing.Size(183, 18);
             this.lbl_defected.TabIndex = 11;
             this.lbl_defected.Text = "# of Defected Materials";
             // 
             // Another_Material_btn
             // 
-            this.Another_Material_btn.Location = new System.Drawing.Point(363, 414);
-            this.Another_Material_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Another_Material_btn.Location = new System.Drawing.Point(272, 336);
             this.Another_Material_btn.Name = "Another_Material_btn";
-            this.Another_Material_btn.Size = new System.Drawing.Size(153, 28);
+            this.Another_Material_btn.Size = new System.Drawing.Size(115, 23);
             this.Another_Material_btn.TabIndex = 10;
             this.Another_Material_btn.Text = "Add Stock";
             this.Another_Material_btn.UseVisualStyleBackColor = true;
@@ -151,10 +143,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(524, 414);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(393, 336);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(124, 28);
+            this.btnClose.Size = new System.Drawing.Size(93, 23);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -164,18 +155,18 @@
             // 
             this.txt_materialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_materialType.FormattingEnabled = true;
-            this.txt_materialType.Location = new System.Drawing.Point(363, 60);
-            this.txt_materialType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_materialType.Location = new System.Drawing.Point(272, 49);
+            this.txt_materialType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_materialType.Name = "txt_materialType";
-            this.txt_materialType.Size = new System.Drawing.Size(233, 24);
+            this.txt_materialType.Size = new System.Drawing.Size(176, 21);
             this.txt_materialType.TabIndex = 1;
             // 
             // btnCustomizeMaterials
             // 
-            this.btnCustomizeMaterials.Location = new System.Drawing.Point(629, 59);
-            this.btnCustomizeMaterials.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCustomizeMaterials.Location = new System.Drawing.Point(472, 48);
+            this.btnCustomizeMaterials.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomizeMaterials.Name = "btnCustomizeMaterials";
-            this.btnCustomizeMaterials.Size = new System.Drawing.Size(121, 27);
+            this.btnCustomizeMaterials.Size = new System.Drawing.Size(91, 22);
             this.btnCustomizeMaterials.TabIndex = 2;
             this.btnCustomizeMaterials.Text = "Customize List";
             this.btnCustomizeMaterials.UseVisualStyleBackColor = true;
@@ -186,10 +177,9 @@
             this.lblRequiredMaterial.AutoSize = true;
             this.lblRequiredMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequiredMaterial.ForeColor = System.Drawing.Color.Red;
-            this.lblRequiredMaterial.Location = new System.Drawing.Point(143, 79);
-            this.lblRequiredMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRequiredMaterial.Location = new System.Drawing.Point(107, 64);
             this.lblRequiredMaterial.Name = "lblRequiredMaterial";
-            this.lblRequiredMaterial.Size = new System.Drawing.Size(77, 18);
+            this.lblRequiredMaterial.Size = new System.Drawing.Size(66, 15);
             this.lblRequiredMaterial.TabIndex = 18;
             this.lblRequiredMaterial.Text = "(Required)";
             // 
@@ -198,19 +188,17 @@
             this.lblRequiredQuantity.AutoSize = true;
             this.lblRequiredQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequiredQuantity.ForeColor = System.Drawing.Color.Red;
-            this.lblRequiredQuantity.Location = new System.Drawing.Point(143, 146);
-            this.lblRequiredQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRequiredQuantity.Location = new System.Drawing.Point(107, 119);
             this.lblRequiredQuantity.Name = "lblRequiredQuantity";
-            this.lblRequiredQuantity.Size = new System.Drawing.Size(77, 18);
+            this.lblRequiredQuantity.Size = new System.Drawing.Size(66, 15);
             this.lblRequiredQuantity.TabIndex = 19;
             this.lblRequiredQuantity.Text = "(Required)";
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(629, 238);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalculate.Location = new System.Drawing.Point(472, 193);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(121, 28);
+            this.btnCalculate.Size = new System.Drawing.Size(91, 23);
             this.btnCalculate.TabIndex = 6;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -218,64 +206,59 @@
             // 
             // txt_Quantity
             // 
-            this.txt_Quantity.Location = new System.Drawing.Point(363, 127);
-            this.txt_Quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Quantity.Location = new System.Drawing.Point(272, 103);
             this.txt_Quantity.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.txt_Quantity.Name = "txt_Quantity";
-            this.txt_Quantity.Size = new System.Drawing.Size(235, 22);
+            this.txt_Quantity.Size = new System.Drawing.Size(176, 20);
             this.txt_Quantity.TabIndex = 3;
             // 
             // txt_Defected
             // 
-            this.txt_Defected.Location = new System.Drawing.Point(363, 367);
-            this.txt_Defected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Defected.Location = new System.Drawing.Point(272, 298);
             this.txt_Defected.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.txt_Defected.Name = "txt_Defected";
-            this.txt_Defected.Size = new System.Drawing.Size(235, 22);
+            this.txt_Defected.Size = new System.Drawing.Size(176, 20);
             this.txt_Defected.TabIndex = 9;
             // 
             // txt_unitCost
             // 
-            this.txt_unitCost.Location = new System.Drawing.Point(363, 197);
-            this.txt_unitCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_unitCost.Location = new System.Drawing.Point(272, 160);
             this.txt_unitCost.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.txt_unitCost.Name = "txt_unitCost";
-            this.txt_unitCost.Size = new System.Drawing.Size(235, 22);
+            this.txt_unitCost.Size = new System.Drawing.Size(176, 20);
             this.txt_unitCost.TabIndex = 4;
             // 
             // txt_TotalCost
             // 
-            this.txt_TotalCost.Location = new System.Drawing.Point(363, 238);
-            this.txt_TotalCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TotalCost.Location = new System.Drawing.Point(272, 193);
             this.txt_TotalCost.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.txt_TotalCost.Name = "txt_TotalCost";
-            this.txt_TotalCost.Size = new System.Drawing.Size(235, 22);
+            this.txt_TotalCost.Size = new System.Drawing.Size(176, 20);
             this.txt_TotalCost.TabIndex = 5;
             // 
             // txt_DateAcq
             // 
             this.txt_DateAcq.CustomFormat = " ";
             this.txt_DateAcq.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txt_DateAcq.Location = new System.Drawing.Point(363, 277);
-            this.txt_DateAcq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_DateAcq.Location = new System.Drawing.Point(272, 225);
             this.txt_DateAcq.Name = "txt_DateAcq";
-            this.txt_DateAcq.Size = new System.Drawing.Size(233, 22);
+            this.txt_DateAcq.Size = new System.Drawing.Size(176, 20);
             this.txt_DateAcq.TabIndex = 7;
             this.txt_DateAcq.Value = new System.DateTime(2019, 4, 14, 20, 55, 8, 0);
             this.txt_DateAcq.ValueChanged += new System.EventHandler(this.txt_DateAcq_ValueChanged);
@@ -284,11 +267,10 @@
             // 
             this.txt_dateUsed.CustomFormat = " ";
             this.txt_dateUsed.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txt_dateUsed.Location = new System.Drawing.Point(363, 322);
-            this.txt_dateUsed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_dateUsed.Location = new System.Drawing.Point(272, 262);
             this.txt_dateUsed.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.txt_dateUsed.Name = "txt_dateUsed";
-            this.txt_dateUsed.Size = new System.Drawing.Size(233, 22);
+            this.txt_dateUsed.Size = new System.Drawing.Size(176, 20);
             this.txt_dateUsed.TabIndex = 8;
             this.txt_dateUsed.Value = new System.DateTime(2019, 4, 14, 20, 55, 8, 0);
             this.txt_dateUsed.ValueChanged += new System.EventHandler(this.txt_dateUsed_ValueChanged);
@@ -296,10 +278,9 @@
             // lblAddToList
             // 
             this.lblAddToList.AutoSize = true;
-            this.lblAddToList.Location = new System.Drawing.Point(596, 42);
-            this.lblAddToList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddToList.Location = new System.Drawing.Point(447, 34);
             this.lblAddToList.Name = "lblAddToList";
-            this.lblAddToList.Size = new System.Drawing.Size(179, 17);
+            this.lblAddToList.Size = new System.Drawing.Size(136, 13);
             this.lblAddToList.TabIndex = 20;
             this.lblAddToList.Text = "Item not in List? Click Here:";
             // 
@@ -310,35 +291,34 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.StsAddMaterial.Location = new System.Drawing.Point(0, 471);
+            this.StsAddMaterial.Location = new System.Drawing.Point(0, 381);
             this.StsAddMaterial.Name = "StsAddMaterial";
-            this.StsAddMaterial.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.StsAddMaterial.Size = new System.Drawing.Size(777, 25);
+            this.StsAddMaterial.Size = new System.Drawing.Size(583, 22);
             this.StsAddMaterial.TabIndex = 21;
-            this.StsAddMaterial.Text = "Once material added to list, review and add to database";
-            this.StsAddMaterial.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StsAddMaterial_ItemClicked);
+            this.StsAddMaterial.Text = "...";
+
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(289, 20);
-            this.toolStripStatusLabel1.Text = "Add material to list, then save to database";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(305, 17);
+            this.toolStripStatusLabel1.Text = "Clicking \"Add Stock\" saves your material to the database";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 20);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 20);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
             // 
             // AddMaterialForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 496);
+            this.ClientSize = new System.Drawing.Size(583, 403);
             this.ControlBox = false;
             this.Controls.Add(this.StsAddMaterial);
             this.Controls.Add(this.lblAddToList);
@@ -365,7 +345,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Add Raw Material";

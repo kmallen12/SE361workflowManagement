@@ -301,7 +301,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 869</value>
+    <value>393, 709</value>
   </data>
   <data name="tabStock.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -496,7 +496,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 869</value>
+    <value>393, 569</value>
   </data>
   <data name="tabProducts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -607,7 +607,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 869</value>
+    <value>393, 569</value>
   </data>
   <data name="tabQuality.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -772,7 +772,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabDelivery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 869</value>
+    <value>393, 569</value>
   </data>
   <data name="tabDelivery.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1048,7 +1048,7 @@
     <value>0, 3, 2, 3</value>
   </data>
   <data name="tabReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 1125</value>
+    <value>393, 569</value>
   </data>
   <data name="tabReports.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1081,7 +1081,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 1156</value>
+    <value>401, 740</value>
   </data>
   <data name="tabBar.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1111,7 +1111,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 900</value>
+    <value>400, 720</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
