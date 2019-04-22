@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace WorkFlowManagement
 {
@@ -29,6 +23,11 @@ namespace WorkFlowManagement
 
             //use stock datatable as datasource for data grid
             dataGridView1.DataSource = stocks;
+
+            for(int i=0; i<stocks.Rows.Count; i++)
+            {
+                ItemIDGrid_box.Items.Add(stocks.Rows[i]["itemID"]);
+            }
         }
 
         private void UpdateStockForm_Load(object sender, EventArgs e)
@@ -98,5 +97,48 @@ namespace WorkFlowManagement
         {
             this.Hide();
         }
+
+        private void ItemIDGrid_box_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow[] selectedRow;
+
+                selectedRow = stocks.Select("itemID = " + ItemIDGrid_box.Text);
+
+                if (selectedRow.Length > 0)
+                {
+                    if (DateTime.Parse(selectedRow[0]["dateAcquired"].ToString()) != DateTime.MinValue){
+                        dateAcquiredGrid_box.CustomFormat = "MM/dd/yyyy";
+                        dateAcquiredGrid_box.Text = selectedRow[0]["dateAcquired"].ToString();
+                    }
+                    else
+                    {
+                        dateAcquiredGrid_box.CustomFormat = " ";
+                    }
+
+                    if (DateTime.Parse(selectedRow[0]["dateUsed"].ToString()) != DateTime.MinValue)
+                    {
+                        dateUsedGrid_box.CustomFormat = "MM/dd/yyyy";
+                        dateUsedGrid_box.Text = selectedRow[0]["dateUsed"].ToString();
+                    }
+                    else
+                    {
+                        dateUsedGrid_box.CustomFormat = " ";
+                    }
+
+                    txtMaterialType.Text = selectedRow[0]["materialType"].ToString();
+                    quantityGrid_box.Text = selectedRow[0]["quantity"].ToString();
+                    unitCostGrid_box.Text = selectedRow[0]["unitCost"].ToString();
+                    totalCostGrid_box.Text = selectedRow[0]["totalCost"].ToString();
+                    amtDefectedGrid_box.Text = selectedRow[0]["amtDefected"].ToString();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error selecting data from data table.");
+            }
+        }       
     }
 }

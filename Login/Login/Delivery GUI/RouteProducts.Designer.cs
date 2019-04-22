@@ -69,7 +69,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(645, 410);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 36);
             this.btnClose.TabIndex = 33;
@@ -80,7 +80,7 @@
             // btnRemoveDefects
             // 
             this.btnRemoveDefects.Location = new System.Drawing.Point(60, 392);
-            this.btnRemoveDefects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveDefects.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveDefects.Name = "btnRemoveDefects";
             this.btnRemoveDefects.Size = new System.Drawing.Size(68, 41);
             this.btnRemoveDefects.TabIndex = 32;
@@ -91,7 +91,7 @@
             // btnSendToManu
             // 
             this.btnSendToManu.Location = new System.Drawing.Point(153, 392);
-            this.btnSendToManu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSendToManu.Margin = new System.Windows.Forms.Padding(2);
             this.btnSendToManu.Name = "btnSendToManu";
             this.btnSendToManu.Size = new System.Drawing.Size(109, 41);
             this.btnSendToManu.TabIndex = 31;
@@ -102,7 +102,7 @@
             // btnAddToDefectsList
             // 
             this.btnAddToDefectsList.Location = new System.Drawing.Point(202, 284);
-            this.btnAddToDefectsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddToDefectsList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToDefectsList.Name = "btnAddToDefectsList";
             this.btnAddToDefectsList.Size = new System.Drawing.Size(68, 20);
             this.btnAddToDefectsList.TabIndex = 30;
@@ -114,7 +114,7 @@
             // 
             this.lstDefectedProd.FormattingEnabled = true;
             this.lstDefectedProd.Location = new System.Drawing.Point(24, 319);
-            this.lstDefectedProd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstDefectedProd.Margin = new System.Windows.Forms.Padding(2);
             this.lstDefectedProd.Name = "lstDefectedProd";
             this.lstDefectedProd.Size = new System.Drawing.Size(259, 69);
             this.lstDefectedProd.TabIndex = 29;
@@ -134,7 +134,7 @@
             this.cboxProdIDDefects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProdIDDefects.FormattingEnabled = true;
             this.cboxProdIDDefects.Location = new System.Drawing.Point(96, 284);
-            this.cboxProdIDDefects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxProdIDDefects.Margin = new System.Windows.Forms.Padding(2);
             this.cboxProdIDDefects.Name = "cboxProdIDDefects";
             this.cboxProdIDDefects.Size = new System.Drawing.Size(92, 21);
             this.cboxProdIDDefects.TabIndex = 27;
@@ -142,7 +142,7 @@
             // btnRemoveQualified
             // 
             this.btnRemoveQualified.Location = new System.Drawing.Point(60, 184);
-            this.btnRemoveQualified.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveQualified.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveQualified.Name = "btnRemoveQualified";
             this.btnRemoveQualified.Size = new System.Drawing.Size(68, 41);
             this.btnRemoveQualified.TabIndex = 26;
@@ -153,7 +153,7 @@
             // btnSendToSales
             // 
             this.btnSendToSales.Location = new System.Drawing.Point(173, 184);
-            this.btnSendToSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSendToSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnSendToSales.Name = "btnSendToSales";
             this.btnSendToSales.Size = new System.Drawing.Size(68, 41);
             this.btnSendToSales.TabIndex = 25;
@@ -164,7 +164,7 @@
             // btnAddToQualifiedList
             // 
             this.btnAddToQualifiedList.Location = new System.Drawing.Point(202, 76);
-            this.btnAddToQualifiedList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddToQualifiedList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToQualifiedList.Name = "btnAddToQualifiedList";
             this.btnAddToQualifiedList.Size = new System.Drawing.Size(68, 20);
             this.btnAddToQualifiedList.TabIndex = 24;
@@ -176,7 +176,7 @@
             // 
             this.lstQualifiedProd.FormattingEnabled = true;
             this.lstQualifiedProd.Location = new System.Drawing.Point(24, 110);
-            this.lstQualifiedProd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstQualifiedProd.Margin = new System.Windows.Forms.Padding(2);
             this.lstQualifiedProd.Name = "lstQualifiedProd";
             this.lstQualifiedProd.Size = new System.Drawing.Size(259, 69);
             this.lstQualifiedProd.TabIndex = 23;
@@ -196,7 +196,7 @@
             this.cboxProdIDQualified.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProdIDQualified.FormattingEnabled = true;
             this.cboxProdIDQualified.Location = new System.Drawing.Point(96, 76);
-            this.cboxProdIDQualified.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxProdIDQualified.Margin = new System.Windows.Forms.Padding(2);
             this.cboxProdIDQualified.Name = "cboxProdIDQualified";
             this.cboxProdIDQualified.Size = new System.Drawing.Size(92, 21);
             this.cboxProdIDQualified.TabIndex = 21;
@@ -331,9 +331,12 @@
             this.Controls.Add(this.dataGrid_ViewProducts);
             this.Controls.Add(this.lblSelectProdForManu);
             this.Controls.Add(this.lblSelectProdForSales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Location = new System.Drawing.Point(404, 92);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RouteProducts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "RouteProducts";
             this.Load += new System.EventHandler(this.RouteProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ViewProducts)).EndInit();

@@ -1,0 +1,1131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="workFlowDatabaseDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 348</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 56</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Manage Stock Orders</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnStockInventorySum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnStockInventorySum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 274</value>
+  </data>
+  <data name="btnStockInventorySum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 56</value>
+  </data>
+  <data name="btnStockInventorySum.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnStockInventorySum.Text" xml:space="preserve">
+    <value>Stock Inventory Summary</value>
+  </data>
+  <data name="&gt;&gt;btnStockInventorySum.Name" xml:space="preserve">
+    <value>btnStockInventorySum</value>
+  </data>
+  <data name="&gt;&gt;btnStockInventorySum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockInventorySum.Parent" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;btnStockInventorySum.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblStockHmpg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStockHmpg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt, style=Bold</value>
+  </data>
+  <data name="lblStockHmpg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 13</value>
+  </data>
+  <data name="lblStockHmpg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 29</value>
+  </data>
+  <data name="lblStockHmpg.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblStockHmpg.Text" xml:space="preserve">
+    <value>Stock Manager Dashboard</value>
+  </data>
+  <data name="&gt;&gt;lblStockHmpg.Name" xml:space="preserve">
+    <value>lblStockHmpg</value>
+  </data>
+  <data name="&gt;&gt;lblStockHmpg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStockHmpg.Parent" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;lblStockHmpg.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnStockUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnStockUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 127</value>
+  </data>
+  <data name="btnStockUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 52</value>
+  </data>
+  <data name="btnStockUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnStockUpdate.Text" xml:space="preserve">
+    <value>View/Update Stock</value>
+  </data>
+  <data name="&gt;&gt;btnStockUpdate.Name" xml:space="preserve">
+    <value>btnStockUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnStockUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockUpdate.Parent" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;btnStockUpdate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnStockGenerateReport.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnStockGenerateReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 196</value>
+  </data>
+  <data name="btnStockGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="btnStockGenerateReport.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnStockGenerateReport.Text" xml:space="preserve">
+    <value>Generate Report</value>
+  </data>
+  <data name="&gt;&gt;btnStockGenerateReport.Name" xml:space="preserve">
+    <value>btnStockGenerateReport</value>
+  </data>
+  <data name="&gt;&gt;btnStockGenerateReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockGenerateReport.Parent" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;btnStockGenerateReport.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnStockMaterials.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnStockMaterials.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 53</value>
+  </data>
+  <data name="btnStockMaterials.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 56</value>
+  </data>
+  <data name="btnStockMaterials.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnStockMaterials.Text" xml:space="preserve">
+    <value>Add Raw Materials</value>
+  </data>
+  <data name="&gt;&gt;btnStockMaterials.Name" xml:space="preserve">
+    <value>btnStockMaterials</value>
+  </data>
+  <data name="&gt;&gt;btnStockMaterials.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockMaterials.Parent" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;btnStockMaterials.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabStock.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="tabStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabStock.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 732</value>
+  </data>
+  <data name="tabStock.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabStock.Text" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="&gt;&gt;tabStock.Name" xml:space="preserve">
+    <value>tabStock</value>
+  </data>
+  <data name="&gt;&gt;tabStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabStock.Parent" xml:space="preserve">
+    <value>tabBar</value>
+  </data>
+  <data name="&gt;&gt;tabStock.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_StockOrderStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btn_StockOrderStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 353</value>
+  </data>
+  <data name="btn_StockOrderStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 56</value>
+  </data>
+  <data name="btn_StockOrderStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btn_StockOrderStatus.Text" xml:space="preserve">
+    <value>View Stock Orders</value>
+  </data>
+  <data name="&gt;&gt;btn_StockOrderStatus.Name" xml:space="preserve">
+    <value>btn_StockOrderStatus</value>
+  </data>
+  <data name="&gt;&gt;btn_StockOrderStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_StockOrderStatus.Parent" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;btn_StockOrderStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnReManufacture.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnReManufacture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 202</value>
+  </data>
+  <data name="btnReManufacture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnReManufacture.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnReManufacture.Text" xml:space="preserve">
+    <value>Defective Products to Re-Manufacture</value>
+  </data>
+  <data name="&gt;&gt;btnReManufacture.Name" xml:space="preserve">
+    <value>btnReManufacture</value>
+  </data>
+  <data name="&gt;&gt;btnReManufacture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReManufacture.Parent" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;btnReManufacture.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_AddProduct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btn_AddProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 277</value>
+  </data>
+  <data name="btn_AddProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btn_AddProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btn_AddProduct.Text" xml:space="preserve">
+    <value>Add Product</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProduct.Name" xml:space="preserve">
+    <value>btn_AddProduct</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProduct.Parent" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProduct.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnReorderStock.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnReorderStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 130</value>
+  </data>
+  <data name="btnReorderStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 56</value>
+  </data>
+  <data name="btnReorderStock.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnReorderStock.Text" xml:space="preserve">
+    <value>Request More Materials</value>
+  </data>
+  <data name="&gt;&gt;btnReorderStock.Name" xml:space="preserve">
+    <value>btnReorderStock</value>
+  </data>
+  <data name="&gt;&gt;btnReorderStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReorderStock.Parent" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;btnReorderStock.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblProductHomepg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProductHomepg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt, style=Bold</value>
+  </data>
+  <data name="lblProductHomepg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 12</value>
+  </data>
+  <data name="lblProductHomepg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 29</value>
+  </data>
+  <data name="lblProductHomepg.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblProductHomepg.Text" xml:space="preserve">
+    <value>Product Manager Dashboard</value>
+  </data>
+  <data name="&gt;&gt;lblProductHomepg.Name" xml:space="preserve">
+    <value>lblProductHomepg</value>
+  </data>
+  <data name="&gt;&gt;lblProductHomepg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProductHomepg.Parent" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;lblProductHomepg.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnProductsView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnProductsView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 55</value>
+  </data>
+  <data name="btnProductsView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnProductsView.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnProductsView.Text" xml:space="preserve">
+    <value>View and Update Products</value>
+  </data>
+  <data name="&gt;&gt;btnProductsView.Name" xml:space="preserve">
+    <value>btnProductsView</value>
+  </data>
+  <data name="&gt;&gt;btnProductsView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnProductsView.Parent" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;btnProductsView.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabProducts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="tabProducts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabProducts.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 732</value>
+  </data>
+  <data name="tabProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabProducts.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="&gt;&gt;tabProducts.Name" xml:space="preserve">
+    <value>tabProducts</value>
+  </data>
+  <data name="&gt;&gt;tabProducts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabProducts.Parent" xml:space="preserve">
+    <value>tabBar</value>
+  </data>
+  <data name="&gt;&gt;tabProducts.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnQAUpdateProdStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnQAUpdateProdStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 136</value>
+  </data>
+  <data name="btnQAUpdateProdStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnQAUpdateProdStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnQAUpdateProdStatus.Text" xml:space="preserve">
+    <value>Update Product Status</value>
+  </data>
+  <data name="&gt;&gt;btnQAUpdateProdStatus.Name" xml:space="preserve">
+    <value>btnQAUpdateProdStatus</value>
+  </data>
+  <data name="&gt;&gt;btnQAUpdateProdStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQAUpdateProdStatus.Parent" xml:space="preserve">
+    <value>tabQuality</value>
+  </data>
+  <data name="&gt;&gt;btnQAUpdateProdStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnQAViewProd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnQAViewProd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 57</value>
+  </data>
+  <data name="btnQAViewProd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnQAViewProd.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnQAViewProd.Text" xml:space="preserve">
+    <value>View Products</value>
+  </data>
+  <data name="&gt;&gt;btnQAViewProd.Name" xml:space="preserve">
+    <value>btnQAViewProd</value>
+  </data>
+  <data name="&gt;&gt;btnQAViewProd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQAViewProd.Parent" xml:space="preserve">
+    <value>tabQuality</value>
+  </data>
+  <data name="&gt;&gt;btnQAViewProd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblQAdashboard.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQAdashboard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt, style=Bold</value>
+  </data>
+  <data name="lblQAdashboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 13</value>
+  </data>
+  <data name="lblQAdashboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 29</value>
+  </data>
+  <data name="lblQAdashboard.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblQAdashboard.Text" xml:space="preserve">
+    <value>Quality Analyzer Dashboard</value>
+  </data>
+  <data name="&gt;&gt;lblQAdashboard.Name" xml:space="preserve">
+    <value>lblQAdashboard</value>
+  </data>
+  <data name="&gt;&gt;lblQAdashboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQAdashboard.Parent" xml:space="preserve">
+    <value>tabQuality</value>
+  </data>
+  <data name="&gt;&gt;lblQAdashboard.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabQuality.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 732</value>
+  </data>
+  <data name="tabQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabQuality.Text" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="&gt;&gt;tabQuality.Name" xml:space="preserve">
+    <value>tabQuality</value>
+  </data>
+  <data name="&gt;&gt;tabQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabQuality.Parent" xml:space="preserve">
+    <value>tabBar</value>
+  </data>
+  <data name="&gt;&gt;tabQuality.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnDelProductStatusReport.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnDelProductStatusReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 290</value>
+  </data>
+  <data name="btnDelProductStatusReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnDelProductStatusReport.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnDelProductStatusReport.Text" xml:space="preserve">
+    <value>Product Status Report</value>
+  </data>
+  <data name="&gt;&gt;btnDelProductStatusReport.Name" xml:space="preserve">
+    <value>btnDelProductStatusReport</value>
+  </data>
+  <data name="&gt;&gt;btnDelProductStatusReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelProductStatusReport.Parent" xml:space="preserve">
+    <value>tabDelivery</value>
+  </data>
+  <data name="&gt;&gt;btnDelProductStatusReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnDelViewQualProducts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnDelViewQualProducts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 215</value>
+  </data>
+  <data name="btnDelViewQualProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnDelViewQualProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnDelViewQualProducts.Text" xml:space="preserve">
+    <value>View Qualified Products</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewQualProducts.Name" xml:space="preserve">
+    <value>btnDelViewQualProducts</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewQualProducts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewQualProducts.Parent" xml:space="preserve">
+    <value>tabDelivery</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewQualProducts.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnDelRouteProduct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnDelRouteProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 139</value>
+  </data>
+  <data name="btnDelRouteProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnDelRouteProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnDelRouteProduct.Text" xml:space="preserve">
+    <value>Route Products</value>
+  </data>
+  <data name="&gt;&gt;btnDelRouteProduct.Name" xml:space="preserve">
+    <value>btnDelRouteProduct</value>
+  </data>
+  <data name="&gt;&gt;btnDelRouteProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelRouteProduct.Parent" xml:space="preserve">
+    <value>tabDelivery</value>
+  </data>
+  <data name="&gt;&gt;btnDelRouteProduct.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnDelViewProduct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnDelViewProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 60</value>
+  </data>
+  <data name="btnDelViewProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 58</value>
+  </data>
+  <data name="btnDelViewProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnDelViewProduct.Text" xml:space="preserve">
+    <value>View Products</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewProduct.Name" xml:space="preserve">
+    <value>btnDelViewProduct</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewProduct.Parent" xml:space="preserve">
+    <value>tabDelivery</value>
+  </data>
+  <data name="&gt;&gt;btnDelViewProduct.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblDdashboard.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDdashboard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt, style=Bold</value>
+  </data>
+  <data name="lblDdashboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 13</value>
+  </data>
+  <data name="lblDdashboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 29</value>
+  </data>
+  <data name="lblDdashboard.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblDdashboard.Text" xml:space="preserve">
+    <value>Delivery Manager Dashboard</value>
+  </data>
+  <data name="&gt;&gt;lblDdashboard.Name" xml:space="preserve">
+    <value>lblDdashboard</value>
+  </data>
+  <data name="&gt;&gt;lblDdashboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDdashboard.Parent" xml:space="preserve">
+    <value>tabDelivery</value>
+  </data>
+  <data name="&gt;&gt;lblDdashboard.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabDelivery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabDelivery.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabDelivery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 732</value>
+  </data>
+  <data name="tabDelivery.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabDelivery.Text" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="&gt;&gt;tabDelivery.Name" xml:space="preserve">
+    <value>tabDelivery</value>
+  </data>
+  <data name="&gt;&gt;tabDelivery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabDelivery.Parent" xml:space="preserve">
+    <value>tabBar</value>
+  </data>
+  <data name="&gt;&gt;tabDelivery.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 116</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>(Items with Low/High Inventory)</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProduct.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 216</value>
+  </data>
+  <data name="lblProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 18</value>
+  </data>
+  <data name="lblProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblProduct.Text" xml:space="preserve">
+    <value>Product Reports</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.Name" xml:space="preserve">
+    <value>lblProduct</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblStockReport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStockReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 57</value>
+  </data>
+  <data name="lblStockReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 18</value>
+  </data>
+  <data name="lblStockReport.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblStockReport.Text" xml:space="preserve">
+    <value>Stock Reports</value>
+  </data>
+  <data name="&gt;&gt;lblStockReport.Name" xml:space="preserve">
+    <value>lblStockReport</value>
+  </data>
+  <data name="&gt;&gt;lblStockReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStockReport.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;lblStockReport.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 9</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 29</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Report Manager Dashboard</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnRepDefectedProducts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnRepDefectedProducts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 369</value>
+  </data>
+  <data name="btnRepDefectedProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="btnRepDefectedProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnRepDefectedProducts.Text" xml:space="preserve">
+    <value>Defective Products</value>
+  </data>
+  <data name="&gt;&gt;btnRepDefectedProducts.Name" xml:space="preserve">
+    <value>btnRepDefectedProducts</value>
+  </data>
+  <data name="&gt;&gt;btnRepDefectedProducts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRepDefectedProducts.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;btnRepDefectedProducts.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnRepQualifiedProducts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnRepQualifiedProducts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 303</value>
+  </data>
+  <data name="btnRepQualifiedProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="btnRepQualifiedProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnRepQualifiedProducts.Text" xml:space="preserve">
+    <value>Qualified Products</value>
+  </data>
+  <data name="&gt;&gt;btnRepQualifiedProducts.Name" xml:space="preserve">
+    <value>btnRepQualifiedProducts</value>
+  </data>
+  <data name="&gt;&gt;btnRepQualifiedProducts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRepQualifiedProducts.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;btnRepQualifiedProducts.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnRepProductsInProgress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnRepProductsInProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 237</value>
+  </data>
+  <data name="btnRepProductsInProgress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="btnRepProductsInProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnRepProductsInProgress.Text" xml:space="preserve">
+    <value>Products In Progress</value>
+  </data>
+  <data name="&gt;&gt;btnRepProductsInProgress.Name" xml:space="preserve">
+    <value>btnRepProductsInProgress</value>
+  </data>
+  <data name="&gt;&gt;btnRepProductsInProgress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRepProductsInProgress.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;btnRepProductsInProgress.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnRepStockRawMaterials.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnRepStockRawMaterials.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 153</value>
+  </data>
+  <data name="btnRepStockRawMaterials.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="btnRepStockRawMaterials.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnRepStockRawMaterials.Text" xml:space="preserve">
+    <value>Stock Inventory</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockRawMaterials.Name" xml:space="preserve">
+    <value>btnRepStockRawMaterials</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockRawMaterials.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockRawMaterials.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockRawMaterials.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnRepStockWarehouseCapacity.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnRepStockWarehouseCapacity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 78</value>
+  </data>
+  <data name="btnRepStockWarehouseCapacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="btnRepStockWarehouseCapacity.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnRepStockWarehouseCapacity.Text" xml:space="preserve">
+    <value>Warehouse Capacity</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockWarehouseCapacity.Name" xml:space="preserve">
+    <value>btnRepStockWarehouseCapacity</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockWarehouseCapacity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockWarehouseCapacity.Parent" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;btnRepStockWarehouseCapacity.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 2, 3</value>
+  </data>
+  <data name="tabReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 732</value>
+  </data>
+  <data name="tabReports.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabReports.Text" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="&gt;&gt;tabReports.Name" xml:space="preserve">
+    <value>tabReports</value>
+  </data>
+  <data name="&gt;&gt;tabReports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabReports.Parent" xml:space="preserve">
+    <value>tabBar</value>
+  </data>
+  <data name="&gt;&gt;tabReports.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabBar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="tabBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 2</value>
+  </data>
+  <data name="tabBar.Padding" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 763</value>
+  </data>
+  <data name="tabBar.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tabBar.Name" xml:space="preserve">
+    <value>tabBar</value>
+  </data>
+  <data name="&gt;&gt;tabBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabBar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>404, 644</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 92</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
+  </data>
+  <data name="&gt;&gt;workFlowDatabaseDataSet1.Name" xml:space="preserve">
+    <value>workFlowDatabaseDataSet1</value>
+  </data>
+  <data name="&gt;&gt;workFlowDatabaseDataSet1.Type" xml:space="preserve">
+    <value>Login.WorkFlowDatabaseDataSet, WorkFlowDatabaseDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TabHolder</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

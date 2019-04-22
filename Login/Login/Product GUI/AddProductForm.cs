@@ -11,14 +11,26 @@ using System.IO;
 
 namespace WorkFlowManagement
 {
-      
     public partial class AddProduct : Form
     {
         Product product;
+        DataTable stockTable;
+        DatabaseManager objDatabaseManager;
         //We check to see if text entries are correct.
         CheckEntry CE;
         //Dialogue boxes for confirmation
         WorkFlowMessage M;
+        
+        ManageProductOrders Orders;
+        public AddProduct(ManageProductOrders O)
+        {
+            InitializeComponent();
+            product = new Product();
+            product.newProduct();
+            CE = new CheckEntry();
+            M = new WorkFlowMessage();
+            Orders = O;       
+        }
         public AddProduct()
         {
             InitializeComponent();
@@ -26,21 +38,31 @@ namespace WorkFlowManagement
             product.newProduct();
             CE = new CheckEntry();
             M = new WorkFlowMessage();
+            objDatabaseManager = new DatabaseManager();
+            stockTable = objDatabaseManager.SumStocks();
         }
 
         private void Product_Load_1(object sender, EventArgs e)
         {
-            //use partialstock datatable as datasource for data grid
-            PartialStockGrid.DataSource = product.PartialStockTable();
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockSummaryView' table. You can move, or remove it, as needed.
+            this.stockSummaryViewTableAdapter.Fill(this.workFlowDatabaseDataSet.StockSummaryView);
+
+            lbl_Title.Text = "Create a New Product";
+
+            for(int i=0; i<stockTable.Rows.Count; i++)
+            {
+                txt_Material.Items.Add(stockTable.Rows[i]["Material"].ToString().Trim(' '));
+            }
+
         }
 
 
         private void btn_AddMaterialtoProduct_Click(object sender, EventArgs e)
         {
-            if (CE.isnotNull(txt_MaterialID.Text, "ID") && CE.isnotNull(txt_MaterialQuantity.Text, "Quantity"))
+            if (CE.isnotNull(txt_Material.Text, "ID") && CE.isnotNull(txt_MaterialQuantity.Text, "Quantity"))
             {
                 //Add materials one at a time to materialsProduct in Productclass.
-                product.AddMaterialtoProduct(txt_MaterialID.Text, txt_MaterialQuantity.Text);
+                product.AddMaterialtoProduct(txt_Material.Text, txt_MaterialQuantity.Text);
                 //Update the description in the bottom half so the user can see what has been added thus far.
                 
                 lbl_Description.Text = string.Empty;
@@ -58,10 +80,10 @@ namespace WorkFlowManagement
             txt_ProductQuantity.Text = quantity;
             txt_ProductName.Visible=false;
             txt_MaterialQuantity.Visible = false;
-            txt_MaterialID.Visible = false;
+            txt_Material.Visible = false;
             lbl_MaterialAmount.Visible = false;
             lbl_MaterialID.Visible = false;
-            lbl_CreateANewProduct.Visible = false;
+            lbl_Title.Visible = false;
             btn_FinalizeProduct.Visible = false;
             btn_AddMaterialtoProduct.Visible = false;
             lbl_ProductName.Visible = false;
@@ -98,9 +120,11 @@ namespace WorkFlowManagement
             if (CE.isnotNull(txt_ProductID.Text, "ProductID") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
             {
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
-                product.AdditionalProduct(Int32.Parse(txt_ProductID.Text), Int32.Parse(txt_ProductQuantity.Text));
+                product.AdditionalProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
                 Product_Load_1(sender, e);
+                Orders.ConfirmFilled();
             }
+            
         }
     }
 }

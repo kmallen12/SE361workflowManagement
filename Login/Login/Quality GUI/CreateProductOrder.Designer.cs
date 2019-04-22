@@ -39,16 +39,16 @@
             this.Discription_text = new System.Windows.Forms.TextBox();
             this.Amount_Text = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
-            this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
-            this.listBox_ProductOrders = new System.Windows.Forms.ListBox();
-            this.btn_AddOrderToList = new System.Windows.Forms.Button();
             this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
+            this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
+            this.listBox_ProductOrders = new System.Windows.Forms.ListBox();
+            this.btn_AddOrderToList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).BeginInit();
@@ -154,6 +154,39 @@
             this.dataGridView1.Size = new System.Drawing.Size(648, 477);
             this.dataGridView1.TabIndex = 9;
             // 
+            // pIdDataGridViewTextBoxColumn
+            // 
+            this.pIdDataGridViewTextBoxColumn.DataPropertyName = "pId";
+            this.pIdDataGridViewTextBoxColumn.HeaderText = "pId";
+            this.pIdDataGridViewTextBoxColumn.Name = "pIdDataGridViewTextBoxColumn";
+            this.pIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pIdDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "productName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // materialsStringDataGridViewTextBoxColumn
+            // 
+            this.materialsStringDataGridViewTextBoxColumn.DataPropertyName = "materialsString";
+            this.materialsStringDataGridViewTextBoxColumn.HeaderText = "materialsString";
+            this.materialsStringDataGridViewTextBoxColumn.Name = "materialsStringDataGridViewTextBoxColumn";
+            this.materialsStringDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // productStatusDataGridViewTextBoxColumn
+            // 
+            this.productStatusDataGridViewTextBoxColumn.DataPropertyName = "productStatus";
+            this.productStatusDataGridViewTextBoxColumn.HeaderText = "productStatus";
+            this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
+            // 
             // productTableBindingSource
             // 
             this.productTableBindingSource.DataMember = "ProductTable";
@@ -192,44 +225,12 @@
             this.btn_AddOrderToList.UseVisualStyleBackColor = true;
             this.btn_AddOrderToList.Click += new System.EventHandler(this.btn_AddOrderToList_Click);
             // 
-            // pIdDataGridViewTextBoxColumn
-            // 
-            this.pIdDataGridViewTextBoxColumn.DataPropertyName = "pId";
-            this.pIdDataGridViewTextBoxColumn.HeaderText = "pId";
-            this.pIdDataGridViewTextBoxColumn.Name = "pIdDataGridViewTextBoxColumn";
-            this.pIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pIdDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "productName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // materialsStringDataGridViewTextBoxColumn
-            // 
-            this.materialsStringDataGridViewTextBoxColumn.DataPropertyName = "materialsString";
-            this.materialsStringDataGridViewTextBoxColumn.HeaderText = "materialsString";
-            this.materialsStringDataGridViewTextBoxColumn.Name = "materialsStringDataGridViewTextBoxColumn";
-            this.materialsStringDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // productStatusDataGridViewTextBoxColumn
-            // 
-            this.productStatusDataGridViewTextBoxColumn.DataPropertyName = "productStatus";
-            this.productStatusDataGridViewTextBoxColumn.HeaderText = "productStatus";
-            this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
-            // 
             // CreateProductOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1403, 475);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_AddOrderToList);
             this.Controls.Add(this.listBox_ProductOrders);
             this.Controls.Add(this.dataGridView1);
@@ -241,9 +242,12 @@
             this.Controls.Add(this.Confirm_btn);
             this.Controls.Add(this.ID_Text);
             this.Controls.Add(this.ProductOrderInfo_lbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateProductOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CreateProductOrder";
             this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

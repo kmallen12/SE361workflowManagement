@@ -17,13 +17,11 @@ namespace WorkFlowManagement
         public ViewProductsForm()
         {
             InitializeComponent();
-        }
-
-        private void ViewProductsForm_Load(object sender, EventArgs e)
-        {
-
+            product = new Product();
             dataGrid_ViewProducts.DataSource = product.ProductTable();
         }
+
+        
 
         private void ViewProductsForm_Load_1(object sender, EventArgs e)
         {

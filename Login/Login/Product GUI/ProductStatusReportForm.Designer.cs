@@ -92,10 +92,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 432);
+            this.ControlBox = false;
             this.Controls.Add(this.dataGridProductStatus);
             this.Controls.Add(this.lblDefectiveProducts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Name = "ProductStatusReportForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Product Status Report Form";
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProductsBindingSource)).EndInit();

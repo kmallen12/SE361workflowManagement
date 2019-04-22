@@ -17,26 +17,26 @@ namespace WorkFlowManagement
     /// 
     public struct StockOrderRequest
     {
-        public int OrderID;
-        public int Quantity;
-        public string Description;
-        public int StockID;
-        public string Status;
-        public StockOrderRequest(int initID, int initQuantity, string initDescription, string initStatus, int initStockID)
+        public int OrderID { get; set; }
+        public int Quantity { get; set; }
+        public string Description { get; set; }
+        public string MaterialType { get; set; }
+        public string Status { get; set; }
+        public StockOrderRequest(int initID, int initQuantity, string initDescription, string initStatus, string initMaterialType)
         {
             OrderID = initID;
             Quantity = initQuantity;
             Description = initDescription;
-            StockID = initStockID;
+            MaterialType = initMaterialType;
             Status = initStatus;
         }
         public override string ToString()
         {
-            return string.Format("StockID: {0}, Quantity: {1}, Description: {2}, Satus: {3}", StockID, Quantity, Description, Status);
+            return string.Format("Material: {0}, Quantity: {1}, Description: {2}, Status: {3}", MaterialType, Quantity, Description, Status);
         }
         public string returnOrders()
         {
-            return string.Format("StockID: {0}, Quantity: {1}", StockID, Quantity);
+            return string.Format("StockID: {0}, Quantity: {1}", MaterialType, Quantity);
         }
     };
     public class Stock
@@ -45,7 +45,7 @@ namespace WorkFlowManagement
 
         DatabaseManager objDatabaseManager = new DatabaseManager();
         public string materialType { get { return MaterialType; } set { MaterialType = value;  } }
-        public double quantity { get; set; }
+        public decimal quantity { get; set; }
         public double unitCost { get; set; }
         public double defects { get; set; }
         public DateTime dateAcquired { get; set; }
@@ -76,16 +76,16 @@ namespace WorkFlowManagement
         {
             objDatabaseManager.UpdateStockOrderStatus(OrderID);
         }
-        public void newOrder(int initQuantity, string initDescription, string initStatus, int initID)
+        public void newOrder(int initQuantity, string initDescription, string initStatus, string materialType)
         {
-            StockOrder = new StockOrderRequest(0, initQuantity, initDescription, initStatus, initID);
+            StockOrder = new StockOrderRequest(0, initQuantity, initDescription, initStatus, materialType);
             StockOrderRequests.Add(StockOrder);
         }
         public void InsertStockOrder()
         {
             objDatabaseManager.InsertStockOrders(StockOrderRequests);
         }
-        public Stock(string material, double quan, double uCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
+        public Stock(string material, decimal quan, double uCost, double defectNo, DateTime dtAcq, DateTime dtUsed)
         {
             materialType = material;
             quantity = quan;
@@ -114,13 +114,13 @@ namespace WorkFlowManagement
         //returns the unit cost of materials purchased
         public double totalCost()
         {
-            return unitCost * quantity;
+            return unitCost * (double)quantity;
         }
 
         //returns the percent of unusable materials by dividing the defect number by quantity purchased
         public double defectRate()
         {
-            return (defects / quantity * 100);
+            return (defects / (double)quantity * 100);
         }
 
         //returns the time materials sit idle (difference between received date and use date)

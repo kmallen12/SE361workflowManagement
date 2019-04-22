@@ -12,13 +12,13 @@ namespace WorkFlowManagement
 {
     public partial class ViewQualifiedProducts : Form
     {
-        private List<Product> qualProducts;
+        private List<ProductStruct> qualProducts;
         private DatabaseManager objDatabaseManager;
         private ToolTip ttExport = new ToolTip();
         public ViewQualifiedProducts()
         {
             InitializeComponent();
-            qualProducts = new List<Product>();
+            qualProducts = new List<ProductStruct>();
             objDatabaseManager = new DatabaseManager();
 
             qualProducts = objDatabaseManager.LoadQualifiedProducts();

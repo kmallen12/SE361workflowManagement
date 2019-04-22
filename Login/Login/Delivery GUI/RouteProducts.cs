@@ -13,10 +13,10 @@ namespace WorkFlowManagement
     public partial class RouteProducts : Form
     {
         private Product objProduct;
-        private List<Product> qualifiedProducts;
-        private List<Product> defectiveProducts;
-        private List<Product> toSalesProducts;
-        private List<Product> toManufacturingProducts;
+        private List<ProductStruct> qualifiedProducts;
+        private List<ProductStruct> defectiveProducts;
+        private List<ProductStruct> toSalesProducts;
+        private List<ProductStruct> toManufacturingProducts;
         private DatabaseManager objDatabaseManager;
 
         private void LoadQualifiedProducts()
@@ -25,7 +25,7 @@ namespace WorkFlowManagement
 
             foreach (var prod in qualifiedProducts)
             {
-                cboxProdIDQualified.Items.Add(prod.productID);
+                cboxProdIDQualified.Items.Add(prod.ProductID);
             }
         }
 
@@ -35,7 +35,7 @@ namespace WorkFlowManagement
 
             foreach (var prod in defectiveProducts)
             {
-                cboxProdIDDefects.Items.Add(prod.productID);
+                cboxProdIDDefects.Items.Add(prod.ProductID);
             }
         }
 
@@ -43,10 +43,10 @@ namespace WorkFlowManagement
         {
             InitializeComponent();
 
-            qualifiedProducts = new List<Product>();
-            defectiveProducts = new List<Product>();
-            toSalesProducts = new List<Product>();
-            toManufacturingProducts = new List<Product>();
+            qualifiedProducts = new List<ProductStruct>();
+            defectiveProducts = new List<ProductStruct>();
+            toSalesProducts = new List<ProductStruct>();
+            toManufacturingProducts = new List<ProductStruct>();
             objDatabaseManager = new DatabaseManager();
         }
 
@@ -73,7 +73,7 @@ namespace WorkFlowManagement
 
                 foreach (var prod in qualifiedProducts)
                 {
-                    if(prod.productID == int.Parse(cboxProdIDQualified.Text))
+                    if(prod.ProductID == int.Parse(cboxProdIDQualified.Text))
                     {
                         toSalesProducts.Add(prod);
                     }
@@ -93,7 +93,7 @@ namespace WorkFlowManagement
 
                 foreach (var prod in defectiveProducts)
                 {
-                    if (prod.productID == int.Parse(cboxProdIDDefects.Text))
+                    if (prod.ProductID == int.Parse(cboxProdIDDefects.Text))
                     {
                         toManufacturingProducts.Add(prod);
                     }
@@ -119,9 +119,9 @@ namespace WorkFlowManagement
         {
             foreach (var prod in toSalesProducts)
             {
-                prod.productStatus = "Sent to Sales";
-                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.JsonMaterialString, prod.productQuantity, prod.productStatus);
-                MessageBox.Show(prod.ToString());
+                
+                objDatabaseManager.UpdateProductStatus(prod.ProductID, "Sent to Sales");
+                
             }
 
             lstQualifiedProd.Items.Clear();
@@ -136,9 +136,8 @@ namespace WorkFlowManagement
         {
             foreach (var prod in toManufacturingProducts)
             {
-                prod.productStatus = "Returned to Manufacturing";
-                objDatabaseManager.UpdateProduct(prod.productID, prod.productName, prod.JsonMaterialString, prod.productQuantity, prod.productStatus);
-                MessageBox.Show(prod.ToString());
+               
+                objDatabaseManager.UpdateProductStatus(prod.ProductID, "Returned to Manufacturing");
             }
 
             lstDefectedProd.Items.Clear();

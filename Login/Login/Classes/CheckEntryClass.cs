@@ -159,7 +159,7 @@ namespace WorkFlowManagement
             }
             else
             {
-                objStock.quantity = double.Parse(quantityText);
+                objStock.quantity = decimal.Parse(quantityText);
             }
 
             //If unit cost contains a value that is not formatted correctly, prompt user to enter a different value.
@@ -205,8 +205,15 @@ namespace WorkFlowManagement
             {
                 if (!isValidDate(dateAcqText))
                 {
-                    warningDateFormat += "\n" + dateAcqLabel;
-                    validStock = false;
+                    if(dateAcqText != " ")
+                    {
+                        warningDateFormat += "\n" + dateAcqLabel;
+                        validStock = false;
+                    }
+                    else
+                    {
+                        objStock.dateAcquired = DateTime.MinValue;
+                    }
                 }
                 else
                 {
@@ -225,8 +232,15 @@ namespace WorkFlowManagement
             {
                 if (!isValidDate(dateUsedText))
                 {
-                    warningDateFormat += "\n" + dateUsedLabel;
-                    validStock = false;
+                    if(dateUsedText != " ")
+                    {
+                        warningDateFormat += "\n" + dateUsedLabel;
+                        validStock = false;
+                    }
+                    else
+                    {
+                        objStock.dateUsed = DateTime.MinValue;
+                    }
                 }
                 else
                 {

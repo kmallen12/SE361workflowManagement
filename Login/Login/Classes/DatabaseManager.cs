@@ -86,23 +86,31 @@ namespace WorkFlowManagement
             return "";
         }
         //returns the amount of material if we tried to subtract that much material.
-        public int CheckMaterialQuantity(int key, decimal amt)
+        public int CheckMaterialQuantity(string StockMaterial, string StockAmount)
         {
+            MessageBox.Show(StockMaterial + "!");
             try
             {
+                decimal quantity;
+
                 _conn.Open();
 
                 //SQL Command to grab quantity based on materialID
-                SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
+                SqlCommand cmd = new SqlCommand("SELECT SUM(quantity) as Sum FROM StockTable WHERE materialType = @material", _conn);
+
+                cmd.Parameters.AddWithValue("@material", StockMaterial);
+
+
                 SqlDataReader reader2 = cmd.ExecuteReader();
                 reader2.Read();
-                decimal total = reader2.GetDecimal(0);
+                decimal sum = (decimal)reader2["Sum"];
+
                 reader2.Close();
 
-                total = total - amt;
-                
-                return (int)total;
-
+                quantity = decimal.Parse(StockAmount);
+                sum -= quantity;
+                _conn.Close();                
+                return (int)sum;
             }
             catch (Exception q)
             {
@@ -116,29 +124,70 @@ namespace WorkFlowManagement
             return 0;
         }
         //actually subtracts the material
-        public void SubtractMaterialQuantity(int key, decimal amt)
+        public void SubtractMaterialQuantity(string StockMaterial, string StockAmount)
         {
+            
+
             try
             {
+                decimal total = decimal.Parse(StockAmount);
+
                 _conn.Open();
 
                 //SQL Command to grab quantity based on materialID
-                SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID="+key, _conn);
+                SqlCommand cmd = new SqlCommand("SELECT itemID, quantity FROM StockTable WHERE materialType = @material", _conn);
+
+                cmd.Parameters.AddWithValue("@material", StockMaterial);
+
                 SqlDataReader reader2 = cmd.ExecuteReader();
-                reader2.Read();
-                decimal total = reader2.GetDecimal(0);
-                reader2.Close();
-                
-                total = total - amt;
-                //Update row to new total 
-                string str = "UPDATE [dbo].[StockTable] SET  quantity=@quantity WHERE itemID=@itemID";
-                using (SqlCommand com = new SqlCommand(str, _conn))
+                List<Stock> Stocks = new List<Stock>();
+                Stock S;
+                while (reader2.Read())
                 {
-                    com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
-                    com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = total;
-                    com.ExecuteNonQuery();
+                    S = new Stock();
+
+                    S.quantity= (decimal)reader2["quantity"];
+                    S.id = (int)reader2["itemID"];
+                    Stocks.Add(S);
                 }
-               
+                reader2.Close();
+                foreach (Stock So in Stocks)  {
+                    if (total < So.quantity)
+                    {
+                        _conn.Close();
+                        _conn.Open();
+                        So.quantity -= total;
+
+
+                        //Update row to new total 
+                        string str = "UPDATE [dbo].[StockTable] SET quantity=@quantity WHERE itemID=@itemID";
+                        using (SqlCommand con = new SqlCommand(str, _conn))
+                        {
+                            con.Parameters.Add("@itemID", SqlDbType.Int).Value = So.id;
+                            con.Parameters.Add("@quantity", SqlDbType.Decimal).Value = So.quantity;
+                            con.ExecuteNonQuery();
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        _conn.Close();
+                        _conn.Open();
+
+                        //Update row to new total 
+                        string str = "UPDATE [dbo].[StockTable] SET  quantity=@quantity WHERE itemID=@itemID";
+                        using (SqlCommand co = new SqlCommand(str, _conn))
+                        {
+                            co.Parameters.Add("@itemID", SqlDbType.Int).Value = So.id;
+                            co.Parameters.Add("@quantity", SqlDbType.Decimal).Value = 0;
+                            co.ExecuteNonQuery();
+                        }
+
+                    }
+
+                    
+                    
+                }
             }
             catch (Exception q)
             {
@@ -287,16 +336,16 @@ namespace WorkFlowManagement
         }
 
         //load IDs of qualified products from the Products Table into a list
-        public List<Product> LoadQualifiedProducts()
+        public List<ProductStruct> LoadQualifiedProducts()
         {
             string acceptable = "Acceptable";
             string medium = "Medium";
             string high = "High";
-            List<Product> qualifiedProds = new List<Product>();
+            List<ProductStruct> qualifiedProds = new List<ProductStruct>();
 
             try
             {
-                Product tempProd;
+                ProductStruct tempProd;
 
                 //open a db connection
                 conn.Open();
@@ -312,12 +361,8 @@ namespace WorkFlowManagement
 
                 while (reader.Read())
                 {
-                    tempProd = new Product();
-                    tempProd.productID = (int)reader["pID"];
-                    tempProd.productName = (string)reader["ProductName"];
-                    tempProd.JsonMaterialString = (string)reader["materialsString"];
-                    tempProd.productQuantity = (int)reader["quantity"];
-                    tempProd.productStatus = (string)reader["productStatus"];
+                    tempProd = new ProductStruct((int)reader["pID"], (int)reader["quantity"], (string)reader["ProductName"], (string)reader["productStatus"]);
+                    ;
                     qualifiedProds.Add(tempProd);
 
                 }
@@ -335,34 +380,34 @@ namespace WorkFlowManagement
         }
 
         //load IDs of defective products from the Products Table into a list
-        public List<Product> LoadDefectiveProducts()
+        public List<ProductStruct> LoadDefectiveProducts()
         {
-            
-            List<Product> defectiveProds = new List<Product>();
+            string poor = "Poor";
+            string vpoor = "Very Poor";
+           
+            List<ProductStruct> qualifiedProds = new List<ProductStruct>();
 
             try
             {
-                Product tempProd;
+                ProductStruct tempProd;
 
                 //open a db connection
                 conn.Open();
 
-                //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = 'Returned to Manufacturing'", conn);
+                //create SQL Command to pull data from Product table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status1 OR productStatus = @status2", conn);
 
+                cmd.Parameters.AddWithValue("@status1", poor);
+                cmd.Parameters.AddWithValue("@status2", vpoor);
                 
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    tempProd = new Product();
-                    tempProd.productID = (int)reader["pID"];
-                    tempProd.productName = (string)reader["ProductName"];
-                    tempProd.JsonMaterialString = (string)reader["materialsString"];
-                    tempProd.productQuantity = (int)reader["quantity"];
-                    tempProd.productStatus = (string)reader["productStatus"];
-                    defectiveProds.Add(tempProd);
+                    tempProd = new ProductStruct((int)reader["pID"], (int)reader["quantity"], (string)reader["ProductName"], (string)reader["productStatus"]);
+                    
+                    qualifiedProds.Add(tempProd);
 
                 }
             }
@@ -375,7 +420,55 @@ namespace WorkFlowManagement
                 conn.Close();
             }
 
-            return defectiveProds;
+            return qualifiedProds;
+        }
+
+
+
+        public int[] WareHouseStats(string mat)
+        {
+
+            int[] numbers = new int[3];
+
+            try
+            {
+                conn.Close();
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand(@"SELECT ST.materialType, ST.Sum, WHT.Max, WHT.Low FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = @material AND ST.materialType = WHT.Material; ", conn);
+
+
+                cmd.Parameters.AddWithValue("@material", mat);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    numbers[0] = (int)((Decimal)reader["Sum"]);
+
+                    numbers[1] = (int)(reader["Low"]);
+                    numbers[2] = (int)(reader["Max"]);
+                 
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error getting material information from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return numbers;
         }
 
         //load IDs of defective products from the Products Table into a list
@@ -426,11 +519,11 @@ namespace WorkFlowManagement
         public void UpdateWareHouse(string ID, string max, string low)
         {
             _conn.Open();
-            string str = "UPDATE [dbo].[WareHouseTable] SET Max=@Max, Low=@Low WHERE itemID = @itemID";
+            string str = "UPDATE [dbo].[WarehouseCapTable] SET Max=@Max, Low=@Low WHERE Material = @itemID";
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;
-                com.Parameters.Add("@itemID", SqlDbType.Int).Value = int.Parse(ID);
+                com.Parameters.Add("@itemID", SqlDbType.VarChar).Value =ID;
 
                 if (!string.IsNullOrEmpty(max) && isValidQuantity(max))
                 {
@@ -454,19 +547,24 @@ namespace WorkFlowManagement
             _conn.Close();
             _conn.Open();
             string str = "INSERT INTO [dbo].[ProductTable] (  [productName], [materialsString], [quantity], [productStatus]) VALUES (@productName, @materialsString, @quantity, @status)";
-            using (SqlCommand com = new SqlCommand(str, _conn))
+            for (int i = 0; i < quantity; i++)
             {
-                com.Connection = _conn;
-                com.Parameters.Add("@productName", SqlDbType.VarChar).Value = productName;
-                com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
-                com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
-                com.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+                using (SqlCommand com = new SqlCommand(str, _conn))
+                {
+                    com.Connection = _conn;
+                    com.Parameters.Add("@productName", SqlDbType.VarChar).Value = productName;
+                    com.Parameters.Add("@quantity", SqlDbType.Int).Value = 1;
+                    com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
+                    com.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
 
-                
-                com.ExecuteNonQuery();
+
+                    com.ExecuteNonQuery();
+                }
             }
             _conn.Close();
         }
+            
+        
         public DataTable StockOrderTable()
         {
             _conn.Close();
@@ -488,22 +586,19 @@ namespace WorkFlowManagement
         public void InsertStockOrders(List<StockOrderRequest> Orders)
         {
 
-            List<int> IDs = new List<int>();
             foreach (StockOrderRequest order in Orders)
             {
                 _conn.Close();
                 _conn.Open();
 
-                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDiscription], [OrderStatus], [itemID]) VALUES (@Amount, @OrderDiscription, @Status, @itemID)";
+                string str = "INSERT INTO [dbo].[StockOrderRequest] (  [Amount], [OrderDescription], [OrderStatus], [MaterialType]) VALUES (@Amount, @OrderDescription, @Status, @MaterialType)";
                 using (SqlCommand com = new SqlCommand(str, _conn))
                 {
                     com.Connection = _conn;
                     com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
-                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Description;
+                    com.Parameters.Add("@OrderDescription", SqlDbType.NVarChar).Value = order.Description;
                     com.Parameters.Add("@Status", SqlDbType.NVarChar).Value = order.Status;
-                    com.Parameters.Add("@itemID", SqlDbType.Int).Value = order.StockID;
-
-
+                    com.Parameters.Add("@MaterialType", SqlDbType.NVarChar).Value = order.MaterialType;
 
                     com.ExecuteNonQuery();
                 }
@@ -523,7 +618,7 @@ namespace WorkFlowManagement
                 _conn.Open();
 
                 //create SQL Command to pull data from Repair table
-                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDiscription, OrderStatus, itemID FROM [dbo].[StockOrderRequest]", _conn);
+                SqlCommand cmd = new SqlCommand("SELECT OrderID, Amount, OrderDescription, OrderStatus, MaterialType FROM [dbo].[StockOrderRequest]", _conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -531,11 +626,11 @@ namespace WorkFlowManagement
                 {
                     int ID = (int)reader["OrderID"];
                     int Quantity = (int)reader["Amount"];
-                    string Discription = (string)reader["OrderDiscription"];
+                    string Discription = (string)reader["OrderDescription"];
                     string Status = (string)reader["OrderStatus"];
-                    int itemID = (int)reader["itemID"];
+                    string MaterialType = (string)reader["MaterialType"];
 
-                    order = new StockOrderRequest(ID, Quantity, Discription, Status, itemID);
+                    order = new StockOrderRequest(ID, Quantity, Discription, Status, MaterialType);
                     orders.Add(order);
                 }
                 _conn.Close();
@@ -562,7 +657,7 @@ namespace WorkFlowManagement
                 {
                     com.Connection = _conn;
                     com.Parameters.Add("@Amount", SqlDbType.Int).Value = order.Quantity;
-                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Discription;
+                    com.Parameters.Add("@OrderDiscription", SqlDbType.NVarChar).Value = order.Description;
                     com.Parameters.Add("@ProductID", SqlDbType.Int).Value = order.ProductID;
 
 
@@ -901,14 +996,14 @@ namespace WorkFlowManagement
             ProductTable.Columns.Add("ProductName", typeof(string));
             ProductTable.Columns.Add("materialsString", typeof(string));
             ProductTable.Columns.Add("quantity", typeof(int));
-
+            ProductTable.Columns.Add("productStatus", typeof(string));
             try
             {
                 //open a db connection
                 conn.Open();
 
                 //SQL Command to pull data from Product table
-                SqlCommand cmd = new SqlCommand("SELECT pId, ProductName, materialsString, quantity FROM [dbo].[ProductTable]", conn);
+                SqlCommand cmd = new SqlCommand("SELECT pId, ProductName, materialsString, quantity, productStatus FROM [dbo].[ProductTable]", conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -918,7 +1013,7 @@ namespace WorkFlowManagement
                     string ProductName = (string)reader["ProductName"];
                     string materialsString = (string)reader["materialsString"];
                     int quantity = (int)reader["quantity"];
-
+                    string status = (string)reader["productStatus"];
 
 
 
@@ -928,7 +1023,7 @@ namespace WorkFlowManagement
                     //handle null defects in database
 
 
-                    ProductTable.Rows.Add(pId, ProductName, materialsString, quantity);
+                    ProductTable.Rows.Add(pId, ProductName, materialsString, quantity, status);
 
                 }
             }
@@ -1111,6 +1206,21 @@ namespace WorkFlowManagement
                 com.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName;
                 com.Parameters.Add("@materialsString", SqlDbType.VarChar).Value = materialsString;
                 com.Parameters.Add("@quantity", SqlDbType.Int).Value = quantity;
+                com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
+
+                com.ExecuteNonQuery();
+            }
+            _conn.Close();
+        }
+        public void UpdateProductStatus(int key, string productStatus)
+        {
+            _conn.Open();
+            string str = "UPDATE [dbo].[ProductTable] SET  productStatus=@productStatus WHERE pId=@pId";
+            using (SqlCommand com = new SqlCommand(str, _conn))
+            {
+                com.Connection = _conn;
+                com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
+              
                 com.Parameters.Add("@productStatus", SqlDbType.VarChar).Value = productStatus;
 
                 com.ExecuteNonQuery();
@@ -1443,39 +1553,69 @@ namespace WorkFlowManagement
 
         public DataTable StockReportMax()
         {
-            _conn.Close();
-            _conn.Open();
-
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = _conn;
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity >= WHT.Max";
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
             DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
 
-            _conn.Close();
+            try
+            {
+                _conn.Close();
+                _conn.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = _conn;
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = @"SELECT ST.materialType, ST.Sum, WHT.Max FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum 
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = WHT.Material AND ST.Sum >= WHT.Max; ";
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+                sqlDataAdap.Fill(dtRecord);
+
+                _conn.Close();
+
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error loading stock max capacity from database.");
+            }
 
             return dtRecord;
+
         }
 
         public DataTable StockReportLow()
         {
-            _conn.Close();
-            _conn.Open();
-
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = _conn;
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT ST.itemID , ST.quantity FROM StockTable AS ST, WareHouseTable AS WHT WHERE ST.itemID = WHT.itemID AND ST.quantity <= WHT.Low";
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
             DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-            _conn.Close();
+
+            try
+            {
+                _conn.Close();
+                _conn.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = _conn;
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = @"SELECT ST.materialType, ST.Sum, WHT.Low FROM 
+                                      (SELECT materialType, SUM(quantity) as Sum 
+                                       FROM StockTable GROUP BY materialType) AS ST,
+                                     WarehouseCapTable AS WHT
+                                      WHERE ST.materialType = WHT.Material AND ST.Sum <= WHT.Low; ";
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+                sqlDataAdap.Fill(dtRecord);
+                _conn.Close();
+
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error loading stock low capacity from database.");
+            }
 
             return dtRecord;
+
         }
 
         //load data from the User Type Table into a list

@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace WorkFlowManagement
 {
@@ -20,7 +13,7 @@ namespace WorkFlowManagement
         private DatabaseManager objDatabaseManager = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
-        private int ID { get; set; }
+        private string material { get; set; }
         public AddMaterialForm()
         {
             InitializeComponent();
@@ -39,16 +32,12 @@ namespace WorkFlowManagement
 
             txt_unitCost.DecimalPlaces = 2;
             txt_TotalCost.DecimalPlaces = 2;
-            txt_dateUsed.CustomFormat = " ";
         }
 
-        public void SETFORM(int stockID, int Quantity)
+        public void SETFORM(string Material, int Quantity)
         {
-            ID = stockID;
             txt_Quantity.Text = Quantity.ToString();
-            txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
-
-            txt_materialType.SelectedIndex = txt_materialType.FindStringExact(objDatabaseManager.StockName(stockID).Trim(' '));
+            txt_materialType.Text = Material.ToString();
         }
 
         private void Another_Material_btn_Click(object sender, EventArgs e)
@@ -60,11 +49,10 @@ namespace WorkFlowManagement
                 {
                     stocks.Add(objStock);
 
-                    lstStocks.Items.Add(objStock.ToString());
+                    objDatabaseManager.InsertToStockTable(stocks);
 
                     txt_materialType.SelectedIndex = -1;
-                    txt_DateAcq.Value= DateTime.Now;
-                    txt_dateUsed.CustomFormat = "";
+                    ResetDTP();
                     txt_Defected.Value = 0;
                     txt_Quantity.Value = 0;
                     txt_TotalCost.Value = 0;
@@ -75,6 +63,8 @@ namespace WorkFlowManagement
                 {
                     MessageBox.Show("Error: " + err);
                 }
+                toolStripStatusLabel1.Text = "List of Materials Added to Database";
+                stocks.Clear();
             }
         }
 
@@ -125,28 +115,13 @@ namespace WorkFlowManagement
             }
         }
 
-        private void btnSaveToDB_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                objDatabaseManager.InsertToStockTable(stocks);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Error: " + err);
-            }
-            toolStripStatusLabel1.Text = "List of Materials Added to Database";
-            stocks.Clear();
-            lstStocks.Clear();
-        }
-
-        
+            
 
         private void btn_IncreaseQuantity_Click(object sender, EventArgs e)
         {
             try
             {
-                objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
+                //objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
             }
             catch(Exception ex)
             {
@@ -157,12 +132,31 @@ namespace WorkFlowManagement
 
         private void txt_dateUsed_ValueChanged(object sender, EventArgs e)
         {
-            txt_dateUsed.CustomFormat = "dd/mm/yyyy";
+            txt_dateUsed.CustomFormat = "MM/dd/yyyy";
         }
 
         private void StsAddMaterial_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             toolStripStatusLabel1.Text = "Review items in the list then save to database";
+        }
+
+        private void AddMaterialForm_Load(object sender, EventArgs e)
+        {
+            ResetDTP();
+        }
+
+        private void ResetDTP()
+        {
+            txt_DateAcq.Format = DateTimePickerFormat.Custom;
+            txt_DateAcq.CustomFormat = " ";
+
+            txt_dateUsed.Format = DateTimePickerFormat.Custom;
+            txt_dateUsed.CustomFormat = " ";
+        }
+
+        private void txt_DateAcq_ValueChanged(object sender, EventArgs e)
+        {
+            txt_DateAcq.CustomFormat = "MM/dd/yyyy";
         }
     }
 }

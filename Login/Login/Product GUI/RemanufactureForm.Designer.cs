@@ -54,6 +54,7 @@
             this.lstDefProd.Name = "lstDefProd";
             this.lstDefProd.Size = new System.Drawing.Size(528, 134);
             this.lstDefProd.TabIndex = 1;
+            this.lstDefProd.SelectedIndexChanged += new System.EventHandler(this.lstDefProd_SelectedIndexChanged);
             // 
             // btnRepRemanufacture
             // 
@@ -82,13 +83,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ControlBox = false;
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnRepRemanufacture);
             this.Controls.Add(this.lstDefProd);
             this.Controls.Add(this.lblDefectiveProducts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(404, 92);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RemanufactureForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Remanufacture Form";
             this.ResumeLayout(false);
             this.PerformLayout();

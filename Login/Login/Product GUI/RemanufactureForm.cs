@@ -12,24 +12,23 @@ namespace WorkFlowManagement
 {
     public partial class RemanufactureForm : Form
     {
-        private List<Product> defProducts;
+        
         
         private DatabaseManager objDatabaseManager;
         private ToolTip ttExport = new ToolTip();
-
-        public RemanufactureForm()
+        Product P;
+        HomePage Home;
+        ProductStruct PS;
+        public RemanufactureForm(HomePage H)
         {
             InitializeComponent();
-            defProducts = new List<Product>();
             
+            P = new Product();
             objDatabaseManager = new DatabaseManager();
-
-            defProducts = objDatabaseManager.LoadDefectiveProducts();
+            Home = H;
             
-            foreach (var prod in defProducts)
-            {
-                lstDefProd.Items.Add(prod.ToString());
-            }
+
+            lstDefProd.DataSource = P.LoadDefectives();
 
             ttExport.SetToolTip(btnExport, "Export as pdfs coming soon  :D");
         }
@@ -37,11 +36,29 @@ namespace WorkFlowManagement
         //add selected item to Remanufacture list
         private void btnRepRemanufacture_Click(object sender, EventArgs e)
         {
-            //This line of code is what needs to happen but you can't cast the selected item
-            //as a product, so need to find a way around that. 
-            //remanufactureProducts.Add((Product)lstDefProd.SelectedItem);
-            //remanufactureProducts.Add(NewtonSoft.Serialize); //use Matthew's product code for syntax
-            MessageBox.Show("This defective product will be remanufactured");
+            Home.MdiChildren.Last<Form>().Close();
+            AddProduct newProduct = new AddProduct();
+            newProduct.MdiParent = Home;
+            newProduct.SetTXTBoxs(PS.ProductID.ToString(), 1.ToString());
+            newProduct.Show();
+            
+            
+        }
+
+        private void lstDefProd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lstDefProd.SelectedIndex >= 0)
+                {
+                    PS = (ProductStruct)lstDefProd.SelectedItem;                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning");
+            }
         }
     }
 }

@@ -15,15 +15,8 @@ namespace WorkFlowManagement
     {
         private DataTable stocks;
         private DatabaseManager objDatabaseManager = new DatabaseManager();
-        private CheckEntry objCheckEntry = new CheckEntry();
-        private Stock objStock = new Stock();
-        private List<RawMaterials> materialList;
 
-        public StockView() 
-        {
-            InitializeComponent();
-            loadStocks();
-        }
+        public StockView() => InitializeComponent();
 
         private void loadStocks()
         {
@@ -33,6 +26,20 @@ namespace WorkFlowManagement
 
             //use stock datatable as datasource for data grid
             DGVStockView.DataSource = stocks;
+        }
+        private void btnLoadDB_Click(object sender, EventArgs e)
+        {
+            loadStocks();
+        }
+
+        private void StockView_Load_1(object sender, EventArgs e)
+        {
+            loadStocks();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

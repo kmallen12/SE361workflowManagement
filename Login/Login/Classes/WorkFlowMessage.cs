@@ -13,7 +13,8 @@ namespace WorkFlowManagement
 
         public bool UpdateProduct(Product P,string id, string name, string materials, string quantity)
         {
-            messageBoxTxt = "Are you sure you want to change product: " + P.productDiscription() + " to " + "ID: " +id + " Name: " + name + " Materials: " + materials + " Quantity: " +quantity+"?";
+            messageBoxTxt = "Do you want make the following changes? \n\n" 
+                + "ID: " +id + "\nName: " + name + "\nMaterials: " + materials + "\nQuantity: " +quantity;
             caption = "Confirm Product Update";
             if (System.Windows.Forms.MessageBox.Show(messageBoxTxt, caption, System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 return true;
