@@ -348,33 +348,6 @@
   <data name="&gt;&gt;btn_StockOrderStatus.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btn_ManageProductOrders.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="btn_ManageProductOrders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 428</value>
-  </data>
-  <data name="btn_ManageProductOrders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 56</value>
-  </data>
-  <data name="btn_ManageProductOrders.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="btn_ManageProductOrders.Text" xml:space="preserve">
-    <value>Manage Product Orders</value>
-  </data>
-  <data name="&gt;&gt;btn_ManageProductOrders.Name" xml:space="preserve">
-    <value>btn_ManageProductOrders</value>
-  </data>
-  <data name="&gt;&gt;btn_ManageProductOrders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_ManageProductOrders.Parent" xml:space="preserve">
-    <value>tabProducts</value>
-  </data>
-  <data name="&gt;&gt;btn_ManageProductOrders.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btnReManufacture.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
@@ -400,7 +373,7 @@
     <value>tabProducts</value>
   </data>
   <data name="&gt;&gt;btnReManufacture.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btn_AddProduct.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
@@ -427,7 +400,7 @@
     <value>tabProducts</value>
   </data>
   <data name="&gt;&gt;btn_AddProduct.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnReorderStock.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
@@ -454,7 +427,7 @@
     <value>tabProducts</value>
   </data>
   <data name="&gt;&gt;btnReorderStock.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblProductHomepg.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -484,7 +457,7 @@
     <value>tabProducts</value>
   </data>
   <data name="&gt;&gt;lblProductHomepg.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnProductsView.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
@@ -511,7 +484,7 @@
     <value>tabProducts</value>
   </data>
   <data name="&gt;&gt;btnProductsView.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="tabProducts.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>

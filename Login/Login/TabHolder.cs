@@ -41,6 +41,7 @@ namespace WorkFlowManagement
             Dummy.MdiParent = Home;
             SetAccessibility();
         }
+        
         private void SetAccessibility()
         {
             //Grays out inaccessable buttons and displays tooltips for user based on UserType.
@@ -70,8 +71,7 @@ namespace WorkFlowManagement
                 ttUserFeedback.SetToolTip(btnProductsView, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_AddProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
-                ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
-                ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                
                 ttUserFeedback.SetToolTip(btnReManufacture, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_StockOrderStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
@@ -82,7 +82,7 @@ namespace WorkFlowManagement
                 btnReorderStock.ForeColor = Color.DarkGray;
                 btnReManufacture.ForeColor = Color.DarkGray;
 
-                btn_ManageProductOrders.ForeColor = Color.DarkGray;
+               
                 btn_StockOrderStatus.ForeColor = Color.DarkGray;
 
             }
