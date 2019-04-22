@@ -34,10 +34,6 @@
             this.workFlowDatabaseDataSet1 = new Login.WorkFlowDatabaseDataSet();
             this.workFlowDatabaseDataSet2 = new Login.WorkFlowDatabaseDataSet();
             this.dataGrid_ViewProducts = new System.Windows.Forms.DataGridView();
-            this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSetProducts = new Login.WorkFlowDatabaseDataSetProducts();
             this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter();
@@ -71,43 +67,11 @@
             // 
             // dataGrid_ViewProducts
             // 
-            this.dataGrid_ViewProducts.AutoGenerateColumns = false;
             this.dataGrid_ViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_ViewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pIdDataGridViewTextBoxColumn,
-            this.productNameDataGridViewTextBoxColumn,
-            this.materialsStringDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn});
-            this.dataGrid_ViewProducts.DataSource = this.productTableBindingSource;
             this.dataGrid_ViewProducts.Location = new System.Drawing.Point(78, 65);
             this.dataGrid_ViewProducts.Name = "dataGrid_ViewProducts";
-            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(445, 347);
+            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(553, 347);
             this.dataGrid_ViewProducts.TabIndex = 3;
-            // 
-            // pIdDataGridViewTextBoxColumn
-            // 
-            this.pIdDataGridViewTextBoxColumn.DataPropertyName = "pId";
-            this.pIdDataGridViewTextBoxColumn.HeaderText = "pId";
-            this.pIdDataGridViewTextBoxColumn.Name = "pIdDataGridViewTextBoxColumn";
-            this.pIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "productName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // materialsStringDataGridViewTextBoxColumn
-            // 
-            this.materialsStringDataGridViewTextBoxColumn.DataPropertyName = "materialsString";
-            this.materialsStringDataGridViewTextBoxColumn.HeaderText = "materialsString";
-            this.materialsStringDataGridViewTextBoxColumn.Name = "materialsStringDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             // 
             // productTableBindingSource
             // 
@@ -133,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 461);
+            this.ClientSize = new System.Drawing.Size(723, 461);
             this.ControlBox = false;
             this.Controls.Add(this.dataGrid_ViewProducts);
             this.Controls.Add(this.lblProductDetails);
@@ -164,9 +128,5 @@
         private System.Windows.Forms.BindingSource productTableBindingSource;
         private Login.WorkFlowDatabaseDataSetProductsTableAdapters.ProductTableTableAdapter productTableTableAdapter;
         private Login.WorkFlowDatabaseDataSetProductsTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materialsStringDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
     }
 }

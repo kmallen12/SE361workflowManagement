@@ -993,14 +993,14 @@ namespace WorkFlowManagement
             ProductTable.Columns.Add("ProductName", typeof(string));
             ProductTable.Columns.Add("materialsString", typeof(string));
             ProductTable.Columns.Add("quantity", typeof(int));
-
+            ProductTable.Columns.Add("productStatus", typeof(string));
             try
             {
                 //open a db connection
                 conn.Open();
 
                 //SQL Command to pull data from Product table
-                SqlCommand cmd = new SqlCommand("SELECT pId, ProductName, materialsString, quantity FROM [dbo].[ProductTable]", conn);
+                SqlCommand cmd = new SqlCommand("SELECT pId, ProductName, materialsString, quantity, productStatus FROM [dbo].[ProductTable]", conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -1010,7 +1010,7 @@ namespace WorkFlowManagement
                     string ProductName = (string)reader["ProductName"];
                     string materialsString = (string)reader["materialsString"];
                     int quantity = (int)reader["quantity"];
-
+                    string status = (string)reader["productStatus"];
 
 
 
@@ -1020,7 +1020,7 @@ namespace WorkFlowManagement
                     //handle null defects in database
 
 
-                    ProductTable.Rows.Add(pId, ProductName, materialsString, quantity);
+                    ProductTable.Rows.Add(pId, ProductName, materialsString, quantity, status);
 
                 }
             }
