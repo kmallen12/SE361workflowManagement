@@ -89,6 +89,10 @@ namespace WorkFlowManagement
                 //    txt_ProductMaterials.Text = selectedRow[0]["materialsString"].ToString();
                 //    txt_ProductQuantity.Text = selectedRow[0]["quantity"].ToString();
                 //}
+                txt_ProductMaterials.Clear();
+                txt_ProductName.Clear();
+                txt_ProductQuantity.Clear();
+                
                 P.SetProduct(Int32.Parse(txt_ProductID.Text));
                 foreach (var v in P.productMaterials)
                     txt_ProductMaterials.Text = txt_ProductMaterials.Text + v.Name + ", " + v.Quantity + "\n";
