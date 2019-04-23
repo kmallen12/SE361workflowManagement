@@ -61,10 +61,18 @@ namespace WorkFlowManagement
 
         private void btn_OrderProduct_Click(object sender, EventArgs e)
         {
-            //More of an existing product.
-            AddProduct addp = new AddProduct();
-            addp.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
-            addp.ShowDialog();
+            try
+            {
+                //More of an existing product.
+                AddProduct addp = new AddProduct();
+                addp.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
+                addp.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select a product using the Product ID dropdown before trying to order more.");
+            }
+            
         }
 
         private void txt_ProductID_SelectedIndexChanged(object sender, EventArgs e)

@@ -77,7 +77,6 @@ namespace WorkFlowManagement
         //public string productMaterials { get; set; }
         public List<MaterialsProduct> productMaterials;
         public int productQuantity { get; set; }
-        private List<int> IDs;
         private int materialamt;
         public string productStatus { get; set; }
 
