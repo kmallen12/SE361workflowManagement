@@ -79,16 +79,21 @@ namespace WorkFlowManagement
         {
             try
             {
-                DataRow[] selectedRow;
+                //DataRow[] selectedRow;
 
-                selectedRow = productTable.Select("pId = " + txt_ProductID.Text);
+                //selectedRow = productTable.Select("pId = " + txt_ProductID.Text);
 
-                if (selectedRow.Length > 0)
-                {
-                    txt_ProductName.Text = selectedRow[0]["productName"].ToString();
-                    txt_ProductMaterials.Text = selectedRow[0]["materialsString"].ToString();
-                    txt_ProductQuantity.Text = selectedRow[0]["quantity"].ToString();
-                }
+                //if (selectedRow.Length > 0)
+                //{
+                //    txt_ProductName.Text = selectedRow[0]["productName"].ToString();
+                //    txt_ProductMaterials.Text = selectedRow[0]["materialsString"].ToString();
+                //    txt_ProductQuantity.Text = selectedRow[0]["quantity"].ToString();
+                //}
+                P.SetProduct(Int32.Parse(txt_ProductID.Text));
+                foreach (var v in P.productMaterials)
+                    txt_ProductMaterials.Text = txt_ProductMaterials.Text + v.Name + ", " + v.Quantity + "\n";
+                txt_ProductName.Text = P.productName;
+                txt_ProductQuantity.Text = P.productQuantity.ToString();
             }
             catch (Exception)
             {
