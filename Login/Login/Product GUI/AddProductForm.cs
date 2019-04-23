@@ -92,9 +92,11 @@ namespace WorkFlowManagement
             btn_AdditionalProduct.Visible = true;
             txt_ProductID.Visible = true;
             txt_ProductQuantity.Visible = true;
+            btnCancel.Visible = true;
             //Ensures product has correct attributes based on ID.
             //Only needed so we can correctly set the discription of the materials.
             product.SetProduct(Int32.Parse(txt_ProductID.Text));
+            
             lbl_Description.Text = string.Empty;
             foreach (var v in product.productMaterials)
                 lbl_Description.Text = lbl_Description.Text + v.Name + ", " + v.Quantity + "\n";
@@ -103,14 +105,22 @@ namespace WorkFlowManagement
         
         private void btn_FinalizeProduct_Click(object sender, EventArgs e)
         {
-            if (CE.isnotNull(txt_ProductName.Text, "ProductName") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
+            try
             {
-                if (M.CreateProduct(txt_ProductName.Text, lbl_Description.Text, txt_ProductQuantity.Text))
+                if (CE.isnotNull(txt_ProductName.Text, "ProductName") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
                 {
-                    product.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
-                    Product_Load_1(sender, e);
+                    if (M.CreateProduct(txt_ProductName.Text, lbl_Description.Text, txt_ProductQuantity.Text))
+                    {
+                        product.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
+                        Product_Load_1(sender, e);
+                    }
                 }
             }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+            
         }
 
         private void btn_AdditionalProduct_Click(object sender, EventArgs e)
@@ -125,6 +135,11 @@ namespace WorkFlowManagement
                 Orders.ConfirmFilled();
             }
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

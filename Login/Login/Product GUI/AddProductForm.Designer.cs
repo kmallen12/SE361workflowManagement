@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.PartialStockGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockSummaryViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.txt_ProductName = new System.Windows.Forms.TextBox();
             this.txt_ProductQuantity = new System.Windows.Forms.TextBox();
@@ -48,16 +52,13 @@
             this.btn_AdditionalProduct = new System.Windows.Forms.Button();
             this.txt_MaterialQuantity = new System.Windows.Forms.NumericUpDown();
             this.txt_Material = new System.Windows.Forms.ComboBox();
-            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
-            this.stockSummaryViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockSummaryViewTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockSummaryViewTableAdapter();
             this.tableAdapterManager = new Login.WorkFlowDatabaseDataSetTableAdapters.TableAdapterManager();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MaterialQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockSummaryViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaterialQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +81,29 @@
             this.PartialStockGrid.Name = "PartialStockGrid";
             this.PartialStockGrid.Size = new System.Drawing.Size(460, 700);
             this.PartialStockGrid.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "materialType";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Material";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // sumDataGridViewTextBoxColumn
+            // 
+            this.sumDataGridViewTextBoxColumn.DataPropertyName = "Sum";
+            this.sumDataGridViewTextBoxColumn.HeaderText = "Total Quantity";
+            this.sumDataGridViewTextBoxColumn.Name = "sumDataGridViewTextBoxColumn";
+            // 
+            // stockSummaryViewBindingSource
+            // 
+            this.stockSummaryViewBindingSource.DataMember = "StockSummaryView";
+            this.stockSummaryViewBindingSource.DataSource = this.workFlowDatabaseDataSet;
+            // 
+            // workFlowDatabaseDataSet
+            // 
+            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
+            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_Title
             // 
@@ -115,9 +139,9 @@
             this.lbl_ProductName.Location = new System.Drawing.Point(79, 94);
             this.lbl_ProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ProductName.Name = "lbl_ProductName";
-            this.lbl_ProductName.Size = new System.Drawing.Size(142, 25);
+            this.lbl_ProductName.Size = new System.Drawing.Size(148, 25);
             this.lbl_ProductName.TabIndex = 6;
-            this.lbl_ProductName.Text = "ProductName";
+            this.lbl_ProductName.Text = "Product Name";
             // 
             // label5
             // 
@@ -126,9 +150,9 @@
             this.label5.Location = new System.Drawing.Point(79, 177);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 25);
+            this.label5.Size = new System.Drawing.Size(173, 25);
             this.label5.TabIndex = 7;
-            this.label5.Text = "ProductQuantity";
+            this.label5.Text = "Product Quantity";
             // 
             // lbl_MaterialID
             // 
@@ -183,9 +207,9 @@
             this.label7.Location = new System.Drawing.Point(79, 460);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(313, 29);
+            this.label7.Size = new System.Drawing.Size(320, 29);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Materials(Type, Quantity):";
+            this.label7.Text = "Materials (Type, Quantity):";
             // 
             // lbl_Description
             // 
@@ -215,9 +239,9 @@
             this.lbl_ProductID.Location = new System.Drawing.Point(79, 128);
             this.lbl_ProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ProductID.Name = "lbl_ProductID";
-            this.lbl_ProductID.Size = new System.Drawing.Size(107, 25);
+            this.lbl_ProductID.Size = new System.Drawing.Size(113, 25);
             this.lbl_ProductID.TabIndex = 16;
-            this.lbl_ProductID.Text = "ProductID";
+            this.lbl_ProductID.Text = "Product ID";
             this.lbl_ProductID.Visible = false;
             // 
             // lbl_OrderMoreProduct
@@ -261,16 +285,6 @@
             this.txt_Material.Size = new System.Drawing.Size(132, 24);
             this.txt_Material.TabIndex = 20;
             // 
-            // workFlowDatabaseDataSet
-            // 
-            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
-            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockSummaryViewBindingSource
-            // 
-            this.stockSummaryViewBindingSource.DataMember = "StockSummaryView";
-            this.stockSummaryViewBindingSource.DataSource = this.workFlowDatabaseDataSet;
-            // 
             // stockSummaryViewTableAdapter
             // 
             this.stockSummaryViewTableAdapter.ClearBeforeFill = true;
@@ -290,18 +304,18 @@
             this.tableAdapterManager.UserTypeTableTableAdapter = null;
             this.tableAdapterManager.WareHouseTableTableAdapter = null;
             // 
-            // dataGridViewTextBoxColumn1
+            // btnCancel
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "materialType";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Material";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // sumDataGridViewTextBoxColumn
-            // 
-            this.sumDataGridViewTextBoxColumn.DataPropertyName = "Sum";
-            this.sumDataGridViewTextBoxColumn.HeaderText = "Total Quantity";
-            this.sumDataGridViewTextBoxColumn.Name = "sumDataGridViewTextBoxColumn";
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(188, 718);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(200, 62);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddProduct
             // 
@@ -310,6 +324,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1220, 793);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txt_Material);
             this.Controls.Add(this.txt_MaterialQuantity);
             this.Controls.Add(this.btn_AdditionalProduct);
@@ -336,9 +351,9 @@
             this.Text = "  ";
             this.Load += new System.EventHandler(this.Product_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MaterialQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockSummaryViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaterialQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +396,6 @@
         private Login.WorkFlowDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
