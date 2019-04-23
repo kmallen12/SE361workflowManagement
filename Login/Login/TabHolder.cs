@@ -397,7 +397,7 @@ namespace WorkFlowManagement
 
         private void btnRepStockRawMaterials_Click(object sender, EventArgs e)
         {
-            StockSummaryForm formStock = new StockSummaryForm();
+            StockSummaryForm formStock = new StockSummaryForm(Home);
             if (objCurrentUser.canView(formStock))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -416,7 +416,7 @@ namespace WorkFlowManagement
         {
             ViewQualifiedProducts vqpForm = new ViewQualifiedProducts();
 
-            StockSummaryForm formStock = new StockSummaryForm();
+            StockSummaryForm formStock = new StockSummaryForm(Home);
             if (objCurrentUser.canView(vqpForm))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -503,7 +503,7 @@ namespace WorkFlowManagement
 
         private void btnStockInventorySum_Click(object sender, EventArgs e)
         {
-            StockSummaryForm SummaryForm = new StockSummaryForm();
+            StockSummaryForm SummaryForm = new StockSummaryForm(Home);
             if (objCurrentUser.canView(SummaryForm))
             {
                 Home.MdiChildren.Last<Form>().Close();

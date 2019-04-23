@@ -14,11 +14,11 @@ namespace WorkFlowManagement
     {
         private DataTable stocks;
         private DatabaseManager objDatabaseManager;
-
-        public StockSummaryForm()
+        HomePage Home;
+        public StockSummaryForm(HomePage H)
         {
             InitializeComponent();
-
+            Home = H;
             stocks = new DataTable();
             objDatabaseManager = new DatabaseManager();
         }
@@ -37,8 +37,11 @@ namespace WorkFlowManagement
 
         private void btnOpenDetails_Click(object sender, EventArgs e)
         {
+            Home.MdiChildren.Last<Form>().Close();
+
             StockView form = new StockView();
-            form.ShowDialog();
+            form.MdiParent = Home;
+            form.Show();
         }
     }
 }
