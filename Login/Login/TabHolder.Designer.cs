@@ -92,6 +92,8 @@
             // 
             // tabStock
             // 
+            this.tabStock.BackColor = System.Drawing.Color.Transparent;
+            this.tabStock.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
             this.tabStock.Controls.Add(this.button2);
             this.tabStock.Controls.Add(this.btnStockInventorySum);
             this.tabStock.Controls.Add(this.lblStockHmpg);
@@ -100,7 +102,6 @@
             this.tabStock.Controls.Add(this.btnStockMaterials);
             resources.ApplyResources(this.tabStock, "tabStock");
             this.tabStock.Name = "tabStock";
-            this.tabStock.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -121,6 +122,7 @@
             // lblStockHmpg
             // 
             resources.ApplyResources(this.lblStockHmpg, "lblStockHmpg");
+            this.lblStockHmpg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblStockHmpg.Name = "lblStockHmpg";
             // 
             // btnStockUpdate
@@ -147,6 +149,7 @@
             // 
             // tabProducts
             // 
+            this.tabProducts.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
             this.tabProducts.Controls.Add(this.btn_StockOrderStatus);
             this.tabProducts.Controls.Add(this.btnReManufacture);
             this.tabProducts.Controls.Add(this.btn_AddProduct);
@@ -188,6 +191,7 @@
             // lblProductHomepg
             // 
             resources.ApplyResources(this.lblProductHomepg, "lblProductHomepg");
+            this.lblProductHomepg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProductHomepg.Name = "lblProductHomepg";
             // 
             // btnProductsView
@@ -199,6 +203,7 @@
             // 
             // tabQuality
             // 
+            this.tabQuality.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
             this.tabQuality.Controls.Add(this.btnQAUpdateProdStatus);
             this.tabQuality.Controls.Add(this.btnQAViewProd);
             this.tabQuality.Controls.Add(this.lblQAdashboard);
@@ -223,10 +228,12 @@
             // lblQAdashboard
             // 
             resources.ApplyResources(this.lblQAdashboard, "lblQAdashboard");
+            this.lblQAdashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblQAdashboard.Name = "lblQAdashboard";
             // 
             // tabDelivery
             // 
+            this.tabDelivery.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
             this.tabDelivery.Controls.Add(this.btnDelProductStatusReport);
             this.tabDelivery.Controls.Add(this.btnDelViewQualProducts);
             this.tabDelivery.Controls.Add(this.btnDelRouteProduct);
@@ -267,10 +274,12 @@
             // lblDdashboard
             // 
             resources.ApplyResources(this.lblDdashboard, "lblDdashboard");
+            this.lblDdashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDdashboard.Name = "lblDdashboard";
             // 
             // tabReports
             // 
+            this.tabReports.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
             this.tabReports.Controls.Add(this.label2);
             this.tabReports.Controls.Add(this.lblProduct);
             this.tabReports.Controls.Add(this.lblStockReport);
@@ -294,16 +303,19 @@
             // lblProduct
             // 
             resources.ApplyResources(this.lblProduct, "lblProduct");
+            this.lblProduct.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProduct.Name = "lblProduct";
             // 
             // lblStockReport
             // 
             resources.ApplyResources(this.lblStockReport, "lblStockReport");
+            this.lblStockReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblStockReport.Name = "lblStockReport";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Name = "label1";
             // 
             // btnRepDefectedProducts
