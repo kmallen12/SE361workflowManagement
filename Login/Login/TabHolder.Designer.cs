@@ -338,6 +338,7 @@
             resources.ApplyResources(this.btnRepProductsInProgress, "btnRepProductsInProgress");
             this.btnRepProductsInProgress.Name = "btnRepProductsInProgress";
             this.btnRepProductsInProgress.UseVisualStyleBackColor = true;
+            this.btnRepProductsInProgress.Click += new System.EventHandler(this.btnRepProductsInProgress_Click_1);
             // 
             // btnRepStockRawMaterials
             // 

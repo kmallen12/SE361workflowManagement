@@ -87,6 +87,12 @@
     <Compile Include="Product GUI\CreateStockOrder.Designer.cs">
       <DependentUpon>CreateStockOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product GUI\InProgressProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product GUI\InProgressProducts.Designer.cs">
+      <DependentUpon>InProgressProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product GUI\ViewStockOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\CreateStockOrder.resx">
       <DependentUpon>CreateStockOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product GUI\InProgressProducts.resx">
+      <DependentUpon>InProgressProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product GUI\ViewStockOrders.resx">
       <DependentUpon>ViewStockOrders.cs</DependentUpon>

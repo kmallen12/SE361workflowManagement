@@ -468,8 +468,6 @@ namespace WorkFlowManagement
 
             return numbers;
         }
-
-        //load IDs of defective products from the Products Table into a list
         public List<Product> LoadInProgressProducts()
         {
             string status = "In Progress";
@@ -511,6 +509,40 @@ namespace WorkFlowManagement
             }
 
             return products;
+        }
+        //load IDs of defective products from the Products Table into a list
+        public DataTable LoadDataInProgressProducts()
+        {
+            string status = "In Progress";
+
+            DataTable dtRecord = new DataTable();
+            try
+            {
+               
+
+                //open a db connection
+                conn.Open();
+
+                //create SQL Command to pull data from Raw Materials table
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status", conn);
+
+                cmd.Parameters.AddWithValue("@status", status);
+
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+                
+                sqlDataAdap.Fill(dtRecord);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error loading qualified products from the database.");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dtRecord;
         }
 
         //update max/min information for the warehouse

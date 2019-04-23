@@ -18,7 +18,7 @@ namespace WorkFlowManagement
 
         private void LoadProducts()
         {
-            products = objDatabaseManager.LoadInProgressProducts();
+            
 
             lstProducts.Items.AddRange(products.ToArray());
         }
@@ -27,7 +27,7 @@ namespace WorkFlowManagement
             P = new Product();
             InitializeComponent();
 
-            lstProducts.DataSource = P.LoadProductOrders();
+            lstProducts.DataSource = objDatabaseManager.LoadDataInProgressProducts();
         }
         
     }
