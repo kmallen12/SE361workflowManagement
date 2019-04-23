@@ -361,16 +361,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Prod_Label;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridPartialStock;
-        private System.Windows.Forms.BindingSource workFlowDatabaseDataSetBindingSource;
-
-        private System.Windows.Forms.BindingSource stockTableBindingSource;
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materialTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
 
         private System.Windows.Forms.DataGridView PartialStockGrid;
         private System.Windows.Forms.Label lbl_Title;

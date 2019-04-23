@@ -14,9 +14,7 @@ namespace WorkFlowManagement
     {
         Product P;
         private List<Product> products;
-        private List<string> statusList;
         private DatabaseManager objDatabaseManager;
-        private Product objProduct;
 
         private void LoadProducts()
         {

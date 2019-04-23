@@ -27,9 +27,11 @@ namespace WorkFlowManagement
 
         private static bool CheckField(string table, string column, string data)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "select " + column + "from " + table + "where " + column + " = @field";
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = conn,
+                CommandText = "select " + column + "from " + table + "where " + column + " = @field"
+            };
             cmd.Parameters.AddWithValue("@field", data);
             try
             {
@@ -88,7 +90,6 @@ namespace WorkFlowManagement
         //returns the amount of material if we tried to subtract that much material.
         public int CheckMaterialQuantity(string StockMaterial, string StockAmount)
         {
-            MessageBox.Show(StockMaterial + "!");
             try
             {
                 decimal quantity;

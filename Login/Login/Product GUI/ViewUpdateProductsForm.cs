@@ -68,7 +68,7 @@ namespace WorkFlowManagement
                 addp.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
                 addp.ShowDialog();
             }
-            catch (Exception err)
+            catch (Exception)
             {
                 MessageBox.Show("Select a product using the Product ID dropdown before trying to order more.");
             }

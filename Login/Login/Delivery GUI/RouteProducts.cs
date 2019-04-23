@@ -12,7 +12,6 @@ namespace WorkFlowManagement
 {
     public partial class RouteProducts : Form
     {
-        private Product objProduct;
         private List<ProductStruct> qualifiedProducts;
         private List<ProductStruct> defectiveProducts;
         private List<ProductStruct> toSalesProducts;
