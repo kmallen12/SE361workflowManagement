@@ -129,7 +129,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 490</value>
+    <value>113, 480</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -157,7 +157,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnStockInventorySum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 390</value>
+    <value>113, 380</value>
   </data>
   <data name="btnStockInventorySum.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -217,7 +217,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnStockUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 190</value>
+    <value>113, 180</value>
   </data>
   <data name="btnStockUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -244,7 +244,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnStockGenerateReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 290</value>
+    <value>113, 280</value>
   </data>
   <data name="btnStockGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -274,7 +274,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnStockMaterials.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 90</value>
+    <value>113, 80</value>
   </data>
   <data name="btnStockMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -331,7 +331,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btn_StockOrderStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 353</value>
+    <value>113, 480</value>
   </data>
   <data name="btn_StockOrderStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 56</value>
@@ -358,7 +358,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnReManufacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 202</value>
+    <value>113, 280</value>
   </data>
   <data name="btnReManufacture.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -385,7 +385,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btn_AddProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 277</value>
+    <value>113, 380</value>
   </data>
   <data name="btn_AddProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -412,7 +412,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnReorderStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 130</value>
+    <value>113, 180</value>
   </data>
   <data name="btnReorderStock.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 56</value>
@@ -442,7 +442,7 @@
     <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="lblProductHomepg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 12</value>
+    <value>33, 12</value>
   </data>
   <data name="lblProductHomepg.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 29</value>
@@ -469,7 +469,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnProductsView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 55</value>
+    <value>113, 80</value>
   </data>
   <data name="btnProductsView.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -526,7 +526,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnQAUpdateProdStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 136</value>
+    <value>116, 180</value>
   </data>
   <data name="btnQAUpdateProdStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -553,7 +553,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnQAViewProd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 57</value>
+    <value>116, 80</value>
   </data>
   <data name="btnQAViewProd.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -583,7 +583,7 @@
     <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="lblQAdashboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 13</value>
+    <value>36, 13</value>
   </data>
   <data name="lblQAdashboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>334, 29</value>
@@ -637,7 +637,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnDelProductStatusReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 290</value>
+    <value>108, 380</value>
   </data>
   <data name="btnDelProductStatusReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -664,7 +664,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnDelViewQualProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 215</value>
+    <value>108, 280</value>
   </data>
   <data name="btnDelViewQualProducts.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -691,7 +691,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnDelRouteProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 139</value>
+    <value>108, 180</value>
   </data>
   <data name="btnDelRouteProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -718,7 +718,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnDelViewProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 60</value>
+    <value>108, 80</value>
   </data>
   <data name="btnDelViewProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 58</value>
@@ -748,7 +748,7 @@
     <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="lblDdashboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 13</value>
+    <value>28, 15</value>
   </data>
   <data name="lblDdashboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 29</value>
@@ -805,7 +805,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 116</value>
+    <value>123, 118</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
@@ -832,7 +832,7 @@
     <value>True</value>
   </data>
   <data name="lblProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 210</value>
+    <value>122, 280</value>
   </data>
   <data name="lblProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 24</value>
@@ -859,7 +859,7 @@
     <value>True</value>
   </data>
   <data name="lblStockReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 51</value>
+    <value>132, 50</value>
   </data>
   <data name="lblStockReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 24</value>
@@ -889,7 +889,7 @@
     <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 9</value>
+    <value>38, 11</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 29</value>
@@ -916,7 +916,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnRepDefectedProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 369</value>
+    <value>116, 507</value>
   </data>
   <data name="btnRepDefectedProducts.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -943,7 +943,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnRepQualifiedProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 303</value>
+    <value>116, 407</value>
   </data>
   <data name="btnRepQualifiedProducts.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -970,7 +970,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnRepProductsInProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 237</value>
+    <value>116, 307</value>
   </data>
   <data name="btnRepProductsInProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -997,7 +997,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnRepStockRawMaterials.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 147</value>
+    <value>116, 180</value>
   </data>
   <data name="btnRepStockRawMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>
@@ -1024,7 +1024,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="btnRepStockWarehouseCapacity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 78</value>
+    <value>116, 80</value>
   </data>
   <data name="btnRepStockWarehouseCapacity.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 60</value>

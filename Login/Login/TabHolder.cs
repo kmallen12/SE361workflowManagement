@@ -70,8 +70,8 @@ namespace WorkFlowManagement
                 ttUserFeedback.SetToolTip(btnProductsView, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_AddProduct, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
-                ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
-                ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+               // ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
+                //ttUserFeedback.SetToolTip(btn_ManageProductOrders, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btnReManufacture, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
                 ttUserFeedback.SetToolTip(btn_StockOrderStatus, "You do not have access to this feature as a " + objCurrentUser.UserType + ".");
 
@@ -82,7 +82,7 @@ namespace WorkFlowManagement
                 btnReorderStock.ForeColor = Color.DarkGray;
                 btnReManufacture.ForeColor = Color.DarkGray;
 
-                btn_ManageProductOrders.ForeColor = Color.DarkGray;
+               // btn_ManageProductOrders.ForeColor = Color.DarkGray;
                 btn_StockOrderStatus.ForeColor = Color.DarkGray;
 
             }
@@ -567,6 +567,11 @@ namespace WorkFlowManagement
                 ViewIP.Dispose();
                 MessageBox.Show("You do not have access for the Product In Progress Form.\nContact your local Quality Manager.");
             }
+        }
+
+        private void tabProducts_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

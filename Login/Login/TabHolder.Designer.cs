@@ -159,6 +159,7 @@
             resources.ApplyResources(this.tabProducts, "tabProducts");
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.UseVisualStyleBackColor = true;
+            this.tabProducts.Click += new System.EventHandler(this.tabProducts_Click);
             // 
             // btn_StockOrderStatus
             // 
