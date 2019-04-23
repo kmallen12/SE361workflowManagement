@@ -40,6 +40,7 @@
             this.btnStockMaterials = new System.Windows.Forms.Button();
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.btn_StockOrderStatus = new System.Windows.Forms.Button();
+            this.btn_ManageProductOrders = new System.Windows.Forms.Button();
             this.btnReManufacture = new System.Windows.Forms.Button();
             this.btn_AddProduct = new System.Windows.Forms.Button();
             this.btnReorderStock = new System.Windows.Forms.Button();
@@ -151,6 +152,7 @@
             // 
             this.tabProducts.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
             this.tabProducts.Controls.Add(this.btn_StockOrderStatus);
+            this.tabProducts.Controls.Add(this.btn_ManageProductOrders);
             this.tabProducts.Controls.Add(this.btnReManufacture);
             this.tabProducts.Controls.Add(this.btn_AddProduct);
             this.tabProducts.Controls.Add(this.btnReorderStock);
@@ -166,6 +168,13 @@
             this.btn_StockOrderStatus.Name = "btn_StockOrderStatus";
             this.btn_StockOrderStatus.UseVisualStyleBackColor = true;
             this.btn_StockOrderStatus.Click += new System.EventHandler(this.btn_StockOrderStatus_Click);
+            // 
+            // btn_ManageProductOrders
+            // 
+            resources.ApplyResources(this.btn_ManageProductOrders, "btn_ManageProductOrders");
+            this.btn_ManageProductOrders.Name = "btn_ManageProductOrders";
+            this.btn_ManageProductOrders.UseVisualStyleBackColor = true;
+            this.btn_ManageProductOrders.Click += new System.EventHandler(this.btn_ManageProductOrders_Click);
             // 
             // btnReManufacture
             // 
@@ -413,6 +422,7 @@
         private System.Windows.Forms.Button btnReManufacture;
         private System.Windows.Forms.Button btnQAUpdateProdStatus;
         private System.Windows.Forms.Button btnQAViewProd;
+        private System.Windows.Forms.Button btn_ManageProductOrders;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblStockReport;
         private System.Windows.Forms.Label label2;
