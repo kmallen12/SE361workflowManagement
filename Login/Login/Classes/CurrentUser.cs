@@ -28,10 +28,10 @@ namespace WorkFlowManagement
         //Boolean Function To Return if a User can view certain windows/forms
         public Boolean canView(Object Form)
         {
-            if (UserTypeID == 1)
+            if (UserTypeID == 1) //Administrator
                 return true;
 
-            if (UserTypeID == 2)
+            if (UserTypeID == 2) //Stockiest
             {       
                 if (Form.GetType().ToString() == "WorkFlowManagement.StockReportForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.AddMaterialForm"
@@ -41,7 +41,7 @@ namespace WorkFlowManagement
                     return true;
             }
 
-            if (UserTypeID == 3)
+            if (UserTypeID == 3) //Product Manager
             {
                    
                 if (Form.GetType().ToString() == "WorkFlowManagement.AddProduct"
@@ -52,7 +52,7 @@ namespace WorkFlowManagement
                     return true;
             }
 
-            if (UserTypeID == 4)
+            if (UserTypeID == 4) //Quality Analyzer
             {
                 
                 if (Form.GetType().ToString() == "WorkFlowManagement.ViewProductsForm"
@@ -61,7 +61,7 @@ namespace WorkFlowManagement
                     return true;
             }
 
-            if (UserTypeID == 5)
+            if (UserTypeID == 5) //Delivery Manager
             {
                 
                     
@@ -72,7 +72,7 @@ namespace WorkFlowManagement
                     return true;
             }
 
-            if (UserTypeID == 6)
+            if (UserTypeID == 6) //Report Manager
             {
                 if (Form.GetType().ToString() == "WorkFlowManagement.StockReportForm"
                     || Form.GetType().ToString() == "WorkFlowManagement.RemanufactureForm"

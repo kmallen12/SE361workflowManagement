@@ -40,6 +40,32 @@ namespace WorkFlowManagement
             Form Dummy = new Form();
             Dummy.MdiParent = Home;
             SetAccessibility();
+            SetTopTab();
+        }
+
+        private void SetTopTab()
+        {
+            //sets the tab visible at the initiation to be the one the user will need.
+            if (objCurrentUser.UserTypeID == 1 || objCurrentUser.UserTypeID == 2)
+            {
+                tabBar.SelectedTab = tabStock;
+            }
+            else if (objCurrentUser.UserTypeID == 3)
+            {
+                tabBar.SelectedTab = tabProducts;
+            }
+            else if (objCurrentUser.UserTypeID == 4)
+            {
+                tabBar.SelectedTab = tabQuality;
+            }
+            else if (objCurrentUser.UserTypeID == 5)
+            {
+                tabBar.SelectedTab = tabDelivery;
+            }
+            else if (objCurrentUser.UserTypeID == 6)
+            {
+                tabBar.SelectedTab = tabReports;
+            }
         }
         private void SetAccessibility()
         {

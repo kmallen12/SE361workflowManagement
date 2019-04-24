@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Color = System.Drawing.Color;
 
@@ -13,12 +12,13 @@ namespace WorkFlowManagement
 
         CurrentUser objCurrentUser;
         public ToolTip ttUserFeedback = new ToolTip();
+        HelpMessage HelpMessage = new HelpMessage();
+
         public HomePage() 
         {
             InitializeComponent();
             lblUsername.Text = string.Empty;
             lblUserType.Text = string.Empty;
-            
         }
 
         //fixes flickering
@@ -66,6 +66,34 @@ namespace WorkFlowManagement
         {
             base.OnFormClosing(e);
             Application.Exit();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            if (objCurrentUser.UserTypeID == 1)
+            {
+                HelpMessage.ShowAdministrator();
+            }
+            else if (objCurrentUser.UserTypeID == 2)
+            {
+                HelpMessage.ShowStockiest();
+            }
+            else if(objCurrentUser.UserTypeID == 3)
+            {
+                HelpMessage.ShowProductManager();
+            }
+            else if (objCurrentUser.UserTypeID == 4)
+            {
+                HelpMessage.ShowQualityAnalyzer();
+            }
+            else if (objCurrentUser.UserTypeID == 5)
+            {
+                HelpMessage.ShowDeliveryManager();
+            }
+            else if (objCurrentUser.UserTypeID == 6)
+            {
+                HelpMessage.ShowReportManager();
+            }
         }
     }
 }

@@ -68,6 +68,7 @@
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseManager.cs" />
     <Compile Include="Classes\WorkFlowMessage.cs" />
+    <Compile Include="Classes\HelpMessage.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>

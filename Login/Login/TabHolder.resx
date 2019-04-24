@@ -991,7 +991,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnRepDefectedProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 507</value>
+    <value>126, 480</value>
   </data>
   <data name="btnRepDefectedProducts.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 60</value>
@@ -1202,9 +1202,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>404, 644</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 92</value>
