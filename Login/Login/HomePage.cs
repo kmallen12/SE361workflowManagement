@@ -37,8 +37,9 @@ namespace WorkFlowManagement
             InitializeComponent();
             
             
-            lblUsername.BackColor = Color.FromArgb(20, 14, 74);
-            lblUserType.BackColor = Color.FromArgb(20, 14, 74); 
+            lblUsername.BackColor = Color.FromArgb(25, 20, 100);
+            lblUserType.BackColor = Color.FromArgb(25, 20, 100);
+            //lblUserType.BackColor = Color.FromArgb(20, 15, 75);
             objCurrentUser = LoggedInUser;
             lblUsername.Text = objCurrentUser.Username;
             lblUserType.Text = objCurrentUser.UserType;

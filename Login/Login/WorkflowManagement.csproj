@@ -462,5 +462,20 @@
   <ItemGroup>
     <None Include="zzResources\SameColorBack.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OCOTOD_Banner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BannerHighQuality.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BannerHQ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BckBlue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BannerYES.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
