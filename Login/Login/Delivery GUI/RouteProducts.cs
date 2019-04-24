@@ -64,26 +64,6 @@ namespace WorkFlowManagement
             this.Hide();
         }
 
-        private void btnAddToQualifiedList_Click(object sender, EventArgs e)
-        {
-            if (!lstQualifiedProd.Items.Contains(cboxProdIDQualified.Text))
-            {
-                lstQualifiedProd.Items.Add(cboxProdIDQualified.Text);
-
-                foreach (var prod in qualifiedProducts)
-                {
-                    if(prod.ProductID == int.Parse(cboxProdIDQualified.Text))
-                    {
-                        toSalesProducts.Add(prod);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("This product is already in the list.");
-            }
-        }
-
         private void btnAddToDefectsList_Click(object sender, EventArgs e)
         {
             if (!lstDefectedProd.Items.Contains(cboxProdIDDefects.Text))
@@ -145,6 +125,48 @@ namespace WorkFlowManagement
             toManufacturingProducts.Clear();
 
             this.productTableTableAdapter1.Fill(this.workFlowDatabaseDataSet1.ProductTable);
+        }
+
+        //Adds qualified products to the list when they are selected in the qualified products dropdown
+        private void cboxProdIDQualified_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!lstQualifiedProd.Items.Contains(cboxProdIDQualified.Text))
+            {
+                lstQualifiedProd.Items.Add(cboxProdIDQualified.Text);
+
+                foreach (var prod in qualifiedProducts)
+                {
+                    if (prod.ProductID == int.Parse(cboxProdIDQualified.Text))
+                    {
+                        toSalesProducts.Add(prod);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("This product is already in the list.");
+            }
+        }
+
+        //Adds defected products to the list when they are selected in the defected products dropdown
+        private void cboxProdIDDefects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!lstDefectedProd.Items.Contains(cboxProdIDDefects.Text))
+            {
+                lstDefectedProd.Items.Add(cboxProdIDDefects.Text);
+
+                foreach (var prod in defectiveProducts)
+                {
+                    if (prod.ProductID == int.Parse(cboxProdIDDefects.Text))
+                    {
+                        toManufacturingProducts.Add(prod);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("This product is already in the list.");
+            }
         }
     }
 }
