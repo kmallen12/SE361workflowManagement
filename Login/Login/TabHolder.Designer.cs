@@ -93,7 +93,7 @@
             // tabStock
             // 
             this.tabStock.BackColor = System.Drawing.Color.Transparent;
-            this.tabStock.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
+            this.tabStock.BackgroundImage = global::Login.Properties.Resources.BckBlue;
             this.tabStock.Controls.Add(this.button2);
             this.tabStock.Controls.Add(this.btnStockInventorySum);
             this.tabStock.Controls.Add(this.lblStockHmpg);
@@ -149,7 +149,7 @@
             // 
             // tabProducts
             // 
-            this.tabProducts.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
+            this.tabProducts.BackgroundImage = global::Login.Properties.Resources.BckBlue;
             this.tabProducts.Controls.Add(this.btn_StockOrderStatus);
             this.tabProducts.Controls.Add(this.btnReManufacture);
             this.tabProducts.Controls.Add(this.btn_AddProduct);
@@ -158,7 +158,6 @@
             this.tabProducts.Controls.Add(this.btnProductsView);
             resources.ApplyResources(this.tabProducts, "tabProducts");
             this.tabProducts.Name = "tabProducts";
-            this.tabProducts.UseVisualStyleBackColor = true;
             this.tabProducts.Click += new System.EventHandler(this.tabProducts_Click);
             // 
             // btn_StockOrderStatus
@@ -192,6 +191,7 @@
             // lblProductHomepg
             // 
             resources.ApplyResources(this.lblProductHomepg, "lblProductHomepg");
+            this.lblProductHomepg.BackColor = System.Drawing.Color.Transparent;
             this.lblProductHomepg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProductHomepg.Name = "lblProductHomepg";
             // 
@@ -204,13 +204,12 @@
             // 
             // tabQuality
             // 
-            this.tabQuality.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
+            this.tabQuality.BackgroundImage = global::Login.Properties.Resources.BckBlue;
             this.tabQuality.Controls.Add(this.btnQAUpdateProdStatus);
             this.tabQuality.Controls.Add(this.btnQAViewProd);
             this.tabQuality.Controls.Add(this.lblQAdashboard);
             resources.ApplyResources(this.tabQuality, "tabQuality");
             this.tabQuality.Name = "tabQuality";
-            this.tabQuality.UseVisualStyleBackColor = true;
             // 
             // btnQAUpdateProdStatus
             // 
@@ -229,12 +228,13 @@
             // lblQAdashboard
             // 
             resources.ApplyResources(this.lblQAdashboard, "lblQAdashboard");
+            this.lblQAdashboard.BackColor = System.Drawing.Color.Transparent;
             this.lblQAdashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblQAdashboard.Name = "lblQAdashboard";
             // 
             // tabDelivery
             // 
-            this.tabDelivery.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
+            this.tabDelivery.BackgroundImage = global::Login.Properties.Resources.BckBlue;
             this.tabDelivery.Controls.Add(this.btnDelProductStatusReport);
             this.tabDelivery.Controls.Add(this.btnDelViewQualProducts);
             this.tabDelivery.Controls.Add(this.btnDelRouteProduct);
@@ -242,7 +242,6 @@
             this.tabDelivery.Controls.Add(this.lblDdashboard);
             resources.ApplyResources(this.tabDelivery, "tabDelivery");
             this.tabDelivery.Name = "tabDelivery";
-            this.tabDelivery.UseVisualStyleBackColor = true;
             // 
             // btnDelProductStatusReport
             // 
@@ -275,12 +274,13 @@
             // lblDdashboard
             // 
             resources.ApplyResources(this.lblDdashboard, "lblDdashboard");
+            this.lblDdashboard.BackColor = System.Drawing.Color.Transparent;
             this.lblDdashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDdashboard.Name = "lblDdashboard";
             // 
             // tabReports
             // 
-            this.tabReports.BackgroundImage = global::Login.Properties.Resources.SameColorBack;
+            this.tabReports.BackgroundImage = global::Login.Properties.Resources.BckBlue;
             this.tabReports.Controls.Add(this.label2);
             this.tabReports.Controls.Add(this.lblProduct);
             this.tabReports.Controls.Add(this.lblStockReport);
@@ -292,7 +292,6 @@
             this.tabReports.Controls.Add(this.btnRepStockWarehouseCapacity);
             resources.ApplyResources(this.tabReports, "tabReports");
             this.tabReports.Name = "tabReports";
-            this.tabReports.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -304,18 +303,21 @@
             // lblProduct
             // 
             resources.ApplyResources(this.lblProduct, "lblProduct");
+            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
             this.lblProduct.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProduct.Name = "lblProduct";
             // 
             // lblStockReport
             // 
             resources.ApplyResources(this.lblStockReport, "lblStockReport");
+            this.lblStockReport.BackColor = System.Drawing.Color.Transparent;
             this.lblStockReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblStockReport.Name = "lblStockReport";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Name = "label1";
             // 
