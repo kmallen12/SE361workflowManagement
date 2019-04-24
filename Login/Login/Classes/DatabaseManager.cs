@@ -383,7 +383,9 @@ namespace WorkFlowManagement
         //load IDs of defective products from the Products Table into a list
         public List<ProductStruct> LoadDefectiveProducts()
         {
-            
+            string poor = "Poor";
+            string veryPoor = "Very Poor";
+
             List<ProductStruct> defectiveProds = new List<ProductStruct>();
 
             try
@@ -394,9 +396,10 @@ namespace WorkFlowManagement
                 conn.Open();
 
                 //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = 'Returned to Manufacturing'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable WHERE productStatus = @status1 OR productStatus = @status2", conn);
 
-                
+                cmd.Parameters.AddWithValue("@status1", poor);
+                cmd.Parameters.AddWithValue("@status2", veryPoor);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
