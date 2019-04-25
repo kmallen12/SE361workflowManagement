@@ -37,17 +37,17 @@
             this.OrderList_listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderList_listbox.FormattingEnabled = true;
             this.OrderList_listbox.ItemHeight = 15;
-            this.OrderList_listbox.Location = new System.Drawing.Point(1, 1);
+            this.OrderList_listbox.Location = new System.Drawing.Point(11, 11);
             this.OrderList_listbox.Margin = new System.Windows.Forms.Padding(2);
             this.OrderList_listbox.Name = "OrderList_listbox";
-            this.OrderList_listbox.Size = new System.Drawing.Size(939, 484);
+            this.OrderList_listbox.Size = new System.Drawing.Size(840, 394);
             this.OrderList_listbox.TabIndex = 0;
             // 
             // ViewStockOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 489);
+            this.ClientSize = new System.Drawing.Size(865, 424);
             this.ControlBox = false;
             this.Controls.Add(this.OrderList_listbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
