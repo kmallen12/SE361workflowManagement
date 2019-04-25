@@ -32,6 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateStockForm));
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAcquiredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amtDefectedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
             this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
@@ -56,14 +64,6 @@
             this.dateAcquiredGrid_box = new System.Windows.Forms.DateTimePicker();
             this.dateUsedGrid_box = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateAcquiredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amtDefectedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
@@ -77,10 +77,9 @@
             // 
             this.lbl_warehouseSummary.AutoSize = true;
             this.lbl_warehouseSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_warehouseSummary.Location = new System.Drawing.Point(61, 48);
-            this.lbl_warehouseSummary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_warehouseSummary.Location = new System.Drawing.Point(46, 39);
             this.lbl_warehouseSummary.Name = "lbl_warehouseSummary";
-            this.lbl_warehouseSummary.Size = new System.Drawing.Size(267, 29);
+            this.lbl_warehouseSummary.Size = new System.Drawing.Size(216, 24);
             this.lbl_warehouseSummary.TabIndex = 0;
             this.lbl_warehouseSummary.Text = "Warehouse Summary:";
             // 
@@ -98,258 +97,11 @@
             this.dateUsedDataGridViewTextBoxColumn,
             this.amtDefectedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stockTableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 111);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 5;
-            this.dataGridView1.Size = new System.Drawing.Size(1077, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(808, 323);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // stockTableBindingSource
-            // 
-            this.stockTableBindingSource.DataMember = "StockTable";
-            this.stockTableBindingSource.DataSource = this.workFlowDatabaseDataSet;
-            // 
-            // workFlowDatabaseDataSet
-            // 
-            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
-            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockTableTableAdapter
-            // 
-            this.stockTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // Enter_ID_lbl
-            // 
-            this.Enter_ID_lbl.AutoSize = true;
-            this.Enter_ID_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Enter_ID_lbl.Location = new System.Drawing.Point(20, 551);
-            this.Enter_ID_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Enter_ID_lbl.Name = "Enter_ID_lbl";
-            this.Enter_ID_lbl.Size = new System.Drawing.Size(494, 24);
-            this.Enter_ID_lbl.TabIndex = 10;
-            this.Enter_ID_lbl.Text = "To Add New: Omit Item ID and complete other fields";
-            // 
-            // ConfirmGrid_btn
-            // 
-            this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmGrid_btn.Location = new System.Drawing.Point(819, 649);
-            this.ConfirmGrid_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
-            this.ConfirmGrid_btn.Size = new System.Drawing.Size(126, 39);
-            this.ConfirmGrid_btn.TabIndex = 11;
-            this.ConfirmGrid_btn.Text = "Save";
-            this.ConfirmGrid_btn.UseVisualStyleBackColor = true;
-            this.ConfirmGrid_btn.Click += new System.EventHandler(this.ConfirmGrid_btn_Click);
-            // 
-            // btnLoadStockFromDB
-            // 
-            this.btnLoadStockFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadStockFromDB.Location = new System.Drawing.Point(387, 32);
-            this.btnLoadStockFromDB.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadStockFromDB.Name = "btnLoadStockFromDB";
-            this.btnLoadStockFromDB.Size = new System.Drawing.Size(205, 64);
-            this.btnLoadStockFromDB.TabIndex = 13;
-            this.btnLoadStockFromDB.Text = "Refresh Table";
-            this.btnLoadStockFromDB.UseVisualStyleBackColor = true;
-            this.btnLoadStockFromDB.Click += new System.EventHandler(this.btnLoadStockFromDB_Click);
-            // 
-            // lblItemID
-            // 
-            this.lblItemID.AutoSize = true;
-            this.lblItemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemID.Location = new System.Drawing.Point(21, 582);
-            this.lblItemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(54, 18);
-            this.lblItemID.TabIndex = 14;
-            this.lblItemID.Text = "Item ID";
-            // 
-            // lblMaterialType
-            // 
-            this.lblMaterialType.AutoSize = true;
-            this.lblMaterialType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialType.Location = new System.Drawing.Point(155, 582);
-            this.lblMaterialType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaterialType.Name = "lblMaterialType";
-            this.lblMaterialType.Size = new System.Drawing.Size(96, 18);
-            this.lblMaterialType.TabIndex = 15;
-            this.lblMaterialType.Text = "Material Type";
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(291, 582);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(62, 18);
-            this.lblQuantity.TabIndex = 16;
-            this.lblQuantity.Text = "Quantity";
-            // 
-            // lblUnitCost
-            // 
-            this.lblUnitCost.AutoSize = true;
-            this.lblUnitCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitCost.Location = new System.Drawing.Point(424, 582);
-            this.lblUnitCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUnitCost.Name = "lblUnitCost";
-            this.lblUnitCost.Size = new System.Drawing.Size(70, 18);
-            this.lblUnitCost.TabIndex = 17;
-            this.lblUnitCost.Text = "Unit Cost";
-            // 
-            // lblTotalCost
-            // 
-            this.lblTotalCost.AutoSize = true;
-            this.lblTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCost.Location = new System.Drawing.Point(557, 582);
-            this.lblTotalCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(77, 18);
-            this.lblTotalCost.TabIndex = 18;
-            this.lblTotalCost.Text = "Total Cost";
-            // 
-            // lblDateAcq
-            // 
-            this.lblDateAcq.AutoSize = true;
-            this.lblDateAcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAcq.Location = new System.Drawing.Point(693, 582);
-            this.lblDateAcq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDateAcq.Name = "lblDateAcq";
-            this.lblDateAcq.Size = new System.Drawing.Size(100, 18);
-            this.lblDateAcq.TabIndex = 19;
-            this.lblDateAcq.Text = "Date Acquired";
-            // 
-            // lblDateUsed
-            // 
-            this.lblDateUsed.AutoSize = true;
-            this.lblDateUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateUsed.Location = new System.Drawing.Point(828, 582);
-            this.lblDateUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDateUsed.Name = "lblDateUsed";
-            this.lblDateUsed.Size = new System.Drawing.Size(78, 18);
-            this.lblDateUsed.TabIndex = 20;
-            this.lblDateUsed.Text = "Date Used";
-            // 
-            // lblDefects
-            // 
-            this.lblDefects.AutoSize = true;
-            this.lblDefects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefects.Location = new System.Drawing.Point(963, 582);
-            this.lblDefects.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDefects.Name = "lblDefects";
-            this.lblDefects.Size = new System.Drawing.Size(59, 18);
-            this.lblDefects.TabIndex = 21;
-            this.lblDefects.Text = "Defects";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(981, 649);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 39);
-            this.btnClose.TabIndex = 22;
-            this.btnClose.Text = "Cancel";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // txtMaterialType
-            // 
-            this.txtMaterialType.FormattingEnabled = true;
-            this.txtMaterialType.Location = new System.Drawing.Point(156, 604);
-            this.txtMaterialType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMaterialType.Name = "txtMaterialType";
-            this.txtMaterialType.Size = new System.Drawing.Size(125, 24);
-            this.txtMaterialType.TabIndex = 23;
-            // 
-            // ItemIDGrid_box
-            // 
-            this.ItemIDGrid_box.FormattingEnabled = true;
-            this.ItemIDGrid_box.Location = new System.Drawing.Point(24, 604);
-            this.ItemIDGrid_box.Name = "ItemIDGrid_box";
-            this.ItemIDGrid_box.Size = new System.Drawing.Size(125, 24);
-            this.ItemIDGrid_box.TabIndex = 24;
-            this.ItemIDGrid_box.SelectedIndexChanged += new System.EventHandler(this.ItemIDGrid_box_SelectedIndexChanged);
-            // 
-            // quantityGrid_box
-            // 
-            this.quantityGrid_box.Location = new System.Drawing.Point(290, 606);
-            this.quantityGrid_box.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.quantityGrid_box.Name = "quantityGrid_box";
-            this.quantityGrid_box.Size = new System.Drawing.Size(125, 22);
-            this.quantityGrid_box.TabIndex = 25;
-            // 
-            // unitCostGrid_box
-            // 
-            this.unitCostGrid_box.DecimalPlaces = 2;
-            this.unitCostGrid_box.Location = new System.Drawing.Point(427, 606);
-            this.unitCostGrid_box.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.unitCostGrid_box.Name = "unitCostGrid_box";
-            this.unitCostGrid_box.Size = new System.Drawing.Size(125, 22);
-            this.unitCostGrid_box.TabIndex = 26;
-            // 
-            // totalCostGrid_box
-            // 
-            this.totalCostGrid_box.DecimalPlaces = 2;
-            this.totalCostGrid_box.Location = new System.Drawing.Point(560, 606);
-            this.totalCostGrid_box.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.totalCostGrid_box.Name = "totalCostGrid_box";
-            this.totalCostGrid_box.Size = new System.Drawing.Size(125, 22);
-            this.totalCostGrid_box.TabIndex = 27;
-            // 
-            // amtDefectedGrid_box
-            // 
-            this.amtDefectedGrid_box.Location = new System.Drawing.Point(966, 606);
-            this.amtDefectedGrid_box.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.amtDefectedGrid_box.Name = "amtDefectedGrid_box";
-            this.amtDefectedGrid_box.Size = new System.Drawing.Size(125, 22);
-            this.amtDefectedGrid_box.TabIndex = 28;
-            // 
-            // dateAcquiredGrid_box
-            // 
-            this.dateAcquiredGrid_box.CustomFormat = " ";
-            this.dateAcquiredGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateAcquiredGrid_box.Location = new System.Drawing.Point(695, 606);
-            this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
-            this.dateAcquiredGrid_box.Size = new System.Drawing.Size(125, 22);
-            this.dateAcquiredGrid_box.TabIndex = 29;
-            // 
-            // dateUsedGrid_box
-            // 
-            this.dateUsedGrid_box.CustomFormat = " ";
-            this.dateUsedGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateUsedGrid_box.Location = new System.Drawing.Point(831, 606);
-            this.dateUsedGrid_box.Name = "dateUsedGrid_box";
-            this.dateUsedGrid_box.Size = new System.Drawing.Size(125, 22);
-            this.dateUsedGrid_box.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 527);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(510, 24);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "To Update: Select Item ID and update the fields below";
             // 
             // itemIDDataGridViewTextBoxColumn
             // 
@@ -401,11 +153,253 @@
             this.amtDefectedDataGridViewTextBoxColumn.HeaderText = "Amout Defected";
             this.amtDefectedDataGridViewTextBoxColumn.Name = "amtDefectedDataGridViewTextBoxColumn";
             // 
+            // stockTableBindingSource
+            // 
+            this.stockTableBindingSource.DataMember = "StockTable";
+            this.stockTableBindingSource.DataSource = this.workFlowDatabaseDataSet;
+            // 
+            // workFlowDatabaseDataSet
+            // 
+            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
+            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stockTableTableAdapter
+            // 
+            this.stockTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // Enter_ID_lbl
+            // 
+            this.Enter_ID_lbl.AutoSize = true;
+            this.Enter_ID_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Enter_ID_lbl.Location = new System.Drawing.Point(15, 448);
+            this.Enter_ID_lbl.Name = "Enter_ID_lbl";
+            this.Enter_ID_lbl.Size = new System.Drawing.Size(398, 18);
+            this.Enter_ID_lbl.TabIndex = 10;
+            this.Enter_ID_lbl.Text = "To Add New: Omit Item ID and complete other fields";
+            // 
+            // ConfirmGrid_btn
+            // 
+            this.ConfirmGrid_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmGrid_btn.Location = new System.Drawing.Point(614, 527);
+            this.ConfirmGrid_btn.Name = "ConfirmGrid_btn";
+            this.ConfirmGrid_btn.Size = new System.Drawing.Size(94, 32);
+            this.ConfirmGrid_btn.TabIndex = 11;
+            this.ConfirmGrid_btn.Text = "Save";
+            this.ConfirmGrid_btn.UseVisualStyleBackColor = true;
+            this.ConfirmGrid_btn.Click += new System.EventHandler(this.ConfirmGrid_btn_Click);
+            // 
+            // btnLoadStockFromDB
+            // 
+            this.btnLoadStockFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadStockFromDB.Location = new System.Drawing.Point(290, 26);
+            this.btnLoadStockFromDB.Name = "btnLoadStockFromDB";
+            this.btnLoadStockFromDB.Size = new System.Drawing.Size(154, 52);
+            this.btnLoadStockFromDB.TabIndex = 13;
+            this.btnLoadStockFromDB.Text = "Refresh Table";
+            this.btnLoadStockFromDB.UseVisualStyleBackColor = true;
+            this.btnLoadStockFromDB.Click += new System.EventHandler(this.btnLoadStockFromDB_Click);
+            // 
+            // lblItemID
+            // 
+            this.lblItemID.AutoSize = true;
+            this.lblItemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemID.Location = new System.Drawing.Point(16, 473);
+            this.lblItemID.Name = "lblItemID";
+            this.lblItemID.Size = new System.Drawing.Size(46, 15);
+            this.lblItemID.TabIndex = 14;
+            this.lblItemID.Text = "Item ID";
+            // 
+            // lblMaterialType
+            // 
+            this.lblMaterialType.AutoSize = true;
+            this.lblMaterialType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterialType.Location = new System.Drawing.Point(116, 473);
+            this.lblMaterialType.Name = "lblMaterialType";
+            this.lblMaterialType.Size = new System.Drawing.Size(81, 15);
+            this.lblMaterialType.TabIndex = 15;
+            this.lblMaterialType.Text = "Material Type";
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(218, 473);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(51, 15);
+            this.lblQuantity.TabIndex = 16;
+            this.lblQuantity.Text = "Quantity";
+            // 
+            // lblUnitCost
+            // 
+            this.lblUnitCost.AutoSize = true;
+            this.lblUnitCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitCost.Location = new System.Drawing.Point(318, 473);
+            this.lblUnitCost.Name = "lblUnitCost";
+            this.lblUnitCost.Size = new System.Drawing.Size(56, 15);
+            this.lblUnitCost.TabIndex = 17;
+            this.lblUnitCost.Text = "Unit Cost";
+            // 
+            // lblTotalCost
+            // 
+            this.lblTotalCost.AutoSize = true;
+            this.lblTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCost.Location = new System.Drawing.Point(418, 473);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(61, 15);
+            this.lblTotalCost.TabIndex = 18;
+            this.lblTotalCost.Text = "Total Cost";
+            // 
+            // lblDateAcq
+            // 
+            this.lblDateAcq.AutoSize = true;
+            this.lblDateAcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateAcq.Location = new System.Drawing.Point(520, 473);
+            this.lblDateAcq.Name = "lblDateAcq";
+            this.lblDateAcq.Size = new System.Drawing.Size(84, 15);
+            this.lblDateAcq.TabIndex = 19;
+            this.lblDateAcq.Text = "Date Acquired";
+            // 
+            // lblDateUsed
+            // 
+            this.lblDateUsed.AutoSize = true;
+            this.lblDateUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateUsed.Location = new System.Drawing.Point(621, 473);
+            this.lblDateUsed.Name = "lblDateUsed";
+            this.lblDateUsed.Size = new System.Drawing.Size(65, 15);
+            this.lblDateUsed.TabIndex = 20;
+            this.lblDateUsed.Text = "Date Used";
+            // 
+            // lblDefects
+            // 
+            this.lblDefects.AutoSize = true;
+            this.lblDefects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefects.Location = new System.Drawing.Point(722, 473);
+            this.lblDefects.Name = "lblDefects";
+            this.lblDefects.Size = new System.Drawing.Size(48, 15);
+            this.lblDefects.TabIndex = 21;
+            this.lblDefects.Text = "Defects";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(736, 527);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(80, 32);
+            this.btnClose.TabIndex = 22;
+            this.btnClose.Text = "Cancel";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // txtMaterialType
+            // 
+            this.txtMaterialType.FormattingEnabled = true;
+            this.txtMaterialType.Location = new System.Drawing.Point(117, 491);
+            this.txtMaterialType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaterialType.Name = "txtMaterialType";
+            this.txtMaterialType.Size = new System.Drawing.Size(95, 21);
+            this.txtMaterialType.TabIndex = 23;
+            // 
+            // ItemIDGrid_box
+            // 
+            this.ItemIDGrid_box.FormattingEnabled = true;
+            this.ItemIDGrid_box.Location = new System.Drawing.Point(18, 491);
+            this.ItemIDGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ItemIDGrid_box.Name = "ItemIDGrid_box";
+            this.ItemIDGrid_box.Size = new System.Drawing.Size(95, 21);
+            this.ItemIDGrid_box.TabIndex = 24;
+            this.ItemIDGrid_box.SelectedIndexChanged += new System.EventHandler(this.ItemIDGrid_box_SelectedIndexChanged);
+            // 
+            // quantityGrid_box
+            // 
+            this.quantityGrid_box.Location = new System.Drawing.Point(218, 492);
+            this.quantityGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quantityGrid_box.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.quantityGrid_box.Name = "quantityGrid_box";
+            this.quantityGrid_box.Size = new System.Drawing.Size(94, 20);
+            this.quantityGrid_box.TabIndex = 25;
+            // 
+            // unitCostGrid_box
+            // 
+            this.unitCostGrid_box.DecimalPlaces = 2;
+            this.unitCostGrid_box.Location = new System.Drawing.Point(320, 492);
+            this.unitCostGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.unitCostGrid_box.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.unitCostGrid_box.Name = "unitCostGrid_box";
+            this.unitCostGrid_box.Size = new System.Drawing.Size(94, 20);
+            this.unitCostGrid_box.TabIndex = 26;
+            // 
+            // totalCostGrid_box
+            // 
+            this.totalCostGrid_box.DecimalPlaces = 2;
+            this.totalCostGrid_box.Location = new System.Drawing.Point(420, 492);
+            this.totalCostGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.totalCostGrid_box.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.totalCostGrid_box.Name = "totalCostGrid_box";
+            this.totalCostGrid_box.Size = new System.Drawing.Size(94, 20);
+            this.totalCostGrid_box.TabIndex = 27;
+            // 
+            // amtDefectedGrid_box
+            // 
+            this.amtDefectedGrid_box.Location = new System.Drawing.Point(724, 492);
+            this.amtDefectedGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.amtDefectedGrid_box.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.amtDefectedGrid_box.Name = "amtDefectedGrid_box";
+            this.amtDefectedGrid_box.Size = new System.Drawing.Size(94, 20);
+            this.amtDefectedGrid_box.TabIndex = 28;
+            // 
+            // dateAcquiredGrid_box
+            // 
+            this.dateAcquiredGrid_box.CustomFormat = " ";
+            this.dateAcquiredGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateAcquiredGrid_box.Location = new System.Drawing.Point(521, 492);
+            this.dateAcquiredGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateAcquiredGrid_box.Name = "dateAcquiredGrid_box";
+            this.dateAcquiredGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.dateAcquiredGrid_box.TabIndex = 29;
+            this.dateAcquiredGrid_box.ValueChanged += new System.EventHandler(this.dateAcquiredGrid_box_ValueChanged);
+            // 
+            // dateUsedGrid_box
+            // 
+            this.dateUsedGrid_box.CustomFormat = " ";
+            this.dateUsedGrid_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateUsedGrid_box.Location = new System.Drawing.Point(623, 492);
+            this.dateUsedGrid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateUsedGrid_box.Name = "dateUsedGrid_box";
+            this.dateUsedGrid_box.Size = new System.Drawing.Size(95, 20);
+            this.dateUsedGrid_box.TabIndex = 30;
+            this.dateUsedGrid_box.ValueChanged += new System.EventHandler(this.dateUsedGrid_box_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(410, 18);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "To Update: Select Item ID and update the fields below";
+            // 
             // UpdateStockForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 704);
+            this.ClientSize = new System.Drawing.Size(836, 572);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateUsedGrid_box);
@@ -433,7 +427,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateStockForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "View and Update Stock Form";

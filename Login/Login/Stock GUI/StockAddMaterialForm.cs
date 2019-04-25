@@ -42,6 +42,8 @@ namespace WorkFlowManagement
         {
             txt_Quantity.Text = Quantity.ToString();
             txt_materialType.Text = Material.ToString();
+            btnCustomizeMaterials.Visible = false;
+            lblAddToList.Visible = false;
         }
 
         private void Another_Material_btn_Click(object sender, EventArgs e)

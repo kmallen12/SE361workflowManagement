@@ -44,6 +44,8 @@ namespace WorkFlowManagement
             {
                 txtMaterialType.Items.Add(mat.material);
             }
+            ResetDTP();
+
         }
 
         private void btnLoadStockFromDB_Click(object sender, EventArgs e)
@@ -100,6 +102,18 @@ namespace WorkFlowManagement
             this.Hide();
         }
 
+
+        private void ResetDTP()
+        {
+            dateAcquiredGrid_box.Format = DateTimePickerFormat.Custom;
+            dateAcquiredGrid_box.CustomFormat = " ";
+
+            dateUsedGrid_box.Format = DateTimePickerFormat.Custom;
+            dateUsedGrid_box.CustomFormat = " ";
+        }
+
+
+
         private void ItemIDGrid_box_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -141,6 +155,17 @@ namespace WorkFlowManagement
             {
                 MessageBox.Show("Error selecting data from data table.");
             }
-        }       
+        }
+
+        private void dateUsedGrid_box_ValueChanged(object sender, EventArgs e)
+        {
+            dateUsedGrid_box.CustomFormat = "MM/dd/yyyy";
+        }
+
+        private void dateAcquiredGrid_box_ValueChanged(object sender, EventArgs e)
+        {
+            dateAcquiredGrid_box.CustomFormat = "MM/dd/yyyy";
+
+        }
     }
 }

@@ -30,9 +30,22 @@ namespace WorkFlowManagement
         private void Confirm_btn_Click(object sender, EventArgs e)
         {
             AddMaterial = new AddMaterialForm(home);
+            AddMaterial.MdiParent = home;
+
+            AddMaterial.FormClosing += (s,a) =>
+            {
+                this.Show();
+            };
+
+            AddMaterial.Leave += (s, a) =>
+            {
+                home.MdiChildren.Last<Form>().Close();
+            };
+
+            this.Hide();
 
             AddMaterial.SETFORM(Order.MaterialType,Order.Quantity);
-            AddMaterial.ShowDialog();
+            AddMaterial.Show();
         }
 
         private void OrderList_listbox_SelectedIndexChanged(object sender, EventArgs e)

@@ -39,19 +39,21 @@
             // 
             this.OrderList_listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderList_listbox.FormattingEnabled = true;
-            this.OrderList_listbox.ItemHeight = 22;
-            this.OrderList_listbox.Location = new System.Drawing.Point(2, 2);
+            this.OrderList_listbox.ItemHeight = 15;
+            this.OrderList_listbox.Location = new System.Drawing.Point(15, 11);
+            this.OrderList_listbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OrderList_listbox.Name = "OrderList_listbox";
-            this.OrderList_listbox.Size = new System.Drawing.Size(1406, 488);
+            this.OrderList_listbox.Size = new System.Drawing.Size(692, 304);
             this.OrderList_listbox.TabIndex = 0;
             this.OrderList_listbox.SelectedIndexChanged += new System.EventHandler(this.OrderList_listbox_SelectedIndexChanged);
             // 
             // Confirm_btn
             // 
             this.Confirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirm_btn.Location = new System.Drawing.Point(22, 583);
+            this.Confirm_btn.Location = new System.Drawing.Point(15, 379);
+            this.Confirm_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Confirm_btn.Name = "Confirm_btn";
-            this.Confirm_btn.Size = new System.Drawing.Size(312, 71);
+            this.Confirm_btn.Size = new System.Drawing.Size(208, 46);
             this.Confirm_btn.TabIndex = 2;
             this.Confirm_btn.Text = "Fill Order";
             this.Confirm_btn.UseVisualStyleBackColor = true;
@@ -61,18 +63,20 @@
             // 
             this.AcceptorDeny_lbl.AutoSize = true;
             this.AcceptorDeny_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AcceptorDeny_lbl.Location = new System.Drawing.Point(16, 515);
+            this.AcceptorDeny_lbl.Location = new System.Drawing.Point(11, 335);
+            this.AcceptorDeny_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AcceptorDeny_lbl.Name = "AcceptorDeny_lbl";
-            this.AcceptorDeny_lbl.Size = new System.Drawing.Size(324, 29);
+            this.AcceptorDeny_lbl.Size = new System.Drawing.Size(224, 20);
             this.AcceptorDeny_lbl.TabIndex = 4;
             this.AcceptorDeny_lbl.Text = "Select a stock order to fill. ";
             // 
             // btn_Filled
             // 
             this.btn_Filled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Filled.Location = new System.Drawing.Point(549, 583);
+            this.btn_Filled.Location = new System.Drawing.Point(499, 379);
+            this.btn_Filled.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Filled.Name = "btn_Filled";
-            this.btn_Filled.Size = new System.Drawing.Size(312, 71);
+            this.btn_Filled.Size = new System.Drawing.Size(208, 46);
             this.btn_Filled.TabIndex = 5;
             this.btn_Filled.Text = "Confirm Order Filled";
             this.btn_Filled.UseVisualStyleBackColor = true;
@@ -80,9 +84,9 @@
             // 
             // ManageStockOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 465);
+            this.ClientSize = new System.Drawing.Size(747, 461);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Filled);
             this.Controls.Add(this.AcceptorDeny_lbl);
@@ -91,6 +95,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManageStockOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StockOrders";
