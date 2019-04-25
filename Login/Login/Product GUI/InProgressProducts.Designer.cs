@@ -37,21 +37,22 @@
             this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSet2TableAdapters.ProductTableTableAdapter();
             this.lblDefectiveProducts = new System.Windows.Forms.Label();
             this.dataGridProductStatus = new System.Windows.Forms.DataGridView();
-            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
-            this.productTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableTableAdapter1 = new Login.WorkFlowDatabaseDataSetTableAdapters.ProductTableTableAdapter();
             this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialsStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
+            this.productTableTableAdapter1 = new Login.WorkFlowDatabaseDataSetTableAdapters.ProductTableTableAdapter();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // qualifiedProducts
@@ -82,9 +83,10 @@
             // 
             this.lblDefectiveProducts.AutoSize = true;
             this.lblDefectiveProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefectiveProducts.Location = new System.Drawing.Point(27, 25);
+            this.lblDefectiveProducts.Location = new System.Drawing.Point(20, 20);
+            this.lblDefectiveProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDefectiveProducts.Name = "lblDefectiveProducts";
-            this.lblDefectiveProducts.Size = new System.Drawing.Size(213, 25);
+            this.lblDefectiveProducts.Size = new System.Drawing.Size(177, 20);
             this.lblDefectiveProducts.TabIndex = 4;
             this.lblDefectiveProducts.Text = "In Progress Products";
             // 
@@ -99,25 +101,10 @@
             this.quantityDataGridViewTextBoxColumn,
             this.productStatusDataGridViewTextBoxColumn});
             this.dataGridProductStatus.DataSource = this.productTableBindingSource1;
-            this.dataGridProductStatus.Location = new System.Drawing.Point(98, 70);
-            this.dataGridProductStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridProductStatus.Location = new System.Drawing.Point(74, 57);
             this.dataGridProductStatus.Name = "dataGridProductStatus";
-            this.dataGridProductStatus.Size = new System.Drawing.Size(879, 546);
+            this.dataGridProductStatus.Size = new System.Drawing.Size(659, 444);
             this.dataGridProductStatus.TabIndex = 7;
-            // 
-            // workFlowDatabaseDataSet
-            // 
-            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
-            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productTableBindingSource1
-            // 
-            this.productTableBindingSource1.DataMember = "ProductTable";
-            this.productTableBindingSource1.DataSource = this.workFlowDatabaseDataSet;
-            // 
-            // productTableTableAdapter1
-            // 
-            this.productTableTableAdapter1.ClearBeforeFill = true;
             // 
             // pIdDataGridViewTextBoxColumn
             // 
@@ -155,29 +142,53 @@
             this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
             this.productStatusDataGridViewTextBoxColumn.Width = 75;
             // 
+            // productTableBindingSource1
+            // 
+            this.productTableBindingSource1.DataMember = "ProductTable";
+            this.productTableBindingSource1.DataSource = this.workFlowDatabaseDataSet;
+            // 
+            // workFlowDatabaseDataSet
+            // 
+            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
+            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productTableTableAdapter1
+            // 
+            this.productTableTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(690, 13);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 8;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // InProgressProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 667);
+            this.ClientSize = new System.Drawing.Size(825, 542);
             this.ControlBox = false;
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridProductStatus);
             this.Controls.Add(this.lblDefectiveProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InProgressProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Product Status Report Form";
-            this.Load += new System.EventHandler(this.InProgressProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn materialsStringDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnExport;
     }
 }

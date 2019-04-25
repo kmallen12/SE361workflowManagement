@@ -24,8 +24,12 @@ namespace WorkFlowManagement
         {
             P = new Product();
             InitializeComponent();
-
-            lstProducts.DataSource = objDatabaseManager.LoadDataInProgressProducts();
+            try
+            {
+                lstProducts.DataSource = objDatabaseManager.LoadDataInProgressProducts();
+            }catch{
+                MessageBox.Show("There are no in Progress Products.");
+            }
         }
 
     }

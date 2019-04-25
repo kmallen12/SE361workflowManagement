@@ -25,7 +25,8 @@ namespace WorkFlowManagement
             dataGridProductStatus.DataSource = objDatabaseManager.LoadDataInProgressProducts();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnExport_Click(object sender, EventArgs e)
         {
             PdfDocument document = new PdfDocument();
             document.Info.Title = "Product Progress Report";
@@ -57,7 +58,7 @@ namespace WorkFlowManagement
                 XStringFormats.TopLeft);
 
             gfx.DrawString("Quantity", header, XBrushes.Black,
-          new XRect(page.Width-55, 45, page.Width, page.Height),
+          new XRect(page.Width - 55, 45, page.Width, page.Height),
           XStringFormats.TopLeft);
 
 
@@ -102,7 +103,7 @@ namespace WorkFlowManagement
 
                 }
                 catch { }
-               
+
 
             }
 
@@ -115,7 +116,7 @@ namespace WorkFlowManagement
                 Stream filename = sfd.OpenFile();
                 document.Save(filename);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Please enter an appropriate file name and save it to a suitable location.");
             }

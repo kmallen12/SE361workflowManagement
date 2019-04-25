@@ -60,7 +60,8 @@ namespace WorkFlowManagement
             ICF.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnExport_Click(object sender, EventArgs e)
         {
             PdfDocument document = new PdfDocument();
             document.Info.Title = "Stock Report";
@@ -81,32 +82,32 @@ namespace WorkFlowManagement
                    new XRect(
                        75, 45, page.Width, page.Height),
                    XStringFormats.TopLeft);
-            gfx.DrawLine(new XPen(XColors.Black, 2), 10, 67, page.Width/2 - 40, 67);
+            gfx.DrawLine(new XPen(XColors.Black, 2), 10, 67, page.Width / 2 - 40, 67);
 
-                int startx = 0;
-                
-                gfx.DrawString("Material Type" , header, XBrushes.Black,
-                    new XRect(startx += 20, 70, page.Width, page.Height),
-                    XStringFormats.TopLeft);
+            int startx = 0;
 
-                gfx.DrawString("Quantity", header, XBrushes.Black,
-                                    new XRect(startx += 125,70 , page.Width, page.Height),
-                                    XStringFormats.TopLeft);
+            gfx.DrawString("Material Type", header, XBrushes.Black,
+                new XRect(startx += 20, 70, page.Width, page.Height),
+                XStringFormats.TopLeft);
 
-                gfx.DrawString("Limit", header, XBrushes.Black,
-                    new XRect(startx += 75, 70, page.Width, page.Height),
-                    XStringFormats.TopLeft);
+            gfx.DrawString("Quantity", header, XBrushes.Black,
+                                new XRect(startx += 125, 70, page.Width, page.Height),
+                                XStringFormats.TopLeft);
 
-            
+            gfx.DrawString("Limit", header, XBrushes.Black,
+                new XRect(startx += 75, 70, page.Width, page.Height),
+                XStringFormats.TopLeft);
+
+
 
             int starty = 90;
-            
+
             foreach (DataGridViewRow row in dataGridViewLow.Rows)
             {
-               startx = 0;
+                startx = 0;
                 starty += 15;
                 gfx.DrawString(row.Cells[0].Value.ToString(), tnf2, XBrushes.Black,
-                    new XRect(startx+=20, starty, page.Width, page.Height),
+                    new XRect(startx += 20, starty, page.Width, page.Height),
                     XStringFormats.TopLeft);
 
                 gfx.DrawString(row.Cells[1].Value.ToString(), tnf2, XBrushes.Black,
@@ -114,7 +115,7 @@ namespace WorkFlowManagement
                                     XStringFormats.TopLeft);
 
                 gfx.DrawString(row.Cells[2].Value.ToString(), tnf2, XBrushes.Black,
-                    new XRect(startx += 75, starty , page.Width, page.Height),
+                    new XRect(startx += 75, starty, page.Width, page.Height),
                     XStringFormats.TopLeft);
 
             }
@@ -122,11 +123,11 @@ namespace WorkFlowManagement
 
 
             gfx.DrawString("Stock Reaching Max Capacity", header2, XBrushes.Black,
-             new XRect(page.Width / 2 + 40,  45, page.Width, page.Height),
+             new XRect(page.Width / 2 + 40, 45, page.Width, page.Height),
              XStringFormats.TopLeft);
-            gfx.DrawLine(new XPen(XColors.Black, 2), page.Width / 2+10, 67, page.Width - 40, 67);
+            gfx.DrawLine(new XPen(XColors.Black, 2), page.Width / 2 + 10, 67, page.Width - 40, 67);
 
-            startx = (int) page.Width / 2;
+            startx = (int)page.Width / 2;
 
             gfx.DrawString("Material Type", header, XBrushes.Black,
                 new XRect(startx += 20, 70, page.Width, page.Height),
@@ -171,7 +172,7 @@ namespace WorkFlowManagement
                 Stream filename = sfd.OpenFile();
                 document.Save(filename);
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Please enter an appropriate file name and save it to a suitable location.");
             }

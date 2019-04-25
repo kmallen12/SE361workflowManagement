@@ -62,7 +62,7 @@ namespace WorkFlowManagement
                 Stream filename = sfd.OpenFile();
                 document.Save(filename);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Please enter an appropriate file name and save it to a suitable location.");
             }

@@ -576,7 +576,7 @@ namespace WorkFlowManagement
 
         private void btnRepProductsInProgress_Click(object sender, EventArgs e)
         {
-            ViewProductInProgress ViewIP = new ViewProductInProgress();
+            InProgressProducts ViewIP = new InProgressProducts();
             if (objCurrentUser.canView(ViewIP))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -596,7 +596,7 @@ namespace WorkFlowManagement
 
         }
 
-        private void btnRepProductsInProgress_Click_1(object sender, EventArgs e)
+        private void BtnRepProductsInProgress_Click(object sender, EventArgs e)
         {
             InProgressProducts ViewIP = new InProgressProducts();
             if (objCurrentUser.canView(ViewIP))
