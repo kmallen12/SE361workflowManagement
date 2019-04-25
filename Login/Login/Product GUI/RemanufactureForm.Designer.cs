@@ -39,7 +39,7 @@
             // 
             this.lblDefectiveProducts.AutoSize = true;
             this.lblDefectiveProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefectiveProducts.Location = new System.Drawing.Point(26, 24);
+            this.lblDefectiveProducts.Location = new System.Drawing.Point(20, 20);
             this.lblDefectiveProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDefectiveProducts.Name = "lblDefectiveProducts";
             this.lblDefectiveProducts.Size = new System.Drawing.Size(161, 20);
@@ -49,7 +49,7 @@
             // lstDefProd
             // 
             this.lstDefProd.FormattingEnabled = true;
-            this.lstDefProd.Location = new System.Drawing.Point(29, 61);
+            this.lstDefProd.Location = new System.Drawing.Point(23, 57);
             this.lstDefProd.Margin = new System.Windows.Forms.Padding(2);
             this.lstDefProd.Name = "lstDefProd";
             this.lstDefProd.Size = new System.Drawing.Size(528, 134);
@@ -59,7 +59,7 @@
             // btnRepRemanufacture
             // 
             this.btnRepRemanufacture.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRepRemanufacture.Location = new System.Drawing.Point(418, 217);
+            this.btnRepRemanufacture.Location = new System.Drawing.Point(412, 213);
             this.btnRepRemanufacture.Margin = new System.Windows.Forms.Padding(2);
             this.btnRepRemanufacture.Name = "btnRepRemanufacture";
             this.btnRepRemanufacture.Size = new System.Drawing.Size(139, 46);
@@ -71,7 +71,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(274, 217);
+            this.btnExport.Location = new System.Drawing.Point(268, 213);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(139, 46);
             this.btnExport.TabIndex = 4;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(600, 309);
             this.ControlBox = false;
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnRepRemanufacture);

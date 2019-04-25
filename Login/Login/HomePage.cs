@@ -43,8 +43,10 @@ namespace WorkFlowManagement
             lblUsername.Text = objCurrentUser.Username;
             lblUserType.Text = objCurrentUser.UserType;
             this.IsMdiContainer = true;
+            BottomRightGraphic BottomGraphic = new BottomRightGraphic(this);
+            BottomGraphic.Show();
+
             TabHolder newTabHolder = new TabHolder(LoggedInUser, this);
-            
             newTabHolder.Show();
         }
 

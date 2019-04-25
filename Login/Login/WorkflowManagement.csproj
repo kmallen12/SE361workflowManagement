@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BottomRightGraphic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BottomRightGraphic.Designer.cs">
+      <DependentUpon>BottomRightGraphic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseManager.cs" />
     <Compile Include="Classes\WorkFlowMessage.cs" />
@@ -274,6 +280,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BottomRightGraphic.resx">
+      <DependentUpon>BottomRightGraphic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,6 +492,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BannerYES.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BottomGraphic.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
