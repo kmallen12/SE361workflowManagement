@@ -17,6 +17,21 @@ namespace WorkFlowManagement
         {
             material = rMaterial;
         }
+
+        public bool ContainsMaterialName(List<RawMaterials> rawMaterialsList, string material)
+        {
+            bool contains = false;
+
+            foreach (var mat in rawMaterialsList)
+            {
+                if(material == mat.material)
+                {
+                    contains = true;
+                }
+            }
+
+            return contains;
+        }
         
         //override ToString
         public override string ToString()
