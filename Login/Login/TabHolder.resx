@@ -132,10 +132,13 @@
     <value>NoControl</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 480</value>
+    <value>168, 591</value>
+  </data>
+  <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
@@ -163,10 +166,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnStockInventorySum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 380</value>
+    <value>168, 468</value>
+  </data>
+  <data name="btnStockInventorySum.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnStockInventorySum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnStockInventorySum.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -199,10 +205,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblStockHmpg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 15</value>
+    <value>71, 18</value>
+  </data>
+  <data name="lblStockHmpg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblStockHmpg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 29</value>
+    <value>392, 36</value>
   </data>
   <data name="lblStockHmpg.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -229,10 +238,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnStockUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 180</value>
+    <value>168, 222</value>
+  </data>
+  <data name="btnStockUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnStockUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnStockUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -259,10 +271,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnStockGenerateReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 280</value>
+    <value>168, 345</value>
+  </data>
+  <data name="btnStockGenerateReport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnStockGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnStockGenerateReport.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -292,10 +307,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnStockMaterials.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 80</value>
+    <value>168, 98</value>
+  </data>
+  <data name="btnStockMaterials.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnStockMaterials.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnStockMaterials.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -319,13 +337,16 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="tabStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
+    <value>4, 38</value>
+  </data>
+  <data name="tabStock.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabStock.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 726</value>
+    <value>560, 897</value>
   </data>
   <data name="tabStock.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -352,10 +373,13 @@
     <value>NoControl</value>
   </data>
   <data name="btn_StockOrderStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 480</value>
+    <value>168, 591</value>
+  </data>
+  <data name="btn_StockOrderStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btn_StockOrderStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btn_StockOrderStatus.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -382,10 +406,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnReManufacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 280</value>
+    <value>168, 470</value>
+  </data>
+  <data name="btnReManufacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnReManufacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnReManufacture.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -412,10 +439,13 @@
     <value>NoControl</value>
   </data>
   <data name="btn_AddProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 380</value>
+    <value>168, 96</value>
+  </data>
+  <data name="btn_AddProduct.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btn_AddProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btn_AddProduct.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -442,10 +472,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnReorderStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 180</value>
+    <value>168, 347</value>
+  </data>
+  <data name="btnReorderStock.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnReorderStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnReorderStock.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -475,10 +508,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblProductHomepg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 15</value>
+    <value>53, 18</value>
+  </data>
+  <data name="lblProductHomepg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblProductHomepg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 29</value>
+    <value>423, 36</value>
   </data>
   <data name="lblProductHomepg.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -505,10 +541,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnProductsView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 80</value>
+    <value>168, 223</value>
+  </data>
+  <data name="btnProductsView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnProductsView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnProductsView.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -532,13 +571,16 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="tabProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
+    <value>4, 38</value>
+  </data>
+  <data name="tabProducts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabProducts.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 726</value>
+    <value>560, 897</value>
   </data>
   <data name="tabProducts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -565,10 +607,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnQAUpdateProdStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 180</value>
+    <value>168, 222</value>
+  </data>
+  <data name="btnQAUpdateProdStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnQAUpdateProdStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnQAUpdateProdStatus.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -595,10 +640,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnQAViewProd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 80</value>
+    <value>168, 98</value>
+  </data>
+  <data name="btnQAViewProd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnQAViewProd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnQAViewProd.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -628,10 +676,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblQAdashboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 15</value>
+    <value>61, 18</value>
+  </data>
+  <data name="lblQAdashboard.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblQAdashboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 29</value>
+    <value>412, 36</value>
   </data>
   <data name="lblQAdashboard.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -652,13 +703,16 @@
     <value>2</value>
   </data>
   <data name="tabQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
+    <value>4, 38</value>
+  </data>
+  <data name="tabQuality.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabQuality.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 726</value>
+    <value>560, 897</value>
   </data>
   <data name="tabQuality.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -685,10 +739,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelProductStatusReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 380</value>
+    <value>168, 468</value>
+  </data>
+  <data name="btnDelProductStatusReport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDelProductStatusReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnDelProductStatusReport.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -715,10 +772,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelViewQualProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 280</value>
+    <value>168, 345</value>
+  </data>
+  <data name="btnDelViewQualProducts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDelViewQualProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnDelViewQualProducts.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -745,10 +805,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelRouteProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 180</value>
+    <value>168, 222</value>
+  </data>
+  <data name="btnDelRouteProduct.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDelRouteProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnDelRouteProduct.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -775,10 +838,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelViewProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 80</value>
+    <value>168, 98</value>
+  </data>
+  <data name="btnDelViewProduct.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDelViewProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnDelViewProduct.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -808,10 +874,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblDdashboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 15</value>
+    <value>51, 18</value>
+  </data>
+  <data name="lblDdashboard.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblDdashboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 29</value>
+    <value>427, 36</value>
   </data>
   <data name="lblDdashboard.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -832,13 +901,16 @@
     <value>4</value>
   </data>
   <data name="tabDelivery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
+    <value>4, 38</value>
+  </data>
+  <data name="tabDelivery.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabDelivery.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tabDelivery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 726</value>
+    <value>560, 897</value>
   </data>
   <data name="tabDelivery.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -865,10 +937,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 254</value>
+    <value>177, 313</value>
+  </data>
+  <data name="lblProduct.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 24</value>
+    <value>202, 29</value>
   </data>
   <data name="lblProduct.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -895,10 +970,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblStockReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 50</value>
+    <value>192, 62</value>
+  </data>
+  <data name="lblStockReport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblStockReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 24</value>
+    <value>177, 29</value>
   </data>
   <data name="lblStockReport.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -928,10 +1006,13 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 15</value>
+    <value>61, 18</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 29</value>
+    <value>408, 36</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -958,10 +1039,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnRepDefectedProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 480</value>
+    <value>168, 591</value>
+  </data>
+  <data name="btnRepDefectedProducts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnRepDefectedProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnRepDefectedProducts.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -988,10 +1072,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnRepQualifiedProducts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 380</value>
+    <value>168, 468</value>
+  </data>
+  <data name="btnRepQualifiedProducts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnRepQualifiedProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnRepQualifiedProducts.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1018,10 +1105,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnRepProductsInProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 280</value>
+    <value>168, 345</value>
+  </data>
+  <data name="btnRepProductsInProgress.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnRepProductsInProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnRepProductsInProgress.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1048,10 +1138,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnRepStockRawMaterials.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 180</value>
+    <value>168, 222</value>
+  </data>
+  <data name="btnRepStockRawMaterials.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnRepStockRawMaterials.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnRepStockRawMaterials.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1078,10 +1171,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnRepStockWarehouseCapacity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 80</value>
+    <value>168, 98</value>
+  </data>
+  <data name="btnRepStockWarehouseCapacity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnRepStockWarehouseCapacity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 60</value>
+    <value>232, 74</value>
   </data>
   <data name="btnRepStockWarehouseCapacity.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1102,13 +1198,13 @@
     <value>7</value>
   </data>
   <data name="tabReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
+    <value>4, 38</value>
   </data>
   <data name="tabReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 2, 3</value>
+    <value>0, 4, 3, 4</value>
   </data>
   <data name="tabReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 726</value>
+    <value>560, 897</value>
   </data>
   <data name="tabReports.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1132,7 +1228,7 @@
     <value>Microsoft Sans Serif, 14.25pt, style=Bold</value>
   </data>
   <data name="tabBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-5, 2</value>
+    <value>-7, 2</value>
   </data>
   <data name="tabBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1141,7 +1237,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 763</value>
+    <value>568, 939</value>
   </data>
   <data name="tabBar.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1165,13 +1261,16 @@
     <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>404, 644</value>
+    <value>539, 793</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 92</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

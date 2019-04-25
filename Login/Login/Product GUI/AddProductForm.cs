@@ -62,7 +62,8 @@ namespace WorkFlowManagement
                 foreach (var v in product.productMaterials)
                     lbl_Description.Text = lbl_Description.Text +v.Name + ", " + v.Quantity + "\n";
 
-
+                txt_Material.SelectedIndex = -1;
+                txt_MaterialQuantity.Text = "";
             }
         }
         //Sets the GUI form to the version for adding a certain product not creating one. 
@@ -86,6 +87,7 @@ namespace WorkFlowManagement
             txt_ProductID.Visible = true;
             txt_ProductQuantity.Visible = true;
             btnCancel.Visible = true;
+            lblMaterialInstructions.Visible = false;
             //Ensures product has correct attributes based on ID.
             //Only needed so we can correctly set the discription of the materials.
             product.SetProduct(Int32.Parse(txt_ProductID.Text));
@@ -125,7 +127,8 @@ namespace WorkFlowManagement
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
                 product.FinalizeProduct(product.productName, Int32.Parse(txt_ProductQuantity.Text));
                 Product_Load(sender, e);
-                
+
+                this.Close();
             }
             
         }
