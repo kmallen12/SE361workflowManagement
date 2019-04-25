@@ -28,12 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockView));
             this.btnLoadDB = new System.Windows.Forms.Button();
             this.DGVStockView = new System.Windows.Forms.DataGridView();
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.workFlowDatabaseDataSet = new Login.WorkFlowDatabaseDataSet();
+            this.stockTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockTableTableAdapter = new Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter();
+            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAcquiredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amtDefectedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoadDB
@@ -50,7 +64,18 @@
             // 
             // DGVStockView
             // 
+            this.DGVStockView.AutoGenerateColumns = false;
             this.DGVStockView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVStockView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemIDDataGridViewTextBoxColumn,
+            this.materialTypeDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.unitCostDataGridViewTextBoxColumn,
+            this.totalCostDataGridViewTextBoxColumn,
+            this.dateAcquiredDataGridViewTextBoxColumn,
+            this.dateUsedDataGridViewTextBoxColumn,
+            this.amtDefectedDataGridViewTextBoxColumn});
+            this.DGVStockView.DataSource = this.stockTableBindingSource;
             this.DGVStockView.Location = new System.Drawing.Point(-5, 102);
             this.DGVStockView.Margin = new System.Windows.Forms.Padding(4);
             this.DGVStockView.Name = "DGVStockView";
@@ -81,6 +106,69 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // workFlowDatabaseDataSet
+            // 
+            this.workFlowDatabaseDataSet.DataSetName = "WorkFlowDatabaseDataSet";
+            this.workFlowDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stockTableBindingSource
+            // 
+            this.stockTableBindingSource.DataMember = "StockTable";
+            this.stockTableBindingSource.DataSource = this.workFlowDatabaseDataSet;
+            // 
+            // stockTableTableAdapter
+            // 
+            this.stockTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemIDDataGridViewTextBoxColumn
+            // 
+            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "itemID";
+            this.itemIDDataGridViewTextBoxColumn.HeaderText = "Item ID";
+            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
+            this.itemIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // materialTypeDataGridViewTextBoxColumn
+            // 
+            this.materialTypeDataGridViewTextBoxColumn.DataPropertyName = "materialType";
+            this.materialTypeDataGridViewTextBoxColumn.HeaderText = "Material Type";
+            this.materialTypeDataGridViewTextBoxColumn.Name = "materialTypeDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // unitCostDataGridViewTextBoxColumn
+            // 
+            this.unitCostDataGridViewTextBoxColumn.DataPropertyName = "unitCost";
+            this.unitCostDataGridViewTextBoxColumn.HeaderText = "Unit Cost";
+            this.unitCostDataGridViewTextBoxColumn.Name = "unitCostDataGridViewTextBoxColumn";
+            // 
+            // totalCostDataGridViewTextBoxColumn
+            // 
+            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "totalCost";
+            this.totalCostDataGridViewTextBoxColumn.HeaderText = "Total Cost";
+            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
+            // 
+            // dateAcquiredDataGridViewTextBoxColumn
+            // 
+            this.dateAcquiredDataGridViewTextBoxColumn.DataPropertyName = "dateAcquired";
+            this.dateAcquiredDataGridViewTextBoxColumn.HeaderText = "Date Acquired";
+            this.dateAcquiredDataGridViewTextBoxColumn.Name = "dateAcquiredDataGridViewTextBoxColumn";
+            // 
+            // dateUsedDataGridViewTextBoxColumn
+            // 
+            this.dateUsedDataGridViewTextBoxColumn.DataPropertyName = "dateUsed";
+            this.dateUsedDataGridViewTextBoxColumn.HeaderText = "Date Used";
+            this.dateUsedDataGridViewTextBoxColumn.Name = "dateUsedDataGridViewTextBoxColumn";
+            // 
+            // amtDefectedDataGridViewTextBoxColumn
+            // 
+            this.amtDefectedDataGridViewTextBoxColumn.DataPropertyName = "amtDefected";
+            this.amtDefectedDataGridViewTextBoxColumn.HeaderText = "Amount Defected";
+            this.amtDefectedDataGridViewTextBoxColumn.Name = "amtDefectedDataGridViewTextBoxColumn";
+            // 
             // StockView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -100,6 +188,8 @@
             this.Text = "StockView";
             this.Load += new System.EventHandler(this.StockView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +201,16 @@
         private System.Windows.Forms.DataGridView DGVStockView;
         private System.Windows.Forms.Label lbl_warehouseSummary;
         private System.Windows.Forms.Button btnClose;
+        private Login.WorkFlowDatabaseDataSet workFlowDatabaseDataSet;
+        private System.Windows.Forms.BindingSource stockTableBindingSource;
+        private Login.WorkFlowDatabaseDataSetTableAdapters.StockTableTableAdapter stockTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateAcquiredDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateUsedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amtDefectedDataGridViewTextBoxColumn;
     }
 }

@@ -28,6 +28,8 @@ namespace WorkFlowManagement
 
         private void StockView_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockTable' table. You can move, or remove it, as needed.
+            this.stockTableTableAdapter.Fill(this.workFlowDatabaseDataSet.StockTable);
             loadStocks();
         }
 
