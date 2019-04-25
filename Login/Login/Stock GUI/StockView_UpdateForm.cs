@@ -17,6 +17,8 @@ namespace WorkFlowManagement
 
         private void loadStocks()
         {
+            ItemIDGrid_box.Items.Clear();
+
             //load Stocks Table from database into a list
             stocks = new DataTable();
             stocks = objDatabaseManager.LoadStocks();
