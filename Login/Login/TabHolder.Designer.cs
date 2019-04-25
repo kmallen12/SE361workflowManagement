@@ -56,7 +56,6 @@
             this.btnDelViewProduct = new System.Windows.Forms.Button();
             this.lblDdashboard = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblStockReport = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -281,7 +280,6 @@
             // tabReports
             // 
             this.tabReports.BackgroundImage = global::Login.Properties.Resources.BckBlue;
-            this.tabReports.Controls.Add(this.label2);
             this.tabReports.Controls.Add(this.lblProduct);
             this.tabReports.Controls.Add(this.lblStockReport);
             this.tabReports.Controls.Add(this.label1);
@@ -292,13 +290,6 @@
             this.tabReports.Controls.Add(this.btnRepStockWarehouseCapacity);
             resources.ApplyResources(this.tabReports, "tabReports");
             this.tabReports.Name = "tabReports";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Gainsboro;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Name = "label2";
             // 
             // lblProduct
             // 
@@ -413,7 +404,6 @@
         private System.Windows.Forms.Button btnQAViewProd;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblStockReport;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnStockInventorySum;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_StockOrderStatus;

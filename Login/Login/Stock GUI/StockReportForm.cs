@@ -38,15 +38,23 @@ namespace WorkFlowManagement
 
         private void btnChangeDefaults_Click(object sender, EventArgs e)
         {
-            home.MdiChildren.Last<Form>().Close();
+            //home.MdiChildren.Last<Form>().Close();
 
             ItemCapacityForm ICF = new ItemCapacityForm();
             ICF.MdiParent=home;
 
             ICF.FormClosing += (sender2, args2) =>
             {
+               // home.MdiChildren.Last<Form>().Close();
                 updateMaxLowDataViewer();
                 this.Show();
+            };
+
+            ICF.Leave += (sender3, args3) =>
+            {
+                home.MdiChildren.Last<Form>().Close();
+                //updateMaxLowDataViewer();
+               //this.Show();
             };
 
             this.Hide();

@@ -8,7 +8,6 @@ namespace WorkFlowManagement
     {
         /// DATE: 2/25/19
         /// DESCRIPTION: Homepage for application. Knows who the user is.
-        /// LAST UPDATE BY: Cowen Shears 3/26/19
 
         CurrentUser objCurrentUser;
         public ToolTip ttUserFeedback = new ToolTip();

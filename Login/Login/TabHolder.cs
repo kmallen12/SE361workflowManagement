@@ -217,8 +217,7 @@ namespace WorkFlowManagement
             StockReportForm formReport = new StockReportForm(Home);
             if (objCurrentUser.canView(formReport))
             {
-                Form Dummy = new Form();
-                Dummy.MdiParent = Home;
+                
                 Home.MdiChildren.Last<Form>().Close();
 
                 formReport.MdiParent = Home;
