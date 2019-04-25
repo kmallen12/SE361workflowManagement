@@ -33,13 +33,6 @@ namespace WorkFlowManagement
             P.InsertProductOrder();
         }
 
-        private void CreateProductOrder_Load_1(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'workFlowDatabaseDataSetProducts.ProductTable' table. You can move, or remove it, as needed.
-            this.productTableTableAdapter.Fill(this.workFlowDatabaseDataSetProducts.ProductTable);
-
-        }
-
         private void btn_AddOrderToList_Click(object sender, EventArgs e)
         {
             int result;

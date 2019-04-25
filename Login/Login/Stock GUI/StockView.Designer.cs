@@ -32,7 +32,7 @@
             this.btnLoadDB = new System.Windows.Forms.Button();
             this.DGVStockView = new System.Windows.Forms.DataGridView();
             this.lbl_warehouseSummary = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,17 +69,17 @@
             this.lbl_warehouseSummary.TabIndex = 14;
             this.lbl_warehouseSummary.Text = "Warehouse Summary:";
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(608, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 64);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(608, 23);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(165, 64);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // StockView
             // 
@@ -87,7 +87,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLoadDB);
             this.Controls.Add(this.DGVStockView);
             this.Controls.Add(this.lbl_warehouseSummary);
@@ -98,7 +98,7 @@
             this.Name = "StockView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StockView";
-            this.Load += new System.EventHandler(this.StockView_Load_1);
+            this.Load += new System.EventHandler(this.StockView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVStockView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,6 +110,6 @@
         private System.Windows.Forms.Button btnLoadDB;
         private System.Windows.Forms.DataGridView DGVStockView;
         private System.Windows.Forms.Label lbl_warehouseSummary;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

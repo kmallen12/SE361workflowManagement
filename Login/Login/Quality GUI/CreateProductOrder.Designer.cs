@@ -249,7 +249,7 @@
             this.Name = "CreateProductOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CreateProductOrder";
-            this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);
+            this.Load += new System.EventHandler(this.CreateProductOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSetProducts)).EndInit();

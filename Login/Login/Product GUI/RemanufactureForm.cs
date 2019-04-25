@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WorkFlowManagement
 {
     public partial class RemanufactureForm : Form
     {
-        
-        
         private DatabaseManager objDatabaseManager;
         private ToolTip ttExport = new ToolTip();
         Product P;

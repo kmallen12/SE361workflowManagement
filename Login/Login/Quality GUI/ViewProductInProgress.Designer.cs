@@ -28,35 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewProductInProgress));
             this.lstProducts = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lstProducts
             // 
-            this.lstProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstProducts.FormattingEnabled = true;
-            this.lstProducts.ItemHeight = 15;
-            this.lstProducts.Location = new System.Drawing.Point(1, 1);
-            this.lstProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstProducts.ItemHeight = 16;
+            this.lstProducts.Location = new System.Drawing.Point(28, 48);
             this.lstProducts.Name = "lstProducts";
-            this.lstProducts.Size = new System.Drawing.Size(939, 484);
+            this.lstProducts.Size = new System.Drawing.Size(739, 372);
             this.lstProducts.TabIndex = 0;
             // 
             // ViewProductInProgress
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 489);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lstProducts);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewProductInProgress";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "ProductOrders";
+            this.Text = "ViewProductInProgress";
             this.ResumeLayout(false);
 
         }

@@ -98,7 +98,7 @@ namespace WorkFlowManagement
             this.Hide();
         }
 
-        private void ItemIDGrid_box_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void ItemIDGrid_box_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {

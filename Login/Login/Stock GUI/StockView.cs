@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 
 namespace WorkFlowManagement
@@ -32,12 +26,12 @@ namespace WorkFlowManagement
             loadStocks();
         }
 
-        private void StockView_Load_1(object sender, EventArgs e)
+        private void StockView_Load(object sender, EventArgs e)
         {
             loadStocks();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

@@ -153,6 +153,12 @@
     <Compile Include="Quality GUI\CreateProductOrder.Designer.cs">
       <DependentUpon>CreateProductOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quality GUI\ViewProductInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality GUI\ViewProductInProgress.Designer.cs">
+      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Quality GUI\ViewProductOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,12 +255,6 @@
     <Compile Include="TabHolder.Designer.cs">
       <DependentUpon>TabHolder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quality GUI\ViewProductInProgress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quality GUI\ViewProductInProgress.Designer.cs">
-      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
-    </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -316,6 +316,9 @@
     <EmbeddedResource Include="Quality GUI\CreateProductOrder.resx">
       <DependentUpon>CreateProductOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Quality GUI\ViewProductInProgress.resx">
+      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Quality GUI\ViewProductOrders.resx">
       <DependentUpon>ViewProductOrders.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,9 +373,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabHolder.resx">
       <DependentUpon>TabHolder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Quality GUI\ViewProductInProgress.resx">
-      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />

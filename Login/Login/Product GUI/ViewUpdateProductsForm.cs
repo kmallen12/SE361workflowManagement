@@ -79,16 +79,6 @@ namespace WorkFlowManagement
         {
             try
             {
-                //DataRow[] selectedRow;
-
-                //selectedRow = productTable.Select("pId = " + txt_ProductID.Text);
-
-                //if (selectedRow.Length > 0)
-                //{
-                //    txt_ProductName.Text = selectedRow[0]["productName"].ToString();
-                //    txt_ProductMaterials.Text = selectedRow[0]["materialsString"].ToString();
-                //    txt_ProductQuantity.Text = selectedRow[0]["quantity"].ToString();
-                //}
                 txt_ProductMaterials.Clear();
                 txt_ProductName.Clear();
                 txt_ProductQuantity.Clear();
