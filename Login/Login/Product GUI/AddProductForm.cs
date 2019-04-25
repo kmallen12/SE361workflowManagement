@@ -123,9 +123,9 @@ namespace WorkFlowManagement
             if (CE.isnotNull(txt_ProductID.Text, "ProductID") && CE.isnotNull(txt_ProductQuantity.Text, "ProductQuantity"))
             {
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
-                product.AdditionalProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
+                product.FinalizeProduct(product.productName, Int32.Parse(txt_ProductQuantity.Text));
                 Product_Load(sender, e);
-                Orders.ConfirmFilled();
+                
             }
             
         }

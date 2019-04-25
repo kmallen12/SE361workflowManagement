@@ -577,6 +577,7 @@ namespace WorkFlowManagement
         //Insert a new product into the productTable.
         public void InsertProduct(string productName, string materialsString, int quantity, string status)
         {
+            
             _conn.Close();
             _conn.Open();
             string str = "INSERT INTO [dbo].[ProductTable] (  [productName], [materialsString], [quantity], [productStatus]) VALUES (@productName, @materialsString, @quantity, @status)";
