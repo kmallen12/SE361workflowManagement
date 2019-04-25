@@ -13,7 +13,7 @@ namespace WorkFlowManagement
     public partial class ViewProductOrders : Form
     {
         Product P;
-       
+
         public ViewProductOrders()
         {
             P = new Product();
@@ -21,6 +21,6 @@ namespace WorkFlowManagement
 
             OrderList_listbox.DataSource = P.LoadProductOrders();
         }
-        
+
     }
 }

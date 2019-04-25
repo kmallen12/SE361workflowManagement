@@ -288,7 +288,7 @@
             this.Name = "CreateStockOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CreateStockOrder";
-            this.Load += new System.EventHandler(this.CreateProductOrder_Load_1);
+            this.Load += new System.EventHandler(this.CreateProductOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockSummaryViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();

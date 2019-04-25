@@ -319,7 +319,7 @@
             this.ItemIDGrid_box.Name = "ItemIDGrid_box";
             this.ItemIDGrid_box.Size = new System.Drawing.Size(125, 24);
             this.ItemIDGrid_box.TabIndex = 24;
-            this.ItemIDGrid_box.SelectedIndexChanged += new System.EventHandler(this.ItemIDGrid_box_SelectedIndexChanged_1);
+            this.ItemIDGrid_box.SelectedIndexChanged += new System.EventHandler(this.ItemIDGrid_box_SelectedIndexChanged);
             // 
             // quantityGrid_box
             // 

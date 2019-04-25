@@ -349,7 +349,7 @@
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "  ";
-            this.Load += new System.EventHandler(this.Product_Load_1);
+            this.Load += new System.EventHandler(this.Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PartialStockGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockSummaryViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet)).EndInit();

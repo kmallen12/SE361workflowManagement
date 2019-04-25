@@ -26,7 +26,7 @@ namespace WorkFlowManagement
             MessageBox.Show("Order(s) sent to the stock manager.", "Success");
         }
 
-        private void CreateProductOrder_Load_1(object sender, EventArgs e)
+        private void CreateProductOrder_Load(object sender, EventArgs e)
         {
             //This line of code loads data into the 'workFlowDatabaseDataSet.StockSummaryView' table.
             this.stockSummaryViewTableAdapter.Fill(this.workFlowDatabaseDataSet.StockSummaryView);

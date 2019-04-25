@@ -13,7 +13,7 @@ namespace WorkFlowManagement
         private DatabaseManager objDatabaseManager = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
-        private string material { get; set; }
+
         public AddMaterialForm()
         {
             InitializeComponent();
@@ -113,21 +113,6 @@ namespace WorkFlowManagement
             {
                 MessageBox.Show("Enter a value in the Quantity and Unit Cost fields.");
             }
-        }
-
-            
-
-        private void btn_IncreaseQuantity_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //objDatabaseManager.IncreaseStockQuantity(ID, Int32.Parse(txt_Quantity.Text));
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            MessageBox.Show(txt_materialType.SelectedItem.ToString() + " has had it's quantity increased by " + txt_Quantity.Text+".", "Success!");
         }
 
         private void txt_dateUsed_ValueChanged(object sender, EventArgs e)
