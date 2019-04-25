@@ -41,6 +41,7 @@
             this.stockReportLowCapacityTableAdapter = new Login.WorkFlowDatabaseDataSet3TableAdapters.StockReportLowCapacityTableAdapter();
             this.tableAdapterManager = new Login.WorkFlowDatabaseDataSet3TableAdapters.TableAdapterManager();
             this.stockReportMaxCapacityTableAdapter = new Login.WorkFlowDatabaseDataSet3TableAdapters.StockReportMaxCapacityTableAdapter();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockReportLowCapacityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet3)).BeginInit();
@@ -93,7 +94,7 @@
             // 
             this.btnChangeDefaults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeDefaults.Location = new System.Drawing.Point(262, 10);
-            this.btnChangeDefaults.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeDefaults.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeDefaults.Name = "btnChangeDefaults";
             this.btnChangeDefaults.Size = new System.Drawing.Size(207, 33);
             this.btnChangeDefaults.TabIndex = 6;
@@ -131,12 +132,24 @@
             // 
             this.stockReportMaxCapacityTableAdapter.ClearBeforeFill = true;
             // 
+            // btnReport
+            // 
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(686, 10);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(109, 33);
+            this.btnReport.TabIndex = 7;
+            this.btnReport.Text = "Export";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.button1_Click);
+            // 
             // StockReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnChangeDefaults);
             this.Controls.Add(this.dataGridViewMax);
             this.Controls.Add(this.dataGridViewLow);
@@ -145,7 +158,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StockReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Stock Warehouse Report";
@@ -173,5 +186,6 @@
         private Login.WorkFlowDatabaseDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource stockReportMaxCapacityBindingSource;
         private Login.WorkFlowDatabaseDataSet3TableAdapters.StockReportMaxCapacityTableAdapter stockReportMaxCapacityTableAdapter;
+        private System.Windows.Forms.Button btnReport;
     }
 }

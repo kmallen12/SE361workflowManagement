@@ -16,6 +16,7 @@ namespace WorkFlowManagement
         ProductStruct PS;
         public RemanufactureForm(HomePage H)
         {
+            Home = H;
             InitializeComponent();
             
             P = new Product();
@@ -31,10 +32,21 @@ namespace WorkFlowManagement
         //add selected item to Remanufacture list
         private void btnRepRemanufacture_Click(object sender, EventArgs e)
         {
-            Home.MdiChildren.Last<Form>().Close();
             AddProduct newProduct = new AddProduct();
             newProduct.MdiParent = Home;
             newProduct.SetTXTBoxs(PS.ProductID.ToString(), 1.ToString());
+
+            newProduct.FormClosing += (sender2, args2) =>
+            {
+                this.Show();
+            };
+
+            newProduct.Leave += (sender3, args3) =>
+            {
+                Home.MdiChildren.Last<Form>().Close();
+            };
+
+            this.Hide();
             newProduct.Show();
             
             
