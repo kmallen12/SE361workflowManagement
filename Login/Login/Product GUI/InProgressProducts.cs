@@ -22,6 +22,11 @@ namespace WorkFlowManagement
             dataGridProductStatus.DataSource = objDatabaseManager.LoadDataInProgressProducts();
         }
 
-     
+        private void InProgressProducts_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.ProductTable' table. You can move, or remove it, as needed.
+            this.productTableTableAdapter1.Fill(this.workFlowDatabaseDataSet.ProductTable);
+
+        }
     }
 }
