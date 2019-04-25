@@ -63,7 +63,7 @@ namespace WorkFlowManagement
 
 
 
-            int starty = 90;
+            int starty = 50;
 
             foreach (DataGridViewRow row in dataGridProductStatus.Rows)
             {
