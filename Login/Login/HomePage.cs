@@ -48,11 +48,6 @@ namespace WorkFlowManagement
             newTabHolder.Show();
         }
 
-        private void lblUserType_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             objCurrentUser.Username = "";

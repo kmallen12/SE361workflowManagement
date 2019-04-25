@@ -9,9 +9,6 @@ namespace WorkFlowManagement
     {
         //Update: 3/26/2019 - Cowen Shears - I fixed some bugs for the MessageBox in CheckValidUser().
 
-
-
-
         DatabaseManager objDatabaseManager = new DatabaseManager();
         CheckEntry objCheckEntry = new CheckEntry();
         Password objPassword = new Password();

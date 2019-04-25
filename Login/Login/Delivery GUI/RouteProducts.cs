@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WorkFlowManagement
@@ -64,26 +58,6 @@ namespace WorkFlowManagement
             this.Hide();
         }
 
-        private void btnAddToDefectsList_Click(object sender, EventArgs e)
-        {
-            if (!lstDefectedProd.Items.Contains(cboxProdIDDefects.Text))
-            {
-                lstDefectedProd.Items.Add(cboxProdIDDefects.Text);
-
-                foreach (var prod in defectiveProducts)
-                {
-                    if (prod.ProductID == int.Parse(cboxProdIDDefects.Text))
-                    {
-                        toManufacturingProducts.Add(prod);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("This product is already in the list.");
-            }
-        }
-
         private void btnRemoveQualified_Click(object sender, EventArgs e)
         {
             lstQualifiedProd.Items.Remove(lstQualifiedProd.SelectedItem);
@@ -98,9 +72,7 @@ namespace WorkFlowManagement
         {
             foreach (var prod in toSalesProducts)
             {
-                
                 objDatabaseManager.UpdateProductStatus(prod.ProductID, "Sent to Sales");
-                
             }
 
             lstQualifiedProd.Items.Clear();

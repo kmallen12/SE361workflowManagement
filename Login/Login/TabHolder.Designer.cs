@@ -129,14 +129,14 @@
             resources.ApplyResources(this.btnStockUpdate, "btnStockUpdate");
             this.btnStockUpdate.Name = "btnStockUpdate";
             this.btnStockUpdate.UseVisualStyleBackColor = true;
-            this.btnStockUpdate.Click += new System.EventHandler(this.btnStockUpdate_Click_1);
+            this.btnStockUpdate.Click += new System.EventHandler(this.btnStockUpdate_Click);
             // 
             // btnStockGenerateReport
             // 
             resources.ApplyResources(this.btnStockGenerateReport, "btnStockGenerateReport");
             this.btnStockGenerateReport.Name = "btnStockGenerateReport";
             this.btnStockGenerateReport.UseVisualStyleBackColor = true;
-            this.btnStockGenerateReport.Click += new System.EventHandler(this.btnStockGenerateReport_Click_1);
+            this.btnStockGenerateReport.Click += new System.EventHandler(this.btnStockGenerateReport_Click);
             // 
             // btnStockMaterials
             // 
@@ -144,7 +144,7 @@
             this.btnStockMaterials.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnStockMaterials.Name = "btnStockMaterials";
             this.btnStockMaterials.UseVisualStyleBackColor = true;
-            this.btnStockMaterials.Click += new System.EventHandler(this.btnStockMaterials_Click_1);
+            this.btnStockMaterials.Click += new System.EventHandler(this.btnStockMaterials_Click);
             // 
             // tabProducts
             // 
