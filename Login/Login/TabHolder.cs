@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WorkFlowManagement
@@ -180,9 +175,9 @@ namespace WorkFlowManagement
                 btnRepDefectedProducts.ForeColor = Color.DarkGray;
             }
         }
-        private void btnStockMaterials_Click_1(object sender, EventArgs e)
+        private void btnStockMaterials_Click(object sender, EventArgs e)
         {
-            AddMaterialForm formMaterial = new AddMaterialForm();
+            AddMaterialForm formMaterial = new AddMaterialForm(Home);
             if (objCurrentUser.canView(formMaterial))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -196,7 +191,7 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the Stock Materials Form.\nContact your local Stockiest.");
             }
         }
-        private void btnStockUpdate_Click_1(object sender, EventArgs e)
+        private void btnStockUpdate_Click(object sender, EventArgs e)
         {
             UpdateStockForm formStock = new UpdateStockForm();
             if (objCurrentUser.canView(formStock))
@@ -212,7 +207,7 @@ namespace WorkFlowManagement
                 MessageBox.Show("You do not have access for the Stock View/Update Form.\nContact your local Stockiest.");
             }
         }
-        private void btnStockGenerateReport_Click_1(object sender, EventArgs e)
+        private void btnStockGenerateReport_Click(object sender, EventArgs e)
         {
             StockReportForm formReport = new StockReportForm(Home);
             if (objCurrentUser.canView(formReport))
@@ -232,7 +227,7 @@ namespace WorkFlowManagement
 
         private void btnProductsView_Click(object sender, EventArgs e)
         {
-            ViewProducts btnViewProducts = new ViewProducts();
+            ViewProducts btnViewProducts = new ViewProducts(Home);
             
             if (objCurrentUser.canView(btnViewProducts))
             {
@@ -513,7 +508,7 @@ namespace WorkFlowManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ManageStockOrders Orders = new ManageStockOrders();
+            ManageStockOrders Orders = new ManageStockOrders(Home);
             if (objCurrentUser.canView(Orders))
             {
                 Home.MdiChildren.Last<Form>().Close();

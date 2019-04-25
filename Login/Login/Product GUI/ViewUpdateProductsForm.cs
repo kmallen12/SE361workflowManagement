@@ -18,9 +18,11 @@ namespace WorkFlowManagement
         WorkFlowMessage M;
         //We check to see if text entries are correct.
         CheckEntry CE;
+        HomePage home;
 
-        public ViewProducts()
+        public ViewProducts(HomePage h)
         {
+            home = h;
             InitializeComponent();
             P = new Product();
             CE = new CheckEntry();
@@ -66,7 +68,14 @@ namespace WorkFlowManagement
                 //More of an existing product.
                 AddProduct addp = new AddProduct();
                 addp.SetTXTBoxs(txt_ProductID.Text, txt_ProductQuantity.Text);
-                addp.ShowDialog();
+                addp.MdiParent = home;
+
+                addp.Leave += (sender3, args3) =>
+                {
+                    home.MdiChildren.Last<Form>().Close();
+                };
+
+                addp.Show();
             }
             catch (Exception)
             {
