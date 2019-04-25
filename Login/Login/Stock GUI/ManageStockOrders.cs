@@ -12,11 +12,13 @@ namespace WorkFlowManagement
 {
     public partial class ManageStockOrders : Form
     {
+        HomePage home;
         Stock S;
         StockOrderRequest Order;
         AddMaterialForm AddMaterial;
-        public ManageStockOrders()
+        public ManageStockOrders(HomePage h)
         {
+            home = h;
             S = new Stock();
             InitializeComponent();
 
@@ -27,7 +29,7 @@ namespace WorkFlowManagement
 
         private void Confirm_btn_Click(object sender, EventArgs e)
         {
-            AddMaterial = new AddMaterialForm();
+            AddMaterial = new AddMaterialForm(home);
 
             AddMaterial.SETFORM(Order.MaterialType,Order.Quantity);
             AddMaterial.ShowDialog();

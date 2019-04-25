@@ -83,6 +83,7 @@ namespace WorkFlowManagement
             txt_Material.Visible = false;
             lbl_MaterialAmount.Visible = false;
             lbl_MaterialID.Visible = false;
+            //Ryan was here
             lbl_Title.Visible = false;
             btn_FinalizeProduct.Visible = false;
             btn_AddMaterialtoProduct.Visible = false;
@@ -132,7 +133,7 @@ namespace WorkFlowManagement
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
                 product.AdditionalProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
                 Product_Load_1(sender, e);
-                Orders.ConfirmFilled();
+                
             }
             
         }

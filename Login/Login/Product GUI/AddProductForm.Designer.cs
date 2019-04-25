@@ -76,10 +76,10 @@
             this.dataGridViewTextBoxColumn1,
             this.sumDataGridViewTextBoxColumn});
             this.PartialStockGrid.DataSource = this.stockSummaryViewBindingSource;
-            this.PartialStockGrid.Location = new System.Drawing.Point(761, 94);
-            this.PartialStockGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.PartialStockGrid.Location = new System.Drawing.Point(699, 14);
+            this.PartialStockGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PartialStockGrid.Name = "PartialStockGrid";
-            this.PartialStockGrid.Size = new System.Drawing.Size(460, 700);
+            this.PartialStockGrid.Size = new System.Drawing.Size(518, 679);
             this.PartialStockGrid.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -109,37 +109,37 @@
             // 
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(141, 11);
+            this.lbl_Title.Location = new System.Drawing.Point(159, 14);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(271, 29);
+            this.lbl_Title.Size = new System.Drawing.Size(323, 33);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Create A New Product\r\n";
             // 
             // txt_ProductName
             // 
-            this.txt_ProductName.Location = new System.Drawing.Point(333, 96);
-            this.txt_ProductName.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ProductName.Location = new System.Drawing.Point(375, 120);
+            this.txt_ProductName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_ProductName.Name = "txt_ProductName";
-            this.txt_ProductName.Size = new System.Drawing.Size(132, 22);
+            this.txt_ProductName.Size = new System.Drawing.Size(148, 26);
             this.txt_ProductName.TabIndex = 2;
             // 
             // txt_ProductQuantity
             // 
-            this.txt_ProductQuantity.Location = new System.Drawing.Point(333, 177);
-            this.txt_ProductQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ProductQuantity.Location = new System.Drawing.Point(375, 221);
+            this.txt_ProductQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_ProductQuantity.Name = "txt_ProductQuantity";
-            this.txt_ProductQuantity.Size = new System.Drawing.Size(132, 22);
+            this.txt_ProductQuantity.Size = new System.Drawing.Size(148, 26);
             this.txt_ProductQuantity.TabIndex = 3;
             // 
             // lbl_ProductName
             // 
             this.lbl_ProductName.AutoSize = true;
             this.lbl_ProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductName.Location = new System.Drawing.Point(79, 94);
+            this.lbl_ProductName.Location = new System.Drawing.Point(89, 118);
             this.lbl_ProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ProductName.Name = "lbl_ProductName";
-            this.lbl_ProductName.Size = new System.Drawing.Size(148, 25);
+            this.lbl_ProductName.Size = new System.Drawing.Size(179, 29);
             this.lbl_ProductName.TabIndex = 6;
             this.lbl_ProductName.Text = "Product Name";
             // 
@@ -147,10 +147,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(79, 177);
+            this.label5.Location = new System.Drawing.Point(89, 221);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 25);
+            this.label5.Size = new System.Drawing.Size(205, 29);
             this.label5.TabIndex = 7;
             this.label5.Text = "Product Quantity";
             // 
@@ -158,20 +158,20 @@
             // 
             this.lbl_MaterialID.AutoSize = true;
             this.lbl_MaterialID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MaterialID.Location = new System.Drawing.Point(79, 251);
+            this.lbl_MaterialID.Location = new System.Drawing.Point(89, 314);
             this.lbl_MaterialID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_MaterialID.Name = "lbl_MaterialID";
-            this.lbl_MaterialID.Size = new System.Drawing.Size(89, 25);
+            this.lbl_MaterialID.Size = new System.Drawing.Size(107, 29);
             this.lbl_MaterialID.TabIndex = 8;
             this.lbl_MaterialID.Text = "Material";
             // 
             // btn_AddMaterialtoProduct
             // 
             this.btn_AddMaterialtoProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddMaterialtoProduct.Location = new System.Drawing.Point(84, 379);
-            this.btn_AddMaterialtoProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AddMaterialtoProduct.Location = new System.Drawing.Point(94, 474);
+            this.btn_AddMaterialtoProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_AddMaterialtoProduct.Name = "btn_AddMaterialtoProduct";
-            this.btn_AddMaterialtoProduct.Size = new System.Drawing.Size(200, 62);
+            this.btn_AddMaterialtoProduct.Size = new System.Drawing.Size(225, 78);
             this.btn_AddMaterialtoProduct.TabIndex = 9;
             this.btn_AddMaterialtoProduct.Text = "Add Material to Current Product";
             this.btn_AddMaterialtoProduct.UseVisualStyleBackColor = true;
@@ -180,10 +180,10 @@
             // btn_FinalizeProduct
             // 
             this.btn_FinalizeProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_FinalizeProduct.Location = new System.Drawing.Point(333, 379);
-            this.btn_FinalizeProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_FinalizeProduct.Location = new System.Drawing.Point(375, 474);
+            this.btn_FinalizeProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_FinalizeProduct.Name = "btn_FinalizeProduct";
-            this.btn_FinalizeProduct.Size = new System.Drawing.Size(200, 62);
+            this.btn_FinalizeProduct.Size = new System.Drawing.Size(225, 78);
             this.btn_FinalizeProduct.TabIndex = 10;
             this.btn_FinalizeProduct.Text = "Finalize Product";
             this.btn_FinalizeProduct.UseVisualStyleBackColor = true;
@@ -193,10 +193,10 @@
             // 
             this.lbl_MaterialAmount.AutoSize = true;
             this.lbl_MaterialAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MaterialAmount.Location = new System.Drawing.Point(79, 329);
+            this.lbl_MaterialAmount.Location = new System.Drawing.Point(89, 411);
             this.lbl_MaterialAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_MaterialAmount.Name = "lbl_MaterialAmount";
-            this.lbl_MaterialAmount.Size = new System.Drawing.Size(169, 25);
+            this.lbl_MaterialAmount.Size = new System.Drawing.Size(201, 29);
             this.lbl_MaterialAmount.TabIndex = 11;
             this.lbl_MaterialAmount.Text = "Material Amount";
             // 
@@ -204,10 +204,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(79, 460);
+            this.label7.Location = new System.Drawing.Point(89, 575);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(320, 29);
+            this.label7.Size = new System.Drawing.Size(387, 33);
             this.label7.TabIndex = 13;
             this.label7.Text = "Materials (Type, Quantity):";
             // 
@@ -215,19 +215,19 @@
             // 
             this.lbl_Description.AutoSize = true;
             this.lbl_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Description.Location = new System.Drawing.Point(79, 501);
+            this.lbl_Description.Location = new System.Drawing.Point(89, 626);
             this.lbl_Description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(13, 29);
+            this.lbl_Description.Size = new System.Drawing.Size(15, 33);
             this.lbl_Description.TabIndex = 14;
             this.lbl_Description.Text = "\r\n";
             // 
             // txt_ProductID
             // 
-            this.txt_ProductID.Location = new System.Drawing.Point(333, 128);
-            this.txt_ProductID.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ProductID.Location = new System.Drawing.Point(375, 160);
+            this.txt_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_ProductID.Name = "txt_ProductID";
-            this.txt_ProductID.Size = new System.Drawing.Size(132, 22);
+            this.txt_ProductID.Size = new System.Drawing.Size(148, 26);
             this.txt_ProductID.TabIndex = 15;
             this.txt_ProductID.Visible = false;
             this.txt_ProductID.WordWrap = false;
@@ -236,10 +236,10 @@
             // 
             this.lbl_ProductID.AutoSize = true;
             this.lbl_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductID.Location = new System.Drawing.Point(79, 128);
+            this.lbl_ProductID.Location = new System.Drawing.Point(89, 160);
             this.lbl_ProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ProductID.Name = "lbl_ProductID";
-            this.lbl_ProductID.Size = new System.Drawing.Size(113, 25);
+            this.lbl_ProductID.Size = new System.Drawing.Size(135, 29);
             this.lbl_ProductID.TabIndex = 16;
             this.lbl_ProductID.Text = "Product ID";
             this.lbl_ProductID.Visible = false;
@@ -248,10 +248,10 @@
             // 
             this.lbl_OrderMoreProduct.AutoSize = true;
             this.lbl_OrderMoreProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_OrderMoreProduct.Location = new System.Drawing.Point(141, 41);
+            this.lbl_OrderMoreProduct.Location = new System.Drawing.Point(159, 51);
             this.lbl_OrderMoreProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_OrderMoreProduct.Name = "lbl_OrderMoreProduct";
-            this.lbl_OrderMoreProduct.Size = new System.Drawing.Size(245, 29);
+            this.lbl_OrderMoreProduct.Size = new System.Drawing.Size(290, 33);
             this.lbl_OrderMoreProduct.TabIndex = 17;
             this.lbl_OrderMoreProduct.Text = "Order More Product";
             this.lbl_OrderMoreProduct.Visible = false;
@@ -259,10 +259,10 @@
             // btn_AdditionalProduct
             // 
             this.btn_AdditionalProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AdditionalProduct.Location = new System.Drawing.Point(188, 379);
-            this.btn_AdditionalProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AdditionalProduct.Location = new System.Drawing.Point(212, 474);
+            this.btn_AdditionalProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_AdditionalProduct.Name = "btn_AdditionalProduct";
-            this.btn_AdditionalProduct.Size = new System.Drawing.Size(200, 62);
+            this.btn_AdditionalProduct.Size = new System.Drawing.Size(225, 78);
             this.btn_AdditionalProduct.TabIndex = 18;
             this.btn_AdditionalProduct.Text = "Order Additional Product";
             this.btn_AdditionalProduct.UseVisualStyleBackColor = true;
@@ -271,18 +271,20 @@
             // 
             // txt_MaterialQuantity
             // 
-            this.txt_MaterialQuantity.Location = new System.Drawing.Point(333, 329);
+            this.txt_MaterialQuantity.Location = new System.Drawing.Point(375, 411);
+            this.txt_MaterialQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_MaterialQuantity.Name = "txt_MaterialQuantity";
-            this.txt_MaterialQuantity.Size = new System.Drawing.Size(132, 22);
+            this.txt_MaterialQuantity.Size = new System.Drawing.Size(148, 26);
             this.txt_MaterialQuantity.TabIndex = 19;
             // 
             // txt_Material
             // 
             this.txt_Material.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_Material.FormattingEnabled = true;
-            this.txt_Material.Location = new System.Drawing.Point(333, 251);
+            this.txt_Material.Location = new System.Drawing.Point(375, 314);
+            this.txt_Material.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Material.Name = "txt_Material";
-            this.txt_Material.Size = new System.Drawing.Size(132, 24);
+            this.txt_Material.Size = new System.Drawing.Size(148, 28);
             this.txt_Material.TabIndex = 20;
             // 
             // stockSummaryViewTableAdapter
@@ -307,10 +309,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(188, 718);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(518, 606);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(200, 62);
+            this.btnCancel.Size = new System.Drawing.Size(161, 78);
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -319,10 +321,10 @@
             // 
             // AddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1220, 793);
+            this.ClientSize = new System.Drawing.Size(1230, 1094);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txt_Material);
@@ -345,7 +347,7 @@
             this.Controls.Add(this.PartialStockGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "  ";

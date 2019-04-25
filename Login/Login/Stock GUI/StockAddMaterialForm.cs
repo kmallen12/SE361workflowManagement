@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Linq;
 
 namespace WorkFlowManagement
 {
@@ -8,14 +10,16 @@ namespace WorkFlowManagement
     {
         private Stock objStock;
         CheckEntry objCheckEntry;
+        HomePage home;
 
         private List<Stock> stocks;
         private DatabaseManager objDatabaseManager = new DatabaseManager();
         //dropdown list property
         private List<RawMaterials> materialList;
         private string material { get; set; }
-        public AddMaterialForm()
+        public AddMaterialForm(HomePage h)
         {
+            home = h;
             InitializeComponent();
 
             objStock = new Stock();
@@ -83,6 +87,8 @@ namespace WorkFlowManagement
         private void btnCustomizeMaterials_Click(object sender, EventArgs e)
         {
             RawMaterialsForm formMaterial = new RawMaterialsForm();
+            formMaterial.MdiParent = home;
+
             formMaterial.FormClosing += (sender2, e2) =>
             {
                 txt_materialType.Items.Clear();
@@ -92,8 +98,15 @@ namespace WorkFlowManagement
                 {
                     txt_materialType.Items.Add(mat.material);
                 }
+                this.Show();
             };
-            formMaterial.ShowDialog();
+
+            formMaterial.Leave += (sender3, args3) =>
+            {
+                home.MdiChildren.Last<Form>().Close();
+            };
+            this.Hide();
+            formMaterial.Show();
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)

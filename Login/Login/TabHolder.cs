@@ -182,7 +182,7 @@ namespace WorkFlowManagement
         }
         private void btnStockMaterials_Click_1(object sender, EventArgs e)
         {
-            AddMaterialForm formMaterial = new AddMaterialForm();
+            AddMaterialForm formMaterial = new AddMaterialForm(Home);
             if (objCurrentUser.canView(formMaterial))
             {
                 Home.MdiChildren.Last<Form>().Close();
@@ -232,7 +232,7 @@ namespace WorkFlowManagement
 
         private void btnProductsView_Click(object sender, EventArgs e)
         {
-            ViewProducts btnViewProducts = new ViewProducts();
+            ViewProducts btnViewProducts = new ViewProducts(Home);
             
             if (objCurrentUser.canView(btnViewProducts))
             {
@@ -513,7 +513,7 @@ namespace WorkFlowManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ManageStockOrders Orders = new ManageStockOrders();
+            ManageStockOrders Orders = new ManageStockOrders(Home);
             if (objCurrentUser.canView(Orders))
             {
                 Home.MdiChildren.Last<Form>().Close();
