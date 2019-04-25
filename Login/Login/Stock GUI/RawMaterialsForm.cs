@@ -13,6 +13,15 @@ namespace WorkFlowManagement
 
         DatabaseManager objDatabaseManager;
 
+        private void LoadRawMat()
+        {
+            rawMaterials = objDatabaseManager.LoadRawMat();
+
+            //refresh list display
+            lstRawMaterials.Items.Clear();
+            lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
+        }
+
         public RawMaterialsForm()
         {
             InitializeComponent();
@@ -27,23 +36,39 @@ namespace WorkFlowManagement
 
         private void RawMaterialsForm_Load(object sender, EventArgs e)
         {
-
+            LoadRawMat();
         }
 
         private void btnAddNewMaterial_Click(object sender, EventArgs e)
         {
             try
             {
-                string materialName = txtRawMaterialName.Text;
-
+                string materialName = txtRawMaterialName.Text.Trim(' ');
                 objRawMat = new RawMaterials(materialName);
-                addedRawMaterials.Add(objRawMat);
 
-                MessageBox.Show("Material " + materialName + " was added to the list.");
+                if (rawMaterials.Contains(objRawMat))
+                {
+                    MessageBox.Show(objRawMat.ToString());
+                }
 
-                lstRawMaterials.Items.Clear();
-                lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
-                lstRawMaterials.Items.AddRange(addedRawMaterials.ToArray());
+
+                if (!objRawMat.ContainsMaterialName(rawMaterials, objRawMat.material))
+                {
+                    addedRawMaterials.Add(objRawMat);
+
+                    toolStripStatusLabel1.Text = "The material " + materialName + " was added to the list.";
+
+                    lstRawMaterials.Items.Clear();
+                    lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
+                    lstRawMaterials.Items.AddRange(addedRawMaterials.ToArray());
+
+                    objDatabaseManager.InsertToRMTable(addedRawMaterials);
+                }
+                else
+                {
+                    MessageBox.Show("First input the name of a new material.");
+                }
+
             }
             catch (Exception err)
             {
@@ -69,42 +94,35 @@ namespace WorkFlowManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //save material name to a string to use in the message to user
-            string materialName = objRawMat.material;
+            try
+            {
+                //save material name to a string to use in the message to user
+                string materialName = objRawMat.material;
+
+                //remove item from local list
+                rawMaterials.Remove(objRawMat);
+                addedRawMaterials.Remove(objRawMat);
+
+                //add deleted object to the deleted list - this will later be used to remove these from the database
+                deletedRawMaterials.Add(objRawMat);
+
+                //refresh list display
+                lstRawMaterials.Items.Clear();
+                lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
+                lstRawMaterials.Items.AddRange(addedRawMaterials.ToArray());
+
+                //remove from database
+                objDatabaseManager.DeleteFromRMTable(deletedRawMaterials);
+
+                //message to user
+                toolStripStatusLabel1.Text = "The material " + materialName + " was removed to the list.";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("First select an item to delete.");
+            }
             
-            //remove item from local list
-            rawMaterials.Remove(objRawMat);
-            addedRawMaterials.Remove(objRawMat);
-
-            //add deleted object to the deleted list - this will later be used to remove these from the database
-            deletedRawMaterials.Add(objRawMat);
-
-            //refresh list display
-            lstRawMaterials.Items.Clear();
-            lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
-            lstRawMaterials.Items.AddRange(addedRawMaterials.ToArray());
-
-            //message to user
-            MessageBox.Show("Material " + materialName + " was removed from the list.");
         }
 
-        private void btnSaveRMtoDB_Click(object sender, EventArgs e)
-        {
-            objDatabaseManager.InsertToRMTable(addedRawMaterials);
-            objDatabaseManager.DeleteFromRMTable(deletedRawMaterials);
-
-            MessageBox.Show("List saved to the database.");
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            rawMaterials = objDatabaseManager.LoadRawMat();
-
-            MessageBox.Show("List loaded from the database.");
-
-            //refresh list display
-            lstRawMaterials.Items.Clear();
-            lstRawMaterials.Items.AddRange(rawMaterials.ToArray());
-        }
     }
 }

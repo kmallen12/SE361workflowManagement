@@ -193,7 +193,7 @@
             this.dataGrid_ViewProducts.Location = new System.Drawing.Point(539, 30);
             this.dataGrid_ViewProducts.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_ViewProducts.Name = "dataGrid_ViewProducts";
-            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(711, 448);
+            this.dataGrid_ViewProducts.Size = new System.Drawing.Size(743, 448);
             this.dataGrid_ViewProducts.TabIndex = 20;
             // 
             // pIdDataGridViewTextBoxColumn

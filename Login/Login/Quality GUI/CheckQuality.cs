@@ -71,12 +71,12 @@ namespace WorkFlowManagement
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             objProduct.productStatus = cboxStatus.Text;
-            updatedProducts.Add(objProduct);
+
+            objDatabaseManager.UpdateProduct(objProduct.productID, objProduct.productName, objProduct.JsonMaterialString, objProduct.productQuantity, objProduct.productStatus);
 
             lstProducts.Items.Clear();
 
-            lstProducts.Items.AddRange(products.ToArray());
-
+            LoadProducts();
         }
     }
 }

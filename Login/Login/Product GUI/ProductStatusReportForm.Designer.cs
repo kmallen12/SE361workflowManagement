@@ -37,6 +37,8 @@
             this.productTableTableAdapter = new Login.WorkFlowDatabaseDataSet2TableAdapters.ProductTableTableAdapter();
             this.lblDefectiveProducts = new System.Windows.Forms.Label();
             this.dataGridProductStatus = new System.Windows.Forms.DataGridView();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualifiedProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).BeginInit();
@@ -72,32 +74,52 @@
             // 
             this.lblDefectiveProducts.AutoSize = true;
             this.lblDefectiveProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefectiveProducts.Location = new System.Drawing.Point(20, 20);
-            this.lblDefectiveProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDefectiveProducts.Location = new System.Drawing.Point(27, 25);
             this.lblDefectiveProducts.Name = "lblDefectiveProducts";
-            this.lblDefectiveProducts.Size = new System.Drawing.Size(129, 20);
+            this.lblDefectiveProducts.Size = new System.Drawing.Size(154, 25);
             this.lblDefectiveProducts.TabIndex = 4;
             this.lblDefectiveProducts.Text = "Product Status";
             // 
             // dataGridProductStatus
             // 
+            this.dataGridProductStatus.AutoGenerateColumns = false;
             this.dataGridProductStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProductStatus.Location = new System.Drawing.Point(80, 57);
+            this.dataGridProductStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productNameDataGridViewTextBoxColumn,
+            this.productStatusDataGridViewTextBoxColumn});
+            this.dataGridProductStatus.DataSource = this.productTableBindingSource;
+            this.dataGridProductStatus.Location = new System.Drawing.Point(61, 72);
+            this.dataGridProductStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridProductStatus.Name = "dataGridProductStatus";
-            this.dataGridProductStatus.Size = new System.Drawing.Size(275, 363);
+            this.dataGridProductStatus.Size = new System.Drawing.Size(457, 472);
             this.dataGridProductStatus.TabIndex = 7;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.Width = 165;
+            // 
+            // productStatusDataGridViewTextBoxColumn
+            // 
+            this.productStatusDataGridViewTextBoxColumn.DataPropertyName = "productStatus";
+            this.productStatusDataGridViewTextBoxColumn.HeaderText = "Product Status";
+            this.productStatusDataGridViewTextBoxColumn.Name = "productStatusDataGridViewTextBoxColumn";
+            this.productStatusDataGridViewTextBoxColumn.Width = 120;
             // 
             // ProductStatusReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 432);
+            this.ClientSize = new System.Drawing.Size(584, 571);
             this.ControlBox = false;
             this.Controls.Add(this.dataGridProductStatus);
             this.Controls.Add(this.lblDefectiveProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductStatusReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Product Status Report Form";
@@ -119,5 +141,7 @@
         private Login.WorkFlowDatabaseDataSet2TableAdapters.ProductTableTableAdapter productTableTableAdapter;
         private System.Windows.Forms.Label lblDefectiveProducts;
         private System.Windows.Forms.DataGridView dataGridProductStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productStatusDataGridViewTextBoxColumn;
     }
 }

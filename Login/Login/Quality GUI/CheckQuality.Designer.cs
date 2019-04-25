@@ -42,7 +42,6 @@
             this.lblProdName = new System.Windows.Forms.Label();
             this.cboxStatus = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTableBindingSource)).BeginInit();
@@ -52,21 +51,19 @@
             // 
             this.lblProducts.AutoSize = true;
             this.lblProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts.Location = new System.Drawing.Point(75, 23);
-            this.lblProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProducts.Location = new System.Drawing.Point(100, 28);
             this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(80, 20);
+            this.lblProducts.Size = new System.Drawing.Size(221, 25);
             this.lblProducts.TabIndex = 1;
-            this.lblProducts.Text = "Products";
+            this.lblProducts.Text = "Products Needing QA";
             // 
             // lblUpdateStatus
             // 
             this.lblUpdateStatus.AutoSize = true;
             this.lblUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateStatus.Location = new System.Drawing.Point(75, 214);
-            this.lblUpdateStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateStatus.Location = new System.Drawing.Point(100, 263);
             this.lblUpdateStatus.Name = "lblUpdateStatus";
-            this.lblUpdateStatus.Size = new System.Drawing.Size(193, 20);
+            this.lblUpdateStatus.Size = new System.Drawing.Size(229, 25);
             this.lblUpdateStatus.TabIndex = 2;
             this.lblUpdateStatus.Text = "Update Product Status";
             // 
@@ -93,10 +90,11 @@
             // lstProducts
             // 
             this.lstProducts.FormattingEnabled = true;
-            this.lstProducts.Location = new System.Drawing.Point(79, 62);
-            this.lstProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstProducts.ItemHeight = 16;
+            this.lstProducts.Location = new System.Drawing.Point(105, 76);
+            this.lstProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstProducts.Name = "lstProducts";
-            this.lstProducts.Size = new System.Drawing.Size(458, 134);
+            this.lstProducts.Size = new System.Drawing.Size(609, 164);
             this.lstProducts.TabIndex = 3;
             this.lstProducts.SelectedIndexChanged += new System.EventHandler(this.lstProducts_SelectedIndexChanged);
             // 
@@ -104,10 +102,9 @@
             // 
             this.lblInstrux.AutoSize = true;
             this.lblInstrux.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstrux.Location = new System.Drawing.Point(75, 242);
-            this.lblInstrux.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInstrux.Location = new System.Drawing.Point(100, 298);
             this.lblInstrux.Name = "lblInstrux";
-            this.lblInstrux.Size = new System.Drawing.Size(402, 13);
+            this.lblInstrux.Size = new System.Drawing.Size(532, 17);
             this.lblInstrux.TabIndex = 4;
             this.lblInstrux.Text = "Select a product from the list above. Then select a product status and click Upda" +
     "te.";
@@ -117,10 +114,9 @@
             this.lblProdID.AutoSize = true;
             this.lblProdID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdID.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblProdID.Location = new System.Drawing.Point(76, 280);
-            this.lblProdID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProdID.Location = new System.Drawing.Point(101, 345);
             this.lblProdID.Name = "lblProdID";
-            this.lblProdID.Size = new System.Drawing.Size(20, 13);
+            this.lblProdID.Size = new System.Drawing.Size(23, 17);
             this.lblProdID.TabIndex = 5;
             this.lblProdID.Text = "ID";
             // 
@@ -129,10 +125,9 @@
             this.lblProdName.AutoSize = true;
             this.lblProdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblProdName.Location = new System.Drawing.Point(132, 280);
-            this.lblProdName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProdName.Location = new System.Drawing.Point(152, 345);
             this.lblProdName.Name = "lblProdName";
-            this.lblProdName.Size = new System.Drawing.Size(87, 13);
+            this.lblProdName.Size = new System.Drawing.Size(110, 17);
             this.lblProdName.TabIndex = 6;
             this.lblProdName.Text = "Product Name";
             // 
@@ -140,53 +135,41 @@
             // 
             this.cboxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxStatus.FormattingEnabled = true;
-            this.cboxStatus.Location = new System.Drawing.Point(256, 280);
-            this.cboxStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cboxStatus.Location = new System.Drawing.Point(358, 341);
+            this.cboxStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboxStatus.Name = "cboxStatus";
-            this.cboxStatus.Size = new System.Drawing.Size(152, 21);
+            this.cboxStatus.Size = new System.Drawing.Size(201, 24);
             this.cboxStatus.TabIndex = 7;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(467, 274);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Location = new System.Drawing.Point(623, 337);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(69, 25);
+            this.btnUpdate.Size = new System.Drawing.Size(92, 31);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(364, 329);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 40);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "SAVE TO DATABASE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(182, 329);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(338, 394);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(86, 40);
+            this.btnClose.Size = new System.Drawing.Size(115, 49);
             this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "CLOSE";
+            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // CheckQuality
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 395);
+            this.ClientSize = new System.Drawing.Size(800, 486);
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cboxStatus);
             this.Controls.Add(this.lblProdName);
@@ -198,7 +181,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(404, 92);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CheckQuality";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Check Product Quality";
@@ -223,7 +206,6 @@
         private System.Windows.Forms.Label lblProdName;
         private System.Windows.Forms.ComboBox cboxStatus;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
     }
 }
