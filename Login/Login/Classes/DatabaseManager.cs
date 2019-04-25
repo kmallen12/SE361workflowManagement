@@ -597,25 +597,6 @@ namespace WorkFlowManagement
             _conn.Close();
         }
             
-        
-        public DataTable StockOrderTable()
-        {
-            _conn.Close();
-            _conn.Open();
-
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = _conn;
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT itemID, materialType, quantity FROM StockTable";
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-
-            _conn.Close();
-
-            return dtRecord;
-        }
         public void InsertStockOrders(List<StockOrderRequest> Orders)
         {
 
@@ -972,56 +953,8 @@ namespace WorkFlowManagement
 
             return stockTable;
         }
-        //Grabs just the itemID, materialType, and quantity for materials datagrid in Product GUIS.
-        public DataTable LoadPartialStocks()
-        {
-            DataTable stockTable = new DataTable();
-            stockTable.Columns.Add("itemID", typeof(int));
-            stockTable.Columns.Add("materialType", typeof(string));
-            stockTable.Columns.Add("quantity", typeof(double));
-            
+        
 
-            try
-            {
-                //open a db connection
-                conn.Open();
-
-                //create SQL Command to pull data from Raw Materials table
-                SqlCommand cmd = new SqlCommand("SELECT itemID, materialType, quantity FROM [dbo].[StockTable]", conn);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    int id = (int)reader["itemID"];
-                    string matName = (string)reader["materialType"];
-                    decimal quan = (decimal)reader["quantity"];
-                    double quantity = (double)quan;
-
-                   
-                 
-
-                    //handle null unit cost values in database
-                   
-
-                    //handle null defects in database
-                   
-
-                    stockTable.Rows.Add(id, matName, quantity);
-
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return stockTable;
-        }
         public DataTable LoadProducts()
         {
             DataTable ProductTable = new DataTable();
@@ -1151,32 +1084,7 @@ namespace WorkFlowManagement
 
             return name;
         }
-        public string StockName(int key)
-        {
-            string name = "";
-            try
-            {
-                //open a db connection
-                conn.Open();
-
-                //SQL Command to pull productName from productTable.
-                SqlCommand cmd = new SqlCommand("SELECT  materialType FROM [dbo].[StockTable] WHERE itemID=" + key, conn);
-
-                name = Convert.ToString(cmd.ExecuteScalar());
-
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return name;
-        }
+        
         public string ProductStatus(int key)
         {
             string status = "";
@@ -1201,32 +1109,7 @@ namespace WorkFlowManagement
 
             return status;
         }
-        public string MaterialName(int key)
-        {
-            string name = "";
-            try
-            {
-                //open a db connection
-                conn.Open();
-
-                //SQL Command to pull productName from productTable.
-                SqlCommand cmd = new SqlCommand("SELECT  materialType FROM [dbo].[StockTable] WHERE itemID=" + key, conn);
-
-                name = Convert.ToString(cmd.ExecuteScalar());
-
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error loading stocks from the database.");
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return name;
-        }
+        
         //Updates Product based on key(ID).
         public void UpdateProduct(int key, string ProductName ,string materialsString, int quantity, string productStatus)
         {
@@ -1269,10 +1152,7 @@ namespace WorkFlowManagement
             using (SqlCommand com = new SqlCommand(str, _conn))
             {
                 com.Connection = _conn;
-                
-                
-
-
+                             
                 com.ExecuteNonQuery();
             }
             _conn.Close();
@@ -1293,50 +1173,7 @@ namespace WorkFlowManagement
             }
             _conn.Close();
         }
-        public void IncreaseStockQuantity(int key, int quantity)
-        {
-            _conn.Close();
-            _conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT quantity FROM StockTable WHERE itemID=" + key, _conn);
-            SqlDataReader reader2 = cmd.ExecuteReader();
-            reader2.Read();
-            decimal total = reader2.GetDecimal(0) + (decimal)quantity;
-            reader2.Close();
-            string str = "UPDATE [dbo].[StockTable] SET quantity=@quantity WHERE itemID=@itemID";
-            using (SqlCommand com = new SqlCommand(str, _conn))
-            {
-                com.Connection = _conn;
-                com.Parameters.Add("@itemID", SqlDbType.Int).Value = key;
-
-                com.Parameters.Add("@quantity", SqlDbType.Decimal).Value = total;
-
-
-                com.ExecuteNonQuery();
-            }
-            _conn.Close();
-        }
-        public void IncreaseProductQuantity(int key, int quantity)
-        {
-            _conn.Close();
-            _conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT quantity FROM ProductTable WHERE pId=" + key, _conn);
-            SqlDataReader reader2 = cmd.ExecuteReader();
-            reader2.Read();
-            int total = reader2.GetInt32(0)+quantity;
-            reader2.Close();
-            string str = "UPDATE [dbo].[ProductTable] SET quantity=@quantity WHERE pId=@pId";
-            using (SqlCommand com = new SqlCommand(str, _conn))
-            {
-                com.Connection = _conn;
-                com.Parameters.Add("@pId", SqlDbType.Int).Value = key;
-                
-                com.Parameters.Add("@quantity", SqlDbType.Int).Value = total;
-
-
-                com.ExecuteNonQuery();
-            }
-            _conn.Close();
-        }
+       
         //update stock in the Stock Table
         public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
         {

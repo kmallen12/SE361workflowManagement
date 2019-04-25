@@ -1,6 +1,6 @@
 ﻿namespace WorkFlowManagement
 {
-    partial class ViewProductInProgress
+    partial class BottomRightGraphic
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstProducts = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // lstProducts
+            // BottomRightGraphic
             // 
-            this.lstProducts.FormattingEnabled = true;
-            this.lstProducts.ItemHeight = 16;
-            this.lstProducts.Location = new System.Drawing.Point(28, 48);
-            this.lstProducts.Name = "lstProducts";
-            this.lstProducts.Size = new System.Drawing.Size(739, 372);
-            this.lstProducts.TabIndex = 0;
-            // 
-            // ViewProductInProgress
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lstProducts);
-            this.Name = "ViewProductInProgress";
-            this.Text = "ViewProductInProgress";
+            this.BackgroundImage = global::Login.Properties.Resources.BottomGraphic;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(384, 151);
+            this.ControlBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(1212, 682);
+            this.Name = "BottomRightGraphic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstProducts;
     }
 }

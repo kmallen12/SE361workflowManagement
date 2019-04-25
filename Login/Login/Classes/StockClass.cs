@@ -94,43 +94,13 @@ namespace WorkFlowManagement
             dateAcquired = dtAcq;
             dateUsed = dtUsed;
         }
-        public void UpdateStock(int key, string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
-        {
-            objDatabaseManager.UpdateStock(key, material, quantity, unitCost, totalCost, dateAcquired, dateUsed, amtDefected);
-        }
-        public void InsertStock(string material, string quantity, string unitCost, string totalCost, string dateAcquired, string dateUsed, string amtDefected)
-        {
-            objDatabaseManager.InsertStock(material, quantity, unitCost, totalCost, dateAcquired, dateUsed, amtDefected);
-        }
-        public DataTable StockTable()
-        {
-            return objDatabaseManager.LoadStocks();
-        }
-        public List<RawMaterials> LoadRawMat()
-        {
-            return objDatabaseManager.LoadRawMat();
-        }
 
         //returns the unit cost of materials purchased
         public double totalCost()
         {
             return unitCost * (double)quantity;
         }
-
-        //returns the percent of unusable materials by dividing the defect number by quantity purchased
-        public double defectRate()
-        {
-            return (defects / (double)quantity * 100);
-        }
-
-        //returns the time materials sit idle (difference between received date and use date)
-        public TimeSpan idleTime()
-        {
-            return dateUsed - dateAcquired;
-        }
-
        
-
         //Overriding the ToString method
         public override string ToString()
         {

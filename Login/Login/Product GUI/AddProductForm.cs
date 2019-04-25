@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace WorkFlowManagement
 {
@@ -42,7 +35,7 @@ namespace WorkFlowManagement
             stockTable = objDatabaseManager.SumStocks();
         }
 
-        private void Product_Load_1(object sender, EventArgs e)
+        private void Product_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'workFlowDatabaseDataSet.StockSummaryView' table. You can move, or remove it, as needed.
             this.stockSummaryViewTableAdapter.Fill(this.workFlowDatabaseDataSet.StockSummaryView);
@@ -83,7 +76,6 @@ namespace WorkFlowManagement
             txt_Material.Visible = false;
             lbl_MaterialAmount.Visible = false;
             lbl_MaterialID.Visible = false;
-            //Ryan was here
             lbl_Title.Visible = false;
             btn_FinalizeProduct.Visible = false;
             btn_AddMaterialtoProduct.Visible = false;
@@ -113,7 +105,7 @@ namespace WorkFlowManagement
                     if (M.CreateProduct(txt_ProductName.Text, lbl_Description.Text, txt_ProductQuantity.Text))
                     {
                         product.FinalizeProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
-                        Product_Load_1(sender, e);
+                        Product_Load(sender, e);
                     }
                 }
             }
@@ -132,8 +124,8 @@ namespace WorkFlowManagement
             {
                 product.SetProduct(Int32.Parse(txt_ProductID.Text));
                 product.AdditionalProduct(txt_ProductName.Text, Int32.Parse(txt_ProductQuantity.Text));
-                Product_Load_1(sender, e);
-                
+                Product_Load(sender, e);
+                Orders.ConfirmFilled();
             }
             
         }

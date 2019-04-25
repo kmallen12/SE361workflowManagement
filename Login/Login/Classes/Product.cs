@@ -128,11 +128,8 @@ namespace WorkFlowManagement
         {
             objDatabaseManager.UpdateProduct(id, name, materials, quantity, status);
         }
-        //Grabs the ID, name, and quantity of a material for a datagrid.
-        public DataTable PartialStockTable()
-        {
-           return objDatabaseManager.LoadPartialStocks();
-        }
+        
+
         public DataTable ProductTable()
         {
             return objDatabaseManager.LoadProducts();
@@ -148,10 +145,6 @@ namespace WorkFlowManagement
             
         }
         
-        public string productDescription()
-        {
-            return "ID: " + productID + " Name: " + productName + " Materials: " + productMaterials + " Quantity: " + productQuantity;
-        }
         public int FinalizeProduct(string name, int quantity)
         {
             
@@ -217,57 +210,6 @@ namespace WorkFlowManagement
             FinalizeProduct(name, quantity);
 
             return 0;
-
-            ////Ensure we have the correct product information.
-            
-            //materialsDescription = new int[2 * materialamt];
-            
-            //int tempmat;
-            //int id;
-            //decimal amt;
-            ////Build the materialstring
-            //for (int i = 0; i < materialamt; i++)
-            //{
-            //    materialsDescription[2 * i] = productMaterials[i].ID;
-            //    materialsDescription[2 * i + 1] = productMaterials[i].Quantity;
-            //}
-            
-            //try
-            //{
-            //    for (int x = 0; x < quantity; x++)
-            //    {
-            //        //Subtract quantity of material given from material in database. 
-            //        //Description [0] would be the first ID and [1] is the quantity then increment +2.
-            //        for (int i = 0; i < materialsDescription.Length; i = i + 2)
-            //        {
-            //            id = materialsDescription[i];
-            //            amt = materialsDescription[i + 1];
-            //            //Value for material quantity if we did subtract based on product amount.
-            //            tempmat = objDatabaseManager.CheckMaterialQuantity(id, (decimal)quantity * amt);
-            //            if (tempmat < 0)
-            //            {
-            //                M.NegativeMaterial(objDatabaseManager.returnMaterialName(id), (int)amt, quantity, tempmat + quantity * (int)amt);
-            //                return 0;
-            //            }
-
-
-            //        }
-            //        //If we don't get negatives in the previous loop we actually subtract materials.
-            //        for (int i = 0; i < materialsDescription.Length - 1; i = i + 2)
-            //            objDatabaseManager.SubtractMaterialQuantity(materialsDescription[i], materialsDescription[i + 1]);
-
-            //    }
-
-            //}
-            //catch (Exception p)
-            //{
-            //    // MessageBox.Show("TEST" + Int32.Parse(list[0]) + " " + Decimal.Parse(list[1]) + "TEST");
-            //    MessageBox.Show(p.ToString());
-            //}
-            //objDatabaseManager.IncreaseProductQuantity(productID,quantity);
-            ////Update product info after increase.
-            //SetProduct(key);
-            //return 0;
         }
 
         public override string ToString()

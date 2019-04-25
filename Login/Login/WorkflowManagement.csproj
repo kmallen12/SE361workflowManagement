@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BottomRightGraphic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BottomRightGraphic.Designer.cs">
+      <DependentUpon>BottomRightGraphic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseManager.cs" />
     <Compile Include="Classes\WorkFlowMessage.cs" />
@@ -146,6 +152,12 @@
     </Compile>
     <Compile Include="Quality GUI\CreateProductOrder.Designer.cs">
       <DependentUpon>CreateProductOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality GUI\ViewProductInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality GUI\ViewProductInProgress.Designer.cs">
+      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
     </Compile>
     <Compile Include="Quality GUI\ViewProductOrders.cs">
       <SubType>Form</SubType>
@@ -243,12 +255,6 @@
     <Compile Include="TabHolder.Designer.cs">
       <DependentUpon>TabHolder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quality GUI\ViewProductInProgress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quality GUI\ViewProductInProgress.Designer.cs">
-      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
-    </Compile>
     <Compile Include="WorkFlowDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -274,6 +280,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkFlowDatabaseDataSetProducts.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BottomRightGraphic.resx">
+      <DependentUpon>BottomRightGraphic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Quality GUI\CreateProductOrder.resx">
       <DependentUpon>CreateProductOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality GUI\ViewProductInProgress.resx">
+      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quality GUI\ViewProductOrders.resx">
       <DependentUpon>ViewProductOrders.cs</DependentUpon>
@@ -361,9 +373,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabHolder.resx">
       <DependentUpon>TabHolder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Quality GUI\ViewProductInProgress.resx">
-      <DependentUpon>ViewProductInProgress.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
@@ -483,6 +492,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BannerYES.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BottomGraphic.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
