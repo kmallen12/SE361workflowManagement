@@ -78,7 +78,6 @@
             this.lblUserType.TabIndex = 14;
             this.lblUserType.Text = "UserType";
             this.lblUserType.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.lblUserType.Click += new System.EventHandler(this.lblUserType_Click);
             // 
             // workFlowDatabaseDataSet1
             // 

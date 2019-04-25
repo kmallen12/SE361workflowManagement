@@ -108,7 +108,7 @@
             this.Name = "ViewProductsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ViewProductsForm";
-            this.Load += new System.EventHandler(this.ViewProductsForm_Load_1);
+            this.Load += new System.EventHandler(this.ViewProductsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workFlowDatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ViewProducts)).EndInit();
